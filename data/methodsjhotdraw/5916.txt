@@ -1,0 +1,35 @@
+/**
+ * Writes the figures to the specified output stream.
+ * This method applies the specified drawingTransform to the drawing, and draws
+ * it on an image of the specified getChildCount.
+ *
+ * All other write methods delegate their work to here.
+ */
+public void write(OutputStream out, List<Figure> figures, AffineTransform drawingTransform, Dimension imageSize) throws IOException {
+    this.drawingTransform = (drawingTransform == null) ? new AffineTransform() : drawingTransform;
+    this.bounds = (imageSize == null) ? new Rectangle(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE) : new Rectangle(0, 0, imageSize.width, imageSize.height);
+    XMLElement document = new XMLElement("map");
+    // Note: Image map elements need to be written from front to back
+    for (Figure f : new ReversedList<Figure>(figures)) {
+        writeElement(document, f);
+    }
+    // Strip AREA elements with "nohref" attributes from the end of the
+    // map
+    if (!(isIncludeNohref)) {
+        for (int i = (document.getChildrenCount()) - 1; i >= 0; i--) {
+            XMLElement child = ((XMLElement) (document.getChildAtIndex(i)));
+            if (child.hasAttribute("nohref")) {
+                document.removeChildAtIndex(i);
+            }
+        }
+    }
+    // Write XML content
+    PrintWriter writer = new PrintWriter(new OutputStreamWriter(out, "UTF-8"));
+    // new XMLWriter(writer).write(document);
+    for (Object o : document.getChildren()) {
+        XMLElement child = ((XMLElement) (o));
+        new XMLWriter(writer).write(child);
+    }
+    // Flush writer
+    writer.flush();
+}

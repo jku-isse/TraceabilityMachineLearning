@@ -1,0 +1,32 @@
+protected void drawStroke(Graphics2D g) {
+    Rectangle2D.Double r = ((Rectangle2D.Double) (rectangle.clone()));
+    if (DiamondFigure.IS_QUADRATIC.get(this)) {
+        double side = Math.max(r.width, r.height);
+        r.x -= (side - (r.width)) / 2;
+        r.y -= (side - (r.height)) / 2;
+        r.width = r.height = side;
+    }
+    double grow = AttributeKeys.getPerpendicularDrawGrowth(this);
+    double growx;
+    double growy;
+    if (grow == 0.0) {
+        growx = growy = 0.0;
+    } else {
+        double w = (r.width) / 2.0;
+        double h = (r.height) / 2.0;
+        double lineLength = Math.sqrt(((w * w) + (h * h)));
+        double scale = grow / lineLength;
+        double yb = scale * w;
+        double xa = scale * h;
+        growx = ((yb * yb) / xa) + xa;
+        growy = ((xa * xa) / yb) + yb;
+        Geom.grow(r, growx, growy);
+    }
+    GeneralPath diamond = new GeneralPath();
+    diamond.moveTo(((float) ((r.x) + ((r.width) / 2))), ((float) (r.y)));
+    diamond.lineTo(((float) ((r.x) + (r.width))), ((float) ((r.y) + ((r.height) / 2))));
+    diamond.lineTo(((float) ((r.x) + ((r.width) / 2))), ((float) ((r.y) + (r.height))));
+    diamond.lineTo(((float) (r.x)), ((float) ((r.y) + ((r.height) / 2))));
+    diamond.closePath();
+    g.draw(diamond);
+}

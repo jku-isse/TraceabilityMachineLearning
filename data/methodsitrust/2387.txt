@@ -1,0 +1,3 @@
+public PreparedStatement loadParameters(PreparedStatement ps, OfficeVisitBean p) throws SQLException {
+    throw new IllegalStateException("unimplemented!");
+}

@@ -1,0 +1,31 @@
+/**
+ * Notifies all listeners that have registered interest for
+ * notification on this event type. The event instance
+ * is lazily created using the <code>command</code> parameter.
+ */
+protected void fireActionPerformed(String command) {
+    // Guaranteed to return a non-null array
+    Object[] listeners = listenerList.getListenerList();
+    long mostRecentEventTime = EventQueue.getMostRecentEventTime();
+    int modifiers = 0;
+    AWTEvent currentEvent = EventQueue.getCurrentEvent();
+    if (currentEvent instanceof InputEvent) {
+        modifiers = ((InputEvent) (currentEvent)).getModifiers();
+    } else
+        if (currentEvent instanceof ActionEvent) {
+            modifiers = ((ActionEvent) (currentEvent)).getModifiers();
+        }
+
+    ActionEvent e = null;
+    // Process the listeners last to first, notifying
+    // those that are interested in this event
+    for (int i = (listeners.length) - 2; i >= 0; i -= 2) {
+        if ((listeners[i]) == (ActionListener.class)) {
+            // Lazily create the event:
+            if (e == null) {
+                e = new ActionEvent(this, ActionEvent.ACTION_PERFORMED, command, mostRecentEventTime, modifiers);
+            }
+            ((ActionListener) (listeners[(i + 1)])).actionPerformed(e);
+        }
+    }
+}

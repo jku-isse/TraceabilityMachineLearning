@@ -1,0 +1,15 @@
+public Point2D.Double locate(Figure owner) {
+    Rectangle2D.Double r;
+    if ((owner instanceof DecoratedFigure) && ((((DecoratedFigure) (owner)).getDecorator()) != null)) {
+        r = ((DecoratedFigure) (owner)).getDecorator().getBounds();
+    } else {
+        r = owner.getBounds();
+    }
+    if (isQuadratic) {
+        double side = Math.max(r.width, r.height);
+        r.x -= (side - (r.width)) / 2;
+        r.y -= (side - (r.height)) / 2;
+        r.width = r.height = side;
+    }
+    return new Point2D.Double(((r.x) + ((r.width) * (relativeX))), ((r.y) + ((r.height) * (relativeY))));
+}

@@ -1,0 +1,4 @@
+void bind(GraphicPrimitiveContainer.GraphicPrimitive primitive, Object modelObject) {
+    myModelObject2primitive.put(modelObject, primitive);
+    primitive.setModelObject(modelObject);
+}

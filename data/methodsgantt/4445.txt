@@ -1,0 +1,56 @@
+TaskManagerImpl(TaskContainmentHierarchyFacade.Factory containmentFacadeFactory, TaskManagerConfig config, CustomColumnsStorage columnStorage) {
+    myCustomColumnStorage = (columnStorage == null) ? new CustomColumnsStorage() : columnStorage;
+    myConfig = config;
+    myHierarchyManager = new TaskHierarchyManagerImpl();
+    EventDispatcher dispatcher = new EventDispatcher() {
+        public void fireDependencyAdded(TaskDependency dep) {
+            TaskManagerImpl.this.fireDependencyAdded(dep);
+        }
+
+        public void fireDependencyRemoved(TaskDependency dep) {
+            TaskManagerImpl.this.fireDependencyRemoved(dep);
+        }
+    };
+    myDependencyCollection = new TaskDependencyCollectionImpl(containmentFacadeFactory, dispatcher) {
+        private TaskContainmentHierarchyFacade myTaskHierarchy;
+
+        protected TaskContainmentHierarchyFacade getTaskHierarchy() {
+            if ((myTaskHierarchy) == null) {
+                myTaskHierarchy = TaskManagerImpl.this.getTaskHierarchy();
+            }
+            return myTaskHierarchy;
+        }
+    };
+    myFacadeFactory = (containmentFacadeFactory == null) ? new TaskManagerImpl.FacadeFactoryImpl() : containmentFacadeFactory;
+    // clear();
+    {
+        Calendar c = CalendarFactory.newCalendar();
+        Date today = c.getTime();
+        myRoot = new GanttTask(null, new GanttCalendar(today), 1, this, (-1));
+        myRoot.setStart(new GanttCalendar(today));
+        myRoot.setDuration(createLength(getConfig().getTimeUnitStack().getDefaultTimeUnit(), 1));
+        myRoot.setExpand(true);
+    }
+    FindPossibleDependeesAlgorithm alg1 = new FindPossibleDependeesAlgorithmImpl() {
+        protected TaskContainmentHierarchyFacade createContainmentFacade() {
+            return TaskManagerImpl.this.getTaskHierarchy();
+        }
+    };
+    AdjustTaskBoundsAlgorithm alg3 = new AdjustTaskBoundsAlgorithm() {
+        protected TaskContainmentHierarchyFacade createContainmentFacade() {
+            return TaskManagerImpl.this.getTaskHierarchy();
+        }
+    };
+    RecalculateTaskScheduleAlgorithm alg2 = new RecalculateTaskScheduleAlgorithm(alg3) {
+        protected TaskContainmentHierarchyFacade createContainmentFacade() {
+            return TaskManagerImpl.this.getTaskHierarchy();
+        }
+    };
+    RecalculateTaskCompletionPercentageAlgorithm alg4 = new RecalculateTaskCompletionPercentageAlgorithm() {
+        protected TaskContainmentHierarchyFacade createContainmentFacade() {
+            return TaskManagerImpl.this.getTaskHierarchy();
+        }
+    };
+    ProjectBoundsAlgorithm alg5 = new ProjectBoundsAlgorithm();
+    myAlgorithmCollection = new AlgorithmCollection(alg1, alg2, alg3, alg4, alg5);
+}

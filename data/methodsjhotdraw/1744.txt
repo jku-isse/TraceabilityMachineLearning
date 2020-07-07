@@ -1,0 +1,5 @@
+@Override
+public void mouseExited(MouseEvent evt) {
+    DrawingView view = editor.findView(((Container) (evt.getSource())));
+    updateHoverHandles(view, null);
+}

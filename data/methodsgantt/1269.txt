@@ -1,0 +1,53 @@
+public void showDialog(Component content, Action[] buttonActions, String title) {
+    JDialog result = new JDialog(myMainFrame, true);
+    result.setTitle(title);
+    final UIFacadeImpl.Commiter commiter = new UIFacadeImpl.Commiter();
+    Action okAction = null;
+    Action cancelAction = null;
+    Box buttonBox = Box.createHorizontalBox();
+    for (int i = 0; i < (buttonActions.length); i++) {
+        Action nextAction = buttonActions[i];
+        JButton nextButton = null;
+        if (nextAction instanceof OkAction) {
+            nextAction = createOkAction(nextAction, result, commiter);
+            okAction = nextAction;
+            nextButton = new JButton(nextAction);
+            result.getRootPane().setDefaultButton(nextButton);
+        }
+        if (nextAction instanceof CancelAction) {
+            nextAction = createCancelAction(nextAction, result, commiter);
+            cancelAction = nextAction;
+            result.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), nextAction.getValue(Action.NAME));
+            result.getRootPane().getActionMap().put(nextAction.getValue(Action.NAME), nextAction);
+        }
+        if (nextButton == null) {
+            nextButton = new JButton(nextAction);
+        }
+        buttonBox.add(nextButton);
+        if (i < ((buttonActions.length) - 1)) {
+            buttonBox.add(Box.createHorizontalStrut(5));
+        }
+    }
+    result.getContentPane().setLayout(new BorderLayout());
+    result.getContentPane().add(content, BorderLayout.CENTER);
+    // 
+    JPanel buttonPanel = new JPanel(new BorderLayout());
+    buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 5, 5));
+    buttonPanel.add(buttonBox, BorderLayout.EAST);
+    result.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+    // 
+    result.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    final Action localOkAction = okAction;
+    final Action localCancelAction = cancelAction;
+    result.addWindowListener(new WindowAdapter() {
+        public void windowClosed(WindowEvent e) {
+            if ((localCancelAction != null) && (!(commiter.isCommited()))) {
+                localCancelAction.actionPerformed(null);
+            }
+        }
+    });
+    result.pack();
+    // setSize(300, 300);
+    DialogAligner.center(result, myMainFrame);
+    result.setVisible(true);
+}

@@ -1,0 +1,24 @@
+/**
+ * Copy the current selected tree node
+ */
+public void copySelectedNode() {
+    TreePath currentSelection = treetable.getTree().getSelectionPath();
+    cpNodesArrayList = new ArrayList();
+    if (currentSelection != null) {
+        final DefaultMutableTreeNode[] cdmtn = getSelectedNodes();
+        cpAllDependencies(cdmtn);
+        for (int i = 0; i < (cdmtn.length); i++) {
+            boolean isNodeDescendant = false;
+            for (int j = 0; j < (cpNodesArrayList.size()); j++) {
+                if (((DefaultMutableTreeNode) (cdmtn[i])).isNodeDescendant(((DefaultMutableTreeNode) (cpNodesArrayList.get(j))))) {
+                    isNodeDescendant = true;
+                    // if a selected node is a descendant of an other
+                    // selected one he doesnt have to be copied
+                }
+            }
+            if (!isNodeDescendant) {
+                cpNodesArrayList.add(((DefaultMutableTreeNode) (cdmtn[i])));
+            }
+        }
+    }
+}

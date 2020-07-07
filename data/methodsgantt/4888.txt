@@ -1,0 +1,3 @@
+MyTimeUnitPair(TimeUnit topUnit, TimeUnit bottomUnit) {
+    super(topUnit, bottomUnit, this);
+}

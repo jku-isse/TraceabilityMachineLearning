@@ -1,0 +1,10 @@
+public void testEvilDAOFactory() throws Exception {
+    DrugInteractionAction actionEvil = new DrugInteractionAction(evilFactory, 9000000001L);
+    gen.drugInteractions();
+    try {
+        actionEvil.deleteInteraction("009042407", "548680955");
+        fail();
+    } catch (iTrustException e) {
+        assertSame(("A database exception has occurred. Please see the log in the " + "console for stacktrace"), e.getMessage());
+    }
+}

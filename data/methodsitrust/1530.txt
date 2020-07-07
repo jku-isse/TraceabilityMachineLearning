@@ -1,0 +1,13 @@
+/**
+ *
+ *
+ * @param pending
+ * 		
+ */
+public void setPending(boolean pending) {
+    if (pending) {
+        status = null;
+    } else {
+        status = new Boolean(false);
+    }
+}

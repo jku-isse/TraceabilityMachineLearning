@@ -1,0 +1,3 @@
+public void setDayOffColor(Color dayOffColor) {
+    this.myDayOffColor = dayOffColor;
+}

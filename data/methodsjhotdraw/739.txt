@@ -1,0 +1,4 @@
+public double getStrokeMiterLimitFactor() {
+    Number value = ((Number) (getAttribute(AttributeKeys.STROKE_MITER_LIMIT)));
+    return value != null ? value.doubleValue() : 10.0F;
+}

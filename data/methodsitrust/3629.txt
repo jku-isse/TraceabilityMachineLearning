@@ -1,0 +1,3 @@
+public void surveyResults() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/surveyResults.sql"));
+}

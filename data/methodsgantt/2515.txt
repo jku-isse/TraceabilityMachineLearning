@@ -1,0 +1,14 @@
+public static void center(JDialog dialog, Container parent) {
+    boolean alignToParent = false;
+    if (parent != null) {
+        alignToParent = parent.isVisible();
+    }
+    if (alignToParent) {
+        Point point = parent.getLocationOnScreen();
+        int x = ((int) (point.getX())) + ((parent.getWidth()) / 2);
+        int y = ((int) (point.getY())) + ((parent.getHeight()) / 2);
+        dialog.setLocation((x - ((dialog.getWidth()) / 2)), (y - ((dialog.getHeight()) / 2)));
+    } else {
+        DialogAligner.centerOnScreen(dialog);
+    }
+}

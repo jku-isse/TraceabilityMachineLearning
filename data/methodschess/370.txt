@@ -1,0 +1,6 @@
+/**
+ * Add a new ply to the game.
+ *
+ * @unknown The new ply.
+ */
+void doPly(Ply ply);

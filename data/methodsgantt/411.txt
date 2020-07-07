@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param pvString
+ * 		
+ */
+public void setFTPPwd(String pvString) {
+    FTPPwd = pvString;
+}

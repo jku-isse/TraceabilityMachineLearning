@@ -1,0 +1,7 @@
+protected void writeLiner(DOMOutput out) throws IOException {
+    if ((liner) != null) {
+        out.openElement("liner");
+        out.writeObject(liner);
+        out.closeElement();
+    }
+}

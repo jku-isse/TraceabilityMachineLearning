@@ -1,0 +1,6 @@
+private void fireStartDateChanged(ChartViewState.ViewStateEvent e) {
+    for (int i = 0; i < (myListeners.size()); i++) {
+        ChartViewState.Listener nextListener = ((ChartViewState.Listener) (myListeners.get(i)));
+        nextListener.startDateChanged(e);
+    }
+}

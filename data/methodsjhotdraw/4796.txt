@@ -1,0 +1,7 @@
+@Override
+public <T> void setAttribute(AttributeKey<T> key, T newValue) {
+    if (key == (AttributeKeys.TRANSFORM)) {
+        invalidate();
+    }
+    super.setAttribute(key, newValue);
+}

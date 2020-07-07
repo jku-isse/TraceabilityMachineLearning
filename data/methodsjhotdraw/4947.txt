@@ -1,0 +1,8 @@
+/**
+ * Converts the EnhancedPath into a GeneralPath.
+ */
+public GeneralPath toGeneralPath() {
+    GeneralPath gp = new GeneralPath();
+    // XXX implement me
+    return gp;
+}

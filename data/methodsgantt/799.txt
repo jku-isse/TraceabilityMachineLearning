@@ -1,0 +1,8 @@
+public static List convertNodesListToItemList(List nodesList) {
+    List res = new ArrayList(nodesList.size());
+    Iterator itNodes = nodesList.iterator();
+    while (itNodes.hasNext()) {
+        res.add(((DefaultMutableTreeNode) (itNodes.next())).getUserObject());
+    } 
+    return res;
+}

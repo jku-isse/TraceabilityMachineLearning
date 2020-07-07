@@ -1,0 +1,6 @@
+/**
+ * Gets the color displayed when over a docking area
+ */
+public Color getDockingColor() {
+    return dockingColor;
+}

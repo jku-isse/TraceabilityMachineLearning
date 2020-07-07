@@ -1,0 +1,7 @@
+public void testGenerateReport() {
+    List<ReportFilter> f = new ArrayList<ReportFilter>();
+    f.add(new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.LAST_NAME, "Person", factory));
+    GroupReportBean res = action.generateReport(f);
+    assertTrue(((res.getPatients().size()) == 1));
+    assertEquals(1L, res.getPatients().get(0).getMID());
+}

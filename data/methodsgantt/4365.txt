@@ -1,0 +1,7 @@
+public List getActivities() {
+    if ((((myActivities) == null) && ((myStartChange) != null)) || ((myDurationChange) != null)) {
+        myActivities = new ArrayList();
+        this.recalculateActivities(myActivities, getStart().getTime(), this.getEnd().getTime());
+    }
+    return myActivities;
+}

@@ -1,0 +1,7 @@
+public Component getComponent() {
+    if (myProvider.hasCustomComponent()) {
+        return myProvider.buildPageComponent(myProject, myUIFacade);
+    }
+    OptionsPageBuilder builder = new OptionsPageBuilder();
+    return builder.buildPage(myGroups, myProvider.getPageID());
+}

@@ -1,0 +1,4 @@
+/**
+ * Opens the element with the specified index and makes it the current node.
+ */
+public void openElement(int index) throws IOException;

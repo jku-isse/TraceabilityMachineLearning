@@ -1,0 +1,12 @@
+public void testUpdateICDInformation0() throws Exception {
+    final String code = "888.88";
+    final String desc = "new descrip 0";
+    final String desc_new = "new descrip 1";
+    final String classification = "Long Term";
+    DiagnosisBean proc = new DiagnosisBean(code, desc, classification);
+    action.addICDCode(proc);
+    proc.setDescription(desc_new);
+    assertEquals("Success: 1 row(s) updated", action.updateInformation(proc));
+    proc = factory.getICDCodesDAO().getICDCode(code);
+    assertEquals(desc_new, proc.getDescription());
+}

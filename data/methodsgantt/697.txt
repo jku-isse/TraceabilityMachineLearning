@@ -1,0 +1,3 @@
+public void open(Document document) throws IOException {
+    // TODO Auto-generated method stub
+}

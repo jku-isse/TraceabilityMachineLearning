@@ -1,0 +1,3 @@
+protected GPViewManager getViewManager() {
+    return myViewManager;
+}

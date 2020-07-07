@@ -1,0 +1,5 @@
+public void testDeleteInteraction() throws Exception {
+    gen.drugInteractions();
+    String response = action.deleteInteraction("009042407", "548680955");
+    assertSame(response, "Interaction deleted successfully");
+}

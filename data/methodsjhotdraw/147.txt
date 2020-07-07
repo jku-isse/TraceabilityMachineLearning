@@ -1,0 +1,4 @@
+@Override
+public void addPalette(Window palette) {
+    paletteHandler.addPalette(palette);
+}

@@ -1,0 +1,4 @@
+@Override
+public void setStartPoint(Point2D.Double p) {
+    setPoint(0, p);
+}

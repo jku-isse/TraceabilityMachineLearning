@@ -1,0 +1,7 @@
+public boolean isCellEditable(int row, int col) {
+    boolean result = col > 0;
+    if (result) {
+        result = ((col == 2 ? row < (myAssignments.size()) : row <= (myAssignments.size())) || (col == 3)) || (col == 4);
+    }
+    return result;
+}

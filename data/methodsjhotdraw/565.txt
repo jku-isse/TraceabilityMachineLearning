@@ -1,0 +1,9 @@
+public CompositeColor getCompositeColor() {
+    float[] c = new float[system.getComponentCount()];
+    int i = 0;
+    for (DefaultBoundedRangeModel m : componentModels) {
+        c[i] = ((m.getValue()) - (m.getMinimum())) / ((float) ((m.getMaximum()) - (m.getMinimum())));
+        i++;
+    }
+    return new CompositeColor(system, c);
+}

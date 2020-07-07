@@ -1,0 +1,8 @@
+/**
+ * Returns the duration of the task.
+ *
+ * @return The duration of the task.
+ */
+public int getDuration() {
+    return ((int) (task.getDuration().getValue()));
+}

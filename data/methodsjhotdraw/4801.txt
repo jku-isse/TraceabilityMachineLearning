@@ -1,0 +1,11 @@
+/**
+ * Transforms all coords of the figure by the current TRANSFORM attribute
+ * and then sets the TRANSFORM attribute to null.
+ */
+public void flattenTransform() {
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        path.transform(AttributeKeys.TRANSFORM.get(this));
+        AttributeKeys.TRANSFORM.basicSet(this, null);
+    }
+    invalidate();
+}

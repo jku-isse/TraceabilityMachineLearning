@@ -1,0 +1,11 @@
+public void testUpdateNonExistent() throws Exception {
+    final String code = "99996";
+    OverrideReasonBean orc = new OverrideReasonBean(code, "shouldnt be here");
+    String result = action.updateInformation(orc);
+    assertEquals("Error: Code not found.", result);
+    OverrideReasonBean orc2 = new OverrideReasonBean("99995", "Test");
+    String result2 = action.addORCode(orc2);
+    assert result2.contains("Success");
+    assertEquals(null, factory.getORCodesDAO().getORCode(code));
+    assertEquals(1, factory.getORCodesDAO().getAllORCodes().size());
+}

@@ -1,0 +1,12 @@
+/**
+ * Draw the axes.
+ */
+public void labelAxes(OutputStreamWriter fout) {
+    // TODO write this method
+    if (debug)
+        System.out.println("labelAxes begin");
+
+    if (debug)
+        System.out.println("labelAxes end");
+
+}

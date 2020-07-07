@@ -1,0 +1,22 @@
+/**
+ * Returns all LOINCs as a list.
+ *
+ * @return A java.util.List of LOINCbeans.
+ * @throws DBException
+ * 		
+ */
+public List<LOINCbean> getAllLOINC() throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM loinc");
+        ResultSet rs = ps.executeQuery();
+        return LOINCLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

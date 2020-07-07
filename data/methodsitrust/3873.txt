@@ -1,0 +1,26 @@
+public void testDiagnosesLink() throws Exception {
+    // login uap
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // choose Edit Patient
+    wr = wr.getLinkWith("Edit Diagnoses URLs").click();
+    // choose patient 2
+    WebForm Form = wr.getForms()[0];
+    Form.setParameter("diagnoses", "715.09");
+    Form.submit();
+    wr = wc.getCurrentPage();
+    Form = wr.getForms()[0];
+    Form.setParameter("url", "http://www.wikipedia.org/");
+    wr = Form.submit();
+    assertEquals("iTrust - Maintain Diagnoses Links", wr.getTitle());
+    assertTrue(wr.getText().contains("URL has been successfully updated to http://www.wikipedia.org/"));
+    wr = wr.getLinkWith("Logout").click();
+    // login as patient
+    wc = login("1", "pw");
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    wr = wr.getLinkWith("My Diagnoses").click();
+    wr = wr.getLinkWith("http://www.wikipedia.org/").click();
+    assertEquals("Wikipedia", wr.getTitle());
+}

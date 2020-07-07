@@ -1,0 +1,3 @@
+protected Document getDocument(File selectedFile) {
+    return new FileDocument(selectedFile);
+}

@@ -1,0 +1,7 @@
+public UndoManagerImpl(IGanttProject project, ParserFactory parserFactory, DocumentManager documentManager) {
+    myProject = project;
+    myParserFactory = parserFactory;
+    myDocumentManager = documentManager;
+    mySwingUndoManager = new UndoManager();
+    myUndoEventDispatcher = new UndoableEditSupport();
+}

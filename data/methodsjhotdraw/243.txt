@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public AbstractApplicationAction(Application app) {
+    this.app = app;
+    installApplicationListeners(app);
+    updateApplicationEnabled();
+}

@@ -1,0 +1,8 @@
+public ResourceActionSet(IGanttProject project, ResourceContext context, GanttProject projectFrame, UIFacade uiFacade) {
+    myManager = project.getHumanResourceManager();
+    myRoleManager = project.getRoleManager();
+    myContext = context;
+    myProjectFrame = projectFrame;
+    myUIFacade = uiFacade;
+    myDeleteHumanAction = new DeleteHumanAction(myManager, myContext, myProjectFrame, myUIFacade);
+}

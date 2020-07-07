@@ -1,0 +1,8 @@
+public FamilyMemberBean loadSingle(ResultSet rs) throws SQLException {
+    FamilyMemberBean fam = new FamilyMemberBean();
+    fam.setRelation(relation);
+    fam.setFirstName(rs.getString("FirstName"));
+    fam.setLastName(rs.getString("LastName"));
+    fam.setMid(rs.getInt("MID"));
+    return fam;
+}

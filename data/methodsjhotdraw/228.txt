@@ -1,0 +1,5 @@
+/**
+ * Marks all changes as saved.
+ * This changes the state of hasUnsavedChanges to false.
+ */
+public void markChangesAsSaved();

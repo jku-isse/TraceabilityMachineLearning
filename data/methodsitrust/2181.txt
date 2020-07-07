@@ -1,0 +1,3 @@
+public long getLoggedInMID() {
+    return loggedInMID;
+}

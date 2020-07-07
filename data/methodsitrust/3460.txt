@@ -1,0 +1,9 @@
+public void testSurveyResultsHospitalAnySpecialty2() throws Exception {
+    List<SurveyResultBean> list = surveyResultDAO.getSurveyResultsForHospital("9191919191", SurveyResultBean.ANY_SPECIALTY);
+    assertEquals(2, list.size());
+    SurveyResultBean bean = list.get(1);
+    assertEquals(9100000000L, bean.getHCPMID());
+    assertEquals("Good", bean.getHCPFirstName());
+    assertEquals("Doctor", bean.getHCPLastName());
+    assertEquals(50.0F, bean.getPercentSatisfactionResults());
+}

@@ -1,0 +1,3 @@
+protected JComponent getDisclosedComponent(int state) {
+    return new JLabel(Integer.toString(state));
+}

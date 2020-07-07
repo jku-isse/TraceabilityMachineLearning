@@ -1,0 +1,4 @@
+public BezierOutlineHandle(BezierFigure owner, boolean isHoverHandle) {
+    super(owner);
+    this.isHoverHandle = isHoverHandle;
+}

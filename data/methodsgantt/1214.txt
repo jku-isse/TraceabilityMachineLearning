@@ -1,0 +1,3 @@
+public void taskScheduleChanged(TaskScheduleEvent e) {
+    myGanttProject.setModified();
+}

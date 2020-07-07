@@ -1,0 +1,3 @@
+public void clearHospitalAssignments() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/hospitalAssignmentsReset.sql"));
+}

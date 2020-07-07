@@ -1,0 +1,17 @@
+public void openStartupDocument(String path) {
+    if (path != null) {
+        final Document document = getDocumentManager().getDocument(path);
+        // openStartupDocument(document);
+        getUndoManager().undoableEdit("OpenFile", new Runnable() {
+            public void run() {
+                try {
+                    getProjectUIFacade().openProject(document, getProject());
+                } catch (IOException e) {
+                    if (!(tryImportDocument(document))) {
+                        getUIFacade().showErrorDialog(e);
+                    }
+                }
+            }
+        });
+    }
+}

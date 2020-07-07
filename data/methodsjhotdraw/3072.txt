@@ -1,0 +1,3 @@
+public static JButton createFontStyleBoldButton(DrawingEditor editor) {
+    return ButtonFactory.createFontStyleBoldButton(editor, ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+}

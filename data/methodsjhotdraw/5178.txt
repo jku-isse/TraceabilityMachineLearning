@@ -1,0 +1,21 @@
+/**
+ * Closes the applet. This method can be implemented by invoking
+ * <code>getAppletContext().showDocument(...)</code>.
+ */
+protected void close() {
+    AppletContext appletContext;
+    try {
+        appletContext = getAppletContext();
+    } catch (Throwable e) {
+        appletContext = null;
+    }
+    if (appletContext == null) {
+        System.exit(0);
+    } else {
+        try {
+            appletContext.showDocument(new URL(getDocumentBase(), getParameter("PageURL")));
+        } catch (MalformedURLException ex) {
+            ex.printStackTrace();
+        }
+    }
+}

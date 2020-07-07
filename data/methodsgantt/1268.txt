@@ -1,0 +1,3 @@
+public void showDialog(Component content, Action[] buttonActions) {
+    showDialog(content, buttonActions, "");
+}

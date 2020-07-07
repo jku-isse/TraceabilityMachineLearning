@@ -1,0 +1,9 @@
+@SuppressWarnings("unchecked")
+private static Method raiseToPublicClass(Method m, Class c) {
+    try {
+        Method sm = c.getMethod(m.getName(), m.getParameterTypes());
+        return GenericListener.raiseToPublicClass(sm);
+    } catch (NoSuchMethodException ee) {
+        return null;
+    }
+}

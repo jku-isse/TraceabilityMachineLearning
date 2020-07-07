@@ -1,0 +1,4 @@
+/**
+ * Finds the start point for the connection.
+ */
+public Point2D.Double findStart(ConnectionFigure connection);

@@ -1,0 +1,25 @@
+/**
+ * Used by the JSP, which passes the param map from the html form and a list of OfficeVisitBeans Returns a
+ * string that will be used to create a new url. The JSP will pull params from this url to create the
+ * prescription report.
+ *
+ * @param paramMap
+ * 		A java.util.HashMap of the parameters.
+ * @param officeVisits
+ * 		A java.util.List of OfficeVisitBeans.
+ * @return the string that will be used in the new url
+ * @throws FormValidationException
+ * 		
+ * @throws DBException
+ * 		
+ */
+@SuppressWarnings("rawtypes")
+public String getQueryString(Map paramMap, List<OfficeVisitBean> officeVisits) throws DBException, FormValidationException {
+    HashMap<String, String> myParams = ParameterUtil.convertMap(paramMap);
+    List<Integer> ovOffsets = checkOfficeVisits(myParams, officeVisits);
+    String queryString = buildQueryString(ovOffsets);
+    if (isRepresenting)
+        queryString += "&rep=" + (pid);
+
+    return queryString;
+}

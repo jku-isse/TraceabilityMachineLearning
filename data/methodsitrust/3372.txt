@@ -1,0 +1,8 @@
+public void testGetTelemedicineBean() throws Exception {
+    try {
+        List<TelemedicineBean> tBeans = rmDAO.getTelemedicineBean(2L);
+        assertEquals(1, tBeans.size());
+    } catch (iTrustException e) {
+        fail();
+    }
+}

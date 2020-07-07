@@ -1,0 +1,8 @@
+/**
+ * Returns the insets used to draw text.
+ */
+public Insets2D.Double getInsets() {
+    double sw = ((AttributeKeys.STROKE_COLOR.get(this)) == null) ? 0 : Math.ceil(((AttributeKeys.STROKE_WIDTH.get(this)) / 2));
+    Insets2D.Double insets = new Insets2D.Double(0, 0, 0, 0);
+    return new Insets2D.Double(((insets.top) + sw), ((insets.left) + sw), ((insets.bottom) + sw), ((insets.right) + sw));
+}

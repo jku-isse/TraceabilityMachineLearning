@@ -1,0 +1,27 @@
+/**
+ * Logs the checkout reason for a patient
+ *
+ * @param mid
+ * 		The mid of the Patient checking out
+ * @param reason
+ * 		The reason the patient is being checked out.
+ * @return Whether 1 patient was inserted
+ * @throws iTrustException
+ * 		
+ */
+public boolean checkOutPatientReason(long mid, String reason) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO WardRoomCheckout (PID, Reason) Values(?,?)");
+        ps.setLong(1, mid);
+        ps.setString(2, reason);
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

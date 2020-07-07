@@ -1,0 +1,5 @@
+public void trackDoubleClick(Point p, int modifiersEx, DrawingView view) {
+    for (Handle h : handles) {
+        h.trackDoubleClick(p, modifiersEx);
+    }
+}

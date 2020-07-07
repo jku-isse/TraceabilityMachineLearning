@@ -1,0 +1,9 @@
+public Date findClosestWorkingTime(Date time) {
+    if ((myWeekendDaysCount) == 0) {
+        return time;
+    }
+    if (!(isNonWorkingDay(time))) {
+        return time;
+    }
+    return getStateChangeDate(time, false);
+}

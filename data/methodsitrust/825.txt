@@ -1,0 +1,7 @@
+public void testResetForHCP() throws Exception {
+    gen.hcp0();
+    assertEquals("Password changed", action.resetPassword(9000000000L, "hcp", "a", "12345678", "12345678", "127.0.0.1"));
+    List<Email> list = feDAO.getAllEmails();
+    assertEquals("Dear Kelly Doctor, 
+ You have chosen to change your iTrust password for user 9000000000", list.get(0).getBody());
+}

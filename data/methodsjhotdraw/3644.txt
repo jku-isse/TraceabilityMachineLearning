@@ -1,0 +1,21 @@
+/**
+ * Attaches the FigureAttributeEditorHandler to the specified DrawingEditor.
+ * <p>
+ * The FigureAttributeEditorHandler listens to view changes and selection
+ * changes of the drawing editor and calls setEnabled(boolean) and
+ * updateField(Set&lt;Figure&gt;) on the field accordingly.
+ *
+ * @param newValue
+ * 		a drawing editor.
+ */
+public void setDrawingEditor(DrawingEditor newValue) {
+    DrawingEditor oldValue = drawingEditor;
+    if ((drawingEditor) != null) {
+        drawingEditor.removePropertyChangeListener(eventHandler);
+    }
+    this.drawingEditor = newValue;
+    if ((drawingEditor) != null) {
+        drawingEditor.addPropertyChangeListener(eventHandler);
+    }
+    updateActiveView();
+}

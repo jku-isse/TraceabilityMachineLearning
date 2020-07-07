@@ -1,0 +1,3 @@
+public void setPopupMenu(JPopupMenu popupMenu) {
+    this.popupMenu = popupMenu;
+}

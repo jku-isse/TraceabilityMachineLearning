@@ -1,0 +1,8 @@
+public void testCannotRepresent() throws Exception {
+    try {
+        action = new ViewOfficeVisitAction(factory, 1L, "2", "955");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("You do not represent this patient, contact your HCP to represent this patient", e.getMessage());
+    }
+}

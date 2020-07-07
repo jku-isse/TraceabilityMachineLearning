@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the senderName
+ */
+public String getSenderName() {
+    return senderName;
+}

@@ -1,0 +1,13 @@
+public boolean addEdit(UndoableEdit anEdit) {
+    if (anEdit == (this)) {
+        end();
+        return true;
+    } else {
+        if (!(inProgress)) {
+            return false;
+        } else {
+            anEdit.die();
+            return true;
+        }
+    }
+}

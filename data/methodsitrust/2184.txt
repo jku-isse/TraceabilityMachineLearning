@@ -1,0 +1,3 @@
+public Timestamp getTimeLogged() {
+    return timeLogged;
+}

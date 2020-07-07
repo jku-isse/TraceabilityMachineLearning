@@ -1,0 +1,11 @@
+public void testGetOfficeVisit() {
+    try {
+        OfficeVisitBean ov = ovDAO.getOfficeVisit(1);
+        assertEquals(1, ov.getVisitID());
+        assertEquals(9000000000L, ov.getHcpID());
+        assertEquals("Generated for Death for Patient: 1", ov.getNotes());
+        assertEquals(1, ov.getPatientID());
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}

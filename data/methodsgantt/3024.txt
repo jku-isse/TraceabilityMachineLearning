@@ -1,0 +1,130 @@
+/**
+ * Appli the new language
+ */
+public void changeLanguage() {
+    String lang = ((String) (cbLanguage.getSelectedItem()));
+    if (lang.equals("Traditional Chinese"))
+        language.setLocale(Locale.TAIWAN);
+    else
+        if (lang.equals("Simplified Chinese"))
+            language.setLocale(Locale.CHINA);
+        else
+            if (lang.equals("u0411u044au043bu0433u0430u0440u0441u043au0438"))
+                language.setLocale(new Locale("bg", "BG"));
+            else
+                if (lang.equals("u010cesky"))
+                    language.setLocale(new Locale("cs", "CZ"));
+                else
+                    if (lang.equals("Dansk"))
+                        language.setLocale(new Locale("da", "DK"));
+                    else
+                        if (lang.equals("Deutsch"))
+                            language.setLocale(Locale.GERMANY);
+                        else
+                            if (lang.equals("English"))
+                                language.setLocale(Locale.US);
+                            else
+                                if (lang.equals("English (United Kingdom)"))
+                                    language.setLocale(Locale.UK);
+                                else
+                                    if (lang.equals("Espau00f1ol"))
+                                        language.setLocale(new Locale("es", "ES"));
+                                    else
+                                        if (lang.equals("Estonian"))
+                                            language.setLocale(new Locale("et", "ET"));
+                                        else
+                                            if (lang.equals("Greek"))
+                                                language.setLocale(new Locale("el", "GR"));
+                                            else
+                                                if (lang.equals("Finnish"))
+                                                    language.setLocale(new Locale("fi", "FI"));
+                                                else
+                                                    if (lang.equals("Franu00e7ais"))
+                                                        language.setLocale(Locale.FRANCE);
+                                                    else
+                                                        if (lang.equals("Hrvatski")) {
+                                                            language.setLocale(new Locale("hr", "HR"));
+                                                        } else
+                                                            if (lang.equals("Hungarian"))
+                                                                language.setLocale(new Locale("hu", "HU"));
+                                                            else
+                                                                if (lang.equals("Korean"))
+                                                                    language.setLocale(new Locale("ko", "KR"));
+                                                                else
+                                                                    if (lang.equals("u05e2u05d1u05e8u05d9u05ea"))
+                                                                        language.setLocale(new Locale("iw", "iW"));
+                                                                    else
+                                                                        if (lang.equals("Italiano"))
+                                                                            language.setLocale(Locale.ITALY);
+                                                                        else
+                                                                            if (lang.equals("Japanese"))
+                                                                                language.setLocale(new Locale("ja", "JP"));
+                                                                            else
+                                                                                if (lang.equals("Nederlands"))
+                                                                                    language.setLocale(new Locale("nl", "NL"));
+                                                                                else
+                                                                                    if (lang.equals("Norsk"))
+                                                                                        language.setLocale(new Locale("no", "NO"));
+                                                                                    else
+                                                                                        if (lang.equals("Polski"))
+                                                                                            language.setLocale(new Locale("pl", "PL"));
+                                                                                        else
+                                                                                            if (lang.equals("Portuguu00eas"))
+                                                                                                language.setLocale(new Locale("pt", "PT"));
+                                                                                            else
+                                                                                                if (lang.equals("Portuguu00eas do Brasil"))
+                                                                                                    language.setLocale(new Locale("pt", "BR"));
+                                                                                                else
+                                                                                                    if (lang.equals("Romanian"))
+                                                                                                        language.setLocale(new Locale("ro", "RO"));
+                                                                                                    else
+                                                                                                        if (lang.equals("Slovenu0161u010dina"))
+                                                                                                            language.setLocale(new Locale("sl", "SL"));
+                                                                                                        else
+                                                                                                            if (lang.equals("Slovensky"))
+                                                                                                                language.setLocale(new Locale("sk", "SK"));
+                                                                                                            else
+                                                                                                                if (lang.equals("Svenska"))
+                                                                                                                    language.setLocale(new Locale("sv", "SV"));
+                                                                                                                else
+                                                                                                                    if (lang.equals("Tu00fcrku00e7e"))
+                                                                                                                        language.setLocale(new Locale("tr", "TR"));
+                                                                                                                    else
+                                                                                                                        if (lang.equals("u0420u0443u0441u0441u043au0438u0439"))
+                                                                                                                            language.setLocale(new Locale("ru", "RU"));
+                                                                                                                        else
+                                                                                                                            if (lang.equals("Tiu1ebfng anh"))
+                                                                                                                                language.setLocale(new Locale("vi", "VN"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    appli.changeLanguage();
+}

@@ -1,0 +1,4 @@
+private ProgressBarDialog(IProgressMonitor progressMonitor) {
+    super(myMainFrame, true);
+    myProgressMonitor = progressMonitor;
+}

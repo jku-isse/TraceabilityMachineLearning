@@ -1,0 +1,15 @@
+public Date shiftDate(Date input, TaskLength shift) {
+    List activities = getActivities(input, shift);
+    if (activities.isEmpty()) {
+        throw new RuntimeException(((("FIXME: Failed to compute calendar activities in time period=" + shift) + " starting from ") + input));
+    }
+    Date result;
+    if ((shift.getValue()) >= 0) {
+        GPCalendarActivity lastActivity = ((GPCalendarActivity) (activities.get(((activities.size()) - 1))));
+        result = lastActivity.getEnd();
+    } else {
+        GPCalendarActivity firstActivity = ((GPCalendarActivity) (activities.get(0)));
+        result = firstActivity.getStart();
+    }
+    return result;
+}

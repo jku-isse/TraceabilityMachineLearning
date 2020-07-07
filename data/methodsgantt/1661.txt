@@ -1,0 +1,6 @@
+protected void fireOptionsChanged() {
+    for (int i = 0; i < (myOptionListeners.size()); i++) {
+        GPOptionChangeListener next = ((GPOptionChangeListener) (myOptionListeners.get(i)));
+        next.optionsChanged();
+    }
+}

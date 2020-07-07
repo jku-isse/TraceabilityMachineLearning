@@ -1,0 +1,26 @@
+/**
+ * Creates a DOMStorable object.
+ */
+public Object create(String name) {
+    Object o = DefaultDOMFactory.nameToPrototypeMap.get(name);
+    if (o == null) {
+        throw new IllegalArgumentException(("Storable name not known to factory: " + name));
+    }
+    if (o instanceof Class) {
+        try {
+            return ((Class) (o)).newInstance();
+        } catch (Exception e) {
+            IllegalArgumentException error = new IllegalArgumentException(("Storable class not instantiable by factory: " + name));
+            error.initCause(e);
+            throw error;
+        }
+    } else {
+        try {
+            return o.getClass().getMethod("clone", ((Class[]) (null))).invoke(o, ((Object[]) (null)));
+        } catch (Exception e) {
+            IllegalArgumentException error = new IllegalArgumentException(("Storable prototype not cloneable by factory. Name: " + name));
+            error.initCause(e);
+            throw error;
+        }
+    }
+}

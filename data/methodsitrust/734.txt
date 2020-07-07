@@ -1,0 +1,3 @@
+public void testRemoveNonAssigned() throws iTrustException {
+    assertEquals("HCP not unassigned", action.removeHCPAssignmentToHospital(("" + (ManageHospitalAssignmentsActionTest.hcp0)), ManageHospitalAssignmentsActionTest.hosp0));
+}

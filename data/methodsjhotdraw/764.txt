@@ -1,0 +1,8 @@
+public void setDecorator(Figure newValue) {
+    willChange();
+    decorator = newValue;
+    if ((decorator) != null) {
+        decorator.setBounds(getStartPoint(), getEndPoint());
+    }
+    changed();
+}

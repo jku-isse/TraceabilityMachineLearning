@@ -1,0 +1,20 @@
+protected PropertyChangeListener getEventHandler() {
+    if ((eventHandler) == null) {
+        eventHandler = new PropertyChangeListener() {
+            public void propertyChange(PropertyChangeEvent evt) {
+                String name = evt.getPropertyName();
+                if (name == (JDisclosureToolBar.DISCLOSURE_STATE_PROPERTY)) {
+                    try {
+                        prefs.putInt(((getID()) + ".disclosureState"), ((Integer) (evt.getNewValue())));
+                    } catch (IllegalStateException e) {
+                        // This happens, due to a bug in Apples implementation
+                        // of the Preferences class.
+                        System.err.println("Warning AbstractToolBar caught IllegalStateException of Preferences class");
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+    }
+    return eventHandler;
+}

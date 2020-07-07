@@ -1,0 +1,28 @@
+/**
+ * Updates the rights of a user on a given lab procedure.
+ *
+ * @param b
+ * 		The LabProcedureBean in question.
+ * @throws DBException
+ * 		
+ */
+public void updateRights(LabProcedureBean b) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if ((b.getPid()) == 0L)
+            throw new SQLException("PatientMID cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("UPDATE labprocedure SET Rights = ?, UpdatedDate = ? WHERE LaboratoryProcedureID=?");
+        ps.setString(1, b.getRights());
+        ps.setTimestamp(2, new Timestamp(System.currentTimeMillis()));
+        ps.setLong(3, b.getProcedureID());
+        ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

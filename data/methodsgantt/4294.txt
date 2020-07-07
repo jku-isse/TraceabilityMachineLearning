@@ -1,0 +1,67 @@
+/* <Document> */
+public List getAttachments() {
+    if (((getWebLink()) != null) && (!("".equals(getWebLink())))) {
+        return Collections.singletonList(new AbstractURLDocument() {
+            public boolean canRead() {
+                return true;
+            }
+
+            public boolean canWrite() {
+                return false;
+            }
+
+            public String getDescription() {
+                return null;
+            }
+
+            public InputStream getInputStream() throws IOException {
+                return null;
+            }
+
+            public OutputStream getOutputStream() throws IOException {
+                return null;
+            }
+
+            public String getPath() {
+                return null;
+            }
+
+            public URI getURI() {
+                try {
+                    return new URI(new URL(getWebLink()).toString());
+                } catch (URISyntaxException e) {
+                } catch (MalformedURLException e) {
+                    File f = new File(getWebLink());
+                    if (f.exists()) {
+                        return f.toURI();
+                    }
+                }
+                try {
+                    URL context = myManager.getProjectDocument();
+                    if (context == null) {
+                        return null;
+                    }
+                    URL relative = new URL(context, getWebLink());
+                    return new URI(URLEncoder.encode(relative.toString(), "utf-8"));
+                } catch (URISyntaxException e) {
+                } catch (MalformedURLException e) {
+                } catch (UnsupportedEncodingException e) {
+                }
+                return null;
+            }
+
+            public boolean isLocal() {
+                return false;
+            }
+
+            public boolean isValidForMRU() {
+                return false;
+            }
+
+            public void write() throws IOException {
+            }
+        });
+    } else {
+        return Collections.EMPTY_LIST;
+    }
+}

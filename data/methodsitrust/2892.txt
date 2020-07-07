@@ -1,0 +1,28 @@
+/**
+ * Returns a particular description for a given code.
+ *
+ * @param code
+ * 		The override reason code to be looked up.
+ * @return A bean representing the override reason that was looked up.
+ * @throws DBException
+ * 		
+ */
+public OverrideReasonBean getORCode(String code) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM drugreactionoverridecodes WHERE Code = ?");
+        ps.setString(1, code);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next())
+            return orcLoader.loadSingle(rs);
+
+        return null;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

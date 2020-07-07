@@ -1,0 +1,17 @@
+/**
+ * Escapes a few key HTML characters
+ *
+ * @param input
+ * 		String to check and escape
+ * @return 
+ */
+public static String encode(String input) {
+    if (input == null)
+        return input;
+
+    String str = input.replaceAll("<", "&lt;");
+    str = str.replaceAll(">", "&gt;");
+    str = str.replaceAll("
+", "<br />");
+    return str;
+}

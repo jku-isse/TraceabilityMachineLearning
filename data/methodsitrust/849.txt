@@ -1,0 +1,6 @@
+public void testZeroPatients() throws Exception {
+    SearchUsersAction action = new SearchUsersAction(factory, 9990000000L);
+    List<PatientBean> patients = action.searchForPatientsWithName("A", "B");
+    assertNotNull(patients);
+    assertEquals(0, patients.size());
+}

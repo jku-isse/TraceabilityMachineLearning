@@ -1,0 +1,17 @@
+/* (non-Javadoc)
+
+@see net.sourceforge.ganttproject.gui.options.GeneralOptionPanel#applyChanges(boolean)
+ */
+public boolean applyChanges(boolean askForApply) {
+    if ((((getExportName()) == (appli.getOptions().getExportName())) && ((getExportComplete()) == (appli.getOptions().getExportComplete()))) && ((getExportRelations()) == (appli.getOptions().getExportRelations()))) {
+        bHasChange = false;
+    } else {
+        bHasChange = true;
+        if ((!askForApply) || (askForApply && (askForApplyChanges()))) {
+            appli.getOptions().setExportName(getExportName());
+            appli.getOptions().setExportComplete(getExportComplete());
+            appli.getOptions().setExportRelations(getExportRelations());
+        }
+    }
+    return bHasChange;
+}

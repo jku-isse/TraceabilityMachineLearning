@@ -1,0 +1,12 @@
+/**
+ * Gets the value of the attribute denoted by this AttributeKey from
+ * a Figure.
+ *
+ * @param f
+ * 		A figure.
+ * @return The value of the attribute.
+ */
+public T get(Figure f) {
+    T value = ((T) (f.getAttribute(this)));
+    return (value == null) && (!(isNullValueAllowed)) ? defaultValue : value;
+}

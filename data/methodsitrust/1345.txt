@@ -1,0 +1,12 @@
+/**
+ * Raises an exception if the office visit has not been saved.  Otherwise,
+ * does nothing.
+ *
+ * @throws iTrustException
+ * 		
+ */
+protected void verifySaved() throws iTrustException {
+    if (isUnsaved()) {
+        throw new iTrustException("Cannot perform action.  OfficeVisit is not saved.");
+    }
+}

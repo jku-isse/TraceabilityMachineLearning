@@ -1,0 +1,4 @@
+public void testLocalization() {
+    Locale l = Localization.instance().getCurrentLocale();
+    assert l != null;
+}

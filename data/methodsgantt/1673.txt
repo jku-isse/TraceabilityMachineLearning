@@ -1,0 +1,13 @@
+public GPCalendar.DayType getDayType(TimeFrame timeFrame, TimeUnit timeUnit, int unitIndex) {
+    Date startDate = timeFrame.getUnitStart(timeUnit, unitIndex);
+    Date endDate = timeFrame.getUnitFinish(timeUnit, unitIndex);
+    Calendar c = CalendarFactory.newCalendar();
+    c.setTime(startDate);
+    int startDayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+    c.setTime(endDate);
+    int endDayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+    // return startDayOfWeek==Calendar.SATURDAY ||
+    // startDayOfWeek==Calendar.SUNDAY;
+    // return getTaskManager().getCalendar().getWeekDayType(startDayOfWeek);
+    return getTaskManager().getCalendar().getDayTypeDate(startDate);
+}

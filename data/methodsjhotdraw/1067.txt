@@ -1,0 +1,7 @@
+/**
+ * Cuts the selection into the clipboard.
+ * Depending on the tool, this could be selected figures, selected points
+ * or selected text.
+ */
+public void editCut() {
+}

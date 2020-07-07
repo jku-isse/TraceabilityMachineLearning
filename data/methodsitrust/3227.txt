@@ -1,0 +1,4 @@
+public void testCheckDeclared() throws Exception {
+    assertTrue(patientDAO.checkDeclaredHCP(2L, 9000000003L));
+    assertFalse(patientDAO.checkDeclaredHCP(2L, 9000000000L));
+}

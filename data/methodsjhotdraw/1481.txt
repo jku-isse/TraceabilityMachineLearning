@@ -1,0 +1,9 @@
+/**
+ * If this is set to false, the CreationTool does not fire toolDone
+ * after a new Figure has been created. This allows to create multiple
+ * figures consecutively.
+ */
+public void setToolDoneAfterCreation(boolean newValue) {
+    boolean oldValue = isToolDoneAfterCreation;
+    isToolDoneAfterCreation = newValue;
+}

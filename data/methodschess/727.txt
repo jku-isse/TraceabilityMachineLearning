@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Check, if there are more elements to iterate over.
+ *
+ * @return true, if there are more elements.
+ */
+public final boolean hasNext() {
+    return (_curElement) < (_nItems);
+}

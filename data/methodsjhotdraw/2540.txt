@@ -1,0 +1,3 @@
+public static Handle west(Figure owner) {
+    return new ResizeHandleKit.WestHandle(owner);
+}

@@ -1,0 +1,3 @@
+public VerticalGridLayout(int rows, int cols, boolean isVertical) {
+    this(rows, cols, 0, 0, isVertical);
+}

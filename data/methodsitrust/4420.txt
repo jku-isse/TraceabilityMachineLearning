@@ -1,0 +1,9 @@
+@Override
+public boolean hasFactor() {
+    try {
+        return factory.getRiskDAO().hadChildhoodInfection(patientID, icdCodes);
+    } catch (DBException e) {
+        System.err.println("DBException on Childhood Infection Risk, giving no risk");
+        return false;
+    }
+}

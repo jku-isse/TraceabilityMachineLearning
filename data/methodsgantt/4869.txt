@@ -1,0 +1,3 @@
+protected CachingTextFormatter() {
+    GanttLanguage.getInstance().addListener(this);
+}

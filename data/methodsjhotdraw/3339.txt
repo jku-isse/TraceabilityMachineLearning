@@ -1,0 +1,58 @@
+/**
+ * Finds corners in the provided point list, and returns their indices.
+ *
+ * @param digitizedPoints
+ * 		List of digitized points.
+ * @param minAngle
+ * 		Minimal angle for corner points
+ * @param minDistance
+ * 		Minimal distance between a point and adjacent points
+ * 		for corner detection
+ * @return list of corner indices.
+ */
+public static ArrayList<Integer> findCorners(List<Point2D.Double> digitizedPoints, double minAngle, double minDistance) {
+    ArrayList<Integer> cornerIndices = new ArrayList<Integer>();
+    double squaredDistance = minDistance * minDistance;
+    int previousCorner = -1;
+    double previousCornerAngle = 0;
+    for (int i = 1, n = digitizedPoints.size(); i < (n - 1); i++) {
+        Point2D.Double p = digitizedPoints.get(i);
+        // search for a preceding point for corner detection
+        Point2D.Double prev = null;
+        boolean intersectsPreviousCorner = false;
+        for (int j = i - 1; j >= 0; j--) {
+            if ((j == previousCorner) || ((Bezier.v2SquaredDistanceBetween2Points(digitizedPoints.get(j), p)) >= squaredDistance)) {
+                prev = digitizedPoints.get(j);
+                intersectsPreviousCorner = j < previousCorner;
+                break;
+            }
+        }
+        if (prev == null) {
+            continue;
+        }
+        // search for a succeeding point for corner detection
+        Point2D.Double next = null;
+        for (int j = i + 1; j < n; j++) {
+            if ((Bezier.v2SquaredDistanceBetween2Points(digitizedPoints.get(j), p)) >= squaredDistance) {
+                next = digitizedPoints.get(j);
+                break;
+            }
+        }
+        if (next == null) {
+            continue;
+        }
+        double aPrev = Math.atan2(((prev.y) - (p.y)), ((prev.x) - (p.x)));
+        double aNext = Math.atan2(((next.y) - (p.y)), ((next.x) - (p.x)));
+        double angle = Math.abs((aPrev - aNext));
+        if ((angle < ((Math.PI) - minAngle)) || (angle > ((Math.PI) + minAngle))) {
+            if (intersectsPreviousCorner) {
+                cornerIndices.set(((cornerIndices.size()) - 1), i);
+            } else {
+                cornerIndices.add(i);
+            }
+            previousCorner = i;
+            previousCornerAngle = angle;
+        }
+    }
+    return cornerIndices;
+}

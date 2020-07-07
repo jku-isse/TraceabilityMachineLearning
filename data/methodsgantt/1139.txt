@@ -1,0 +1,140 @@
+/**
+ * Initialize the treetable. Addition of various listeners, trees icons,
+ */
+public void initTreeTable() {
+    // ttModel = (ResourceTreeTableModel) this.getTreeTableModel();
+    Enumeration enumeration = getTable().getColumnModel().getColumns();
+    Collection lToDel = new ArrayList();
+    while (enumeration.hasMoreElements()) {
+        TableColumnExt tc = ((TableColumnExt) (enumeration.nextElement()));
+        lToDel.add(tc);
+    } 
+    Iterator it = lToDel.iterator();
+    while (it.hasNext())
+        getTable().removeColumn(((TableColumn) (it.next())));
+
+    getTable().setAutoCreateColumnsFromModel(false);
+    getTable().setAutoResizeMode(JTable.AUTO_RESIZE_SUBSEQUENT_COLUMNS);
+    TableColumnExt tce1 = newTableColumnExt(0);
+    tce1.setTitle(ResourceTreeTableModel.strResourceName);
+    TableColumnExt tce2 = newTableColumnExt(1);
+    tce2.setTitle(ResourceTreeTableModel.strResourceRole);
+    TableColumnExt tce3 = newTableColumnExt(2);
+    tce3.setTitle(ResourceTreeTableModel.strResourceEMail);
+    TableColumnExt tce4 = newTableColumnExt(3);
+    tce4.setTitle(ResourceTreeTableModel.strResourcePhone);
+    TableColumnExt tce5 = newTableColumnExt(4);
+    tce5.setTitle(ResourceTreeTableModel.strResourceRoleForTask);
+    /* adding the columns on the screen and to the data model */
+    this.addMandatoryColumn(new ResourceColumn(tce1, ttModel.useNextIndex(), String.class));
+    this.addMandatoryColumn(new ResourceColumn(tce2, ttModel.useNextIndex(), String.class));
+    this.addMandatoryColumn(new ResourceColumn(tce3, ttModel.useNextIndex(), String.class));
+    this.addMandatoryColumn(new ResourceColumn(tce4, ttModel.useNextIndex(), String.class));
+    this.addMandatoryColumn(new ResourceColumn(tce5, ttModel.useNextIndex(), String.class));
+    initColumnsAlignements();
+    ArrayList cols = ttModel.getColumns();
+    for (int i = 2; i < (cols.size()); i++) {
+        hideColumn(((ResourceColumn) (cols.get(i))));
+    }
+    // Highlighters to ease the reading of the table.
+    setHighlighters(new org.jdesktop.swing.decorator.HighlighterPipeline(new Highlighter[]{ AlternateRowHighlighter.quickSilver, new HierarchicalColumnHighlighter() }));
+    setShowHorizontalLines(true);
+    setHasColumnControl(true);
+    ImageIcon icon = new ImageIcon(getClass().getResource("/icons/simple_task.gif"));
+    setOpenIcon(icon);
+    setClosedIcon(icon);
+    setCollapsedIcon(new ImageIcon(getClass().getResource("/icons/plus.gif")));
+    setExpandedIcon(new ImageIcon(getClass().getResource("/icons/minus.gif")));
+    setLeafIcon(icon);
+    this.getTreeTable().getParent().setBackground(Color.WHITE);
+    setUpRolesRenderer();
+    setUpAssignementRolesRenderer();
+    // getTable().getTableHeader().addMouseListener(new MouseListener(){
+    // 
+    // public void mouseClicked(MouseEvent arg0) {
+    // // TODO Auto-generated method stub
+    // 
+    // }
+    // 
+    // public void mousePressed(MouseEvent arg0) {
+    // // TODO Auto-generated method stub
+    // 
+    // }
+    // 
+    // public void mouseReleased(MouseEvent e) {
+    // Enumeration en = getTable().getColumnModel().getColumns();
+    // while(en.hasMoreElements())
+    // {
+    // TableColumn tc = (TableColumn)en.nextElement();
+    // tc.setPreferredWidth(tc.getWidth());
+    // }
+    // }
+    // 
+    // public void mouseEntered(MouseEvent arg0) {
+    // // TODO Auto-generated method stub
+    // 
+    // }
+    // 
+    // public void mouseExited(MouseEvent arg0) {
+    // // TODO Auto-generated method stub
+    // 
+    // }
+    // 
+    // });
+    this.getTreeTable().getTree().addTreeExpansionListener(new TreeExpansionListener() {
+        public void treeExpanded(TreeExpansionEvent arg0) {
+            Mediator.getGanttProjectSingleton().repaint2();
+        }
+
+        public void treeCollapsed(TreeExpansionEvent arg0) {
+            Mediator.getGanttProjectSingleton().repaint2();
+        }
+    });
+    this.setPreferredSize(new Dimension(this.getPreferredSize().width, 0));
+    /* listener provoking the popup menu for the column management */
+    this.getTable().getTableHeader().addMouseListener(new MouseAdapter() {
+        public void mousePressed(MouseEvent e) {
+            handlePopupTrigger(e);
+        }
+
+        public void mouseReleased(MouseEvent e) {
+            handlePopupTrigger(e);
+        }
+
+        private void handlePopupTrigger(MouseEvent e) {
+            if (e.isPopupTrigger()) {
+                clickPoint = e.getPoint();
+                String name = getTable().getColumnName(getTable().columnAtPoint(clickPoint));
+                createPopup();
+                /* the delete button is activated only for removable columns */
+                if (ttModel.checkRemovableCol(name))
+                    delColumnItem.setEnabled(true);
+                else
+                    delColumnItem.setEnabled(false);
+
+                Component c = ((Component) (e.getSource()));
+                popupMenu.show(c, e.getX(), e.getY());
+            }
+        }
+    });
+    getTable().getColumnModel().addColumnModelListener(new TableColumnModelListener() {
+        public void columnAdded(TableColumnModelEvent e) {
+        }
+
+        public void columnMarginChanged(ChangeEvent e) {
+        }
+
+        public void columnMoved(TableColumnModelEvent e) {
+            if ((e.getFromIndex()) != (e.getToIndex())) {
+                updateColumnOrders(e.getFromIndex(), e.getToIndex());
+                getProject().setModified();
+            }
+        }
+
+        public void columnRemoved(TableColumnModelEvent e) {
+        }
+
+        public void columnSelectionChanged(ListSelectionEvent e) {
+        }
+    });
+}

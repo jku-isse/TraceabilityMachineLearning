@@ -1,0 +1,6 @@
+private Timestamp endTime(ApptBean bean) throws SQLException {
+    Timestamp d = new Timestamp(bean.getDate().getTime());
+    ApptTypeBean type = atDAO.getApptType(bean.getApptType());
+    d.setTime(((d.getTime()) + (((type.getDuration()) * 60) * 1000)));
+    return d;
+}

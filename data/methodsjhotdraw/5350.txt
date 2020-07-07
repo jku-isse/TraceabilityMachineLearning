@@ -1,0 +1,6 @@
+@Override
+public void invalidate() {
+    super.invalidate();
+    cachedTransformedShape = null;
+    cachedHitShape = null;
+}

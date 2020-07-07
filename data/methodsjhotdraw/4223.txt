@@ -1,0 +1,32 @@
+@Override
+public void paintTrack(Graphics g) {
+    int cx;
+    int cy;
+    int cw;
+    int ch;
+    int pad;
+    Rectangle trackBounds = trackRect;
+    if ((slider.getOrientation()) == (JSlider.HORIZONTAL)) {
+        pad = trackBuffer;
+        cx = pad;
+        cy = ((trackBounds.height) / 2) - 2;
+        cw = trackBounds.width;
+        g.translate(trackBounds.x, ((trackBounds.y) + cy));
+        g.setColor(getShadowColor());
+        g.drawLine(0, 0, (cw - 1), 0);
+        g.drawLine(0, 1, 0, 2);
+        g.setColor(getHighlightColor());
+        g.drawLine(0, 3, cw, 3);
+        g.drawLine(cw, 0, cw, 3);
+        g.setColor(Color.black);
+        g.drawLine(1, 1, (cw - 2), 1);
+        g.translate((-(trackBounds.x)), (-((trackBounds.y) + cy)));
+    } else {
+        pad = trackBuffer;
+        cx = ((trackBounds.width) / 2) - 2;
+        cy = pad;
+        ch = trackBounds.height;
+        g.setColor(new Color((slider.isEnabled() ? 8947848 : 11184810)));
+        g.drawRoundRect(((trackBounds.x) + cx), trackBounds.y, 5, ch, 5, 5);
+    }
+}

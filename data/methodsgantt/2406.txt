@@ -1,0 +1,2 @@
+// File proposeOutputFile(IGanttProject project);
+String proposeFileExtension();

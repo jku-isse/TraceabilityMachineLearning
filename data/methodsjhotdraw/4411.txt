@@ -1,0 +1,10 @@
+/**
+ * Appends the extension to the filename, in case it is missing.
+ */
+public File makeAcceptable(File pathname) {
+    if (accept(pathname)) {
+        return pathname;
+    } else {
+        return new File((((pathname.getPath()) + .) + (defaultExtension)));
+    }
+}

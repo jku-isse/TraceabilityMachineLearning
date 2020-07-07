@@ -1,0 +1,4 @@
+/**
+ * Sent when a figure was added.
+ */
+public void figureAdded(CompositeFigureEvent e);

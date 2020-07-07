@@ -1,0 +1,9 @@
+/**
+ * Gets the height of the tick area for horizontal sliders and the width of the
+ * tick area for vertical sliders.  BasicSliderUI uses the returned value to
+ * determine the tick area rectangle.  If you want to give your ticks some room,
+ * make this larger than you need and paint your ticks away from the sides in paintTicks().
+ */
+protected int getTickLength() {
+    return 4;
+}

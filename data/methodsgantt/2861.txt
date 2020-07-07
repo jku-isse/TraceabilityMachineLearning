@@ -1,0 +1,10 @@
+public void commit() {
+    super.commit();
+    String value = getValue();
+    for (int i = 0; i < (UIConfiguration.AlphaRenderingOption.VALUES.length); i++) {
+        if (UIConfiguration.AlphaRenderingOption.VALUES[i].equals(value)) {
+            myIndex = i;
+            break;
+        }
+    }
+}

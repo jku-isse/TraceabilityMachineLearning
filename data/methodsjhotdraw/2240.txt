@@ -1,0 +1,2 @@
+public void attributeChanged(FigureEvent e) {
+}

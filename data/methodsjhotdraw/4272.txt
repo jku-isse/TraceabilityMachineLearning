@@ -1,0 +1,5 @@
+protected void installKeyboardActions() {
+    InputMap km = getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    SwingUtilities.replaceUIInputMap(toolBar, JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT, km);
+    PaletteLazyActionMap.installLazyActionMap(toolBar, PaletteToolBarUI.class, "ToolBar.actionMap");
+}

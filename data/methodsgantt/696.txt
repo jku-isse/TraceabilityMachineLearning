@@ -1,0 +1,5 @@
+public Task newTask() {
+    Task result = getTaskManager().createTask();
+    getTaskManager().getTaskHierarchy().move(result, getTaskManager().getRootTask());
+    return result;
+}

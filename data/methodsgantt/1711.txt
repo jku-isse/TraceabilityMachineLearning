@@ -1,0 +1,3 @@
+public int getOffsetPixels() {
+    return myOffsetPixels;
+}

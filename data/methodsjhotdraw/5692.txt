@@ -1,0 +1,11 @@
+/**
+ * Gets the beans <code>MethodDescriptor</code>s.
+ *
+ * @return An array of MethodDescriptors describing the methods
+implemented by this bean.  May return null if the information
+should be obtained by automatic analysis.
+ */
+@Override
+public MethodDescriptor[] getMethodDescriptors() {
+    return FigureToolBarBeanInfo.getMdescriptor();
+}

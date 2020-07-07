@@ -1,0 +1,3 @@
+public PatientBean getPatient() {
+    return patient;
+}

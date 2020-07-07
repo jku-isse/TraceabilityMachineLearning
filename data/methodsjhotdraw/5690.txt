@@ -1,0 +1,65 @@
+/**
+ * This method returns an image object that can be used to
+ * represent the bean in toolboxes, toolbars, etc.   Icon images
+ * will typically be GIFs, but may in future include other formats.
+ * <p>
+ * Beans arent required to provide icons and may return null from
+ * this method.
+ * <p>
+ * There are four possible flavors of icons (16x16 color,
+ * 32x32 color, 16x16 mono, 32x32 mono).  If a bean choses to only
+ * support a single icon we recommend supporting 16x16 color.
+ * <p>
+ * We recommend that icons have a "transparent" background
+ * so they can be rendered onto an existing background.
+ *
+ * @param iconKind
+ * 		The kind of icon requested.  This should be
+ * 		one of the constant values ICON_COLOR_16x16, ICON_COLOR_32x32,
+ * 		ICON_MONO_16x16, or ICON_MONO_32x32.
+ * @return An image object representing the requested icon.  May
+return null if no suitable icon is available.
+ */
+@Override
+public Image getIcon(int iconKind) {
+    switch (iconKind) {
+        case BeanInfo.ICON_COLOR_16x16 :
+            if ((FigureToolBarBeanInfo.iconNameC16) == null)
+                return null;
+            else {
+                if ((FigureToolBarBeanInfo.iconColor16) == null)
+                    FigureToolBarBeanInfo.iconColor16 = loadImage(FigureToolBarBeanInfo.iconNameC16);
+
+                return FigureToolBarBeanInfo.iconColor16;
+            }
+        case BeanInfo.ICON_COLOR_32x32 :
+            if ((FigureToolBarBeanInfo.iconNameC32) == null)
+                return null;
+            else {
+                if ((FigureToolBarBeanInfo.iconColor32) == null)
+                    FigureToolBarBeanInfo.iconColor32 = loadImage(FigureToolBarBeanInfo.iconNameC32);
+
+                return FigureToolBarBeanInfo.iconColor32;
+            }
+        case BeanInfo.ICON_MONO_16x16 :
+            if ((FigureToolBarBeanInfo.iconNameM16) == null)
+                return null;
+            else {
+                if ((FigureToolBarBeanInfo.iconMono16) == null)
+                    FigureToolBarBeanInfo.iconMono16 = loadImage(FigureToolBarBeanInfo.iconNameM16);
+
+                return FigureToolBarBeanInfo.iconMono16;
+            }
+        case BeanInfo.ICON_MONO_32x32 :
+            if ((FigureToolBarBeanInfo.iconNameM32) == null)
+                return null;
+            else {
+                if ((FigureToolBarBeanInfo.iconMono32) == null)
+                    FigureToolBarBeanInfo.iconMono32 = loadImage(FigureToolBarBeanInfo.iconNameM32);
+
+                return FigureToolBarBeanInfo.iconMono32;
+            }
+        default :
+            return null;
+    }
+}

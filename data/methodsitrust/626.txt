@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @param factory
+ * 		
+ */
+public GroupReportAction(DAOFactory factory) {
+    pDAO = factory.getPatientDAO();
+    aDAO = factory.getAllergyDAO();
+    fDAO = factory.getFamilyDAO();
+    oDAO = factory.getOfficeVisitDAO();
+}

@@ -1,0 +1,11 @@
+/* JTable uses this method to determine the default renderer/ editor for
+each cell. If we didnt implement this method, then the last column would
+contain text ("true"/"false"), rather than a check box.
+ */
+/* public Class getColumnClass(int c) { if (c == 0 || c == 2) { return new
+String().getClass(); } else { return new HumanResource().getClass(); } //
+return getValueAt(0, c).getClass(); }
+ */
+public boolean isCellEditable(int row, int col) {
+    return col == 1;
+}

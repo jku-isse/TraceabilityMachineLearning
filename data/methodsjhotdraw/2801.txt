@@ -1,0 +1,9 @@
+// CONNECTING
+// COMPOSITE FIGURES
+// CLONING
+// EVENT HANDLING
+@Override
+public void invalidate() {
+    super.invalidate();
+    textLayout = null;
+}

@@ -1,0 +1,5 @@
+public void testHospitalNameGood() throws Exception {
+    String value = "90A very long Hospital Names.";
+    String errorMessage = HospitalNameValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Hospital Name", value, HospitalNameValidatorTest.VALIDATION_FORMAT, false));
+}

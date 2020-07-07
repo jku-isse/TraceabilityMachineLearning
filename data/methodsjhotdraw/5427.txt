@@ -1,0 +1,7 @@
+@Override
+protected void invalidate() {
+    super.invalidate();
+    cachedPath = null;
+    cachedDrawingArea = null;
+    cachedHitShape = null;
+}

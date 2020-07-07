@@ -1,0 +1,3 @@
+public void setHardness(TaskDependency.Hardness hardness) {
+    myHardness = hardness;
+}

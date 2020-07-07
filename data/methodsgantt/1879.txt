@@ -1,0 +1,6 @@
+private Line(int startx, int starty, int finishx, int finishy) {
+    myStartX = startx;
+    myStartY = starty;
+    myFinishX = finishx;
+    myFinishY = finishy;
+}

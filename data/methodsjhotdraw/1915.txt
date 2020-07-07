@@ -1,0 +1,5 @@
+/**
+ * Changes between a visible Constrainer and an invisible Constrainer.
+ * This is a bound property.
+ */
+public void setConstrainerVisible(boolean newValue);

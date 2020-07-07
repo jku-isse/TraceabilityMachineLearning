@@ -1,0 +1,8 @@
+/**
+ * Get the current board.
+ *
+ * @return The current board.
+ */
+final Board getBoard() {
+    return _board;
+}

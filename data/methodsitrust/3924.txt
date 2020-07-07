@@ -1,0 +1,34 @@
+/* filters by demographic filters */
+public void testViewGroupReportDemographic() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Group Report").click();
+    assertEquals("iTrust - Generate Group Report", wr.getTitle());
+    WebForm form = wr.getFormWithID("mainForm");
+    form.setCheckbox("demographics", "GENDER", true);
+    form.setCheckbox("demographics", "FIRST_NAME", true);
+    form.setCheckbox("demographics", "CONTACT_EMAIL", true);
+    form.setCheckbox("demographics", "CITY", true);
+    form.setCheckbox("demographics", "STATE", true);
+    form.setCheckbox("demographics", "ZIP", true);
+    form.setCheckbox("demographics", "INSURE_NAME", true);
+    form.setCheckbox("demographics", "INSURE_ID", true);
+    form.setCheckbox("demographics", "LOWER_AGE_LIMIT", true);
+    form.setCheckbox("demographics", "UPPER_AGE_LIMIT", true);
+    wr = form.submit();
+    assertEquals("iTrust - Generate Group Report", wr.getTitle());
+    WebForm form2 = wr.getFormWithID("mainForm2");
+    form2.getScriptableObject().setParameterValue("GENDER", "Male");
+    form2.getScriptableObject().setParameterValue("FIRST_NAME", "Baby");
+    form2.getScriptableObject().setParameterValue("CONTACT_EMAIL", "fake@email.com");
+    form2.getScriptableObject().setParameterValue("CITY", "Raleigh");
+    form2.getScriptableObject().setParameterValue("STATE", "NC");
+    form2.getScriptableObject().setParameterValue("ZIP", "27606");
+    form2.getScriptableObject().setParameterValue("INSURE_NAME", "Aetna");
+    form2.getScriptableObject().setParameterValue("INSURE_ID", "ChetumNHowe");
+    form2.getScriptableObject().setParameterValue("LOWER_AGE_LIMIT", "10");
+    form2.getScriptableObject().setParameterValue("UPPER_AGE_LIMIT", "30");
+    wr = form2.submit(form2.getSubmitButtons()[0]);
+}

@@ -1,0 +1,5 @@
+public void setInvisibleConstrainer(Constrainer newValue) {
+    Constrainer oldValue = invisibleConstrainer;
+    invisibleConstrainer = newValue;
+    firePropertyChange(DrawingView.INVISIBLE_CONSTRAINER_PROPERTY, oldValue, newValue);
+}

@@ -1,0 +1,19 @@
+/**
+ * Creates a new instance.
+ *
+ * @param editor
+ * 		The drawing editor.
+ * @param key
+ * 		The key of the default attribute
+ * @param imageLocation
+ * 		the icon image
+ * @param colorShape
+ * 		The shape to be drawn with the color of the default
+ * 		attribute.
+ */
+public SelectionColorIcon(DrawingEditor editor, AttributeKey<Color> key, URL imageLocation, Shape colorShape) {
+    super(imageLocation);
+    this.editor = editor;
+    this.key = key;
+    this.colorShape = colorShape;
+}

@@ -1,0 +1,10 @@
+/**
+ * Set the name of the destination square.
+ *
+ * @param squareName
+ * 		The name of the destination square.
+ */
+public final void setDestination(String squareName) {
+    // Create a new position implementation from the name and store it.
+    _destination = new PositionImpl(squareName);
+}

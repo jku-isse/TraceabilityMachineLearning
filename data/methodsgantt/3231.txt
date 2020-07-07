@@ -1,0 +1,3 @@
+public String getRoleSetDisplayName(RoleSet roleSet) {
+    return GanttLanguage.getInstance().getText((("roleSet." + (roleSet.getName())) + ".displayName"));
+}

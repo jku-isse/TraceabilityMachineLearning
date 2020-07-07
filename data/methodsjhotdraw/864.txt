@@ -1,0 +1,4 @@
+/**
+ * Disconnects the connection.
+ */
+protected abstract void disconnect();

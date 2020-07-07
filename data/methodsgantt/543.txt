@@ -1,0 +1,35 @@
+/**
+ * Invoked when a key has been pressed.
+ */
+public void keyPressed(KeyEvent e) {
+    // System.out.println(e.getKeyCode());
+    /* Consume the event to prevent it to go farther. */
+    int code = e.getKeyCode();
+    int modifiers = e.getModifiersEx();
+    if (code == (KeyEvent.KEY_LOCATION_UNKNOWN))
+        e.consume();
+
+    switch (code) {
+        case KeyEvent.VK_DELETE :
+            e.consume();
+            if (!(isOnlyViewer)) {
+                if ((getViewIndex()) == (UIFacade.GANTT_INDEX))
+                    deleteTasks(true);
+                else
+                    if ((getViewIndex()) == (UIFacade.RESOURCES_INDEX)) {
+                        deleteResources();
+                    }
+
+            }
+            break;
+        case KeyEvent.VK_ENTER :
+            break;
+        case KeyEvent.VK_F5 :
+            {
+                e.consume();
+                getActiveChart().reset();
+                repaint();
+                break;
+            }
+    }
+}

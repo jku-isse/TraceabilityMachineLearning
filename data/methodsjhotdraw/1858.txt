@@ -1,0 +1,6 @@
+/**
+ * Removes a drawing view from the editor.
+ * The editor invokes removeNotify on the view, and it unregisters its tool
+ * on the view.
+ */
+void remove(DrawingView view);

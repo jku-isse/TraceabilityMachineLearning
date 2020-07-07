@@ -1,0 +1,21 @@
+public void testRemovePatientsToMonitor() throws Exception {
+    // Add patient 1 to HCP 9000000000s monitoring list
+    gen.remoteMonitoring2();
+    // login HCP
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    // Click Edit Patient List
+    wr = wr.getLinkWith("Edit Patient List").click();
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "1");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    WebForm confirmForm = wr.getForms()[0];
+    assertEquals("Remove Random Person", confirmForm.getButtons()[0].getValue());
+    confirmForm.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Patient Random Person Removed"));
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_LIST_REMOVE, 9000000000L, 1L, "");
+}

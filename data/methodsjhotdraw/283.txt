@@ -1,0 +1,10 @@
+private PropertyChangeListener createApplicationListener() {
+    return new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            if ((evt.getPropertyName()) == "recentFiles") {
+                // Strings get interned
+                updateEnabled();
+            }
+        }
+    };
+}

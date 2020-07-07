@@ -1,0 +1,3 @@
+public int getBloodPressureN() {
+    return bloodPressureN;
+}

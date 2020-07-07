@@ -1,0 +1,8 @@
+/**
+ * Removes the specified component from the layout.
+ *
+ * @param comp
+ * 		the component to be removed
+ */
+public void removeLayoutComponent(Component comp) {
+}

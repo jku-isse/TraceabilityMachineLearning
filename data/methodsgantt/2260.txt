@@ -1,0 +1,3 @@
+public URI getURI() {
+    return myURI;
+}

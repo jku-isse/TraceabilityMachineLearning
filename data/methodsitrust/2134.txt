@@ -1,0 +1,3 @@
+public void setWaitingRoomMinutes(int waitingRoomMinutes) {
+    this.waitingRoomMinutes = waitingRoomMinutes;
+}

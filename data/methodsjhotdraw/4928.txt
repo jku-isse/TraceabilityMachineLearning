@@ -1,0 +1,4 @@
+public boolean contains(double x, double y, double w, double h) {
+    validatePath();
+    return generalPath.contains(x, y, w, h);
+}

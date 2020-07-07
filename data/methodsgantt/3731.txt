@@ -1,0 +1,3 @@
+public VacationTagHandler(ResourceManager resourceManager) {
+    myResourceManager = ((HumanResourceManager) (resourceManager));
+}

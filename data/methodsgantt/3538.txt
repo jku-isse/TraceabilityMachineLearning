@@ -1,0 +1,3 @@
+protected void addAttribute(String name, int value, AttributesImpl attrs) {
+    addAttribute(name, String.valueOf(value), attrs);
+}

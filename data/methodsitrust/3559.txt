@@ -1,0 +1,3 @@
+public void messages() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/message.sql"));
+}

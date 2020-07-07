@@ -1,0 +1,9 @@
+public void testNullForm() throws Exception {
+    try {
+        qav.validate(null);
+        fail("exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals(1, e.getErrorList().size());
+        assertEquals("Null form", e.getErrorList().get(0));
+    }
+}

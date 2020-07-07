@@ -1,0 +1,14 @@
+// ATTRIBUTES
+/**
+ * Sets an attribute of the figure and calls attributeChanged on all
+ * registered FigureListeners.
+ * <p>
+ * For efficiency reasons, the drawing is not automatically repainted.
+ * If you want the drawing to be repainted when the attribute is changed,
+ * you can either use {@code key.set(figure, value);} or
+ * {@code figure.willChange(); figure.setAttribute(key, value);
+ * figure.changed();}.
+ *
+ * @see AttributeKey#set
+ */
+public <T> void setAttribute(AttributeKey<T> key, T value);

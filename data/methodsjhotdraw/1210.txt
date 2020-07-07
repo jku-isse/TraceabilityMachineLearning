@@ -1,0 +1,12 @@
+/**
+ * Sets the location of the first and the last <code>BezierPath.Node</code>
+ * of the BezierFigure.
+ * If the BezierFigure has not at least two nodes, nodes are added
+ * to the figure until the BezierFigure has at least two nodes.
+ */
+@Override
+public void setBounds(Point2D.Double anchor, Point2D.Double lead) {
+    setStartPoint(anchor);
+    setEndPoint(lead);
+    invalidate();
+}

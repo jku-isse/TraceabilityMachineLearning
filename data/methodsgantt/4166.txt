@@ -1,0 +1,5 @@
+private ResourceAssignment auxAddAssignment(ProjectResource resource) {
+    final ResourceAssignment result = new ResourceAssignmentCollectionImpl.ResourceAssignmentImpl(resource);
+    addAssignment(result);
+    return result;
+}

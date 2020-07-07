@@ -1,0 +1,15 @@
+@Override
+public Connector findConnector(Point2D.Double p, ConnectionFigure figure) {
+    // return closest connector
+    double min = Double.MAX_VALUE;
+    Connector closest = null;
+    for (Connector c : connectors) {
+        Point2D.Double p2 = Geom.center(c.getBounds());
+        double d = Geom.length2(p.x, p.y, p2.x, p2.y);
+        if (d < min) {
+            min = d;
+            closest = c;
+        }
+    }
+    return closest;
+}

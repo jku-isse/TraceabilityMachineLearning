@@ -1,0 +1,12 @@
+public void testParseLOINCFileIgnore() throws Exception {
+    gen.clearAllTables();
+    String filename1 = "./testing-files/sample_loinc/sampleLoinc.txt";
+    String filename2 = "./testing-files/sample_loinc/sampleLoinc2.txt";
+    FileInputStream stream1 = new FileInputStream(filename1);
+    FileInputStream stream2 = new FileInputStream(filename2);
+    action.parseLOINCFile(stream1, true);
+    assertEquals(29, dao.getAllLOINC().size());
+    action.parseLOINCFile(stream2, true);
+    assertEquals(29, dao.getAllLOINC().size());
+    assertTrue(dao.getProcedures("10054-5").get(0).getComponent().equals("S wave duration.lead V3"));
+}

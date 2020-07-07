@@ -1,0 +1,10 @@
+public TaskContainmentHierarchyFacade getTaskContainment() {
+    if ((myFacadeInvalidator) == null) {
+        return TaskContainmentHierarchyFacade.STUB;
+    }
+    if ((!(myFacadeInvalidator.isValid())) || ((myCachedFacade) == null)) {
+        myCachedFacade = new TaskContainmentHierarchyFacadeImpl(tree);
+        myFacadeInvalidator.reset();
+    }
+    return myCachedFacade;
+}

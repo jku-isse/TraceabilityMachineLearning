@@ -1,0 +1,45 @@
+/**
+ * Adds a new drug interaction, returns whether or not the addition was successful. If the code already exists, an
+ * iTrustException is thrown.
+ *
+ * @param firstDrug
+ * 		The name of the first drug in an interaction.
+ * @param secondDrug
+ * 		The name of the second drug in an interaction.
+ * @param description
+ * 		Explanation of the drug interaction.
+ * @return A boolean indicating success or failure.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public boolean reportInteraction(String firstDrug, String secondDrug, String description) throws DBException, iTrustException {
+    if (firstDrug.equals(secondDrug))
+        throw new iTrustException("Drug cannot interact with itself.");
+
+    List<DrugInteractionBean> currentIntsDrug2 = getInteractions(secondDrug);
+    for (DrugInteractionBean dib : currentIntsDrug2) {
+        if (dib.getSecondDrug().equals(firstDrug)) {
+            throw new iTrustException("Error: Interaction between these drugs already exists.");
+        }
+    }
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("INSERT INTO druginteractions (FirstDrug, SecondDrug, Description) " + "VALUES (?,?,?)"));
+        ps.setString(1, firstDrug);
+        ps.setString(2, secondDrug);
+        ps.setString(3, description);
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        e.printStackTrace();
+        if (1062 == (e.getErrorCode()))
+            throw new iTrustException("Error: Interaction between these drugs already exists.");
+
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

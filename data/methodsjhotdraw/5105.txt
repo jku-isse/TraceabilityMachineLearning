@@ -1,0 +1,7 @@
+public int getStartTime() {
+    try {
+        return Integer.valueOf(getStartTimeFigure().getText());
+    } catch (NumberFormatException e) {
+        return 0;
+    }
+}

@@ -1,0 +1,14 @@
+private void applyChanges() {
+    person.setName(myNameField.getValue());
+    person.setMail(myMailField.getValue());
+    person.setPhone(myPhoneField.getValue());
+    Role role = findRole(myRoleField.getValue());
+    if (role != null) {
+        person.setRole(role);
+    }
+    DateIntervalListEditor.DateInterval[] intervals = myDaysOffModel.getIntervals();
+    person.getDaysOff().clear();
+    for (int i = 0; i < (intervals.length); i++) {
+        person.addDaysOff(new GanttDaysOff(intervals[i].start, intervals[i].end));
+    }
+}

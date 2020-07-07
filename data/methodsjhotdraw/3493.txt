@@ -1,0 +1,27 @@
+/**
+ * This method computes a binary OR of the appropriate mask values
+ * indicating, for each side of Rectangle r1, whether or not the
+ * Rectangle r2 is on the same side of the edge as the rest
+ * of this Rectangle.
+ *
+ * @return the logical OR of all appropriate out codes OUT_RIGHT, OUT_LEFT, OUT_BOTTOM,
+OUT_TOP.
+ */
+public static int outcode(Rectangle r1, Rectangle r2) {
+    int outcode = 0;
+    if ((r2.x) > ((r1.x) + (r1.width))) {
+        outcode = Geom.OUT_RIGHT;
+    } else
+        if (((r2.x) + (r2.width)) < (r1.x)) {
+            outcode = Geom.OUT_LEFT;
+        }
+
+    if ((r2.y) > ((r1.y) + (r1.height))) {
+        outcode |= Geom.OUT_BOTTOM;
+    } else
+        if (((r2.y) + (r2.height)) < (r1.y)) {
+            outcode |= Geom.OUT_TOP;
+        }
+
+    return outcode;
+}

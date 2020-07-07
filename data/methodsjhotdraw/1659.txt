@@ -1,0 +1,3 @@
+public void removeFigureSelectionListener(FigureSelectionListener fsl) {
+    listenerList.remove(FigureSelectionListener.class, fsl);
+}

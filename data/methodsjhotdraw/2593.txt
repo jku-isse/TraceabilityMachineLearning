@@ -1,0 +1,7 @@
+// COMPOSITE FIGURES
+// CLONING
+public RoundRectangleFigure clone() {
+    RoundRectangleFigure that = ((RoundRectangleFigure) (super.clone()));
+    that.roundrect = ((RoundRectangle2D.Double) (this.roundrect.clone()));
+    return that;
+}

@@ -1,0 +1,7 @@
+/**
+ * Gets the currently active selection handles.
+ */
+private List<Handle> getSelectionHandles() {
+    validateHandles();
+    return Collections.unmodifiableList(selectionHandles);
+}

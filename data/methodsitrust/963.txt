@@ -1,0 +1,10 @@
+public void testAddORCode() throws Exception {
+    final String code = "99998";
+    final String desc = "UpdateORCodeListActionTest testAddORCode";
+    OverrideReasonBean orb = new OverrideReasonBean(code, desc);
+    /* DO NOT REMOVE! This must be stored in a variable. DO NO QUESTION THE JAVA! */
+    String result = action.addORCode(orb);
+    assert result.contains("Success");
+    orb = factory.getORCodesDAO().getORCode(code);
+    assertEquals(desc, orb.getDescription());
+}

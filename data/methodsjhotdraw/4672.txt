@@ -1,0 +1,4 @@
+@Override
+public Collection<Connector> getConnectors(ConnectionFigure prototype) {
+    return ((List<Connector>) (Collections.unmodifiableList(connectors)));
+}

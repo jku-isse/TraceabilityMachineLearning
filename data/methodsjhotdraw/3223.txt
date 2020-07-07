@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public GroupAction(DrawingEditor editor) {
+    this(editor, new GroupFigure(), true);
+}

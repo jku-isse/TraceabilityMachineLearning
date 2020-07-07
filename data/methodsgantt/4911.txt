@@ -1,0 +1,16 @@
+private DateFrameable calculateHighestFrameableUnit(TimeUnit topUnit, TimeUnit bottomUnit) {
+    // DateFrameable highestFrameable = null;
+    // for (TimeUnit timeUnit = topUnit; timeUnit!=null; timeUnit =
+    // timeUnit.getDirectAtomUnit()) {
+    // System.err.println("next time unit="+timeUnit);
+    // if (timeUnit instanceof DateFrameable) {
+    // highestFrameable = (DateFrameable)timeUnit;
+    // break;
+    // }
+    // if (timeUnit==bottomUnit) {
+    // break;
+    // }
+    // }
+    // return highestFrameable;
+    return topUnit;
+}

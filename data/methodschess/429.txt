@@ -1,0 +1,8 @@
+/**
+ * Get the notation for a piece type.
+ *
+ * @param pieceType
+ * 		The piece type.
+ * @return The notation for a piece type.
+ */
+String getPieceTypeNotation(byte pieceType);

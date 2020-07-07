@@ -1,0 +1,4 @@
+public Dimension getPreferredSize() {
+    Insets ins = getInsets();
+    return new Dimension((((getScaledWidth()) + (ins.left)) + (ins.right)), (((getScaledHeight()) + (ins.top)) + (ins.bottom)));
+}

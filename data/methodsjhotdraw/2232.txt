@@ -1,0 +1,8 @@
+/**
+ * Returns true, if this InputFormat can readFigures TransferData using the
+ * specified DataFlavor.
+ *
+ * @param flavor
+ * 		A DataFlavor.
+ */
+public boolean isDataFlavorSupported(DataFlavor flavor);

@@ -1,0 +1,10 @@
+/**
+ * Return the logcal display area. This method is delegated to the encapsulated
+ * presentation figure.
+ */
+public Rectangle2D.Double getBounds() {
+    if ((getPresentationFigure()) == null)
+        return super.getBounds();
+
+    return getPresentationFigure().getBounds();
+}

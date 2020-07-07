@@ -1,0 +1,5 @@
+// CONNECTING
+public void updateConnection() {
+    super.updateConnection();
+    layout();
+}

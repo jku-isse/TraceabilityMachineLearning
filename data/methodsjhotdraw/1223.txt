@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ * This constructor is for use by DOMStorable only.
+ */
+public BezierLabelLocator() {
+}

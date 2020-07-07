@@ -1,0 +1,3 @@
+public List getAllResouces() {
+    return myResourceManager.getResources();
+}

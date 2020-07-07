@@ -1,0 +1,1 @@
+void add(String name, int order, int width);

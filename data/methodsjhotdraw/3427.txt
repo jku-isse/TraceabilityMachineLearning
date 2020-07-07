@@ -1,0 +1,3 @@
+public void setMask(int newValue) {
+    mask = newValue;
+}

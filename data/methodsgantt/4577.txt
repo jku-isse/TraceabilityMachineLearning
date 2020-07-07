@@ -1,0 +1,22 @@
+/**
+ * Recursive method that adds critical task among predecessors of
+ * <code>successor</code> in <code>criticalTasksList</code>
+ *
+ * @param successor
+ * 		The start task.
+ * @param criticalTasksList
+ * 		The list in which critical tasks should be added.
+ */
+private void checkCriticalTasks(Task successor, List criticalTasksList) {
+    TaskDependency[] rel = successor.getDependenciesAsDependant().toArray();
+    for (int i = 0; i < (rel.length); i++) {
+        Task t = rel[i].getDependee();
+        if (((t.getEnd().compareTo(successor.getStart())) == 0) || (CriticalPathAlgorithmImpl.isIntervalNonWorking(t.getEnd(), successor.getStart(), calendar))) {
+            criticalTasksList.add(t);
+            checkCriticalTasks(t, criticalTasksList);
+            // System.out.println("critical " + t);
+        }
+        // else
+        // System.out.println("non critical " + t);
+    }
+}

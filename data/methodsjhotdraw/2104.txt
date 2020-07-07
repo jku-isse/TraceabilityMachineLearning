@@ -1,0 +1,15 @@
+public Rectangle2D.Double constrainRectangle(Rectangle2D.Double r) {
+    Point2D.Double p0 = constrainPoint(new Point2D.Double(r.x, r.y));
+    Point2D.Double p1 = constrainPoint(new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height))));
+    if ((Math.abs(((p0.x) - (r.x)))) < (Math.abs((((p1.x) - (r.x)) - (r.width))))) {
+        r.x = p0.x;
+    } else {
+        r.x = (p1.x) - (r.width);
+    }
+    if ((Math.abs(((p0.y) - (r.y)))) < (Math.abs((((p1.y) - (r.y)) - (r.height))))) {
+        r.y = p0.y;
+    } else {
+        r.y = (p1.y) - (r.height);
+    }
+    return r;
+}

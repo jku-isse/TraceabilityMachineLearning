@@ -1,0 +1,12 @@
+/**
+ * Gets a PatientBean from an MID
+ *
+ * @param patientID
+ * 		MID of the patient
+ * @return PatientBean for the MID given
+ * @throws iTrustException
+ * 		
+ */
+public PatientBean getPatient(long patientID) throws iTrustException {
+    return patientDAO.getPatient(patientID);
+}

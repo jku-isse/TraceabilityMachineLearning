@@ -1,0 +1,7 @@
+/**
+ * Notify all listenerList that have registered interest for
+ * notification on this event type.
+ */
+protected void fireUndoableEditHappened(UndoableEdit edit) {
+    view.getDrawing().fireUndoableEditHappened(edit);
+}

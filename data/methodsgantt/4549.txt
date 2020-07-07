@@ -1,0 +1,12 @@
+/**
+ * Returns <code>true</code> if <code>task</code> is selected,
+ * <code>false</code> otherwise.
+ *
+ * @param task
+ * 		The task to test.
+ * @return <code>true</code> if <code>task</code> is selected,
+<code>false</code> otherwise.
+ */
+public boolean isTaskSelected(Task task) {
+    return selectedTasks.contains(task);
+}

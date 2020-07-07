@@ -1,0 +1,15 @@
+public void testSurveyResultsZipCodeFormat2() throws Exception {
+    // log in as patient
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    // go to page with HCP Survey Results
+    wr = wr.getLinkWith("Satisfaction Survey Results").click();
+    assertTrue(wr.getText().contains("Search HCP Survey Results"));
+    WebForm form = wr.getForms()[0];
+    form.setParameter("hcpZip", "123456");
+    wr = form.submit();
+    // view current page to ensure data is correct
+    assertTrue(wr.getText().contains("Zip Code: xxxxx or xxxxx-xxxx"));
+}

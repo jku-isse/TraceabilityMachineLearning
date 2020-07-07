@@ -1,0 +1,4 @@
+public ResourceAssignmentCollectionImpl(TaskImpl task, ResourceManager resourceManager) {
+    myTask = task;
+    myResourceManager = resourceManager;
+}

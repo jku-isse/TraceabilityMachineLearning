@@ -1,0 +1,20 @@
+public void run(Set taskSet) throws TaskDependencyException {
+    if (!(isEnabled())) {
+        return;
+    }
+    isRunning = true;
+    (myEntranceCounter)++;
+    myMarkedTasks.clear();
+    for (Iterator tasks = taskSet.iterator(); tasks.hasNext();) {
+        Task nextTask = ((Task) (tasks.next()));
+        buildDistanceGraph(nextTask);
+        fulfilDependencies();
+        myDistance2dependencyList.clear();
+        myModifiedTasks.add(nextTask);
+    }
+    myAdjuster.run(((Task[]) (myModifiedTasks.toArray(new Task[0]))));
+    myDistance2dependencyList.clear();
+    myModifiedTasks.clear();
+    (myEntranceCounter)--;
+    isRunning = false;
+}

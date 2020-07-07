@@ -1,0 +1,10 @@
+/**
+ * Handles the connection of a connection.
+ * Override this method to handle this event.
+ * <p>
+ * Note: This method is only invoked, when the Figure is part of a
+ * Drawing. If the Figure is added to a Drawing this method is invoked
+ * on behalf of the addNotify call to the Figure.
+ */
+protected void handleConnect(Connector start, Connector end) {
+}

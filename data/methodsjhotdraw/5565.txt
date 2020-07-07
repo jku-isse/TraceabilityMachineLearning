@@ -1,0 +1,5 @@
+// SHAPE AND BOUNDS
+public void setCoordinates(Point2D.Double[] coordinates) {
+    this.coordinates = coordinates;
+    invalidate();
+}

@@ -1,0 +1,11 @@
+/**
+ * Start the timer.
+ */
+public void start() {
+    if ((_time) > 0L) {
+        if ((_timerThread) == null) {
+            _timerThread = new Thread(this);
+            _timerThread.start();
+        }
+    }
+}

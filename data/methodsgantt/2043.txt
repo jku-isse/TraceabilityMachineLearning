@@ -1,0 +1,17 @@
+public TaskRendererImpl(ChartModelImpl model) {
+    super(model);
+    this.myModel = model;
+    getPrimitiveContainer().newLayer();
+    getPrimitiveContainer().newLayer();
+    DefaultEnumerationOption deo0 = new DefaultEnumerationOption("taskLabelUp", TaskRendererImpl.ourInfoList);
+    DefaultEnumerationOption deo1 = new DefaultEnumerationOption("taskLabelDown", TaskRendererImpl.ourInfoList);
+    DefaultEnumerationOption deo2 = new DefaultEnumerationOption("taskLabelLeft", TaskRendererImpl.ourInfoList);
+    DefaultEnumerationOption deo3 = new DefaultEnumerationOption("taskLabelRight", TaskRendererImpl.ourInfoList);
+    Mediator.addChangeValueDispatcher(deo0);
+    Mediator.addChangeValueDispatcher(deo1);
+    Mediator.addChangeValueDispatcher(deo2);
+    Mediator.addChangeValueDispatcher(deo3);
+    myLabelOptions = new EnumerationOption[]{ deo0, deo1, deo2, deo3 };
+    myOptionGroups = new GPOptionGroup[1];
+    updateOptions();
+}

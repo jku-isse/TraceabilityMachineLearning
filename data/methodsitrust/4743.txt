@@ -1,0 +1,5 @@
+public void testCorrectFormat() throws Exception {
+    AllergyBean ab = new AllergyBean();
+    ab.setDescription("Correct format");
+    new AllergyBeanValidator().validate(ab);
+}

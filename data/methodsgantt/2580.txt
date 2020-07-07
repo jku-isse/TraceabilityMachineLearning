@@ -1,0 +1,4 @@
+public GanttLookAndFeelInfo(String name, String className) {
+    super(name, className);
+    toString = name;
+}

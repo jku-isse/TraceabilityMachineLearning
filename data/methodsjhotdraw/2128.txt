@@ -1,0 +1,6 @@
+/**
+ * Draws this handle.
+ * Note: The handle is drawn with the coordinate system of
+ * the DrawingView.
+ */
+public void draw(Graphics2D g);

@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the 3d borders export.
+ */
+public boolean getExport3dBorders() {
+    return bExport3DBorders;
+}

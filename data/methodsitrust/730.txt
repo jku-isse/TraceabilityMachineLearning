@@ -1,0 +1,8 @@
+public void testRemoveAll() throws iTrustException, Exception {
+    doAssignment();
+    doAssignment(ManageHospitalAssignmentsActionTest.hosp1);
+    doAssignment(ManageHospitalAssignmentsActionTest.hosp2);
+    assertEquals(3, action.getAssignedHospitals(("" + (ManageHospitalAssignmentsActionTest.hcp0))).size());
+    assertEquals(3, action.removeAllAssignmentsFromHCP(("" + (ManageHospitalAssignmentsActionTest.hcp0))));
+    assertEquals(0, action.getAssignedHospitals(("" + (ManageHospitalAssignmentsActionTest.hcp0))).size());
+}

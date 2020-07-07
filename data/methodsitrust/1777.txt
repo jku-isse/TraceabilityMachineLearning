@@ -1,0 +1,4 @@
+public void setOriginalMessageId(long originalMsgId) {
+    // NEW
+    this.originalMsgId = originalMsgId;
+}

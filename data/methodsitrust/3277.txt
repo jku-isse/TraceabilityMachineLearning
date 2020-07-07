@@ -1,0 +1,3 @@
+public void testNotPatient200() throws Exception {
+    assertFalse(patientDAO.checkPatientExists(200));
+}

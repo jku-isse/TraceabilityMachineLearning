@@ -1,0 +1,4 @@
+/**
+ * Adds an input format to the drawing.
+ */
+void addInputFormat(InputFormat format);

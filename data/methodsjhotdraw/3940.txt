@@ -1,0 +1,9 @@
+public float getLayoutAlignmentY(Container target) {
+    switch (axis) {
+        case ToolBarLayout.Y_AXIS :
+            return 0.0F;
+        case ToolBarLayout.X_AXIS :
+        default :
+            return 0.0F;
+    }
+}

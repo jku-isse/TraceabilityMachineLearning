@@ -1,0 +1,7 @@
+public void setHandleDetailLevel(int newValue) {
+    if (newValue != (detailLevel)) {
+        detailLevel = newValue;
+        invalidateHandles();
+        validateHandles();
+    }
+}

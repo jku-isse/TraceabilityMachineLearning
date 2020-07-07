@@ -1,0 +1,6 @@
+/**
+ * Check, if this piece is white.
+ *
+ * @return true, if this piece is white, false if black.
+ */
+public boolean isWhite();

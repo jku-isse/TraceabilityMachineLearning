@@ -1,0 +1,3 @@
+public long getLastAccessedTime() {
+    throw new IllegalStateException("should not be hit!");
+}

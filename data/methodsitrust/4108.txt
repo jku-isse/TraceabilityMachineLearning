@@ -1,0 +1,6 @@
+private String dateOffsetStr(Date date, int offset) {
+    Calendar cal = Calendar.getInstance();
+    cal.setTime(date);
+    cal.add(Calendar.DATE, offset);
+    return dateFormat.format(cal.getTime());
+}

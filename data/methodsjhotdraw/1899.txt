@@ -1,0 +1,4 @@
+/**
+ * Gets the number of selected figures.
+ */
+public int getSelectionCount();

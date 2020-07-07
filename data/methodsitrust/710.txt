@@ -1,0 +1,18 @@
+/**
+ * Removes all hospital assignments for the given hcp mid
+ *
+ * @param midString
+ * 		HCPs mid
+ * @return status message
+ * @throws iTrustException
+ * 		
+ */
+public int removeAllAssignmentsFromHCP(String midString) throws iTrustException {
+    try {
+        long hcpID = Long.valueOf(midString);
+        int numAssignments = hospitalsDAO.removeAllHospitalAssignmentsFrom(hcpID);
+        return numAssignments;
+    } catch (NumberFormatException e) {
+        throw new iTrustException("HCPs MID not a number");
+    }
+}

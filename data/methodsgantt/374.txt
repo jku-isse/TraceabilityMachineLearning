@@ -1,0 +1,13 @@
+// TODO This method was not used...
+// /** @return the color for resources overload. */
+// public Color getResourceOverloadColor() {
+// return getUIConfiguration().getResourceOverloadColor();
+// }
+/**
+ *
+ *
+ * @return the lock DAV Minutes.
+ */
+public int getLockDAVMinutes() {
+    return lockDAVMinutes;
+}

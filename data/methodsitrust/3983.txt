@@ -1,0 +1,43 @@
+public void testHCPSendMessage() throws Exception {
+    // Login
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Message Outbox").click();
+    iTrustHTTPTest.assertLogged(TransactionType.OUTBOX_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Compose a Message").click();
+    // Select Patient
+    WebForm wf = wr.getFormWithID("mainForm");
+    wf.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    wr = wf.submit();
+    // Submit message
+    wf = wr.getFormWithID("mainForm");
+    wf.getScriptableObject().setParameterValue("subject", "Visit Request");
+    wf.getScriptableObject().setParameterValue("messageBody", "We really need to have a visit.");
+    wr = wf.submit();
+    iTrustHTTPTest.assertLogged(TransactionType.MESSAGE_SEND, 9000000000L, 2L, "");
+    // Create timestamp
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    Date date = new Date();
+    String stamp = dateFormat.format(date);
+    assertTrue(wr.getText().contains("My Sent Messages"));
+    // Check message in outbox
+    wr = wr.getLinkWith("Message Outbox").click();
+    assertTrue(wr.getText().contains("Visit Request"));
+    assertTrue(wr.getText().contains("Andy Programmer"));
+    assertTrue(wr.getTableWithID("mailbox").getText().contains(stamp));
+    iTrustHTTPTest.assertLogged(TransactionType.OUTBOX_VIEW, 9000000000L, 0L, "");
+    // Check bolded message appears in patient
+    wr = wr.getLinkWith("Logout").click();
+    iTrustHTTPTest.assertLogged(TransactionType.LOGOUT, 9000000000L, 9000000000L, "");
+    // wr = wr.getLinkWith("Log into iTrust").click();
+    wc = login("2", "pw");
+    wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    wr = wr.getLinkWith("Message Inbox").click();
+    iTrustHTTPTest.assertLogged(TransactionType.INBOX_VIEW, 2L, 0L, "");
+    assertEquals("font-weight: bold;", wr.getTableWithID("mailbox").getRows()[1].getAttribute("style"));
+    assertTrue(wr.getTableWithID("mailbox").getRows()[1].getText().contains("Kelly Doctor"));
+    assertTrue(wr.getTableWithID("mailbox").getRows()[1].getText().contains("Visit Request"));
+    assertTrue(wr.getTableWithID("mailbox").getRows()[1].getText().contains(stamp));
+}

@@ -1,0 +1,4 @@
+protected float getLengthDiff(MouseEvent event) {
+    float diff = getChartModel().calculateLength(myStartX, event.getX(), event.getY());
+    return diff;
+}

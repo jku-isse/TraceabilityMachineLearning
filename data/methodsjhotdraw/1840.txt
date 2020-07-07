@@ -1,0 +1,11 @@
+/**
+ * Removes the specified figures from the drawing.
+ * The drawing sends a {@code removeNotify}  message to each figure
+ * before it is removed.
+ *
+ * @see Figure#removeNotify
+ * @param figures
+ * 		A collection of figures which are part of the drawing
+ * 		and should be removed
+ */
+void removeAll(Collection<? extends Figure> figures);

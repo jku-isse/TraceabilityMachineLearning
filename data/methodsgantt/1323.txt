@@ -1,0 +1,4 @@
+public void setIconVisible(boolean isVisible) {
+    iconVisible = isVisible;
+    putValue(Action.SMALL_ICON, (iconVisible ? myIcon : null));
+}

@@ -1,0 +1,3 @@
+public void setHCPName(String name) {
+    HCPname = name;
+}

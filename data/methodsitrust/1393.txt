@@ -1,0 +1,9 @@
+public void testGetBloodPressure() throws Exception {
+    HealthRecord r = new HealthRecord();
+    r.setBloodPressureN(80);
+    r.setBloodPressureD(120);
+    assertEquals("80/120", r.getBloodPressure());
+    r.setBloodPressureSystolic(90);
+    r.setBloodPressureDiastolic(130);
+    assertEquals("90/130", r.getBloodPressure());
+}

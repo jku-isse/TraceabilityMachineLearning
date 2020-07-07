@@ -1,0 +1,11 @@
+/**
+ * Puts a property name modifier along with a fallback chain.
+ *
+ * @param name
+ * 		The name of the modifier.
+ * @param fallbackChain
+ * 		The fallback chain of the modifier.
+ */
+public static void putPropertyNameModifier(String name, String... fallbackChain) {
+    ResourceBundleUtil.propertyNameModifiers.put(name, fallbackChain);
+}

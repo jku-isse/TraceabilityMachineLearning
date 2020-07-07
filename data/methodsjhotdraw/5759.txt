@@ -1,0 +1,12 @@
+/**
+ * Creates new instance.
+ */
+public ProgressIndicator(String message, String note, int min, int max, boolean indeterminate) {
+    initComponents();
+    messageLabel.setFont(messageLabel.getFont().deriveFont(Font.BOLD));
+    progressModel = new DefaultBoundedRangeModel(0, 0, min, max);
+    progressBar.setModel(progressModel);
+    setMessage(message);
+    setNote(note);
+    setIndeterminate(indeterminate);
+}

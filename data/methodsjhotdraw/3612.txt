@@ -1,0 +1,10 @@
+public void add(T o, Rectangle2D.Double bounds) {
+    if (root.bounds.contains(bounds)) {
+        root.add(o, ((Rectangle2D.Double) (bounds.clone())));
+    } else {
+        outside.put(o, ((Rectangle2D.Double) (bounds.clone())));
+        if ((outside.size()) > (maxOutside)) {
+            reorganize();
+        }
+    }
+}

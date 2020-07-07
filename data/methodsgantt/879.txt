@@ -1,0 +1,23 @@
+public void autoscroll(Point pt) {
+    // Figure out which row we?e on.
+    int nRow = this.getClosestRowForLocation(pt.x, pt.y);
+    // If we are not on a row then ignore this autoscroll request
+    if (nRow < 0)
+        return;
+
+    Rectangle raOuter = getBounds();
+    // Now decide if the row is at the top of the screen or at the
+    // bottom. We do this to make the previous row (or the next
+    // row) visible as appropriate. If we?e at the absolute top or
+    // bottom, just return the first or last row respectively.
+    nRow = (((pt.y) + (raOuter.y)) <= (GanttTree2.AUTOSCROLL_MARGIN)// Is row at top of
+    ) ? // screen?
+    nRow <= 0 ? 0 : nRow - 1// Yes, scroll up one row
+     : nRow < ((this.getRowCount()) - 1) ? nRow + 1 : nRow;// No,
+
+    // scroll
+    // down
+    // one
+    // row
+    this.scrollRowToVisible(nRow);
+}

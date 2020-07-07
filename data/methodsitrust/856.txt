@@ -1,0 +1,12 @@
+/**
+ * Returns the personnels name
+ *
+ * @param mid
+ * 		MId of the personnel
+ * @return the name of the personnel
+ * @throws iTrustException
+ * 		
+ */
+public String getPersonnelName(long mid) throws iTrustException {
+    return personnelDAO.getName(mid);
+}

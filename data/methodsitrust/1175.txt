@@ -1,0 +1,14 @@
+/**
+ * Sets the viewed status of the report.  If the report is "viewed" the HCP must request a new one to see it again.
+ *
+ * @param ID
+ * 		id of the report
+ * @throws iTrustException
+ * 		
+ */
+public void setViewed(int ID) throws iTrustException {
+    // ReportRequestBean rr = reportRequestDAO.getReportRequest(ID);
+    reportRequestDAO.setViewed(ID, Calendar.getInstance().getTime());
+    // new EmailUtil(factory).sendEmail(makeEmailView(rr.getApproverMID(), rr.getRequesterMID(), rr
+    // .getPatientMID()));
+}

@@ -1,0 +1,5 @@
+public ScrollGanttChartCenterAction(ScrollingManager scrollingManager, TaskSelectionManager taskSelectionManager, String iconSize) {
+    super("ScrollCenter", iconSize);
+    myScrollingManager = scrollingManager;
+    myTaskSelectionManager = taskSelectionManager;
+}

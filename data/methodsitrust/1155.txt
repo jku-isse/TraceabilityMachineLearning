@@ -1,0 +1,13 @@
+public void testViewNonExistantRecords() {
+    action = new ViewMyRecordsAction(evil, 0L);
+    try {
+        action.getFamilyHistory();
+    } catch (iTrustException e) {
+        assertEquals("A database exception has occurred. Please see the log in the console for stacktrace", e.getMessage());
+    }
+    try {
+        action.getFamily();
+    } catch (iTrustException e) {
+        assertEquals("A database exception has occurred. Please see the log in the console for stacktrace", e.getMessage());
+    }
+}

@@ -1,0 +1,6 @@
+/**
+ * Gets the current tool.
+ * <p>
+ * This is a bound property.
+ */
+Tool getTool();

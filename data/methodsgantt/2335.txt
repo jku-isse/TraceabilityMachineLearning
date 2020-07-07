@@ -1,0 +1,51 @@
+void enter() throws IOException {
+    GPParser opener = myParserFactory.newParser();
+    ResourceManager hrManager = getHumanResourceManager();
+    RoleManager roleManager = getRoleManager();
+    TaskManager taskManager = getTaskManager();
+    ResourceTagHandler resourceHandler = new ResourceTagHandler(hrManager, roleManager, myProject.getResourceCustomPropertyManager());
+    DependencyTagHandler dependencyHandler = new DependencyTagHandler(opener.getContext(), taskManager, getUIFacade());
+    AllocationTagHandler allocationHandler = new AllocationTagHandler(hrManager, getTaskManager(), getRoleManager());
+    VacationTagHandler vacationHandler = new VacationTagHandler(hrManager);
+    PreviousStateTasksTagHandler previousStateHandler = new PreviousStateTasksTagHandler(myProject.getBaselines());
+    RoleTagHandler rolesHandler = new RoleTagHandler(roleManager);
+    TaskTagHandler taskHandler = new TaskTagHandler(taskManager, opener.getContext());
+    DefaultWeekTagHandler weekHandler = new DefaultWeekTagHandler(getActiveCalendar());
+    ViewTagHandler viewHandler = new ViewTagHandler(getUIFacade());
+    TaskPropertiesTagHandler taskPropHandler = new TaskPropertiesTagHandler(myProject.getCustomColumnsStorage());
+    opener.addTagHandler(taskPropHandler);
+    CustomPropertiesTagHandler customPropHandler = new CustomPropertiesTagHandler(opener.getContext(), getTaskManager(), myProject.getCustomColumnsStorage());
+    opener.addTagHandler(customPropHandler);
+    TaskDisplayColumnsTagHandler taskDisplayHandler = new TaskDisplayColumnsTagHandler(myVisibleFields);
+    opener.addTagHandler(taskDisplayHandler);
+    TaskDisplayColumnsTagHandler resourceViewHandler = new TaskDisplayColumnsTagHandler(getUIFacade().getResourceTree().getVisibleFields(), "field", "id", "order", "width");
+    opener.addTagHandler(resourceViewHandler);
+    opener.addParsingListener(resourceViewHandler);
+    opener.addTagHandler(taskHandler);
+    opener.addParsingListener(taskPropHandler);
+    opener.addParsingListener(taskDisplayHandler);
+    opener.addParsingListener(customPropHandler);
+    opener.addTagHandler(opener.getDefaultTagHandler());
+    opener.addTagHandler(resourceHandler);
+    opener.addTagHandler(dependencyHandler);
+    opener.addTagHandler(allocationHandler);
+    opener.addParsingListener(allocationHandler);
+    opener.addTagHandler(vacationHandler);
+    opener.addTagHandler(previousStateHandler);
+    opener.addTagHandler(rolesHandler);
+    opener.addTagHandler(weekHandler);
+    opener.addTagHandler(viewHandler);
+    opener.addParsingListener(dependencyHandler);
+    opener.addParsingListener(resourceHandler);
+    HolidayTagHandler holidayHandler = new HolidayTagHandler(myProject);
+    opener.addTagHandler(holidayHandler);
+    opener.addParsingListener(holidayHandler);
+    // 
+    ProxyDocument.PortfolioTagHandler portfolioHandler = new ProxyDocument.PortfolioTagHandler();
+    opener.addTagHandler(portfolioHandler);
+    if (opener.load(getInputStream())) {
+        mySuccessState.enter();
+    } else {
+        myFailureState.enter();
+    }
+}

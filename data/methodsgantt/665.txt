@@ -1,0 +1,5 @@
+public GPView createView(IAdaptable adaptable, Icon icon) {
+    GPView view = new GanttProjectBase.GPViewImpl(this, myTabs, ((Container) (adaptable.getAdapter(Container.class))), ((Chart) (adaptable.getAdapter(Chart.class))), icon);
+    myViews.add(view);
+    return view;
+}

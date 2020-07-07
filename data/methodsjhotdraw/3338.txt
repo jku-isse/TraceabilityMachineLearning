@@ -1,0 +1,14 @@
+/**
+ * Approximate unit tangents at "right" endpoint of digitized curve.
+ *
+ * @param d
+ * 		Digitized points.
+ * @param end
+ * 		Index to "right" end of region.
+ */
+private static Point2D.Double computeRightTangent(ArrayList<Point2D.Double> d, int end) {
+    Point2D.Double tHat2 = new Point2D.Double();
+    tHat2 = Bezier.v2SubII(d.get((end - 1)), d.get(end));
+    tHat2 = Bezier.v2Normalize(tHat2);
+    return tHat2;
+}

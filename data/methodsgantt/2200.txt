@@ -1,0 +1,3 @@
+public void addToRecentDocuments(Document document) {
+    // TODO Auto-generated method stub
+}

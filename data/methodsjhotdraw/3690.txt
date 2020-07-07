@@ -1,0 +1,3 @@
+public JAttributeSlider(int orientation, int min, int max, int value) {
+    super(orientation, min, max, value);
+}

@@ -1,0 +1,21 @@
+/**
+ * Constructor for the bean. Accepts stats and zip code
+ *
+ * @param zipCode
+ * 		The zip code analyzed
+ * @param zipStats
+ * 		The count of diagnoses for the zip code
+ * @param regionStats
+ * 		The count of diagnoses for the region
+ * @param startDate
+ * 		The beginning of the datas time period
+ * @param endDate
+ * 		The end of the datas time period
+ */
+public DiagnosisStatisticsBean(String zipCode, long zipStats, long regionStats, Date startDate, Date endDate) {
+    this.zipCode = zipCode;
+    this.zipStats = zipStats;
+    this.regionStats = regionStats;
+    this.startDate = startDate;
+    this.endDate = endDate;
+}

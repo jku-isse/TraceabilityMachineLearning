@@ -1,0 +1,3 @@
+public String getPageTitle(String pageID) {
+    return GanttLanguage.getInstance().getText((((myOptionPageKeyPrefix) + pageID) + ".title"));
+}

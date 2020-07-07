@@ -1,0 +1,7 @@
+/**
+ * If this returns true, the JSheet uses native support for
+ * sheet display.
+ */
+private static boolean isDocumentModalitySupported() {
+    return JSheet.isDocumentModalitySupported;
+}

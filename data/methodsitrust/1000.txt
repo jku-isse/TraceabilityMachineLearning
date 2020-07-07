@@ -1,0 +1,10 @@
+/**
+ * Constructor for the action. Initializes DAO fields
+ *
+ * @param factory
+ * 		The sessions factory for DAOs
+ */
+public ViewDiagnosisStatisticsAction(DAOFactory factory) {
+    this.icdDAO = factory.getICDCodesDAO();
+    this.diagnosesDAO = factory.getDiagnosesDAO();
+}

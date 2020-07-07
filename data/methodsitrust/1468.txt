@@ -1,0 +1,4 @@
+protected void setUp() throws Exception {
+    ctrl = createControl();
+    rs = ctrl.createMock(ResultSet.class);
+}

@@ -1,0 +1,33 @@
+/**
+ * Brings up a sheet with a specified icon, where the number of
+ * choices is determined by the <code>optionType</code> parameter.
+ * The <code>messageType</code> parameter is primarily used to supply
+ * a default icon from the look and feel.
+ *
+ * @param parentComponent
+ * 		determines the <code>Frame</code> in which the
+ * 		dialog is displayed; if <code>null</code>,
+ * 		or if the <code>parentComponent</code> has no
+ * 		<code>Frame</code>, the sheet is displayed as a dialog.
+ * @param message
+ * 		the Object to display
+ * @param optionType
+ * 		an int designating the options available on the dialog:
+ * 		<code>YES_NO_OPTION</code>,
+ * 		or <code>YES_NO_CANCEL_OPTION</code>
+ * @param messageType
+ * 		an int designating the kind of message this is,
+ * 		primarily used to determine the icon from the pluggable
+ * 		Look and Feel: <code>JOptionPane.ERROR_MESSAGE</code>,
+ * 		<code>JOptionPane.INFORMATION_MESSAGE</code>,
+ * 		<code>JOptionPane.WARNING_MESSAGE</code>,
+ * 		<code>JOptionPane.QUESTION_MESSAGE</code>,
+ * 		or <code>JOptionPane.PLAIN_MESSAGE</code>
+ * @param icon
+ * 		the icon to display in the dialog
+ * @param listener
+ * 		The listener for SheetEvents.
+ */
+public static void showConfirmSheet(Component parentComponent, Object message, int optionType, int messageType, Icon icon, SheetListener listener) {
+    JSheet.showOptionSheet(parentComponent, message, optionType, messageType, icon, null, null, listener);
+}

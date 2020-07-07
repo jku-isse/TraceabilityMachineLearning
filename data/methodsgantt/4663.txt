@@ -1,0 +1,3 @@
+public TaskDependencyCollectionMutator createMutator() {
+    return new TaskDependencyCollectionImpl.MutatorImpl();
+}

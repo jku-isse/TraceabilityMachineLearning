@@ -1,0 +1,9 @@
+/**
+ * Set a new notation object.
+ *
+ * @param gameNotation
+ * 		The new game notation.
+ */
+public void setGameNotation(GameNotation gameNotation) {
+    _gameNotation = gameNotation;
+}

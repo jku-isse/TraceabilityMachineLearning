@@ -1,0 +1,3 @@
+public void setHCPzip(String zip) {
+    this.hcpZip = zip;
+}

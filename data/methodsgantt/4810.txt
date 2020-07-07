@@ -1,0 +1,4 @@
+public TimeUnitDateFrameableImpl(String name, TimeUnitGraph timeUnitGraph, TimeUnit atomUnit, DateFrameable framer) {
+    super(name, timeUnitGraph, atomUnit);
+    myFramer = framer;
+}

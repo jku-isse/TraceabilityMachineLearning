@@ -1,0 +1,3 @@
+public String getTopicalNotes() {
+    return topicalNotes;
+}

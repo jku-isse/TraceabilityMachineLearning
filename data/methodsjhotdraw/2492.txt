@@ -1,0 +1,3 @@
+public static Locator east() {
+    return new RelativeDecoratorLocator(1.0, 0.5);
+}

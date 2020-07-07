@@ -1,0 +1,4 @@
+public Dimension getPreferredScrollableViewportSize() {
+    // System.out.println("EditorViewport: "+editor.getPreferredScrollableViewportSize());
+    return editor.getPreferredScrollableViewportSize();
+}

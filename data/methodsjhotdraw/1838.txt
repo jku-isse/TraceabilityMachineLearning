@@ -1,0 +1,7 @@
+/**
+ * Returns the index of the specified figure.
+ *
+ * Returns -1 if the Figure is not directly contained in this Drawing, for
+ * example if the Figure is a child of a CompositeFigure.
+ */
+int indexOf(Figure figure);

@@ -1,0 +1,8 @@
+/**
+ * Test, if this ply is equal to another ply.
+ *
+ * @param ply
+ * 		The other ply.
+ * @return true, if the 2 plies are equal. False otherwise.
+ */
+boolean equals(Ply ply);

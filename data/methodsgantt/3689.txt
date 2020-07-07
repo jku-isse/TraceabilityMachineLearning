@@ -1,0 +1,18 @@
+/**
+ *
+ *
+ * @see net.sourceforge.ganttproject.parser.TagHandler#startElement(String,
+String, String, Attributes)
+ */
+public void startElement(String namespaceURI, String sName, String qName, Attributes attrs) {
+    if (qName.equals("resource")) {
+        loadResource(attrs);
+    }
+    if ("custom-property".equals(qName)) {
+        assert (myCurrentResource) != null;
+        loadCustomProperty(attrs);
+    }
+    if ("custom-property-definition".equals(qName)) {
+        loadCustomPropertyDefinition(attrs);
+    }
+}

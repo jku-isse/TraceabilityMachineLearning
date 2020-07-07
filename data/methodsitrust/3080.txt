@@ -1,0 +1,31 @@
+/**
+ * Perform the query.
+ *
+ * @param sortField
+ * 		The pseudo-field name in which to sort.
+ * @param dir
+ * 		The direction of the desired sort (ascending or
+ * 		descending)
+ * @return A list of VerboseReferralBeans.
+ * @throws DBException
+ * 		
+ */
+protected List<VerboseReferralBean> doquery(String sortField, SortDirection dir) throws DBException {
+    String stmt = "SELECT " + ((((((((((((((("CONCAT(psender.firstName, ,psender.lastName) AS senderName, " + "CONCAT(preceiver.firstName, ,preceiver.lastName) AS receiverName, ") + "referrals.*, ") + "officevisits.visitDate, ") + "CONCAT(patients.firstName, ,patients.lastName) AS patientName ") + "FROM ") + "referrals, ") + "personnel AS psender, ") + "personnel AS preceiver, ") + "patients, ") + "officevisits ") + "WHERE ") + "referrals.SenderID=psender.mid ") + "AND referrals.ReceiverID=preceiver.mid ") + "AND referrals.PatientID=patients.mid ") + "AND referrals.ovid=officevisits.id ");
+    stmt += String.format("AND %s = ? ", getUserField());
+    stmt += buildSort(sortField, dir);
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(stmt);
+        ps.setLong(1, getUserId());
+        ResultSet rs = ps.executeQuery();
+        return verboseLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

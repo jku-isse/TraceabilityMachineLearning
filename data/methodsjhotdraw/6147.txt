@@ -1,0 +1,5 @@
+public void setLineWrap(boolean newValue) {
+    isLineWrap = newValue;
+    editor.revalidate();
+    editor.repaint();
+}

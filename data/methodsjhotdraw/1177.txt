@@ -1,0 +1,11 @@
+protected void drawFill(Graphics2D g) {
+    if ((isClosed()) || (AttributeKeys.FILL_OPEN_PATH.get(this))) {
+        double grow = AttributeKeys.getPerpendicularFillGrowth(this);
+        if (grow == 0.0) {
+            g.fill(path);
+        } else {
+            GrowStroke gs = new GrowStroke(((float) (grow)), ((float) ((AttributeKeys.getStrokeTotalWidth(this)) * (AttributeKeys.STROKE_MITER_LIMIT.get(this)))));
+            g.fill(gs.createStrokedShape(path));
+        }
+    }
+}

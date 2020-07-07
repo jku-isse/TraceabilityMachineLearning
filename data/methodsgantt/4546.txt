@@ -1,0 +1,21 @@
+/**
+ * Returns the earliest start date.
+ *
+ * @return The earliest start date.
+ */
+public Date getEarliestStart() {
+    Date res = null;
+    Iterator it = selectedTasks.iterator();
+    while (it.hasNext()) {
+        Task task = ((Task) (it.next()));
+        Date d = task.getStart().getTime();
+        if (res == null) {
+            res = d;
+            continue;
+        }
+        if (d.before(res))
+            res = d;
+
+    } 
+    return res;
+}

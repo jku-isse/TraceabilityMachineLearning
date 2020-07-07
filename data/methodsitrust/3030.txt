@@ -1,0 +1,27 @@
+/**
+ * Returns all personnel of specified specialty from the specified hospital.
+ *
+ * @param hosid,
+ * 		the ID of the Hospital to get personnel from
+ * @param specialty,
+ * 		the type of specialty to search for
+ * @return A java.util.List of PersonnelBeans.
+ * @throws DBException
+ * 		
+ */
+public List<PersonnelBean> getPersonnelFromHospital(String hosid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM hcpassignedhos hah inner join personnel p where hah.hosID = ? and hah.HCPID = p.MID and p.role = hcp");
+        ps.setString(1, hosid);
+        ResultSet rs = ps.executeQuery();
+        return personnelLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

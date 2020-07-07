@@ -1,0 +1,6 @@
+public void testGetPatient2() throws Exception {
+    List<PrescriptionBean> list = patientDAO.getCurrentPrescriptions(2L);
+    PrescriptionBean first = list.get(0);
+    assertEquals("Take twice daily", first.getInstructions());
+    assertEquals("10/11/2020", first.getEndDateStr());
+}

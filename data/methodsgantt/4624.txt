@@ -1,0 +1,25 @@
+public SearchKey(int type, TaskDependencyImpl taskDependency) {
+    myType = type;
+    Task firstTask;
+    Task secondTask;
+    switch (type) {
+        case SearchKey.DEPENDANT :
+            {
+                firstTask = taskDependency.getDependant();
+                secondTask = taskDependency.getDependee();
+                break;
+            }
+        case SearchKey.DEPENDEE :
+            {
+                firstTask = taskDependency.getDependee();
+                secondTask = taskDependency.getDependant();
+                break;
+            }
+        default :
+            {
+                throw new RuntimeException(("Invalid type=" + type));
+            }
+    }
+    myFirstTaskID = firstTask.getTaskID();
+    mySecondTaskID = secondTask.getTaskID();
+}

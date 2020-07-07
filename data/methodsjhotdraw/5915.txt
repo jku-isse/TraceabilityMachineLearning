@@ -1,0 +1,16 @@
+/**
+ * All other write methods delegate their work to here.
+ */
+public void write(OutputStream out, List<Figure> figures) throws IOException {
+    Rectangle2D.Double drawingRect = null;
+    for (Figure f : figures) {
+        if (drawingRect == null) {
+            drawingRect = f.getBounds();
+        } else {
+            drawingRect.add(f.getBounds());
+        }
+    }
+    AffineTransform drawingTransform = new AffineTransform();
+    drawingTransform.translate((-(Math.min(0, drawingRect.x))), (-(Math.min(0, drawingRect.y))));
+    write(out, figures, drawingTransform, new Dimension(((int) ((Math.abs(drawingRect.x)) + (drawingRect.width))), ((int) ((Math.abs(drawingRect.y)) + (drawingRect.height)))));
+}

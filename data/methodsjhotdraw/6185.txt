@@ -1,0 +1,9 @@
+/**
+ * Gets the left inset.
+ *
+ * @return the inset >= 0
+ */
+protected short getLeftInset() {
+    short left = super.getLeftInset();
+    return viewFactory.isLineNumbersVisible() ? ((short) (left + (NumberedParagraphView.NUMBERS_WIDTH))) : left;
+}

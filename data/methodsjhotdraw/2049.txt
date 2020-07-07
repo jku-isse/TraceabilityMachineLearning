@@ -1,0 +1,5 @@
+public void trackStart(Point anchor, int modifiersEx) {
+    TextHolderFigure textOwner = ((TextHolderFigure) (getOwner()));
+    oldSize = newSize = textOwner.getFontSize();
+    restoreData = textOwner.getAttributesRestoreData();
+}

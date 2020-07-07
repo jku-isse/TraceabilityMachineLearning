@@ -1,0 +1,3 @@
+protected void addPage(WizardPage page) {
+    myPages.add(page);
+}

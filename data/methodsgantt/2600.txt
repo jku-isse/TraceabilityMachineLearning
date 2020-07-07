@@ -1,0 +1,11 @@
+/**
+ * Fill the content of the central label *
+ */
+private void changeDate(GregorianCalendar newDate) {
+    boolean differentMonth = ((ddd.date.get(Calendar.MONTH)) != (newDate.get(Calendar.MONTH))) || ((ddd.date.get(Calendar.YEAR)) != (newDate.get(Calendar.YEAR)));
+    ddd.date.setTime(newDate.getTime());
+    if (differentMonth) {
+        jtDate.setValue(ddd.date.getTime());
+        ddd.repaint();
+    }
+}

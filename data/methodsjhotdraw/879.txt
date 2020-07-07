@@ -1,0 +1,4 @@
+/**
+ * Sets the location of the connectableConnector point.
+ */
+protected abstract void setLocation(Point2D.Double p);

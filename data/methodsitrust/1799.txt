@@ -1,0 +1,3 @@
+public void setVisitDateStr(String visitDate) {
+    this.visitDateStr = visitDate;
+}

@@ -1,0 +1,15 @@
+public void findInside(Rectangle2D.Double r, HashSet<T> result) {
+    if (bounds.intersects(r)) {
+        for (Map.Entry<T, Rectangle2D.Double> entry : objects.entrySet()) {
+            if (r.contains(entry.getValue())) {
+                result.add(entry.getKey());
+            }
+        }
+        if (!(isLeaf())) {
+            northWest.findInside(r, result);
+            northEast.findInside(r, result);
+            southWest.findInside(r, result);
+            southEast.findInside(r, result);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+public void testUpdateWardRoom() {
+    WardRoomBean wb = new WardRoomBean(0, 0, 0, "name1", "status");
+    try {
+        assertEquals(0, wd1.updateWardRoom(wb));
+    } catch (DBException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.updateWardRoom(wb);
+        fail();
+    } catch (Exception e) {
+    }
+}

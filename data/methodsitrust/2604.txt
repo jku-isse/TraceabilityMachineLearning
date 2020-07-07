@@ -1,0 +1,8 @@
+public void testSetSessionTimeoutException() throws Exception {
+    try {
+        evilDAO.setSessionTimeoutMins(0);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertSame(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param dosage
+ * 		the dosage to set
+ */
+public void setDosage(String dosage) {
+    this.dosage = dosage;
+}

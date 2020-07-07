@@ -1,0 +1,8 @@
+/**
+ * Get the remaining time in seconds.
+ *
+ * @return The remaining time in seconds.
+ */
+public int getRemainingTime() {
+    return ((int) ((_time) / 1000L));
+}

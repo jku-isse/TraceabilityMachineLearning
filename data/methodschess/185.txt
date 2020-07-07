@@ -1,0 +1,9 @@
+/**
+ * Set the number of analyzed boards.
+ *
+ * @param analyzedBoards
+ * 		The new number of analyzed boards.
+ */
+public final void setAnalyzedBoards(long analyzedBoards) {
+    _analyzedBoards = analyzedBoards;
+}

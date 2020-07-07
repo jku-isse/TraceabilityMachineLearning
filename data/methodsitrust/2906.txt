@@ -1,0 +1,26 @@
+/**
+ * Returns a list of all health records for a particular patient
+ *
+ * @param mid
+ * 		The MID of the patient to look up.
+ * @return A java.util.List of HealthRecords.
+ * @throws DBException
+ * 		
+ */
+public List<HealthRecord> getAllHealthRecords(long mid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("SELECT * FROM personalhealthinformation " + "WHERE PatientID=? ORDER BY ASOFDATE DESC"));
+        ps.setLong(1, mid);
+        ResultSet rs;
+        rs = ps.executeQuery();
+        return loader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

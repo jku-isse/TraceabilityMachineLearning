@@ -1,0 +1,3 @@
+public boolean isMilestone() {
+    return isMilestone;
+}

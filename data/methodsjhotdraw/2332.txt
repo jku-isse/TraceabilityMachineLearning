@@ -1,0 +1,3 @@
+private ConnectionHandler(LineConnectionFigure owner) {
+    this.owner = owner;
+}

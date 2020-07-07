@@ -1,0 +1,5 @@
+/**
+ * Sets the scale factor of the drawing view.
+ * This is a bound property.
+ */
+public void setScaleFactor(double newValue);

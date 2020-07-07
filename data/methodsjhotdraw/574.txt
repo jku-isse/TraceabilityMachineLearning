@@ -1,0 +1,13 @@
+/**
+ * Unconfigures a JSlider from this AbstractColorSystem.
+ */
+public void unconfigureSlider(JSlider slider) {
+    if ((slider.getClientProperty("colorSliderModel")) == (this)) {
+        // XXX - This creates a NullPointerException ??
+        // slider.setUI((SliderUI) UIManager.getUI(slider));
+        slider.setModel(new DefaultBoundedRangeModel());
+        slider.putClientProperty("colorSliderModel", null);
+        slider.putClientProperty("colorComponentIndex", null);
+        removeColorSlider(slider);
+    }
+}

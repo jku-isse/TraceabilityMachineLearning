@@ -1,0 +1,76 @@
+// Input methods
+/**
+ * as the name indicated, it will not replace the original GanttTask in the
+ * Tree.
+ */
+public Task[] getReturnTask() {
+    GanttTask[] returnTask = new GanttTask[selectedTasks.length];
+    for (int i = 0; i < (selectedTasks.length); i++) {
+        if (myAllocationsPanel[0].getTableModel().isChanged()) {
+            if (i != 0)
+                copyValues(myAllocationsPanel[0].getTableModel(), myAllocationsPanel[i].getTableModel());
+
+        }
+        myAllocationsPanel[i].getTableModel().commit();
+        returnTask[i] = selectedTasks[i];
+        // returnTask.setTaskID(selectedTask.getTaskID());
+        TaskMutator mutator = returnTask[i].createMutator();
+        if (onlyOneTask) {
+            mutator.setName(getTaskName());// getName()
+
+            mutator.setProjectTask(false);
+        }
+        if (((this.taskWebLink) != null) && (!(this.taskWebLink.equals(getWebLink()))))
+            returnTask[i].setWebLink(getWebLink());
+        // getName()
+
+        if ((mileStoneCheckBox1) != null) {
+            if ((this.taskIsMilestone) != (isBilan()))
+                mutator.setMilestone(isBilan());
+
+        } else
+            if ((projectTaskCheckBox1) != null) {
+                if ((this.taskIsProjectTask) != (isProjectTask()))
+                    mutator.setProjectTask(isProjectTask());
+
+            }
+
+        if (!(this.taskStartDate.equals(getStart())))
+            mutator.setStart(getStart());
+
+        if (((((this.taskThirdDate) == null) && ((getThird()) != null)) || (((this.taskThirdDate) != null) && ((getThird()) == null))) || (((this.taskThirdDate) != null) && (!(this.taskThirdDate.equals(getThird())))))
+            mutator.setThird(getThird(), getThirdDateConstraint());
+
+        if ((getLength()) > 0) {
+            mutator.setDuration(returnTask[i].getManager().createLength(getLength()));
+        }
+        if (!(this.taskNotes.equals(getNotes())))
+            returnTask[i].setNotes(getNotes());
+
+        if ((this.taskCompletionPercentage) != (getPercentComplete()))
+            mutator.setCompletionPercentage(getPercentComplete());
+
+        if ((this.taskPriority) != (getPriority()))
+            returnTask[i].setPriority(getPriority());
+
+        // if (this.taskIsStartFixed != isStartFixed)
+        // returnTask[i].setStartFixed(isStartFixed);
+        // if (this.taskIsFinishFixed != isFinishFixed)
+        // returnTask[i].setFinishFixed(isFinishFixed);
+        if (isColorChanged)
+            returnTask[i].setColor(colorButton.getBackground());
+
+        if ((((this.taskShape) == null) && ((shapeComboBox.getSelectedIndex()) != 0)) || (((this.taskShape) != null) && (!(this.taskShape.equals(((ShapePaint) (shapeComboBox.getSelectedPaint())))))))
+            returnTask[i].setShape(new ShapePaint(((ShapePaint) (shapeComboBox.getSelectedPaint())), Color.white, returnTask[i].getColor()));
+
+        if ((returnTask[i].getShape()) != null)
+            returnTask[i].setShape(new ShapePaint(returnTask[i].getShape(), Color.white, returnTask[i].getColor()));
+
+        mutator.commit();
+        if (onlyOneTask) {
+            myDependenciesPanel.getTableModel().commit();
+        }
+        returnTask[i].applyThirdDateConstraint();
+    }
+    return returnTask;
+}

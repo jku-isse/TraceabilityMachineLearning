@@ -1,0 +1,18 @@
+/**
+ * Creates an EditPatientInstructionsAction for an existing office visit.
+ *
+ * @param factory
+ * 		The DAO Factory.
+ * @param hcpid
+ * 		The HCP id.
+ * @param pidString
+ * 		The patient id as a string.
+ * @param ovIDString
+ * 		The office visit as a string.
+ * @throws iTrustException
+ * 		
+ */
+public EditPatientInstructionsAction(DAOFactory factory, long hcpid, String pidString, String ovIDString) throws iTrustException {
+    super(factory, hcpid, pidString, ovIDString);
+    instructionsDAO = factory.getPatientInstructionsDAO();
+}

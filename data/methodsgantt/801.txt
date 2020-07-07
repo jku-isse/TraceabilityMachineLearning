@@ -1,0 +1,20 @@
+public void cpAllDependencies(DefaultMutableTreeNode[] cdmtn) {
+    // to get all the dependencies who need to be paste.
+    cpDependencies = new ArrayList();
+    allNodes = new ArrayList();
+    for (int i = 0; i < (cdmtn.length); i++) {
+        getAllNodes(cdmtn[i]);
+    }
+    TaskDependency[] dependencies = getTaskManager().getDependencyCollection().getDependencies();
+    for (int i = 0; i < (dependencies.length); i++) {
+        Task dependant = dependencies[i].getDependant();
+        Task dependee = dependencies[i].getDependee();
+        for (int j = 0; j < (allNodes.size()); j++) {
+            for (int k = 0; k < (allNodes.size()); k++)
+                if ((((Task) (((DefaultMutableTreeNode) (allNodes.get(j))).getUserObject())).equals(dependant)) && (((Task) (((DefaultMutableTreeNode) (allNodes.get(k))).getUserObject())).equals(dependee))) {
+                    cpDependencies.add(dependencies[i]);
+                }
+
+        }
+    }
+}

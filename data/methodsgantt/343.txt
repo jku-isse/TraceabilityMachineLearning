@@ -1,0 +1,6 @@
+public void addOptionGroups(GPOptionGroup[] optionGroups) {
+    for (int i = 0; i < (optionGroups.length); i++) {
+        GPOptionGroup nextGroup = optionGroups[i];
+        addOptions(nextGroup);
+    }
+}

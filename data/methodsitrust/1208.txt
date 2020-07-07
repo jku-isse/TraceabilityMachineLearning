@@ -1,0 +1,17 @@
+/**
+ * Get a map in which to lookup HCP names from an HCP id.
+ *
+ * @return A map which associated HCP ids with their names.
+ * @throws iTrustException
+ * 		
+ */
+public Map<Long, String> getHCPNameLookup() throws iTrustException {
+    HashMap<Long, String> map = new HashMap<Long, String>();
+    List<OfficeVisitBean> ovisits = ovDAO.getAllOfficeVisits(getPid());
+    for (OfficeVisitBean ovisit : ovisits) {
+        if (!(map.containsKey(ovisit.getHcpID()))) {
+            map.put(ovisit.getHcpID(), personnelDAO.getName(ovisit.getHcpID()));
+        }
+    }
+    return map;
+}

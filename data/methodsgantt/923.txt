@@ -1,0 +1,13 @@
+public void customColumsChange(CustomColumEvent event) {
+    switch (event.getType()) {
+        case CustomColumEvent.EVENT_ADD :
+            addNewCustomColumn(event.getColumn());
+            break;
+        case CustomColumEvent.EVENT_REMOVE :
+            deleteCustomColumn(event.getColumn());
+            break;
+        case CustomColumEvent.EVENT_RENAME :
+            renameCustomcolumn(event.getOldName(), event.getColName());
+            break;
+    }
+}

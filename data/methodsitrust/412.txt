@@ -1,0 +1,24 @@
+/**
+ * Creates and e-mail to inform the patient that their information has been updated.
+ *
+ * @return the email with the notice
+ * @throws DBException
+ * 		
+ */
+private Email makeEmail() throws DBException {
+    Email email = new Email();
+    List<PatientBean> reps = patientDAO.getRepresenting(pid);
+    PatientBean pb = patientDAO.getPatient(pid);
+    List<String> toAddrs = new ArrayList<String>();
+    toAddrs.add(pb.getEmail());
+    for (PatientBean r : reps) {
+        toAddrs.add(r.getEmail());
+    }
+    email.setFrom("no-reply@itrust.com");
+    email.setToList(toAddrs);// patient and personal representative
+
+    email.setSubject(String.format("Patient Information Updated"));
+    email.setBody(((("Dear " + (pb.getFullName())) + ",
+	Your patient record information has been updated. ") + "Please login to iTrust to see who has viewed your records."));
+    return email;
+}

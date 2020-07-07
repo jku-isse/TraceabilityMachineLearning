@@ -1,0 +1,3 @@
+boolean isCommited() {
+    return isCommited;
+}

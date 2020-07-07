@@ -1,0 +1,1 @@
+void selectionChanged(List currentSelection);

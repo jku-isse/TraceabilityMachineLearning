@@ -1,0 +1,9 @@
+public int compareDocumentOrder(Task task1, Task task2) {
+    // DefaultMutableTreeNode node1 = (DefaultMutableTreeNode) myTask2treeNode.get(task1);
+    // DefaultMutableTreeNode node2 = (DefaultMutableTreeNode) myTask2treeNode.get(task2);
+    // int row1 = myTree.getJTree().getRowForPath(new TreePath(node1.getPath()));
+    // int row2 = myTree.getJTree().getRowForPath(new TreePath(node2.getPath()));
+    Integer index1 = ((Integer) (myTask2index.get(task1)));
+    Integer index2 = ((Integer) (myTask2index.get(task2)));
+    return (index1.intValue()) - (index2.intValue());
+}

@@ -1,0 +1,48 @@
+/**
+ * Insert survey data into database.
+ *
+ * @param surveyBean
+ * 		The Bean representing the users responses which will be inserted.
+ * @param date
+ * 		The date the survey was completed.
+ */
+public void addCompletedSurvey(SurveyBean surveyBean, Date date) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO ovsurvey (VisitID, SurveyDate) VALUES (?,?)");
+        ps.setLong(1, surveyBean.getVisitID());
+        ps.setTimestamp(2, new Timestamp(date.getTime()));
+        ps.executeUpdate();
+        if ((surveyBean.getWaitingRoomMinutes()) > 0) {
+            ps = conn.prepareStatement("update ovsurvey set WaitingRoomMinutes = ? where VisitID = ?");
+            ps.setFloat(1, surveyBean.getWaitingRoomMinutes());
+            ps.setLong(2, surveyBean.getVisitID());
+            ps.executeUpdate();
+        }
+        if ((surveyBean.getExamRoomMinutes()) > 0) {
+            ps = conn.prepareStatement("update ovsurvey set ExamRoomMinutes = ? where VisitID = ?");
+            ps.setFloat(1, surveyBean.getExamRoomMinutes());
+            ps.setLong(2, surveyBean.getVisitID());
+            ps.executeUpdate();
+        }
+        if ((surveyBean.getVisitSatisfaction()) > 0) {
+            ps = conn.prepareStatement("update ovsurvey set VisitSatisfaction = ? where VisitID = ?");
+            ps.setFloat(1, surveyBean.getVisitSatisfaction());
+            ps.setLong(2, surveyBean.getVisitID());
+            ps.executeUpdate();
+        }
+        if ((surveyBean.getTreatmentSatisfaction()) > 0) {
+            ps = conn.prepareStatement("update ovsurvey set TreatmentSatisfaction = ? where VisitID = ?");
+            ps.setFloat(1, surveyBean.getTreatmentSatisfaction());
+            ps.setLong(2, surveyBean.getVisitID());
+            ps.executeUpdate();
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

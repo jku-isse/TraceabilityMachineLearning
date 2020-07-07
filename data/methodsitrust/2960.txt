@@ -1,0 +1,20 @@
+/**
+ * Gets all the messages from a certain user MID.
+ *
+ * @param mid
+ * 		The MID of the user to be looked up.
+ * @return A java.util.List of MessageBeans.
+ * @throws SQLException
+ * 		
+ */
+public List<MessageBean> getMessagesFrom(long mid) throws SQLException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    conn = factory.getConnection();
+    ps = conn.prepareStatement("SELECT * FROM message WHERE from_id = ? ORDER BY sent_date DESC");
+    ps.setLong(1, mid);
+    ResultSet rs = ps.executeQuery();
+    List<MessageBean> mbList = this.mbLoader.loadList(rs);
+    DBUtil.closeConnection(conn, ps);
+    return mbList;
+}

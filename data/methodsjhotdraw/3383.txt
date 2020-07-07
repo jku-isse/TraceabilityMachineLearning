@@ -1,0 +1,7 @@
+/**
+ * Convenience method for getting a single coordinate of a control point.
+ */
+public Point2D.Double get(int index, int coord) {
+    BezierPath.Node c = get(index);
+    return new Point2D.Double(c.x[coord], c.y[coord]);
+}

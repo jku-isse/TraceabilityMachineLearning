@@ -1,0 +1,8 @@
+/**
+ * Writes the contents of the DOMOutput into the specified output stream.
+ */
+public void save(OutputStream out) throws IOException {
+    Writer w = new OutputStreamWriter(out, "UTF8");
+    save(w);
+    w.flush();
+}

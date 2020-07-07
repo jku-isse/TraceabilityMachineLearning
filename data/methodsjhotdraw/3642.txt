@@ -1,0 +1,12 @@
+/**
+ * Attaches the FigureAttributeEditorHandler to the specified AttributeEditor.
+ */
+public void setAttributeEditor(AttributeEditor<T> newValue) {
+    if ((attributeEditor) != null) {
+        attributeEditor.removePropertyChangeListener(eventHandler);
+    }
+    this.attributeEditor = newValue;
+    if ((attributeEditor) != null) {
+        attributeEditor.addPropertyChangeListener(eventHandler);
+    }
+}

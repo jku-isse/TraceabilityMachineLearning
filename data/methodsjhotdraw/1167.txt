@@ -1,0 +1,10 @@
+/**
+ * Creates an empty <code>BezierFigure</code>, for example without any
+ * <code>BezierPath.Node</code>s.
+ * The BezierFigure will not draw anything, if at least two nodes
+ * are added to it. The <code>BezierPath</code> created by this constructor
+ * is not closed.
+ */
+public BezierFigure() {
+    this(false);
+}

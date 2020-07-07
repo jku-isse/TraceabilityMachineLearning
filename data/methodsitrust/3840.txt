@@ -1,0 +1,37 @@
+/* Authenticate HCP
+MID 9000000000
+Password: pw
+Choose Document Office Visit
+Enter Patient MID 2 and confirm
+Choose to document new office vist.
+Enter Fields:
+Date: 2005-11-2
+Notes: Great patient!
+ */
+public void testDocumentOfficeVisit1() throws Exception {
+    // login HCP
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // choose patient 2
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // click Yes, Document Office Visit
+    WebForm form = wr.getForms()[0];
+    form.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    // add a new office visit
+    form = wr.getFormWithID("mainForm");
+    form.setParameter("visitDate", "11/02/2005");
+    form.setParameter("notes", "Great Patient!");
+    form.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Information Successfully Updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_CREATE, 9000000000L, 2L, "Office visit");
+}

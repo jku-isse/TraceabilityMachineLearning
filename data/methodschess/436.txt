@@ -1,0 +1,7 @@
+/**
+ * Set the piece, that is moved with this ply.
+ *
+ * @param ply
+ * 		The moved ply.
+ */
+void setPiece(Piece piece);

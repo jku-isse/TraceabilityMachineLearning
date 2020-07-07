@@ -1,0 +1,12 @@
+/**
+ * Checks if a Point2D.Double is inside the figure.
+ */
+public boolean contains(Point2D.Double p) {
+    Shape triangle = getBezierPath();
+    double grow = AttributeKeys.getPerpendicularHitGrowth(this);
+    if (grow != 0.0) {
+        GrowStroke gs = new GrowStroke(((float) (grow)), ((float) ((AttributeKeys.getStrokeTotalWidth(this)) * (AttributeKeys.STROKE_MITER_LIMIT.get(this)))));
+        triangle = gs.createStrokedShape(triangle);
+    }
+    return triangle.contains(p);
+}

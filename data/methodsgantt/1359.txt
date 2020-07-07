@@ -1,0 +1,3 @@
+protected ResourceManager getManager() {
+    return myManager;
+}

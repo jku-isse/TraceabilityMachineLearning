@@ -1,0 +1,24 @@
+/**
+ *
+ *
+ * @see java.awt.event.ActionListener#actionPerformed(ActionEvent)
+ */
+public void actionPerformed(ActionEvent event) {
+    final File file = getResourcesFile();
+    if (file != null) {
+        Mediator.getUndoManager().undoableEdit("Import Resources", new Runnable() {
+            public void run() {
+                GanttXMLOpen loader = new GanttXMLOpen(myTaskManager);
+                ResourceTagHandler tagHandler = new ResourceTagHandler(myResourceManager, myRoleManager, myproject.getResourceCustomPropertyManager());
+                DependencyTagHandler dependencyHandler = new DependencyTagHandler(loader.getContext(), myTaskManager, myproject.getUIFacade());
+                RoleTagHandler rolesHandler = new RoleTagHandler(net.sourceforge.ganttproject.roles.RoleManager.Access.getInstance());
+                loader.addTagHandler(tagHandler);
+                loader.addTagHandler(dependencyHandler);
+                loader.addTagHandler(rolesHandler);
+                loader.load(file);
+                // myproject.setQuickSave (true);
+                // myproject.quickSave ("Import Resources");
+            }
+        });
+    }
+}

@@ -1,0 +1,10 @@
+public JComponent buildPage(GPOptionGroup[] optionGroups, String pageID) {
+    JPanel result = new JPanel(new BorderLayout());
+    result.setBorder(new EmptyBorder(0, 5, 0, 5));
+    TopPanel topPanel = new TopPanel(myi18n.getPageTitle(pageID), myi18n.getPageDescription(pageID));
+    topPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+    result.add(topPanel, BorderLayout.NORTH);
+    JComponent planePage = buildPlanePage(optionGroups);
+    result.add(planePage, BorderLayout.CENTER);
+    return result;
+}

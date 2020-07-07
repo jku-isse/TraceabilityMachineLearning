@@ -1,0 +1,9 @@
+/**
+ * Registers an object for notification.
+ *
+ * @param listener
+ * 		The object to be registered.
+ */
+public void addEngineStatusListener(EngineStatusListener listener) {
+    listeners.add(listener);
+}

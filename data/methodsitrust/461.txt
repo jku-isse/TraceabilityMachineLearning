@@ -1,0 +1,15 @@
+/**
+ *
+ *
+ * @return A list of all prescriptions for this office visit.  (If the
+office visit is unsaved, this returns an empty list.)
+ * @throws DBException
+ * 		
+ */
+public List<PrescriptionBean> getPrescriptions() throws DBException {
+    if (isUnsaved()) {
+        return new ArrayList<PrescriptionBean>();
+    } else {
+        return psDAO.getList(getOvID());
+    }
+}

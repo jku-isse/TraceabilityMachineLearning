@@ -1,0 +1,10 @@
+@Override
+public Rectangle2D getBounds2D() {
+    if ((npoints) == 0) {
+        return new Rectangle2D.Double();
+    }
+    if ((bounds) == null) {
+        calculateBounds(xpoints, ypoints, npoints);
+    }
+    return ((Rectangle2D) (bounds.clone()));
+}

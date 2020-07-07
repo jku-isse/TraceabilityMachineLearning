@@ -1,0 +1,3 @@
+public Point getLocation() {
+    return view.drawingToView(locator.locate(getOwner()));
+}

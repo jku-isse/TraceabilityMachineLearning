@@ -1,0 +1,7 @@
+public Date getEndDate() {
+    TaskLength projectLength = getTaskManager().getProjectLength();
+    GanttCalendar pstart = new GanttCalendar(getTaskManager().getProjectStart());
+    pstart.add(((int) (projectLength.getLength())));
+    GanttCalendar end = pstart.Clone();
+    return end.getTime();
+}

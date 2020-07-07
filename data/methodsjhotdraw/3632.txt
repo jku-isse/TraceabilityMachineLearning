@@ -1,0 +1,3 @@
+public AbstractAttributeEditorHandler(AttributeKey<T> key, AttributeEditor<T> attributeEditor, DrawingEditor drawingEditor) {
+    this(key, attributeEditor, drawingEditor, true);
+}

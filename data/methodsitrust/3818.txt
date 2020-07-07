@@ -1,0 +1,25 @@
+/* AMEX stands for American Express. */
+public void testGoodAmex() throws Exception {
+    // login patient 2
+    WebConversation wc = login("1", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 1L, 0L, "");
+    // click on My Demographics
+    wr = wr.getLinkWith("My Demographics").click();
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_VIEW, 1L, 1L, "");
+    WebForm form = wr.getForms()[0];
+    form.setParameter("creditCardType", "AMEX");
+    form.setParameter("creditCardNumber", "343570480641495");
+    wr = form.submit();
+    assertTrue(wr.getText().contains("Information Successfully Updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_EDIT, 1L, 1L, "");
+    form.setParameter("creditCardNumber", "377199947956764");
+    wr = form.submit();
+    assertTrue(wr.getText().contains("Information Successfully Updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_EDIT, 1L, 1L, "");
+    form.setParameter("creditCardNumber", "344558915054011");
+    wr = form.submit();
+    assertTrue(wr.getText().contains("Information Successfully Updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_EDIT, 1L, 1L, "");
+}

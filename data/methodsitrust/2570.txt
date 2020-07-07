@@ -1,0 +1,4 @@
+// For our special unit test - do not use unless you know what you are doing
+public ProductionConnectionDriver(InitialContext context) {
+    initialContext = context;
+}

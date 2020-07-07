@@ -1,0 +1,9 @@
+public void testOfficeVisitSubActions() throws Exception {
+    action = new ViewOfficeVisitAction(factory, 2L, "955");
+    assertEquals(1, action.getAllProcedures().size());
+    assertEquals(1, action.getDiagnoses().size());
+    assertEquals(0, action.getImmunizations().size());
+    assertEquals(2, action.getLabProcedures().size());
+    assertEquals(3, action.getPrescriptions().size());
+    assertEquals(1, action.getProcedures().size());
+}

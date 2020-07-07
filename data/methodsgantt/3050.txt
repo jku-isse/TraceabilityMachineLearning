@@ -1,0 +1,25 @@
+private Component createColorComponent(final ColorOption option) {
+    final JButton colorButton = new JButton();
+    Action action = new AbstractAction(myi18n.getColorButtonText(option)) {
+        public void actionPerformed(ActionEvent e) {
+            ActionListener onOkPressing = new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    Color color = OptionsPageBuilder.ourColorChooser.getColor();
+                    colorButton.setBackground(color);
+                    option.setValue(color);
+                }
+            };
+            ActionListener onCancelPressing = new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    // nothing to do for "Cancel"
+                }
+            };
+            JDialog dialog = JColorChooser.createDialog(myParentComponent, myi18n.getColorChooserTitle(option), true, OptionsPageBuilder.ourColorChooser, onOkPressing, onCancelPressing);
+            OptionsPageBuilder.ourColorChooser.setColor(colorButton.getBackground());
+            dialog.setVisible(true);
+        }
+    };
+    colorButton.setAction(action);
+    colorButton.setBackground(option.getValue());
+    return colorButton;
+}

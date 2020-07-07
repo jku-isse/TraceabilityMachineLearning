@@ -1,0 +1,6 @@
+public boolean hasData() {
+    if ((dsBean) != null) {
+        return true;
+    }
+    return false;
+}

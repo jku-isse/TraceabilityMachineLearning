@@ -1,0 +1,10 @@
+private Shape getHitShape() {
+    if ((cachedHitShape) == null) {
+        if (((AttributeKeys.FILL_COLOR.get(this)) != null) || ((SVGAttributeKeys.FILL_GRADIENT.get(this)) != null)) {
+            cachedHitShape = new GrowStroke((((float) (SVGAttributeKeys.getStrokeTotalWidth(this))) / 2.0F), ((float) (SVGAttributeKeys.getStrokeTotalMiterLimit(this)))).createStrokedShape(getTransformedShape());
+        } else {
+            cachedHitShape = SVGAttributeKeys.getHitStroke(this).createStrokedShape(getTransformedShape());
+        }
+    }
+    return cachedHitShape;
+}

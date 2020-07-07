@@ -1,0 +1,18 @@
+@Override
+public void setNode(int index, BezierPath.Node p) {
+    if ((index != 0) && (index != ((getNodeCount()) - 1))) {
+        if ((getStartConnector()) != null) {
+            Point2D.Double start = getStartConnector().findStart(this);
+            if (start != null) {
+                setStartPoint(start);
+            }
+        }
+        if ((getEndConnector()) != null) {
+            Point2D.Double end = getEndConnector().findEnd(this);
+            if (end != null) {
+                setEndPoint(end);
+            }
+        }
+    }
+    super.setNode(index, p);
+}

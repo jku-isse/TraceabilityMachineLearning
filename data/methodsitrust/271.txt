@@ -1,0 +1,4 @@
+public void deleteDiagnosis(DiagnosisBean bean) throws iTrustException {
+    verifySaved();
+    diagnosesDAO.remove(bean.getOvDiagnosisID());
+}

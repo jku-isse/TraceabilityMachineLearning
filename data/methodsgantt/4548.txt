@@ -1,0 +1,8 @@
+/**
+ * Returns the selected tasks list.
+ *
+ * @return The selected tasks list.
+ */
+public List getSelectedTasks() {
+    return Collections.unmodifiableList(selectedTasks);
+}

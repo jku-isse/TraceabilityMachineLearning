@@ -1,0 +1,3 @@
+public boolean isPropertiesPanelVisible() {
+    return propertiesPanel.isVisible();
+}

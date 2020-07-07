@@ -1,0 +1,12 @@
+/**
+ * Accessor for text area.
+ * This is used by Actions that need ot act on the text area of the View.
+ */
+public void select(int start, int end) {
+    editor.select(start, end);
+    try {
+        editor.scrollRectToVisible(editor.modelToView(start));
+    } catch (BadLocationException e) {
+        e.printStackTrace();
+    }
+}

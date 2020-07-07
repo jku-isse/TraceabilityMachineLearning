@@ -1,0 +1,3 @@
+public TextAreaCreationTool(TextHolderFigure prototype, Map<AttributeKey, Object> attributes) {
+    super(prototype, attributes);
+}

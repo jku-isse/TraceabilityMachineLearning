@@ -1,0 +1,6 @@
+public TaskDependency[] getDependencies(Task task) {
+    SearchKey fromKey = new RangeSearchFromKey(task);
+    SearchKey toKey = new RangeSearchToKey(task);
+    SortedMap submap = mySearchKey2dependency.subMap(fromKey, toKey);
+    return ((TaskDependency[]) (submap.values().toArray(new TaskDependency[0])));
+}

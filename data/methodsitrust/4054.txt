@@ -1,0 +1,24 @@
+public void testAddAdditionalDemographics2() throws Exception {
+    // Login
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Patient Information").click();
+    assertEquals("iTrust - Please Select a Patient", wr.getTitle());
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    wr = patientForm.submit();
+    assertTrue(wr.getText().contains("Patient Information"));
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_VIEW, 9000000000L, 2L, "");
+    WebForm editPatientForm = wr.getForms()[0];
+    editPatientForm.getScriptableObject().setParameterValue("spiritualPractices", "Sleeps in class");
+    wr = editPatientForm.submit();
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_EDIT, 9000000000L, 2L, "");
+    wr = wr.getLinkWith("PHR Information").click();
+    assertEquals("iTrust - Edit Personal Health Record", wr.getTitle());
+    WebTable table = wr.getTableStartingWith("Patient Information");
+    assertTrue(table.getCellAsText(8, 0).contains("Spiritual Practices:"));
+    assertTrue(table.getCellAsText(8, 1).contains("Sleeps in class"));
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_HEALTH_INFORMATION_VIEW, 9000000000L, 2L, "");
+}

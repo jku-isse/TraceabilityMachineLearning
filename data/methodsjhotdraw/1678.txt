@@ -1,0 +1,6 @@
+/**
+ * Converts view coordinates to drawing coordinates.
+ */
+public Point2D.Double viewToDrawing(Point p) {
+    return new Point2D.Double((((p.x) / (scaleFactor)) + (translate.x)), (((p.y) / (scaleFactor)) + (translate.y)));
+}

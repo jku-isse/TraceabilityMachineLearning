@@ -1,0 +1,7 @@
+/**
+ * Gets the current selection as a FigureSelection. A FigureSelection
+ * can be cut, copied, pasted.
+ */
+public Set<Figure> getSelectedFigures() {
+    return Collections.unmodifiableSet(selectedFigures);
+}

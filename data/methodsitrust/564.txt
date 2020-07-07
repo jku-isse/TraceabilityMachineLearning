@@ -1,0 +1,7 @@
+public void testFindExperts() {
+    List<HospitalBean> hospitals = new ArrayList<HospitalBean>();
+    HospitalBean realHospital = new HospitalBean();
+    hospitals.add(realHospital);
+    // Test a single result
+    assertTrue(((fea.findExperts(hospitals, "ob/gyn").size()) == 1));
+}

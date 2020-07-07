@@ -1,0 +1,8 @@
+/**
+ * Check, if this ply fragment is a capture.
+ *
+ * @return true, if this move is a capture.
+ */
+public final boolean isCapture() {
+    return _capture;
+}

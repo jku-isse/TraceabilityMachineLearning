@@ -1,0 +1,3 @@
+public Component buildPageComponent(IGanttProject project, UIFacade uiFacade) {
+    throw new UnsupportedOperationException();
+}

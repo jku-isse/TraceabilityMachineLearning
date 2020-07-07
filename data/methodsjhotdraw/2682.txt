@@ -1,0 +1,3 @@
+public StickyRectangleConnector(Figure owner) {
+    super(owner);
+}

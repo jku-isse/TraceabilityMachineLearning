@@ -1,0 +1,23 @@
+protected void paintSkewedTimeFrames(Graphics g) {
+    TimeUnit savedBottomUnit = myBottomUnit;
+    TimeUnit topUnit = getTopUnit();
+    setTopUnit(myBottomUnit);
+    myTimeFrames = null;
+    enableRenderers1();
+    TimeFrame[] timeFrames = getTimeFrames(null);
+    paintRegularTimeFrames(g, timeFrames);
+    Date exactStart = timeFrames[0].getStartDate();
+    // System.err.println("... done");
+    // System.err.println("[ChartModelImpl] rendering skewed frames. Top
+    // unit="+myTopUnit+" bottom unit="+myBottomUnit);
+    // System.err.println(" rendering top line");
+    myTimeFrames = null;
+    setTopUnit(topUnit);
+    myBottomUnit = topUnit;
+    enableRenderers2();
+    timeFrames = getTimeFrames(exactStart);
+    paintRegularTimeFrames(g, timeFrames);
+    myBottomUnit = savedBottomUnit;
+    // 
+    // System.err.println(" rendering bottom line");
+}

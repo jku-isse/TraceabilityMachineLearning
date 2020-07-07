@@ -1,0 +1,54 @@
+BigDog
+
+BigDog is a dynamically stable quadruped robot created in 2005 by Boston Dynamics with Foster-Miller, the NASA Jet Propulsion Laboratory, and the Harvard University Concord Field Station.[1] It was funded by DARPA, but the project was shelved after the BigDog was deemed too loud for combat.[2]
+
+History
+
+BigDog was funded by the Defense Advanced Research Projects Agency (DARPA) in the hopes that it will be able to serve as a robotic pack mule to accompany soldiers in terrain too rough for conventional vehicles. Instead of wheels or treads, BigDog uses four legs for movement, allowing it to move across surfaces that would defeat wheels. The legs contain a variety of sensors, including joint position and ground contact. BigDog also features a laser gyroscope and a stereo vision system.
+
+BigDog is 3 feet (0.91 m) long, stands 2.5 feet (0.76 m) tall, and weighs 240 pounds (110 kg), about the size of a small mule. It is capable of traversing difficult terrain, running at 4 miles per hour (6.4 km/h), carrying 340 pounds (150 kg), and climbing a 35 degree incline.[1] Locomotion is controlled by an onboard computer that receives input from the robot's various sensors. Navigation and balance are also managed by the control system.
+
+BigDog's walking pattern is controlled through four legs, each equipped with four low-friction hydraulic cylinder actuators that power the joints. "The BigDog robot, labelled as a military robot mule, has subsequently proven its potential worth in its ability to reduce load and remove that burden from a soldier's back."[citation needed]
+
+The BigDog project was headed by Dr. Martin Buehler, who, in 2012, received the Joseph F. Engelberger Award from the Robotics Industries Association for the work.[4] Dr. Buehler while previously a professor at McGill University, headed the robotics lab there, developing four-legged walking and running robots.[5]
+
+Built onto the actuators are sensors for joint position and force, and movement is ultimately controlled through an onboard computer which manages the sensors.
+
+Approximately 50 sensors are located on BigDog. These measure the attitude and acceleration of the body, motion and force of joint actuators as well as engine speed, temperature and hydraulic pressure inside the robot's internal engine. Low-level control, such as position and force of the joints, and high-level control such as velocity and altitude during locomotion, are both controlled through the onboard computer.
+
+BigDog was featured in episodes of Web Junk 20 and Hungry Beast, and in articles in New Scientist,[6] Popular Science, Popular Mechanics, and The Wall Street Journal.
+
+On March 18, 2008, Boston Dynamics released video footage of a new generation of BigDog known as AlphaDog.[7] The footage shows BigDog's ability to walk on icy terrain and recover its balance when kicked from the side.[8]
+
+The refined equivalent has been designed by Boston Dynamics to exceed the BigDog in terms of capabilities and use to dismounted soldiers.
+
+In February 2012, with further DARPA support, the militarized Legged Squad Support System (LS3) variant of BigDog demonstrated its capabilities during a hike over tough terrain.[citation needed]
+
+Starting in the summer of 2012, DARPA planned to complete the overall development of the system and refine its key capabilities in 18 months, ensuring its worth to dismounted warfighters before it is rolled out to squads operating in theatre. BigDog must be able to demonstrate its ability to complete a 20 mi (32 km) trek within 24 hours without refuelling while carrying a load of 400 lb (180 kg), whereas a refinement of its vision sensors will also be conducted.
+
+At the end of February 2013, Boston Dynamics released video footage of a modified BigDog with an arm. The arm can pick up objects and throw them. The robot is relying on its legs and torso to help power the motions of the arm. The news writer supposed it can lift weights around 50 pounds (23 kg).[9]
+
+Discontinuation
+
+At the end of December 2015, the BigDog project was discontinued. Despite hopes that it would one day work as a pack mule for US soldiers in the field, the petrol-powered engine was deemed too noisy for use in combat. A similar project for an all-electric robot named Spot was much quieter, but could only carry 40 pounds (18 kg). Both projects are no longer in progress.[10][2]
+
+Hardware
+
+BigDog is powered by a two-stroke, one-cylinder, 15-brake-horsepower (11 kW) go-kart engine operating at over 9,000 RPM. The engine drives a hydraulic pump, which in turn drives the hydraulic leg actuators. Each leg has four actuators (two for the hip joint, and one each for the knee and ankle joints), for a total of 16. Each actuator unit consists of a hydraulic cylinder, servo valve, position sensor, and force sensor.
+
+Onboard computing power is a ruggedized PC/104 board stack with a Pentium 4 class computer running QNX.[11]
+
+
+References
+
+1. "BigDog - The Most Advanced Rough-Terrain Robot on Earth". Boston Dynamics. Retrieved 2009-06-22.
+2. Degeler, Andrii. "Marines’ LS3 robotic mule is too loud for real-world combat". Ars Technica. Retrieved 2 January 2016.
+3. https://commons.wikimedia.org/wiki/File:DARPA_Strategic_Plan_%282007%29.pdf
+4. "2012 Engelberger Robotics Awards to be Presented to Richard Litt and Martin Buehler". Robotics Online. 2012-07-30.
+5. Quiazua, Nicolas and Corbeil, Laurent Bastien (November 26, 2012). "From the Lab to the Battlefield". McGill Daily.
+6. Hambling, David (3 March 2006). "Robotic 'pack mule' displays stunning reflexes". Robotic 'pack mule' displays stunning reflexes. The New Scientist. Retrieved 9 June 2015.
+7. DARPA’S LS3 AlphaDog begins outdoor testing
+8. Video of BigDog in action from Boston Dynamics
+9. "BigDog Throws Cinder Blocks with Huge Robotic Face-Arm" IEEE Spectrum, 28 February 2013.
+10. "Marine Corps Shelves Futuristic Robo-Mule Due to Noise Concerns" military.com, 22 December 2015.
+11. "BigDog Overview" (PDF). Boston Dynamics. November 22, 2008.

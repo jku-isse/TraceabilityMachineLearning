@@ -1,0 +1,24 @@
+/**
+ * Default constructor.
+ */
+public GanttStatusBar(JFrame mainFrame) {
+    super(new BorderLayout());
+    myMainFrame = mainFrame;
+    // pbp = new ProgressBarPanel();
+    message0 = new GanttStatusBar.MessagePanel(215, false);
+    message1 = new GanttStatusBar.MessagePanel(400, true);
+    message2 = new GanttStatusBar.MessagePanel(250, true);
+    myErrorNotificationPanel = new GanttStatusBar.ErrorNotificationPanel();
+    // myMainFrame.setGlassPane(pbp);
+    // pbp.setPreferredSize(new Dimension(160, 16));
+    // message1.setPreferredSize(new Dimension(360,25));
+    // message2.setPreferredSize(new Dimension(210,25));
+    // add(pbp, BorderLayout.WEST);
+    // add(message0, BorderLayout.WEST);
+    add(myErrorNotificationPanel, BorderLayout.WEST);
+    add(message1, BorderLayout.CENTER);
+    add(message2, BorderLayout.EAST);
+    message0.setText((("GanttProject.biz (" + (GanttProject.version)) + ")"));
+    // pbp.setValue(0);
+    setFirstText(GanttLanguage.getInstance().getText("welcome"), 500);
+}

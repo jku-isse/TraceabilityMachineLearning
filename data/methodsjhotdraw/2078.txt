@@ -1,0 +1,19 @@
+/**
+ * Return the draw area. This method is delegated to the
+ * encapsulated presentation figure.
+ */
+public Rectangle2D.Double getDrawingArea() {
+    Rectangle2D.Double r;
+    if ((getPresentationFigure()) != null) {
+        Rectangle2D.Double presentationBounds = getPresentationFigure().getDrawingArea();
+        r = super.getDrawingArea();
+        if (r.isEmpty()) {
+            r = presentationBounds;
+        } else {
+            r.add(presentationBounds);
+        }
+    } else {
+        r = super.getDrawingArea();
+    }
+    return r;
+}

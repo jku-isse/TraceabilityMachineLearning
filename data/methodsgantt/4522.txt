@@ -1,0 +1,8 @@
+/**
+ * Returns the completion percentage of the task.
+ *
+ * @return The completion percentage of the task.
+ */
+public int getCompletionPercentage() {
+    return task.getCompletionPercentage();
+}

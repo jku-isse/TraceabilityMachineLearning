@@ -1,0 +1,3 @@
+protected void processLeftButton(MouseEvent e) {
+    getImplementation().beginScrollViewInteraction(e);
+}

@@ -1,0 +1,7 @@
+// Constructors
+/**
+ * Create a new instance of this test.
+ */
+public PlyGeneratorTest6() {
+    super("A simple ply generator test for a bishop move f1-c4");
+}

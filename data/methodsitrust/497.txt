@@ -1,0 +1,52 @@
+/**
+ * Add a new referral to the database.  The id on the ReferralBean is
+ * ignored.
+ *
+ * @param bean
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+/* public void addReferral(ReferralBean bean) throws iTrustException {
+verifySaved();
+referralDAO.addReferral(bean);
+}
+ */
+/**
+ * Edit an existing referral.
+ *
+ * @param bean
+ * 		The bean to edit.
+ * @throws iTrustException
+ * 		
+ */
+/* public void editReferral(ReferralBean bean) throws iTrustException {
+verifySaved();
+referralDAO.editReferral(bean);
+}
+ */
+/**
+ * Delete an existing referral from the database.
+ *
+ * @param bean
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+/* public void deleteReferral(ReferralBean bean) throws iTrustException {
+verifySaved();
+referralDAO.removeReferral(bean.getId());
+}
+ */
+/**
+ * Get the patient name associated with the given referral.
+ *
+ * @param bean
+ * 		
+ * @return The patients name as a String.
+ * @throws iTrustException
+ * 		
+ */
+public String getPatientName(ReferralBean bean) throws iTrustException {
+    return patientDAO.getName(bean.getPatientID());
+}

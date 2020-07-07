@@ -1,0 +1,8 @@
+/**
+ * Get the size of a square.
+ *
+ * @return The size of a square as a int (since height and width are the same).
+ */
+public static final int getSquareSize() {
+    return ChessBoardRenderer2D._squareSize;
+}

@@ -1,0 +1,13 @@
+/**
+ * Gets the value of the attribute denoted by this AttributeKey from
+ * a Map.
+ *
+ * @param a
+ * 		A Map.
+ * @return The value of the attribute.
+ */
+@SuppressWarnings("unchecked")
+public T get(Map<AttributeKey, Object> a) {
+    T value = ((T) (a.get(this)));
+    return (value == null) && (!(isNullValueAllowed)) ? defaultValue : value;
+}

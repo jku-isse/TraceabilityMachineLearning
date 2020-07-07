@@ -1,0 +1,3 @@
+public String getToolTipText(Point2D.Double p) {
+    return null;
+}

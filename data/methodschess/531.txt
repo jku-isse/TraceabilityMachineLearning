@@ -1,0 +1,10 @@
+/**
+ * Set the name of the origin square.
+ *
+ * @param squareName
+ * 		The name of the origin square.
+ */
+public final void setOrigin(String squareName) {
+    // Create a new position implementation from the name and store it.
+    _origin = new PositionImpl(squareName);
+}

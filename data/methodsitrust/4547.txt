@@ -1,0 +1,3 @@
+public void removeValue(String arg0) {
+    throw new IllegalStateException("should not be hit!");
+}

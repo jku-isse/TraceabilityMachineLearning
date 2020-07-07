@@ -1,0 +1,8 @@
+/**
+ * Get the flag for a check.
+ *
+ * @return true, if the opponent is in check.
+ */
+public final boolean isCheck() {
+    return _check;
+}

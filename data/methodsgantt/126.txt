@@ -1,0 +1,13 @@
+protected GPTreeTableBase(IGanttProject project, TreeTableModel model) {
+    super(new JXTreeTable(model) {
+        protected boolean processKeyBinding(KeyStroke ks, KeyEvent e, int condition, boolean pressed) {
+            if ((e.isAltDown()) || (e.isControlDown())) {
+                putClientProperty("JTable.autoStartsEdit", Boolean.FALSE);
+            }
+            boolean result = super.processKeyBinding(ks, e, condition, pressed);
+            putClientProperty("JTable.autoStartsEdit", Boolean.TRUE);
+            return result;
+        }
+    });
+    myProject = project;
+}

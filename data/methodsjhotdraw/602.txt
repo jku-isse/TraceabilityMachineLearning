@@ -1,0 +1,3 @@
+public HSLHarmonicColorWheelImageProducer(ColorSystem sys, int w, int h) {
+    super(sys, w, h);
+}

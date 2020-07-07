@@ -1,0 +1,6 @@
+protected Point getColorLocation(CompositeColor c) {
+    Point p = colorWheelProducer.getColorLocation(c, (((getWidth()) - (wheelInsets.left)) - (wheelInsets.right)), (((getHeight()) - (wheelInsets.top)) - (wheelInsets.bottom)));
+    p.x += wheelInsets.left;
+    p.y += wheelInsets.top;
+    return p;
+}

@@ -1,0 +1,10 @@
+/**
+ * Returns a list of PatientBeans of all patients the currently logged in patient represents
+ *
+ * @return a list of PatientBeans of all patients the currently logged in patient represents
+ * @throws iTrustException
+ * 		
+ */
+public List<PatientBean> getRepresented() throws iTrustException {
+    return patientDAO.getRepresented(loggedInMID);
+}

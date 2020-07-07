@@ -1,0 +1,63 @@
+/**
+ * Brings up a sheet with a specified icon, where the initial
+ * choice is determined by the <code>initialValue</code> parameter and
+ * the number of choices is determined by the <code>optionType</code>
+ * parameter.
+ * <p>
+ * If <code>optionType</code> is <code>YES_NO_OPTION</code>,
+ * or <code>YES_NO_CANCEL_OPTION</code>
+ * and the <code>options</code> parameter is <code>null</code>,
+ * then the options are
+ * supplied by the look and feel.
+ * <p>
+ * The <code>messageType</code> parameter is primarily used to supply
+ * a default icon from the look and feel.
+ *
+ * @param parentComponent
+ * 		determines the <code>Frame</code>
+ * 		in which the dialog is displayed;  if
+ * 		<code>null</code>, or if the
+ * 		<code>parentComponent</code> has no
+ * 		<code>Frame</code>, the sheet is displayed as a dialog.
+ * @param message
+ * 		the <code>Object</code> to display
+ * @param optionType
+ * 		an integer designating the options available on the
+ * 		dialog: <code>YES_NO_OPTION</code>,
+ * 		or <code>YES_NO_CANCEL_OPTION</code>
+ * @param messageType
+ * 		an integer designating the kind of message this is,
+ * 		primarily used to determine the icon from the
+ * 		pluggable Look and Feel: <code>JOptionPane.ERROR_MESSAGE</code>,
+ * 		<code>JOptionPane.INFORMATION_MESSAGE</code>,
+ * 		<code>JOptionPane.WARNING_MESSAGE</code>,
+ * 		<code>JOptionPane.QUESTION_MESSAGE</code>,
+ * 		or <code>JOptionPane.PLAIN_MESSAGE</code>
+ * @param icon
+ * 		the icon to display in the dialog
+ * @param options
+ * 		an array of objects indicating the possible choices
+ * 		the user can make; if the objects are components, they
+ * 		are rendered properly; non-<code>String</code>
+ * 		objects are
+ * 		rendered using their <code>toString</code> methods;
+ * 		if this parameter is <code>null</code>,
+ * 		the options are determined by the Look and Feel
+ * @param initialValue
+ * 		the object that represents the default selection
+ * 		for the dialog; only meaningful if <code>options</code>
+ * 		is used; can be <code>null</code>
+ * @param listener
+ * 		The listener for SheetEvents.
+ */
+public static void showOptionSheet(Component parentComponent, Object message, int optionType, int messageType, Icon icon, Object[] options, Object initialValue, SheetListener listener) {
+    JOptionPane pane = new JOptionPane(message, messageType, optionType, icon, options, initialValue);
+    pane.setInitialValue(initialValue);
+    pane.setComponentOrientation((parentComponent == null ? JOptionPane.getRootFrame() : parentComponent).getComponentOrientation());
+    int style = JSheet.styleFromMessageType(messageType);
+    JSheet sheet = JSheet.createSheet(pane, parentComponent, style);
+    pane.selectInitialValue();
+    sheet.addSheetListener(listener);
+    sheet.show();
+    sheet.toFront();
+}

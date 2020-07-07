@@ -1,0 +1,3 @@
+public void setFigureActions(Collection<Action> selectionActions) {
+    this.selectionActions = selectionActions;
+}

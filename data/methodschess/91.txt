@@ -1,0 +1,9 @@
+public Image getSelectedPieceImage() {
+    byte type = this.getType();
+    if (type == 0) {
+        type = Piece.KING;
+    }
+    // To avoid the instanciation of a image each time, just reuse
+    // the images of the icons.
+    return _pieceIcon[this.getColor()][type].getImage();
+}

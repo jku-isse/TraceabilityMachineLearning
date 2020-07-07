@@ -1,0 +1,6 @@
+/**
+ * Gets the undo action for use as an Undo menu item.
+ */
+public Action getUndoAction() {
+    return undoAction;
+}

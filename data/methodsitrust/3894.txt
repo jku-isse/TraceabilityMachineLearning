@@ -1,0 +1,11 @@
+public void testViewDiagnoses() throws Exception {
+    WebConversation wc = login("1", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 1L, 0L, "");
+    wr = wr.getLinkWith("My Diagnoses").click();
+    assertEquals("iTrust - My Diagnoses", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.DIAGNOSES_LIST_VIEW, 1L, 1L, "");
+    assertTrue(wr.getText().contains("Echovirus(79.10)"));
+    assertTrue(wr.getText().contains("Acute Lycanthropy(250.00)"));
+}

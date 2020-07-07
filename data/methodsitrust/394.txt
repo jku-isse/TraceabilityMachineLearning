@@ -1,0 +1,8 @@
+@Override
+protected void setUp() throws Exception {
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.standardData();
+    fmbList = famDAO.getParents(5);
+    fmBean = fmbList.get(0);
+}

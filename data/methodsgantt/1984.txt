@@ -1,0 +1,6 @@
+/**
+ * Returns the X coordinate of the uppermost row of the image.
+ */
+public int getMinY() {
+    return minY;
+}

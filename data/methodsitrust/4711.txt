@@ -1,0 +1,5 @@
+/**
+ * The default constructor.
+ */
+public OverrideReasonBeanValidator() {
+}

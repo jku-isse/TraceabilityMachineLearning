@@ -1,0 +1,6 @@
+/**
+ * Set a new week end color.
+ */
+public void setWeekEndColor(Color color) {
+    getUIConfiguration().setWeekEndColor(color);
+}

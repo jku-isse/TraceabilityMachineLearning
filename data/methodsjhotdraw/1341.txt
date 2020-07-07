@@ -1,0 +1,42 @@
+/**
+ * Creates a bounds outline handle for resizing or transforming a component.
+ *
+ * @param owner
+ * 		
+ */
+public BoundsOutlineHandle(Figure owner, boolean isTransformHandle, boolean isHoverHandle) {
+    super(owner);
+    if (isTransformHandle) {
+        if (isHoverHandle) {
+            stroke1Enabled = HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_1_HOVER;
+            strokeColor1Enabled = HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_1_HOVER;
+            stroke2Enabled = HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_2_HOVER;
+            strokeColor2Enabled = HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_2_HOVER;
+        } else {
+            stroke1Enabled = HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_1;
+            strokeColor1Enabled = HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_1;
+            stroke2Enabled = HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_2;
+            strokeColor2Enabled = HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_2;
+        }
+        stroke1Disabled = HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_1_DISABLED;
+        strokeColor1Disabled = HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_1_DISABLED;
+        stroke2Disabled = HandleAttributeKeys.TRANSFORM_BOUNDS_STROKE_2_DISABLED;
+        strokeColor2Disabled = HandleAttributeKeys.TRANSFORM_BOUNDS_COLOR_2_DISABLED;
+    } else {
+        if (isHoverHandle) {
+            stroke1Enabled = HandleAttributeKeys.RESIZE_BOUNDS_STROKE_1_HOVER;
+            strokeColor1Enabled = HandleAttributeKeys.RESIZE_BOUNDS_COLOR_1_HOVER;
+            stroke2Enabled = HandleAttributeKeys.RESIZE_BOUNDS_STROKE_2_HOVER;
+            strokeColor2Enabled = HandleAttributeKeys.RESIZE_BOUNDS_COLOR_2_HOVER;
+        } else {
+            stroke1Enabled = HandleAttributeKeys.RESIZE_BOUNDS_STROKE_1;
+            strokeColor1Enabled = HandleAttributeKeys.RESIZE_BOUNDS_COLOR_1;
+            stroke2Enabled = HandleAttributeKeys.RESIZE_BOUNDS_STROKE_2;
+            strokeColor2Enabled = HandleAttributeKeys.RESIZE_BOUNDS_COLOR_2;
+        }
+        stroke1Disabled = HandleAttributeKeys.RESIZE_BOUNDS_STROKE_1_DISABLED;
+        strokeColor1Disabled = HandleAttributeKeys.RESIZE_BOUNDS_COLOR_1_DISABLED;
+        stroke2Disabled = HandleAttributeKeys.RESIZE_BOUNDS_STROKE_2_DISABLED;
+        strokeColor2Disabled = HandleAttributeKeys.RESIZE_BOUNDS_COLOR_2_DISABLED;
+    }
+}

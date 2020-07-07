@@ -1,0 +1,7 @@
+public TimeUnit createAtomTimeUnit(String name) {
+    TimeUnit result = new TimeUnitImpl(name, this, null);
+    List compositions = new ArrayList();
+    compositions.add(new TimeUnitGraph.Composition(result, 1));
+    myUnit2compositions.put(result, compositions);
+    return result;
+}

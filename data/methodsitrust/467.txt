@@ -1,0 +1,22 @@
+/**
+ * Test if prescription have been added for scenario 1
+ *
+ * @throws Exception
+ * 		
+ */
+public void testAddPrescription1() throws Exception {
+    action = new EditPrescriptionsAction(factory, 9000000000L, "1", "11");
+    assertEquals(0, action.getPrescriptions().size());
+    PrescriptionBean bean = new PrescriptionBean();
+    MedicationBean med = factory.getNDCodesDAO().getNDCode("009042407");
+    bean.setMedication(med);
+    bean.setDosage(10);
+    bean.setStartDateStr("01/31/2011");
+    bean.setEndDateStr("02/12/2011");
+    bean.setInstructions("Take as needed");
+    bean.setVisitID(11);
+    action.addPrescription(bean);
+    List<PrescriptionBean> list = action.getPrescriptions();
+    assertEquals(1, list.size());
+    assertEquals("009042407", list.get(0).getMedication().getNDCode());
+}

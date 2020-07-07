@@ -1,0 +1,3 @@
+public void setTaskManager(TaskManager taskManager) {
+    // TODO Auto-generated method stub
+}

@@ -1,0 +1,7 @@
+/**
+ * Activates the view.
+ * This occurs, when the user activated the parent window of the view.
+ * Only one view can be active at any given time.
+ * This method is only invoked on a started view.
+ */
+public void activate();

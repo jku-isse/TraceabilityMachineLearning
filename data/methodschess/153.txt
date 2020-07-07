@@ -1,0 +1,28 @@
+// Constructors
+/**
+ * Create a new engine instance with a given board.
+ *
+ * @param game
+ * 		The current game.
+ * @param notation
+ * 		The current notation.
+ * @param board
+ * 		The new board.
+ * @param white
+ * 		Flag, to indicate if the engine operates on the white pieces.
+ */
+public ChessEngineImpl(Game game, GameNotation notation, Board board, boolean white) {
+    listeners = new ArrayList();
+    this.createLogFile();
+    setGame(game);
+    setBoard(board);
+    setWhite(white);
+    _hashtable = new PlyHashtableImpl(10000);
+    _plyGenerator = new PlyGenerator(getGame(), _hashtable);
+    _analyzer = new BitBoardAnalyzerImpl(getGame(), _plyGenerator);
+    _plyGenerator.setAnalyzer(_analyzer);
+    setPermanentBrain(new PermanentBrain(this));
+    startPermanentBrain();
+    setOpeningBook(new OpeningBookImpl(notation));
+    setInOpeningBook(true);
+}

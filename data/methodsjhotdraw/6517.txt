@@ -1,0 +1,3 @@
+public StyleManager() {
+    rules = new ArrayList<CSSRule>();
+}

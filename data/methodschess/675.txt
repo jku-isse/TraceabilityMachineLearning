@@ -1,0 +1,41 @@
+/**
+ * Construction a la JBuilder to be able to use the JBuilder designer
+ *
+ * @throws Exception
+ * 		
+ */
+private void jbInit() throws Exception {
+    this.setLayout(gridBagNavigation);
+    jbBack.setBackground(Color.white);
+    jbBack.setToolTipText("one ply back");
+    jbStart.setBackground(Color.white);
+    jbStart.setToolTipText("to start position");
+    jbForward.setBackground(Color.white);
+    jbForward.setToolTipText("one ply forward");
+    jbEnd.setBackground(Color.white);
+    jbEnd.setToolTipText("to end position");
+    URL urlBack = getClass().getResource("images/back03.gif");
+    Image imBack = Toolkit.getDefaultToolkit().getImage(urlBack);
+    jbBack.setIcon(new ImageIcon(imBack));
+    URL urlStart = getClass().getResource("images/start03.gif");
+    Image imStart = Toolkit.getDefaultToolkit().getImage(urlStart);
+    jbStart.setIcon(new ImageIcon(imStart));
+    URL urlForward = getClass().getResource("images/forward03.gif");
+    Image imForward = Toolkit.getDefaultToolkit().getImage(urlForward);
+    jbForward.setIcon(new ImageIcon(imForward));
+    URL urlEnd = getClass().getResource("images/end03.gif");
+    Image imEnd = Toolkit.getDefaultToolkit().getImage(urlEnd);
+    jbEnd.setIcon(new ImageIcon(imEnd));
+    // jbBack.setIcon( new ImageIcon( Toolkit.getDefaultToolkit().getImage( new URL( "jar:file:javaChess.jar!/de/java_chess/javaChess/renderer2d/images/back02.gif"))));
+    // jbStart.setIcon( new ImageIcon( Toolkit.getDefaultToolkit().getImage( new URL( "jar:file:javaChess.jar!/de/java_chess/javaChess/renderer2d/images/start02.gif"))));
+    // jbForward.setIcon( new ImageIcon( Toolkit.getDefaultToolkit().getImage( new URL( "jar:file:javaChess.jar!/de/java_chess/javaChess/renderer2d/images/forward02.gif"))));
+    // jbEnd.setIcon( new ImageIcon( Toolkit.getDefaultToolkit().getImage( new URL( "jar:file:javaChess.jar!/de/java_chess/javaChess/renderer2d/images/end02.gif"))));
+    jbBack.addActionListener(this);
+    jbStart.addActionListener(this);
+    jbForward.addActionListener(this);
+    jbEnd.addActionListener(this);
+    this.add(jbStart, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+    this.add(jbBack, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+    this.add(jbForward, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+    this.add(jbEnd, new GridBagConstraints(3, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+}

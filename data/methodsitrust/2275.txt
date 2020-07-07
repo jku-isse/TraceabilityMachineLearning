@@ -1,0 +1,11 @@
+/**
+ *
+ *
+ * @return the overrideCode
+ */
+public String[] getOverrideCodes() {
+    if ((overrideCodes) == null) {
+        overrideCodes = new String[0];
+    }
+    return overrideCodes;
+}

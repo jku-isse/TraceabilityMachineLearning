@@ -1,0 +1,14 @@
+public void actionPerformed(ActionEvent event) {
+    Object source = event.getSource();
+    if (source == (patternCombo)) {
+        preview.setPattern(((ShapePaint) (patternCombo.getSelectedPaint())));
+    }
+    if (source == (foregroundCombo)) {
+        preview.setForeground(((Color) (foregroundCombo.getSelectedPaint())));
+    }
+    if (source == (backgroundCombo)) {
+        preview.setBackground(((Color) (backgroundCombo.getSelectedPaint())));
+    }
+    fireActionEvent();
+    preview.repaint();
+}

@@ -1,0 +1,13 @@
+public TaskHierarchyItem[] getNestedItems() {
+    TaskHierarchyItem[] result;
+    if ((myFirstNestedItem) == null) {
+        result = TaskHierarchyItem.EMPTY_ARRAY;
+    } else {
+        ArrayList tempList = new ArrayList();
+        for (TaskHierarchyItem nested = myFirstNestedItem; nested != null; nested = nested.myNextSiblingItem) {
+            tempList.add(nested);
+        }
+        result = ((TaskHierarchyItem[]) (tempList.toArray(TaskHierarchyItem.EMPTY_ARRAY)));
+    }
+    return result;
+}

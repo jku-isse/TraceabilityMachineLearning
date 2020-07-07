@@ -1,0 +1,52 @@
+/**
+ * test update Immunization
+ *  throws Exception
+ *
+ * @author student
+ * @author student
+ */
+public void testUpdateImmunizations() throws Exception {
+    boolean check = false;
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Document Office Visit").click();
+    assertEquals("iTrust - Please Select a Patient", wr.getTitle());
+    // choose patient 1
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "6");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    wr = wr.getLinkWith("07/10/2004").click();
+    WebForm wf = wr.getFormWithID("immunizationForm");
+    wf.setParameter("CPTCode", "90371");
+    wr = wf.submit();
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_EDIT, 9000000000L, 6L, "Office visit");
+    wr = wr.getLinkWith("Office Visit Reminders").click();
+    assertEquals("iTrust - Visit Reminders", wr.getTitle());
+    // Select "Immunization Needers"
+    wf = wr.getFormWithID("reminderForm");
+    wf.setParameter("ReminderType", "Immunization Needers");
+    // Select "Get Reminders"
+    wr = wf.submit();
+    // Check for content
+    WebTable[] tables = wr.getTables();
+    for (WebTable t : tables) {
+        if ("Patient Information".equals(t.getCellAsText(0, 0))) {
+            if ("Baby A".equals(t.getCellAsText(1, 1))) {
+                // assertEquals("Baby", t.getCellAsText(2, 1));
+                assertEquals("Needs Immunization:    90681 Rotavirus (6 months), 90696 Diphtheria, Tetanus, Pertussis (15 weeks), 90669 Pneumococcal (12 months), 90649 Human Papillomavirus (9 years, 6 months)", t.getCellAsText(3, 1));
+                check = true;
+            } else
+                if ("Baby C".equals(t.getCellAsText(1, 1))) {
+                    // assertEquals("Baby", t.getCellAsText(2, 1));
+                    assertEquals("Needs Immunization:    90371 Hepatitis B (1 month), 90696 Diphtheria, Tetanus, Pertussis (6 weeks), 90396 Varicella (12 months), 90633 Hepatits A (18 months)", t.getCellAsText(3, 1));
+                    check = true;
+                }
+
+        }
+    }
+    assertTrue(check);
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_REMINDERS_VIEW, 9000000000L, 0L, "");
+}

@@ -1,0 +1,9 @@
+private void updateSourceImage() {
+    try {
+        BufferedImage image = myChart.getChart(myExportSettings);
+        myPrintable = new GanttPrintable(image, GanttPrintable.REDUCE_FACTOR_DEFAULT);
+        changePageOrientation(myOrientation);
+    } catch (OutOfMemoryError e) {
+        myUIfacade.showErrorDialog(GanttLanguage.getInstance().getText("printing.out_of_memory"));
+    }
+}

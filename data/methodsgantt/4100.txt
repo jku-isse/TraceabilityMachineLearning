@@ -1,0 +1,12 @@
+/**
+ * Returns true if a custom column has the same name that the one given in
+ * parameter, false otherwise.
+ *
+ * @param colName
+ * 		The name of the column to check the existence.
+ * @return True if a custom column has the same name that the one given in
+parameter, false otherwise.
+ */
+public boolean exists(String colName) {
+    return (getIdFromName(colName)) != null;
+}

@@ -1,0 +1,10 @@
+/**
+ *
+ *
+ * @return The EditDiagnosesAction sub action associated with this office visit.
+ * @throws iTrustException
+ * 		
+ */
+public EditDiagnosesAction diagnoses() throws iTrustException {
+    return diagnosesAction;
+}

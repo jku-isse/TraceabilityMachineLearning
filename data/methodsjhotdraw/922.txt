@@ -1,0 +1,3 @@
+public void setFontRenderContext(FontRenderContext frc) {
+    fontRenderContext = frc;
+}

@@ -1,0 +1,4 @@
+@Override
+public HttpSession getSession() {
+    return new MockHttpSession();
+}

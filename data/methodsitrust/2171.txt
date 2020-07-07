@@ -1,0 +1,3 @@
+public boolean isSystolicBloodPressureAllowed() {
+    return systolicBloodPressureAllowed;
+}

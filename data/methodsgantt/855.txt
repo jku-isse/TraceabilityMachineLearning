@@ -1,0 +1,4 @@
+private void initRootNode() {
+    getTaskManager().getRootTask().setName("root");
+    rootNode = new TaskNode(getTaskManager().getRootTask());
+}

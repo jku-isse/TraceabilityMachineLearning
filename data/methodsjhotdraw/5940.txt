@@ -1,0 +1,1 @@
+public Figure createPath(BezierPath[] beziers, Map<AttributeKey, Object> attributes);

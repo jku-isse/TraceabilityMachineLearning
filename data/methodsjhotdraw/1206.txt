@@ -1,0 +1,6 @@
+/**
+ * Removes the Node at the specified index.
+ */
+public BezierPath.Node removeNode(int index) {
+    return path.remove(index);
+}

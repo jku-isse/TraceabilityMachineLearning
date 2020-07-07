@@ -1,0 +1,49 @@
+// Methods
+/**
+ * Turn a loaded ply fragment from a PGN file into a notated ply.
+ *
+ * @param plyFragment
+ * 		The info from the PGN file.
+ * @return The notation for the ply, if we could recognize the ply, or null.
+ */
+public final PlyNotation completePly(PGNPlyFragment plyFragment) {
+    // Create a ply from the ply fragment.
+    Ply ply = null;
+    PlyNotation notation = null;
+    // If the origin of the move is missing, compute it from the destination
+    // ...not necessary yet...
+    if (plyFragment.isCastling()) {
+        ply = new CastlingPlyImpl(new PositionImpl((_whiteMoves ? 4 : 60)), plyFragment.isLeftCastling());
+        notation = new PlyNotationImpl(ply, _board.getPiece(ply.getSource()));
+    } else {
+        // Check, how complete our fragment is so far.
+        if ((plyFragment.getOrigin()) == null) {
+            // If there was no origin given, try to figure it from the currently available moves
+            // Compute all the available moves for this board.
+            Ply[] plies = _plyGenerator.getPliesForColor(_whiteMoves);
+            for (int i = 0; i < (plies.length); i++) {
+                if (((plies[i].getDestination()) == (plyFragment.getDestination())) && ((_board.getPiece(plies[i].getSource()).getType()) == (plyFragment.getPieceType()))) {
+                    // Found the right ply!
+                    plyFragment.setOrigin(plies[i].getSource());
+                    break;// Stop the search for the ply origin.
+
+                }
+            }
+        }
+        if (plyFragment.isPawnPromotion()) {
+            ply = new TransformationPlyImpl(plyFragment.getOrigin(), plyFragment.getDestination(), plyFragment.getNewPieceType(), ((_board.getPiece(plyFragment.getDestination())) == null));
+            notation = new PlyNotationImpl(ply, _board.getPiece(ply.getSource()));
+        } else {
+            ply = new PlyImpl(plyFragment.getOrigin(), plyFragment.getDestination(), ((_board.getPiece(plyFragment.getDestination())) == null));
+            notation = new PlyNotationImpl(ply, _board.getPiece(ply.getSource()));
+        }
+        // Verifiy, if the notation doesnt show a capture on an empty sqare.
+        if ((plyFragment.isCapture()) && ((_board.getPiece(plyFragment.getDestination())) == null)) {
+            return null;
+        }
+    }
+    // No perform the ply on our simulated board.
+    doPly(ply);
+    // And return the notation for the ply.
+    return notation;
+}

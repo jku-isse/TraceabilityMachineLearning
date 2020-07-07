@@ -1,0 +1,39 @@
+public int setRowHeight() {
+    boolean textUP = false;
+    boolean textDOWN = false;
+    isOnlyDown = false;
+    isOnlyUp = false;
+    // GPOption[] options = myTaskRendererImpl.getOptionGroups()[0]
+    // .getOptions();// HACK: we assume there is at least one option
+    // group which is label options group
+    // for (int i = 1; i < options.length; i++) {
+    // EnumerationOption nextOption = (EnumerationOption) options[i];
+    // if ((LabelPositionOptionImpl.UP.equals(nextOption.getValue()))) {
+    // textUP = true;
+    // }
+    // if ((LabelPositionOptionImpl.DOWN.equals(nextOption.getValue()))) {
+    // textDOWN = true;
+    // }
+    // }
+    textUP = myTaskRendererImpl.isTextUp();
+    textDOWN = myTaskRendererImpl.isTextDown();
+    if (textUP && textDOWN) {
+        rowHeight = 40;
+    } else
+        if (textUP) {
+            rowHeight = 30;
+            isOnlyUp = true;
+        } else
+            if (textDOWN) {
+                rowHeight = 30;
+                isOnlyDown = true;
+            } else {
+                rowHeight = 20;
+            }
+
+
+    if (isPreviousState)
+        rowHeight = (rowHeight) + 8;
+
+    return rowHeight;
+}

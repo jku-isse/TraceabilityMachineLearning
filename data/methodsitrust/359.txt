@@ -1,0 +1,20 @@
+/**
+ * Update the office visit with the given data.  If the office visit has
+ * not yet been saved, this will save it and reinitialize the sub actions.
+ *
+ * @param bean
+ * 		The data with which to update the office visit.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+private void updateBean(OfficeVisitBean bean) throws DBException, iTrustException {
+    if (isUnsaved()) {
+        // bean.getID() == -1
+        ovID = ovDAO.add(bean);
+        reinitializeSubActions();
+    } else {
+        ovDAO.update(bean);
+    }
+}

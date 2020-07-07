@@ -1,0 +1,12 @@
+/**
+ * Get procedure list for the given patient
+ *
+ * @param pid
+ * 		the patient of interest
+ * @return list of procedures
+ * @throws iTrustException
+ * 		
+ */
+public List<ProcedureBean> getProcedures(long pid) throws iTrustException {
+    return patientDAO.getProcedures(pid);
+}

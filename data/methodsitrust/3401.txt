@@ -1,0 +1,8 @@
+public void testAddCPTCode() throws DBException, iTrustException {
+    final String code = "9999F";
+    final String desc = "testAddCPTCode description";
+    genericAdd(code, desc);
+    List<ProcedureBean> allCodes = cptDAO.getAllCPTCodes();
+    assertEquals(code, allCodes.get(((allCodes.size()) - 1)).getCPTCode());
+    assertEquals(desc, allCodes.get(((allCodes.size()) - 1)).getDescription());
+}

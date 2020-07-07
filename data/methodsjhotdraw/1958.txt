@@ -1,0 +1,9 @@
+/**
+ * Returns a collection of Actions for the specified location on the figure.
+ *
+ * <p>The collection may contain null entries. These entries are used
+ * interpreted as separators in the popup menu.
+ * <p>Actions can use the property Figure.ACTION_SUBMENU to specify a
+ * submenu.
+ */
+public Collection<Action> getActions(Point2D.Double p);

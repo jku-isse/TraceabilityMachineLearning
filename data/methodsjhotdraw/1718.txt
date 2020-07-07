@@ -1,0 +1,4 @@
+@Override
+public boolean importData(JComponent comp, Transferable t) {
+    return importData(comp, t, new HashSet<Figure>());
+}

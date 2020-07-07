@@ -1,0 +1,7 @@
+/**
+ * Adds a key listener to the drawing view.
+ *
+ * @param l
+ * 		the listener.
+ */
+public void addKeyListener(KeyListener l);

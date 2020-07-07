@@ -1,0 +1,6 @@
+private void writePolygonElement(IXMLElement parent, SVGPathFigure f) throws IOException {
+    IXMLElement elem = parent.createElement("area");
+    if (writePolyAttributes(elem, f, new GrowStroke(((float) ((AttributeKeys.getStrokeTotalWidth(f)) / 2.0)), ((float) (AttributeKeys.getStrokeTotalWidth(f)))).createStrokedShape(f.getChild(0).getBezierPath()))) {
+        parent.addChild(elem);
+    }
+}

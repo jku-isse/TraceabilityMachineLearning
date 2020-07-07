@@ -1,0 +1,25 @@
+/**
+ * Returns if the patient has ever smoked in their life
+ *
+ * @param patientID
+ * 		The MID of the patient in question.
+ * @return A boolean indicating whether the patient smoked.
+ * @throws DBException
+ * 		
+ */
+public boolean hasSmoked(long patientID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM personalhealthinformation WHERE PatientID=? AND Smoker=1");
+        ps.setLong(1, patientID);
+        return ps.executeQuery().next();// if this query has ANY rows, then yes
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

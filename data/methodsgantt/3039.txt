@@ -1,0 +1,6 @@
+public boolean applyChanges(boolean askForApply) {
+    for (int i = 0; i < (myGroups.length); i++) {
+        myGroups[i].commit();
+    }
+    return true;
+}

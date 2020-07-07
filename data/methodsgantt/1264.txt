@@ -1,0 +1,3 @@
+public void setStatusText(String text) {
+    myStatusBar.setFirstText(text, 2000);
+}

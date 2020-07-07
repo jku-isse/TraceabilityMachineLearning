@@ -1,0 +1,51 @@
+/**
+ *
+ *
+ * @see net.sourceforge.ganttproject.parser.ParsingListener#parsingFinished()
+ */
+public void parsingFinished() {
+    Iterator it = this.listStructure.iterator();
+    while (it.hasNext()) {
+        CustomPropertiesTagHandler.CustomPropertiesStructure cps = ((CustomPropertiesTagHandler.CustomPropertiesStructure) (it.next()));
+        Task task = taskManager.getTask(cps.taskID);
+        CustomColumn cc = myColumnStorage.getCustomColumnByID(cps.taskPropertyID);
+        String valueStr = cps.value;
+        Object value = null;
+        Class cla = cc.getType();
+        if (valueStr != null) {
+            if (cla.equals(String.class))
+                value = valueStr.toString();
+            else
+                if (cla.equals(Boolean.class))
+                    value = Boolean.valueOf(valueStr);
+                else
+                    if (cla.equals(Integer.class))
+                        value = Integer.valueOf(valueStr);
+                    else
+                        if (cla.equals(Double.class))
+                            value = Double.valueOf(valueStr);
+                        else
+                            if (GregorianCalendar.class.isAssignableFrom(cla))
+                                try {
+                                    value = new GanttCalendar(DateParser.parse(valueStr));
+                                } catch (InvalidDateException e) {
+                                    if (!(GPLogger.log(e))) {
+                                        e.printStackTrace(System.err);
+                                    }
+                                }
+
+
+
+
+
+        }
+        try {
+            // System.out.println(task.getName());
+            task.getCustomValues().setValue(cc.getName(), value);
+        } catch (CustomColumnsException e) {
+            if (!(GPLogger.log(e))) {
+                e.printStackTrace(System.err);
+            }
+        }
+    } 
+}

@@ -1,0 +1,9 @@
+public void testUpdatePrivacyLevelWithoutAccess() throws Exception {
+    List<DiagnosisBean> diagnoses = getDiagnoses();
+    DiagnosisBean d = new DiagnosisBean();
+    d.setOvDiagnosisID(diagnoses.get(0).getOvDiagnosisID());
+    d.setDescription("My Description");
+    d.setICDCode("79.3");
+    diagnoses = getDiagnoses();
+    assertEquals(5, diagnoses.size());
+}

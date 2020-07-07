@@ -1,0 +1,4 @@
+protected void invalidateDimension() {
+    cachedPreferredSize = null;
+    cachedDrawingArea = null;
+}

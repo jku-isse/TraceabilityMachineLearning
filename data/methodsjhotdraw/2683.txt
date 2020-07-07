@@ -1,0 +1,4 @@
+public StickyRectangleConnector(Figure owner, Point2D.Double p) {
+    super(owner);
+    this.angle = ((float) (Geom.pointToAngle(owner.getBounds(), p)));
+}

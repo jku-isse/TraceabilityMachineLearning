@@ -1,0 +1,4 @@
+public void testGlucoseLevel() throws Exception {
+    tBean.setGlucoseLevelAllowed(true);
+    assertTrue(tBean.isGlucoseLevelAllowed());
+}

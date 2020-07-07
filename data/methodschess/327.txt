@@ -1,0 +1,23 @@
+/**
+ * Run the actual knight tests.
+ */
+public void knightTests() {
+    // Now set the black knight on every other square to see if the analyzer
+    // reports a check.
+    for (int i = 63; i >= 0; i--) {
+        Position currentPosition = new PositionImpl(i);
+        if (null == (_board.getPiece(currentPosition))) {
+            // If this square is empty
+            _board.setPiece(new PieceImpl(Piece.KNIGHT, Piece.BLACK), currentPosition);// Set a black knight there.
+
+            int squareIndexDifference = Math.abs((i - (_whiteKingPos)));
+            // The white king is in check, if the square difference is
+            // 6, 10, 15 or 17 (count the squares on a board to verify this).
+            boolean whiteKingIsInCheck = (((squareIndexDifference == 6) || (squareIndexDifference == 10)) || (squareIndexDifference == 15)) || (squareIndexDifference == 17);
+            // Only if the white king is in check, the analyzer should return BLACK_WIN.
+            assertTrue(("Wrong check status with knight on square " + i), (whiteKingIsInCheck == (_analyzer.isInCheck(((BitBoard) (_board)), true))));
+            _board.setPiece(null, currentPosition);// Remove the black knight from the current square.
+
+        }
+    }
+}

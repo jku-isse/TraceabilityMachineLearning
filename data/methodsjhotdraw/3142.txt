@@ -1,0 +1,13 @@
+@Override
+protected Color getInitialColor() {
+    Color initialColor = null;
+    DrawingView v = getEditor().getActiveView();
+    if (v != null) {
+        Figure f = v.getDrawing();
+        initialColor = key.get(f);
+    }
+    if (initialColor == null) {
+        initialColor = super.getInitialColor();
+    }
+    return initialColor;
+}

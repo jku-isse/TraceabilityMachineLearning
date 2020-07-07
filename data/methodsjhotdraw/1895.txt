@@ -1,0 +1,5 @@
+/**
+ * Returns the detail level of the handles.
+ * This is a bound property.
+ */
+public int getHandleDetailLevel();

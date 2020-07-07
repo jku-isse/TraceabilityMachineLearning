@@ -1,0 +1,4 @@
+public GanttMetalTheme(UIConfiguration config) {
+    super();
+    font = new FontUIResource(config.getMenuFont());
+}

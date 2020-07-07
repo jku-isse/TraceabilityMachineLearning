@@ -1,0 +1,3 @@
+public StringOption getLastWebDAVDocumentOption() {
+    return myLastWebDAVDocument;
+}

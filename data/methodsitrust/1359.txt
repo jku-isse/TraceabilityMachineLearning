@@ -1,0 +1,9 @@
+public void testAccepted() {
+    assertFalse(req.isAccepted());
+    req.setPending(false);
+    assertFalse(req.isAccepted());
+    req.setAccepted(true);
+    assertTrue(req.isAccepted());
+    req.setAccepted(false);
+    assertFalse(req.isAccepted());
+}

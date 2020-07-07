@@ -1,0 +1,7 @@
+/**
+ * Launches the application from the main method.
+ * This method is typically invoked on the main Thread.
+ * This will invoke configure() on the current thread and then
+ * init() and start() on the AWT Event Dispatcher Thread.
+ */
+public void launch(String[] args);

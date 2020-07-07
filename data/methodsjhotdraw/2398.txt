@@ -1,0 +1,7 @@
+/**
+ * Constructs a perpendicular line with the given height.
+ */
+public PerpendicularBar(double height) {
+    super(false, true, false);
+    this.height = height;
+}

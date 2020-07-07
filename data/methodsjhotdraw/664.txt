@@ -1,0 +1,3 @@
+public ColorSliderModel getModel() {
+    return model;
+}

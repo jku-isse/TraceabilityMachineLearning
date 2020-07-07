@@ -1,0 +1,8 @@
+/**
+ * Indicates if the office visit has been saved or not.
+ *
+ * @return boolean that indicates if this has been saved.
+ */
+public boolean isUnsaved() {
+    return (ovID) == (OfficeVisitBaseAction.UNSAVED_VISIT_ID);
+}

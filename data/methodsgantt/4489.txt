@@ -1,0 +1,15 @@
+public void processCriticalPath(TaskNode root) {
+    try {
+        myAlgorithmCollection.getRecalculateTaskScheduleAlgorithm().run();
+    } catch (TaskDependencyException e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+    }
+    CriticalPathAlgorithm criticAlgo = new CriticalPathAlgorithmImpl(root, getCalendar());
+    Task[] tasks = criticAlgo.getCriticalTasks();
+    resetCriticalPath(root);
+    for (int i = 0; i < (tasks.length); i++)
+        tasks[i].setCritical(true);
+
+}

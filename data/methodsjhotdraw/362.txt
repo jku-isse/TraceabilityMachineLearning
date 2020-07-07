@@ -1,0 +1,4 @@
+@Override
+protected JFileChooser getFileChooser(View view) {
+    return ((DirectoryView) (view)).getOpenDirectoryChooser();
+}

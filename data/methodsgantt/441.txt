@@ -1,0 +1,16 @@
+/**
+ * Correct the charcters to be compatible with xml format
+ */
+public String correct(String s) {
+    String res;
+    if (s != null) {
+        res = s.replaceAll("&", "&#38;");
+        res = res.replaceAll("<", "&#60;");
+        res = res.replaceAll(">", "&#62;");
+        res = res.replaceAll("/", "&#47;");
+        res = res.replaceAll(""", "&#34;");
+    } else
+        res = s;
+
+    return res;
+}

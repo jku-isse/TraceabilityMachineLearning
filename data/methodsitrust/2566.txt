@@ -1,0 +1,5 @@
+public void testClosingNullPS() throws Exception {
+    Connection conn = TestDAOFactory.getTestInstance().getConnection();
+    PreparedStatement ps = conn.prepareStatement("SHOW TABLES");
+    DBUtil.closeConnection(conn, ps);
+}

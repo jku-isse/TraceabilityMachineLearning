@@ -1,0 +1,57 @@
+private void updateRules() {
+    HarmonicColorModel m = harmonicWheel.getHarmonicColorModel();
+    m.removeAllRules();
+    for (int i = 1, n = m.getSize(); i < n; i++) {
+        m.set(i, null);
+    }
+    if (customHueRadio.isSelected()) {
+    } else
+        if (analogousRadio.isSelected()) {
+            m.addRule(new SimpleHarmonicRule(0, (30.0F / 360.0F), 0, 5));
+            m.addRule(new SimpleHarmonicRule(0, ((-30.0F) / 360.0F), 0, 10));
+        } else
+            if (primaryRadio.isSelected()) {
+                m.addRule(new SimpleHarmonicRule(0, (120.0F / 360.0F), 0, 5));
+                m.addRule(new SimpleHarmonicRule(0, ((-120.0F) / 360.0F), 0, 10));
+            } else
+                if (clashRadio.isSelected()) {
+                    m.addRule(new SimpleHarmonicRule(0, (90.0F / 360.0F), 0, 5));
+                    m.addRule(new SimpleHarmonicRule(0, ((-90.0F) / 360.0F), 0, 10));
+                } else
+                    if (triadRadio.isSelected()) {
+                        m.addRule(new SimpleHarmonicRule(0, (120.0F / 360.0F), 0, 5));
+                        m.addRule(new SimpleHarmonicRule(0, ((-120.0F) / 360.0F), 0, 10));
+                    } else
+                        if (splitComplementaryRadio.isSelected()) {
+                            m.addRule(new SimpleHarmonicRule(0, (150.0F / 360.0F), 0, 5));
+                            m.addRule(new SimpleHarmonicRule(0, ((-150.0F) / 360.0F), 0, 10));
+                        } else
+                            if (complementaryRadio.isSelected()) {
+                                m.addRule(new SimpleHarmonicRule(0, (180.0F / 360.0F), 0, 5));
+                            }
+
+
+
+
+
+
+    /* if (achromaticCheck.isSelected()) {
+    m.addRule(new SimpleHarmonicRule(1, -1f / 12f, 0, 3, 4));
+    m.addRule(new SimpleHarmonicRule(1, -1f / 12f, 5, 8, 9));
+    m.addRule(new SimpleHarmonicRule(1, -1f / 12f, 10, 13, 14));
+    }
+     */
+    if (monochromaticCheck.isSelected()) {
+        /* m.addRule(new SimpleHarmonicRule(2, 1f/12f, 0, 1, 2));
+        m.addRule(new SimpleHarmonicRule(2, 1f/12f, 5, 6, 7));
+        m.addRule(new SimpleHarmonicRule(2, 1f/12f, 10, 11, 12));
+         */
+        m.addRule(new SimpleHarmonicRule(2, (1.0F / 12.0F), 0, 1, 2));
+        m.addRule(new SimpleHarmonicRule(2, (1.0F / 12.0F), 5, 6, 7));
+        m.addRule(new SimpleHarmonicRule(2, (1.0F / 12.0F), 10, 11, 12));
+        m.addRule(new SimpleHarmonicRule(2, ((-1.0F) / 12.0F), 0, 3, 4));
+        m.addRule(new SimpleHarmonicRule(2, ((-1.0F) / 12.0F), 5, 8, 9));
+        m.addRule(new SimpleHarmonicRule(2, ((-1.0F) / 12.0F), 10, 13, 14));
+    }
+    m.applyRules();
+}

@@ -1,0 +1,3 @@
+public void loadPersistentValue(String value) {
+    setValue(value);
+}

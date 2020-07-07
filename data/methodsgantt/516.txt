@@ -1,0 +1,6 @@
+protected ParserFactory getParserFactory() {
+    if ((myParserFactory) == null) {
+        myParserFactory = new GanttProject.ParserFactoryImpl();
+    }
+    return myParserFactory;
+}

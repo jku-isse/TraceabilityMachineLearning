@@ -1,0 +1,6 @@
+private ResourceActionSet getResourceActions() {
+    if ((myResourceActions) == null) {
+        myResourceActions = new ResourceActionSet(((IGanttProject) (this)), ((ResourceContext) (getResourcePanel())), this, getUIFacade());
+    }
+    return myResourceActions;
+}

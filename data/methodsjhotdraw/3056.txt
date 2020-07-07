@@ -1,0 +1,4 @@
+public static JToggleButton addSelectionToolTo(JToolBar tb, final DrawingEditor editor, Collection<Action> drawingActions, Collection<Action> selectionActions) {
+    Tool selectionTool = new DelegationSelectionTool(drawingActions, selectionActions);
+    return ButtonFactory.addSelectionToolTo(tb, editor, selectionTool);
+}

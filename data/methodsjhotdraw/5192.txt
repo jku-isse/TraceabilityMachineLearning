@@ -1,0 +1,14 @@
+public static void main(String[] args) {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            JFrame f = new JFrame("JHotDraw SVG Sample Applet");
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            SVGApplet a = new SVGApplet();
+            f.getContentPane().add(a);
+            a.init();
+            f.setSize(500, 300);
+            f.setVisible(true);
+            a.start();
+        }
+    });
+}

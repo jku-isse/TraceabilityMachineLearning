@@ -1,0 +1,6 @@
+/**
+ * Returns the bounding box of the handle.
+ * Note: The bounding box must be returned in the coordinate
+ * system of the DrawingView.
+ */
+Rectangle getBounds();

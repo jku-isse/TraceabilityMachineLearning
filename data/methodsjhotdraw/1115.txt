@@ -1,0 +1,21 @@
+/**
+ * Sets a clone of a value on the specified figure, without invoking
+ * {@code willChange} and {@code changed} on the figure.
+ * <p>
+ * This method can be used to efficiently build a drawing from an
+ * {@link InputFormat}.
+ *
+ * @param f
+ * 		the Figure
+ * @param value
+ * 		the attribute value
+ */
+public void basicSetClone(Figure f, T value) {
+    try {
+        basicSet(f, (value == null ? null : clazz.cast(Methods.invoke(value, "clone"))));
+    } catch (NoSuchMethodException ex) {
+        InternalError e = new InternalError();
+        e.initCause(ex);
+        throw e;
+    }
+}

@@ -1,0 +1,10 @@
+public void testWardRoomCRUDServletFail() throws Exception {
+    WardRoomCRUDServletTest.LittleDelegatorServlet servlet = new WardRoomCRUDServletTest.LittleDelegatorServlet();
+    servlet.setUp();
+    expect(req.getParameter("inWard")).andReturn("").once();
+    expect(req.getParameter("roomName")).andReturn("").once();
+    resp.sendRedirect("");
+    expectLastCall();
+    ctrl.replay();
+    servlet.doPost(req, resp);
+}

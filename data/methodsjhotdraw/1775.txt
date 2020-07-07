@@ -1,0 +1,70 @@
+protected void showPopupMenu(Figure figure, Point p, Component c) {
+    if (DelegationSelectionTool.DEBUG) {
+        System.out.println(("DelegationSelectionTool.showPopupMenu " + figure));
+    }
+    JPopupMenu menu = new JPopupMenu();
+    popupMenu = menu;
+    JMenu submenu = null;
+    String submenuName = null;
+    LinkedList<Action> popupActions = new LinkedList<Action>();
+    if (figure != null) {
+        LinkedList<Action> figureActions = new LinkedList<Action>(figure.getActions(viewToDrawing(p)));
+        if (((popupActions.size()) != 0) && ((figureActions.size()) != 0)) {
+            popupActions.add(null);
+        }
+        popupActions.addAll(figureActions);
+        if (((popupActions.size()) != 0) && ((selectionActions.size()) != 0)) {
+            popupActions.add(null);
+        }
+        popupActions.addAll(selectionActions);
+    }
+    if (((popupActions.size()) != 0) && ((drawingActions.size()) != 0)) {
+        popupActions.add(null);
+    }
+    popupActions.addAll(drawingActions);
+    HashMap<Object, ButtonGroup> buttonGroups = new HashMap<Object, ButtonGroup>();
+    for (Action a : popupActions) {
+        if ((a != null) && ((a.getValue(Actions.SUBMENU_KEY)) != null)) {
+            if ((submenuName == null) || (!(submenuName.equals(a.getValue(Actions.SUBMENU_KEY))))) {
+                submenuName = ((String) (a.getValue(Actions.SUBMENU_KEY)));
+                submenu = new JMenu(submenuName);
+                menu.add(submenu);
+            }
+        } else {
+            submenuName = null;
+            submenu = null;
+        }
+        if (a == null) {
+            if (submenu != null) {
+                submenu.addSeparator();
+            } else {
+                menu.addSeparator();
+            }
+        } else {
+            AbstractButton button;
+            if ((a.getValue(Actions.BUTTON_GROUP_KEY)) != null) {
+                ButtonGroup bg = buttonGroups.get(a.getValue(Actions.BUTTON_GROUP_KEY));
+                if (bg == null) {
+                    bg = new ButtonGroup();
+                    buttonGroups.put(a.getValue(Actions.BUTTON_GROUP_KEY), bg);
+                }
+                button = new JRadioButtonMenuItem(a);
+                bg.add(button);
+                button.setSelected(((a.getValue(Actions.SELECTED_KEY)) == (Boolean.TRUE)));
+            } else
+                if ((a.getValue(Actions.SELECTED_KEY)) != null) {
+                    button = new JCheckBoxMenuItem(a);
+                    button.setSelected(((a.getValue(Actions.SELECTED_KEY)) == (Boolean.TRUE)));
+                } else {
+                    button = new JMenuItem(a);
+                }
+
+            if (submenu != null) {
+                submenu.add(button);
+            } else {
+                menu.add(button);
+            }
+        }
+    }
+    menu.show(c, p.x, p.y);
+}

@@ -1,0 +1,14 @@
+public static final Object beginGraphics(Graphics2D graphics2d) {
+    Object object = graphics2d.getRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING);
+    /* AffineTransform tx = graphics2d.getTransform();
+    AffineTransform savedTransform = (AffineTransform) tx.clone();
+    tx.scale(0.9,0.9);
+    graphics2d.setTransform(tx);
+     */
+    graphics2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    /* graphics2d.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
+    RenderingHints.VALUE_FRACTIONALMETRICS_ON);
+     */
+    // if (true) return savedTransform;
+    return object;
+}

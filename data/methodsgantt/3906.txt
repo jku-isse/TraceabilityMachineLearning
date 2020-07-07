@@ -1,0 +1,7 @@
+// public void setIndex(int defaultIndex)  {
+// this.defaultIndex = defaultIndex;
+// }
+// 
+public TableColumnExt getColumn() {
+    return column;
+}

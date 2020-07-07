@@ -1,0 +1,10 @@
+public void testViewApptWithConflicts() throws Exception {
+    gen.uc22();
+    // Login
+    WebConversation wc = login("100", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("View My Appointments").click();
+    // assertTrue(wr.getTableStartingWithPrefix("Patient").getRows()[1].getAttribute("style").contains("bold"));
+    assertTrue(wr.getTableStartingWithPrefix("Patient").getRows()[2].getAttribute("style").contains("bold"));
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_ALL_VIEW, 100L, 0L, "");
+}

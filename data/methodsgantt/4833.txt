@@ -1,0 +1,4 @@
+Composition(TimeUnitGraph.Composition transitiveComposition, int atomCount) {
+    myAtomCount = atomCount * (transitiveComposition.myAtomCount);
+    myAtom = transitiveComposition.myAtom;
+}

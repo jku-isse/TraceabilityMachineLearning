@@ -1,0 +1,8 @@
+protected IXMLElement createPath(IXMLElement doc, BezierPath[] beziers, Map<AttributeKey, Object> attributes) throws IOException {
+    IXMLElement elem = doc.createElement("path");
+    writeShapeAttributes(elem, attributes);
+    writeOpacityAttribute(elem, attributes);
+    writeTransformAttribute(elem, attributes);
+    writeAttribute(elem, "d", SVGOutputFormat.toPath(beziers), null);
+    return elem;
+}

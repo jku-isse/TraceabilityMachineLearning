@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public ImageTool(ImageHolderFigure prototype, Map<AttributeKey, Object> attributes) {
+    super(prototype, attributes);
+}

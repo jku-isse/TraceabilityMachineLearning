@@ -1,0 +1,4 @@
+public void testGetAllVisitsWithNoSurvey() throws Exception {
+    List<OfficeVisitBean> visits = ovDAO.getOfficeVisitsWithNoSurvey(2L);
+    assertEquals(7, visits.size());
+}

@@ -1,0 +1,5 @@
+@Override
+public void read(DOMInput in) throws IOException {
+    readPoints(in);
+    readAttributes(in);
+}

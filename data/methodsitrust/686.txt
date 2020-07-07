@@ -1,0 +1,12 @@
+/**
+ * Returns a list of all the lab procedures for a particular patient.
+ *
+ * @param id
+ * 		MID of the UAP viewing the procedures
+ * @return a list of all the lab procedures for that UAP
+ * @throws DBException
+ * 		
+ */
+public List<LabProcedureBean> viewProcedures(long id) throws DBException {
+    return lpDAO.getAllLabProceduresDate(id);
+}

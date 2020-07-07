@@ -1,0 +1,49 @@
+protected void constructPredecessorsPanel() {
+    predecessorsPanel = new JPanel(new GridBagLayout());
+    myTableModel = new DependencyTableModel(getTask());
+    predecessorsTable = new JTable(myTableModel);
+    predecessorsTable.setPreferredScrollableViewportSize(new Dimension(500, 130));
+    setUpPredecessorComboColumn(predecessorsTable.getColumnModel().getColumn(1), predecessorsTable);// set column editor
+
+    setUpTypeComboColumn(predecessorsTable.getColumnModel().getColumn(2));// set
+
+    // column
+    // editor
+    setUpHardnessColumnEditor(predecessorsTable.getColumnModel().getColumn(4));
+    predecessorsTable.setRowHeight(23);// set row height
+
+    predecessorsTable.getColumnModel().getColumn(0).setPreferredWidth(10);// set
+
+    // column
+    // size
+    predecessorsTable.getColumnModel().getColumn(1).setPreferredWidth(200);
+    predecessorsTable.getColumnModel().getColumn(2).setPreferredWidth(60);
+    predecessorsTable.getColumnModel().getColumn(3).setPreferredWidth(40);
+    predecessorsScrollPane = new JScrollPane(predecessorsTable);
+    JPanel secondPredecessorsPanel = new JPanel();
+    secondPredecessorsPanel.setBorder(new TitledBorder(new EtchedBorder(), language.getText("predecessors")));
+    secondPredecessorsPanel.add(predecessorsScrollPane);
+    JButton bremove = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/delete_16.gif")));
+    bremove.setToolTipText(GanttProject.getToolTip(language.getText("removeRelationShip")));
+    bremove.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            int[] selectedRow = predecessorsTable.getSelectedRows();
+            for (int i = 0; i < (selectedRow.length); ++i) {
+                predecessorsTable.getModel().setValueAt(null, selectedRow[i], 1);
+            }
+        }
+    });
+    secondPredecessorsPanel.add(bremove);
+    gbc.anchor = GridBagConstraints.WEST;
+    gbc.insets.right = 15;
+    gbc.insets.left = 10;
+    gbc.insets.top = 10;
+    gbc.weighty = 0;
+    addUsingGBL(predecessorsPanel, setupCommonFields(true), gbc, 0, 0, 1, 1);
+    gbc.gridx = 0;
+    gbc.gridy = 1;
+    gbc.gridwidth = 8;
+    gbc.gridheight = 1;
+    gbc.weighty = 1;
+    predecessorsPanel.add(secondPredecessorsPanel, gbc);
+}

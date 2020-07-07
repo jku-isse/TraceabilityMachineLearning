@@ -1,0 +1,24 @@
+public void testAddLOINCFile() throws Exception {
+    // Log in as Admin
+    WebConversation wc = login("9000000001", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000001L, 0L, "");
+    // Click Edit LOINC Codes
+    wr = wr.getLinkWith("Edit LOINC Codes").click();
+    assertEquals("iTrust - Maintain LOINC Codes", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.LOINC_CODE_VIEW, 9000000001L, 0L, "");
+    wr.getFormWithName("mainForm").getButtonWithID("import").click();
+    wr = wc.getCurrentPage();
+    // Import the LOINC database file
+    WebForm wf = wr.getFormWithName("mainForm");
+    wf.setParameter("loincFile", new File("testing-files/sample_loinc/sampleLoinc.txt"));
+    wf.setParameter("ignoreDupData", "1");
+    wf.getButtonWithID("sendFile").click();
+    iTrustHTTPTest.assertLogged(TransactionType.LOINC_CODE_FILE_ADD, 9000000001L, 0L, "");
+    // Check the Display Database for the updated codes
+    wr = wr.getLinkWith("Display Database").click();
+    WebTable wt = wr.getTableWithID("loinc");
+    assertEquals((33 + 1), wt.getRowCount());// 33+1 is 33 rows and a header
+
+    assertFalse(wt.getText().contains("THIS ONE IS DIFFERENT"));
+}

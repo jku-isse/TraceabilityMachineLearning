@@ -1,0 +1,11 @@
+public void testHCPEditDeactivatedPatient() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Patient Information").click();
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "314159");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/editPatient.jsp"), wr.getURL().toString());
+    assertTrue(wr.getText().contains("Patient is deactivated.  Cannot edit."));
+}

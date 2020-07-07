@@ -1,0 +1,29 @@
+/**
+ * Returns the number of minutes it would take for a session to time out. This is done by effectively
+ * using the database table as a hash table. If a row in GlobalVariables does not exist, one is inserted
+ * with the default value 20.
+ *
+ * @return An int for the number of minutes.
+ * @throws DBException
+ * 		
+ */
+public int getSessionTimeoutMins() throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT Value FROM globalvariables WHERE Name=Timeout");
+        ResultSet rs = ps.executeQuery();
+        if (rs.next())
+            return rs.getInt("Value");
+        else {
+            insertDefaultTimeout(conn, 20);
+            return 20;
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

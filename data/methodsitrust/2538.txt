@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return this DAOFactorys HealthRecordsDAO
+ */
+public HealthRecordsDAO getHealthRecordsDAO() {
+    return new HealthRecordsDAO(this);
+}

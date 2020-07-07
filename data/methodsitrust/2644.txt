@@ -1,0 +1,6 @@
+public void testGetApptRequestsFor() throws Exception {
+    List<ApptRequestBean> beans = arDAO.getApptRequestsFor(9000000000L);
+    assertEquals(1, beans.size());
+    assertEquals(2L, beans.get(0).getRequestedAppt().getPatient());
+    assertTrue(beans.get(0).isPending());
+}

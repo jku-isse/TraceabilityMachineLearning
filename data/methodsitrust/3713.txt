@@ -1,0 +1,9 @@
+/**
+ * Constructor with error messages as a special ErrorList data type.
+ *
+ * @param errorList
+ * 		An ErrorList object which contains the list of error messages.
+ */
+public FormValidationException(ErrorList errorList) {
+    this.errorList = errorList;
+}

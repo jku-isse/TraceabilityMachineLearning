@@ -1,0 +1,4 @@
+/**
+ * Gets the open file chooser for the view.
+ */
+public JFileChooser getOpenChooser();

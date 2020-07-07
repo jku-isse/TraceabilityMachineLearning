@@ -1,0 +1,8 @@
+/**
+ * Splits the segment at the given Point2D.Double if a segment was hit.
+ *
+ * @return the index of the segment or -1 if no segment was hit.
+ */
+public int splitSegment(Point2D.Double split, float tolerance) {
+    return path.splitSegment(split, tolerance);
+}

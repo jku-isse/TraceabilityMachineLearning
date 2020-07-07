@@ -1,0 +1,6 @@
+public Action getScrollCenterAction(ScrollingManager scrollMgr, TaskSelectionManager taskSelMgr, String iconSize) {
+    if ((myScrollCenterAction) == null)
+        myScrollCenterAction = new GanttGraphicArea.ScrollGanttChartCenterAction(scrollMgr, taskSelMgr, iconSize);
+
+    return myScrollCenterAction;
+}

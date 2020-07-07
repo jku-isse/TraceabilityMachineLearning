@@ -1,0 +1,3 @@
+public void setBase(int newValue) {
+    base = newValue;
+}

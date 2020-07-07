@@ -1,0 +1,7 @@
+@Override
+protected void setUp() throws Exception {
+    chart = new PatientLabResults();
+    gen.clearAllTables();
+    gen.standardData();
+    gen.patientLabProcedures();
+}

@@ -1,0 +1,17 @@
+/**
+ * Adds a message to the database.
+ *
+ * @param mBean
+ * 		A bean representing the message to be added.
+ * @throws SQLException
+ * 		
+ */
+public void addMessage(MessageBean mBean) throws SQLException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    conn = factory.getConnection();
+    ps = conn.prepareStatement(("INSERT INTO message (from_id, to_id, sent_date, message, subject, been_read, parent_msg_id, original_msg_id) " + "  VALUES (?, ?, NOW(), ?, ?, ?, ?, ?)"));
+    this.mbLoader.loadParameters(ps, mBean);
+    ps.executeUpdate();
+    DBUtil.closeConnection(conn, ps);
+}

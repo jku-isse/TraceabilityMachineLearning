@@ -1,0 +1,5 @@
+public void endElement(String namespaceURI, String sName, String qName) {
+    if ((qName.equals("previous-tasks")) && ((myPreviousStates) != null)) {
+        previousState.saveFilesFromLoaded(tasks);
+    }
+}

@@ -1,0 +1,8 @@
+public Task unpluggedClone() {
+    TaskImpl result = new TaskImpl(this, true) {
+        public boolean isSupertask() {
+            return false;
+        }
+    };
+    return result;
+}

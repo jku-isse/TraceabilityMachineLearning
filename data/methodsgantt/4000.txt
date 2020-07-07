@@ -1,0 +1,3 @@
+public Role getDefaultRole() {
+    return DEFAULT_ROLE_SET.findRole(0);
+}

@@ -1,0 +1,3 @@
+public String getUserRolesString() {
+    return userRolesString;
+}

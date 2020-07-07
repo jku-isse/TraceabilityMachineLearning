@@ -1,0 +1,10 @@
+// constructor for a new previous state
+public GanttPreviousState(String name, GanttProject project) throws IOException {
+    myName = name;
+    myTree = ((GanttTree2) (project.getTree()));
+    myProject = project;
+    myFile = createTemporaryFile();
+    myFile.deleteOnExit();
+    os = new OutputStreamWriter(new FileOutputStream(myFile), "UTF-8");
+    saveFile();
+}

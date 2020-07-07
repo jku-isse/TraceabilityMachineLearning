@@ -1,0 +1,94 @@
+/**
+ * Add the plies for a bishop position.
+ *
+ * @param square
+ * 		The square index of the bishop pos.
+ */
+private final void addPliesForBishopPos(int square) {
+    int orgPos = square;// Save the original position.
+
+    int squareRow = square >> 3;
+    int squareLine = square & 7;
+    long bitmask;
+    if (squareRow > 0) {
+        // If we are not on row 1
+        if (squareLine < 7) {
+            // Compute plies to the lower right.
+            square -= 7;
+            bitmask = 1L << square;
+            while ((square >= 0) && ((square & 7) > 0)) {
+                if ((bitmask & ((_emptySquares) | (_attackablePieces))) != 0L) {
+                    boolean capture = (bitmask & (_attackablePieces)) != 0L;
+                    addRegularPly(orgPos, square, capture, (capture ? MATERIAL_WIN : REGULAR_PLY));
+                    // If we attacked a piece, we cannot move further
+                    if (capture) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                square -= 7;
+                bitmask >>>= 7;
+            } 
+        }
+        if (squareLine > 0) {
+            // Compute plies to the lower left.
+            square = orgPos - 9;
+            bitmask = 1L << square;
+            while ((square >= 0) && ((square & 7) != 7)) {
+                if ((bitmask & ((_emptySquares) | (_attackablePieces))) != 0L) {
+                    boolean capture = (bitmask & (_attackablePieces)) != 0L;
+                    addRegularPly(orgPos, square, capture, (capture ? MATERIAL_WIN : REGULAR_PLY));
+                    // If we attacked a piece, we cannot move further
+                    if (capture) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                square -= 9;
+                bitmask >>>= 9;
+            } 
+        }
+    }
+    if (squareRow < 7) {
+        if (squareLine > 0) {
+            // Compute plies to the upper left.
+            square = orgPos + 7;
+            bitmask = 1L << square;
+            while ((square < 64) && ((square & 7) != 7)) {
+                if ((bitmask & ((_emptySquares) | (_attackablePieces))) != 0L) {
+                    boolean capture = (bitmask & (_attackablePieces)) != 0L;
+                    addRegularPly(orgPos, square, capture, (capture ? MATERIAL_WIN : REGULAR_PLY));
+                    // If we attacked a piece, we cannot move further
+                    if (capture) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                square += 7;
+                bitmask <<= 7;
+            } 
+        }
+        if (squareLine < 7) {
+            // Compute plies to the upper right.
+            square = orgPos + 9;
+            bitmask = 1L << square;
+            while ((square < 64) && ((square & 7) > 0)) {
+                if ((bitmask & ((_emptySquares) | (_attackablePieces))) != 0L) {
+                    boolean capture = (bitmask & (_attackablePieces)) != 0L;
+                    addRegularPly(orgPos, square, capture, (capture ? MATERIAL_WIN : REGULAR_PLY));
+                    // If we attacked a piece, we cannot move further
+                    if (capture) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                square += 9;
+                bitmask <<= 9;
+            } 
+        }
+    }
+}

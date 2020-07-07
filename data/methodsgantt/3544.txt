@@ -1,0 +1,3 @@
+protected void startElement(String name, TransformerHandler handler) throws SAXException {
+    startElement(name, SaverBase.ourEmptyAttributes, handler);
+}

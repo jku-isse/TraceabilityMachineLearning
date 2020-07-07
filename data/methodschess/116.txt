@@ -1,0 +1,8 @@
+/**
+ * Get the currently selected piece type.
+ *
+ * @return The currently selected piece type.
+ */
+public byte getPieceType() {
+    return _pieceType;
+}

@@ -1,0 +1,12 @@
+/**
+ * Reads figures from a file and replaces the children of the drawing
+ * with them.
+ * <p>
+ * This is a convenience method for calling read(File,Drawing,true).
+ *
+ * @param file
+ * 		The file.
+ * @param drawing
+ * 		The drawing.
+ */
+public void read(File file, Drawing drawing) throws IOException;

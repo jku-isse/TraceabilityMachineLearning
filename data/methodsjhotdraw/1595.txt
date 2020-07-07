@@ -1,0 +1,3 @@
+public Collection<DrawingView> getDrawingViews() {
+    return Collections.unmodifiableCollection(views);
+}

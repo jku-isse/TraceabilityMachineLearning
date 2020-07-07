@@ -1,0 +1,6 @@
+public void startElement(String namespaceURI, String sName, String qName, Attributes attrs) throws FileFormatException {
+    if (qName.equals("positions")) {
+        loadIcon(attrs);
+        loadDeletedIcon(attrs);
+    }
+}

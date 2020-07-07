@@ -1,0 +1,6 @@
+public void testGetSomeAccesses() throws Exception {
+    List<TransactionBean> transactions = tranDAO.getRecordAccesses(2L, (-1), new SimpleDateFormat("MM/dd/yyyy").parse("06/23/2007"), new SimpleDateFormat("MM/dd/yyyy").parse("06/24/2007"), false);
+    assertEquals(3, transactions.size());
+    transactions = tranDAO.getRecordAccesses(1L, (-1), new SimpleDateFormat("MM/dd/yyyy").parse("06/23/2007"), new SimpleDateFormat("MM/dd/yyyy").parse("06/24/2007"), false);
+    assertEquals(0, transactions.size());
+}

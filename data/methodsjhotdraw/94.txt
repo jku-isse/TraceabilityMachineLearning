@@ -1,0 +1,14 @@
+/**
+ * Creates tool bars.
+ * <p>
+ * Depending on the document interface of the application, this method
+ * may be invoked only once for the application, or for each opened view.
+ * <p>
+ *
+ * @param a
+ * 		Application.
+ * @param v
+ * 		The view for which the toolbars need to be created, or null
+ * 		if the toolbar needs to be shared with multiple views.
+ */
+public List<JToolBar> createToolBars(Application a, View v);

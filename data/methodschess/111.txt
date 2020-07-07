@@ -1,0 +1,9 @@
+/**
+ * Mouse cursor left the board: Use normal mouse pointer again
+ *
+ * @param e
+ * 		The event
+ */
+void jpBoard_mouseExited(MouseEvent e) {
+    jpBoard.setCursor(oldCursor);
+}

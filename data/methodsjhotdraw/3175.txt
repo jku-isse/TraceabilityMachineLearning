@@ -1,0 +1,18 @@
+/**
+ * Creates new form.
+ */
+public EditCanvasPanel() {
+    labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    initComponents();
+    colorButton.putClientProperty("Quaqua.Button.style", "colorWell");
+    opacitySlider = new JAttributeSlider(JSlider.VERTICAL, 0, 100, 100);
+    opacityPopupButton.add(opacitySlider);
+    opacityPopupButton.putClientProperty("JButton.buttonType", "toolbar");
+    add(opacityPopupButton);
+    NumberFormatter nf = new NumberFormatter();
+    nf.setMaximum(1.0);
+    nf.setMinimum(0.0);
+    opacityField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0.0, 1.0, 100.0));
+    opacityFieldHandler = new DrawingAttributeEditorHandler<Double>(AttributeKeys.CANVAS_FILL_OPACITY, opacityField, null);
+    opacitySliderHandler = new DrawingAttributeEditorHandler<Double>(AttributeKeys.CANVAS_FILL_OPACITY, opacitySlider, null);
+}

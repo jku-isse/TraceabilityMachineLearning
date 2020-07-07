@@ -1,0 +1,28 @@
+/**
+ * Edits an existing prescription bean.
+ *
+ * @param pres
+ * 		The newly updated prescription bean.
+ * @return A long indicating the ID of the newly updated prescription bean.
+ * @throws DBException
+ * 		
+ */
+public long edit(PrescriptionBean pres) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        // ps = conn.prepareStatement("UPDATE OVMedication (VisitID,NDCode,StartDate,EndDate,Dosage,Instructions) VALUES (?,?,?,?,?,?)");
+        String statement = "UPDATE ovmedication " + ("SET VisitID=?, NDCode=?, StartDate=?, EndDate=?, Dosage=?, Instructions=?, OverrideOther=? " + "WHERE ID=?");
+        ps = conn.prepareStatement(statement);
+        loader.loadParameters(ps, pres);
+        ps.setLong(8, pres.getId());
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

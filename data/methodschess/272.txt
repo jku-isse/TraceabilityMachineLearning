@@ -1,0 +1,10 @@
+// Methods
+/**
+ * Get the only instance of this class.
+ */
+public static final ZobristKeyImpl getInstance() {
+    if ((ZobristKeyImpl._instance) == null) {
+        ZobristKeyImpl._instance = new ZobristKeyImpl();
+    }
+    return ZobristKeyImpl._instance;
+}

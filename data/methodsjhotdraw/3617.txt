@@ -1,0 +1,4 @@
+public void remove(T o) {
+    outside.remove(o);
+    root.remove(o);
+}

@@ -1,0 +1,3 @@
+protected ContainerListener createToolBarContListener() {
+    return getHandler();
+}

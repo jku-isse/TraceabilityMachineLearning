@@ -1,0 +1,24 @@
+@Override
+public void keyPressed(KeyEvent evt) {
+    Object geom = getOwner().getTransformRestoreData();
+    Rectangle2D.Double r = getTransformedBounds();
+    switch (evt.getKeyCode()) {
+        case KeyEvent.VK_UP :
+            evt.consume();
+            break;
+        case KeyEvent.VK_DOWN :
+            evt.consume();
+            break;
+        case KeyEvent.VK_LEFT :
+            transform(new Point2D.Double(((r.x) - 1), r.y), new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height))));
+            evt.consume();
+            break;
+        case KeyEvent.VK_RIGHT :
+            if ((r.width) > 1) {
+                transform(new Point2D.Double(((r.x) + 1), r.y), new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height))));
+            }
+            evt.consume();
+            break;
+    }
+    fireUndoableEditHappened(new GeometryEdit(getOwner(), geom, getOwner().getTransformRestoreData()));
+}

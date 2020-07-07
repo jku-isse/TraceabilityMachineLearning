@@ -1,0 +1,11 @@
+public Role[] getEnabledRoles() {
+    ArrayList result = new ArrayList();
+    RoleSet[] roleSets = getRoleSets();
+    for (int i = 0; i < (roleSets.length); i++) {
+        if (roleSets[i].isEnabled()) {
+            result.addAll(Arrays.asList(roleSets[i].getRoles()));
+        }
+    }
+    result.addAll(Arrays.asList(getProjectRoleSet().getRoles()));
+    return ((Role[]) (result.toArray(new Role[0])));
+}

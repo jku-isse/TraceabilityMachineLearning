@@ -1,0 +1,3 @@
+private void setEnabledTree(JComponent root, boolean isEnabled) {
+    UIUtil.setEnabledTree(root, isEnabled);
+}

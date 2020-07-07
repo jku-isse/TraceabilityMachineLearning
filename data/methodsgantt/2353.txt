@@ -1,0 +1,4 @@
+public Frame getMainFrame() {
+    // TODO Auto-generated method stub
+    return null;
+}

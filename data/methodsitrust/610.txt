@@ -1,0 +1,8 @@
+public void testGetVisitReminders_AlivePatients() throws Exception {
+    gen.hcp0();
+    gen.aliveRecurringPatients();
+    action = new GetVisitRemindersAction(factory, 9000000000L);
+    assertEquals(1, action.getVisitReminders(GetVisitRemindersAction.ReminderType.FLU_SHOT_NEEDERS).size());
+    assertEquals(1, action.getVisitReminders(GetVisitRemindersAction.ReminderType.DIAGNOSED_CARE_NEEDERS).size());
+    assertEquals(1, action.getVisitReminders(GetVisitRemindersAction.ReminderType.IMMUNIZATION_NEEDERS).size());
+}

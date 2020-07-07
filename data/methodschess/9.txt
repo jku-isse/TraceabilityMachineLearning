@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the current game.
+ *
+ * @return The current game.
+ */
+public final Game getGame() {
+    return _game;
+}

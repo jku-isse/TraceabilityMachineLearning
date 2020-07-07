@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param factory
+ * 		
+ */
+public ProceduresDAO(DAOFactory factory) {
+    this.factory = factory;
+}

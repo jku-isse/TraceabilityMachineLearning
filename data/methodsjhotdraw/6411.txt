@@ -1,0 +1,21 @@
+/**
+ * Lazily create the document builder and keep a reference to it for
+ * performance improvement.
+ */
+protected static DocumentBuilder getBuilder() throws IOException {
+    if ((JavaxDOMInput.documentBuilder) == null) {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
+        factory.setValidating(false);
+        factory.setXIncludeAware(false);
+        try {
+            factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+            JavaxDOMInput.documentBuilder = factory.newDocumentBuilder();
+        } catch (Exception ex) {
+            InternalError error = new InternalError("Unable to create DocumentBuilder");
+            error.initCause(ex);
+            throw error;
+        }
+    }
+    return JavaxDOMInput.documentBuilder;
+}

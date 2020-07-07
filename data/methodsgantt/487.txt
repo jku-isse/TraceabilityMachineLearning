@@ -1,0 +1,18 @@
+public void close() {
+    fireProjectClosed();
+    prjInfos = new PrjInfos();
+    net.sourceforge.ganttproject.roles.RoleManager.Access.getInstance().clear();
+    if (null != (projectDocument)) {
+        projectDocument.releaseLock();
+    }
+    projectDocument = null;
+    setModified(false);
+    getTaskManager().clear();
+    getCustomColumnsStorage().reset();
+    for (int i = 0; i < (myPreviousStates.size()); i++) {
+        ((GanttPreviousState) (myPreviousStates.get(i))).remove();
+    }
+    myPreviousStates = new ArrayList();
+    // TODO [dbarashev] implement ProjectEventListener in bComparePrev action
+    bComparePrev.setEnabled(false);
+}

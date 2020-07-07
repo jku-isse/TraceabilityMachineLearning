@@ -1,0 +1,5 @@
+private void fireZoomOut() {
+    if (myZoomManager.canZoomOut()) {
+        myZoomManager.zoomOut();
+    }
+}

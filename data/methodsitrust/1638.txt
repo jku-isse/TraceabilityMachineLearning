@@ -1,0 +1,3 @@
+public void setDesignated(boolean val) {
+    designated = val;
+}

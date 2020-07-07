@@ -1,0 +1,3 @@
+public void referrals() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/referrals.sql"));
+}

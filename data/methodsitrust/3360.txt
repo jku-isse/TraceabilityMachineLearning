@@ -1,0 +1,13 @@
+protected void setUp() throws Exception {
+    super.setUp();
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.hcp0();
+    gen.hcp3();
+    gen.hcp4();
+    gen.hcp5();
+    gen.patient1();
+    gen.patient2();
+    gen.patient5();
+    gen.referral_query_testdata();
+}

@@ -1,0 +1,21 @@
+protected void generateMissingIcons() {
+    Icon[] oldIcons;
+    if ((icons.length) != 6) {
+        oldIcons = new Icon[6];
+        System.arraycopy(icons, 0, oldIcons, 0, Math.min(icons.length, 6));
+    } else {
+        oldIcons = icons;
+    }
+    if ((icons[SliderThumbIcon.EP]) == null) {
+        icons[SliderThumbIcon.EP] = icons[SliderThumbIcon.E];
+    }
+    if ((icons[SliderThumbIcon.D]) == null) {
+        icons[SliderThumbIcon.D] = icons[SliderThumbIcon.E];
+    }
+    if ((icons[SliderThumbIcon.I]) == null) {
+        icons[SliderThumbIcon.I] = icons[SliderThumbIcon.E];
+    }
+    if ((icons[SliderThumbIcon.DI]) == null) {
+        icons[SliderThumbIcon.DI] = icons[SliderThumbIcon.D];
+    }
+}

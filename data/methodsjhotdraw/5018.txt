@@ -1,0 +1,12 @@
+/**
+ * Reads a &lt;master-styles&gt; element from the specified
+ * XML element.
+ * <p>
+ * The master-styles element contains master styles.
+ *
+ * @param elem
+ * 		A &lt;master-styles&gt; element.
+ */
+private void readMasterStylesElement(IXMLElement elem) throws IOException {
+    readStylesChildren(elem, masterStyles);
+}

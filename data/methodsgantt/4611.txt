@@ -1,0 +1,4 @@
+public void sortByStartDate(/* <TaskActivity> */
+List tasks) {
+    Collections.sort(tasks, mySortActivitiesByStartDateComparator);
+}

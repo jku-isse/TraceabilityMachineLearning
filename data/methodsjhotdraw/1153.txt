@@ -1,0 +1,5 @@
+public void dispose() {
+    super.dispose();
+    transformOwner.removeFigureListener(this);
+    transformOwner = null;
+}

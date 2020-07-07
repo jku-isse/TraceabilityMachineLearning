@@ -1,0 +1,4 @@
+public MutationInfo(TaskDependency myDependency, int myOperation) {
+    this.myDependency = myDependency;
+    this.myOperation = myOperation;
+}

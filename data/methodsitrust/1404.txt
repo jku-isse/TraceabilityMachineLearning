@@ -1,0 +1,8 @@
+public void testGetNumericalResultUnit() throws Exception {
+    LabProcedureBean lp = new LabProcedureBean();
+    assertEquals("", lp.getNumericalResultUnit());
+    lp.setNumericalResultUnit("grams");
+    assertEquals("grams", lp.getNumericalResultUnit());
+    lp.setNumericalResultUnit("ml");
+    assertEquals("ml", lp.getNumericalResultUnit());
+}

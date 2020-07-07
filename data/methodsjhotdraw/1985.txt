@@ -1,0 +1,4 @@
+/**
+ * Restores the attributes of the figure to a previously stored state.
+ */
+public void restoreAttributesTo(Object restoreData);

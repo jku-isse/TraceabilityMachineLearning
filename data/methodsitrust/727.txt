@@ -1,0 +1,3 @@
+public void testGetAvailableHospitals() throws iTrustException {
+    assertSame(9, action.getAvailableHospitals("9000000000").size());
+}

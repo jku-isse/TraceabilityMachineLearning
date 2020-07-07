@@ -1,0 +1,4 @@
+/**
+ * Reset the opening book to the initial piece position.
+ */
+void reset();

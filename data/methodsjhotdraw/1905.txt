@@ -1,0 +1,4 @@
+/**
+ * Removes a figure from the selection.
+ */
+public void removeFromSelection(Figure figure);

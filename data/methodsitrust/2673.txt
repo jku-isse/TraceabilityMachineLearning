@@ -1,0 +1,6 @@
+// no need to do it *exactly* if we have -10s and +10s; we dont need that level of accuracy
+public void testGetLoginFailuresWithEntry5() throws Exception {
+    // also doing BVA - make it 10s less than the timeout time
+    addLoginFailure(5, new Timestamp(((System.currentTimeMillis()) - ((AuthDAO.LOGIN_TIMEOUT) - 10000))));
+    assertEquals(5, authDAO.getLoginFailures(ipAddr));
+}

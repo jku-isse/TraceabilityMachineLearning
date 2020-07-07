@@ -1,0 +1,4 @@
+public void testAddEmptyPatient() throws Exception {
+    long pid = patientDAO.addEmptyPatient();
+    assertEquals(" ", patientDAO.getName(pid));
+}

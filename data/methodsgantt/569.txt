@@ -1,0 +1,4 @@
+public void resourcesRemoved(ResourceEvent event) {
+    refreshProjectInfos();
+    setAskForSave(true);
+}

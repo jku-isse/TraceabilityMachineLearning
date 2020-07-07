@@ -1,0 +1,7 @@
+/**
+ * Set the flag, if the castling goes left.
+ *
+ * @param goesLeft
+ * 		Flag to indicate if the castling goes left.
+ */
+void setLeftCastling(boolean goesLeft);

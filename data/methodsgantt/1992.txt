@@ -1,0 +1,6 @@
+/**
+ * Returns the X coordinate of the upper-left pixel of tile (0, 0).
+ */
+public int getTileGridXOffset() {
+    return tileGridXOffset;
+}

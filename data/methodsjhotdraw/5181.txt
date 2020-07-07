@@ -1,0 +1,12 @@
+/**
+ * Returns information about the applet.
+ */
+@Override
+public String getAppletInfo() {
+    return (((((getName()) + "
+Version ") + (getVersion())) + "
+
+Copyright 1996-2009 (c) by the original authors of JHotDraw and all its contributors") + "
+This software is licensed under LGPL or") + "
+Creative Commons 2.5 BY";
+}

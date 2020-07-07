@@ -1,0 +1,29 @@
+private void writeTaskProperties(TransformerHandler handler, CustomColumnsStorage customCol) throws SAXException {
+    writeTaskProperty(handler, "tpd0", "type", "default", "icon");
+    writeTaskProperty(handler, "tpd1", "priority", "default", "icon");
+    writeTaskProperty(handler, "tpd2", "info", "default", "icon");
+    writeTaskProperty(handler, "tpd3", "name", "default", "text");
+    writeTaskProperty(handler, "tpd4", "begindate", "default", "date");
+    writeTaskProperty(handler, "tpd5", "enddate", "default", "date");
+    writeTaskProperty(handler, "tpd6", "duration", "default", "int");
+    writeTaskProperty(handler, "tpd7", "completion", "default", "int");
+    writeTaskProperty(handler, "tpd8", "coordinator", "default", "text");
+    writeTaskProperty(handler, "tpd9", "predecessorsr", "default", "text");
+    /* <CustomColumn> */
+    Iterator it = customCol.getCustomColums().iterator();
+    while (it.hasNext()) {
+        final CustomColumn cc = ((CustomColumn) (it.next()));
+        Object defVal = cc.getDefaultValue();
+        final Class cla = cc.getType();
+        final String valueType = TaskSaver.encodeFieldType(cla);
+        if (valueType == null) {
+            continue;
+        }
+        if (("date".equals(valueType)) && (defVal != null)) {
+            assert defVal instanceof GanttCalendar;
+            defVal = DateParser.getIsoDate(((GanttCalendar) (defVal)).getTime());
+        }
+        String idcStr = cc.getId();
+        writeTaskProperty(handler, idcStr, cc.getName(), "custom", valueType, (defVal == null ? null : String.valueOf(defVal)));
+    } 
+}

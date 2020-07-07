@@ -1,0 +1,11 @@
+/**
+ * Button Start position pressed; self-explaining
+ *
+ * @param e
+ * 		The event
+ */
+void jbStartPosition_actionPerformed(ActionEvent e) {
+    bitBoard.initialPosition();
+    this.boardRenderer.reset();
+    this.validate();
+}

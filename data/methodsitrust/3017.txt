@@ -1,0 +1,25 @@
+/**
+ * Get a list of patient instructions for a given office visit.
+ *
+ * @param visitID
+ * 		The id of the office visit to lookup.
+ * @return The list of patient instructions.
+ * @throws DBException
+ * 		
+ */
+public List<PatientInstructionsBean> getList(long visitID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("Select * From patientspecificinstructions Where patientspecificinstructions.VisitID = ? ");
+        ps.setLong(1, visitID);
+        ResultSet rs = ps.executeQuery();
+        return loader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,3 @@
+public TextFigure(String text) {
+    setText(text);
+}

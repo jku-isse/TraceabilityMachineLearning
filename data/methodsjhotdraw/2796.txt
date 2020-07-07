@@ -1,0 +1,3 @@
+public Color getTextColor() {
+    return AttributeKeys.TEXT_COLOR.get(this);
+}

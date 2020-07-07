@@ -1,0 +1,27 @@
+protected void processLeftButton(MouseEvent e) {
+    boolean isMineEvent = true;
+    ChartItem itemUnderPoint = myMouseSupport.getChartItemUnderMousePoint(e.getX(), e.getY());
+    if (itemUnderPoint instanceof TaskBoundaryChartItem) {
+        TaskBoundaryChartItem taskBoundary = ((TaskBoundaryChartItem) (itemUnderPoint));
+        if (taskBoundary.isStartBoundary()) {
+            getChartImplementation().beginChangeTaskStartInteraction(e, taskBoundary);
+        } else {
+            getChartImplementation().beginChangeTaskEndInteraction(e, taskBoundary);
+        }
+    } else
+        if (itemUnderPoint instanceof TaskProgressChartItem) {
+            getChartImplementation().beginChangeTaskProgressInteraction(e, ((TaskProgressChartItem) (itemUnderPoint)));
+        } else
+            if (itemUnderPoint instanceof TaskRegularAreaChartItem) {
+                getChartImplementation().beginDrawDependencyInteraction(e, ((TaskRegularAreaChartItem) (itemUnderPoint)), myMouseSupport);
+            } else {
+                isMineEvent = false;
+                super.processLeftButton(e);
+            }
+
+
+    if (isMineEvent) {
+        repaint();
+        appli.recalculateCriticalPath();
+    }
+}

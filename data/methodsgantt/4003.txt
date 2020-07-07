@@ -1,0 +1,3 @@
+public RoleSet getProjectRoleSet() {
+    return myProjectRoleSet;
+}

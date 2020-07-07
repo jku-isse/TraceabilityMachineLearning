@@ -1,0 +1,8 @@
+/**
+ * Returns the width of this dimension in double precision.
+ *
+ * @return the width of this dimension in double precision
+ */
+public double getWidth() {
+    return width;
+}

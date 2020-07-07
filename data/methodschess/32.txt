@@ -1,0 +1,9 @@
+private Dimension packFrame() {
+    boolean packFrame = true;
+    if (packFrame) {
+        pack();
+    } else {
+        validate();
+    }
+    return this.getSize();
+}

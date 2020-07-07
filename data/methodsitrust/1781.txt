@@ -1,0 +1,9 @@
+/**
+ * Sets the subject of this message
+ *
+ * @param subject
+ * 		
+ */
+public void setSubject(String subject) {
+    this.subject = subject;
+}

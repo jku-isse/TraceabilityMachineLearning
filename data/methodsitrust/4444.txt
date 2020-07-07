@@ -1,0 +1,6 @@
+public void testMultipleEthnicities() throws Exception {
+    factor = new EthnicityFactor(p, Ethnicity.Caucasian, Ethnicity.AfricanAmerican);
+    assertFalse(factor.hasRiskFactor());
+    factor = new EthnicityFactor(p, Ethnicity.Caucasian, Ethnicity.AfricanAmerican, Ethnicity.Asian);
+    assertTrue(factor.hasRiskFactor());
+}

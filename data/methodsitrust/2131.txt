@@ -1,0 +1,3 @@
+public void setTreatmentSatisfaction(int treatmentSatisfaction) {
+    this.treatmentSatisfaction = treatmentSatisfaction;
+}

@@ -1,0 +1,9 @@
+public GPOption getOption(String optionID) {
+    assert optionID != null;
+    for (int i = 0; i < (myOptions.length); i++) {
+        if (myOptions[i].getID().equals(optionID)) {
+            return myOptions[i];
+        }
+    }
+    return null;
+}

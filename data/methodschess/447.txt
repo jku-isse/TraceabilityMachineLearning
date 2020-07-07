@@ -1,0 +1,16 @@
+/**
+ * Set the flag for a check.
+ *
+ * @param check,
+ * 		true if the oppenent is in check.
+ */
+public final void setCheck(boolean check) {
+    _check = check;
+    // If we are not in check, we are also no checkmate.
+    if (check == false) {
+        setCheckMate(false);
+    }
+    // Recompute the string representation to make sure, that
+    // it is still correct.
+    computeStringRepresentation();
+}

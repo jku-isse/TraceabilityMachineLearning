@@ -1,0 +1,5 @@
+public void testMIDLetter() throws Exception {
+    String value = "a";
+    String errorMessage = MIDValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.MID, false));
+}

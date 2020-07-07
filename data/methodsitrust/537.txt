@@ -1,0 +1,10 @@
+/**
+ * Returns a list of allergies for the given patient
+ *
+ * @return a list of AllergyBeans
+ * @throws iTrustException
+ * 		
+ */
+public List<AllergyBean> getAllergies() throws iTrustException {
+    return allergyDAO.getAllergies(this.pid);
+}

@@ -1,0 +1,3 @@
+public void parse(String css, StyleManager rm) throws IOException {
+    parse(new StringReader(css), rm);
+}

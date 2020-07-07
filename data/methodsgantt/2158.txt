@@ -1,0 +1,4 @@
+public void taskRemoved(TaskHierarchyEvent e) {
+    // ourCriticProcess = true;
+    fireDelayObservation();
+}

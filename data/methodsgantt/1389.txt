@@ -1,0 +1,6 @@
+public void actionPerformed(ActionEvent arg0) {
+    if (myZoomManager.canZoomOut()) {
+        myZoomManager.zoomOut();
+    }
+    setEnabled(myZoomManager.canZoomOut());
+}

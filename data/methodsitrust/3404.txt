@@ -1,0 +1,4 @@
+public void testGetAllFromEmptyTable() throws Exception {
+    clearCPTCodes();
+    assertEquals(0, cptDAO.getAllCPTCodes().size());
+}

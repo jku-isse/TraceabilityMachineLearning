@@ -1,0 +1,3 @@
+public void setEventsEnabled(boolean enabled) {
+    areEventsEnabled = enabled;
+}

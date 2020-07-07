@@ -1,0 +1,4 @@
+@Override
+public String getDescription() {
+    return "Patient is " + (patient.getGender().toString().toLowerCase());
+}

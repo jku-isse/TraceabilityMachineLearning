@@ -1,0 +1,3 @@
+public ChartHeader getChartHeader() {
+    return myChartHeader;
+}

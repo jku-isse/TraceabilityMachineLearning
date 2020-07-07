@@ -1,0 +1,5 @@
+/**
+ * Returns all figures that lie within the specified
+ * bounds. The figures are returned in Z-order from back to front.
+ */
+List<Figure> findFiguresWithin(Rectangle2D.Double bounds);

@@ -1,0 +1,14 @@
+protected void fireProjectModified(boolean isModified) {
+    for (int i = 0; i < (myModifiedStateChangeListeners.size()); i++) {
+        ProjectEventListener next = ((ProjectEventListener) (myModifiedStateChangeListeners.get(i)));
+        try {
+            if (isModified) {
+                next.projectModified();
+            } else {
+                next.projectSaved();
+            }
+        } catch (Exception e) {
+            showErrorDialog(e);
+        }
+    }
+}

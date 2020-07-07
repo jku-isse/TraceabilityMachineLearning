@@ -1,0 +1,30 @@
+public void testAcceptanceScenario3() throws Exception {
+    gen.uc44_acceptance_scenario_3();
+    WebConversation wc = login("9000000003", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // select the patient
+    WebForm form = wr.getForms()[0];
+    form.getScriptableObject().setParameterValue("UID_PATIENTID", "5");
+    form.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // Select the office visit from yesterday
+    wr.getLinkWith("1/28/2011").click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    form = wr.getFormWithID("patientInstructionsForm");
+    form.setParameter("name", "Infant Milestones - 1 to 6 months.");
+    form.setParameter("url", "http://www.babycenter.com/0_milestone-chart-1-to-6-months_1496585.bc");
+    form.setParameter("comment", "Watch for Baby Programmer rolling over soon. Make sure to prevent falls from furniture.");
+    form.getButtonWithID("addPatientInstructionsButton").click();
+    // check updated page
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Patient-Specific Instructions information successfully updated."));
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_INSTRUCTIONS_ADD, 9000000003L, 5L, "");
+    WebTable tbl = wr.getTableWithID("patientInstructionsTable");
+    TableRow[] rows = tbl.getRows();
+    assertTrue(rows[2].getText().contains("Infant Milestones - 1 to 6 months."));
+}

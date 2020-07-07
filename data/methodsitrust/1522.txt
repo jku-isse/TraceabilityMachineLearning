@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param date
+ * 		the date to set
+ */
+public void setDate(Timestamp date) {
+    this.date = date;
+}

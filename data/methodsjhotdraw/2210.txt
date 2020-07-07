@@ -1,0 +1,8 @@
+/**
+ * Writes the drawing to the specified output stream.
+ * This method ensures that all figures of the drawing are visible on
+ * the image.
+ */
+public Transferable createTransferable(Drawing drawing, List<Figure> figures, double scaleFactor) throws IOException {
+    return new ImageTransferable(toImage(drawing, figures, scaleFactor, true));
+}

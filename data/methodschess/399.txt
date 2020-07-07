@@ -1,0 +1,39 @@
+/**
+ * Interface method. Currently displays input dialogs to edit white and black player
+ * names
+ *
+ * @param e
+ * 		The action event
+ */
+public void actionPerformed(ActionEvent e) {
+    if (e.getSource().equals(jmiEditPosition)) {
+        SetupBoardDialog setupBoardDialog = new SetupBoardDialog();
+        Tools.setDialogToCenter(setupBoardDialog);
+        setupBoardDialog.setModal(true);
+        setupBoardDialog.show();
+    } else {
+        if ((notationPanel) != null) {
+            PlayerDialog playerDialog = null;
+            boolean bWhiteOrBlack = true;
+            if (e.getSource().equals(jmiWhitePlayerName)) {
+                playerDialog = new PlayerDialog(1, notationPanel.getWhitePlayerName());
+                bWhiteOrBlack = true;
+            } else
+                if (e.getSource().equals(jmiBlackPlayerName)) {
+                    playerDialog = new PlayerDialog(2, notationPanel.getBlackPlayerName());
+                    bWhiteOrBlack = false;
+                }
+
+            if (playerDialog != null) {
+                Tools.setDialogToCenter(playerDialog);
+                playerDialog.show();
+                String sNewName = playerDialog.getNewName();
+                if (bWhiteOrBlack == true) {
+                    notationPanel.setWhitePlayerName(sNewName);
+                } else {
+                    notationPanel.setBlackPlayerName(sNewName);
+                }
+            }
+        }
+    }
+}

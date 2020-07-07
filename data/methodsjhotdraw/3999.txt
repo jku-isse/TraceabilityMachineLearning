@@ -1,0 +1,3 @@
+public boolean isLeaf(Object node) {
+    return ((TreeNode) (node)).isLeaf();
+}

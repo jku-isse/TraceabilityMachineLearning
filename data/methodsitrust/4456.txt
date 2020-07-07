@@ -1,0 +1,4 @@
+public void testNobody() throws Exception {
+    factor = new FamilyHistoryFactor(factory, 5L, 250.0, 251.0);
+    assertFalse(factor.hasRiskFactor());
+}

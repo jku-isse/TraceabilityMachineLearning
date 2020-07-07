@@ -1,0 +1,6 @@
+public void changeWorkingDirectory(File directory) {
+    assert directory.isDirectory();
+    myWorkingDirectory.lock();
+    myWorkingDirectory.setValue(directory.getAbsolutePath());
+    myWorkingDirectory.commit();
+}

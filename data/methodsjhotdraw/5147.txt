@@ -1,0 +1,7 @@
+public void transform(AffineTransform tx) {
+    if ((transform) == null) {
+        transform = ((AffineTransform) (tx.clone()));
+    } else {
+        transform.preConcatenate(tx);
+    }
+}

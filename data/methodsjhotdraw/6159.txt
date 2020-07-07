@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public ToggleStatusBarAction(Application app) {
+    super(app);
+    labels.configureAction(this, ToggleStatusBarAction.ID);
+    setPropertyName("statusBarVisible");
+}

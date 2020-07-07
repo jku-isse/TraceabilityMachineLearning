@@ -1,0 +1,13 @@
+private GeneralPath getTransformedDecoratorPath(Figure f, Point2D.Double p1, Point2D.Double p2) {
+    GeneralPath path = getDecoratorPath(f);
+    double strokeWidth = AttributeKeys.STROKE_WIDTH.get(f);
+    AffineTransform transform = new AffineTransform();
+    transform.translate(p1.x, p1.y);
+    transform.rotate(Math.atan2(((p1.x) - (p2.x)), ((p2.y) - (p1.y))));
+    // transform.rotate(Math.PI / 2);
+    if (strokeWidth > 1.0F) {
+        transform.scale((1.0 + ((strokeWidth - 1.0) / 2.0)), (1.0 + ((strokeWidth - 1.0) / 2.0)));
+    }
+    path.transform(transform);
+    return path;
+}

@@ -1,0 +1,5 @@
+private void commit() {
+    for (int i = 0; i < (myGroups.length); i++) {
+        myGroups[i].commit();
+    }
+}

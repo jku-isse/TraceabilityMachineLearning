@@ -1,0 +1,3 @@
+ErrorNotificationPanel() {
+    super(new BorderLayout());
+}

@@ -1,0 +1,11 @@
+public RoleSet getRoleSet(String rolesetName) {
+    RoleSet result = null;
+    RoleSet[] roleSets = getRoleSets();
+    for (int i = 0; i < (roleSets.length); i++) {
+        if (roleSets[i].getName().equals(rolesetName)) {
+            result = roleSets[i];
+            break;
+        }
+    }
+    return result;
+}

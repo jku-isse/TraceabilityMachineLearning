@@ -1,0 +1,14 @@
+/**
+ * Creates a drawing with input and output formats, so that drawing figures
+ * can be copied and pasted between drawing views.
+ *
+ * @return a drawing
+ */
+private static Drawing createDrawing() {
+    // Create a default drawing with
+    // input/output formats for basic clipboard support.
+    DefaultDrawing drawing = new DefaultDrawing();
+    drawing.addInputFormat(new SerializationInputOutputFormat());
+    drawing.addOutputFormat(new SerializationInputOutputFormat());
+    return drawing;
+}

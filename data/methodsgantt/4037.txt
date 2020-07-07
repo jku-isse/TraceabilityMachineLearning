@@ -1,0 +1,3 @@
+public Paint getSelectedPaint() {
+    return ((Paint) (getSelectedItem()));
+}

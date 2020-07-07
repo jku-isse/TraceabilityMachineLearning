@@ -1,0 +1,8 @@
+public void testInsertReportFailureNullMIDs() throws Exception {
+    try {
+        dao.addReportRequest(0, 0, null);
+        fail("Should have throw exception");
+    } catch (DBException ex) {
+        assertEquals("RequesterMID cannot be null", ex.getSQLException().getMessage());
+    }
+}

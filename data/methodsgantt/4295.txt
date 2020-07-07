@@ -1,0 +1,11 @@
+public Color getColor() {
+    Color result = myColor;
+    if (result == null) {
+        if ((isMilestone()) || ((getNestedTasks().length) > 0)) {
+            result = Color.BLACK;
+        } else {
+            result = myManager.getConfig().getDefaultColor();
+        }
+    }
+    return result;
+}

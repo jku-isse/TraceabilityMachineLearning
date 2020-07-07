@@ -1,0 +1,3 @@
+public String getStreetAddress2() {
+    return streetAddress2;
+}

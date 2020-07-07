@@ -1,0 +1,5 @@
+public void testGetHospital() throws DBException {
+    HospitalBean hosp = hospitalDAO.getHospital("9191919191");
+    assertEquals("9191919191", hosp.getHospitalID());
+    assertEquals("Test Hospital 9191919191", hosp.getHospitalName());
+}

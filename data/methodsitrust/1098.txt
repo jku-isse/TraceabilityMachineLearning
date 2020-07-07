@@ -1,0 +1,3 @@
+public void testLinkedToReferral() throws DBException {
+    assertEquals(0, action.linkedToReferral(1));
+}

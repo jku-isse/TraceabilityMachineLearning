@@ -1,0 +1,3 @@
+protected Figure getTransformOwner() {
+    return transformOwner;
+}

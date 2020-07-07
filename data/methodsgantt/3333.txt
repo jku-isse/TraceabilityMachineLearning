@@ -1,0 +1,37 @@
+private void updateDependency(Object value, int row, int col) throws TaskDependencyException {
+    TaskDependency dep = ((TaskDependency) (myDependencies.get(row)));
+    switch (col) {
+        case 4 :
+            dep.setHardness(((TaskDependency.Hardness) (value)));
+            break;
+        case 3 :
+            {
+                int loadAsInt = Integer.parseInt(String.valueOf(value));
+                dep.setDifference(loadAsInt);
+                break;
+            }
+        case 2 :
+            {
+                TaskDependencyConstraint clone;
+                try {
+                    clone = ((TaskDependencyConstraint) (((ConstraintImpl) (value)).clone()));
+                } catch (CloneNotSupportedException e) {
+                    throw new RuntimeException(e);
+                }
+                dep.setConstraint(clone);
+                break;
+            }
+        case 1 :
+            {
+                dep.delete();
+                myDependencies.remove(row);
+                if (value == null) {
+                    fireTableRowsDeleted(row, row);
+                } else {
+                    Task selectedTask = ((DependencyTableModel.TaskComboItem) (value)).myTask;
+                    TaskDependency newDependency = myMutator.createDependency(myTask, selectedTask, new FinishStartConstraintImpl());
+                    myDependencies.add(newDependency);
+                }
+            }
+    }
+}

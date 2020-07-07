@@ -1,0 +1,3 @@
+public Rectangle2D.Double getBounds() {
+    return isConnectToDecorator() ? ((DecoratedFigure) (getOwner())).getDecorator().getBounds() : getOwner().getBounds();
+}

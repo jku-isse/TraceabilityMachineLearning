@@ -1,0 +1,3 @@
+public void setSpiritualPractices(String spiritualPractices) {
+    this.spiritualPractices = spiritualPractices;
+}

@@ -1,0 +1,17 @@
+public void testHCPPatientUploadInvalidData() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Upload Patient File").click();
+    assertEquals("iTrust - Upload Patient File", wr.getTitle());
+    WebForm wf = wr.getFormWithName("mainForm");
+    wf.setParameter("patientFile", new File("testing-files/sample_patientupload/HCPPatientUploadInvalidData.csv"));
+    wf.getButtonWithID("sendFile").click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("File upload was successful, but some patients could not be added"));
+    assertTrue(wr.getText().contains("Field number mismatch on line 3"));
+    assertTrue(wr.getText().contains("Field number mismatch on line 4"));
+    assertTrue(wr.getText().contains("Input validation failed for patient &quot;not,valid first&quot;!"));
+    assertTrue(wr.getText().contains("Input validation failed for patient &quot;Not valid&quot"));
+    assertTrue(wr.getText().contains("<td>Correct</td>"));
+    assertTrue(wr.getText().contains("<td>Number</td>"));
+}

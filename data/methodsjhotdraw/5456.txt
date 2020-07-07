@@ -1,0 +1,3 @@
+public double getArcHeight() {
+    return (roundrect.archeight) / 2.0;
+}

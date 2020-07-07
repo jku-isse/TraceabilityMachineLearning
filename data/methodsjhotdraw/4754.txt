@@ -1,0 +1,6 @@
+/**
+ * Creates a Pageable object for printing the view.
+ */
+public Pageable createPageable() {
+    return new DrawingPageable(view.getDrawing());
+}

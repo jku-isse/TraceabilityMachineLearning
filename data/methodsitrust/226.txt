@@ -1,0 +1,9 @@
+public void testDeclareAdmin() throws Exception {
+    gen.admin1();
+    try {
+        action.declareHCP("9000000001");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("This user is not a licensed healthcare professional!", e.getMessage());
+    }
+}

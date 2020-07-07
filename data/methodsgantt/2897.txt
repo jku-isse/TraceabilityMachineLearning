@@ -1,0 +1,9 @@
+public static void setEnabledTree(JComponent root, boolean isEnabled) {
+    root.setEnabled(isEnabled);
+    Component[] components = root.getComponents();
+    for (int i = 0; i < (components.length); i++) {
+        if ((components[i]) instanceof JComponent) {
+            UIUtil.setEnabledTree(((JComponent) (components[i])), isEnabled);
+        }
+    }
+}

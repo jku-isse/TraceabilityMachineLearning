@@ -1,0 +1,3 @@
+public ConnectionFigure getOwner() {
+    return ((ConnectionFigure) (super.getOwner()));
+}

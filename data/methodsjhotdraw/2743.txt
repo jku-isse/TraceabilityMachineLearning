@@ -1,0 +1,7 @@
+public void restoreTransformTo(Object geometry) {
+    Rectangle2D.Double r = ((Rectangle2D.Double) (geometry));
+    bounds.x = r.x;
+    bounds.y = r.y;
+    bounds.width = r.width;
+    bounds.height = r.height;
+}

@@ -1,0 +1,12 @@
+public void testGetResultsByWrongZip() throws Exception {
+    SurveyResultBean bean = new SurveyResultBean();
+    bean.setHCPzip("12388a");
+    bean.setHCPspecialty(SurveyResultBean.SURGEON_SPECIALTY);
+    try {
+        action.getSurveyResultsForZip(bean);
+        fail("Exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals(1, e.getErrorList().size());
+        assertEquals(("Zip Code: " + (ValidationFormat.ZIPCODE.getDescription())), e.getErrorList().get(0));
+    }
+}

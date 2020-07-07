@@ -1,0 +1,4 @@
+public ApptTypeBean(String name, int duration) {
+    this.name = name;
+    this.duration = duration;
+}

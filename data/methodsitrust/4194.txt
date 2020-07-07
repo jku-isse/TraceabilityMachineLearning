@@ -1,0 +1,26 @@
+/* HCP 9000000000 has viewed PHR of patient 2 on 11/11/2007.
+Authenticate Patient
+MID: 2
+Password: pw
+Choose option View Access Log
+Choose date range 6/22/2000 through 6/23/2000
+ */
+public void testViewAccessLog2() throws Exception {
+    // clear operational profile
+    gen.transactionLog();
+    // login patient 2
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    // click on View Access Log
+    wr = wr.getLinkWith("Access Log").click();
+    // select the date range and submit
+    WebForm form = wr.getForms()[0];
+    form.setParameter("startDate", "06/22/2000");
+    form.setParameter("endDate", "06/23/2000");
+    form.getSubmitButtons()[0].click();
+    WebResponse add = wc.getCurrentPage();
+    assertFalse(add.getText().contains("Exception"));
+    iTrustHTTPTest.assertLogged(TransactionType.ACCESS_LOG_VIEW, 2L, 0L, "");
+}

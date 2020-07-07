@@ -1,0 +1,3 @@
+public AddBlankLineAction(GanttTree2 ganttTree) {
+    myGanttTree = ganttTree;
+}

@@ -1,0 +1,7 @@
+public boolean contains(Point2D.Double p) {
+    if ((getPresentationFigure()) != null) {
+        return getPresentationFigure().contains(p);
+    } else {
+        return super.contains(p);
+    }
+}

@@ -1,0 +1,3 @@
+protected void writeAttribute(IXMLElement elem, String name, double value, double defaultValue) {
+    writeAttribute(elem, name, SVGConstants.SVG_NAMESPACE, value, defaultValue);
+}

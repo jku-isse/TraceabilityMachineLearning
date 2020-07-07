@@ -1,0 +1,10 @@
+/**
+ * Specifies the minimum value.
+ *
+ * @param m
+ * 		an int specifying the minimum value
+ * @see #getMinimum
+ */
+public void setMinimum(int m) {
+    progressModel.setMinimum(m);
+}

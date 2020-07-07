@@ -1,0 +1,9 @@
+/**
+ * Set the new running state of the timer.
+ *
+ * @param active
+ * 		The new state of the timer panel.
+ */
+public void setRunning(boolean active) {
+    _running = active;
+}

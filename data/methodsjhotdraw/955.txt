@@ -1,0 +1,4 @@
+public Point2D.Double getEndPoint() {
+    Rectangle2D.Double r = getBounds();
+    return new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height)));
+}

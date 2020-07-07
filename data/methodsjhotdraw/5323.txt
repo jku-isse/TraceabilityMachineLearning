@@ -1,0 +1,18 @@
+/**
+ * Gets the segment of the polyline that is hit by
+ * the given Point2D.Double.
+ *
+ * @return the index of the segment or -1 if no segment was hit.
+ */
+@Override
+public int findSegment(Point2D.Double find, double tolerance) {
+    // Apply inverse of transform to point
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        try {
+            find = ((Point2D.Double) (AttributeKeys.TRANSFORM.get(this).inverseTransform(find, new Point2D.Double())));
+        } catch (NoninvertibleTransformException ex) {
+            System.err.println("Warning: SVGBezierFigure.findSegment. Figure has noninvertible Transform.");
+        }
+    }
+    return getBezierPath().findSegment(find, tolerance);
+}

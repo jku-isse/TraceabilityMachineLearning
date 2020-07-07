@@ -1,0 +1,3 @@
+public void setCallingDialog(SetupBoardDialog dialog) {
+    this.setupBoardDialog = dialog;
+}

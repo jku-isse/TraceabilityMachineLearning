@@ -1,0 +1,12 @@
+public void actionPerformed(ActionEvent e) {
+    Mediator.getGanttProjectSingleton().getUndoManager().undoableEdit("HIDE OR SHOW A COLUMN", new Runnable() {
+        public void run() {
+            if (!(isShown))
+                show();
+            else
+                hide();
+
+            getTable().repaint();
+        }
+    });
+}

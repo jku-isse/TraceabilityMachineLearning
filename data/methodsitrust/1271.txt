@@ -1,0 +1,4 @@
+public boolean updateReferral(ReferralBean bean) throws DBException {
+    referralDAO.editReferral(bean);
+    return true;
+}

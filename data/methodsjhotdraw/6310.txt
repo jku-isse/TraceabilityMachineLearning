@@ -1,0 +1,13 @@
+/**
+ * Returns a formatted string using java.util.Formatter().
+ *
+ * @param key
+ * 		
+ * @param arguments
+ * 		
+ * @return formatted String
+ */
+public String format(String key, Object... arguments) {
+    // return String.format(resource.getLocale(), getString(key), arguments);
+    return new Formatter(resource.getLocale()).format(getString(key), arguments).toString();
+}

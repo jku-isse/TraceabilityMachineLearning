@@ -1,0 +1,6 @@
+public Rectangle getDrawingArea() {
+    Rectangle r = getBounds();
+    r.grow(2, 2);// grow by two pixels to take antialiasing into account
+
+    return r;
+}

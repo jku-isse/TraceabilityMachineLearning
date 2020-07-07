@@ -1,0 +1,5 @@
+public void testZipCount() throws Exception {
+    DiagnosisStatisticsBean dsBean = new DiagnosisStatisticsBean();
+    dsBean.setZipStats(10);
+    assertEquals(10, dsBean.getZipStats());
+}

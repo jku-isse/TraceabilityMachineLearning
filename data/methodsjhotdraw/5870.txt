@@ -1,0 +1,17 @@
+/**
+ * post the POST request specified URL, with the specified parameter
+ *
+ * @param url
+ * 		post URL
+ * @param name1
+ * 		parameter name
+ * @param value1
+ * 		parameter value
+ * @return input stream with the server response
+ * @throws IOException
+ * 		
+ * @see #setParameter
+ */
+public static InputStream post(URL url, String name1, Object value1) throws IOException {
+    return new ClientHttpRequest(url).post(name1, value1);
+}

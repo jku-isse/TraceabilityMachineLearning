@@ -1,0 +1,7 @@
+/**
+ * checks if the given column is removable
+ */
+public boolean checkRemovableCol(String name) {
+    /* only custom columns are removable */
+    return ((HumanResourceManager) (myResourceManager)).checkCustomField(name);
+}

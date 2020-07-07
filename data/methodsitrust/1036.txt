@@ -1,0 +1,13 @@
+/**
+ * Set up
+ *
+ * @param factory
+ * 		The DAOFactory used to create the DAOs used in this action.
+ * @param loggedInMID
+ * 		The MID of the person retrieving the logs.
+ */
+public ViewMyAccessLogAction(DAOFactory factory, long loggedInMID) {
+    this.loggedInMID = loggedInMID;
+    this.transDAO = factory.getTransactionDAO();
+    this.patientDAO = factory.getPatientDAO();
+}

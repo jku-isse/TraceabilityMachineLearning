@@ -1,0 +1,7 @@
+private String replaceNameWithYou(String activity) {
+    try {
+        return activity.replace(authDAO.getUserName(loggedInMID), "You");
+    } catch (Exception e) {
+        return activity;
+    }
+}

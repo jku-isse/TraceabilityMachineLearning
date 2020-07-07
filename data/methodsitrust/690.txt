@@ -1,0 +1,14 @@
+public void testViewProcedure() throws Exception {
+    LabProcedureBean lp = new LabProcedureBean();
+    lp.setLoinc("10763-1");
+    lp.setCommentary("This is a routine procedure");
+    lp.setOvID(902L);
+    lp.setPid(3L);
+    lp.setResults("");
+    lp.allow();
+    lp.statusPending();
+    long id = lpDAO.addLabProcedure(lp);
+    List<LabProcedureBean> procedures = action.viewProcedures(3L);
+    assertEquals(1, procedures.size());
+    assertEquals(id, procedures.get(0).getProcedureID());
+}

@@ -1,0 +1,16 @@
+ViewManagerImpl(GanttTabbedPane tabs) {
+    myTabs = tabs;
+    myTabs.addChangeListener(new ChangeListener() {
+        public void stateChanged(ChangeEvent e) {
+            GanttProjectBase.GPViewImpl selectedView = ((GanttProjectBase.GPViewImpl) (myTabs.getSelectedUserObject()));
+            if ((mySelectedView) == selectedView) {
+                return;
+            }
+            if ((mySelectedView) != null) {
+                mySelectedView.setActive(false);
+            }
+            mySelectedView = selectedView;
+            mySelectedView.setActive(true);
+        }
+    });
+}

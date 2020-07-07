@@ -1,0 +1,25 @@
+void populate(/* <JButton> */
+List buttons) {
+    removeAll();
+    myButtons = new ArrayList(buttons.size());
+    for (int i = 0; i < (buttons.size()); i++) {
+        Object nextButton = buttons.get(i);
+        if (GPToolBar.SEPARATOR_OBJECT.equals(nextButton)) {
+            int size = Integer.parseInt(options.getIconSize());
+            // toolBar.addSeparator(new Dimension(size, size));
+            ImageIcon icon;
+            if ((getOrientation()) == (JToolBar.HORIZONTAL)) {
+                icon = new ImageIcon(getClass().getResource("/icons/sepV_16.png"));
+            } else {
+                icon = new ImageIcon(getClass().getResource("/icons/sepH_16.png"));
+            }
+            add(new JLabel(icon));
+        } else {
+            add(((AbstractButton) (nextButton)));
+            if (nextButton instanceof TestGanttRolloverButton) {
+                myButtons.add(nextButton);
+            }
+        }
+    }
+    invalidate();
+}

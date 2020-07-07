@@ -1,0 +1,9 @@
+/**
+ * Set a new board to be analyzed.
+ *
+ * @param board
+ * 		The new board.
+ */
+public final void setBoard(BitBoard board) {
+    _board = board;
+}

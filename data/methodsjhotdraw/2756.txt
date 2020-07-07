@@ -1,0 +1,5 @@
+@Override
+protected void creationFinished(Figure createdFigure) {
+    beginEdit(((TextHolderFigure) (createdFigure)));
+    updateCursor(getView(), new Point(0, 0));
+}

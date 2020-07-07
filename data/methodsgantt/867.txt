@@ -1,0 +1,10 @@
+public void selectTasks(List tasksList) {
+    boolean multi = false;
+    Iterator it = tasksList.iterator();
+    if (it.hasNext())
+        selectTask(((Task) (it.next())), false);
+
+    while (it.hasNext())
+        selectTask(((Task) (it.next())), true);
+
+}

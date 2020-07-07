@@ -1,0 +1,6 @@
+/**
+ * Get the name of this square.
+ *
+ * @return The suare name of this position (i.e. a4).
+ */
+String toSquareName();

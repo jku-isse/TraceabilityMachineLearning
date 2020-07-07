@@ -1,0 +1,3 @@
+public void read() throws IOException {
+    throw new UnsupportedOperationException("This method should be overriden in derived classes");
+}

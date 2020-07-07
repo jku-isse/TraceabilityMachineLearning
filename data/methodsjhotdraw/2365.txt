@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public MoveHandle(Figure owner, Locator locator) {
+    super(owner, locator);
+}

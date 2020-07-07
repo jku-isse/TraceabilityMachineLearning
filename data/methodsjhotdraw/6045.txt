@@ -1,0 +1,5 @@
+protected void writeAttribute(IXMLElement elem, String name, String namespace, String value, String defaultValue) {
+    if (!(value.equals(defaultValue))) {
+        elem.setAttribute(name, value);
+    }
+}

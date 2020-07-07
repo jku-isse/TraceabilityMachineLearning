@@ -1,0 +1,175 @@
+public Token nextToken() throws TokenStreamException {
+    Token theRetToken = null;
+    tryAgain : for (; ;) {
+        Token _token = null;
+        int _ttype = Token.INVALID_TYPE;
+        resetText();
+        try {
+            // for char stream error handling
+            try {
+                // for lexical error handling
+                switch (LA(1)) {
+                    case 	 :
+                    case 
+ :
+                    case f :
+                    case  :
+                    case   :
+                        {
+                            mWS(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case . :
+                        {
+                            mDOT(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case [ :
+                        {
+                            mLBRACK(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case ] :
+                        {
+                            mRBRACK(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case ; :
+                        {
+                            mSL_COMMENT(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case " :
+                        {
+                            mSTRING_LITERAL(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case a :
+                    case b :
+                    case c :
+                    case d :
+                    case e :
+                    case f :
+                    case g :
+                    case h :
+                        {
+                            mSQUARE_NAME(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case - :
+                        {
+                            mPIECE_MOVE(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case x :
+                        {
+                            mPIECE_CAPTURE(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case = :
+                        {
+                            mPAWN_PROMOTION(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case W :
+                        {
+                            mTAG_WHITE(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case D :
+                        {
+                            mTAG_DATE(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case E :
+                        {
+                            mTAG_EVENT(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    case S :
+                        {
+                            mTAG_SITE(true);
+                            theRetToken = _returnToken;
+                            break;
+                        }
+                    default :
+                        if (((LA(1)) == O) && ((LA(2)) == -)) {
+                            mRIGHT_CASTLING(true);
+                            theRetToken = _returnToken;
+                        } else
+                            if ((((LA(1)) >= 1) && ((LA(1)) <= 9)) && (PGNLexer._tokenSet_0.member(LA(2)))) {
+                                mMOVE_INDEX(true);
+                                theRetToken = _returnToken;
+                            } else
+                                if (((LA(1)) == B) && ((LA(2)) == l)) {
+                                    mTAG_BLACK(true);
+                                    theRetToken = _returnToken;
+                                } else
+                                    if (((LA(1)) == R) && ((LA(2)) == o)) {
+                                        mTAG_ROUND(true);
+                                        theRetToken = _returnToken;
+                                    } else
+                                        if (((LA(1)) == R) && ((LA(2)) == e)) {
+                                            mTAG_RESULT(true);
+                                            theRetToken = _returnToken;
+                                        } else
+                                            if (((LA(1)) == O) && ((LA(2)) == p)) {
+                                                mTAG_OPENING(true);
+                                                theRetToken = _returnToken;
+                                            } else
+                                                if ((PGNLexer._tokenSet_1.member(LA(1))) && true) {
+                                                    mFIGURINE_LETTER_CODE(true);
+                                                    theRetToken = _returnToken;
+                                                } else
+                                                    if (((((LA(1)) == *) || ((LA(1)) == 0)) || ((LA(1)) == 1)) && true) {
+                                                        mGAME_TERMINATOR(true);
+                                                        theRetToken = _returnToken;
+                                                    } else {
+                                                        if ((LA(1)) == (EOF_CHAR)) {
+                                                            uponEOF();
+                                                            _returnToken = makeToken(Token.EOF_TYPE);
+                                                        } else {
+                                                            throw new antlr.NoViableAltForCharException(((char) (LA(1))), getFilename(), getLine());
+                                                        }
+                                                    }
+
+
+
+
+
+
+
+                }
+                if ((_returnToken) == null)
+                    continue tryAgain;
+                // found SKIP token
+
+                _ttype = _returnToken.getType();
+                _ttype = testLiteralsTable(_ttype);
+                _returnToken.setType(_ttype);
+                return _returnToken;
+            } catch (RecognitionException e) {
+                throw new antlr.TokenStreamRecognitionException(e);
+            }
+        } catch (CharStreamException cse) {
+            if (cse instanceof CharStreamIOException) {
+                throw new antlr.TokenStreamIOException(((CharStreamIOException) (cse)).io);
+            } else {
+                throw new TokenStreamException(cse.getMessage());
+            }
+        }
+    }
+}

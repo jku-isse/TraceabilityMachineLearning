@@ -1,0 +1,3 @@
+public boolean isEditing() {
+    return (typingTarget) != null;
+}

@@ -1,0 +1,11 @@
+PiecesLayer(Board board) {
+    super(new GridLayout(8, 8));
+    _set = new ChessSet(this);
+    _animationLayer = new AnimationLayer(this);
+    _board = board;
+    int _boardSize = 8 * (ChessBoardRenderer2D.getSquareSize());
+    setPreferredSize(new Dimension(_boardSize, _boardSize));
+    setBounds(0, 0, _boardSize, _boardSize);
+    setOpaque(false);
+    repaintBoard();
+}

@@ -1,0 +1,11 @@
+public void read(File file, Drawing drawing, boolean replace) throws IOException {
+    BufferedInputStream in = null;
+    try {
+        in = new BufferedInputStream(new FileInputStream(file));
+        read(in, drawing, replace);
+    } finally {
+        if (in != null) {
+            in.close();
+        }
+    }
+}

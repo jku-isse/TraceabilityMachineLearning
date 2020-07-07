@@ -1,0 +1,5 @@
+/**
+ * Creates an instance of TaskSelectionManager
+ */
+public TaskSelectionManager() {
+}

@@ -1,0 +1,3 @@
+public boolean shouldSelectCell(EventObject arg0) {
+    return myProxiedEditor.shouldSelectCell(arg0);
+}

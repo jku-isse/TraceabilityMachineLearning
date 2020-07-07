@@ -1,0 +1,3 @@
+protected UIConfiguration getProjectConfig() {
+    return myProjectConfig;
+}

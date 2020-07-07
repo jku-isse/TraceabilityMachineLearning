@@ -1,0 +1,3 @@
+public Component getContentPane() {
+    return publicHolidayBean;
+}

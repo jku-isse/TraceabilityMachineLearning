@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public PathTool(SVGPathFigure pathPrototype, SVGBezierFigure bezierPrototype) {
+    this(pathPrototype, bezierPrototype, null);
+}

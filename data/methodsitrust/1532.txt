@@ -1,0 +1,4 @@
+public ApptTypeBean() {
+    this.name = null;
+    this.duration = 0;
+}

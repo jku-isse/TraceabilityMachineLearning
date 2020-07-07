@@ -1,0 +1,11 @@
+/**
+ * Constructor which creates a GraphicalCompositeFigure with
+ * a given graphical figure for presenting it.
+ *
+ * @param newPresentationFigure	figure
+ * 		which renders the container
+ */
+public GraphicalCompositeFigure(Figure newPresentationFigure) {
+    super();
+    setPresentationFigure(newPresentationFigure);
+}

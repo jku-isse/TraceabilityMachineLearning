@@ -1,0 +1,3 @@
+private void handleDoubleClick(MouseEvent e) {
+    myPropertiesAction.actionPerformed(null);
+}

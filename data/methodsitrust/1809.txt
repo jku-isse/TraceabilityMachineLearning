@@ -1,0 +1,3 @@
+public void setNumPersonnelTransactions(int numPersonnelTransactions) {
+    this.numPersonnelTransactions = numPersonnelTransactions;
+}

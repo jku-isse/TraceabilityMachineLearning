@@ -1,0 +1,11 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((DefaultDrawingViewBeanInfo.beanDescriptor) == null)
+        DefaultDrawingViewBeanInfo.beanDescriptor = new BeanDescriptor(DefaultDrawingViewBeanInfo.class);
+
+    DefaultDrawingViewBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    DefaultDrawingViewBeanInfo.beanDescriptor.setDisplayName("DefaultDrawingView");
+    return DefaultDrawingViewBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

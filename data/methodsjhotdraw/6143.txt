@@ -1,0 +1,3 @@
+public boolean getScrollableTracksViewportHeight() {
+    return editor.getScrollableTracksViewportHeight();
+}

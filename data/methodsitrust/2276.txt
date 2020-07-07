@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the overrideComment
+ */
+public String getOverrideOther() {
+    return overrideOther;
+}

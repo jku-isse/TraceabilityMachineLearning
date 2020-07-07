@@ -1,0 +1,3 @@
+public void setStartDateStr(String startDate) {
+    this.startDateStr = startDate;
+}

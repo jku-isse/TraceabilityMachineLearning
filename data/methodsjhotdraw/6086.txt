@@ -1,0 +1,11 @@
+private void replaceAndFind(ActionEvent evt) {
+    // GEN-FIRST:event_replaceAndFind
+    TeddyView view = ((TeddyView) (app.getActiveView()));
+    if (view != null) {
+        CompositeEdit edit = new CompositeEdit("Replace And Find");
+        view.fireEdit(edit);
+        view.replaceRange(replaceField.getText(), view.getSelectionStart(), view.getSelectionEnd());
+        next(evt);
+        view.fireEdit(edit);
+    }
+}// GEN-LAST:event_replaceAndFind

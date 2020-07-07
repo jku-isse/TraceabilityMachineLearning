@@ -1,0 +1,9 @@
+public void testPatientViewLabResults() throws Exception {
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    wr = wr.getLinkWith("View My Records").click();
+    assertEquals("iTrust - View My Records", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.MEDICAL_RECORD_VIEW, 2L, 2L, "");
+}

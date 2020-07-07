@@ -1,0 +1,8 @@
+@Override
+protected void setUp() throws Exception {
+    pres = new PrescriptionBean();
+    pres.setDosage(50);
+    pres.setStartDateStr("2007/05/19");
+    pres.setEndDateStr("2010/05/19");
+    pres.setVisitID(1L);
+}

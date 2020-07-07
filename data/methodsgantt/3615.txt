@@ -1,0 +1,9 @@
+private void loadCalendar(Attributes attrs) {
+    for (int i = 1; i <= 7; i++) {
+        String nextDayName = getShortDayName(i);
+        String nextEncodedType = attrs.getValue(nextDayName);
+        if ("1".equals(nextEncodedType)) {
+            myGPCalendar.setWeekDayType(i, GPCalendar.DayType.WEEKEND);
+        }
+    }
+}

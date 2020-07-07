@@ -1,0 +1,7 @@
+/**
+ * Creates toolbars for the application.
+ * This class returns an empty list - we dont want toolbars in a text editor.
+ */
+public List<JToolBar> createToolBars(Application app, View p) {
+    return Collections.emptyList();
+}

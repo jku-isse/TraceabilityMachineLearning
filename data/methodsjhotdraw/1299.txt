@@ -1,0 +1,31 @@
+@Override
+public void mousePressed(MouseEvent evt) {
+    if (BezierTool.DEBUG) {
+        System.out.println(("BezierTool.mousePressed " + evt));
+    }
+    if ((mouseLocation) != null) {
+        Rectangle r = new Rectangle(mouseLocation);
+        r.add(evt.getPoint());
+        r.grow(1, 1);
+        fireAreaInvalidated(r);
+    }
+    mouseLocation = evt.getPoint();
+    super.mousePressed(evt);
+    if (((createdFigure) != null) && ((creationView) != (getView()))) {
+        finishCreation(createdFigure, creationView);
+        createdFigure = null;
+    }
+    if ((createdFigure) == null) {
+        creationView = getView();
+        creationView.clearSelection();
+        finishWhenMouseReleased = null;
+        createdFigure = createFigure();
+        createdFigure.addNode(new BezierPath.Node(creationView.getConstrainer().constrainPoint(creationView.viewToDrawing(anchor))));
+        getDrawing().add(createdFigure);
+    } else {
+        if ((evt.getClickCount()) == 1) {
+            addPointToFigure(creationView.getConstrainer().constrainPoint(creationView.viewToDrawing(anchor)));
+        }
+    }
+    nodeCountBeforeDrag = createdFigure.getNodeCount();
+}

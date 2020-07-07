@@ -1,0 +1,3 @@
+private void saveAssignments(TransformerHandler handler) throws SAXException {
+    new AssignmentSaver().save(getProject(), handler);
+}

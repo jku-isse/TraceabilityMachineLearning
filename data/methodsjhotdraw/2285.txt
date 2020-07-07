@@ -1,0 +1,11 @@
+// SHAPE AND BOUNDS
+/**
+ * Transforms the figure.
+ */
+public void transform(AffineTransform tx) {
+    super.transform(tx);
+    for (Figure f : children) {
+        f.transform(tx);
+    }
+    invalidate();
+}

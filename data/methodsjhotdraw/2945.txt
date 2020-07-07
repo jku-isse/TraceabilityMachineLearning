@@ -1,0 +1,9 @@
+protected void drawStroke(Graphics2D g) {
+    Shape triangle = getBezierPath();
+    double grow = AttributeKeys.getPerpendicularDrawGrowth(this);
+    if (grow != 0.0) {
+        GrowStroke gs = new GrowStroke(((float) (grow)), ((float) ((AttributeKeys.getStrokeTotalWidth(this)) * (AttributeKeys.STROKE_MITER_LIMIT.get(this)))));
+        triangle = gs.createStrokedShape(triangle);
+    }
+    g.draw(triangle);
+}

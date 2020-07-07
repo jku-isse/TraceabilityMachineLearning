@@ -1,0 +1,18 @@
+/**
+ * A convenient version of <code>create(listenerMethod, targetObject, targetMethod)</code>.
+ * This version looks up the listener and target Methods, so you dont have to.
+ */
+public static Object create(Class listenerInterface, String listenerMethodName, Object target, String targetMethodName) {
+    Method listenerMethod = GenericListener.getListenerMethod(listenerInterface, listenerMethodName);
+    // Search a target method with the same parameter types as the listener method.
+    Method targetMethod = GenericListener.getTargetMethod(target, targetMethodName, listenerMethod.getParameterTypes());
+    // Nothing found? Search a target method with no parameters
+    if (targetMethod == null) {
+        targetMethod = GenericListener.getTargetMethod(target, targetMethodName, new Class[0]);
+    }
+    // Still nothing found? We give up.
+    if (targetMethod == null) {
+        throw new RuntimeException(((("no such method " + targetMethodName) + " in ") + (target.getClass())));
+    }
+    return GenericListener.create(listenerMethod, target, targetMethod);
+}

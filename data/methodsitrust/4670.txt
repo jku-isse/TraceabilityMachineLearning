@@ -1,0 +1,21 @@
+/**
+ * Check a long value against a particular format. isNullable will check if it is empty or a Java null.
+ * Otherwise, an error message will be returned. Use this in conjunction with {@link ErrorList}.
+ *
+ * @param name
+ * 		
+ * @param longValue
+ * 		
+ * @param format
+ * 		
+ * @param isNullable
+ * 		
+ * @return 
+ */
+protected String checkFormat(String name, Long longValue, ValidationFormat format, boolean isNullable) {
+    String str = "";
+    if (longValue != null)
+        str = String.valueOf(longValue);
+
+    return checkFormat(name, str, format, isNullable);
+}

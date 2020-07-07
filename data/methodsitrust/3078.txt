@@ -1,0 +1,19 @@
+/**
+ * Create a new ReferralListQuery object.
+ *
+ * @param factory
+ * 		
+ * @param userid
+ * 		
+ */
+public ReferralListQuery(DAOFactory factory, long userid) {
+    this.factory = factory;
+    this.userid = userid;
+    // initialize lookup map
+    sortColumns = new HashMap<String, String>();
+    sortColumns.put("patientName", "CONCAT(patients.lastName,  , patients.firstName)");
+    sortColumns.put("receiverName", "CONCAT(preceiver.lastName, preceiver.firstName)");
+    sortColumns.put("senderName", "CONCAT(psender.lastName, psender.firstName)");
+    sortColumns.put("timestamp", "referrals.timestamp");
+    sortColumns.put("priority", "referrals.PriorityCode");
+}

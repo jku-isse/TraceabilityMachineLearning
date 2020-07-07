@@ -1,0 +1,15 @@
+public void testgetAllWardsByHospitalID() {
+    List<WardBean> list = new ArrayList<WardBean>();
+    try {
+        list = wd1.getAllWardsByHospitalID("1");
+        assertNotNull(list);
+    } catch (DBException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.getAllWardsByHospitalID("1");
+        fail();
+    } catch (Exception e) {
+    }
+}

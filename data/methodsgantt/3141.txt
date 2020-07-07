@@ -1,0 +1,3 @@
+public DefaultDateOption(String id) {
+    super(id);
+}

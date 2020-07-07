@@ -1,0 +1,5 @@
+protected SearchKey(int type, int firstTaskID, int secondTaskID) {
+    myType = type;
+    myFirstTaskID = firstTaskID;
+    mySecondTaskID = secondTaskID;
+}

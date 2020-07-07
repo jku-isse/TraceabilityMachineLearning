@@ -1,0 +1,12 @@
+@Override
+protected void setUp() {
+    // Initialize a bean to valid values.
+    bean = new ReferralBean();
+    bean.setOvid(1L);
+    bean.setPatientID(1L);
+    bean.setPriority(1);
+    bean.setReceiverID(1L);
+    bean.setSenderID(1L);
+    bean.setReferralDetails("details");
+    bean.setTimeStamp("");
+}

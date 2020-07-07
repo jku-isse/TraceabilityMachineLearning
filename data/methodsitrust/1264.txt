@@ -1,0 +1,8 @@
+public void testTwoPatients() throws Exception {
+    action = new ViewPrescriptionRenewalNeedsAction(factory, 9000000003L);
+    List<PatientBean> patients = action.getRenewalNeedsPatients();
+    assertEquals("Andy", patients.get(0).getFirstName());
+    assertEquals("Koopa", patients.get(0).getLastName());
+    assertEquals("919-212-3433", patients.get(1).getPhone());
+    assertEquals("prince@gmail.com", patients.get(1).getEmail());
+}

@@ -1,0 +1,7 @@
+public List<VerboseReferralBean> loadList(ResultSet rs) throws SQLException {
+    ArrayList<VerboseReferralBean> list = new ArrayList<VerboseReferralBean>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

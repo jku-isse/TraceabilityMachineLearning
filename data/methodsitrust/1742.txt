@@ -1,0 +1,6 @@
+/**
+ * Up to 500 alphanumeric characters
+ */
+public void setResults(String results) {
+    this.results = results;
+}

@@ -1,0 +1,5 @@
+public RefreshViewAction(UIFacade uiFacade, GanttOptions options) {
+    super(null, options.getIconSize());
+    myUIFacade = uiFacade;
+    this.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_R, GPAction.MENU_MASK));
+}

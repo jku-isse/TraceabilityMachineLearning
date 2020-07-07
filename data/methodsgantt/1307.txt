@@ -1,0 +1,13 @@
+private String getDisplayName(ProjectResource[] resources) {
+    if ((resources.length) == 1) {
+        return resources[0].toString();
+    }
+    StringBuffer result = new StringBuffer();
+    for (int i = 0; i < (resources.length); i++) {
+        result.append(resources[i].toString());
+        if (i < ((resources.length) - 1)) {
+            result.append(", ");
+        }
+    }
+    return result.toString();
+}

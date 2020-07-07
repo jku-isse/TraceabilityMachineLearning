@@ -1,0 +1,19 @@
+@SuppressWarnings("unchecked")
+public void read(InputStream in, Drawing drawing, boolean replace) throws IOException {
+    try {
+        ObjectInputStream oin = new ObjectInputStream(in);
+        Drawing d = ((Drawing) (oin.readObject()));
+        if (replace) {
+            for (Map.Entry<AttributeKey, Object> e : d.getAttributes().entrySet()) {
+                e.getKey().basicSet(drawing, e.getValue());
+            }
+        }
+        for (Figure f : d.getChildren()) {
+            drawing.add(f);
+        }
+    } catch (ClassNotFoundException ex) {
+        IOException ioe = new IOException("Couldnt read drawing.");
+        ioe.initCause(ex);
+        throw ioe;
+    }
+}

@@ -1,0 +1,22 @@
+public void setOrientation(int o) {
+    if (isShowing()) {
+        if (o == (this.orientation)) {
+            return;
+        }
+        this.orientation = o;
+        Dimension size = getSize();
+        setSize(new Dimension(size.height, size.width));
+        if ((offset) != null) {
+            if (toolBar.getComponentOrientation().isLeftToRight()) {
+                setOffset(new Point(offset.y, offset.x));
+            } else
+                if (o == (JToolBar.HORIZONTAL)) {
+                    setOffset(new Point(((size.height) - (offset.y)), offset.x));
+                } else {
+                    setOffset(new Point(offset.y, ((size.width) - (offset.x))));
+                }
+
+        }
+        repaint();
+    }
+}

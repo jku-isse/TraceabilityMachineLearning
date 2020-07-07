@@ -1,0 +1,17 @@
+// Constructors
+/**
+ * Create a new transformation ply instance.
+ *
+ * @param source
+ * 		The source square.
+ * @param destination
+ * 		The destination square.
+ * @param pieceType
+ * 		The piece type after the transformation.
+ * @param capture
+ * 		Flag to indicate if this ply captures another piece.
+ */
+public TransformationPlyImpl(Position source, Position destination, byte pieceType, boolean capture) {
+    super(source, destination, capture);
+    setTypeAfterTransformation(pieceType);
+}

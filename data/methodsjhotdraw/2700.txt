@@ -1,0 +1,10 @@
+/* public void mouseDragged(java.awt.event.MouseEvent e) {
+}
+ */
+@Override
+public void draw(Graphics2D g) {
+    if (((createdFigure) != null) && ((rubberbandColor) != null)) {
+        g.setColor(rubberbandColor);
+        g.draw(getView().drawingToView(createdFigure.getBounds()));
+    }
+}

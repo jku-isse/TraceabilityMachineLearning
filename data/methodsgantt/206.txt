@@ -1,0 +1,3 @@
+protected Component createPreviewComponent() {
+    return myPreviewPanel;
+}

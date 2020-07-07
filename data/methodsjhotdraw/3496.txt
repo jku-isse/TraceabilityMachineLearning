@@ -1,0 +1,8 @@
+/**
+ * Gets the point on an oval that corresponds to the given angle.
+ */
+public static Point2D.Double ovalAngleToPoint(Rectangle2D.Double r, double angle) {
+    Point2D.Double center = Geom.center(r);
+    Point2D.Double p = Geom.polarToPoint2D(angle, ((r.width) / 2), ((r.height) / 2));
+    return new Point2D.Double(((center.x) + (p.x)), ((center.y) + (p.y)));
+}

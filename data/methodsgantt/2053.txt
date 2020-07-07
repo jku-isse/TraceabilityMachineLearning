@@ -1,0 +1,11 @@
+private void createUpSideText(TaskActivity taskActivity) {
+    String text;
+    text = getTaskLabel(taskActivity.getTask(), TaskRendererImpl.UP);
+    if ((text.length()) > 0) {
+        Rectangle taskRectangle = myModel.getBoundingRectangle(taskActivity.getTask());
+        int xOrigin = ((int) (taskRectangle.getMinX())) + (((int) (taskRectangle.getWidth())) / 2);
+        int yOrigin = ((int) (taskRectangle.getMinY())) - 3;
+        GraphicPrimitiveContainer.Text textPrimitive = processText(xOrigin, yOrigin, text);
+        textPrimitive.setAlignment(GraphicPrimitiveContainer.HAlignment.CENTER, GraphicPrimitiveContainer.VAlignment.BOTTOM);
+    }
+}

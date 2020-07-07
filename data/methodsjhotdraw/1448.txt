@@ -1,0 +1,4 @@
+/**
+ * Sets the specified point.
+ */
+public void setPoint(int index, Point2D.Double p);

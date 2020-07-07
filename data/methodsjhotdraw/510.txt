@@ -1,0 +1,18 @@
+/**
+ * Creates a new instance.
+ */
+public ColorTrackImageProducer(int w, int h, int trackBuffer, boolean isHorizontal) {
+    super(w, h, null, 0, w);
+    pixels = new int[w * h];
+    this.w = w;
+    this.h = h;
+    // trackBuffer must be even
+    this.trackBuffer = ((trackBuffer % 2) == 1) ? trackBuffer - 1 : trackBuffer;
+    this.componentIndex = componentIndex;
+    this.isHorizontal = isHorizontal;
+    newPixels(pixels, // Red
+    // Green
+    // Blue
+    new DirectColorModel(24, 16711680, 65280, 255), 0, w);
+    setAnimated(true);
+}

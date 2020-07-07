@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return 
+ */
+public List<ReportFilter> getFilters() {
+    return filters;
+}

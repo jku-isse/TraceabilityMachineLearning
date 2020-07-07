@@ -1,0 +1,6 @@
+/**
+ * Gets the point coordinate of a control point.
+ */
+public Point2D.Double getPoint(int index, int coord) {
+    return path.get(index).getControlPoint(coord);
+}

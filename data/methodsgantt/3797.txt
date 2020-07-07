@@ -1,0 +1,12 @@
+/* <CustomProperty> */
+public List getCustomProperties() {
+    List result = new ArrayList(customFields.size());
+    for (Iterator entries = customFields.entrySet().iterator(); entries.hasNext();) {
+        Map.Entry nextEntry = ((Map.Entry) (entries.next()));
+        String nextName = ((String) (nextEntry.getKey()));
+        Object nextValue = nextEntry.getValue();
+        CustomPropertyDefinition nextDefinition = myManager.getCustomPropertyDefinition(nextName);
+        result.add(new HumanResource.CustomPropertyImpl(nextDefinition, nextValue));
+    }
+    return result;
+}

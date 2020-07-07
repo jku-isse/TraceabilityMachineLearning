@@ -1,0 +1,41 @@
+public static JToggleButton addSelectionToolTo(JToolBar tb, final DrawingEditor editor, Tool selectionTool) {
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    JToggleButton t;
+    Tool tool;
+    HashMap<String, Object> attributes;
+    ButtonGroup group;
+    if ((tb.getClientProperty("toolButtonGroup")) instanceof ButtonGroup) {
+        group = ((ButtonGroup) (tb.getClientProperty("toolButtonGroup")));
+    } else {
+        group = new ButtonGroup();
+        tb.putClientProperty("toolButtonGroup", group);
+    }
+    // Selection tool
+    editor.setTool(selectionTool);
+    t = new JToggleButton();
+    final JToggleButton defaultToolButton = t;
+    ToolListener toolHandler;
+    if ((tb.getClientProperty("toolHandler")) instanceof ToolListener) {
+        toolHandler = ((ToolListener) (tb.getClientProperty("toolHandler")));
+    } else {
+        toolHandler = new ToolListener() {
+            public void toolStarted(ToolEvent event) {
+            }
+
+            public void toolDone(ToolEvent event) {
+                defaultToolButton.setSelected(true);
+            }
+
+            public void areaInvalidated(ToolEvent e) {
+            }
+        };
+        tb.putClientProperty("toolHandler", toolHandler);
+    }
+    labels.configureToolBarButton(t, "selectionTool");
+    t.setSelected(true);
+    t.addItemListener(new ButtonFactory.ToolButtonListener(selectionTool, editor));
+    t.setFocusable(false);
+    group.add(t);
+    tb.add(t);
+    return t;
+}

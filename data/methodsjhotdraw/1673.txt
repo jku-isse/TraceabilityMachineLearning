@@ -1,0 +1,13 @@
+public void setScaleFactor(double newValue) {
+    double oldValue = scaleFactor;
+    scaleFactor = newValue;
+    // fireViewTransformChanged();
+    validateViewTranslation();
+    firePropertyChange("scaleFactor", oldValue, newValue);
+    invalidate();
+    invalidateHandles();
+    if ((getParent()) != null) {
+        getParent().validate();
+    }
+    repaint();
+}

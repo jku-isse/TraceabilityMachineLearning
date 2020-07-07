@@ -1,0 +1,6 @@
+/**
+ * Gets the changed child figure.
+ */
+public Figure getChildFigure() {
+    return child;
+}

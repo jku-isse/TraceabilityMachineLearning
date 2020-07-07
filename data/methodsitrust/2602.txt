@@ -1,0 +1,6 @@
+public void testDBException() throws Exception {
+    DBException e = new DBException(null);
+    assertEquals("No extended information.", e.getExtendedMessage());
+    e = new DBException(new SQLException("Fake SQL Exception"));
+    assertEquals("Fake SQL Exception", e.getExtendedMessage());
+}

@@ -1,0 +1,4 @@
+protected void onFileChosen(File file) {
+    myFile = file;
+    myTextField.setText(myFile.getAbsolutePath());
+}

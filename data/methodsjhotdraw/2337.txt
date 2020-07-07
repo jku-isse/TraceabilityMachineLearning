@@ -1,0 +1,4 @@
+/**
+ * Returns the drawing bounds of the decorator.
+ */
+public Rectangle2D.Double getDrawingArea(Figure f, Point2D.Double p1, Point2D.Double p2);

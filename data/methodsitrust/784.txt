@@ -1,0 +1,8 @@
+public void testGetNoPrescriptionReports() throws Exception {
+    action = new PrescriptionReportAction(factory, 9000000000L, "2");
+    List<OfficeVisitBean> officeVisits = action.getAllOfficeVisits();
+    Map params = new HashMap();
+    params.put("ov1", new String[]{ "1" });
+    List<PrescriptionReportBean> prescriptionReports = action.getPrescriptionReports(params, officeVisits);
+    assertEquals(0, prescriptionReports.size());
+}

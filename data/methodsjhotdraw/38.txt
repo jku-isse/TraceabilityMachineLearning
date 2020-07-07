@@ -1,0 +1,10 @@
+/**
+ * Gets rid of all the resources of the view.
+ * No other methods should be invoked on the view afterwards.
+ */
+public void dispose() {
+    if ((executor) != null) {
+        executor.shutdown();
+        executor = null;
+    }
+}

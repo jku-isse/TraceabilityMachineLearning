@@ -1,0 +1,6 @@
+/**
+ * Give the focus to the text field.
+ */
+public void setFocus() {
+    super.requestFocusInWindow();
+}

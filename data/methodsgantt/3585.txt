@@ -1,0 +1,8 @@
+/* (non-Javadoc)
+
+@see net.sourceforge.ganttproject.parser.TagHandler#endElement(java.lang.String,
+     java.lang.String, java.lang.String)
+ */
+public void endElement(String namespaceURI, String sName, String qName) {
+    // TODO Auto-generated method stub
+}

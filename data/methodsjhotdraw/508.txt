@@ -1,0 +1,10 @@
+/**
+ * Converts the specified color components to RGB.
+ *
+ * @param rgb
+ * 		value.
+ * @param components
+ * 		A component array for reuse.
+ * @return color components for the rgb value.
+ */
+public float[] toComponents(int rgb, float[] components);

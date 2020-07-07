@@ -1,0 +1,5 @@
+public void testGood() throws Exception {
+    String value = "123456789";
+    String errorMessage = NDCodeValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, NDCodeValidatorTest.VALIDATION_FORMAT, false));
+}

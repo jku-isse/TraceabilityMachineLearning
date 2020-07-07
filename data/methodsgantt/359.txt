@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @return true if you want to export the name of the task on the exported
+chart.
+ */
+public boolean getExportName() {
+    return bExportName;
+}

@@ -1,0 +1,7 @@
+/**
+ * Removes a mouse listener to the drawing view.
+ *
+ * @param l
+ * 		the listener.
+ */
+public void removeMouseListener(MouseListener l);

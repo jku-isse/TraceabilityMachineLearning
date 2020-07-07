@@ -1,0 +1,12 @@
+/**
+ * Returns the full name of the patient with this MID
+ *
+ * @return name in the form of a string
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public String getUserName() throws DBException, iTrustException {
+    return factory.getAuthDAO().getUserName(pid);
+}

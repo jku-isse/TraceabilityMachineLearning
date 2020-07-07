@@ -1,0 +1,30 @@
+public TaskDependencyConstraint createConstraint(final int constraintID) {
+    TaskDependencyConstraint result;
+    switch (constraintID) {
+        case GanttTaskRelationship.FS :
+            {
+                result = new FinishStartConstraintImpl();
+                break;
+            }
+        case GanttTaskRelationship.FF :
+            {
+                result = new FinishFinishConstraintImpl();
+                break;
+            }
+        case GanttTaskRelationship.SF :
+            {
+                result = new StartFinishConstraintImpl();
+                break;
+            }
+        case GanttTaskRelationship.SS :
+            {
+                result = new StartStartConstraintImpl();
+                break;
+            }
+        default :
+            {
+                throw new IllegalArgumentException(("Unknown constraint ID=" + constraintID));
+            }
+    }
+    return result;
+}

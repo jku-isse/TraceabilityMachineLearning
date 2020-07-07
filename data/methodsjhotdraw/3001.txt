@@ -1,0 +1,15 @@
+/**
+ * Returns the bounds of the selected figures.
+ */
+protected Rectangle2D.Double getSelectionBounds() {
+    Rectangle2D.Double bounds = null;
+    for (Iterator i = getView().getSelectedFigures().iterator(); i.hasNext();) {
+        Figure f = ((Figure) (i.next()));
+        if (bounds == null) {
+            bounds = f.getBounds();
+        } else {
+            bounds.add(f.getBounds());
+        }
+    }
+    return bounds;
+}

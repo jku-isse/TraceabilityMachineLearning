@@ -1,0 +1,13 @@
+private void adjustNestedTasks() {
+    try {
+        assert (myManager) != null;
+        AlgorithmCollection algorithmCollection = myManager.getAlgorithmCollection();
+        if (algorithmCollection != null) {
+            algorithmCollection.getAdjustTaskBoundsAlgorithm().adjustNestedTasks(this);
+        }
+    } catch (TaskDependencyException e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+    }
+}

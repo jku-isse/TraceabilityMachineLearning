@@ -1,0 +1,3 @@
+public ChopRoundRectangleConnector(Figure owner) {
+    super(owner);
+}

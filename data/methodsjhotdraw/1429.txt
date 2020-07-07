@@ -1,0 +1,3 @@
+protected Connector getTarget() {
+    return getOwner().getEndConnector();
+}

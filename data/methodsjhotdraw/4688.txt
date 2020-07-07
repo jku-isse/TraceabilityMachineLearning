@@ -1,0 +1,20 @@
+private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
+    // AttributeKeys for the entitie sets
+    HashMap<AttributeKey, Object> attributes;
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+    ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    ButtonFactory.addSelectionToolTo(tb, editor, ODGApplicationModel.createDrawingActions(editor), ODGApplicationModel.createSelectionActions(editor));
+    tb.addSeparator();
+    attributes = new HashMap<AttributeKey, Object>();
+    ButtonFactory.addToolTo(tb, editor, new CreationTool(new ODGRectFigure(), attributes), "edit.createRectangle", drawLabels);
+    attributes = new HashMap<AttributeKey, Object>();
+    attributes.put(AttributeKeys.FILL_COLOR, null);
+    attributes.put(AttributeKeys.STROKE_COLOR, Color.black);
+    ButtonFactory.addToolTo(tb, editor, new CreationTool(new ODGPathFigure(), attributes), "edit.createLine", drawLabels);
+    attributes = new HashMap<AttributeKey, Object>();
+    attributes.put(AttributeKeys.FILL_COLOR, Color.black);
+    attributes.put(AttributeKeys.STROKE_COLOR, null);
+    attributes = new HashMap<AttributeKey, Object>();
+    attributes.put(AttributeKeys.FILL_COLOR, null);
+    attributes.put(AttributeKeys.STROKE_COLOR, null);
+}

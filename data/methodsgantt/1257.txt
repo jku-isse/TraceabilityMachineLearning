@@ -1,0 +1,3 @@
+public int getViewIndex() {
+    return myFallbackDelegate.getViewIndex();
+}

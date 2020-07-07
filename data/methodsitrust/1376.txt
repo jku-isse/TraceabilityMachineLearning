@@ -1,0 +1,2 @@
+GroupReportBeanTest() {
+}

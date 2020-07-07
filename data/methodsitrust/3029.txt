@@ -1,0 +1,29 @@
+/**
+ * Retrieves a PersonnelBean with all of the specific information for a given employee.
+ *
+ * @param mid
+ * 		The MID of the personnel in question.
+ * @return A PersonnelBean representing the employee.
+ * @throws DBException
+ * 		
+ */
+public PersonnelBean getPersonnel(long mid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM personnel WHERE MID = ?");
+        ps.setLong(1, mid);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return personnelLoader.loadSingle(rs);
+        } else
+            return null;
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

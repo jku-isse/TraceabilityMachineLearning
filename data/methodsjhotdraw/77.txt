@@ -1,0 +1,4 @@
+/**
+ * Hides a view.
+ */
+public void hide(View p);

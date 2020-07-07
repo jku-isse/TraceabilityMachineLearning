@@ -1,0 +1,7 @@
+/**
+ * Repaint the board after a game position change.
+ */
+public final void repaintBoard() {
+    _piecesLayer.repaintBoard();
+    repaint();
+}

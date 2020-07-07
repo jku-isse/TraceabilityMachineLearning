@@ -1,0 +1,28 @@
+/* Authenticate Patient
+MID: 2
+Password: pw
+Choose option My Expired Prescription Reports
+ */
+public void testViewExpired1() throws Exception {
+    // login patient 2
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    // click on My Expired Prescription Reports
+    wr = wr.getLinkWith("My Expired Prescription Reports").click();
+    assertTrue(wr.getText().contains("00904-2407"));
+    assertFalse(wr.getText().contains("9000000000"));
+    // click on a particular office visit to check medication and diagnoses
+    wr = wr.getLinkWith("Kelly Doctor").click();// This click does not work at the moment.
+
+    assertTrue(wr.getText().contains("surgeon"));
+    assertTrue(wr.getText().contains("4321 My Road St"));
+    assertTrue(wr.getText().contains("CityName"));
+    assertTrue(wr.getText().contains("NY"));
+    assertTrue(wr.getText().contains("12345-1234"));
+    assertTrue(wr.getText().contains("999-888-7777"));
+    assertTrue(wr.getText().contains("kdoctor@iTrust.org"));
+    assertFalse(wr.getText().contains("9000000000"));
+    iTrustHTTPTest.assertLogged(TransactionType.EXPIRED_PRESCRIPTION_VIEW, 2L, 2L, "");
+}

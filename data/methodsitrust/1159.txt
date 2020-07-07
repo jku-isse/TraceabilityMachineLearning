@@ -1,0 +1,27 @@
+/**
+ * Returns a list of RemoteMonitoringDataBeans for the logged in HCP based on a certain data type
+ *
+ * @param patientMID
+ * 		
+ * @param dataType
+ * 		
+ * @return list of TransactionBeans
+ * @throws DBException
+ * 		
+ * @throws FormValidationException
+ * 		
+ */
+public List<RemoteMonitoringDataBean> getPatientDataByType(long patientMID, String dataType) throws DBException, FormValidationException {
+    String[] types = new String[]{ "weight", "systolicBloodPressure", "diastolicBloodPressure", "glucoseLevel", "pedometerReading" };
+    boolean valid = false;
+    for (String dType : types) {
+        if (dType.equals(dataType)) {
+            valid = true;
+            break;
+        }
+    }
+    if (!valid) {
+        throw new FormValidationException("Input must be a valid telemedicine data type!");
+    }
+    return rmDAO.getPatientDataByType(patientMID, dataType);
+}

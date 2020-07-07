@@ -1,0 +1,7 @@
+/**
+ * Gets an attribute of the current element of the DOM Document.
+ */
+public double getAttribute(String name, double defaultValue) {
+    String value = ((Element) (current)).getAttribute(name);
+    return (value.length()) == 0 ? defaultValue : Double.parseDouble(value);
+}

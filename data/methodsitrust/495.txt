@@ -1,0 +1,6 @@
+public EditReferralsAction(DAOFactory factory, long hcpid, String pidString, String ovIDString) throws iTrustException {
+    super(factory, hcpid, pidString, ovIDString);
+    referralDAO = factory.getReferralDAO();
+    patientDAO = factory.getPatientDAO();
+    personnelDAO = factory.getPersonnelDAO();
+}

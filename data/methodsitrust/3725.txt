@@ -1,0 +1,13 @@
+/**
+ * Display warning message
+ *
+ * @return r
+ */
+public String getDisplayMessage() {
+    StringBuffer buf = new StringBuffer();
+    for (String warning : warnings) {
+        buf.append((warning + "
+"));
+    }
+    return buf.toString();
+}

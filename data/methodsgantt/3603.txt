@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @see net.sourceforge.ganttproject.parser.ParsingListener#parsingStarted()
+ */
+public void parsingStarted() {
+    // nothing to do.
+}

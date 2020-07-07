@@ -1,0 +1,7 @@
+/**
+ * Returns the element name for the specified object.
+ * Note: The element names "string", "int", "float", "long", "double",
+ * "boolean", "enum" and "null"  are reserved and must not be returned by
+ * this operation.
+ */
+public String getName(DOMStorable o);

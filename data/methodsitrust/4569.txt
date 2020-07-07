@@ -1,0 +1,4 @@
+@Override
+protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    super.doDelete(req, resp);
+}

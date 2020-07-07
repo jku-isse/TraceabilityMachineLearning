@@ -1,0 +1,26 @@
+/**
+ * Given a prescription that has been given, this method returns all the information for the
+ * doctor who authorized that prescription.
+ *
+ * @param prescription
+ * 		The PrescriptionBean describing the prescription in question.
+ * @return The PersonnelBean describing the doctor who authorized it.
+ * @throws DBException
+ * 		
+ */
+public PersonnelBean getPrescribingDoctor(PrescriptionBean prescription) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM personnel WHERE MID IN (SELECT HCPID FROM officevisits WHERE ID=?)");
+        ps.setLong(1, prescription.getVisitID());
+        ResultSet rs = ps.executeQuery();
+        return personnelLoader.loadList(rs).get(0);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

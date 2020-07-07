@@ -1,0 +1,4 @@
+protected Dimension getThumbSize() {
+    Icon thumb = getThumbIcon();
+    return new Dimension(thumb.getIconWidth(), thumb.getIconHeight());
+}

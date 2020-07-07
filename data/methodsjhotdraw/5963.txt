@@ -1,0 +1,13 @@
+/* Reads core attributes as listed in
+http://www.w3.org/TR/SVGMobile12/feature.html#CoreAttribute
+ */
+private void readCoreAttributes(IXMLElement elem, HashMap<AttributeKey, Object> a) throws IOException {
+    // read "id" or "xml:id"
+    // identifiedElements.put(elem.getAttribute("id"), elem);
+    // identifiedElements.put(elem.getAttribute("xml:id"), elem);
+    // XXX - Add
+    // xml:base
+    // xml:lang
+    // xml:space
+    // class
+}

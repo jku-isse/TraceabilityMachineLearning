@@ -1,0 +1,3 @@
+public boolean getTaskPercent() {
+    return cbTaskPercent.isSelected();
+}

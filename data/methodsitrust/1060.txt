@@ -1,0 +1,4 @@
+public ViewMyLabProceduresAction(DAOFactory factory, long loggedInMID) {
+    labProcedureDAO = factory.getLabProcedureDAO();
+    patient = loggedInMID;
+}

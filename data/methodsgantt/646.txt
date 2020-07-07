@@ -1,0 +1,3 @@
+public void setStatusText(String text) {
+    myUIFacade.setStatusText(text);
+}

@@ -1,0 +1,8 @@
+protected List getActivitiesBackward(Date startDate, TimeUnit timeUnit, long unitCount) {
+    Date activityEnd = timeUnit.adjustLeft(startDate);
+    Date activityStart = activityEnd;
+    while ((unitCount--) > 0) {
+        activityStart = timeUnit.jumpLeft(activityStart);
+    } 
+    return Collections.singletonList(new CalendarActivityImpl(activityStart, activityEnd, true));
+}

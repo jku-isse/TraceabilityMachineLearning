@@ -1,0 +1,105 @@
+/**
+ * Die GUI nach Nomenklatur des JBuilder
+ *
+ * @throws Exception
+ * 		
+ */
+private void jbInit() throws Exception {
+    // Add some location for resources to the resource loader.
+    ResourceLoader.getInstance().addLocation("jar:file:javaChess.jar!/de/java_chess/javaChess/renderer2d/images/");
+    _game = new GameImpl();
+    _gameNotation = new GameNotationImpl();
+    _board = new BitBoardImpl();
+    _engine = new ChessEngineImpl(_game, _gameNotation, _board, false);
+    ((ChessEngineImpl) (_engine)).addEngineStatusListener(this);
+    // Create a timer with 40 min for each player.
+    _gameTimer = new GameTimerPanel((40 * 60));
+    _controller = new GameController(_game, _gameNotation, _engine, _board, _gameTimer);
+    _renderer = new ChessBoardRenderer2D(_controller, _board);
+    _controller.setRenderer(_renderer);
+    editMenu = new EditMenu();
+    this.jpNotation = new NotationPanel(_gameNotation);
+    ((GameNotationImpl) (_gameNotation)).setNotationPanel(jpNotation);
+    editMenu.setNotationPanel(jpNotation);
+    this.jpEngine = new EnginePanel();
+    ((ChessEngineImpl) (_engine)).setEnginePanel(jpEngine);
+    ((ChessEngineImpl) (_engine)).setStatusPanel(jpStatus);
+    this.jpNavigation = new NavigationPanel();
+    // setIconImage(Toolkit.getDefaultToolkit().createImage(VisFrame.class.getResource("jclogo.gif")));
+    contentPane = ((JPanel) (this.getContentPane()));
+    contentPane.setLayout(new GridBagLayout());
+    this.setSize(new Dimension(800, 600));
+    this.addWindowListener(new WindowAdapter() {
+        public void windowClosing(WindowEvent e) {
+            this_windowClosing(e);
+        }
+    });
+    JMenuBar menuBar = new JMenuBar();
+    JMenu fileMenu = new JMenu("File");
+    fileMenu.setMnemonic(KeyEvent.VK_F);// Shortcut Alt-F
+
+    fileMenu.add(getMenuItem(new ResetGameAction()));
+    fileMenu.addSeparator();
+    fileMenu.add(getMenuItem(new LoadGameAction()));
+    fileMenu.addSeparator();
+    fileMenu.add(getMenuItem(new SaveGameAction(_gameNotation)));
+    fileMenu.add(getMenuItem(new SaveGameAsAction(_gameNotation)));
+    _exitItem = new JMenuItem("Exit");
+    // Shortcut f?r ALT-X zum Beenden:
+    this._exitItem.setAccelerator(KeyStroke.getKeyStroke(88, KeyEvent.ALT_MASK, false));
+    _exitItem.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0);
+        }
+    });
+    // Create a separated exit item
+    fileMenu.addSeparator();
+    this.jpBrett.setLayout(gridBagBrett);
+    // this.jpBrett.setPreferredSize( new Dimension(520,520) );
+    // this.jpBrett.setMaximumSize( new Dimension(520,520) );
+    // this.jpBrett.setMinimumSize( new Dimension(520,520) );
+    this.jpBrett.setPreferredSize(new Dimension(430, 430));
+    // this.jpBrett.setMaximumSize( new Dimension(400,400) );
+    this.jpBrett.setMinimumSize(new Dimension(430, 430));
+    this.jpStatus.setPreferredSize(new Dimension(780, 20));
+    this.jpStatus.setMinimumSize(new Dimension(780, 20));
+    this.jpStatus.setMaximumSize(new Dimension(780, 20));
+    this.jpEngine.setPreferredSize(new Dimension(780, 150));
+    this.jpEngine.setMinimumSize(new Dimension(780, 150));
+    this.jpEngine.setMaximumSize(new Dimension(780, 150));
+    this.jpNavigation.setLayout(gridBagNavigation);
+    fileMenu.add(_exitItem);
+    // Add the file menu to the menu bar.
+    menuBar.add(fileMenu);
+    // Get the Edit menu from the according class and add to the menu bar.
+    menuBar.add(editMenu.getMenu());
+    // Get the menu from the chess engine and add it to the menu bar.
+    menuBar.add(_engine.getMenu());
+    this.engineStatusChanged(((ChessEngineImpl) (_engine)));
+    // Create and add a help menu
+    JMenu helpMenu = new JMenu("Help");
+    helpMenu.add(new HelpAction());
+    helpMenu.addSeparator();
+    helpMenu.add(new AboutAction());
+    menuBar.add(Box.createHorizontalGlue());// Move the help menu to the right.
+
+    menuBar.add(helpMenu);
+    // Create and set the menu.
+    this.setJMenuBar(menuBar);
+    contentPane.setForeground(Color.black);
+    contentPane.add(jpBrett, new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(2, 2, 2, 2), 0, 0));// Brett
+
+    contentPane.add(_gameTimer, new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, GridBagConstraints.NONE, new Insets(2, 2, 2, 2), 0, 0));// The Clock
+
+    contentPane.add(jpEngine, new GridBagConstraints(0, 2, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(2, 2, 2, 2), 0, 0));// Engineoutput
+
+    contentPane.add(jpStatus, new GridBagConstraints(0, 3, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 0));// Statuszeile
+
+    contentPane.add(jpNotation, new GridBagConstraints(1, 0, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(2, 2, 2, 2), 0, 0));
+    contentPane.add(jpNavigation, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));// Notation etc.
+
+    jpBrett.add(((ChessBoardRenderer2D) (_renderer)), new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+    jpBrett.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED, Color.white, Color.white, new Color(148, 145, 140), new Color(103, 101, 98)));
+    this.pack();
+    this.setVisible(true);
+}

@@ -1,0 +1,3 @@
+protected Point getColorLocation(CompositeColor c, int width, int height) {
+    return getColorLocation(c.getComponents(), width, height);
+}

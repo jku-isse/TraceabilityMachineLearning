@@ -1,0 +1,18 @@
+public void installUI(JComponent c) {
+    toolBar = ((JToolBar) (c));
+    // Set defaults
+    installDefaults();
+    installComponents();
+    installListeners();
+    installKeyboardActions();
+    // Initialize instance vars
+    dockingSensitivity = 0;
+    floating = false;
+    floatingX = floatingY = 0;
+    floatingToolBar = null;
+    setOrientation(toolBar.getOrientation());
+    LookAndFeel.installProperty(c, "opaque", Boolean.TRUE);
+    if ((c.getClientProperty(PaletteToolBarUI.FOCUSED_COMP_INDEX)) != null) {
+        focusedCompIndex = ((Integer) (c.getClientProperty(PaletteToolBarUI.FOCUSED_COMP_INDEX))).intValue();
+    }
+}

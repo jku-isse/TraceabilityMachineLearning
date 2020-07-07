@@ -1,0 +1,9 @@
+/**
+ * Launch the options dialog
+ */
+public void launchOptionsDialog() {
+    getUIFacade().setStatusText(language.getText("settingsPreferences"));
+    SettingsDialog dialogOptions = new SettingsDialog(this);
+    dialogOptions.show();
+    area.repaint();
+}

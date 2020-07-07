@@ -1,0 +1,14 @@
+public static void main(String[] args) {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            JFrame f = new JFrame("JHotDraw Pert Applet");
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            PertApplet a = new PertApplet();
+            f.getContentPane().add(a);
+            a.init();
+            f.setSize(500, 400);
+            f.setVisible(true);
+            a.start();
+        }
+    });
+}

@@ -1,0 +1,8 @@
+public Date getDateOfDeath() {
+    try {
+        return new SimpleDateFormat("MM/dd/yyyy").parse(dateOfDeathStr);
+    } catch (ParseException e) {
+        e.printStackTrace();
+        return null;
+    }
+}

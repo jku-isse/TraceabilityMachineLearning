@@ -1,0 +1,35 @@
+/**
+ * Computes the convex hull from a shape.
+ *
+ * @param shape
+ * 		an arbitray shape
+ * @return convex hull of the points as a Polygon2D object.
+ */
+public static Polygon2D.Double getConvexHullPath2D(Shape shape) {
+    List<Point2D.Double> points = new LinkedList<Point2D.Double>();
+    double[] coords = new double[6];
+    for (PathIterator i = shape.getPathIterator(null); !(i.isDone()); i.next()) {
+        switch (i.currentSegment(coords)) {
+            case PathIterator.SEG_CLOSE :
+                break;
+            case PathIterator.SEG_MOVETO :
+            case PathIterator.SEG_LINETO :
+                points.add(new Point2D.Double(coords[0], coords[1]));
+                break;
+            case PathIterator.SEG_QUADTO :
+                points.add(new Point2D.Double(coords[0], coords[1]));
+                points.add(new Point2D.Double(coords[2], coords[3]));
+                break;
+            case PathIterator.SEG_CUBICTO :
+                points.add(new Point2D.Double(coords[0], coords[1]));
+                points.add(new Point2D.Double(coords[2], coords[3]));
+                points.add(new Point2D.Double(coords[4], coords[5]));
+                break;
+        }
+    }
+    Polygon2D.Double convexHull = new Polygon2D.Double();
+    for (Point2D.Double p : ConvexHull.getConvexHull2D(points.toArray(new Point2D.Double[points.size()]))) {
+        convexHull.add(p);
+    }
+    return convexHull;
+}

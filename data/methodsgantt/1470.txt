@@ -1,0 +1,3 @@
+public UnlinkTasksAction(TaskManager taskManager, TaskSelectionManager selectionManager, UIFacade uiFacade) {
+    super(taskManager, selectionManager, uiFacade);
+}

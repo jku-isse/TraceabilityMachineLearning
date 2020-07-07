@@ -1,0 +1,8 @@
+/**
+ * Get all white or black pieces.
+ *
+ * @param white
+ * 		true, if the white pieces are requested,
+ * 		false for the black pieces.
+ */
+long getAllPiecesForColor(boolean white);

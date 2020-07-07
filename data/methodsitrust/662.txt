@@ -1,0 +1,18 @@
+public void testUpdateRights() throws Exception {
+    OfficeVisitBean ov = new OfficeVisitBean();
+    ov.setHcpID(9000000000L);
+    long ovid = ovDAO.add(ov);
+    LabProcedureBean lp = new LabProcedureBean();
+    lp.setLoinc("10763-5");
+    lp.setCommentary("This is a routine procedure");
+    lp.setOvID(ovid);
+    lp.setPid(2L);
+    lp.setResults("");
+    lp.allow();
+    lp.statusPending();
+    long id = lpDAO.addLabProcedure(lp);
+    assertEquals(LabProcedureBean.Allow, lpDAO.getLabProcedure(id).getRights());
+    action.changePrivacy(id);
+    LabProcedureBean procedures = lpDAO.getLabProcedure(id);
+    assertEquals(LabProcedureBean.Restrict, procedures.getRights());
+}

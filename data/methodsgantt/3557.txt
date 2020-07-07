@@ -1,0 +1,19 @@
+protected void writeColumns(TableHeaderUIFacade visibleFields, TransformerHandler handler) throws SAXException {
+    AttributesImpl attrs = new AttributesImpl();
+    int totalWidth = 0;
+    for (int i = 0; i < (visibleFields.getSize()); i++) {
+        if (visibleFields.getField(i).isVisible()) {
+            totalWidth += visibleFields.getField(i).getWidth();
+        }
+    }
+    for (int i = 0; i < (visibleFields.getSize()); i++) {
+        TableHeaderUIFacade.Column field = visibleFields.getField(i);
+        if (field.isVisible()) {
+            addAttribute("id", field.getID(), attrs);
+            addAttribute("name", field.getName(), attrs);
+            addAttribute("width", (((field.getWidth()) * 100) / totalWidth), attrs);
+            addAttribute("order", field.getOrder(), attrs);
+            emptyElement("field", attrs, handler);
+        }
+    }
+}

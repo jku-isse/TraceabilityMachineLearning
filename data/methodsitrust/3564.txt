@@ -1,0 +1,13 @@
+/**
+ * Adds drugs Midichlominene and Midichlomaxene for UC10 and UC37 testing purposes.
+ *
+ * @throws FileNotFoundException
+ * 		
+ * @throws SQLException
+ * 		
+ * @throws IOException
+ * 		
+ */
+public void ndCodes100() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/ndcodes100.sql"));
+}// NEW

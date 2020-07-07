@@ -1,0 +1,3 @@
+public void testDoesFamilyMemberHaveHighBP() throws iTrustException {
+    assertTrue(action.doesFamilyMemberHaveHighBP(fmBean));
+}

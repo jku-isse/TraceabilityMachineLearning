@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the position of some pieces as a long (64 bit wide) bitmask.
+ *
+ * @param pieceTypeColor
+ * 		The color and type of the pieces.
+ * @return A bitmask with the positions of these pieces.
+ */
+long getPositionOfPieces(int pieceTypeColor);

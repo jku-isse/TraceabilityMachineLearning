@@ -1,0 +1,6 @@
+protected void fireSelectionChanged() {
+    for (Iterator listeners = mySelectionListeners.iterator(); listeners.hasNext();) {
+        ChartSelectionListener nextListener = ((ChartSelectionListener) (listeners.next()));
+        nextListener.selectionChanged();
+    }
+}

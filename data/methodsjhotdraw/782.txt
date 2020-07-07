@@ -1,0 +1,3 @@
+public boolean hasAttribute(AttributeKey key) {
+    return attributes.containsKey(key);
+}

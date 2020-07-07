@@ -1,0 +1,3 @@
+public void setAddress1(String address1) {
+    Address1 = address1;
+}

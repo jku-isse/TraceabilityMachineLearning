@@ -1,0 +1,10 @@
+public PreparedStatement loadParameters(PreparedStatement ps, PrescriptionBean pres) throws SQLException {
+    ps.setLong(1, pres.getVisitID());
+    ps.setString(2, pres.getMedication().getNDCode());
+    ps.setDate(3, new Date(pres.getStartDate().getTime()));
+    ps.setDate(4, new Date(pres.getEndDate().getTime()));
+    ps.setInt(5, pres.getDosage());
+    ps.setString(6, pres.getInstructions());
+    ps.setString(7, pres.getOverrideReasonOther());
+    return ps;
+}

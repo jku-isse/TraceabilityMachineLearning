@@ -1,0 +1,4 @@
+public void testBadTri() throws Exception {
+    hr.setCholesterolTri(251);
+    assertTrue(factor.hasRiskFactor());
+}

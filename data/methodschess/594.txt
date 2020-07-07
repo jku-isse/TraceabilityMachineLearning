@@ -1,0 +1,6 @@
+/**
+ * Get the row index of this position.
+ *
+ * @return The row index of this position (0-7).
+ */
+int getRowIndex();

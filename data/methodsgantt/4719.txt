@@ -1,0 +1,3 @@
+public TaskDependencySliceAsDependee(Task task, TaskDependencyCollection dependencyCollection) {
+    super(task, dependencyCollection);
+}

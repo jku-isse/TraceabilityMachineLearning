@@ -1,0 +1,6 @@
+public void handleRequestRemove(HandleEvent e) {
+    selectionHandles.remove(e.getHandle());
+    e.getHandle().dispose();
+    invalidateHandles();
+    repaint(e.getInvalidatedArea());
+}

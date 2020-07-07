@@ -1,0 +1,11 @@
+/* extends Serializable, Storable */
+/**
+ * Calculate the layout for the figure and all its subelements. The
+ * layout is not actually performed but just its dimensions are calculated.
+ *
+ * @param anchor
+ * 		start point for the layout
+ * @param lead
+ * 		minimum lead point for the layout
+ */
+public Rectangle2D.Double calculateLayout(CompositeFigure compositeFigure, Point2D.Double anchor, Point2D.Double lead);

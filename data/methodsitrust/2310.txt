@@ -1,0 +1,9 @@
+public VisitFlag[] getVisitFlags() {
+    // Keep similar flags next to each other
+    Collections.sort(visitFlags, new Comparator<VisitFlag>() {
+        public int compare(VisitFlag vf1, VisitFlag vf2) {
+            return vf1.getType().compareToIgnoreCase(vf2.getType());
+        }
+    });
+    return visitFlags.toArray(new VisitFlag[visitFlags.size()]);
+}

@@ -1,0 +1,7 @@
+public BezierControlPointHandle(BezierFigure owner, int index, int coord, Figure transformOwner) {
+    super(owner);
+    this.index = index;
+    this.controlPointIndex = coord;
+    this.transformOwner = transformOwner;
+    transformOwner.addFigureListener(this);
+}

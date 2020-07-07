@@ -1,0 +1,3 @@
+private boolean equals(Email other) {
+    return (((from.equals(other.from)) && (subject.equals(other.subject))) && (body.equals(other.body))) && (listEquals(toList, other.toList));
+}

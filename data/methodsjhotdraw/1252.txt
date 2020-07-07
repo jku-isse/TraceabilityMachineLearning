@@ -1,0 +1,38 @@
+@Override
+public void trackDoubleClick(Point p, int modifiersEx) {
+    final BezierFigure f = getOwner();
+    if (((f.getNodeCount()) > 2) && ((modifiersEx & (((InputEvent.META_DOWN_MASK) | (InputEvent.CTRL_DOWN_MASK)) | (InputEvent.ALT_DOWN_MASK))) == 0)) {
+        Rectangle invalidatedArea = getDrawingArea();
+        f.willChange();
+        final BezierPath.Node removedNode = f.removeNode(index);
+        f.changed();
+        fireHandleRequestRemove(invalidatedArea);
+        fireUndoableEditHappened(new AbstractUndoableEdit() {
+            @Override
+            public String getPresentationName() {
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                return labels.getString("edit.bezierPath.joinSegments.text");
+            }
+
+            @Override
+            public void redo() throws CannotRedoException {
+                super.redo();
+                view.removeFromSelection(f);
+                f.willChange();
+                f.removeNode(index);
+                f.changed();
+                view.addToSelection(f);
+            }
+
+            @Override
+            public void undo() throws CannotUndoException {
+                super.undo();
+                view.removeFromSelection(f);
+                f.willChange();
+                f.addNode(index, removedNode);
+                f.changed();
+                view.addToSelection(f);
+            }
+        });
+    }
+}

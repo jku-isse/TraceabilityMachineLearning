@@ -1,0 +1,22 @@
+/**
+ * Updates the title of a view and displays it in the given frame.
+ *
+ * @param p
+ * 		The view.
+ * @param f
+ * 		The frame.
+ */
+protected void updateViewTitle(View p, JFrame f) {
+    File file = p.getFile();
+    String title;
+    if (file == null) {
+        title = labels.getString("unnamedFile");
+    } else {
+        title = file.getName();
+    }
+    if (p.hasUnsavedChanges()) {
+        title += "*";
+    }
+    p.setTitle(labels.getFormatted("frame.title", title, getName(), p.getMultipleOpenId()));
+    f.setTitle(p.getTitle());
+}

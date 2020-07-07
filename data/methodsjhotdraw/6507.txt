@@ -1,0 +1,4 @@
+public CSSRule(String name, String value) {
+    properties = new HashMap<String, String>();
+    properties.put(name, value);
+}

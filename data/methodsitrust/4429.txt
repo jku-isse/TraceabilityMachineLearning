@@ -1,0 +1,4 @@
+public void testRegularPatient2() throws Exception {
+    factor = new ChildhoodInfectionFactor(factory, 2L, 79.1, 79.3);
+    assertTrue(factor.hasRiskFactor());
+}

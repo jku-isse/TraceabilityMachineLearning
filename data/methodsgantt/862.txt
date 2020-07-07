@@ -1,0 +1,11 @@
+/**
+ * In elder version, this function refresh all the related tasks to the
+ * taskToMove. In the new version, this function is same as
+ * forwardScheduling(). It will refresh all the tasks.
+ *
+ * @param taskToMove
+ * 		
+ */
+public void refreshAllChild(String taskToMove) {
+    forwardScheduling();
+}

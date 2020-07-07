@@ -1,0 +1,8 @@
+// Instance variables
+// Constructors
+/**
+ * Create a new action instance.
+ */
+public AboutAction() {
+    super("About");
+}

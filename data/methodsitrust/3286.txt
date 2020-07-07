@@ -1,0 +1,6 @@
+public void testRemoveRepresentative() throws Exception {
+    assertEquals(1, patientDAO.getRepresented(2L).size());
+    boolean confirm = patientDAO.removeRepresentative(2L, 1L);
+    assertEquals(0, patientDAO.getRepresented(2L).size());
+    assertTrue(confirm);
+}

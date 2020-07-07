@@ -1,0 +1,6 @@
+/**
+ * Sets the color displayed when over a docking area
+ */
+public void setDockingColor(Color c) {
+    this.dockingColor = c;
+}

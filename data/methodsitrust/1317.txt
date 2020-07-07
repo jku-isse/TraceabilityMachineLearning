@@ -1,0 +1,17 @@
+/**
+ * Given an HCPs name, return the corresponding HCPVisitBean.
+ *
+ * @param name
+ * 		
+ * @return 
+ */
+public HCPVisitBean getNamedHCP(String name) {
+    HCPVisitBean r = new HCPVisitBean();
+    for (HCPVisitBean bean : getVisitedHCPs()) {
+        if (name.equals(bean.getHCPName())) {
+            r = bean;
+            break;
+        }
+    }
+    return r;
+}

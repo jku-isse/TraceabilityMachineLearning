@@ -1,0 +1,14 @@
+public Figure createText(Point2D.Double[] coordinates, double[] rotates, StyledDocument text, Map<AttributeKey, Object> a) {
+    SVGTextFigure figure = new SVGTextFigure();
+    figure.setCoordinates(coordinates);
+    figure.setRotates(rotates);
+    try {
+        figure.setText(text.getText(0, text.getLength()));
+    } catch (BadLocationException e) {
+        InternalError ex = new InternalError(e.getMessage());
+        ex.initCause(e);
+        throw ex;
+    }
+    figure.setAttributes(a);
+    return figure;
+}

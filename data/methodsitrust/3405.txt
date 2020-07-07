@@ -1,0 +1,5 @@
+public void testGetCPTCode() throws DBException {
+    ProcedureBean proc = cptDAO.getCPTCode("87");
+    assertEquals("87", proc.getCPTCode());
+    assertEquals("Diagnostic Radiology", proc.getDescription());
+}

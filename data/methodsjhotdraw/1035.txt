@@ -1,0 +1,3 @@
+protected boolean isStroked() {
+    return isStroked;
+}

@@ -1,0 +1,6 @@
+/**
+ * Gets a control point.
+ */
+public BezierPath.Node getNode(int index) {
+    return ((BezierPath.Node) (path.get(index).clone()));
+}

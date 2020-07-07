@@ -1,0 +1,10 @@
+/**
+ *
+ */
+public List<ApptRequestBean> loadList(ResultSet rs) throws SQLException {
+    List<ApptRequestBean> list = new ArrayList<ApptRequestBean>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

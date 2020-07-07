@@ -1,0 +1,6 @@
+public void testCheckDeclared() throws Exception {
+    assertEquals(false, action.checkDeclared(0));
+    assertEquals(true, action.checkDeclared(9000000003L));
+    assertEquals(false, action.checkDeclared(9668301824L));
+    assertEquals(false, action.checkDeclared(9000000000L));
+}

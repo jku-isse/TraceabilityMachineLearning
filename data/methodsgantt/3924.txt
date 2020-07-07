@@ -1,0 +1,3 @@
+public void setVisible(boolean vis) {
+    visible = vis;
+}

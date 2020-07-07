@@ -1,0 +1,15 @@
+/**
+ * Takes information from the personnelForm param and updates the patient
+ *
+ * @param personnelForm
+ * 		PersonnelBean with new information
+ * @throws iTrustException
+ * 		
+ * @throws FormValidationException
+ * 		
+ */
+public void updateInformation(PersonnelBean personnelForm) throws FormValidationException, iTrustException {
+    personnelForm.setMID(pid);
+    validator.validate(personnelForm);
+    personnelDAO.editPersonnel(personnelForm);
+}

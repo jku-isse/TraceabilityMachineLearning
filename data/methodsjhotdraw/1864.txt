@@ -1,0 +1,11 @@
+/**
+ * Sets a handle attribute of the editor.
+ * The default attribute will be used by creation tools, to create a new
+ * figure.
+ *
+ * @param key
+ * 		AttributeKey.
+ * @param value
+ * 		Attribute value.
+ */
+public <T> void setHandleAttribute(AttributeKey<T> key, T value);

@@ -1,0 +1,3 @@
+public View getActiveView() {
+    return app.getActiveView();
+}

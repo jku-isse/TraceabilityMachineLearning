@@ -1,0 +1,9 @@
+public void testGetVisitedHCPsRed() {
+    // Get all visited HCPs without any filtering.
+    List<HCPVisitBean> beans = action.getVisitedHCPs();
+    assertEquals("Gandalf Stormcrow", beans.get(0).getHCPName());
+    assertEquals("Mary Shelley", beans.get(1).getHCPName());
+    assertEquals("Lauren Frankenstein", beans.get(2).getHCPName());
+    assertEquals("Jason Frankenstein", beans.get(3).getHCPName());
+    assertEquals("Kelly Doctor", beans.get(4).getHCPName());
+}

@@ -1,0 +1,23 @@
+/**
+ * Updates the ND Code with new information from the MedicationBean
+ *
+ * @param med
+ * 		the MedicationBean that holds new information but the same code
+ * @return status message
+ * @throws FormValidationException
+ * 		
+ */
+public String updateInformation(MedicationBean med) throws FormValidationException {
+    validator.validate(med);
+    try {
+        int rows = updateCode(med);
+        if (0 == rows) {
+            return "Error: Code not found.";
+        } else {
+            return ("Success: " + rows) + " row(s) updated";
+        }
+    } catch (DBException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    }
+}

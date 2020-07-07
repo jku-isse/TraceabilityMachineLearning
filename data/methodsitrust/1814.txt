@@ -1,0 +1,4 @@
+public OverrideReasonBean() {
+    description = null;
+    reasonCode = "";
+}

@@ -1,0 +1,18 @@
+protected List getActivitiesForward(Date startDate, TimeUnit timeUnit, long unitCount) {
+    List result = new ArrayList();
+    Date unitStart = timeUnit.adjustLeft(startDate);
+    while (unitCount > 0) {
+        boolean isWeekendState = isNonWorkingDay(unitStart);
+        if (isWeekendState) {
+            Date workingUnitStart = getStateChangeDate(unitStart, timeUnit, false, true);
+            result.add(new CalendarActivityImpl(unitStart, workingUnitStart, false));
+            unitStart = workingUnitStart;
+            continue;
+        }
+        Date nextUnitStart = timeUnit.adjustRight(unitStart);
+        result.add(new CalendarActivityImpl(unitStart, nextUnitStart, true));
+        unitStart = nextUnitStart;
+        unitCount--;
+    } 
+    return result;
+}

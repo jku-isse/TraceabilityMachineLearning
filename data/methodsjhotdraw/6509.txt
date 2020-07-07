@@ -1,0 +1,4 @@
+public CSSRule(String selector, Map<String, String> properties) {
+    setSelector(selector);
+    this.properties = properties;
+}

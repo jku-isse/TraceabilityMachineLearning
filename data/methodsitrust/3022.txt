@@ -1,0 +1,25 @@
+/**
+ * Indicates whether a certain personnel is in the database.
+ *
+ * @param pid
+ * 		The MID of the personnel in question.
+ * @return A boolean indicating whether this personnel exists.
+ * @throws DBException
+ * 		
+ */
+public boolean checkPersonnelExists(long pid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM personnel WHERE MID=?");
+        ps.setLong(1, pid);
+        ResultSet rs = ps.executeQuery();
+        return rs.next();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

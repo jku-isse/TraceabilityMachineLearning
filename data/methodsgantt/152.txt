@@ -1,0 +1,6 @@
+/**
+ * Return the day
+ */
+public int getDate() {
+    return this.get(Calendar.DATE);
+}

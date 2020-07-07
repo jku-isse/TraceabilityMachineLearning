@@ -1,0 +1,3 @@
+public String getNewProjectWizardWindowTitle() {
+    return GanttLanguage.getInstance().getText("createNewProject");
+}

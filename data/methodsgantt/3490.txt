@@ -1,0 +1,63 @@
+/**
+ * get project time range, compute box scaling values and shifts so that the
+ * total chart fits in targetWidthPoints units: targetWidthPoints is in
+ * pixels, 1200 pixels per inch, or about 472 pixels/cm this also adds box
+ * and text objects to the project tasks for plotting later
+ */
+public void setProjectPlotTimes(float targetWidthPoints, float depthval) {
+    if (debug)
+        System.out.println("setProjectPlotTimes begin");
+
+    float targetwidth = targetWidthPoints - (fTtextwidth);
+    GanttCalendar startDate = null;
+    GanttCalendar endDate = null;
+    // Get project start, end times
+    for (Iterator it = lot.iterator(); it.hasNext();) {
+        // get the task
+        Task task = ((Task) (((DefaultMutableTreeNode) (it.next())).getUserObject()));
+        if ((startDate == null) && (endDate == null)) {
+            startDate = task.getStart();
+            endDate = task.getEnd();
+        } else {
+            // before
+            if ((task.getStart().compareTo(startDate)) == (-1))
+                startDate = task.getStart();
+
+            // after
+            if ((task.getEnd().compareTo(startDate)) == 1)
+                endDate = task.getEnd();
+
+        }
+    }
+    // shift all dates by this amount to plot
+    dateShift = startDate;
+    scale = targetwidth / (Math.max(1.0F, ((float) (endDate.diff(startDate)))));
+    chwidth = (scale) * ((float) (endDate.diff(startDate)));
+    System.out.println((((("Chart width =" + (chwidth)) + " points = ") + ((chwidth) / 1200)) + " inches
+"));
+    int index = 0;
+    // now add text and box objects to the tasks
+    for (Iterator it = lot.iterator(); it.hasNext();) {
+        DefaultMutableTreeNode node = ((DefaultMutableTreeNode) (it.next()));
+        if (!(node.isRoot())) {
+            // get the task
+            GanttTask task = ((GanttTask) (node.getUserObject()));
+            // get the text infos of the task
+            GanttXFIGSaver.TextObject textLabel = task2text(task, index, node.getLevel(), ((int) (depthval)));
+            if (debug)
+                System.out.println("    add TEXT");
+
+            atl.add(textLabel);
+            // get the box object of the task
+            GanttXFIGSaver.BoxObject boxObject = task2box(task, ((int) (depthval)), index, node.isLeaf());
+            if (debug)
+                System.out.println("    add BOX");
+
+            abl.add(boxObject);
+            index++;
+        }
+    }
+    if (debug)
+        System.out.println(("setProjectPlotTimes end + index=" + index));
+
+}

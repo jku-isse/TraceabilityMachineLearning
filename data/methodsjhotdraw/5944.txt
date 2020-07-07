@@ -1,0 +1,1 @@
+public Figure createRect(double x, double y, double width, double height, double rx, double ry, Map<AttributeKey, Object> attributes);

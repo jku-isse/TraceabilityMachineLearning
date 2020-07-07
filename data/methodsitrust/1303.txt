@@ -1,0 +1,11 @@
+public void testGetReferrals() throws Exception {
+    long hcpid = 9000000000L;
+    action = new ViewSentReferralsAction(factory, hcpid);
+    String field = "priority";
+    SortDirection dir = SortDirection.ASCENDING;
+    List<VerboseReferralBean> list = action.getReferrals(field, dir);
+    assertEquals(1, list.get(0).getPriority());
+    assertEquals(1, list.get(1).getPriority());
+    assertEquals(1, list.get(2).getPriority());
+    assertEquals(1, list.get(3).getPriority());
+}

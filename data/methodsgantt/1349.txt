@@ -1,0 +1,3 @@
+public void isIconVisible(boolean isNull) {
+    setIconVisible(isNull);
+}

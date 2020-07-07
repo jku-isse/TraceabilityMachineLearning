@@ -1,0 +1,4 @@
+public void deleteRole(Role role) {
+    myRoles.remove(role);
+    myRoleManager.fireRolesChanged(this);
+}

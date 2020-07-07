@@ -1,0 +1,5 @@
+public void testUnDeclareNormal() throws Exception {
+    assertEquals("HCP successfully undeclared", action.undeclareHCP("9000000003"));
+    List<PersonnelBean> decs = action.getDeclaredHCPS();
+    assertEquals(0, decs.size());
+}

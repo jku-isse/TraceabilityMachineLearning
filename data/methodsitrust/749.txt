@@ -1,0 +1,3 @@
+public void testSendMessage() throws Exception {
+    assertEquals("9999999990 Ill fix you up", action.sendEmail(1L, "Ill fix you up"));
+}

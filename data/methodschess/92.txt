@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------
+// Interface methods:
+// -----------------------------------------------------------------------
+/**
+ * Get the type of this piece.
+ *
+ * @return The type of this piece.
+ */
+public byte getType() {
+    return ((byte) ((pieceColor) >> 1));
+}

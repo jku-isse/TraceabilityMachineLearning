@@ -1,0 +1,10 @@
+/**
+ * Adds a collection of figures to the drawing.
+ * The drawing sends an {@code addNotify}  message to each figure
+ * after it has been added.
+ *
+ * @see Figure#addNotify
+ * @param figures
+ * 		to be added to the drawing
+ */
+void addAll(Collection<? extends Figure> figures);

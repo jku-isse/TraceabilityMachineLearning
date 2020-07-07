@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((JDisclosureToolBarBeanInfo.beanDescriptor) == null)
+        JDisclosureToolBarBeanInfo.beanDescriptor = new BeanDescriptor(JDisclosureToolBarBeanInfo.class);
+
+    JDisclosureToolBarBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    JDisclosureToolBarBeanInfo.beanDescriptor.setDisplayName("JDisclosureToolBar");
+    return JDisclosureToolBarBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

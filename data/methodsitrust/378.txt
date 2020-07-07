@@ -1,0 +1,21 @@
+/**
+ * Checks to see if a particular family member has heart disease
+ *
+ * @param member
+ * 		the family member to check
+ * @return true if the family member has heart disease.  False if there are no records or the family member does not
+ * @throws iTrustException
+ * 		
+ */
+public boolean doesFamilyMemberHaveHeartDisease(FamilyMemberBean member) throws iTrustException {
+    List<DiagnosisBean> diagnoses = patientDAO.getDiagnoses(member.getMid());
+    if ((diagnoses.size()) == 0)
+        return false;
+
+    for (DiagnosisBean diag : diagnoses) {
+        if (diag.getICDCode().startsWith("402"))
+            return true;
+
+    }
+    return false;
+}

@@ -1,0 +1,12 @@
+/**
+ * Indicates the valid characters by giving an regular expression pattern.
+ *
+ * @param pattern
+ * 		The regular expression with which the matching is done.
+ */
+public void setPattern(String pattern) {
+    Document d = this.getDocument();
+    if (d instanceof GPlainDocument) {
+        ((GPlainDocument) (d)).setPattern(pattern);
+    }
+}

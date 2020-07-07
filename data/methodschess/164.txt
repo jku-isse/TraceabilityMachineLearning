@@ -1,0 +1,22 @@
+/**
+ * Get the current game state.
+ *
+ * @param white
+ * 		True, if the state of the white player is requested.
+ * @return The current game state.
+ */
+public final byte getCurrentGameState(boolean white) {
+    // Test if the given player is in check.
+    boolean inCheck = _analyzer.isInCheck(((BitBoard) (getBoard())), white);
+    // Test if the player has valid plies available.
+    // The following computation of the available plies is not really efficient,
+    // since they are done anyway (either to compute the next computer ply or to
+    // check if a user ply is valid). So maybe the plygenerator or the engine should
+    // cache the computed plies.
+    boolean validPliesAvailable = (_plyGenerator.getPliesForColor(((BitBoard) (getBoard())), white).length) > 0;
+    if (inCheck) {
+        return validPliesAvailable ? GameState.CHECK : GameState.CHECKMATE;
+    } else {
+        return validPliesAvailable ? GameState.ONGOING : GameState.DRAW;
+    }
+}

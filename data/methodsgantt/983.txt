@@ -1,0 +1,5 @@
+public void tableChanged(TableModelEvent e) {
+    // Mediator.getGanttProjectSingleton().getArea().repaint();
+    // getTable().repaint();
+    Mediator.getGanttProjectSingleton().repaint();
+}

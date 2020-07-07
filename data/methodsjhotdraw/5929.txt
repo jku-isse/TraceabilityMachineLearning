@@ -1,0 +1,6 @@
+private void writePolylineElement(IXMLElement parent, SVGPathFigure f) throws IOException {
+    IXMLElement elem = parent.createElement("area");
+    if (writePolyAttributes(elem, f, new BasicStroke(((float) (AttributeKeys.getStrokeTotalWidth(f)))).createStrokedShape(f.getChild(0).getBezierPath()))) {
+        parent.addChild(elem);
+    }
+}

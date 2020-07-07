@@ -1,0 +1,26 @@
+/**
+ * Checks to make sure the password is correctly entered twice.
+ *
+ * @param password
+ * 		the password
+ * @param confirmPassword
+ * 		the password again for confirmation
+ * @throws FormValidationException
+ * 		
+ */
+private void validatePassword(String password, String confirmPassword) throws FormValidationException {
+    ErrorList errorList = new ErrorList();
+    if ((password == null) || ("".equals(password))) {
+        errorList.addIfNotNull("Password cannot be empty");
+    } else {
+        if (!(password.equals(confirmPassword)))
+            errorList.addIfNotNull("Passwords dont match");
+
+        if (!(ValidationFormat.PASSWORD.getRegex().matcher(password).matches())) {
+            errorList.addIfNotNull(("Password must be in the following format: " + (ValidationFormat.PASSWORD.getDescription())));
+        }
+    }
+    if (errorList.hasErrors())
+        throw new FormValidationException(errorList);
+
+}

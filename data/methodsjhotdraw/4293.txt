@@ -1,0 +1,18 @@
+/**
+ * Sets the flag for enabling rollover borders on the toolbar and it will
+ * also install the apropriate border depending on the state of the flag.
+ *
+ * @param rollover
+ * 		if true, rollover borders are installed.
+ * 		Otherwise non-rollover borders are installed
+ * @see #isRolloverBorders
+ * @since 1.4
+ */
+public void setRolloverBorders(boolean rollover) {
+    rolloverBorders = rollover;
+    if (rolloverBorders) {
+        installRolloverBorders(toolBar);
+    } else {
+        installNonRolloverBorders(toolBar);
+    }
+}

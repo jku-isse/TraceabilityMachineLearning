@@ -1,0 +1,17 @@
+public void finish() {
+    if ((myLastMouseEvent) != null) {
+        myDependant = myMouseSupport.findTaskUnderMousePointer(myLastMouseEvent.getX(), myLastMouseEvent.getY());
+        if ((myDependant) != null) {
+            if (getTaskManager().getDependencyCollection().canCreateDependency(myDependant, myTask)) {
+                getUndoManager().undoableEdit("Draw dependency", new Runnable() {
+                    public void run() {
+                        createDependency(myTask);
+                    }
+                });
+            }
+        } else {
+            myArrow = new DependencyInteractionRenderer();
+            repaint();
+        }
+    }
+}

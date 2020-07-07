@@ -1,0 +1,64 @@
+/**
+ * Set the menus language after the user select a different language
+ */
+private void changeLanguageOfMenu() {
+    mProject = changeMenuLabel(mProject, language.getText("project"));
+    mEdit = changeMenuLabel(mEdit, language.getText("edit"));
+    // mView = changeMenuLabel(mView, language.getText("view"));
+    mTask = changeMenuLabel(mTask, language.getText("task"));
+    mHuman = changeMenuLabel(mHuman, language.getText("human"));
+    mHelp = changeMenuLabel(mHelp, language.getText("help"));
+    mCalendar = changeMenuLabel(mCalendar, language.getText("calendars"));
+    mMRU = changeMenuLabel(mMRU, language.getText("lastOpen"));
+    mServer = changeMenuLabel(mServer, language.getText("webServer"));
+    miPreview = changeMenuLabel(miPreview, language.getText("preview"));
+    miUndo = changeMenuLabel(miUndo, language.getText("undo"));
+    miRedo = changeMenuLabel(miRedo, language.getText("redo"));
+    miOptions = changeMenuLabel(miOptions, language.getText("settings"));
+    // miNewTask = changeMenuLabel(miNewTask,
+    // language.getText("createTask"));
+    miDeleteTask = changeMenuLabel(miDeleteTask, language.getText("deleteTask"));
+    mHuman.insert(changeMenuLabel(mHuman.getItem(0), language.getText("newHuman")), 0);
+    miDelHuman = changeMenuLabel(miDelHuman, language.getText("deleteHuman"));
+    mHuman.insert(changeMenuLabel(mHuman.getItem(4), language.getText("importResources")), 4);
+    miSendMailHuman = changeMenuLabel(miSendMailHuman, language.getText("sendMail"));
+    miEditCalendar = changeMenuLabel(miEditCalendar, language.getText("editCalendars"));
+    miPrjCal = changeMenuLabel(miPrjCal, language.getText("projectCalendar"));
+    miWebPage = changeMenuLabel(miWebPage, language.getText("webPage"));
+    miAbout = changeMenuLabel(miAbout, language.getText("about"));
+    miTips = changeMenuLabel(miTips, language.getText("tipsOfTheDay"));
+    miManual = changeMenuLabel(miManual, language.getText("manual"));
+    miChartOptions = changeMenuLabel(miChartOptions, language.getText("chartOptions"));
+    miRefresh = changeMenuLabel(miRefresh, language.getText("refresh"));
+    // //////////////////////////////////////////
+    bPreviewPrint.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("preview"))));
+    bExport.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("export"))));
+    bImport.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("import"))));
+    bNewTask.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("createTask"))));
+    // bCut.setToolTipText(getToolTip(correctLabel(language.getText("cut"))));
+    // bCopy
+    // .setToolTipText(getToolTip(correctLabel(language
+    // .getText("copy"))));
+    // bPaste
+    // .setToolTipText(getToolTip(correctLabel(language
+    // .getText("paste"))));
+    bDelete.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("deleteTask"))));
+    bProperties.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("propertiesTask"))));
+    bPrev.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("backDate"))));
+    bScrollCenter.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("centerOnSelectedTasks"))));
+    bNext.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("forwardDate"))));
+    bZoomIn.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("zoomIn"))));
+    bZoomOut.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("zoomOut"))));
+    bAbout.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("about"))));
+    bUndo.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("undo"))));
+    bRedo.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("redo"))));
+    // bZoomFit.setToolTipText(getToolTip(language.zoomFit()));
+    bCritical.setToolTipText(GanttProject.getToolTip(language.getText("criticalPath")));
+    bComparePrev.setToolTipText(GanttProject.getToolTip(language.getText("comparePrev")));
+    bSaveCurrent.setToolTipText(GanttProject.getToolTip(language.getText("saveCurrent")));
+    bRefresh.setToolTipText(GanttProject.getToolTip(language.getText("refresh")));
+    bShowHiddens.setToolTipText(GanttProject.getToolTip(language.getText("showHiddens")));
+    getTabs().setTitleAt(1, GanttProject.correctLabel(language.getText("human")));
+    setButtonText();
+    toolBar.updateButtonsLook();
+}

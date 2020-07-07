@@ -1,0 +1,10 @@
+public String getColumnName(int column) {
+    if (column < (titles.size()))
+        return ((String) (titles.get(column)));
+
+    try {
+        return ((String) (customColumns.get((column - (titles.size())))));
+    } catch (IndexOutOfBoundsException e) {
+        return ((String) (customColumns.get(((column - (titles.size())) - 1))));
+    }
+}

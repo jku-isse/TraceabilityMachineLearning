@@ -1,0 +1,3 @@
+public LoopDetector(TaskManager taskManager) {
+    myTaskManager = taskManager;
+}

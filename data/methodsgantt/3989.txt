@@ -1,0 +1,1 @@
+public void rolesChanged(RoleManager.RoleEvent e);

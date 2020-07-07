@@ -1,0 +1,4 @@
+@Override
+public boolean hasFactor() {
+    return ((record.getBloodPressureSystolic()) > (HypertensionFactor.systolicThreshold)) || ((record.getBloodPressureDiastolic()) > (HypertensionFactor.diastolicThreshold));
+}

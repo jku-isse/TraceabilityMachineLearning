@@ -1,0 +1,9 @@
+/**
+ * The typical constructor.
+ *
+ * @param message
+ * 		A message to be displayed to the screen.
+ */
+public iTrustException(String message) {
+    this.message = message;
+}

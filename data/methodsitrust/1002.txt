@@ -1,0 +1,12 @@
+/**
+ * Gets all the diagnosis codes in iTrust and returns them in a list of beans.
+ *
+ * @return List of DiagnosisBeans correlating to all ICDCodes
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public List<DiagnosisBean> getDiagnosisCodes() throws DBException, iTrustException {
+    return icdDAO.getAllICDCodes();
+}

@@ -1,0 +1,6 @@
+/**
+ * The prefered size of this panel
+ */
+public Dimension getPreferredSize() {
+    return new Dimension(140, 20);
+}

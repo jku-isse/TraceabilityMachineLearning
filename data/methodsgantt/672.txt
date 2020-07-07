@@ -1,0 +1,5 @@
+private void updateActions() {
+    ChartSelection selection = mySelectedView.myChart.getSelection();
+    myCopyAction.setEnabled((false == (selection.isEmpty())));
+    myCutAction.setEnabled(((false == (selection.isEmpty())) && (selection.isDeletable().isOK())));
+}

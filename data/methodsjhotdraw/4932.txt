@@ -1,0 +1,10 @@
+/**
+ * Draws a segment of an ellipse. The ellipse is specified by the
+ * center(x, y), the size(w, h) and the start-angle t0 and end-angle t1.
+ */
+public void ellipseTo(Object x, Object y, Object w, Object h, Object t0, Object t1) {
+    if (((size()) == 0) || ((get(((size()) - 1)).type) == (EnhancedPath.SegType.CLOSE))) {
+        throw new IllegalPathStateException("ellipseTo is only allowed when a path segment is open");
+    }
+    add(new EnhancedPath.Segment(EnhancedPath.SegType.ELLIPSETO, x, y, w, h, t0, t1));
+}

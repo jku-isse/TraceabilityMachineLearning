@@ -1,0 +1,11 @@
+// DRAWING
+// SHAPE AND BOUNDS
+// ATTRIBUTES
+// EDITING
+// CONNECTING
+// COMPOSITE FIGURES
+// CLONING
+// EVENT HANDLING
+public void addFigureListener(FigureListener l) {
+    listenerList.add(FigureListener.class, l);
+}

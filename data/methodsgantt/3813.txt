@@ -1,0 +1,3 @@
+public HumanResourceManager(Role defaultRole) {
+    myDefaultRole = defaultRole;
+}

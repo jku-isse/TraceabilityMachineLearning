@@ -1,0 +1,5 @@
+/**
+ * Creates a new view.
+ */
+public ODGView() {
+}

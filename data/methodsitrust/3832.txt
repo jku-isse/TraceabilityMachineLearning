@@ -1,0 +1,21 @@
+public void testReportSeenHCPs1() throws Exception {
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    wr = wr.getLinkWith("My Providers").click();
+    assertEquals("iTrust - My Providers", wr.getTitle());
+    WebForm form = wr.getFormWithName("mainForm");// .getFormWithID("mainForm");
+
+    // form.setCheckbox("doctor", "Jason Frankenstein", false);
+    form.getScriptableObject().setParameterValue("removeID", "Jason Frankenstein");
+    // form.getScriptableObject().setParameterValue("doctor", "Jason Frankenstein");
+    // wr.getElementsWithName(doctor)[0]
+    // form.getScriptableObject().submit();
+    // wr = wc.getCurrentPage();
+    wr = wr.getForms()[0].submit();
+    iTrustHTTPTest.assertLogged(TransactionType.LHCP_VIEW, 2L, 0L, "");
+    WebTable table = ((WebTable) (wr.getElementWithID("hcp_table")));
+    TableRow[] rows = table.getRows();
+    assertTrue(rows[4].getText().contains("Jason Frankenstein"));
+}

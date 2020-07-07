@@ -1,0 +1,5 @@
+public void testPendingAppointmentAlert() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Appointment requests."));
+}

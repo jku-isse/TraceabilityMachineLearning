@@ -1,0 +1,9 @@
+/**
+ * Process a single PGN file.
+ *
+ * @param file
+ * 		The PGN file to process.
+ */
+private final void processPGNfile(File file) {
+    getOpeningBook().addPGNopening(file);
+}

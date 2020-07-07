@@ -1,0 +1,7 @@
+public EllipseFigure(double x, double y, double width, double height) {
+    ellipse = new Ellipse2D.Double(x, y, width, height);
+    /* setFillColor(Color.white);
+    setStrokeColor(Color.black);
+     */
+    setAttributeEnabled(AttributeKeys.TEXT_COLOR, false);
+}

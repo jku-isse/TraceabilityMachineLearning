@@ -1,0 +1,9 @@
+@Override
+protected JFileChooser createSaveChooser() {
+    JFileChooser c = new JFileChooser();
+    c.addChoosableFileFilter(new ExtensionFileFilter("Net Diagram", "xml"));
+    if ((preferences) != null) {
+        c.setSelectedFile(new File(preferences.get("projectFile", System.getProperty("user.home"))));
+    }
+    return c;
+}

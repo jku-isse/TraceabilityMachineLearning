@@ -1,0 +1,14 @@
+@Override
+protected void setUp() throws Exception {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = TestDAOFactory.getTestInstance().getConnection();
+        ps = conn.prepareStatement("DROP TABLE IF EXISTS testincrement");
+        ps.executeUpdate();
+        ps = conn.prepareStatement("CREATE TABLE testincrement(id integer auto_increment primary key)");
+        ps.executeUpdate();
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

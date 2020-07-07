@@ -1,0 +1,31 @@
+/**
+ * The user moved a piece.
+ *
+ * @param ply
+ * 		The ply of the user.
+ */
+public final void userPly(Ply ply) {
+    // Before any user ply can be applied, we have to stop
+    // the permanent brain, so the engine is free to process
+    // the user ply.
+    getEngine().stopPermanentBrain();
+    // plyInterpretation
+    ply = convertUserPly(ply);
+    // Check if the user has the right to move a piece
+    // and made a valid move.
+    if ((_moveRight) != (_computerIsWhite)) {
+        if ((((_gameState) != (GameState.CHECKMATE)) && ((_gameState) != (GameState.DRAW))) && ((_gameState) != (GameState.TIMEOUT))) {
+            if (getEngine().validateUserPly(ply)) {
+                doPly(ply);// Ok => move the piece.
+
+            } else {
+                // The user had to right to move or made an invalid move.
+                signalUserInputError("invalid move");
+            }
+        } else {
+            signalUserInputError("game is already over");
+        }
+    } else {
+        signalUserInputError("user is not about to move");
+    }
+}

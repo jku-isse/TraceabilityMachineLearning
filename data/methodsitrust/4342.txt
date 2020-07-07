@@ -1,0 +1,5 @@
+public void testFilterByOfficeVisitNoResult() {
+    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.UPPER_OFFICE_VISIT_DATE, "Dalpe", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertTrue(res.isEmpty());
+}

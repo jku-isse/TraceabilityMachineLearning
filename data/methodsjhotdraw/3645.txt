@@ -1,0 +1,10 @@
+/**
+ * Set this to true if you want the attribute editor to update the
+ * default values of the drawing editor.
+ *
+ * @param newValue
+ * 		
+ */
+public void setUpdateDrawingEditorDefaults(boolean newValue) {
+    isUpdateDrawingEditorDefaults = newValue;
+}

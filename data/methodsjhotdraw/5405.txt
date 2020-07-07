@@ -1,0 +1,6 @@
+public SVGPathFigure(boolean isEmpty) {
+    if (!isEmpty) {
+        add(new SVGBezierFigure());
+    }
+    SVGAttributeKeys.setDefaults(this);
+}

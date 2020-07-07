@@ -1,0 +1,25 @@
+/**
+ * Test view office visit
+ *
+ * @throws Exception
+ * 		
+ */
+public void testViewOfficeVisit() throws Exception {
+    String hcp = null;
+    action = new ViewOfficeVisitAction(factory, 2L, "955");
+    assertEquals(955L, action.getOvID());
+    assertEquals(2L, action.getPid());
+    assertEquals(955L, action.getOfficeVisit().getID());
+    // assertEquals(3, action.getPrescriptions().size());
+    hcp = action.getHCPName(9000000000L);
+    assertNotNull(hcp);
+    hcp = action.getHCPName(9000000099L);
+    assertEquals("User does not exist", hcp);
+    try {
+        action = new ViewOfficeVisitAction(factory, 2L, "0");
+        fail("should have been iTrustException");
+    } catch (DBException dbe) {
+    } catch (iTrustException e) {
+        assertEquals((("Office Visit " + (Long.valueOf("0"))) + " with Patient MID 2 does not exist"), e.getMessage());
+    }
+}

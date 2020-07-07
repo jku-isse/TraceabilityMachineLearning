@@ -1,0 +1,9 @@
+/**
+ * Presort the scored plies.
+ */
+private final void presortPlies() {
+    if ((_plyCounter) > 1) {
+        // Check the array size, so the sort methods dont have to do it.
+        quickersort(0, ((_plyCounter) - 1));
+    }
+}

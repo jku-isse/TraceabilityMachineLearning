@@ -1,0 +1,3 @@
+public Localization() {
+    currentLocale = new Locale("en", "US");
+}

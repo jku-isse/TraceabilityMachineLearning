@@ -1,0 +1,13 @@
+public void testPatientAllErrors() throws Exception {
+    ProcedureBean d = new ProcedureBean();
+    d.setDescription("An description!");
+    d.setCPTCode("8000.84");
+    try {
+        validator.validate(d);
+        fail("exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals(("CPT Code: " + (ValidationFormat.CPT.getDescription())), e.getErrorList().get(0));
+        assertEquals(("Description: " + (ValidationFormat.ICD_CODE_DESCRIPTION.getDescription())), e.getErrorList().get(1));
+        assertEquals("number of errors", 2, e.getErrorList().size());
+    }
+}

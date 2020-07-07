@@ -1,0 +1,3 @@
+public ResourceAssignment getAssignment(ProjectResource resource) {
+    return ((ResourceAssignment) (myAssignments.get(resource)));
+}

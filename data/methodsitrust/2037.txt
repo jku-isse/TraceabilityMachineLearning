@@ -1,0 +1,8 @@
+/**
+ * Gets the CPT Description for this procedure
+ *
+ * @return The CPT Description for this procedure
+ */
+public String getDescription() {
+    return description;
+}

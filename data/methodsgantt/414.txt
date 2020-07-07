@@ -1,0 +1,3 @@
+public void setIconList(String list) {
+    iconListAsString = list;
+}

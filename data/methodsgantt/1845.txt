@@ -1,0 +1,3 @@
+public TaskLength getDuration() {
+    return myDuration;
+}

@@ -1,0 +1,9 @@
+/**
+ * Sets the completion percentage of the task.
+ *
+ * @param percentage
+ * 		The percentage to be set.
+ */
+public void setCompletionPercentage(int percentage) {
+    task.setCompletionPercentage(percentage);
+}

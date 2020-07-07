@@ -1,0 +1,10 @@
+private void caretUpdate(CaretEvent evt) {
+    try {
+        int pos = editor.getCaretPosition();
+        int line = getLineOfOffset(pos);
+        int lineStartOffset = getLineStartOffset(line);
+        caretInfoLabel.setText((((line + 1) + ":") + ((pos - lineStartOffset) + 1)));
+    } catch (BadLocationException e) {
+        caretInfoLabel.setText(e.toString());
+    }
+}

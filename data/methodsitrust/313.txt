@@ -1,0 +1,4 @@
+public LabProcedureBean getLabProcedure(long id) throws iTrustException {
+    verifySaved();
+    return labProcedureDAO.getLabProcedure(id);
+}

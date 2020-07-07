@@ -1,0 +1,3 @@
+public void setLabList(List<LabProcedureBean> lablist) {
+    labList = lablist;
+}

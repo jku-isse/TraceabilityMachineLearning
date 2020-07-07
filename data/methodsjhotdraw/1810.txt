@@ -1,0 +1,12 @@
+/**
+ * Adds a collection of figures to the drawing.
+ * The drawing sends an {@code addNotify}  message to each figure
+ * after it has been added.
+ *
+ * @see Figure#addNotify
+ * @param index
+ * 		The z-index of the figure.
+ * @param figures
+ * 		to be added to the drawing
+ */
+void addAll(int index, Collection<? extends Figure> figures);

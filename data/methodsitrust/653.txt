@@ -1,0 +1,3 @@
+public int getPendingCount() throws DBException {
+    return lpDAO.getHCPPendingCount(loggedInMID);
+}

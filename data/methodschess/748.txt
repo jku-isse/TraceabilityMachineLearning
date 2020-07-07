@@ -1,0 +1,8 @@
+/**
+ * Look at the object, that is at the top of the stack without removing it.
+ *
+ * @return The object at the top of the stack.
+ */
+public final Object peek() {
+    return empty() ? null : _items[((_nItems) - 1)];
+}

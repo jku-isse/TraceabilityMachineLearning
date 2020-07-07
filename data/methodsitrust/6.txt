@@ -1,0 +1,6 @@
+public void testEqualsOkayToBeOverloaded() throws Exception {
+    HashMap<String, Object> map = new HashMap<String, Object>();
+    map.put("thing", new String[]{ "test text" });
+    OkayBean ok = new BeanBuilder<OkayBean>().build(map, new OkayBean());
+    assertEquals("test text", ok.getThing());
+}

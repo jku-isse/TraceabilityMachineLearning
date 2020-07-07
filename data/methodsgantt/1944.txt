@@ -1,0 +1,34 @@
+/**
+ * Renders a list of loads in a single chart row
+ * Precondition: loads belong to the same pair (resource,task) and are ordered
+ * by their time values
+ */
+private void buildTasksLoadsRectangles(List partition, /* <Load> */
+int ypos) {
+    /* <Offset> */
+    LinkedList offsets = getOffsets();
+    /* <Load> */
+    Iterator loads = partition.iterator();
+    while ((loads.hasNext()) && ((offsets.getFirst()) != null)) {
+        final LoadDistribution.Load nextLoad = ((LoadDistribution.Load) (loads.next()));
+        final Date nextStart = nextLoad.startDate;
+        final Date nextEnd = nextLoad.endDate;
+        GraphicPrimitiveContainer.Rectangle nextRect = createRectangle(offsets, nextStart, nextEnd, ypos);
+        if (nextRect == null) {
+            continue;
+        }
+        String style;
+        if ((nextLoad.load) < 100.0F) {
+            style = "load.underload";
+        } else
+            if ((nextLoad.load) > 100.0F) {
+                style = "load.overload";
+            } else {
+                style = "load.normal";
+            }
+
+        style += ".first.last";
+        nextRect.setStyle(style);
+        nextRect.setModelObject(new ResourceLoadRenderer.ResourceLoad(nextLoad.load));
+    } 
+}

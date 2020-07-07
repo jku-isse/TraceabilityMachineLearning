@@ -1,0 +1,9 @@
+/**
+ * Tracks a step of the interaction.
+ *
+ * @param anchor
+ * 		the position where the interaction started
+ * @param lead
+ * 		the current position
+ */
+public void trackStep(Point anchor, Point lead, int modifiersEx);

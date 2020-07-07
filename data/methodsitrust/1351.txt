@@ -1,0 +1,21 @@
+/**
+ * Asserts whether the input is a valid, existing personnels MID.
+ *
+ * @param input
+ * 		The presumed MID
+ * @return The existing personnels ID as a long.
+ * @throws iTrustException
+ * 		If the personnel does not exist or there is a DB Problem.
+ */
+private long checkPersonnelID(String input) throws iTrustException {
+    try {
+        long pid = Long.valueOf(input);
+        if (factory.getPersonnelDAO().checkPersonnelExists(pid))
+            return pid;
+        else
+            throw new iTrustException("Personnel does not exist");
+
+    } catch (NumberFormatException e) {
+        throw new iTrustException(("Personnel ID is not a number: " + (e.getMessage())));
+    }
+}

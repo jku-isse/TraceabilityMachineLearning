@@ -1,0 +1,11 @@
+protected void setTracker(Tool newTracker) {
+    if ((tracker) != null) {
+        tracker.deactivate(getEditor());
+        tracker.removeToolListener(this);
+    }
+    tracker = newTracker;
+    if ((tracker) != null) {
+        tracker.activate(getEditor());
+        tracker.addToolListener(this);
+    }
+}

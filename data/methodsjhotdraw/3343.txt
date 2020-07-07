@@ -1,0 +1,102 @@
+/**
+ * Fit one or multiple subsequent cubic bezier curves to a (sub)set of
+ * digitized points. The digitized points represent a smooth curve without
+ * corners.
+ *
+ * @param d
+ * 		Array of digitized points. Must not contain subsequent
+ * 		coincident points.
+ * @param first
+ * 		Indice of first point in d.
+ * @param last
+ * 		Indice of last point in d.
+ * @param tHat1
+ * 		Unit tangent vectors at start point.
+ * @param tHat2
+ * 		Unit tanget vector at end point.
+ * @param errorSquared
+ * 		User-defined errorSquared squared.
+ * @param bezierPath
+ * 		Path to which the bezier curve segments are added.
+ */
+private static void fitCubic(ArrayList<Point2D.Double> d, int first, int last, Point2D.Double tHat1, Point2D.Double tHat2, double errorSquared, BezierPath bezierPath) {
+    Point2D.Double[] bezCurve;/* Control points of fitted Bezier curve */
+
+    double[] u;/* Parameter values for point */
+
+    double maxError;/* Maximum fitting errorSquared */
+
+    int[] splitPoint = new int[1];/* Point to split point set at.
+    This is an array of size one, because we need it as an input/output parameter.
+     */
+
+    int nPts;/* Number of points in subset */
+
+    double iterationError;/* Error below which you try iterating */
+
+    int maxIterations = 4;/* Max times to try iterating */
+
+    Point2D.Double tHatCenter = new Point2D.Double();/* Unit tangent vector at splitPoint */
+
+    int i;
+    // clone unit tangent vectors, so that we can alter their coordinates
+    // without affecting the input values.
+    tHat1 = ((Point2D.Double) (tHat1.clone()));
+    tHat2 = ((Point2D.Double) (tHat2.clone()));
+    iterationError = errorSquared * errorSquared;
+    nPts = (last - first) + 1;
+    /* Use heuristic if region only has two points in it */
+    if (nPts == 2) {
+        double dist = (Bezier.v2DistanceBetween2Points(d.get(last), d.get(first))) / 3.0;
+        bezCurve = new Point2D.Double[4];
+        for (i = 0; i < (bezCurve.length); i++) {
+            bezCurve[i] = new Point2D.Double();
+        }
+        bezCurve[0] = d.get(first);
+        bezCurve[3] = d.get(last);
+        Bezier.v2Add(bezCurve[0], Bezier.v2Scale(tHat1, dist), bezCurve[1]);
+        Bezier.v2Add(bezCurve[3], Bezier.v2Scale(tHat2, dist), bezCurve[2]);
+        bezierPath.curveTo(bezCurve[1].x, bezCurve[1].y, bezCurve[2].x, bezCurve[2].y, bezCurve[3].x, bezCurve[3].y);
+        return;
+    }
+    /* Parameterize points, and attempt to fit curve */
+    u = Bezier.chordLengthParameterize(d, first, last);
+    bezCurve = Bezier.generateBezier(d, first, last, u, tHat1, tHat2);
+    /* Find max deviation of points to fitted curve */
+    maxError = Bezier.computeMaxError(d, first, last, bezCurve, u, splitPoint);
+    if (maxError < errorSquared) {
+        Bezier.addCurveTo(bezCurve, bezierPath, errorSquared, ((first == 0) && (last == ((d.size()) - 1))));
+        return;
+    }
+    /* If errorSquared not too large, try some reparameterization */
+    /* and iteration */
+    if (maxError < iterationError) {
+        double[] uPrime;/* Improved parameter values */
+
+        for (i = 0; i < maxIterations; i++) {
+            uPrime = Bezier.reparameterize(d, first, last, u, bezCurve);
+            bezCurve = Bezier.generateBezier(d, first, last, uPrime, tHat1, tHat2);
+            maxError = Bezier.computeMaxError(d, first, last, bezCurve, uPrime, splitPoint);
+            if (maxError < errorSquared) {
+                Bezier.addCurveTo(bezCurve, bezierPath, errorSquared, ((first == 0) && (last == ((d.size()) - 1))));
+                return;
+            }
+            u = uPrime;
+        }
+    }
+    /* Fitting failed -- split at max errorSquared point and fit recursively */
+    tHatCenter = Bezier.computeCenterTangent(d, splitPoint[0]);
+    if (first < (splitPoint[0])) {
+        Bezier.fitCubic(d, first, splitPoint[0], tHat1, tHatCenter, errorSquared, bezierPath);
+    } else {
+        bezierPath.lineTo(d.get(splitPoint[0]).x, d.get(splitPoint[0]).y);
+        // System.err.println("Cant split any further " + first + ".." + splitPoint[0]);
+    }
+    Bezier.v2Negate(tHatCenter);
+    if ((splitPoint[0]) < last) {
+        Bezier.fitCubic(d, splitPoint[0], last, tHatCenter, tHat2, errorSquared, bezierPath);
+    } else {
+        bezierPath.lineTo(d.get(last).x, d.get(last).y);
+        // System.err.println("Cant split any further " + splitPoint[0] + ".." + last);
+    }
+}

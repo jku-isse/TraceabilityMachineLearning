@@ -1,0 +1,3 @@
+public void setTaskInfo(TaskInfo info) {
+    task.setTaskInfo(info);
+}

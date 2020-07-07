@@ -1,0 +1,14 @@
+public void startElement(String namespaceURI, String sName, // simple
+// name
+String qName, // qualified name
+Attributes attrs) throws SAXException {
+    myTagStack.push(qName);
+    for (Iterator handlers = myTagHandlers.iterator(); handlers.hasNext();) {
+        TagHandler next = ((TagHandler) (handlers.next()));
+        try {
+            next.startElement(namespaceURI, sName, qName, attrs);
+        } catch (FileFormatException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+}

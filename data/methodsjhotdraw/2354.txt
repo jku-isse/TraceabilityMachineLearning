@@ -1,0 +1,3 @@
+protected Point2D.Double locate(ConnectionFigure connection) {
+    return locator.locate(getOwner());
+}

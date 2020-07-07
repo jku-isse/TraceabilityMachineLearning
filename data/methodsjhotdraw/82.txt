@@ -1,0 +1,5 @@
+/**
+ * Returns the recently opened files.
+ * By convention, this is an immutable list.
+ */
+public List<File> recentFiles();

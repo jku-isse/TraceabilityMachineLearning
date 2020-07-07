@@ -1,0 +1,3 @@
+public TableHeaderUIFacade.Column getField(int index) {
+    return ((TableHeaderUIFacade.Column) (myFields.get(index)));
+}

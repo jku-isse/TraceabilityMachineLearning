@@ -1,0 +1,9 @@
+public int hashCode() {
+    long bits = Double.doubleToLongBits(x1);
+    bits += (Double.doubleToLongBits(y1)) * 31;
+    bits += (Double.doubleToLongBits(x2)) * 35;
+    bits += (Double.doubleToLongBits(y2)) * 39;
+    bits += (stopColors[0].hashCode()) * 43;
+    bits += (stopColors[((stopColors.length) - 1)].hashCode()) * 47;
+    return ((int) (bits)) ^ ((int) (bits >> 32));
+}

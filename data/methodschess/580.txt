@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the source of the ply.
+ *
+ * @return The source of the piece.
+ */
+public final Position getSource() {
+    return _source;
+}

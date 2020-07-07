@@ -1,0 +1,21 @@
+public void setActive(boolean b) {
+    GPOptionGroup[] optionGroups = getOptionGroups();
+    if (b == false) {
+        for (int i = 0; i < (optionGroups.length); i++) {
+            optionGroups[i].commit();
+        }
+    } else {
+        for (int i = 0; i < (optionGroups.length); i++) {
+            optionGroups[i].lock();
+        }
+        if ((mySecondaryOptionsComponent) != null) {
+            mySecondaryOptionsComponent.removeAll();
+        }
+        // mySecondaryOptionsComponent= new JPanel(new BorderLayout());
+        mySecondaryOptionsComponent.add(myOptionsBuilder.buildPlanePage(optionGroups), BorderLayout.NORTH);
+        // myComponent.add(mySecondaryOptionsComponent, BorderLayout.CENTER);
+        mySecondaryOptionsComponent.invalidate();
+        myComponent.invalidate();
+        myChooser.setFileFilter(createFileFilter());
+    }
+}

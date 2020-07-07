@@ -1,0 +1,34 @@
+/**
+ * Checks to see if a patient needs the HPV immunization
+ *
+ * @param count			how
+ * 		many HPV immunizations she has already had
+ * @param patientAge	how
+ * 		old the patient is, in weeks
+ * @param time			date
+ * 		of the last procedure
+ * @return the			reason the immunization should be given, including required immunization age
+ */
+public static String testHPV(int count, Date patientDOB, long time) {
+    String reason = "";
+    long weeks = ((Calendar.getInstance().getTimeInMillis()) - time) / (GetVisitRemindersAction.WEEK_IN_MILLIS);
+    new Date();
+    if (0 == count) {
+        if (GetVisitRemindersAction.olderThan(patientDOB, 9, 0, 0))
+            reason += "90649 Human Papillomavirus (9 years), ";
+
+    } else
+        if (1 == count) {
+            if ((GetVisitRemindersAction.olderThan(patientDOB, 9, 2, 0)) && (8 <= weeks))
+                reason += "90649 Human Papillomavirus (9 years, 2 months), ";
+
+        } else
+            if (2 == count) {
+                if ((GetVisitRemindersAction.olderThan(patientDOB, 9, 6, 0)) && (16 <= weeks))
+                    reason += "90649 Human Papillomavirus (9 years, 6 months), ";
+
+            }
+
+
+    return reason;
+}

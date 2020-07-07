@@ -1,0 +1,23 @@
+// public void setStartFixed(final boolean isFixed) {
+// myCommands.add(new Runnable() {
+// public void run() {
+// TaskImpl.this.setStartFixed(isFixed);
+// }
+// });
+// }
+// 
+// public void setFinishFixed(final boolean isFixed) {
+// myCommands.add(new Runnable() {
+// public void run() {
+// TaskImpl.this.setFinishFixed(isFixed);
+// }
+// });
+// 
+// }
+public void setCritical(final boolean critical) {
+    myCommands.add(new Runnable() {
+        public void run() {
+            TaskImpl.this.setCritical(critical);
+        }
+    });
+}

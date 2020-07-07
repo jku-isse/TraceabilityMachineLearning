@@ -1,0 +1,33 @@
+/**
+ * Start saving the xfig image.
+ */
+public void beginToSave(OutputStreamWriter fout) throws IOException {
+    if (debug)
+        System.out.println("beginToSave begin");
+
+    float depthval = 50;// depth level - 999 is the lowest level.
+
+    // targetWidthPoints is in pixels, 1200 pixels per inch,
+    // or about 472 pixels/cm
+    float targetWidthPoints = 1200;
+    // get the list of tasks on an array list
+    // lot = tree.getAllTasks();
+    lot = Arrays.asList(myTaskManager.getTasks());
+    fTtextwidth = getProjectTextWidth();
+    if (debug)
+        System.out.println(("Text Size : " + (fTtextwidth)));
+
+    // write the xfig header
+    xfigheader(fout);
+    // Search for the user colors
+    searchUserColor();
+    // Need to give user control of date range created in plot
+    setProjectPlotTimes(targetWidthPoints, 50);
+    // Write the list of tasks
+    drawTasks(fout);
+    // Write the axes
+    labelAxes(fout);
+    if (debug)
+        System.out.println("beginToSave end");
+
+}

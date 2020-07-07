@@ -1,0 +1,8 @@
+/**
+ * Get the panel for the output.
+ *
+ * @return The panel for the output.
+ */
+public final NotationPanel getNotationPanel() {
+    return _notationPanel;
+}

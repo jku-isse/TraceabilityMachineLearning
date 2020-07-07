@@ -1,0 +1,29 @@
+/* filters by medical filters */
+public void testViewGroupReportMedical() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Group Report").click();
+    assertEquals("iTrust - Generate Group Report", wr.getTitle());
+    WebForm form = wr.getFormWithID("mainForm");
+    form.setCheckbox("medical", "PROCEDURE", true);
+    form.setCheckbox("medical", "ALLERGY", true);
+    form.setCheckbox("medical", "CURRENT_PRESCRIPTIONS", true);
+    form.setCheckbox("medical", "PASTCURRENT_PRESCRIPTIONS", true);
+    form.setCheckbox("medical", "DIAGNOSIS_ICD_CODE", true);
+    form.setCheckbox("medical", "LOWER_OFFICE_VISIT_DATE", true);
+    form.setCheckbox("medical", "UPPER_OFFICE_VISIT_DATE", true);
+    wr = form.submit();
+    assertEquals("iTrust - Generate Group Report", wr.getTitle());
+    WebForm form2 = wr.getFormWithID("mainForm2");
+    form2.getScriptableObject().setParameterValue("PROCEDURE", "1270F");
+    form2.getScriptableObject().setParameterValue("ALLERGY", "664662530");
+    form2.getScriptableObject().setParameterValue("CURRENT_PRESCRIPTIONS", "647641512");
+    form2.getScriptableObject().setParameterValue("PASTCURRENT_PRESCRIPTIONS", "009042407");
+    form2.getScriptableObject().setParameterValue("DIAGNOSIS_ICD_CODE", "250.10");
+    form2.getScriptableObject().setParameterValue("DIAGNOSIS_ICD_CODE", "15.00");
+    form2.getScriptableObject().setParameterValue("LOWER_OFFICE_VISIT_DATE", "01/01/1990");
+    form2.getScriptableObject().setParameterValue("UPPER_OFFICE_VISIT_DATE", "01/01/2012");
+    wr = form2.submit(form2.getSubmitButtons()[0]);
+}

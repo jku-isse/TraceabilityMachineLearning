@@ -1,0 +1,6 @@
+public void fireEvent() {
+    if (myEnabled) {
+        myManager.fireTaskPropertiesChanged(this);
+    }
+    myEnabled = false;
+}

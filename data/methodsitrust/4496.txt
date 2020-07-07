@@ -1,0 +1,4 @@
+@Override
+public String getDescription() {
+    return "Patients body mass index is over " + (bmiThreshold);
+}

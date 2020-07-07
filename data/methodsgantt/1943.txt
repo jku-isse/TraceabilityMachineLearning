@@ -1,0 +1,11 @@
+public void beforeProcessingTimeFrames() {
+    myDistributions = /* <LoadDistribution> */
+    new ArrayList();
+    getPrimitiveContainer().clear();
+    ProjectResource[] resources = ((ChartModelResource) (getChartModel())).getVisibleResources();
+    for (int i = 0; i < (resources.length); i++) {
+        ProjectResource nextResource = resources[i];
+        LoadDistribution nextDistribution = nextResource.getLoadDistribution();
+        myDistributions.add(nextDistribution);
+    }
+}

@@ -1,0 +1,5 @@
+public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+    if (c instanceof AbstractButton) {
+        paintBorder(((AbstractButton) (c)), g, x, y, width, height);
+    }
+}

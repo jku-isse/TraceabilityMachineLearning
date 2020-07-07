@@ -1,0 +1,4 @@
+public DependencyFigure clone() {
+    DependencyFigure that = ((DependencyFigure) (super.clone()));
+    return that;
+}

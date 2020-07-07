@@ -1,0 +1,22 @@
+public void testAddConflicts() throws FormValidationException, FileNotFoundException, IOException, SQLException {
+    gen.clearAllTables();
+    gen.appointmentType();
+    ApptBean a = new ApptBean();
+    a.setApptType("General Checkup");
+    a.setHcp(hcpId);
+    a.setPatient(mid);
+    Timestamp t = new Timestamp(((System.currentTimeMillis()) + ((10 * 60) * 1000)));
+    a.setDate(t);
+    a.setComment("Test Appiontment");
+    ApptBean b = new ApptBean();
+    b.setApptType("General Checkup");
+    b.setHcp(hcpId);
+    b.setPatient(mid);
+    Timestamp t2 = new Timestamp(((System.currentTimeMillis()) + ((20 * 60) * 1000)));
+    b.setDate(t2);
+    b.setComment("Test Appiontment");
+    String resultA = action.addAppt(a, false);
+    String resultB = action.addAppt(b, false);
+    assertTrue(resultA.contains("Success"));
+    assertTrue(resultB.contains("conflict"));
+}

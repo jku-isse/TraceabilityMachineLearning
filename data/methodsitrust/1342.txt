@@ -1,0 +1,16 @@
+/**
+ * Converts all characters of the input string to their HTML special characters equivalent representation.
+ * Explicitly, the less than symbol becomes lt, the greater than symbol becomes gt and a newline feed
+ * becomes br.
+ *
+ * @param input
+ * 		The string to encode.
+ * @return The encoded string.
+ */
+public String encode(String input) {
+    String str = input.replaceAll("<", "&lt;");
+    str = str.replaceAll(">", "&gt;");
+    str = str.replaceAll("
+", "<br />");
+    return str;
+}

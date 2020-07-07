@@ -1,0 +1,11 @@
+/**
+ * Add the plies for queens.
+ */
+public final void addPliesForQueens() {
+    long queenPositions = getBoard().getPositionOfPieces((_white ? ((Piece.QUEEN) << 1) | 1 : (Piece.QUEEN) << 1));
+    while (queenPositions != 0) {
+        int highestBit = BitUtils.getHighestBit(queenPositions);
+        addPliesForQueenPos(highestBit);
+        queenPositions &= ~(1L << highestBit);
+    } 
+}

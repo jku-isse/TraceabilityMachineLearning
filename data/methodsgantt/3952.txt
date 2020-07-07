@@ -1,0 +1,6 @@
+/* gets the new value to the custom field referenced by its title */
+public void setCustomField(String title, Object val) {
+    if ((resource) instanceof HumanResource)
+        ((HumanResource) (resource)).setCustomFieldVal(title, val);
+
+}

@@ -1,0 +1,3 @@
+public void intervalRemoved(ListDataEvent e) {
+    repaint();
+}

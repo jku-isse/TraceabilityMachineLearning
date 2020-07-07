@@ -1,0 +1,6 @@
+/**
+ * clears the list of Documents MRU
+ */
+public void clear() {
+    documents.clear();
+}

@@ -1,0 +1,9 @@
+public void testGetAllException() throws Exception {
+    factory = EvilDAOFactory.getEvilInstance();
+    try {
+        factory.getFakeEmailDAO().getAllEmails();
+        fail("exception should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

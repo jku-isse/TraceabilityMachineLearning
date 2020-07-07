@@ -1,0 +1,4 @@
+public void testHeight() throws Exception {
+    tBean.setHeightAllowed(true);
+    assertTrue(tBean.isHeightAllowed());
+}

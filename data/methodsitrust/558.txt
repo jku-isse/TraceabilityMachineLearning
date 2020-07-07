@@ -1,0 +1,22 @@
+/**
+ * Method used to find experts of specified specialty from hospitals that are in range
+ *
+ * @param hospitals
+ * 		The hospitals within the proximity of the user
+ * @param specialty
+ * 		The expertise specified
+ * @return A relationship between the hospitals within proximity and the personnel with the specified expertise within them.
+ */
+public HashMap<HospitalBean, List<PersonnelBean>> findExperts(List<HospitalBean> hospitals, String specialty) {
+    HashMap<HospitalBean, List<PersonnelBean>> experts = new HashMap<HospitalBean, List<PersonnelBean>>();
+    try {
+        // Go through all nearby hospitals
+        for (HospitalBean hospital : hospitals) {
+            // Put the specified experts into a hashmap with the hospital
+            experts.put(hospital, personnelDAO.getPersonnelFromHospital(hospital.getHospitalID(), specialty));
+        }
+    } catch (DBException e) {
+        // 
+    }
+    return experts;
+}

@@ -1,0 +1,7 @@
+/**
+ * Adds the resource to the internal list of available resources.
+ *
+ * @param resource
+ * 		The resource that should be added to the list.
+ */
+public void add(ProjectResource resource);

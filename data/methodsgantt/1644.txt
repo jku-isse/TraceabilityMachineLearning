@@ -1,0 +1,14 @@
+public ChartModelBase(TaskManager taskManager, TimeUnitStack timeUnitStack, UIConfiguration projectConfig) {
+    myTaskManager = taskManager;
+    myProjectConfig = projectConfig;
+    myChartUIConfiguration = new ChartUIConfiguration(projectConfig);
+    myPainter = new StyledPainterImpl(myChartUIConfiguration);
+    myTimeUnitStack = timeUnitStack;
+    myChartHeader = new ChartHeaderImpl(this, projectConfig);
+    myChartGrid = new ChartGridImpl(this, projectConfig);
+    // myBottomUnitLineRenderer = new BottomUnitLineRendererImpl(this);
+    myBackgroundRenderer = new BackgroundRendererImpl(this);
+    myTimeUnitVisitors.add(myChartGrid);
+    // myTimeUnitVisitors.add(myBottomUnitLineRenderer);
+    myCachingOffsetCalculator = new CachingOffsetCalculatorImpl(myTimeUnitStack);
+}

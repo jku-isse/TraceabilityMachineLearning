@@ -1,0 +1,7 @@
+public void testFilterHCPListByZip() {
+    // Filter on zip only.
+    List<HCPVisitBean> beanslist = action.filterHCPList("", "", "27605");
+    ArrayList<HCPVisitBean> beans = new ArrayList<HCPVisitBean>(beanslist);
+    assertEquals(1, beans.size());
+    assertEquals("Lauren Frankenstein", beans.get(0).getHCPName());
+}

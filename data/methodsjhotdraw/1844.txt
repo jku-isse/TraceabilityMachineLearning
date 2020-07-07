@@ -1,0 +1,7 @@
+/**
+ * Sets input formats for the Drawing in order of preferred formats.
+ * <p>
+ * The input formats are used for loading the Drawing from a file and for
+ * pasting Figures from the clipboard into the Drawing.
+ */
+void setInputFormats(List<InputFormat> formats);

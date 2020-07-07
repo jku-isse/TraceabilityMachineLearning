@@ -1,0 +1,42 @@
+protected void dragTo(Point position, Point origin) {
+    if ((toolBar.isFloatable()) == true) {
+        try {
+            if ((dragWindow) == null) {
+                dragWindow = createDragWindow(toolBar);
+            }
+            Point offset = dragWindow.getOffset();
+            if (offset == null) {
+                // Dimension size = toolBar.getPreferredSize();
+                Dimension size = toolBar.getSize();
+                offset = new Point(((size.width) / 2), ((size.height) / 2));
+                dragWindow.setOffset(offset);
+            }
+            Point global = new Point(((origin.x) + (position.x)), ((origin.y) + (position.y)));
+            Point dragPoint = new Point(((global.x) - (offset.x)), ((global.y) - (offset.y)));
+            if ((dockingSource) == null) {
+                dockingSource = toolBar.getParent();
+            }
+            constraintBeforeFloating = calculateConstraint();
+            Point dockingPosition = dockingSource.getLocationOnScreen();
+            Point comparisonPoint = new Point(((global.x) - (dockingPosition.x)), ((global.y) - (dockingPosition.y)));
+            if (canDock(dockingSource, comparisonPoint)) {
+                dragWindow.setBackground(getDockingColor());
+                Object constraint = getDockingConstraint(dockingSource, comparisonPoint);
+                int orientation = mapConstraintToOrientation(constraint);
+                dragWindow.setOrientation(orientation);
+                dragWindow.setBorderColor(dockingBorderColor);
+            } else {
+                dragWindow.setBackground(getFloatingColor());
+                dragWindow.setBorderColor(floatingBorderColor);
+            }
+            dragWindow.setLocation(dragPoint.x, dragPoint.y);
+            if ((dragWindow.isVisible()) == false) {
+                // Dimension size = toolBar.getPreferredSize();
+                Dimension size = toolBar.getSize();
+                dragWindow.setSize(size.width, size.height);
+                dragWindow.show();
+            }
+        } catch (IllegalComponentStateException e) {
+        }
+    }
+}

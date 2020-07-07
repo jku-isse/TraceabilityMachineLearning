@@ -1,0 +1,4 @@
+/**
+ * Draws the decoration in the direction specified by the two Points.
+ */
+public void draw(Graphics2D g, Figure f, Point2D.Double p1, Point2D.Double p2);

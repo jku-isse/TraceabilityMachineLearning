@@ -1,0 +1,3 @@
+public Enumeration children() {
+    return Collections.enumeration(children);
+}

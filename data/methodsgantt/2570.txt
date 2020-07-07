@@ -1,0 +1,12 @@
+private void loadFields() {
+    myGroup.lock();
+    myNameField.setValue(person.getName());
+    myPhoneField.setValue(person.getPhone());
+    myMailField.setValue(person.getMail());
+    Role role = person.getRole();
+    if (role != null) {
+        myRoleField.setValue(role.getName());
+    }
+    myGroup.commit();
+    myGroup.lock();
+}

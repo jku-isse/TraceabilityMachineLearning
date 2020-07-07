@@ -1,0 +1,8 @@
+private void setUpTypeComboColumn(TableColumn typeColumn) {
+    // Set up the editor for the sport cells.
+    DefaultComboBoxModel model = new DefaultComboBoxModel(TaskDependenciesPanel.CONSTRAINTS);
+    JComboBox comboBox = new JComboBox(model);
+    comboBox.setSelectedIndex(0);
+    comboBox.setEditable(false);
+    typeColumn.setCellEditor(new DefaultCellEditor(comboBox));
+}

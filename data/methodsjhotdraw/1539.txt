@@ -1,0 +1,8 @@
+@Override
+public void updateCursor(DrawingView view, Point p) {
+    if (view.isEnabled()) {
+        view.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+    } else {
+        view.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+    }
+}

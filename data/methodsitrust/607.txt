@@ -1,0 +1,13 @@
+public void testBadReminderType() throws Exception {
+    // Test that a null ReminderType is not allowed
+    // TODO: Check other failure inputs
+    gen.standardData();
+    // Login as kelly doctor
+    action = new GetVisitRemindersAction(factory, 9000000000L);
+    try {
+        action.getVisitReminders(null);
+        fail("testBadReminderType: bad reminder type not caught");
+    } catch (iTrustException e) {
+        assertEquals("Reminder Type DNE", e.getMessage());
+    }
+}

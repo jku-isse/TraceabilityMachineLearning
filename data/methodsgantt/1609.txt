@@ -1,0 +1,7 @@
+public void beforeProcessingTimeFrames() {
+    getPrimitiveContainer().clear();
+    myPosX = 0;
+    myToday = myDayFramer.adjustLeft(CalendarFactory.newCalendar().getTime());
+    projectStart = getChartModel().getTaskManager().getProjectStart();
+    projectEnd = getChartModel().getTaskManager().getProjectEnd();
+}

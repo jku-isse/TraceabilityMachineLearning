@@ -1,0 +1,34 @@
+/**
+ * Adds a LOINC
+ *
+ * @param hosp
+ * 		The LOINCbean representing the new code to be added.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public void addLOINC(LOINCbean hosp) throws DBException, iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("INSERT INTO loinc (LaboratoryProcedureCode, Component, KindOfProperty, TimeAspect, System, ScaleType, MethodType) " + "VALUES (?,?,?,?,?,?,?)"));
+        ps.setString(1, hosp.getLabProcedureCode());
+        ps.setString(2, hosp.getComponent());
+        ps.setString(3, hosp.getKindOfProperty());
+        ps.setString(4, hosp.getTimeAspect());
+        ps.setString(5, hosp.getSystem());
+        ps.setString(6, hosp.getScaleType());
+        ps.setString(7, hosp.getMethodType());
+        ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        if (1062 == (e.getErrorCode()))
+            throw new iTrustException("Error: LOINC already exists.");
+
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

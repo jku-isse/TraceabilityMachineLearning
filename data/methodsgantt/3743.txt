@@ -1,0 +1,6 @@
+public Exporter[] getExporters() {
+    if ((myExporters) == null) {
+        myExporters = ((Exporter[]) (getExtensions(PluginManager.EXTENSION_POINT_ID_EXPORTER, Exporter.class)));
+    }
+    return myExporters;
+}

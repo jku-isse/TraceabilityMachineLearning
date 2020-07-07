@@ -1,0 +1,5 @@
+public void testGoodAnswer() throws Exception {
+    String value = "356 Some place blvd";
+    String errorMessage = GenderValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, GenderValidatorTest.VALIDATION_FORMAT, false));
+}

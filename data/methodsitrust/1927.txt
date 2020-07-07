@@ -1,0 +1,3 @@
+public void setChangeMID(long mid) {
+    this.changeMID = mid;
+}

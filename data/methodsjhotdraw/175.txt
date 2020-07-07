@@ -1,0 +1,6 @@
+public void dispose(View p) {
+    super.dispose(p);
+    if ((views().size()) == 0) {
+        stop();
+    }
+}

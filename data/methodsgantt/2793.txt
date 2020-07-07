@@ -1,0 +1,13 @@
+/**
+ * Setup the border (invisible initially)
+ */
+public TestGanttRolloverButton() {
+    setBorder(new EtchedBorder());
+    setBorderPainted(false);
+    setMargin(new Insets(0, 0, 0, 0));
+    setRequestFocusEnabled(false);
+    addMouseListener(new TestGanttRolloverButton.MouseOverHandler());
+    addMouseListener(new TestGanttRolloverButton.AutoRepeatHandler());
+    setHorizontalTextPosition(SwingConstants.CENTER);
+    setVerticalTextPosition(SwingConstants.BOTTOM);
+}

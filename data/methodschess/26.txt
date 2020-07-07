@@ -1,0 +1,5 @@
+public void engineStatusChanged(ChessEngineImpl engine) {
+    if ((this.jpStatus) != null) {
+        this.jpStatus.setActionText(engine.getStatusDisplayString());
+    }
+}

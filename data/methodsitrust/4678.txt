@@ -1,0 +1,6 @@
+/**
+ * Test method to see if colon is accepted in notes.
+ */
+public void testCheckFormatStringStringValidationFormatBoolean() {
+    assertEquals("", validatorProxy.checkFormat("Notes", "Updated Notes:", ValidationFormat.NOTES, true));
+}

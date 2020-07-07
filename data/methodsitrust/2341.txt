@@ -1,0 +1,3 @@
+public DiagnosisBeanLoader(boolean loadOVDiagnosisID) {
+    this.loadOVDiagnosisID = loadOVDiagnosisID;
+}

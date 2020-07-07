@@ -1,0 +1,4 @@
+/**
+ * Adds an attribute to current element of the DOM Document.
+ */
+public void addAttribute(String name, float value);

@@ -1,0 +1,1 @@
+void setLoad(float load);

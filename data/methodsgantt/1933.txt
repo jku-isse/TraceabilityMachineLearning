@@ -1,0 +1,12 @@
+public Raster getTile(int tileX, int tileY) {
+    if ((myCurrentTile) != tileY) {
+        int offsety = tileY * (getTileHeight());
+        BufferedImage tile = getChart(myTaskImage.getWidth(), offsety, getTileWidth(), getTileHeight(), getWidth(), getHeight());
+        Graphics g = tile.getGraphics();
+        g.translate(0, (-offsety));
+        g.drawImage(myTaskImage, 0, 0, null);
+        myCurrentRaster = tile.getRaster().createTranslatedChild(0, (tileY * (getTileHeight())));
+        myCurrentTile = tileY;
+    }
+    return myCurrentRaster;
+}

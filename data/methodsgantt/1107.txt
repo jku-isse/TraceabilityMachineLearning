@@ -1,0 +1,3 @@
+public boolean isExpanded(ProjectResource resource) {
+    return true;
+}

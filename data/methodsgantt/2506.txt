@@ -1,0 +1,3 @@
+public void add(DateIntervalListEditor.DateInterval interval) {
+    myIntervals.add(interval);
+}

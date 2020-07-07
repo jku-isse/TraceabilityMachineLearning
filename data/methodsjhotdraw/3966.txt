@@ -1,0 +1,3 @@
+public DataFlavor[] getTransferDataFlavors() {
+    return new DataFlavor[]{ DataFlavor.imageFlavor, ImageTransferable.IMAGE_PNG_FLAVOR };
+}

@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the last game status.
+ *
+ * @return The last game status.
+ */
+private final GameImpl.GameStatus getLastGameStatus() {
+    return _gameStatus.empty() ? null : ((GameImpl.GameStatus) (_gameStatus.peek()));
+}

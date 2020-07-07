@@ -1,0 +1,12 @@
+// Instance variables
+// Constructors
+/**
+ * Create a new Java-Chess action.
+ *
+ * @param name
+ * 		The name of the action.
+ */
+public JavaChessAction(String name) {
+    super(name);
+    putValue(Action.SHORT_DESCRIPTION, name);
+}

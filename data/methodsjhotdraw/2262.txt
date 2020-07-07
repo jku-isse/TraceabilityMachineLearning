@@ -1,0 +1,11 @@
+public boolean contains(Point2D.Double p) {
+    if (getDrawingArea().contains(p)) {
+        for (Figure child : getChildrenFrontToBack()) {
+            if ((child.isVisible()) && (child.contains(p)))
+                return true;
+
+        }
+        return super.contains(p);
+    }
+    return false;
+}

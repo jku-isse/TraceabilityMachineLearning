@@ -1,0 +1,6 @@
+public void testAddress() {
+    p1.setAddress1("Address 1");
+    p1.setAddress2("Address 2");
+    assertEquals("Address 1", p1.getAddress1());
+    assertEquals("Address 2", p1.getAddress2());
+}

@@ -1,0 +1,10 @@
+/**
+ * Returns a list of HealthRecords for the currently logged in patient
+ *
+ * @return a list of HealthRecords for the currently logged in patient
+ * @throws iTrustException
+ * 		
+ */
+public List<HealthRecord> getAllHealthRecords() throws iTrustException {
+    return hrDAO.getAllHealthRecords(loggedInMID);
+}

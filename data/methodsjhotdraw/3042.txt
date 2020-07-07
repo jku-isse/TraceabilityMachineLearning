@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public BringToFrontAction(DrawingEditor editor) {
+    super(editor);
+    labels.configureAction(this, BringToFrontAction.ID);
+}

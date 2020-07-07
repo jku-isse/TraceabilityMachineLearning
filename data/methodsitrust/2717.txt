@@ -1,0 +1,3 @@
+public int compare(FamilyMemberBean o1, FamilyMemberBean o2) {
+    return o1.getFirstName().compareTo(o2.getFirstName());
+}

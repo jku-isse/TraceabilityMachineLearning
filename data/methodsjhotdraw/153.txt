@@ -1,0 +1,55 @@
+protected JMenu createWindowMenu(final View p) {
+    ApplicationModel model = getModel();
+    JMenu m;
+    JMenuItem mi;
+    m = new JMenu();
+    final JMenu windowMenu = m;
+    labels.configureMenu(m, "window");
+    addViewWindowMenuItems(m, p);
+    m.addSeparator();
+    for (View pr : views()) {
+        if ((pr.getAction(FocusAction.ID)) != null) {
+            windowMenu.add(pr.getAction(FocusAction.ID));
+        }
+    }
+    if ((paletteActions.size()) > 0) {
+        m.addSeparator();
+        for (Action a : paletteActions) {
+            JCheckBoxMenuItem cbmi = new JCheckBoxMenuItem(a);
+            Actions.configureJCheckBoxMenuItem(cbmi, a);
+            cbmi.setIcon(null);
+            m.add(cbmi);
+        }
+    }
+    addPropertyChangeListener(new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            String name = evt.getPropertyName();
+            if ((name == "viewCount") || (name == "paletteCount")) {
+                if ((p == null) || (views().contains(p))) {
+                    JMenu m = windowMenu;
+                    m.removeAll();
+                    addViewWindowMenuItems(m, p);
+                    m.addSeparator();
+                    for (Iterator i = views().iterator(); i.hasNext();) {
+                        View pr = ((View) (i.next()));
+                        if ((pr.getAction(FocusAction.ID)) != null) {
+                            m.add(pr.getAction(FocusAction.ID));
+                        }
+                    }
+                    if ((paletteActions.size()) > 0) {
+                        m.addSeparator();
+                        for (Action a : paletteActions) {
+                            JCheckBoxMenuItem cbmi = new JCheckBoxMenuItem(a);
+                            Actions.configureJCheckBoxMenuItem(cbmi, a);
+                            cbmi.setIcon(null);
+                            m.add(cbmi);
+                        }
+                    }
+                } else {
+                    removePropertyChangeListener(this);
+                }
+            }
+        }
+    });
+    return m;
+}

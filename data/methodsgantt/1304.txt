@@ -1,0 +1,16 @@
+public void actionPerformed(ActionEvent event) {
+    final ProjectResource[] context = getContext().getResources();
+    if ((context.length) > 0) {
+        final String message = (((getLanguage().getText("msg6")) + " ") + (getDisplayName(context))) + "?";
+        final String title = getLanguage().getText("question");
+        UIFacade.Choice choice = myUIFacade.showConfirmationDialog(message, title);
+        if (choice == (UIFacade.Choice.YES)) {
+            myUIFacade.getUndoManager().undoableEdit("Resource removed", new Runnable() {
+                public void run() {
+                    deleteResources(context);
+                    getProjectFrame().repaint2();
+                }
+            });
+        }
+    }
+}

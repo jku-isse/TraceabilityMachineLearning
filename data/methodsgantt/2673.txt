@@ -1,0 +1,8 @@
+public void fireDurationChanged() {
+    String value = durationField1.getText();
+    try {
+        int duration = Integer.parseInt(value);
+        changeLength(duration);
+    } catch (NumberFormatException e) {
+    }
+}

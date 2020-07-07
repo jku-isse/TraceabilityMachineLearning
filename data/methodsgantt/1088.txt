@@ -1,0 +1,12 @@
+/**
+ * Constructor
+ */
+public ResourceLoadGraphicArea(GanttProject app, ZoomManager zoomManager) {
+    super(((IGanttProject) (app)), ((UIFacade) (app)), zoomManager);
+    this.setBackground(Color.WHITE);
+    myChartModel = new ChartModelResource(getTaskManager(), ((HumanResourceManager) (app.getHumanResourceManager())), getTimeUnitStack(), getUIConfiguration(), ((ResourceChart) (this)));
+    getViewState().addStateListener(myChartModel);
+    getViewState().setStartDate(CalendarFactory.newCalendar().getTime());
+    margY = 0;
+    appli = app;
+}

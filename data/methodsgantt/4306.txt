@@ -1,0 +1,8 @@
+public Task[] getNestedTasks() {
+    TaskHierarchyItem[] nestedItems = myTaskHierarchyItem.getNestedItems();
+    Task[] result = new Task[nestedItems.length];
+    for (int i = 0; i < (nestedItems.length); i++) {
+        result[i] = nestedItems[i].getTask();
+    }
+    return result;
+}

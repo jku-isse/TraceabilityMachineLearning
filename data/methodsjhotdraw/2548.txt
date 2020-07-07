@@ -1,0 +1,4 @@
+protected void trackStepNormalized(Point2D.Double p) {
+    Rectangle2D.Double r = getOwner().getBounds();
+    setBounds(new Point2D.Double(r.x, Math.min((((r.y) + (r.height)) - 1), p.y)), new Point2D.Double(Math.max(r.x, p.x), ((r.y) + (r.height))));
+}

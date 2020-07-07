@@ -1,0 +1,7 @@
+public Figure removeChild(int index) {
+    Figure removed = basicRemoveChild(index);
+    if ((getDrawing()) != null) {
+        removed.removeNotify(getDrawing());
+    }
+    return removed;
+}

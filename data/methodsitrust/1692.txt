@@ -1,0 +1,3 @@
+public void setHospitalName(String hospitalName) {
+    this.hospitalName = hospitalName;
+}

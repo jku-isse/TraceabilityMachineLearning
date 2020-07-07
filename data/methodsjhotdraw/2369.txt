@@ -1,0 +1,10 @@
+/**
+ * Returns a cursor for the handle.
+ *
+ * @return Returns a move cursor, if the figure
+is transformable. Returns a default cursor otherwise.
+ */
+@Override
+public Cursor getCursor() {
+    return Cursor.getPredefinedCursor((getOwner().isTransformable() ? Cursor.MOVE_CURSOR : Cursor.DEFAULT_CURSOR));
+}

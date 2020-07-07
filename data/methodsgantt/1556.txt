@@ -1,0 +1,3 @@
+public URL[] getCalendarResources() {
+    return ((URL[]) (myCalendarResources.toArray(new URL[0])));
+}

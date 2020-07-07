@@ -1,0 +1,33 @@
+/* Precondition:
+Patient 2 and HCP 9000000000 are in the system. 
+Patient 2 had an office visit with HCP 9000000000 on 6/10/2007. 
+Patient 2 has successfully authenticated.
+Description:
+Patient 2 chooses to view his records.
+Patient 2 clicks a link next to his office visit on 6/10/2007 to take satisfaction survey.
+Patient 2 changes his mind and decides to cancel his input.
+ */
+public void testTakeSatisfactionSurveyCancel() throws Exception {
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    wr = wr.getLinkWith("My Records").click();
+    assertTrue(wr.getText().contains("Patient Information"));
+    iTrustHTTPTest.assertLogged(TransactionType.MEDICAL_RECORD_VIEW, 2L, 2L, "");
+    WebTable wt = wr.getTableStartingWith("Office Visits");
+    wr = wt.getTableCell(1, 1).getLinkWith("Complete Visit Survey").click();
+    assertTrue(wr.getText().contains("iTrust Patient Survey for Office Visit on Jun 10, 2007"));
+    WebForm form = wr.getForms()[0];
+    form.setParameter("examMinutesString", "10");
+    form.setParameter("Satradios", "satRadio3");
+    // patient changes his mind and cancels his input
+    wr = wr.getLinkWith("Home").click();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    wr = wr.getLinkWith("My Records").click();
+    assertTrue(wr.getText().contains("Patient Information"));
+    wt = wr.getTableStartingWith("Office Visits");
+    // make sure survey CAN still be taken.  This will throw an exception if the survey is not available
+    wr = wt.getTableCell(1, 1).getLinkWith("Complete Visit Survey").click();
+    iTrustHTTPTest.assertNotLogged(TransactionType.SATISFACTION_SURVEY_TAKE, 2L, 2L, "");
+}

@@ -1,0 +1,20 @@
+/**
+ *
+ *
+ * @param name
+ * 		
+ * @return 
+ * @throws CustomColumnsException
+ * 		
+ */
+public CustomColumn getCustomColumn(String name) {
+    // if (!exists(name))
+    // throw new CustomColumnsException(CustomColumnsException.DO_NOT_EXIST,
+    // name);
+    // return (CustomColumn) customColumns.get(name);
+    String id = getIdFromName(name);
+    if (id == null) {
+        return null;
+    }
+    return ((CustomColumn) (mapIdCustomColum.get(id)));
+}

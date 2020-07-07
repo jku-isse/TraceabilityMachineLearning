@@ -1,0 +1,10 @@
+// COMPOSITE FIGURES
+// CLONING
+@Override
+public SVGImageFigure clone() {
+    SVGImageFigure that = ((SVGImageFigure) (super.clone()));
+    that.rectangle = ((Rectangle2D.Double) (this.rectangle.clone()));
+    that.cachedTransformedShape = null;
+    that.cachedHitShape = null;
+    return that;
+}

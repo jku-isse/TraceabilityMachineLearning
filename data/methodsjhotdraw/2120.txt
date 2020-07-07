@@ -1,0 +1,38 @@
+public Rectangle2D.Double translateRectangle(Rectangle2D.Double r, TranslationDirection dir) {
+    double x = r.x;
+    double y = r.y;
+    constrainRectangle(r, dir);
+    switch (dir) {
+        case NORTH :
+        case NORTH_WEST :
+        case NORTH_EAST :
+            if (y == (r.y)) {
+                r.y -= height;
+            }
+            break;
+        case SOUTH :
+        case SOUTH_WEST :
+        case SOUTH_EAST :
+            if (y == (r.y)) {
+                r.y += height;
+            }
+            break;
+    }
+    switch (dir) {
+        case WEST :
+        case NORTH_WEST :
+        case SOUTH_WEST :
+            if (x == (r.x)) {
+                r.x -= width;
+            }
+            break;
+        case EAST :
+        case NORTH_EAST :
+        case SOUTH_EAST :
+            if (x == (r.x)) {
+                r.x += width;
+            }
+            break;
+    }
+    return r;
+}

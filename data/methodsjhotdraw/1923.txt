@@ -1,0 +1,5 @@
+/**
+ * If a figure isnt selected it is added to the selection.
+ * Otherwise it is removed from the selection.
+ */
+public void toggleSelection(Figure figure);

@@ -1,0 +1,3 @@
+public long getPatientMID(long ovID) throws DBException, NumberFormatException {
+    return ovDAO.getOfficeVisit(ovID).getPatientID();
+}

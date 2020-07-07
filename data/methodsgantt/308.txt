@@ -1,0 +1,9 @@
+private void doFinish() {
+    myMutator.commit();
+    try {
+        getTaskManager().getAlgorithmCollection().getRecalculateTaskScheduleAlgorithm().run();
+    } catch (TaskDependencyException e) {
+        getUIFacade().showErrorDialog(e);
+    }
+    this.repaint();
+}

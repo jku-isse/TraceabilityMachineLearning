@@ -1,0 +1,18 @@
+/**
+ * Handles a mouse click.
+ */
+@Override
+public boolean handleMouseClick(Point2D.Double p, MouseEvent evt, DrawingView view) {
+    if (((evt.getClickCount()) == 2) && (((view.getHandleDetailLevel()) % 2) == 0)) {
+        for (Figure child : getChildren()) {
+            SVGBezierFigure bf = ((SVGBezierFigure) (child));
+            int index = bf.findSegment(p, ((float) (5.0F / (view.getScaleFactor()))));
+            if (index != (-1)) {
+                bf.handleMouseClick(p, evt, view);
+                evt.consume();
+                return true;
+            }
+        }
+    }
+    return false;
+}

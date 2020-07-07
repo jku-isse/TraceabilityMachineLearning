@@ -1,0 +1,4 @@
+public void paintComponent(Graphics g) {
+    myChartModel.setBounds(getSize());
+    myChartComponentImpl.paintComponent(g);
+}

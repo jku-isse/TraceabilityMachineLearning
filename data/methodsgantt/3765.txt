@@ -1,0 +1,3 @@
+private int getScaledHeight() {
+    return ((int) (((myPageFormat.getHeight()) * (myScalePercents)) / 100));
+}

@@ -1,0 +1,93 @@
+/* Authenticate HCP
+MID 9000000008
+Password: pw
+Choose "Diagnosis Trends"
+Enter Fields:
+ICDCode: 487.00
+ZipCode: 27695
+StartDate: 08/28/2011, EndDate: 09/28/2011
+Document new office visit
+Add new diagnosis (487.00)
+Choose "Diagnosis Trends"
+Enter Fields:
+ICDCode: 487.00
+ZipCode: 27695
+StartDate: 08/28/2011, EndDate: 09/28/2011
+ */
+public void testViewDiagnosisTrends_LHCPObserveIncrease() throws Exception {
+    // hcp views diagnosis statistics for influenza
+    // login hcp
+    WebConversation wc = login("9000000008", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000008L, 0L, "");
+    // click Diagnosis Trends
+    wr = wr.getLinkWith("Diagnosis Trends").click();
+    WebForm form = wr.getFormWithID("formSelectFlow");
+    form.getScriptableObject().setParameterValue("viewSelect", "trends");
+    form.getSubmitButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-pha/viewDiagnosisStatistics.jsp"), wr.getURL().toString());
+    // View Trend
+    form = wr.getFormWithID("formMain");
+    form.getScriptableObject().setParameterValue("icdCode", "487.00");
+    form.getScriptableObject().setParameterValue("zipCode", "27695");
+    form.getScriptableObject().setParameterValue("startDate", "08/28/2011");
+    form.getScriptableObject().setParameterValue("endDate", "09/28/2011");
+    form.getSubmitButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-pha/viewDiagnosisStatistics.jsp"), wr.getURL().toString());
+    iTrustHTTPTest.assertLogged(TransactionType.DIAGNOSIS_TRENDS_VIEW, 9000000008L, 0L, "");
+    WebTable table = wr.getTableWithID("diagnosisStatisticsTable");
+    long local1 = Long.parseLong(table.getCellAsText(1, 2));
+    long region1 = Long.parseLong(table.getCellAsText(1, 3));
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // choose patient 25
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "25");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // click Yes, Document Office Visit
+    form = wr.getForms()[0];
+    form.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    // add a new office visit
+    form = wr.getFormWithID("mainForm");
+    form.setParameter("visitDate", "09/28/2011");
+    form.setParameter("notes", "I like diet-coke");
+    form.getButtonWithID("update").click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Information Successfully Updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_CREATE, 9000000008L, 25L, "Office visit");
+    // add a new diagnosis
+    form = wr.getFormWithID("diagnosisForm");
+    form.setParameter("ICDCode", "487.00");
+    form.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Diagnosis information successfully updated."));
+    // click Diagnosis Trends
+    wr = wr.getLinkWith("Diagnosis Trends").click();
+    form = wr.getFormWithID("formSelectFlow");
+    form.getScriptableObject().setParameterValue("viewSelect", "trends");
+    form.getSubmitButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-pha/viewDiagnosisStatistics.jsp"), wr.getURL().toString());
+    // View Trend
+    form = wr.getFormWithID("formMain");
+    form.getScriptableObject().setParameterValue("icdCode", "487.00");
+    form.getScriptableObject().setParameterValue("zipCode", "27606-1234");
+    form.getScriptableObject().setParameterValue("startDate", "08/28/2011");
+    form.getScriptableObject().setParameterValue("endDate", "09/28/2011");
+    form.getSubmitButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-pha/viewDiagnosisStatistics.jsp"), wr.getURL().toString());
+    iTrustHTTPTest.assertLogged(TransactionType.DIAGNOSIS_TRENDS_VIEW, 9000000008L, 0L, "");
+    table = wr.getTableWithID("diagnosisStatisticsTable");
+    long local2 = Long.parseLong(table.getCellAsText(1, 2));
+    long region2 = Long.parseLong(table.getCellAsText(1, 3));
+    assertEquals((local1 + 1), local2);
+    assertEquals((region1 + 1), region2);
+}

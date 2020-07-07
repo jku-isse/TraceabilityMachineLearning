@@ -1,0 +1,3 @@
+public void setSecondaryMID(long secondaryMID) {
+    this.secondaryMID = secondaryMID;
+}

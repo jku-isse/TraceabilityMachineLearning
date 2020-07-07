@@ -1,0 +1,12 @@
+private void setUpRolesComboColumn(final JTable resourceTable) {
+    final Role[] roles = myRoleManager.getEnabledRoles();
+    final JComboBox comboBox = new JComboBox();
+    for (int i = 0; i < (roles.length); i++) {
+        Role role = ((Role) (roles[i]));
+        comboBox.addItem(role);
+    }
+    TableColumn rolesColumn = resourceTable.getColumnModel().getColumn(4);
+    comboBox.setEditable(false);
+    rolesColumn.setCellEditor(new DefaultCellEditor(comboBox));
+    rolesColumn.setCellRenderer(new DefaultTableCellRenderer());
+}

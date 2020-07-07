@@ -1,0 +1,3 @@
+public Object getAttributesRestoreData() {
+    return getAttributes();
+}

@@ -1,0 +1,8 @@
+ProxyDocument(DocumentCreator creator, Document physicalDocument, IGanttProject project, UIFacade uiFacade, TableHeaderUIFacade visibleFields, ParserFactory parserFactory) {
+    myPhysicalDocument = physicalDocument;
+    myProject = project;
+    myUIFacade = uiFacade;
+    myParserFactory = parserFactory;
+    myCreator = creator;
+    myVisibleFields = visibleFields;
+}

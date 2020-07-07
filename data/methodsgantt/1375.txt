@@ -1,0 +1,3 @@
+public void actionPerformed(ActionEvent arg0) {
+    tabbedPane.setSelectedIndex((((tabbedPane.getSelectedIndex()) + 1) % (tabbedPane.getTabCount())));
+}

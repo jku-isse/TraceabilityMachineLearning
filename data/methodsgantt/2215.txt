@@ -1,0 +1,3 @@
+protected void setParserFactory(ParserFactory myParserFactory) {
+    this.myParserFactory = myParserFactory;
+}

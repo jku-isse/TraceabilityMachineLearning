@@ -1,0 +1,11 @@
+public void testHCPPatientUploadBinaryData() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Upload Patient File").click();
+    assertEquals("iTrust - Upload Patient File", wr.getTitle());
+    WebForm wf = wr.getFormWithName("mainForm");
+    wf.setParameter("patientFile", new File("testing-files/sample_patientupload/HCPPatientUploadBinaryData.doc"));
+    wf.getButtonWithID("sendFile").click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("File upload was unsuccessful"));
+}

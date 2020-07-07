@@ -1,0 +1,22 @@
+/**
+ * Shows a sheet requesting input from the user parented to
+ * <code>parentComponent</code> and message type <code>messageType</code>.
+ *
+ * @param parentComponent
+ * 		the parent <code>Component</code> for the
+ * 		dialog
+ * @param message
+ * 		the <code>Object</code> to display
+ * @param messageType
+ * 		the type of message that is to be displayed:
+ * 		<code>JOptionPane.ERROR_MESSAGE</code>,
+ * 		<code>JOptionPane.INFORMATION_MESSAGE</code>,
+ * 		<code>JOptionPane.WARNING_MESSAGE</code>,
+ * 		<code>JOptionPane.QUESTION_MESSAGE</code>,
+ * 		or <code>JOptionPane.PLAIN_MESSAGE</code>
+ * @param listener
+ * 		The listener for SheetEvents.
+ */
+public static void showInputSheet(Component parentComponent, Object message, int messageType, SheetListener listener) {
+    JSheet.showInputSheet(parentComponent, message, messageType, null, null, null, listener);
+}

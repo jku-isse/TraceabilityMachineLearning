@@ -1,0 +1,12 @@
+/**
+ * Updates the cpt code
+ *
+ * @param proc
+ * 		the code to be updated
+ * @return updated code
+ * @throws DBException
+ * 		
+ */
+private int updateCode(ProcedureBean proc) throws DBException {
+    return cptDAO.updateCode(proc);
+}

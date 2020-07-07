@@ -1,0 +1,7 @@
+public boolean isExpanded(ProjectResource pr) {
+    ResourceNode node = ((ResourceTreeTableModel) (getTreeTableModel())).exists(pr);
+    if (node != null)
+        return getTreeTable().isExpanded(new javax.swing.tree.TreePath(node.getPath()));
+
+    return false;
+}

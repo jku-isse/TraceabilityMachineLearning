@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @param patients
+ * 		
+ * @param filters
+ * 		
+ */
+public GroupReportBean(List<PatientBean> patients, List<ReportFilter> filters) {
+    this.patients = patients;
+    this.filters = filters;
+}

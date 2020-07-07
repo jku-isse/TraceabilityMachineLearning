@@ -1,0 +1,3 @@
+public void uc47TearDown() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/uc47TearDown.sql"));
+}

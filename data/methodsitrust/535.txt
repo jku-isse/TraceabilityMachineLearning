@@ -1,0 +1,19 @@
+/* public void testDeleteReferral() {
+fail("Not yet implemented");
+}
+ */
+public void testEditReferral() throws Exception {
+    long senderid = 9000000000L;
+    // long receiverid = 9000000003L;
+    // long patientid = 2L;
+    action = new EditSingleReferralAction(factory, senderid);
+    // get existing referral and edit it
+    ReferralBean bean = action.getReferral(3L);
+    assertEquals("Gandalf will help you defeat the orcs!", bean.getReferralDetails());
+    bean.setReferralDetails("abc123");
+    // save modified referral
+    action.editReferral(bean);
+    // retrieve referral and see that it has been modified
+    bean = action.getReferral(3L);
+    assertEquals("abc123", bean.getReferralDetails());
+}

@@ -1,0 +1,6 @@
+private Rectangle(int leftx, int topy, int width, int height) {
+    myLeftX = leftx;
+    myTopY = topy;
+    myWidth = width;
+    myHeight = height;
+}

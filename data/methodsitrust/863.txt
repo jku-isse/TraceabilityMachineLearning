@@ -1,0 +1,11 @@
+public void testGetMyRepresentees() throws iTrustException {
+    List<PatientBean> pbList = this.smAction.getMyRepresentees();
+    assertEquals("Random Person", pbList.get(0).getFullName());
+    assertEquals("05/10/1950", pbList.get(0).getDateOfBirthStr());
+    assertEquals("Care Needs", pbList.get(1).getFullName());
+    assertEquals("Baby Programmer", pbList.get(2).getFullName());
+    assertEquals("Baby A", pbList.get(3).getFullName());
+    assertEquals("Baby B", pbList.get(4).getFullName());
+    assertEquals("Baby C", pbList.get(5).getFullName());
+    assertEquals(6, pbList.size());
+}

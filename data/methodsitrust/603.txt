@@ -1,0 +1,10 @@
+/**
+ * Gets the ReminderType for the name passed as a param
+ *
+ * @param name
+ * 		
+ * @return the ReminderType associated with the name
+ */
+public static GetVisitRemindersAction.ReminderType getReminderType(String name) {
+    return GetVisitRemindersAction.ReminderType.map.get(name);
+}

@@ -1,0 +1,4 @@
+public void testHasNoHistory() throws Exception {
+    clearHistoryOfSmoking();
+    assertFalse(factor.hasRiskFactor());
+}

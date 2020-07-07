@@ -1,0 +1,8 @@
+public void testSetViewedFailure() throws Exception {
+    try {
+        dao.setViewed(0, null);
+        fail("Should have throw exception");
+    } catch (DBException ex) {
+        assertEquals("ID cannot be null", ex.getSQLException().getMessage());
+    }
+}

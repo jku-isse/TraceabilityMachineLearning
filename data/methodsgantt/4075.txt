@@ -1,0 +1,16 @@
+/**
+ * Creates an instance of CustomColmn with a name, a type (class) and a
+ * default value.
+ *
+ * @param colName
+ * 		The column name.
+ * @param colType
+ * 		The colmun type.
+ * @param colDefaultValue
+ * 		The default value.
+ */
+public CustomColumn(String colName, Class colType, Object colDefaultValue) {
+    name = colName;
+    type = colType;
+    defaultValue = colDefaultValue;
+}

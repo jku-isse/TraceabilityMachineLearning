@@ -1,0 +1,3 @@
+protected FileFilter createFileFilter() {
+    return new ExtensionBasedFileFilter(myState.getExporter().getFileNamePattern(), myState.getExporter().getFileTypeDescription());
+}

@@ -1,0 +1,17 @@
+public boolean canCreateDependency(Task dependant, Task dependee) {
+    if (dependant == dependee) {
+        return false;
+    }
+    if (false == (getTaskHierarchy().areUnrelated(dependant, dependee))) {
+        return false;
+    }
+    SearchKey key = new SearchKey(SearchKey.DEPENDANT, dependant.getTaskID(), dependee.getTaskID());
+    if (mySearchKey2dependency.containsKey(key)) {
+        return false;
+    }
+    TaskDependency testDep = new TaskDependencyImpl(dependant, dependee, this);
+    if (isLooping(testDep)) {
+        return false;
+    }
+    return true;
+}

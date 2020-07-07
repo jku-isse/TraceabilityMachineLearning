@@ -1,0 +1,10 @@
+private void copyValues(ResourcesTableModel original, ResourcesTableModel clone) {
+    for (int i = 0; i < (clone.getRowCount()); i++)
+        clone.setValueAt(null, i, 1);
+
+    for (int j = 0; j < (original.getRowCount()); j++)
+        for (int k = 0; k < (original.getColumnCount()); k++)
+            clone.setValueAt(original.getValueAt(j, k), j, k);
+
+
+}

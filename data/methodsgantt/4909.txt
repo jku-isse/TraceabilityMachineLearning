@@ -1,0 +1,4 @@
+public LineItem(Date myStartDate, Date myEndDate) {
+    this.myStartDate = myStartDate;
+    this.myEndDate = myEndDate;
+}

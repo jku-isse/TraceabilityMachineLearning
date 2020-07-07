@@ -1,0 +1,3 @@
+public OkAction() {
+    super(GanttLanguage.getInstance().getText("ok"));
+}

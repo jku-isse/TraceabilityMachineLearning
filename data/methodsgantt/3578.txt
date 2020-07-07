@@ -1,0 +1,5 @@
+public GanttCalendar parseDate(String date) throws ParseException {
+    Calendar tmp = Calendar.getInstance(currentLocale);
+    tmp.setTime(currentDateFormat.parse(date));
+    return new GanttCalendar(tmp.get(Calendar.YEAR), tmp.get(Calendar.MONTH), tmp.get(Calendar.DATE));
+}

@@ -1,0 +1,8 @@
+/**
+ * Returns the initial index of the table column.
+ *
+ * @return The initial index of the table column.
+ */
+public int getInitIndex() {
+    return index;
+}

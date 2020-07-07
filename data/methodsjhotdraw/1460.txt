@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public ConnectionTool(ConnectionFigure prototype) {
+    this(prototype, null, null);
+}

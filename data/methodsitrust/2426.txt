@@ -1,0 +1,11 @@
+public PreparedStatement loadParameters(PreparedStatement ps, ReferralBean ref) throws SQLException {
+    ps.setLong(1, ref.getPatientID());
+    ps.setLong(2, ref.getSenderID());
+    ps.setLong(3, ref.getReceiverID());
+    ps.setString(4, ref.getReferralDetails());
+    ps.setLong(5, ref.getOvid());
+    ps.setBoolean(6, ref.isViewedByPatient());
+    ps.setBoolean(7, ref.isViewedByHCP());
+    ps.setInt(8, ref.getPriority());
+    return ps;
+}

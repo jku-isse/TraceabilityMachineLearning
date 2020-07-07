@@ -1,0 +1,2 @@
+HtmlEncoderTest() {
+}

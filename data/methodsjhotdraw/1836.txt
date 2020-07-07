@@ -1,0 +1,5 @@
+/**
+ * Returns the lock object on which all threads acting in Figures in this
+ * drawing synchronize to prevent race conditions.
+ */
+Object getLock();

@@ -1,0 +1,24 @@
+/**
+ * Constructor.
+ */
+public AboutPanel(GanttProject parent) {
+    super(GanttProject.correctLabel(GanttLanguage.getInstance().getText("about")), (((GanttLanguage.getInstance().getText("settingsAbout")) + " ") + (GanttProject.version)), parent);
+    GanttSplash splash = new GanttSplash();
+    JLabel jLabelImage = splash.getSplashComponent();
+    // JPanel imagePanel = new JPanel(new BorderLayout());
+    // imagePanel.add(jLabelImage, BorderLayout.CENTER);
+    vb.add(new JPanel());
+    vb.add(jLabelImage);
+    vb.add(new JPanel());
+    JButton bHomePage = new JButton(GanttProject.correctLabel(language.getText("webPage")), new ImageIcon(getClass().getResource("/icons/home_16.gif")));
+    bHomePage.setToolTipText(GanttProject.getToolTip((((language.getText("goTo")) + " ") + "http://ganttproject.biz")));// add a simple tool tip
+
+    // text :)
+    bHomePage.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            BrowserControl.displayURL("http://ganttproject.biz/");
+        }
+    });
+    vb.add(bHomePage);
+    applyComponentOrientation(language.getComponentOrientation());
+}

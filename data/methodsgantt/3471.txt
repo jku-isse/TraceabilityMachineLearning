@@ -1,0 +1,54 @@
+/**
+ * Write all tasks.
+ */
+private void writeTasks(OutputStreamWriter out) throws IOException {
+    writeTaskHeaders(out);
+    /* <String> */
+    List customFields = myProject.getCustomColumnsStorage().getCustomColumnsNames();
+    for (int i = 0; i < (myTasks.length); i++) {
+        Task task = myTasks[i];
+        // ID
+        if (csvOptions.bExportTaskID) {
+            writeCell(out, ("" + (task.getTaskID())));
+        }
+        // Name
+        if (csvOptions.bExportTaskName) {
+            writeTextCell(out, getName(task));
+        }
+        // Start Date
+        if (csvOptions.bExportTaskStartDate) {
+            writeCell(out, task.getStart().toString());
+        }
+        // End Date
+        if (csvOptions.bExportTaskEndDate) {
+            writeCell(out, task.getEnd().toString());
+        }
+        // Duration
+        if (csvOptions.bExportTaskDuration) {
+            writeCell(out, ("" + (task.getDuration().getLength())));
+        }
+        // Percent complete
+        if (csvOptions.bExportTaskPercent) {
+            writeCell(out, ("" + (task.getCompletionPercentage())));
+        }
+        // Web Link
+        if (csvOptions.bExportTaskWebLink) {
+            writeTextCell(out, getWebLink(((GanttTask) (task))));
+        }
+        // associated resources
+        if (csvOptions.bExportTaskResources) {
+            writeTextCell(out, getAssignments(task));
+        }
+        // Notes
+        if (csvOptions.bExportTaskNotes) {
+            writeTextCell(out, task.getNotes());
+        }
+        CustomColumnsValues customValues = task.getCustomValues();
+        for (int j = 0; j < (customFields.size()); j++) {
+            Object nextCustomFieldValue = customValues.getValue(String.valueOf(customFields.get(j)));
+            writeCell(out, String.valueOf(nextCustomFieldValue));
+        }
+        out.write("
+");
+    }
+}// end of write tasks

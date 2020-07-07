@@ -1,0 +1,3 @@
+public boolean isConstructedFrom(TimeUnit atomUnit) {
+    return (myGraph.getComposition(this, atomUnit)) != null;
+}

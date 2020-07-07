@@ -1,0 +1,17 @@
+/**
+ * Adds the given text to the existing
+ *
+ * @param newText
+ * 		The text to add
+ */
+public final void modifyText(String newText) {
+    String sCurrentText = getText();
+    if (!(sCurrentText.equals(""))) {
+        setText(((sCurrentText + "
+") + newText));
+        Point point = new Point(0, ((int) (this.jtEngine.getSize().getHeight())));
+        this.jScrollPane.getViewport().setViewPosition(point);
+    } else {
+        setText(newText);
+    }
+}

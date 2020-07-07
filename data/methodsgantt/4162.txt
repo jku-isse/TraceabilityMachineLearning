@@ -1,0 +1,6 @@
+public MutationInfo(ResourceAssignment assignment, int operation) {
+    myAssignment = assignment;
+    myOrder = (ResourceAssignmentCollectionImpl.MutationInfo.ourOrder)++;
+    myOperation = operation;
+    myResource = assignment.getResource();
+}

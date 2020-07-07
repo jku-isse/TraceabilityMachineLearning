@@ -1,0 +1,10 @@
+public void testNotOverloaded() throws Exception {
+    try {
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        map.put("thing", new String[]{ "5" });
+        new BeanBuilder<BadBean>().build(map, new BadBean());
+        fail("exception should have been thrown");
+    } catch (IllegalArgumentException e) {
+        assertEquals("edu.ncsu.csc.itrust.testutils.BadBean should not have any overloaded methods, like setThing", e.getMessage());
+    }
+}

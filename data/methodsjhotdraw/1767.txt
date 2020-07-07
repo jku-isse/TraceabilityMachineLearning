@@ -1,0 +1,15 @@
+/**
+ * Hook method which can be overriden by subclasses to provide
+ * specialised behaviour in the event of a multi-click.
+ */
+protected void handleMultiClick(MouseEvent evt) {
+    if (DelegationSelectionTool.DEBUG) {
+        System.out.println(("DelegationSelectionTool.handleMultiClick " + evt));
+    }
+    DrawingView v = getView();
+    Point pos = new Point(evt.getX(), evt.getY());
+    Handle handle = v.findHandle(pos);
+    if (handle == null) {
+        v.setHandleDetailLevel(((v.getHandleDetailLevel()) + 1));
+    }
+}

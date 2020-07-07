@@ -1,0 +1,11 @@
+/**
+ * Add the differents action listener on the differents widgets
+ */
+public void addActionListener(ActionListener l) {
+    nameField1.addActionListener(l);
+    startDateButton1.addActionListener(l);
+    finishDateButton1.addActionListener(l);
+    thirdDateButton1.addActionListener(l);
+    thirdDateComboBox.addActionListener(l);
+    durationField1.addActionListener(l);
+}

@@ -1,0 +1,7 @@
+/**
+ * Returns the key string.
+ */
+@Override
+public String toString() {
+    return key;
+}

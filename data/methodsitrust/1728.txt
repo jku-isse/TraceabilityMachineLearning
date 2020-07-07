@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the upperBound
+ */
+public String getUpperBound() {
+    return upperBound;
+}

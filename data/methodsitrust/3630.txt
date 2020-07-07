@@ -1,0 +1,3 @@
+public void tester() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/tester.sql"));
+}

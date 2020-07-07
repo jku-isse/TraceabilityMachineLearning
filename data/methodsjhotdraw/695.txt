@@ -1,0 +1,48 @@
+@Override
+protected void paintThumb(Graphics2D g) {
+    paintTicks(g);
+    if ((harmonicModel) != null) {
+        Point center = getCenter();
+        Ellipse2D.Float oval = new Ellipse2D.Float(0, 0, 0, 0);
+        float[] comp = null;
+        float wheelBrightness = (model.getBoundedRangeModel(2).getValue()) / 100.0F;
+        for (int i = (harmonicModel.size()) - 1; i >= 0; i--) {
+            if ((harmonicModel.get(i)) != null) {
+                Point p = getColorLocation(harmonicModel.get(i));
+                g.setColor(Color.black);
+                g.drawLine(center.x, center.y, p.x, p.y);
+            }
+        }
+        for (int i = (harmonicModel.size()) - 1; i >= 0; i--) {
+            if ((harmonicModel.get(i)) != null) {
+                Point p = getColorLocation(harmonicModel.get(i));
+                CompositeColor mixerColor = harmonicModel.get(i);
+                comp = mixerColor.getComponents();
+                if (i == (selectedIndex)) {
+                    g.setColor(Color.white);
+                    oval.x = (p.x) - (baseRadius);
+                    oval.y = (p.y) - (baseRadius);
+                    oval.width = (baseRadius) * 2.0F;
+                    oval.height = (baseRadius) * 2.0F;
+                    g.fill(oval);
+                }
+                g.setColor(mixerColor.getColor());
+                oval.x = (p.x) - (handleRadius);
+                oval.y = (p.y) - (handleRadius);
+                oval.width = (handleRadius) * 2.0F;
+                oval.height = (handleRadius) * 2.0F;
+                g.fill(oval);
+                g.setColor(Color.black);
+                g.draw(oval);
+                if (i == (harmonicModel.getBase())) {
+                    oval.x = (p.x) - (baseRadius);
+                    oval.y = (p.y) - (baseRadius);
+                    oval.width = (baseRadius) * 2.0F;
+                    oval.height = (baseRadius) * 2.0F;
+                    g.draw(oval);
+                }
+                // g.drawString(i+"", p.x, p.y);
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+void fireBeforeProcessingTimeFrames() {
+    myBackgroundRenderer.beforeProcessingTimeFrames();
+    for (int i = 0; i < (myTimeUnitVisitors.size()); i++) {
+        TimeUnitVisitor nextVisitor = ((TimeUnitVisitor) (myTimeUnitVisitors.get(i)));
+        if (!(nextVisitor.isEnabled())) {
+            continue;
+        }
+        nextVisitor.beforeProcessingTimeFrames();
+    }
+}

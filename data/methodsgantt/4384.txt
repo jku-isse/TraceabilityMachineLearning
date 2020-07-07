@@ -1,0 +1,7 @@
+public void setProjectTask(final boolean projectTask) {
+    myCommands.add(new Runnable() {
+        public void run() {
+            TaskImpl.this.setProjectTask(projectTask);
+        }
+    });
+}

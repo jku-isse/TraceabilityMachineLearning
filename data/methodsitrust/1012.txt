@@ -1,0 +1,9 @@
+public void testGetDiagnosisStatisticsInvalidZip() throws Exception {
+    try {
+        action.getDiagnosisStatistics("06/28/2011", "09/28/2011", "487.00", "2766");
+        fail("Should have failed but didnt");
+    } catch (FormValidationException e) {
+        assertEquals(1, e.getErrorList().size());
+        assertEquals("Zip Code must be 5 digits!", e.getErrorList().get(0));
+    }
+}

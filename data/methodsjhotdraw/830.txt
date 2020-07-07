@@ -1,0 +1,9 @@
+@Override
+public Dimension2DDouble getPreferredSize() {
+    if ((this.layouter) != null) {
+        Rectangle2D.Double r = layouter.calculateLayout(this, getStartPoint(), getEndPoint());
+        return new Dimension2DDouble(r.width, r.height);
+    } else {
+        return super.getPreferredSize();
+    }
+}

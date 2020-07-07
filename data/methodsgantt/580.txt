@@ -1,0 +1,40 @@
+public void setHiddens() {
+    menu.removeAll();
+    addButtons();
+    int separatorSize = Integer.parseInt(options.getIconSize());
+    double toolBarlength = 0.0;
+    int buttonSize = 0;
+    int lastDisplayedIndex = 0;
+    Component[] buttons = toolBar.getComponents();
+    if ((toolBar.getOrientation()) == (JToolBar.HORIZONTAL))
+        toolBarlength = toolBar.getSize().getWidth();
+    else
+        toolBarlength = toolBar.getSize().getHeight();
+
+    int position = 10;
+    // searching for hidden buttons
+    for (int i = 0; i < (buttons.length); i++) {
+        if ((buttons[i].getClass()) == (TestGanttRolloverButton.class)) {
+            if ((toolBar.getOrientation()) == (JToolBar.HORIZONTAL))
+                buttonSize = buttons[i].getWidth();
+            else
+                buttonSize = buttons[i].getHeight();
+
+            position = position + buttonSize;
+            if ((position + ((2 * (bShowHiddens.getWidth())) / 3)) < toolBarlength) {
+                lastDisplayedIndex = i;
+            } else {
+                menu.add(buttons[i]);
+            }
+        } else
+            position = position + separatorSize;
+
+    }
+    // if there is hidden buttons
+    if ((menu.getComponentCount()) != 0) {
+        for (int i = lastDisplayedIndex + 1; i < (buttons.length); i++) {
+            toolBar.remove(buttons[i]);
+        }
+        toolBar.add(bShowHiddens);
+    }
+}

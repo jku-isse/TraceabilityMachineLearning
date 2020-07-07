@@ -1,0 +1,6 @@
+/**
+ * Get the destination of the piece.
+ *
+ * @return The destination square of this ply.
+ */
+Position getDestination();

@@ -1,0 +1,4 @@
+public PatientRoomAssignmentAction(DAOFactory factory) {
+    this.factory = factory;
+    wardDAO = new WardDAO(factory);
+}

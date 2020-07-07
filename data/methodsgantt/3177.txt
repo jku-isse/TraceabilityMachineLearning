@@ -1,0 +1,6 @@
+public void lock() {
+    if (isLocked) {
+        throw new IllegalStateException("Already locked");
+    }
+    isLocked = true;
+}

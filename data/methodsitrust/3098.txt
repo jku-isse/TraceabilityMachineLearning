@@ -1,0 +1,55 @@
+// /**
+// * Returns every report request in the database.
+// * @return A java.util.List of report requests.
+// * @throws DBException
+// */
+// public List<ReportRequestBean> getAllReportRequests() throws DBException {
+// Connection conn = null;
+// PreparedStatement ps = null;
+// 
+// try {
+// conn = factory.getConnection();
+// ps = conn.prepareStatement("SELECT * FROM ReportRequests");
+// ResultSet rs = ps.executeQuery();
+// return loader.loadList(rs);
+// } catch (SQLException e) {
+// e.printStackTrace();
+// throw new DBException(e);
+// } finally {
+// DBUtil.closeConnection(conn, ps);
+// }
+// }
+/**
+ * Adds a request for a report.
+ *
+ * @param requesterMID
+ * 		The MID of the requester.
+ * @param patientMID
+ * 		The MID of the patient in question.
+ * @param date
+ * 		The date the request was made.
+ * @return A long of the unique ID of the report request.
+ * @throws DBException
+ * 		
+ */
+public long addReportRequest(long requesterMID, long patientMID, Date date) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (requesterMID == 0L)
+            throw new SQLException("RequesterMID cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO reportrequests (ID, RequesterMID, PatientMID, RequestedDate, Status) VALUES (null,?,?,?,Requested)");
+        ps.setLong(1, requesterMID);
+        ps.setLong(2, patientMID);
+        ps.setTimestamp(3, new Timestamp(date.getTime()));
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

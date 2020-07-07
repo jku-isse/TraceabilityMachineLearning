@@ -1,0 +1,6 @@
+/**
+ * Clone this ply.
+ *
+ * @return A clone of this ply.
+ */
+Object clone();

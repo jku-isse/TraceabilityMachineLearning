@@ -1,0 +1,14 @@
+/**
+ * Edit an existing referral.
+ *
+ * @param bean
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public void editReferral(ReferralBean bean) throws iTrustException {
+    if ((bean.getSenderID()) != (hcpid)) {
+        throw new iTrustException("Edited referrals must be from the current HCP.");
+    }
+    referralDAO.editReferral(bean);
+}

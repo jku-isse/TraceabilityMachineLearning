@@ -1,0 +1,10 @@
+public void testUpdateCPTInformation0() throws Exception {
+    final String code = "8888F";
+    final String desc = "new descrip 0";
+    ProcedureBean proc = new ProcedureBean(code);
+    addEmpty(code);
+    proc.setDescription(desc);
+    assertEquals("Success: 1 row(s) updated", action.updateInformation(proc));
+    proc = factory.getCPTCodesDAO().getCPTCode(code);
+    assertEquals(desc, proc.getDescription());
+}

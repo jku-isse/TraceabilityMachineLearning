@@ -1,0 +1,35 @@
+public void testLabProcedureInTransitToReceived() throws Exception {
+    gen.clearAllTables();
+    gen.standardData();
+    WebConversation wc = login("5000000001", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Lab Tech Home", wr.getTitle());
+    wr = wr.getLinkWith("All Lab Procedures").click();
+    assertEquals("iTrust - View Laboratory Procedures", wr.getTitle());
+    // Ensure the table of received lab procedures has only one entry
+    WebTable tbl = wr.getTableWithID("receivedTable");
+    assertEquals(3, tbl.getRowCount());
+    assertEquals("Beaker Beaker", tbl.getCellAsText(2, 4));
+    // Check table of in-transit lab procedures
+    tbl = wr.getTableWithID("inTransitTable");
+    assertEquals(20, tbl.getRowCount());
+    String labProcID = tbl.getCellAsText(2, 0);// lab proc id is auto-assigned
+
+    // Click "Set to Received" on Lab Procedure
+    WebForm form = wr.getFormWithID("inTransitForm");
+    Button receivedButton = form.getButtons()[0];
+    assertEquals("Set to Received", receivedButton.getText());
+    receivedButton.click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - View Laboratory Procedures", wr.getTitle());
+    // Ensure the table of received lab procedures contains the modified lab procedure.
+    tbl = wr.getTableWithID("receivedTable");
+    assertEquals(4, tbl.getRowCount());
+    // assertFalse(tbl.getCellAsText(2, 0).contains("There are no received lab procedures"));
+    assertEquals(labProcID, tbl.getCellAsText(2, 0));// check that the lab proc is now here
+
+    // Check that table of in-transit lab procedures has no lab procedures
+    tbl = wr.getTableWithID("inTransitTable");
+    assertEquals(19, tbl.getRowCount());
+    // assertTrue(tbl.getCellAsText(2, 0).contains("There are no lab procedures in transit"));  // lab procedure ID
+}

@@ -1,0 +1,3 @@
+public static void addZoomButtonsTo(JToolBar bar, final DrawingEditor editor) {
+    bar.add(ButtonFactory.createZoomButton(editor));
+}

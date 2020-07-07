@@ -1,0 +1,11 @@
+/**
+ * Returns the models maximum.  Note that the upper
+ * limit on the models value is (maximum - extent).
+ *
+ * @return the value of the maximum property.
+ * @see #setMaximum
+ * @see #setExtent
+ */
+public int getMaximum() {
+    return size_;
+}

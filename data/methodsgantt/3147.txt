@@ -1,0 +1,7 @@
+public void setValue(Date value) {
+    if (!(isLocked())) {
+        throw new IllegalStateException("Lock option before setting value");
+    }
+    fireChangeValueEvent(new ChangeValueEvent(getID(), myLockedValue, value));
+    myLockedValue = value;
+}

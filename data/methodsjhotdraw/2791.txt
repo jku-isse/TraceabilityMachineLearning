@@ -1,0 +1,3 @@
+public Insets2D.Double getInsets() {
+    return new Insets2D.Double();
+}

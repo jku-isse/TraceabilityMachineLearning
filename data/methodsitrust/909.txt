@@ -1,0 +1,10 @@
+public void testUpdateICDInformation0() throws Exception {
+    String id = "8888888888";
+    String name = "new hospital 8...";
+    HospitalBean hosp = new HospitalBean(id);
+    addEmpty(id);
+    hosp.setHospitalName(name);
+    assertEquals("Success: 1 row(s) updated", action.updateInformation(hosp));
+    hosp = factory.getHospitalsDAO().getHospital(id);
+    assertEquals(name, hosp.getHospitalName());
+}

@@ -1,0 +1,3 @@
+public void officeVisit2() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/ov2.sql"));
+}

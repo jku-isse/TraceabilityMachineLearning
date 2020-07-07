@@ -1,0 +1,13 @@
+protected void installComponents(JFontChooser fc) {
+    fc.removeAll();
+    fc.setLayout(new BorderLayout());
+    selectionPanel = new PaletteFontChooserSelectionPanel();
+    fc.add(selectionPanel, BorderLayout.CENTER);
+    previewPanel = new PaletteFontChooserPreviewPanel();
+    fc.add(previewPanel, BorderLayout.NORTH);
+    FontChooserModel model = fontChooser.getModel();
+    updateCollectionList();
+    updateFamilyList();
+    updateFaceList();
+    updatePreview();
+}

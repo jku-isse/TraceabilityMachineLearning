@@ -1,0 +1,10 @@
+/**
+ * Creates an instance of CustomColumnsManager for the given treetable.
+ *
+ * @param treetable
+ * 		
+ */
+public CustomColumnsManager(CustomColumnsStorage storage) {
+    myListeners = new ArrayList();
+    myStorage = storage;
+}

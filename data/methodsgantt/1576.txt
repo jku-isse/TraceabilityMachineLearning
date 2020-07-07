@@ -1,0 +1,6 @@
+public BottomUnitLineRendererImpl(ChartModelBase model, GraphicPrimitiveContainer primitiveContainer, UIConfiguration projectConfig) {
+    super(model);
+    myPrimitiveContainer = primitiveContainer;
+    myRedlineOption = projectConfig.getRedlineOption();
+    myProjectDatesOption = projectConfig.getProjectBoundariesOption();
+}

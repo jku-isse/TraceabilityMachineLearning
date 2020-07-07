@@ -1,0 +1,15 @@
+/**
+ * Opens the last element with the specified name and makes it the current node.
+ */
+public void openElement(String tagName) throws IOException {
+    ArrayList list = current.getChildren();
+    for (int i = 0; i < (list.size()); i++) {
+        XMLElement node = ((XMLElement) (list.get(i)));
+        if (node.getName().equals(tagName)) {
+            stack.push(current);
+            current = node;
+            return;
+        }
+    }
+    throw new IOException(("no such element:" + tagName));
+}

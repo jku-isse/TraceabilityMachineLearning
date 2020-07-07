@@ -1,0 +1,9 @@
+public void testCompare3() {
+    a = new HCPDiagnosisBean();
+    b = new HCPDiagnosisBean();
+    hcpdbc = new MyDiagnosisAction.HCPDiagnosisBeanComparator();
+    a.incNumPatients();
+    b.incNumPatients();
+    assertEquals(0, hcpdbc.compare(a, b));// a == b
+
+}

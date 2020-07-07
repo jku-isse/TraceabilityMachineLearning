@@ -1,0 +1,9 @@
+private TimeFrame scrollTimeFrame(Date scrolledDate) {
+    TimeFrame result = null;
+    if (getTopTimeUnit().isConstructedFrom(getBottomTimeUnit())) {
+        result = myTimeUnitStack.createTimeFrame(scrolledDate, getTopTimeUnit(), getBottomTimeUnit());
+    } else {
+        result = myTimeUnitStack.createTimeFrame(scrolledDate, getBottomTimeUnit(), getBottomTimeUnit());
+    }
+    return result;
+}

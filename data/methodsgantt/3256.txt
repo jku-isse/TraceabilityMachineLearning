@@ -1,0 +1,6 @@
+public void toggle(int index) {
+    if (!(isTheOnlyEnabled(myRoleSets[index]))) {
+        myRoleSets[index].setEnabled((!(myRoleSets[index].isEnabled())));
+        fireContentsChanged(this, index, index);
+    }
+}

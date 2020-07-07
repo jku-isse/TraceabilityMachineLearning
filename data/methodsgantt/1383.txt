@@ -1,0 +1,5 @@
+public ZoomInAction(ZoomManager zoomManager, String iconSize) {
+    super("ZoomIn", iconSize);
+    myZoomManager = zoomManager;
+    myZoomManager.addZoomListener(this);
+}

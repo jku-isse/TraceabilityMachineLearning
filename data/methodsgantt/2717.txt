@@ -1,0 +1,5 @@
+public ProjectUIFacadeImpl(UIFacade workbenchFacade, DocumentManager documentManager, GPUndoManager undoManager) {
+    myWorkbenchFacade = workbenchFacade;
+    myDocumentManager = documentManager;
+    myUndoManager = undoManager;
+}

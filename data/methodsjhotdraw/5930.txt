@@ -1,0 +1,27 @@
+/**
+ * Writes the <code>shape</code>, <code>coords</code>, <code>href</code>,
+ * <code>nohref</code> Attribute for the specified figure and rectangle.
+ *
+ * @return Returns true, if the rect is inside of the image bounds.
+ */
+private boolean writeRectAttributes(IXMLElement elem, SVGFigure f, Rectangle2D.Double rect) {
+    AffineTransform t = AttributeKeys.TRANSFORM.getClone(f);
+    if (t == null) {
+        t = drawingTransform;
+    } else {
+        t.preConcatenate(drawingTransform);
+    }
+    if (((t.getType()) & ((AffineTransform.TYPE_UNIFORM_SCALE) | (AffineTransform.TYPE_TRANSLATION))) == (t.getType())) {
+        Point2D.Double start = new Point2D.Double(rect.x, rect.y);
+        Point2D.Double end = new Point2D.Double(((rect.x) + (rect.width)), ((rect.y) + (rect.height)));
+        t.transform(start, start);
+        t.transform(end, end);
+        Rectangle r = new Rectangle(((int) (Math.min(start.x, end.x))), ((int) (Math.min(start.y, end.y))), ((int) (Math.abs(((start.x) - (end.x))))), ((int) (Math.abs(((start.y) - (end.y))))));
+        elem.setAttribute("shape", "rect");
+        elem.setAttribute("coords", (((((((r.x) + ",") + (r.y)) + ",") + ((r.x) + (r.width))) + ",") + ((r.y) + (r.height))));
+        writeHrefAttribute(elem, f);
+        return bounds.intersects(r);
+    } else {
+        return writePolyAttributes(elem, f, ((Shape) (rect)));
+    }
+}

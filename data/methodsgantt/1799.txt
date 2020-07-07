@@ -1,0 +1,3 @@
+public Color getHorizontalGutterColor1() {
+    return myHorizontalGutterColor1;
+}

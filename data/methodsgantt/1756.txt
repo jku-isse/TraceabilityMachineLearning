@@ -1,0 +1,4 @@
+public void setVisibleTasks(/* <Task> */
+List visibleTasks) {
+    myVisibleTasks = visibleTasks;
+}

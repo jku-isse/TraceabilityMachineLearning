@@ -1,0 +1,13 @@
+/**
+ * Sets up the defaults for the class
+ *
+ * @param factory
+ * 		factory for creating the defaults.
+ * @param loggedInMID
+ * 		person currently logged in
+ * @author Andy Meneely
+ */
+public AddUAPAction(DAOFactory factory, long loggedInMID) {
+    this.personnelDAO = factory.getPersonnelDAO();
+    this.authDAO = factory.getAuthDAO();
+}

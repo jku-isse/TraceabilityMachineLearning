@@ -1,0 +1,16 @@
+/**
+ * Appends the specified coordinates to this <code>Polygon</code>.
+ * <p>
+ * If an operation that calculates the bounding box of this
+ * <code>Polygon</code> has already been performed, such as
+ * <code>getBounds</code> or <code>contains</code>, then this
+ * method updates the bounding box.
+ *
+ * @param x
+ * 		the specified X coordinate
+ * @param y
+ * 		the specified Y coordinate
+ * @see java.awt.Polygon#getBounds
+ * @see java.awt.Polygon#contains
+ */
+public abstract void addPoint(double x, double y);

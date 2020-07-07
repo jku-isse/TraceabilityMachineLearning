@@ -1,0 +1,3 @@
+public void setSecondText(String text) {
+    message2.setText(text);
+}

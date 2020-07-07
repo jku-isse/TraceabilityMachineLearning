@@ -1,0 +1,11 @@
+private void writeTasks() {
+    Enumeration children = ((DefaultMutableTreeNode) (myTree.getJTree().getModel().getRoot())).children();
+    write(((((s) + "<previous-tasks name="") + (myName)) + "">
+"));
+    while (children.hasMoreElements()) {
+        DefaultMutableTreeNode element = ((DefaultMutableTreeNode) (children.nextElement()));
+        /* lot.indexOf(element) */
+        writeTask(os, element);
+    } 
+    write(((s) + "</previous-tasks>"));
+}

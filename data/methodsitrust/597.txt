@@ -1,0 +1,27 @@
+/**
+ * Checks to see if a patient needs the Measles, Mumps, and Rubekka immunization
+ *
+ * @param count
+ * 		which immunization they are on
+ * @param patientAge
+ * 		how old the patient is
+ * @param time
+ * 		what the current date is
+ * @return when the immunization should be given
+ */
+public static String testMeasles(int count, Date patientDOB, long time) {
+    String reason = "";
+    long weeks = ((Calendar.getInstance().getTimeInMillis()) - time) / (GetVisitRemindersAction.WEEK_IN_MILLIS);
+    if (0 == count) {
+        if (GetVisitRemindersAction.olderThan(patientDOB, 1, 0, 0))
+            reason += "90707 Measles, Mumps, Rubekka (12 months), ";
+
+    } else
+        if (1 == count) {
+            if ((GetVisitRemindersAction.olderThan(patientDOB, 4, 0, 0)) && (12 <= weeks))
+                reason += "90707 Measles, Mumps, Rubekka (4 years), ";
+
+        }
+
+    return reason;
+}

@@ -1,0 +1,20 @@
+public static JPopupButton createStrokeDecorationButton(DrawingEditor editor) {
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    JPopupButton strokeDecorationPopupButton = new JPopupButton();
+    labels.configureToolBarButton(strokeDecorationPopupButton, "attribute.strokeDecoration");
+    strokeDecorationPopupButton.setFocusable(false);
+    strokeDecorationPopupButton.setColumnCount(2, false);
+    LineDecoration[] decorations = new LineDecoration[]{ // Arrow
+    new ArrowTip(0.35, 12, 11.3), // Arrow
+    new ArrowTip(0.35, 13, 7), // Generalization triangle
+    new ArrowTip(((Math.PI) / 5), 12, 9.8, true, true, false), // Dependency arrow
+    new ArrowTip(((Math.PI) / 6), 12, 0, false, true, false), // Link arrow
+    new ArrowTip(((Math.PI) / 11), 13, 0, false, true, true), // Aggregation diamond
+    new ArrowTip(((Math.PI) / 6), 10, 18, false, true, false), // Composition diamond
+    new ArrowTip(((Math.PI) / 6), 10, 18, true, true, true), null };
+    for (int i = 0; i < (decorations.length); i++) {
+        strokeDecorationPopupButton.add(new AttributeAction(editor, AttributeKeys.START_DECORATION, decorations[i], null, new LineDecorationIcon(decorations[i], true)));
+        strokeDecorationPopupButton.add(new AttributeAction(editor, AttributeKeys.END_DECORATION, decorations[i], null, new LineDecorationIcon(decorations[i], false)));
+    }
+    return strokeDecorationPopupButton;
+}

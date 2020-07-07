@@ -1,0 +1,3 @@
+public void apptRequestConflicts() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/apptRequestConflicts.sql"));
+}

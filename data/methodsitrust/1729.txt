@@ -1,0 +1,13 @@
+/**
+ * Get the upper bound as a double.  If the result is blank or null,
+ * NaN is returned.
+ *
+ * @return The upper bound as a double.
+ */
+public double getUpperBoundAsDouble() {
+    if (((upperBound) != null) && ((upperBound.length()) > 0)) {
+        return Double.parseDouble(upperBound);
+    } else {
+        return Double.NaN;
+    }
+}

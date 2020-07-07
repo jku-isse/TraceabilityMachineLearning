@@ -1,0 +1,17 @@
+/**
+ * Get the number of unread messages that the current user has.
+ *
+ * @return The number of unread messages.
+ * @throws SQLException
+ * 		
+ */
+public int getUnreadCount() throws SQLException {
+    List<MessageBean> messages = getAllMyMessages();
+    int count = 0;
+    for (MessageBean mb : messages) {
+        if ((mb.getRead()) == 0) {
+            count++;
+        }
+    }
+    return count;
+}

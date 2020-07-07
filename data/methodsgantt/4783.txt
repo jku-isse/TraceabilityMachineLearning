@@ -1,0 +1,5 @@
+public void addNestedItem(TaskHierarchyItem nested) {
+    nested.myNextSiblingItem = myFirstNestedItem;
+    nested.myContainerItem = this;
+    myFirstNestedItem = nested;
+}

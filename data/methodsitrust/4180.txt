@@ -1,0 +1,23 @@
+public void testViewWeightAndPedometerReports() throws Exception {
+    // Sets up all preconditions listed in acceptance test
+    gen.remoteMonitoring5();
+    // login HCP
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Monitor Patients").click();
+    // Verify all data
+    WebTable table = wr.getTableStartingWithPrefix("Patient External Statistics");
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    Date date = new Date();
+    assertEquals("Random Person (MID 1)", table.getCellAsText(2, 0));
+    assertTrue(table.getCellAsText(2, 1).contains(dateFormat.format(date)));
+    assertTrue(table.getCellAsText(2, 1).contains("07:17:00"));
+    assertEquals("186.5", table.getCellAsText(2, 3));
+    assertEquals("", table.getCellAsText(2, 4));
+    assertEquals("Random Person", table.getCellAsText(2, 5));
+    // Highlighting for abnormal data
+    assertEquals("#ffff00", table.getRows()[2].getAttribute("bgcolor"));
+    iTrustHTTPTest.assertLogged(TransactionType.TELEMEDICINE_DATA_VIEW, 9000000000L, 0L, "");
+}

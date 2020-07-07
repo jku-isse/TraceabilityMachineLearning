@@ -1,0 +1,8 @@
+public void testThreePatients() throws Exception {
+    action = new ViewPrescriptionRenewalNeedsAction(factory, 9900000000L);
+    List<PatientBean> patients = action.getRenewalNeedsPatients();
+    assertEquals(3, patients.size());
+    assertEquals("Zack", patients.get(0).getFirstName());
+    assertEquals("Darryl", patients.get(1).getFirstName());
+    assertEquals("Marie", patients.get(2).getFirstName());
+}

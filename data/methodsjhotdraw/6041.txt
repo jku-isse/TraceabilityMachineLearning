@@ -1,0 +1,24 @@
+/**
+ * All other write methods delegate their work to here.
+ */
+public void write(OutputStream out, Drawing drawing, List<Figure> figures) throws IOException {
+    document = new XMLElement("svg", SVGConstants.SVG_NAMESPACE);
+    document.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+    document.setAttribute("version", "1.2");
+    document.setAttribute("baseProfile", "tiny");
+    writeViewportAttributes(document, drawing.getAttributes());
+    initStorageContext(document);
+    defs = new XMLElement("defs");
+    document.addChild(defs);
+    for (Figure f : figures) {
+        writeElement(document, f);
+    }
+    // Write XML prolog
+    PrintWriter writer = new PrintWriter(new OutputStreamWriter(out, "UTF-8"));
+    writer.println("<?xml version="1.0" encoding="UTF-8"?>");
+    // Write XML content
+    XMLWriter xmlWriter = new XMLWriter(writer);
+    xmlWriter.write(document, isPrettyPrint);
+    // Flush writer
+    writer.flush();
+}

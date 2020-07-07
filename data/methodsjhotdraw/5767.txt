@@ -1,0 +1,10 @@
+/**
+ * Specifies the maximum value.
+ *
+ * @param m
+ * 		an int specifying the maximum value
+ * @see #getMaximum
+ */
+public void setMaximum(int m) {
+    progressModel.setMaximum(m);
+}

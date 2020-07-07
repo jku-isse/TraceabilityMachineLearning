@@ -1,0 +1,3 @@
+public boolean includes(Figure figure) {
+    return figure == (this);
+}

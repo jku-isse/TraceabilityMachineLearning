@@ -1,0 +1,3 @@
+public Segment() {
+    type = EnhancedPath.SegType.LINETO;
+}

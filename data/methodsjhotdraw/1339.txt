@@ -1,0 +1,4 @@
+public void drawFigure(Graphics2D g) {
+    Rectangle bounds = getBounds().getBounds();
+    border.paintBorder(BorderRectangleFigure.borderComponent, g, bounds.x, bounds.y, bounds.width, bounds.height);
+}

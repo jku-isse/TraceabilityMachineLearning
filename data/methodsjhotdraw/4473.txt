@@ -1,0 +1,14 @@
+/**
+ * Configure Drawing object to support copy and paste.
+ */
+@SuppressWarnings("unchecked")
+private void initDrawing(Drawing d) {
+    d.setInputFormats(((List<InputFormat>) (Collections.EMPTY_LIST)));
+    d.setOutputFormats(((List<OutputFormat>) (Collections.EMPTY_LIST)));
+    DOMStorableInputOutputFormat ioFormat = new DOMStorableInputOutputFormat(new DrawFigureFactory());
+    d.addInputFormat(ioFormat);
+    d.addInputFormat(new ImageInputFormat(new ImageFigure()));
+    d.addInputFormat(new TextInputFormat(new TextFigure()));
+    d.addOutputFormat(ioFormat);
+    d.addOutputFormat(new ImageOutputFormat());
+}

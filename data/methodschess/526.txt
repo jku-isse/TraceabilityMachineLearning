@@ -1,0 +1,8 @@
+/**
+ * Check, if this move is a pawn promotion.
+ *
+ * @return true, if this move is a pawn promotion. False otherwise.
+ */
+public final boolean isPawnPromotion() {
+    return _pawnPromotion;
+}

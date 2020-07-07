@@ -1,0 +1,7 @@
+public void propertyChange(PropertyChangeEvent evt) {
+    if (evt.getPropertyName().equals("enabled")) {
+        setEnabled(((Boolean) (evt.getNewValue())).booleanValue());
+    } else {
+        repaint();
+    }
+}

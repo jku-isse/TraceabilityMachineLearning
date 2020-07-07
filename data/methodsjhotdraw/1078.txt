@@ -1,0 +1,6 @@
+/**
+ * Gets the input map of the Tool
+ */
+public InputMap getInputMap() {
+    return inputMap;
+}

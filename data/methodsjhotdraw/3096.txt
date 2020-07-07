@@ -1,0 +1,19 @@
+public static JPopupButton createStrokeWidthButton(DrawingEditor editor, double[] widths, ResourceBundleUtil labels) {
+    JPopupButton strokeWidthPopupButton = new JPopupButton();
+    labels.configureToolBarButton(strokeWidthPopupButton, "attribute.strokeWidth.text");
+    strokeWidthPopupButton.setFocusable(false);
+    NumberFormat formatter = NumberFormat.getInstance();
+    if (formatter instanceof DecimalFormat) {
+        ((DecimalFormat) (formatter)).setMaximumFractionDigits(1);
+        ((DecimalFormat) (formatter)).setMinimumFractionDigits(0);
+    }
+    for (int i = 0; i < (widths.length); i++) {
+        String label = Double.toString(widths[i]);
+        Icon icon = new StrokeIcon(new BasicStroke(((float) (widths[i])), BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));
+        AttributeAction a = new AttributeAction(editor, AttributeKeys.STROKE_WIDTH, new Double(widths[i]), label, icon);
+        a.putValue(Actions.UNDO_PRESENTATION_NAME_KEY, labels.getString("attribute.strokeWidth.text"));
+        AbstractButton btn = strokeWidthPopupButton.add(a);
+        btn.setDisabledIcon(icon);
+    }
+    return strokeWidthPopupButton;
+}

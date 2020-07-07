@@ -1,0 +1,7 @@
+// 
+// FocusListener
+// 
+public void focusGained(FocusEvent evt) {
+    Component c = evt.getComponent();
+    focusedCompIndex = toolBar.getComponentIndex(c);
+}

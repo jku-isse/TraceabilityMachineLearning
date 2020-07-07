@@ -1,0 +1,18 @@
+/**
+ * Test method for {@link edu.ncsu.csc.itrust.action.EditPHRAction#updateAllergies(long, java.lang.String)}.
+ *
+ * @author Austin Olander
+ * @author Eric Whitmire
+
+This method tests that a warning is shown for a future prescription.
+ * @throws Exception
+ * 		
+ */
+public final void testUpdateAllergiesFutRX() throws Exception {
+    actionPHR = new EditPHRAction(factory, 9000000000L, "100");// HCP Kelly Doctor, patient Anakin Skywalker
+
+    result = actionPHR.updateAllergies(100L, "483012382");// Adds M-minene
+
+    assertTrue(result.contains("is currently"));// Should return warning
+
+}

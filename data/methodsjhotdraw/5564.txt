@@ -1,0 +1,4 @@
+public void setBounds(Point2D.Double anchor, Point2D.Double lead) {
+    coordinates = new Point2D.Double[]{ new Point2D.Double(anchor.x, anchor.y) };
+    rotates = new double[]{ 0.0 };
+}

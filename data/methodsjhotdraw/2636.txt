@@ -1,0 +1,5 @@
+public void keyReleased(KeyEvent evt) {
+    if (((getView()) != null) && (getView().isEnabled())) {
+        tracker.keyReleased(evt);
+    }
+}

@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @param parsing
+ * 		
+ * @param confirmation
+ * 		
+ */
+public AcquireLockState(ProxyDocument.ParsingState parsing, ProxyDocument.OpenCopyConfirmationState confirmation) {
+    myParsingState = parsing;
+    myConfirmationState = confirmation;
+}

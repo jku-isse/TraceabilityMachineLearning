@@ -1,0 +1,25 @@
+/**
+ * Gets a list of all referrals sent to a patient
+ *
+ * @param mid
+ * 		The patientss mid.
+ * @return The list of the referrals they received that were unread.
+ * @throws DBException
+ * 		
+ */
+public List<ReferralBean> getReferralsForPatientUnread(long mid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM referrals WHERE PatientID = ? AND viewed_by_patient = false");
+        ps.setLong(1, mid);
+        ResultSet rs = ps.executeQuery();
+        return referralLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

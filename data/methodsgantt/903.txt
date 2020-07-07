@@ -1,0 +1,14 @@
+/**
+ * Insert a new node.
+ */
+public void treeNodesInserted(TreeModelEvent e) {
+    DefaultMutableTreeNode node = ((DefaultMutableTreeNode) (e.getTreePath().getLastPathComponent()));
+    Task task = ((Task) (node.getUserObject()));
+    /* if (!expand.contains(new Integer(task.getTaskID()))) {
+    expand.add(new Integer(task.getTaskID())); }
+     */
+    // task.setExpand(true);
+    if ((area) != null)
+        area.repaint();
+
+}

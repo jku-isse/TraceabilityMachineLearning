@@ -1,0 +1,8 @@
+/**
+ * Returns the patients blood type
+ *
+ * @return the patients blood type
+ */
+public String getBloodType() {
+    return (pb.getBloodType()) + "";
+}

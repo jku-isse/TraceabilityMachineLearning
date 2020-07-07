@@ -1,0 +1,9 @@
+public void hide(View p) {
+    if (p.isShowing()) {
+        p.setShowing(false);
+        JFrame f = ((JFrame) (SwingUtilities.getWindowAncestor(p.getComponent())));
+        f.setVisible(false);
+        f.remove(p.getComponent());
+        f.dispose();
+    }
+}

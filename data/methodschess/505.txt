@@ -1,0 +1,8 @@
+public final void openingTag() throws RecognitionException, TokenStreamException {
+    Token name = null;
+    match(PGNTokenTypes.TAG_OPENING);
+    whiteSpaces();
+    name = LT(1);
+    match(PGNTokenTypes.STRING_LITERAL);
+    getNotation().setOpeningInfo(name.getText());
+}

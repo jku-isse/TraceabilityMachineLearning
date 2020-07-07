@@ -1,0 +1,8 @@
+public void testNonExistent() throws Exception {
+    try {
+        action = new EditPatientAction(factory, 0L, "200");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("Patient does not exist", e.getMessage());
+    }
+}

@@ -1,0 +1,4 @@
+public void stopEditing() {
+    treetable.getTable().editingCanceled(new ChangeEvent(treetable.getTreeTable()));
+    treetable.getTreeTable().editingCanceled(new ChangeEvent(treetable.getTreeTable()));
+}

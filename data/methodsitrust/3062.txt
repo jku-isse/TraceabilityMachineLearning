@@ -1,0 +1,29 @@
+/**
+ * Get a specific referral.
+ *
+ * @param id
+ * 		The id of the referral to retrieve.
+ * @return A ReferralBean.
+ * @throws DBException
+ * 		
+ */
+public ReferralBean getReferral(long id) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM referrals WHERE id = ?");
+        ps.setLong(1, id);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return referralLoader.loadSingle(rs);
+        } else {
+            return null;
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

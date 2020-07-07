@@ -1,0 +1,9 @@
+/**
+ * Joins two segments into one if the given Point2D.Double hits a node
+ * of the polyline.
+ *
+ * @return true if the two segments were joined.
+ */
+public int joinSegments(Point2D.Double join, float tolerance) {
+    return path.joinSegments(join, tolerance);
+}

@@ -1,0 +1,3 @@
+public void treeNodesChanged(TreeModelEvent e) {
+    isValid = false;
+}

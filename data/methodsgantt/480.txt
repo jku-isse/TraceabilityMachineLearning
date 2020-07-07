@@ -1,0 +1,29 @@
+/**
+ * Change the style of the application
+ */
+public void changeLookAndFeel(GanttLookAndFeelInfo lookAndFeel) {
+    try {
+        UIManager.setLookAndFeel(lookAndFeel.getClassName());
+        SwingUtilities.updateComponentTreeUI(this);
+        this.lookAndFeel = lookAndFeel;
+    } catch (Exception e) {
+        GanttLookAndFeelInfo info = GanttLookAndFeels.getGanttLookAndFeels().getDefaultInfo();
+        System.out.println(((((("Can	 find the LookAndFeel
+" + (lookAndFeel.getClassName())) + "
+") + (lookAndFeel.getName())) + "
+Setting the default Look
+Feel") + (info.getName())));
+        try {
+            UIManager.setLookAndFeel(info.getClassName());
+            SwingUtilities.updateComponentTreeUI(this);
+            this.lookAndFeel = info;
+        } catch (Exception ex) {
+        }
+    }
+    // MetalLookAndFeel.setCurrentTheme(new GanttMetalTheme());
+    // must force to do that instead of the task on tree are not in
+    // continuity of the calendar
+    if ((tree.getTable().getRowHeight()) <= 22)
+        tree.getTable().setRowHeight(20);
+
+}

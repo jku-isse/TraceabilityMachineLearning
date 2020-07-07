@@ -1,0 +1,4 @@
+public GanttDaysOff(Date start, Date finish) {
+    myStart = new GanttCalendar(start);
+    myFinish = new GanttCalendar(finish);
+}

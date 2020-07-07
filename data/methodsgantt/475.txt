@@ -1,0 +1,163 @@
+/**
+ * Create the button on toolbar
+ */
+public void addButtons(JToolBar toolBar) {
+    // toolBar.addSeparator(new Dimension(20,0));
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bNew = new TestGanttRolloverButton(myProjectMenu.getNewProjectAction());
+    bOpen = new TestGanttRolloverButton(myProjectMenu.getOpenProjectAction());
+    bSave = new TestGanttRolloverButton(myProjectMenu.getSaveProjectAction());
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bImport = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/import_" + (options.getIconSize())) + ".gif"))));
+    bImport.addActionListener(this);
+    // toolBar.add(bImport);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bExport = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/export_" + (options.getIconSize())) + ".gif"))));
+    bExport.addActionListener(this);
+    // toolBar.add(bExport);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bPrint = new TestGanttRolloverButton(myProjectMenu.getPrintAction());
+    bPreviewPrint = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/preview_" + (options.getIconSize())) + ".gif"))));
+    bPreviewPrint.addActionListener(this);
+    // toolBar.add(bPrint);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // toolBar.addSeparator(new Dimension(20,0));
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bComparePrev = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/comparePrev_" + (options.getIconSize())) + ".gif"))));
+    bComparePrev.setEnabled(false);
+    bComparePrev.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            compareToPreviousState();
+            if ((myPreviousStates.size()) == 0)
+                bComparePrev.setEnabled(false);
+
+        }
+    });
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bSaveCurrent = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/saveCurrentAsPrev_" + (options.getIconSize())) + ".gif"))));
+    bSaveCurrent.setEnabled(false);
+    bSaveCurrent.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            saveAsPreviousState();
+        }
+    });
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bCut = new TestGanttRolloverButton(getCutAction());
+    bCopy = new TestGanttRolloverButton(getCopyAction());
+    bPaste = new TestGanttRolloverButton(getPasteAction());
+    myNewArtefactAction = new NewArtefactAction(new NewArtefactAction.ActiveActionProvider() {
+        public AbstractAction getActiveAction() {
+            return (getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX) ? ((AbstractAction) (myNewTaskAction)) : ((AbstractAction) (myNewHumanAction));
+        }
+    }, options.getIconSize());
+    bNewTask = new TestGanttRolloverButton(myNewArtefactAction);
+    myRolloverActions.add(myNewArtefactAction);
+    bDelete = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/delete_" + (options.getIconSize())) + ".gif"))));
+    bDelete.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            if ((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) {
+                // Gantt
+                // Chart
+                // deleteTask();
+                deleteTasks(true);
+            } else
+                if ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX)) {
+                    // Resource
+                    // chart
+                    final ProjectResource[] context = getResourcePanel().getContext().getResources();
+                    if ((context.length) > 0) {
+                        UIFacade.Choice choice = getUIFacade().showConfirmationDialog((((getLanguage().getText("msg6")) + (getDisplayName(context))) + "?"), getLanguage().getText("question"));
+                        if (choice == (UIFacade.Choice.YES)) {
+                            getUndoManager().undoableEdit("Delete Human OK", new Runnable() {
+                                public void run() {
+                                    for (int i = 0; i < (context.length); i++) {
+                                        context[i].delete();
+                                    }
+                                }
+                            });
+                            repaint2();
+                            refreshProjectInfos();
+                        }
+                    }
+                }
+
+        }
+    });
+    // if(!isOnlyViewer) toolBar.add(bDelete);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bProperties = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/properties_" + (options.getIconSize())) + ".gif"))));
+    bProperties.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            if ((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) {
+                // Gantt
+                // Chart
+                propertiesTask();
+            } else
+                if ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX)) {
+                    // Resource
+                    // chart
+                    getResourcePanel().getResourcePropertiesAction().actionPerformed(null);
+                }
+
+        }
+    });
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ScrollingManager scrollingManager = getScrollingManager();
+    scrollingManager.addScrollingListener(area.getViewState());
+    scrollingManager.addScrollingListener(getResourcePanel().area.getViewState());
+    Action scrollLeft = new ScrollGanttChartLeftAction(scrollingManager, options.getIconSize());
+    myRolloverActions.add(scrollLeft);
+    bPrev = new TestGanttRolloverButton(scrollLeft);
+    bPrev.setAutoRepeatMousePressedEvent(300);
+    // toolBar.add(bPrev);
+    Action scrollCenter = area.getScrollCenterAction(scrollingManager, Mediator.getTaskSelectionManager(), options.getIconSize());
+    myRolloverActions.add(scrollCenter);
+    bScrollCenter = new TestGanttRolloverButton(scrollCenter);
+    bScrollCenter.setAutoRepeatMousePressedEvent(300);
+    // toolBar.add(bScrollCenter);
+    Action scrollRight = new ScrollGanttChartRightAction(scrollingManager, options.getIconSize());
+    myRolloverActions.add(scrollRight);
+    bNext = new TestGanttRolloverButton(scrollRight);
+    bNext.setAutoRepeatMousePressedEvent(300);
+    // toolBar.add(bNext);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Action zoomOut = new ZoomOutAction(getZoomManager(), options.getIconSize());
+    myRolloverActions.add(zoomOut);
+    bZoomOut = new TestGanttRolloverButton(zoomOut);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Action zoomIn = new ZoomInAction(getZoomManager(), options.getIconSize());
+    myRolloverActions.add(zoomIn);
+    bZoomIn = new TestGanttRolloverButton(zoomIn);
+    // toolBar.add(bZoomIn);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bAbout = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/manual_" + (options.getIconSize())) + ".gif"))));
+    bAbout.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            aboutDialog();
+        }
+    });
+    Action undo = new UndoAction(getUndoManager(), options.getIconSize(), this);
+    myRolloverActions.add(undo);
+    bUndo = new TestGanttRolloverButton(undo);
+    Action redo = new RedoAction(getUndoManager(), options.getIconSize(), this);
+    myRolloverActions.add(redo);
+    bRedo = new TestGanttRolloverButton(redo);
+    Action critic = new CalculateCriticalPathAction(getTaskManager(), tree, options, getUIConfiguration(), this);
+    myRolloverActions.add(critic);
+    bCritical = new TestGanttRolloverButton(critic);
+    bRefresh = new TestGanttRolloverButton(new ImageIcon(getClass().getResource((("/icons/refresh_" + (options.getIconSize())) + ".gif"))));
+    bRefresh.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            getUIFacade().setStatusText(GanttLanguage.getInstance().getText("refresh"));
+            getUIFacade().refresh();
+        }
+    });
+    bShowHiddens = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/showHiddens.gif")));
+    bShowHiddens.addActionListener(this);
+    iconList = initIconList();
+    deletedIconList = initDeletedIconList();
+    addButtons();
+    applyButtonOptions();
+}

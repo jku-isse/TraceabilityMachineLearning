@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public LoadRecentAction(Application app, File file) {
+    super(app);
+    this.file = file;
+    putValue(Action.NAME, file.getName());
+}

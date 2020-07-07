@@ -1,0 +1,120 @@
+/**
+ * Perform a alpha-beta minimax search on the board.
+ *
+ * @param lastPly
+ * 		The ply, that created this board.
+ * @param board
+ * 		The board to analyze.
+ * @param white
+ * 		true, if white has the next move.
+ * @param byte
+ * 		searchLevel The level to search for.
+ * @param alpha
+ * 		The current maximum.
+ * @param beta
+ * 		The current minimum.
+ * @throws InterruptedException
+ * 		if the search was interrupted because of a timeout.
+ */
+private final short minimaxAlphaBeta(Ply lastPly, Board board, boolean white, int searchLevel, short alpha, short beta) throws InterruptedException {
+    if ((searchLevel >= (getSearchDepth())) && (((!(lastPly.isCapture())) || (!(lastPly instanceof TransformationPly))) || (!(_analyzer.isInCheck(((BitBoard) (board)), (!white)))))) {
+        increaseAnalyzedBoards();
+        return analyzeBoard(board);
+    } else {
+        short curAlpha = alpha;
+        short curBeta = beta;
+        int bestPlyIndex = -1;
+        Ply[] plies = _plyGenerator.getPliesForColor(((BitBoard) (board)), white);
+        if (white) {
+            for (int i = 0; i < (plies.length); i++) {
+                if ((isSearchStop()) && ((getSearchDepth()) > 1)) {
+                    // If the search time is over and at least depth 1 was completed
+                    throw new InterruptedException(("Search interrupted at depth " + (getSearchDepth())));// abort the search.
+
+                }
+                getGame().doPly(plies[i]);
+                short val;
+                try {
+                    val = minimaxAlphaBeta(plies[i], board.getBoardAfterPly(plies[i]), false, (searchLevel + 1), curAlpha, curBeta);
+                } catch (InterruptedException ie) {
+                    getGame().undoLastPly();// Undo the last move
+
+                    throw ie;// and pass the exception.
+
+                }
+                if (val > curAlpha) {
+                    curAlpha = val;
+                    bestPlyIndex = i;// Store the index of this ply, so we can access it later.
+
+                }
+                if (curAlpha >= curBeta) {
+                    getGame().undoLastPly();// Take the last ply back, before the loop is aborted.
+
+                    break;
+                }
+                getGame().undoLastPly();
+            }
+            if (bestPlyIndex != (-1)) {
+                // Since this is the best ply for this search level, we store it in the hashtable
+                getHashtable().pushEntry(new PlyHashtableEntryImpl(board, plies[bestPlyIndex], ((getSearchDepth()) - searchLevel)));
+            } else {
+                if ((plies.length) == 0) {
+                    // There are no legal moves available?
+                    if (_analyzer.isInCheck(((BitBoard) (board)), white)) {
+                        // Is this a checkmate?
+                        return BitBoardAnalyzer.BLACK_HAS_WON;
+                    } else {
+                        // Looks like a draw?
+                        return BitBoardAnalyzer.DRAW;
+                    }
+                }
+            }
+            return curAlpha;
+        } else {
+            for (int i = 0; i < (plies.length); i++) {
+                if ((isSearchStop()) && ((getSearchDepth()) > 1)) {
+                    // If the search time is over and at least depth 1 was completed
+                    throw new InterruptedException(("Search interrupted at depth " + (getSearchDepth())));// abort the search.
+
+                }
+                getGame().doPly(plies[i]);
+                short val;
+                try {
+                    val = minimaxAlphaBeta(plies[i], board.getBoardAfterPly(plies[i]), true, (searchLevel + 1), curAlpha, curBeta);
+                } catch (InterruptedException ie) {
+                    getGame().undoLastPly();// Undo the last move
+
+                    throw ie;// and pass the exception.
+
+                }
+                if (val < curBeta) {
+                    curBeta = val;
+                    bestPlyIndex = i;// Store the index of this ply, so we can access it later.
+
+                }
+                if (curBeta <= curAlpha) {
+                    getGame().undoLastPly();// Take the last ply back, before the loop is aborted.
+
+                    break;
+                }
+                getGame().undoLastPly();
+            }
+            if (bestPlyIndex != (-1)) {
+                // Since this is the best ply for this search level, we store it in the hashtable
+                getHashtable().pushEntry(new PlyHashtableEntryImpl(board, plies[bestPlyIndex], ((getSearchDepth()) - searchLevel)));
+            } else {
+                if ((plies.length) == 0) {
+                    // There are no legal moves available?
+                    if (_analyzer.isInCheck(((BitBoard) (board)), white)) {
+                        // Is this a checkmate?
+                        return BitBoardAnalyzer.WHITE_HAS_WON;
+                    } else {
+                        // Looks like a draw?
+                        return BitBoardAnalyzer.DRAW;
+                    }
+                }
+            }
+            return curBeta;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+// boolean getShowStatusBar() {
+// return cbShowStatus.isSelected();
+// }
+/**
+ * Initialize the component.
+ */
+public void initialize() {
+    cbLnf.setSelectedItem(appli.lookAndFeel);
+    cbSmallIcon.setSelected(appli.getOptions().getIconSize().equals("16"));
+    cbButtonType.setSelectedIndex(appli.getOptions().getButtonShow());
+    // cbShowStatus.setSelected(appli.getOptions().getShowStatusBar());
+    deletedIconList = new DefaultListModel();
+    deletedIconList.addElement(GPToolBar.SEPARATOR_OBJECT);
+    deletedButtonList = new DefaultListModel();
+    deletedButtonList.addElement(GPToolBar.SEPARATOR_OBJECT);
+    for (int i = 0; i < (appli.getDeletedButtonList().size()); i++) {
+        if ((GPToolBar.SEPARATOR_OBJECT) != (appli.getDeletedButtonList().getElementAt(i))) {
+            deletedButtonList.addElement(appli.getDeletedButtonList().getElementAt(i));
+        }
+    }
+    for (int i = 1; i < (deletedButtonList.size()); i++) {
+        if ((((TestGanttRolloverButton) (deletedButtonList.getElementAt(i))).getIcon()) == null)
+            deletedIconList.addElement(((TestGanttRolloverButton) (deletedButtonList.getElementAt(i))).getText());
+        else
+            deletedIconList.addElement(((TestGanttRolloverButton) (deletedButtonList.getElementAt(i))).getIcon());
+
+    }
+    iconList = new DefaultListModel();
+    buttonList = new DefaultListModel();
+    for (int i = 0; i < (appli.getButtonList().size()); i++)
+        buttonList.addElement(appli.getButtonList().getElementAt(i));
+
+    for (int i = 0; i < (buttonList.size()); i++) {
+        if (buttonList.elementAt(i).equals(GPToolBar.SEPARATOR_OBJECT))
+            iconList.addElement(buttonList.getElementAt(i));
+        else {
+            if ((((TestGanttRolloverButton) (buttonList.getElementAt(i))).getIcon()) == null)
+                iconList.addElement(((TestGanttRolloverButton) (buttonList.getElementAt(i))).getText());
+            else
+                iconList.addElement(((TestGanttRolloverButton) (buttonList.getElementAt(i))).getIcon());
+
+        }
+    }
+    list.setModel(iconList);
+    listDeleted.setModel(deletedIconList);
+    bHasChange = false;
+}

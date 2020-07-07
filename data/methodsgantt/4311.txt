@@ -1,0 +1,7 @@
+public GanttCalendar getStart() {
+    if (((myMutator) != null) && ((myMutator.myIsolationLevel) == (TaskMutator.READ_UNCOMMITED))) {
+        return myMutator.getStart();
+    } else {
+        return myStart;
+    }
+}

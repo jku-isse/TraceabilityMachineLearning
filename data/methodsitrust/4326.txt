@@ -1,0 +1,15 @@
+/**
+ *
+ *
+ * @param name
+ * 		
+ * @return 
+ */
+public static MedicalReportFilter.MedicalReportFilterType filterTypeFromString(String name) {
+    for (MedicalReportFilter.MedicalReportFilterType type : MedicalReportFilter.MedicalReportFilterType.values()) {
+        if (type.name().equalsIgnoreCase(name)) {
+            return type;
+        }
+    }
+    return null;
+}

@@ -1,0 +1,3 @@
+public int toRGB(float... components) {
+    return ((-16777216 | (((int) ((components[0]) * 255)) << 16)) | (((int) ((components[1]) * 255)) << 8)) | ((int) ((components[2]) * 255));
+}

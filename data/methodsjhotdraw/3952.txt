@@ -1,0 +1,6 @@
+/**
+ * Set the value produced by worker thread
+ */
+private synchronized void setValue(Object x) {
+    value = x;
+}

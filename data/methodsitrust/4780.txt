@@ -1,0 +1,24 @@
+public void testValidateGoodComment() {
+    bean.setComment("x");// shortest possible entry
+
+    try {
+        validator.validate(bean);
+    } catch (FormValidationException e) {
+        fail("Validation should have passed.");
+    }
+    bean.setComment("#;?-.:,!/ 
+");// special legal characters
+
+    try {
+        validator.validate(bean);
+    } catch (FormValidationException e) {
+        fail("Validation should have passed.");
+    }
+    bean.setComment(longString(500));// longest possible entry
+
+    try {
+        validator.validate(bean);
+    } catch (FormValidationException e) {
+        fail("Validation should have passed.");
+    }
+}

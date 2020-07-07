@@ -1,0 +1,8 @@
+public void testInvalidData() throws AddPatientFileException, CSVFormatException, FileNotFoundException {
+    DAOFactory prodDAO = DAOFactory.getProductionInstance();
+    AuthDAO authDAO = prodDAO.getAuthDAO();
+    InputStream testFile = new FileInputStream("testing-files/sample_patientupload/HCPPatientUploadInvalidData.csv");
+    AddPatientFileAction apfa = new AddPatientFileAction(testFile, null, 0);
+    assertEquals(1, apfa.getPatients().size());
+    assertTrue(apfa.getErrors().hasErrors());
+}

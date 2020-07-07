@@ -1,0 +1,3 @@
+public void trackEnd(Point anchor, Point lead, int modifiersEx) {
+    fireUndoableEditHappened(new GeometryEdit(getOwner(), geometry, getOwner().getTransformRestoreData()));
+}

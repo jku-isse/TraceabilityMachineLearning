@@ -1,0 +1,10 @@
+// public static void registerRoleManager(RoleManager roleMgr) {
+// roleManager = roleMgr;
+// }
+// 
+// public static void registerTaskManager(TaskManager taskMgr) {
+// taskManager = taskMgr;
+// }
+public static void registerUndoManager(GPUndoManager undoMgr) {
+    Mediator.undoManager = undoMgr;
+}

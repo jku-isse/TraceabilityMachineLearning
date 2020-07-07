@@ -1,0 +1,5 @@
+public ResourceAssignment createAssignment(ResourceAssignment assignmentToTask) {
+    ResourceAssignment result = super.createAssignment(assignmentToTask);
+    fireAssignmentsChanged();
+    return result;
+}

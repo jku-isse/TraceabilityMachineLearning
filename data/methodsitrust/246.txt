@@ -1,0 +1,29 @@
+/**
+ * Updates an existing appointment
+ *
+ * @param appt
+ * 		Appointment Bean containing the updated information
+ * @return Message to be displayed
+ * @throws FormValidationException
+ * 		
+ * @throws SQLException
+ * 		
+ */
+public String editAppt(ApptBean appt, boolean ignoreConflicts) throws FormValidationException, SQLException {
+    validator.validate(appt);
+    if (appt.getDate().before(new Timestamp(System.currentTimeMillis())))
+        return ("The scheduled date of this appointment (" + (appt.getDate())) + ") has already passed.";
+
+    if (!ignoreConflicts) {
+        if ((getConflictsForAppt(appt.getHcp(), appt).size()) > 0) {
+            return "Warning! This appointment conflicts with other appointments";
+        }
+    }
+    try {
+        apptDAO.editAppt(appt);
+        return "Success: Appointment changed";
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    }
+}

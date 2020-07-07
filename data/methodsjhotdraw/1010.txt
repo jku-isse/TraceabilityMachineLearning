@@ -1,0 +1,3 @@
+protected int getHandlesize() {
+    return ((Integer) (getEditor().getHandleAttribute(HandleAttributeKeys.HANDLE_SIZE)));
+}

@@ -1,0 +1,3 @@
+public Dimension2DDouble getCanvasSize() {
+    return (canvasSize) == null ? null : ((Dimension2DDouble) (canvasSize.clone()));
+}

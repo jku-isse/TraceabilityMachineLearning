@@ -1,0 +1,25 @@
+/**
+ * Apply Buttons options.
+ */
+public void applyButtonOptions() {
+    setButtonText();
+    if ((options.getButtonShow()) == (GanttOptions.TEXT)) {
+        for (int i = 0; i < (myRolloverActions.size()); i++) {
+            RolloverAction next = ((RolloverAction) (myRolloverActions.get(i)));
+            next.isIconVisible(false);
+            next.setIconSize(options.getIconSize());
+        }
+    } else {
+        if (!(myUIConfiguration.isCriticalPathOn()))
+            bCritical.setDefaultIcon(new ImageIcon(getClass().getResource((("/icons/criticalPathOff_" + (options.getIconSize())) + ".gif"))));
+        else
+            bCritical.setDefaultIcon(new ImageIcon(getClass().getResource((("/icons/criticalPathOn_" + (options.getIconSize())) + ".gif"))));
+
+        for (int i = 0; i < (myRolloverActions.size()); i++) {
+            RolloverAction next = ((RolloverAction) (myRolloverActions.get(i)));
+            next.isIconVisible(true);
+            next.setIconSize(options.getIconSize());
+        }
+    }
+    toolBar.updateButtonsLook();
+}

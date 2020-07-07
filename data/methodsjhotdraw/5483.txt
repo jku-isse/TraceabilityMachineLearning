@@ -1,0 +1,19 @@
+public void trackStep(Point anchor, Point lead, int modifiersEx) {
+    int dx = (lead.x) - (anchor.x);
+    int dy = (lead.y) - (anchor.y);
+    SVGRectFigure svgRect = ((SVGRectFigure) (getOwner()));
+    svgRect.willChange();
+    Point2D.Double p = view.viewToDrawing(lead);
+    if ((AttributeKeys.TRANSFORM.get(svgRect)) != null) {
+        try {
+            AttributeKeys.TRANSFORM.get(svgRect).inverseTransform(p, p);
+        } catch (NoninvertibleTransformException ex) {
+            if (SVGRectRadiusHandle.DEBUG)
+                ex.printStackTrace();
+
+        }
+    }
+    Rectangle2D.Double r = svgRect.getBounds();
+    svgRect.setArc(((p.x) - (r.x)), ((p.y) - (r.y)));
+    svgRect.changed();
+}

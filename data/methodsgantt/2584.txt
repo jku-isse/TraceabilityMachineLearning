@@ -1,0 +1,12 @@
+protected void addLookAndFeel(GanttLookAndFeelInfo info) {
+    if ((info.getName().startsWith("Kunststoff")) && (System.getProperty("os.name").startsWith("Mac"))) {
+        System.err.println("LookAndFeel not added (Kunststoff is ignored on MacOS).");
+    } else {
+        if (!(infoByClass.containsKey(info.getClassName()))) {
+            infoByClass.put(info.getClassName(), info);
+            infoByName.put(info.getName(), info);
+        } else {
+            System.err.println((((("LookAndFeel " + info) + "(") + (info.getClassName())) + ") already installed."));
+        }
+    }
+}

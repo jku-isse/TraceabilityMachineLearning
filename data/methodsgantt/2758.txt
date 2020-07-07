@@ -1,0 +1,35 @@
+/**
+ * Return the object a specify cell
+ */
+public Object getValueAt(int row, int col) {
+    Object result;
+    if (row >= 0) {
+        if (row < (myAssignments.size())) {
+            ResourceAssignment assignment = ((ResourceAssignment) (myAssignments.get(row)));
+            switch (col) {
+                case 0 :
+                    result = String.valueOf(assignment.getResource().getId());
+                    break;
+                case 1 :
+                    result = assignment.getResource();
+                    break;
+                case 2 :
+                    result = String.valueOf(assignment.getLoad());
+                    break;
+                case 3 :
+                    result = new Boolean(assignment.isCoordinator());
+                    break;
+                case 4 :
+                    result = assignment.getRoleForAssignment();
+                    break;
+                default :
+                    result = "";
+            }
+        } else {
+            result = "";
+        }
+    } else {
+        throw new IllegalArgumentException(("I cant return data in row=" + row));
+    }
+    return result;
+}

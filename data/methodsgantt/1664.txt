@@ -1,0 +1,3 @@
+protected TimeUnit getBottomUnit() {
+    return myBottomUnit;
+}

@@ -1,0 +1,4 @@
+public void selectionChanged(List currentSelection) {
+    setEnabled(isEnabled(currentSelection));
+    mySelection = currentSelection;
+}

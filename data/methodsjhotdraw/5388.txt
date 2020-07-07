@@ -1,0 +1,3 @@
+public Object getTransformRestoreData() {
+    return new Object[]{ rectangle.clone(), AttributeKeys.TRANSFORM.get(this) };
+}

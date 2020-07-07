@@ -1,0 +1,10 @@
+/**
+ * Gets the beans <code>EventSetDescriptor</code>s.
+ *
+ * @return An array of EventSetDescriptors describing the kinds of
+events fired by this bean.  May return null if the information
+should be obtained by automatic analysis.
+ */
+public EventSetDescriptor[] getEventSetDescriptors() {
+    return DrawingPanelBeanInfo.getEdescriptor();
+}

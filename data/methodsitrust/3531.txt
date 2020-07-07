@@ -1,0 +1,3 @@
+public void expertHospitals() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/expertHospitals.sql"));
+}

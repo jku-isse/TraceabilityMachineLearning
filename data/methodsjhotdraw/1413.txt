@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public CompositeTransformEdit(AbstractFigure owner, AffineTransform tx) {
+    this.owner = owner;
+    this.tx = ((AffineTransform) (tx.clone()));
+    inProgress = true;
+}

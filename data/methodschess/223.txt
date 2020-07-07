@@ -1,0 +1,8 @@
+/**
+ * Get the current board.
+ *
+ * @return The current board.
+ */
+final BitBoard getBoard() {
+    return _board;
+}

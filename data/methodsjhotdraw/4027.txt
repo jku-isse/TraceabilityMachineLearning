@@ -1,0 +1,3 @@
+public void setUserObject(Object object) {
+    throw new UnsupportedOperationException("Not supported.");
+}

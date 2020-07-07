@@ -1,0 +1,9 @@
+// CONNECTING
+/**
+ * Tests whether a figure can be a connection target.
+ * ConnectionFigures cannot be connected and return false.
+ */
+@Override
+public boolean canConnect() {
+    return false;
+}

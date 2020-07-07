@@ -1,0 +1,3 @@
+public TaskDisplayColumnsTagHandler(TableHeaderUIFacade visibleFields) {
+    this(visibleFields, "displaycolumn", "property-id", "order", "width");
+}

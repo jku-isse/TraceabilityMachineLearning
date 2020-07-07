@@ -1,0 +1,29 @@
+/**
+ * Returns the patients information for a given ID
+ *
+ * @param mid
+ * 		The MID of the patient to retrieve.
+ * @return A PatientBean representing the patient.
+ * @throws DBException
+ * 		
+ */
+public PatientBean getPatient(long mid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM patients WHERE MID = ?");
+        ps.setLong(1, mid);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return patientLoader.loadSingle(rs);
+        } else
+            return null;
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

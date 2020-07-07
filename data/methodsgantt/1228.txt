@@ -1,0 +1,19 @@
+public Component getTableCellEditorComponent(JTable arg0, Object arg1, boolean arg2, int arg3, int arg4) {
+    final Component result = myProxiedEditor.getTableCellEditorComponent(arg0, arg1, arg2, arg3, arg4);
+    if (result instanceof JTextComponent) {
+        ((JTextComponent) (result)).selectAll();
+        result.addFocusListener(new FocusAdapter() {
+            public void focusGained(FocusEvent arg0) {
+                super.focusGained(arg0);
+                ((JTextComponent) (result)).selectAll();
+                result.removeFocusListener(this);
+            }
+
+            public void focusLost(FocusEvent arg0) {
+                // TODO Auto-generated method stub
+                super.focusLost(arg0);
+            }
+        });
+    }
+    return result;
+}

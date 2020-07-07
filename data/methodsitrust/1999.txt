@@ -1,0 +1,6 @@
+public void addReason(OverrideReasonBean reason) {
+    if ((reasons) == null) {
+        reasons = new ArrayList<OverrideReasonBean>();
+    }
+    reasons.add(reason);
+}

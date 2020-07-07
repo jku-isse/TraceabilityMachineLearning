@@ -1,0 +1,9 @@
+public void testGetSpecificReport4CheckDetails() throws Exception {
+    ReportRequestBean b = dao.getReportRequest(4);
+    assertEquals(4, b.getID());
+    assertEquals(9000000000L, b.getRequesterMID());
+    assertEquals(2, b.getPatientMID());
+    assertEquals("01/04/2008 12:00", b.getRequestedDateString());
+    assertEquals("03/04/2008 12:00", b.getViewedDateString());
+    assertEquals(ReportRequestBean.Viewed, b.getStatus());
+}

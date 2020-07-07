@@ -1,0 +1,3 @@
+public void setCholesterolTri(int cholesterolTri) {
+    this.cholesterolTri = cholesterolTri;
+}

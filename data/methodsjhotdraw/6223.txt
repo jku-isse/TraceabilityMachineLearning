@@ -1,0 +1,6 @@
+/**
+ * Returns the scale factor of the number formatter.
+ */
+public double getScaleFactor() {
+    return scaleFactor;
+}

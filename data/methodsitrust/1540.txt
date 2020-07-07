@@ -1,0 +1,10 @@
+public DiagnosisBean(String code, String description, String classification, String URL) {
+    this.icdCode = code;
+    this.description = description;
+    this.URL = URL;
+    if ((null != classification) && (classification.equals("yes"))) {
+        this.classification = classification;
+    } else {
+        this.classification = "no";
+    }
+}

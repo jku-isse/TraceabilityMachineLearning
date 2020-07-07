@@ -1,0 +1,33 @@
+/**
+ * Checks to see if a patient needs the Polio immunization
+ *
+ * @param count
+ * 		which immunization they are on
+ * @param patientAge
+ * 		how old the patient is
+ * @param time
+ * 		what the current date is
+ * @return when the immunization should be given
+ */
+public static String testPolio(int count, Date patientDOB, long time) {
+    String reason = "";
+    long weeks = ((Calendar.getInstance().getTimeInMillis()) - time) / (GetVisitRemindersAction.WEEK_IN_MILLIS);
+    if (0 == count) {
+        if (GetVisitRemindersAction.olderThan(patientDOB, 0, 0, 6))
+            reason += "90712 Poliovirus (6 weeks), ";
+
+    } else
+        if (1 == count) {
+            if ((GetVisitRemindersAction.olderThan(patientDOB, 0, 4, 0)) && (4 <= weeks))
+                reason += "90712 Poliovirus (4 months), ";
+
+        } else
+            if (2 == count) {
+                if (GetVisitRemindersAction.olderThan(patientDOB, 0, 6, 0))
+                    reason += "90712 Poliovirus (6 months), ";
+
+            }
+
+
+    return reason;
+}

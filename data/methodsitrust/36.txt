@@ -1,0 +1,19 @@
+/**
+ * Returns the last ID that was generated for an auto-increment column. Please note that this does NOT
+ * cause transaction problems! last_insert_id() returns the last generated ID on a per-connection basis.
+ * See the MySQL documentation at the following location to confirm this:
+ * {@link http://dev.mysql.com/doc/refman/5.0/en/getting-unique-id.html}
+ *
+ * Dont believe me? see {@link AutoIncrementTest}
+ *
+ * @param conn
+ * 		
+ * @return last generated id
+ * @throws SQLException
+ * 		
+ */
+public static long getLastInsert(Connection conn) throws SQLException {
+    ResultSet rs = conn.createStatement().executeQuery("SELECT LAST_INSERT_ID()");
+    rs.next();
+    return rs.getLong(1);
+}

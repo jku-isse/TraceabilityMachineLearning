@@ -1,0 +1,7 @@
+public SVGApplet() {
+    setBackground(Color.WHITE);
+    start = System.currentTimeMillis();
+    setName("JHotDraw SVG Applet");
+    ((JComponent) (getContentPane())).setBorder(new MatteBorder(new Insets(1, 1, 1, 1), new Color(10855845)));
+    // ResourceBundleUtil.setVerbose(true);
+}

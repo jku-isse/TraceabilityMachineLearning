@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public TransformEdit(Figure figure, AffineTransform tx) {
+    figures = new LinkedList<Figure>();
+    ((LinkedList<Figure>) (figures)).add(figure);
+    this.tx = ((AffineTransform) (tx.clone()));
+}

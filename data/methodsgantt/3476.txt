@@ -1,0 +1,6 @@
+/**
+ * Constructor with a task manager.
+ */
+public GanttTXTOpen(TaskManager taskManager) {
+    myTaskManager = taskManager;
+}

@@ -1,0 +1,21 @@
+@Override
+public Collection<Handle> createHandles(int detailLevel) {
+    LinkedList<Handle> handles = new LinkedList<Handle>();
+    switch (detailLevel % 2) {
+        case -1 :
+            // Mouse hover handles
+            handles.add(new BezierOutlineHandle(this, true));
+            break;
+        case 0 :
+            handles.add(new BezierOutlineHandle(this));
+            for (int i = 0, n = path.size(); i < n; i++) {
+                handles.add(new BezierNodeHandle(this, i));
+            }
+            break;
+        case 1 :
+            TransformHandleKit.addTransformHandles(this, handles);
+            handles.add(new BezierScaleHandle(this));
+            break;
+    }
+    return handles;
+}

@@ -1,0 +1,53 @@
+/**
+ * Creates a window which contains the toolbar after it has been
+ * dragged out from its container
+ *
+ * @return a <code>RootPaneContainer</code> object, containing the toolbar.
+ */
+protected RootPaneContainer createFloatingWindow(JToolBar toolbar) {
+    class ToolBarDialog extends JDialog {
+        public ToolBarDialog(Frame owner, String title, boolean modal) {
+            super(owner, title, modal);
+        }
+
+        public ToolBarDialog(Dialog owner, String title, boolean modal) {
+            super(owner, title, modal);
+        }
+
+        // Override createRootPane() to automatically resize
+        // the frame when contents change
+        protected JRootPane createRootPane() {
+            JRootPane rootPane = new JRootPane() {
+                private boolean packing = false;
+
+                public void validate() {
+                    super.validate();
+                    if (!(packing)) {
+                        packing = true;
+                        pack();
+                        packing = false;
+                    }
+                }
+            };
+            rootPane.setOpaque(true);
+            return rootPane;
+        }
+    }
+    JDialog dialog;
+    Window window = SwingUtilities.getWindowAncestor(toolbar);
+    if (window instanceof Frame) {
+        dialog = new ToolBarDialog(((Frame) (window)), toolbar.getName(), false);
+    } else
+        if (window instanceof Dialog) {
+            dialog = new ToolBarDialog(((Dialog) (window)), toolbar.getName(), false);
+        } else {
+            dialog = new ToolBarDialog(((Frame) (null)), toolbar.getName(), false);
+        }
+
+    dialog.getRootPane().setName("ToolBar.FloatingWindow");
+    dialog.setTitle(toolbar.getName());
+    dialog.setResizable(false);
+    WindowListener wl = createFrameListener();
+    dialog.addWindowListener(wl);
+    return dialog;
+}

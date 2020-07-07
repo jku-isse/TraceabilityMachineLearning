@@ -1,0 +1,11 @@
+/**
+ * Moves to the end position of the game
+ */
+private void moveToEnd() {
+    /**
+     *
+     *
+     * @unknown still to implement
+     */
+    System.out.println("Zum Partieende");
+}

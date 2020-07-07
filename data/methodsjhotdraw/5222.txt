@@ -1,0 +1,69 @@
+/**
+ * Creates new instance.
+ */
+public SVGDrawingPanel() {
+    labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+    ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    try {
+        prefs = Preferences.userNodeForPackage(getClass());
+    } catch (SecurityException e) {
+        // prefs is null, because we are not permitted to read preferences
+    }
+    initComponents();
+    toolsPane.setLayout(new ToolBarLayout());
+    toolsPane.setBackground(new Color(15790320));
+    toolsPane.setOpaque(true);
+    viewToolBar.setView(view);
+    undoManager = new UndoRedoManager();
+    setEditor(new DefaultDrawingEditor());
+    editor.setHandleAttribute(HandleAttributeKeys.HANDLE_SIZE, new Integer(7));
+    DefaultDrawing drawing = new DefaultDrawing();
+    view.setDrawing(drawing);
+    drawing.addUndoableEditListener(undoManager);
+    /* FIXME - Implement the code for handling constraints!
+    toggleGridAction = actionToolBar.getToggleGridAction();
+    if (prefs != null && prefs.getBoolean("gridVisible", false)) {
+    view.setConstrainer(view.getOnConstrainer());
+    }
+    view.addPropertyChangeListener(new PropertyChangeListener() {
+    public void propertyChange(PropertyChangeEvent evt) {
+    if (evt.getPropertyName().equals("constrainer") && prefs) {
+    prefs.putBoolean("gridVisible", evt.getNewValue() == toggleGridAction.getOnConstrainer());
+    }
+    }
+    });
+     */
+    // Sort the toolbars according to the user preferences
+    ArrayList<JToolBar> sortme = new ArrayList<JToolBar>();
+    for (Component c : toolsPane.getComponents()) {
+        if (c instanceof JToolBar) {
+            sortme.add(((JToolBar) (c)));
+        }
+    }
+    Collections.sort(sortme, new Comparator<JToolBar>() {
+        public int compare(JToolBar tb1, JToolBar tb2) {
+            int i1 = prefs.getInt(("toolBarIndex." + (tb1.getName())), 0);
+            int i2 = prefs.getInt(("toolBarIndex." + (tb2.getName())), 0);
+            return i1 - i2;
+        }
+    });
+    toolsPane.removeAll();
+    for (JToolBar tb : sortme) {
+        toolsPane.add(tb);
+    }
+    toolsPane.addContainerListener(new ContainerListener() {
+        public void componentAdded(ContainerEvent e) {
+            int i = 0;
+            for (Component c : toolsPane.getComponents()) {
+                if (c instanceof JToolBar) {
+                    JToolBar tb = ((JToolBar) (c));
+                    prefs.putInt(("toolBarIndex." + (tb.getName())), i);
+                    i++;
+                }
+            }
+        }
+
+        public void componentRemoved(ContainerEvent e) {
+        }
+    });
+}

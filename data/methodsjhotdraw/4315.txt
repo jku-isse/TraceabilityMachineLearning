@@ -1,0 +1,7 @@
+public void setBorderColor(Color c) {
+    if ((this.borderColor) == c) {
+        return;
+    }
+    this.borderColor = c;
+    repaint();
+}

@@ -1,0 +1,25 @@
+/**
+ * Launches the application.
+ *
+ * @param args
+ * 		the command line arguments
+ */
+public static void main(String[] args) {
+    TeddyApplicationModel tam = new TeddyApplicationModel();
+    tam.setCopyright(Main.COPYRIGHT);
+    tam.setName(Main.NAME);
+    tam.setViewClassName("org.jhotdraw.samples.teddy.TeddyView");
+    tam.setVersion(Main.class.getPackage().getImplementationVersion());
+    Application app;
+    if (System.getProperty("os.name").toLowerCase().startsWith("mac os x")) {
+        app = new DefaultOSXApplication();
+    } else
+        if (System.getProperty("os.name").toLowerCase().startsWith("win")) {
+            app = new DefaultMDIApplication();
+        } else {
+            app = new DefaultSDIApplication();
+        }
+
+    app.setModel(tam);
+    app.launch(args);
+}

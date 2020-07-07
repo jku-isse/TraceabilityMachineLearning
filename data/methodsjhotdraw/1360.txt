@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ * Only used for storable.
+ */
+public ChopRectangleConnector() {
+}

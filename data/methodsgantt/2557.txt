@@ -1,0 +1,6 @@
+/**
+ * Constructor
+ */
+public GanttDialogDate(JDialog parent, GanttCalendar date) {
+    this(parent, date, false);
+}

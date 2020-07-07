@@ -1,0 +1,4 @@
+private void invalidateTransformedShape() {
+    cachedTransformedShape = null;
+    cachedHitShape = null;
+}

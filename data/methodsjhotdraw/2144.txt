@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public HandleEvent(Handle src, Rectangle invalidatedArea) {
+    super(src);
+    this.invalidatedArea = invalidatedArea;
+}

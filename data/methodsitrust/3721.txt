@@ -1,0 +1,4 @@
+@Override
+public void print(String arg0) throws IOException {
+    this.input += arg0;
+}

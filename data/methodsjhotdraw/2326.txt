@@ -1,0 +1,12 @@
+// DRAWING
+// SHAPE AND BOUNDS
+/**
+ * Ensures that a connection is updated if the connection
+ * was moved.
+ */
+@Override
+public void transform(AffineTransform tx) {
+    super.transform(tx);
+    updateConnection();// make sure that we are still connected
+
+}

@@ -1,0 +1,12 @@
+protected ArrayList<FontFamilyNode> collectFamiliesNamed(ArrayList<FontFamilyNode> families, String... names) {
+    ArrayList<FontFamilyNode> coll = new ArrayList<FontFamilyNode>();
+    HashSet<String> nameMap = new HashSet<String>();
+    nameMap.addAll(Arrays.asList(names));
+    for (FontFamilyNode family : families) {
+        String fName = family.getName();
+        if (nameMap.contains(family.getName())) {
+            coll.add(family.clone());
+        }
+    }
+    return coll;
+}

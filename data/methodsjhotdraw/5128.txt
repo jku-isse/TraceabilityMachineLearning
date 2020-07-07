@@ -1,0 +1,7 @@
+public boolean equals(Object o) {
+    if (o instanceof LinearGradient) {
+        return equals(((LinearGradient) (o)));
+    } else {
+        return false;
+    }
+}

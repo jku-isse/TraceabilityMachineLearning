@@ -1,0 +1,9 @@
+public void testDeclareDuplicateHCP() throws Exception {
+    patientDAO.declareHCP(2L, 9000000000L);
+    try {
+        patientDAO.declareHCP(2L, 9000000000L);
+        fail("Exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("HCP 9000000000 has already been declared for patient 2", e.getMessage());
+    }
+}

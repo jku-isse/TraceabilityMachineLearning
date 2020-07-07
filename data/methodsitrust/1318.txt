@@ -1,0 +1,14 @@
+/**
+ * Returns a list of all the visited and/or designated HCPs.
+ *
+ * @return list of all the visited HCPs
+ */
+public List<HCPVisitBean> getVisitedHCPs() {
+    List<HCPVisitBean> visits;
+    try {
+        visits = getAllVisitedHCPs(null, null, null);
+    } catch (iTrustException ie) {
+        visits = new ArrayList<HCPVisitBean>();
+    }
+    return visits;
+}

@@ -1,0 +1,4 @@
+public TaskTagHandler(TaskManager mgr, ParsingContext context) {
+    myManager = mgr;
+    myContext = context;
+}

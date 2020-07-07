@@ -1,0 +1,26 @@
+/**
+ * Gets an individual lab procedure.
+ *
+ * @param id
+ * 		The ID of the lab procedure.
+ * @return A LabProcedureBean representing the procedure.
+ * @throws DBException
+ * 		
+ */
+public LabProcedureBean getLabProcedure(long id) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM labprocedure WHERE LaboratoryProcedureID = ?");
+        ps.setLong(1, id);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return labProcedureLoader.loadSingle(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

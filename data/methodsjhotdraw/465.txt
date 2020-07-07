@@ -1,0 +1,9 @@
+/**
+ * Returns the BoundedRangeModel used for the specified component
+ * index.
+ *
+ * @param componentIndex
+ * 		.
+ * @return BoundedRangeModel.
+ */
+public BoundedRangeModel getBoundedRangeModel(int componentIndex);

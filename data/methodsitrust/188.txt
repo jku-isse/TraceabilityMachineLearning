@@ -1,0 +1,9 @@
+public void testAddRemoteMonitoringPedometerReadingDataOnly() throws Exception {
+    try {
+        RemoteMonitoringDataBean b = new RemoteMonitoringDataBean();
+        b.setPedometerReading(1234);
+        action.addRemoteMonitoringData(b);
+    } catch (FormValidationException e) {
+        fail();
+    }
+}

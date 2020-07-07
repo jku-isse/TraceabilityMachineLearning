@@ -1,0 +1,3 @@
+public FinishFinishConstraintImpl() {
+    super(GanttTaskRelationship.FF, GanttLanguage.getInstance().getText("finishfinish"));
+}

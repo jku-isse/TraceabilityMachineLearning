@@ -1,0 +1,3 @@
+protected void endElement(String name, TransformerHandler handler) throws SAXException {
+    handler.endElement("", name, name);
+}

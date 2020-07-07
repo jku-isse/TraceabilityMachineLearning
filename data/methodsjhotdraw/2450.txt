@@ -1,0 +1,4 @@
+@Override
+public boolean contains(Figure f) {
+    return children.contains(f);
+}

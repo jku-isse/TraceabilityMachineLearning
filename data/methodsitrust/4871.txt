@@ -1,0 +1,5 @@
+public void testMIDLength() throws Exception {
+    String value = "12345678901";
+    String errorMessage = MIDValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.MID, false));
+}

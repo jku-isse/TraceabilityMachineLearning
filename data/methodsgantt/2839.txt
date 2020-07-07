@@ -1,0 +1,3 @@
+public BooleanOption getRedlineOption() {
+    return myRedlineOption;
+}

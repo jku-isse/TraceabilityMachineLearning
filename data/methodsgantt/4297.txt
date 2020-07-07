@@ -1,0 +1,8 @@
+/**
+ * Returns the CustomColumnValues.
+ *
+ * @return The CustomColumnValues.
+ */
+public CustomColumnsValues getCustomValues() {
+    return customValues;
+}

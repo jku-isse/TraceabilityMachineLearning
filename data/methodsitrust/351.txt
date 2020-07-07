@@ -1,0 +1,12 @@
+/**
+ * Helper that logs an ER incident.  The associated patient id, ER
+ * id, and incident report id are automatically included.
+ *
+ * @param trans
+ * 		Transaction type for the log.
+ * @throws DBException
+ * 		
+ */
+public void logIncidentReportEvent(TransactionType trans) throws DBException {
+    loggingAction.logEvent(trans, loggedInMID, getPid(), ("Incident Report ID: " + (getOvID())));
+}

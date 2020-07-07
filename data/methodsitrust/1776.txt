@@ -1,0 +1,3 @@
+public void setMessageId(long id) {
+    this.id = id;
+}

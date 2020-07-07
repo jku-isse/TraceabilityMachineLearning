@@ -1,0 +1,3 @@
+public Object getCustomFieldVal(String title) {
+    return customFields.get(title);
+}

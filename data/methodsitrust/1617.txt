@@ -1,0 +1,3 @@
+public void setMedList(List<MedicationBean> medlist) {
+    medList = medlist;
+}

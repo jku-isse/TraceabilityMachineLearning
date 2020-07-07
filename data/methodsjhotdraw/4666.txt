@@ -1,0 +1,12 @@
+/**
+ * Creates a new instance.
+ */
+public NodeFigure() {
+    RectangleFigure rf = new RectangleFigure();
+    setDecorator(rf);
+    createConnectors();
+    AttributeKeys.DECORATOR_INSETS.basicSet(this, new Insets2D.Double(6, 10, 6, 10));
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.net.Labels");
+    setText(labels.getString("nodeDefaultName"));
+    setAttributeEnabled(AttributeKeys.DECORATOR_INSETS, false);
+}

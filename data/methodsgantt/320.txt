@@ -1,0 +1,23 @@
+public void paintComponent(Graphics g) {
+    synchronized(ChartModelBase.STATIC_MUTEX) {
+        GanttGraphicArea.super.paintComponent(g);
+        ChartModel model = this.myChartModel;
+        model.setTaskContainment(appli.getTaskContainment());
+        // model.setBounds(getSize());
+        // System.err.println("[NewChartComponentImpl] paintComponent. unit
+        // width="+getViewState().getBottomUnitWidth());
+        model.setBottomUnitWidth(getViewState().getBottomUnitWidth());
+        model.setRowHeight(((GanttTree2) (tree)).getTreeTable().getRowHeight());
+        model.setTopTimeUnit(getViewState().getTopTimeUnit());
+        model.setBottomTimeUnit(getViewState().getBottomTimeUnit());
+        VisibleNodesFilter visibleNodesFilter = new VisibleNodesFilter();
+        List visibleTasks = visibleNodesFilter.getVisibleNodes(tree.getJTree(), getScrollBar(), getHeight(), tree.getTreeTable().getRowHeight());
+        model.setVisibleTasks(visibleTasks);
+        // myChartModel.setExplicitlyHiddenTasks(tree.getHiddenTasks());
+        model.setVerticalOffset(((getScrollBar()) % (tree.getTreeTable().getRowHeight())));
+        model.paint(g);
+        if ((getActiveInteraction()) != null) {
+            getActiveInteraction().paint(g);
+        }
+    }
+}

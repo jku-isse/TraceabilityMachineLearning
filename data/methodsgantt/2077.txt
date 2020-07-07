@@ -1,0 +1,14 @@
+private void processLastActivity(TaskActivity taskActivity) {
+    if ((taskActivity.getIntensity()) != 0.0F) {
+        processRegularActivity(taskActivity);
+    }
+    if (taskActivity.getTask().isMilestone()) {
+        return;
+    }
+    createRightSideText(taskActivity);
+    createDownSideText(taskActivity);
+    createUpSideText(taskActivity);
+    createLeftSideText(taskActivity);
+    // 
+    // drawProjectBoundaries();
+}

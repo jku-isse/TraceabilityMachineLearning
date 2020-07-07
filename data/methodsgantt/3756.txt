@@ -1,0 +1,20 @@
+private void createPages() {
+    int pageIndex = 0;
+    try {
+        while (true) {
+            BufferedImage img = new BufferedImage(myPageWidth, myPageHeight, BufferedImage.TYPE_INT_RGB);
+            Graphics g = img.getGraphics();
+            g.setColor(Color.white);
+            g.fillRect(0, 0, myPageWidth, myPageHeight);
+            if ((myPrintable.print(g, myPageFormat, pageIndex)) != (Printable.PAGE_EXISTS))
+                break;
+
+            PrintPreview.PagePreview pp = new PrintPreview.PagePreview(pageIndex, myPageFormat, myPrintable, myScale);
+            myPreviewContainer.add(pp);
+            pageIndex++;
+        } 
+        statusBar.setText0(("" + pageIndex));
+    } catch (PrinterException e) {
+        myUIfacade.showErrorDialog(e);
+    }
+}

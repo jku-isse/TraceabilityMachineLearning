@@ -1,0 +1,8 @@
+public RoleManager getRoleManager() {
+    RoleManager result = ((RoleManager) (managerHash.get(GanttProject.ROLE_MANAGER_ID)));
+    if (result == null) {
+        result = RoleManager.Access.getInstance();
+        managerHash.put(GanttProject.ROLE_MANAGER_ID, result);
+    }
+    return result;
+}

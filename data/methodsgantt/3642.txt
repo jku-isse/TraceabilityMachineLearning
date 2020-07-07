@@ -1,0 +1,3 @@
+public FileFormatException(String message, Throwable cause) {
+    super(message, cause);
+}

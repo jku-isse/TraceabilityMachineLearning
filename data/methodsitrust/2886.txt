@@ -1,0 +1,30 @@
+/**
+ * Remove an interaction from the database
+ *
+ * @param firstDrug
+ * 		The name of the first patient
+ * @param secondDrug
+ * 		The name of the second patient
+ * @return true if removed successfully, false if not in list
+ */
+public boolean deleteInteraction(String firstDrug, String secondDrug) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("DELETE FROM druginteractions WHERE (FirstDrug = ? OR SecondDrug = ?) AND (FirstDrug = ? OR SecondDrug = ?)");
+        ps.setString(1, firstDrug);
+        ps.setString(2, firstDrug);
+        ps.setString(3, secondDrug);
+        ps.setString(4, secondDrug);
+        if ((ps.executeUpdate()) == 0)
+            return false;
+
+        return true;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

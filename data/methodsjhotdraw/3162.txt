@@ -1,0 +1,3 @@
+public void setCursor(Cursor c) {
+    target.setCursor(c);
+}

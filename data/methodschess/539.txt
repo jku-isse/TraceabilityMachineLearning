@@ -1,0 +1,7 @@
+/**
+ * Set the color of this piece.
+ *
+ * @param The
+ * 		new color of this piece.
+ */
+public void setColor(byte color);

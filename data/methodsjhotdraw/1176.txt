@@ -1,0 +1,22 @@
+protected void drawCaps(Graphics2D g) {
+    if ((getNodeCount()) > 1) {
+        if ((AttributeKeys.START_DECORATION.get(this)) != null) {
+            BezierPath cp = getCappedPath();
+            Point2D.Double p1 = path.get(0, 0);
+            Point2D.Double p2 = cp.get(0, 0);
+            if (p2.equals(p1)) {
+                p2 = path.get(1, 0);
+            }
+            AttributeKeys.START_DECORATION.get(this).draw(g, this, p1, p2);
+        }
+        if ((AttributeKeys.END_DECORATION.get(this)) != null) {
+            BezierPath cp = getCappedPath();
+            Point2D.Double p1 = path.get(((path.size()) - 1), 0);
+            Point2D.Double p2 = cp.get(((path.size()) - 1), 0);
+            if (p2.equals(p1)) {
+                p2 = path.get(((path.size()) - 2), 0);
+            }
+            AttributeKeys.END_DECORATION.get(this).draw(g, this, p1, p2);
+        }
+    }
+}

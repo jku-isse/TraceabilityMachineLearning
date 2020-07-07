@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param upperBound
+ * 		the upperBound to set
+ */
+public void setUpperBound(String upperBound) {
+    this.upperBound = upperBound;
+}

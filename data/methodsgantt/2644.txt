@@ -1,0 +1,4 @@
+public void setCanceled(boolean value) {
+    myProgressDialog.done();
+    isCanceled = value;
+}

@@ -1,0 +1,4 @@
+/**
+ * Unconfigures a JSlider.
+ */
+public void unconfigureSlider(JSlider slider);

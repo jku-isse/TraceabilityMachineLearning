@@ -1,0 +1,14 @@
+// Constructors
+/**
+ * Create a new timer instance for a game.
+ */
+public GameTimerPanel() {
+    super();
+    // Create a new array for the action listeners.
+    _actionListeners = new ArrayList();
+    try {
+        jbInit();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}

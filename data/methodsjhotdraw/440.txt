@@ -1,0 +1,1 @@
+public abstract float[] toComponents(int r, int g, int b, float[] components);

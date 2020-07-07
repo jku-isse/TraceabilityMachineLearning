@@ -1,0 +1,5 @@
+public List<JMenu> createMenus(Application a, View p) {
+    LinkedList<JMenu> list = new LinkedList<JMenu>();
+    list.add(createEditMenu(a, p));
+    return list;
+}

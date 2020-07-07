@@ -1,0 +1,5 @@
+public void testIsSurveyCompleted() throws iTrustException {
+    List<OfficeVisitBean> ovbList = action.getAllOfficeVisits();
+    OfficeVisitBean ovBean = ovbList.get(0);
+    assertFalse(action.isSurveyCompleted(ovBean.getID()));
+}

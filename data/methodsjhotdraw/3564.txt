@@ -1,0 +1,11 @@
+/**
+ * Translates the vertices of the <code>Polygon</code> by
+ * <code>deltaX</code> along the x axis and by
+ * <code>deltaY</code> along the y axis.
+ *
+ * @param deltaX
+ * 		the amount to translate along the X axis
+ * @param deltaY
+ * 		the amount to translate along the Y axis
+ */
+public abstract void translate(double deltaX, double deltaY);

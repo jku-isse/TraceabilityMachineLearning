@@ -1,0 +1,17 @@
+/**
+ * Adds a health record for the given patient
+ *
+ * @param pid
+ * 		The patient record who is being edited.
+ * @param hr
+ * 		The filled out health record form to be added.
+ * @return message - "Information Recorded" or exceptions message
+ * @throws FormValidationException
+ * 		
+ */
+public String addHealthRecord(long pid, HealthRecordForm hr) throws FormValidationException, iTrustException {
+    validator.validate(hr);
+    HealthRecord record = transferForm(pid, hr);
+    hrDAO.add(record);
+    return "Information Recorded";
+}

@@ -1,0 +1,10 @@
+/**
+ * Set this ply as a castling.
+ *
+ * @param goesLeft
+ * 		true, if the castling goes to the left.
+ */
+public final void setCastling(boolean left) {
+    _castling = true;
+    _leftCastling = left;
+}

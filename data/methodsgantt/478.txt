@@ -1,0 +1,24 @@
+/**
+ * Function to change language of the project
+ */
+public void changeLanguage() {
+    if ((helpFrame) != null)
+        helpFrame.dispose();
+
+    helpFrame = null;
+    applyComponentOrientation(language.getComponentOrientation());
+    changeLanguageOfMenu();
+    area.repaint();
+    getResourcePanel().area.repaint();
+    getResourcePanel().refresh(language);
+    this.tree.changeLanguage(language);
+    CustomColumnsStorage.changeLanguage(language);
+    applyComponentOrientation(language.getComponentOrientation());
+    // change the value of the separators in iconList
+    for (int i = 0; i < (iconList.size()); i++)
+        if ((iconList.getElementAt(i).getClass()) != (TestGanttRolloverButton.class)) {
+            iconList.removeElementAt(i);
+            iconList.add(i, GPToolBar.SEPARATOR_OBJECT);
+        }
+
+}

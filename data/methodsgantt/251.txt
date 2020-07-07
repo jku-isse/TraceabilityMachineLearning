@@ -1,0 +1,7 @@
+protected void apply(float diff) {
+    TaskLength newLength = getTaskManager().createLength(getViewState().getBottomTimeUnit(), ((getInitialDuration()) + diff));
+    TaskLength translated = getTask().translateDuration(newLength);
+    if ((translated.getLength()) != 0) {
+        myMutator.setDuration(translated);
+    }
+}

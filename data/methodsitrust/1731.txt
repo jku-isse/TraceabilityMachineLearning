@@ -1,0 +1,3 @@
+public void restrict() {
+    this.rights = LabProcedureBean.Restrict;
+}

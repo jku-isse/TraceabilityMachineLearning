@@ -1,0 +1,3 @@
+public void setExportRelations(boolean eportRelations) {
+    bExportRelations = eportRelations;
+}

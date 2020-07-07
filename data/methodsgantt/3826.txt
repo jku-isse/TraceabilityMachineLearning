@@ -1,0 +1,7 @@
+private void fireResourceAdded(ProjectResource resource) {
+    ResourceEvent e = new ResourceEvent(this, resource);
+    for (Iterator i = myViews.iterator(); i.hasNext();) {
+        ResourceView nextView = ((ResourceView) (i.next()));
+        nextView.resourceAdded(e);
+    }
+}

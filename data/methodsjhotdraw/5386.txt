@@ -1,0 +1,6 @@
+private Shape getHitShape() {
+    if ((cachedHitShape) == null) {
+        cachedHitShape = new GrowStroke((((float) (SVGAttributeKeys.getStrokeTotalWidth(this))) / 2.0F), ((float) (SVGAttributeKeys.getStrokeTotalMiterLimit(this)))).createStrokedShape(getTransformedShape());
+    }
+    return cachedHitShape;
+}

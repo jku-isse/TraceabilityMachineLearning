@@ -1,0 +1,4 @@
+// int rainbow;
+protected void drawConstrainer(Graphics2D g) {
+    getConstrainer().draw(g, this);
+}

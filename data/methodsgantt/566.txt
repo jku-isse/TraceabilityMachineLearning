@@ -1,0 +1,10 @@
+// ///////////////////////////////////////////////////////////////
+// ResourceView implementation
+public void resourceAdded(ResourceEvent event) {
+    if ((getStatusBar()) != null) {
+        // tabpane.setSelectedIndex(1);
+        getUIFacade().setStatusText(GanttLanguage.getInstance().correctLabel(GanttLanguage.getInstance().getText("newHuman")));
+        setAskForSave(true);
+        refreshProjectInfos();
+    }
+}

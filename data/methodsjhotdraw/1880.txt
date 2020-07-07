@@ -1,0 +1,4 @@
+/**
+ * Adds a figure to the current selection.
+ */
+public void addToSelection(Figure figure);

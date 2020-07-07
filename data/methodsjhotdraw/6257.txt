@@ -1,0 +1,7 @@
+/**
+ * Returns true if at least one significant UndoableEdit
+ * has been added since the last call to discardAllEdits.
+ */
+public boolean hasSignificantEdits() {
+    return hasSignificantEdits;
+}

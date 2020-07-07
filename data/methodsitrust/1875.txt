@@ -1,0 +1,4 @@
+// Composition of the city, state, zip
+public String getStreetAddress3() {
+    return ((((getCity()) + ", ") + (getState())) + " ") + (getZip());
+}

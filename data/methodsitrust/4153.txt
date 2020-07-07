@@ -1,0 +1,18 @@
+public void testResetPasswordHash() throws Exception {
+    // Click Reset Password at the login screen
+    WebConversation wc = new WebConversation();
+    WebResponse wr = wc.getResponse(iTrustHTTPTest.ADDRESS);
+    wr = wr.getLinkWith("Reset Password").click();
+    // Enter 1 in the MID field for Random Person
+    wr.getForms()[1].setParameter("mid", "1");
+    wr = wr.getForms()[1].submit();
+    // Answer security question and set new password
+    wr.getForms()[1].setParameter("answer", "blue");
+    wr.getForms()[1].setParameter("password", "newPw12345");
+    wr.getForms()[1].setParameter("confirmPassword", "newPw12345");
+    wr = wr.getForms()[1].submit();
+    iTrustHTTPTest.assertLogged(TransactionType.PASSWORD_RESET, 1L, 1L, "");
+    // Ensure that the password has been hashed
+    wr = wr.getLinkWith("Display Database").click();
+    assertEquals("c43d8e3fe57fe45586d03204c4db94b177256d51", wr.getTableWithID("users").getCellAsText(9, 1));
+}

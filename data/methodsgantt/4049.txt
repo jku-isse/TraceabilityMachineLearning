@@ -1,0 +1,3 @@
+public void addActionListener(ActionListener listener) {
+    listeners.add(listener);
+}

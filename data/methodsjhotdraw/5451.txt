@@ -1,0 +1,8 @@
+// DRAWING
+protected void drawFill(Graphics2D g) {
+    if (((getArcHeight()) == 0.0) && ((getArcWidth()) == 0.0)) {
+        g.fill(roundrect.getBounds2D());
+    } else {
+        g.fill(roundrect);
+    }
+}

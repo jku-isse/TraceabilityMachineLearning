@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public StraightLineFigure() {
+    line = new Line2D.Double();
+}

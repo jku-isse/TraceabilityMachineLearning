@@ -1,0 +1,29 @@
+List getDefaultUnitOffsetsInRange(/* <Offset> */
+ChartModelBase.Offset startOffset, ChartModelBase.Offset endOffset) {
+    ChartModelBase.Range range = new ChartModelBase.Range(startOffset, endOffset);
+    /* <Offset> */
+    List result = ((List) (myRange2DefaultUnitOffsets.get(range)));
+    if (result != null) {
+        return result;
+    }
+    /* <Offset> */
+    ArrayList tmpOffsets = /* <Offset> */
+    new ArrayList();
+    result = /* <Offset> */
+    new ArrayList();
+    int initialEnd = (startOffset == null) ? 0 : startOffset.getOffsetPixels();
+    Date startDate = (startOffset == null) ? myStartDate : startOffset.getOffsetEnd();
+    RegularFrameOffsetBuilder offsetBuilder = new RegularFrameOffsetBuilder(getTimeUnitStack(), myTaskManager.getCalendar(), endOffset.getOffsetUnit(), getTimeUnitStack().getDefaultTimeUnit(), startDate, getBottomUnitWidth(), endOffset.getOffsetPixels(), 1.0F) {
+        protected float getOffsetStep(TimeFrame timeFrame) {
+            int offsetUnitCount = timeFrame.getUnitCount(getTimeUnitStack().getDefaultTimeUnit());
+            return 1.0F / offsetUnitCount;
+        }
+    };
+    offsetBuilder.constructOffsets(tmpOffsets, result, initialEnd);
+    myRange2DefaultUnitOffsets.put(range, result);
+    // System.err.println("For start offstet["+startOffset+"] end offset["+endOffset+"]");
+    // for (Offset t : result) {
+    // System.err.println(t);
+    // }
+    return result;
+}

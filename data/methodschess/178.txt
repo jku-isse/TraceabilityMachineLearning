@@ -1,0 +1,8 @@
+/**
+ * Returns whether the search time is fixed or not.
+ *
+ * @return Is the search time fixed?
+ */
+public boolean isFixedTime() {
+    return this.bFixedTime;
+}

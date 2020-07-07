@@ -1,0 +1,3 @@
+public GPSaver newSaver() {
+    return new GanttXMLSaver(this, ((GanttTree2) (getTree())), getResourcePanel(), getArea(), getUIFacade());
+}

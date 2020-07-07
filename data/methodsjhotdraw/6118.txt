@@ -1,0 +1,6 @@
+@Override
+public JFileChooser getSaveChooser() {
+    JFileChooser chooser = super.getSaveChooser();
+    chooser.setAccessory(getAccessory());
+    return chooser;
+}

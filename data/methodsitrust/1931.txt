@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the modified
+ */
+public Date getModified() {
+    return modified;
+}

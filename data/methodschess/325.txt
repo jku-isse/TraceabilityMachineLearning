@@ -1,0 +1,26 @@
+/**
+ * Create the engine test suite.
+ *
+ * @return The engine test suite.
+ */
+public static Test suite() {
+    // Create a new test suite
+    TestSuite suite = new TestSuite();
+    // Test the ply generator
+    suite.addTest(new PlyGeneratorTest1());
+    suite.addTest(new PlyGeneratorTest2());
+    suite.addTest(new PlyGeneratorTest3());
+    suite.addTest(new PlyGeneratorTest4());
+    suite.addTest(new PlyGeneratorTest5());
+    suite.addTest(new PlyGeneratorTest6());
+    // Add the actual engine tests.
+    suite.addTest(new KingInKnightCheckTest());
+    // Test the analyzer
+    suite.addTest(new AnalyzerTest1());
+    suite.addTest(new AnalyzerTest2());
+    // Test the complete engine
+    suite.addTest(new MinimaxTest1());
+    suite.addTest(new MinimaxTest2());
+    suite.addTest(new BoardConsistencyTest1());
+    return suite;
+}

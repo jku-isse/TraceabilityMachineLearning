@@ -1,0 +1,6 @@
+/**
+ * Checks, wether the document is writable.
+ *
+ * @return writability
+ */
+public boolean canWrite();

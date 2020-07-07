@@ -1,0 +1,11 @@
+/**
+ * Scales the input vector by the specified factor and returns it.
+ * <p>
+ * This method alters the value of the input point!
+ */
+private static Point2D.Double v2ScaleIII(Point2D.Double v, double s) {
+    Point2D.Double result = new Point2D.Double();
+    result.x = (v.x) * s;
+    result.y = (v.y) * s;
+    return result;
+}

@@ -1,0 +1,4 @@
+/**
+ * Returns the specified node.
+ */
+public BezierPath.Node getNode(int index);

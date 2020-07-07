@@ -1,0 +1,3 @@
+public void setThing(String thing) {
+    this.thing = thing;
+}

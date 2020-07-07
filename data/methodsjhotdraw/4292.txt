@@ -1,0 +1,6 @@
+public void setOrientation(int orientation) {
+    toolBar.setOrientation(orientation);
+    if ((dragWindow) != null) {
+        dragWindow.setOrientation(orientation);
+    }
+}

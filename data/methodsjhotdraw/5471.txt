@@ -1,0 +1,5 @@
+// ATTRIBUTES
+public void setArc(double w, double h) {
+    roundrect.arcwidth = Math.max(0.0, Math.min(roundrect.width, (w * 2.0)));
+    roundrect.archeight = Math.max(0.0, Math.min(roundrect.height, (h * 2.0)));
+}

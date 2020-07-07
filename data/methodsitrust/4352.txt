@@ -1,0 +1,5 @@
+public PersonnelReportFilter(PersonnelReportFilter.PersonnelReportFilterType filterType, String filterValue, DAOFactory factory) {
+    this.filterType = filterType;
+    this.filterValue = filterValue;
+    pDAO = factory.getPatientDAO();
+}

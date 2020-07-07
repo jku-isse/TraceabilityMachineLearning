@@ -1,0 +1,5 @@
+public void testDBException() throws Exception {
+    SessionTimeoutListener listener = new SessionTimeoutListener();
+    listener.sessionCreated(new MockHttpSessionEvent());
+    assertEquals(1200, MockHttpSession.mins);
+}

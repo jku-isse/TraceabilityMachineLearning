@@ -1,0 +1,7 @@
+@Override
+public TextFigure clone() {
+    TextFigure that = ((TextFigure) (super.clone()));
+    that.origin = ((Point2D.Double) (this.origin.clone()));
+    that.textLayout = null;
+    return that;
+}

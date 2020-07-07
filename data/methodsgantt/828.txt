@@ -1,0 +1,3 @@
+public GanttTreeTableModel getModel() {
+    return treeModel;
+}

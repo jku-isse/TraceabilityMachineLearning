@@ -1,0 +1,11 @@
+/**
+ * Creates a new object of the same class as this object.
+ */
+public Object clone() {
+    try {
+        return super.clone();
+    } catch (CloneNotSupportedException e) {
+        // this shouldnt happen, since we are Cloneable
+        throw new InternalError();
+    }
+}

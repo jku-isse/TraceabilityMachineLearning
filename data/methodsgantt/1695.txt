@@ -1,0 +1,6 @@
+public void setBottomUnitWidth(int pixelsWidth) {
+    if ((myAtomUnitPixels) != pixelsWidth) {
+        myCachingOffsetCalculator.reset();
+    }
+    myAtomUnitPixels = pixelsWidth;
+}

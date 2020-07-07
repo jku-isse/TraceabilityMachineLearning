@@ -1,0 +1,4 @@
+@Override
+public boolean isCombinableWith(Handle handle) {
+    return false;
+}

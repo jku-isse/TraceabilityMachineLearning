@@ -1,0 +1,11 @@
+private AssignmentNode exists(ResourceNode rn, ResourceAssignment ra) {
+    AssignmentNode res = null;
+    Enumeration en = rn.children();
+    while ((res == null) && (en.hasMoreElements())) {
+        AssignmentNode an = ((AssignmentNode) (en.nextElement()));
+        if (an.getUserObject().equals(ra))
+            res = an;
+
+    } 
+    return res;
+}

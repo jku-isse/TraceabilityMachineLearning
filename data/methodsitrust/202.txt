@@ -1,0 +1,10 @@
+/**
+ * Sets up defualts.
+ *
+ * @param factory
+ * 		
+ * @author Andy Meneely
+ */
+public ChangeSessionTimeoutAction(DAOFactory factory) {
+    this.accessDAO = factory.getAccessDAO();
+}

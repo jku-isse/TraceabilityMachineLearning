@@ -1,0 +1,6 @@
+/**
+ * Constructor
+ */
+public ShapePaint(int width, int height, int[] array) {
+    this(width, height, array, Color.black, Color.white);
+}

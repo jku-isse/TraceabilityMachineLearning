@@ -1,0 +1,5 @@
+/**
+ * Constructs a composite line decoration with no decorations.
+ */
+public CompositeLineDecoration() {
+}

@@ -1,0 +1,34 @@
+public void testValidateBadComment() {
+    bean.setComment("");// empty
+
+    try {
+        validator.validate(bean);
+        fail("Expected a validation failure.");
+    } catch (FormValidationException e) {
+        // passed.
+    }
+    bean.setComment("@");// bad symbol
+
+    try {
+        validator.validate(bean);
+        fail("Expected a validation failure.");
+    } catch (FormValidationException e) {
+        // passed.
+    }
+    bean.setComment(">");// bad symbol
+
+    try {
+        validator.validate(bean);
+        fail("Expected a validation failure.");
+    } catch (FormValidationException e) {
+        // passed.
+    }
+    bean.setComment(longString(501));// string too long
+
+    try {
+        validator.validate(bean);
+        fail("Expected a validation failure.");
+    } catch (FormValidationException e) {
+        // passed.
+    }
+}

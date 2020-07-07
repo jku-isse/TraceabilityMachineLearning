@@ -1,0 +1,13 @@
+public static File replaceExtension(File f, String newExtension) throws IOException {
+    String filename = f.getName();
+    int i = filename.lastIndexOf(FileUtil.FILE_EXTENSION_SEPARATOR);
+    File containingFolder = f.getParentFile();
+    File result;
+    if ((i > 0) && (i < ((filename.length()) - 1))) {
+        String withoutExtension = filename.substring(0, i);
+        result = new File(containingFolder, ((withoutExtension + (FileUtil.FILE_EXTENSION_SEPARATOR)) + newExtension));
+    } else {
+        result = new File(containingFolder, ((filename + (FileUtil.FILE_EXTENSION_SEPARATOR)) + newExtension));
+    }
+    return result;
+}

@@ -1,0 +1,17 @@
+public void testFilterByContactEmail() throws Exception {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.CONTACT_EMAIL, "fake@email.com", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertEquals(6, res.size());
+    assertTrue(((res.get(0).getMID()) == 3L));// Care Needs
+
+    assertTrue(((res.get(1).getMID()) == 4L));// NoRecords Has
+
+    assertTrue(((res.get(2).getMID()) == 5L));// Baby Programmer
+
+    assertTrue(((res.get(3).getMID()) == 6L));// Baby A
+
+    assertTrue(((res.get(4).getMID()) == 7L));// Baby B
+
+    assertTrue(((res.get(5).getMID()) == 8L));// Baby C
+
+}

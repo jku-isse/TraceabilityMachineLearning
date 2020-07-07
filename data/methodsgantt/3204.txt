@@ -1,0 +1,6 @@
+public void addActionListener(ActionListener l) {
+    okButton.addActionListener(l);
+    cancelButton.addActionListener(l);
+    removeButton.addActionListener(l);
+    nameComboBox.addActionListener(l);
+}

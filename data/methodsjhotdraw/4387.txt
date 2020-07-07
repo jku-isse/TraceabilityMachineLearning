@@ -1,0 +1,17 @@
+/**
+ * Run each ChangeListeners stateChanged() method.
+ *
+ * @see #setRangeProperties
+ * @see EventListenerList
+ */
+protected void fireStateChanged() {
+    Object[] listeners = listenerList_.getListenerList();
+    for (int i = (listeners.length) - 2; i >= 0; i -= 2) {
+        if ((listeners[i]) == (ChangeListener.class)) {
+            if ((changeEvent_) == null) {
+                changeEvent_ = new ChangeEvent(this);
+            }
+            ((ChangeListener) (listeners[(i + 1)])).stateChanged(changeEvent_);
+        }
+    }
+}

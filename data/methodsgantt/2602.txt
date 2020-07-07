@@ -1,0 +1,8 @@
+/**
+ * This function rolls the date *
+ */
+private void rollDate(int field, int amount) {
+    ddd.date.add(field, amount);
+    jtDate.setValue(ddd.date.getTime());
+    ddd.repaint();
+}

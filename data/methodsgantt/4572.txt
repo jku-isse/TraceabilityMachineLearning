@@ -1,0 +1,3 @@
+public RecalculateTaskCompletionPercentageAlgorithm getRecalculateTaskCompletionPercentageAlgorithm() {
+    return myCompletionPercentageAlgorithm;
+}

@@ -1,0 +1,4 @@
+void initialize() {
+    int defaultUnitsPerBottomUnit = myBottomUnit.getAtomCount(myTimeUnitStack.getDefaultTimeUnit());
+    myWidthPerDefaultUnit = ((float) (getBottomUnitWidth())) / defaultUnitsPerBottomUnit;
+}

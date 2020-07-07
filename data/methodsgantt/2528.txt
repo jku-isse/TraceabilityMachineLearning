@@ -1,0 +1,5 @@
+protected void setOptionsEnabled(boolean enabled) {
+    if ((mySecondaryOptionsComponent) != null) {
+        setEnabledTree(mySecondaryOptionsComponent, enabled);
+    }
+}

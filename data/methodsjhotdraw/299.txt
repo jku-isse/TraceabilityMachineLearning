@@ -1,0 +1,10 @@
+public void actionPerformed(ActionEvent evt) {
+    Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
+    if (focusOwner != null) {
+        if (focusOwner instanceof EditableComponent) {
+            ((EditableComponent) (focusOwner)).duplicate();
+        } else {
+            focusOwner.getToolkit().beep();
+        }
+    }
+}

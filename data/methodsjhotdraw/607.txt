@@ -1,0 +1,16 @@
+@Override
+protected float[] getColorAt(int x, int y, int width, int height) {
+    x -= width / 2;
+    y -= height / 2;
+    float r = ((float) (Math.sqrt(((x * x) + (y * y)))));
+    float theta = ((float) (Math.atan2((-y), x)));
+    float radius = (Math.min(width, height)) / 2.0F;
+    float[] hsb;
+    float sat = ((float) (r)) / radius;
+    float hue = ((float) ((theta / (Math.PI)) / 2.0));
+    if (hue < 0) {
+        hue += 1.0F;
+    }
+    hsb = new float[]{ hue, 1.0F, 1.0F - sat };
+    return hsb;
+}

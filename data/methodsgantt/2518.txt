@@ -1,0 +1,4 @@
+protected FileChooserPageBase() {
+    myOptionsBuilder = new OptionsPageBuilder();
+    mySecondaryOptionsComponent = new JPanel(new BorderLayout());
+}

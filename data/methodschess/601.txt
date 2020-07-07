@@ -1,0 +1,8 @@
+/**
+ * Get the line index of this postion (0-7).
+ *
+ * @return The line index of this position.
+ */
+public final int getLineIndex() {
+    return (_squareIndex) & 7;
+}

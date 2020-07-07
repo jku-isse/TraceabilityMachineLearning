@@ -1,0 +1,28 @@
+public Action[] getPopupMenuActions() {
+    List actions = new ArrayList();
+    actions.add(new NewTaskAction(((IGanttProject) (appli))));
+    if (!(Mediator.getTaskSelectionManager().getSelectedTasks().isEmpty())) {
+        actions.add(getTaskPropertiesAction());
+        // }
+        actions.add(createMenuAction(GanttProject.correctLabel(language.getText("deleteTask")), "/icons/delete_16.gif"));
+        actions.add(null);
+        actions.add(myIndentAction);
+        actions.add(myDedentAction);
+        actions.add(getMoveUpAction());
+        actions.add(getMoveDownAction());
+        actions.add(null);
+        actions.add(getUnlinkTasksAction());
+        actions.add(getLinkTasksAction());
+        actions.add(null);
+        actions.add(appli.getCutAction());
+        actions.add(appli.getCopyAction());
+        actions.add(appli.getPasteAction());
+        /* actions.add(null);
+        actions.add(createMenuAction(language.getText("hideTask"),
+        "/icons/hide_16.gif"));
+        actions.add(createMenuAction(language.getText("displayHiddenTasks"),
+        "/icons/show_16.gif"));
+         */
+    }
+    return ((Action[]) (actions.toArray(new Action[0])));
+}

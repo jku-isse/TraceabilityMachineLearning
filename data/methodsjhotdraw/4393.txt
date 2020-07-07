@@ -1,0 +1,16 @@
+/**
+ * Increments the extent by the indicated value.
+ * Negative Increments are ignored.
+ *
+ * @param inc
+ * 		The incrementValue value.
+ */
+private void incrementValue(int inc) {
+    if (inc > 0) {
+        nread_ += inc;
+        if ((nread_) > (size_)) {
+            size_ = nread_;
+        }
+        fireStateChanged();
+    }
+}

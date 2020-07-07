@@ -1,0 +1,3 @@
+public ProjectResource getResource() {
+    return myAssignmentToResource.getResource();
+}

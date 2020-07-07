@@ -1,0 +1,17 @@
+public void testPatientNavHappy() throws Exception {
+    PatientNavigation nav = new PatientNavigation();
+    nav.setPageContext(mockContext);
+    // were okay with any strings written here - normally you want to be more specific
+    mockWriter.write(((String) (anyObject())));
+    expectLastCall().anyTimes();
+    ctrl.replay();
+    String str = "Health Records";
+    nav.setThisTitle(str);
+    assertSame(str, nav.getThisTitle());
+    assertEquals(Tag.SKIP_BODY, nav.doStartTag());
+    assertEquals(Tag.SKIP_BODY, nav.doEndTag());
+    nav.setParent(mockParent);
+    assertSame(mockParent, nav.getParent());
+    nav.release();
+    ctrl.verify();
+}

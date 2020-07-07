@@ -1,0 +1,14 @@
+// DRAWING
+protected void drawFill(Graphics2D g) {
+    RoundRectangle2D.Double r = ((RoundRectangle2D.Double) (roundrect.clone()));
+    double grow = AttributeKeys.getPerpendicularFillGrowth(this);
+    r.x -= grow;
+    r.y -= grow;
+    r.width += grow * 2;
+    r.height += grow * 2;
+    r.arcwidth += grow * 2;
+    r.archeight += grow * 2;
+    if (((r.width) > 0) && ((r.height) > 0)) {
+        g.fill(r);
+    }
+}

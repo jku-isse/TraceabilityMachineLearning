@@ -1,0 +1,32 @@
+protected void reviewChanges() {
+    if (unsavedView.isEnabled()) {
+        oldFocusOwner = SwingUtilities.getWindowAncestor(unsavedView.getComponent()).getFocusOwner();
+        unsavedView.setEnabled(false);
+        JOptionPane pane = new JOptionPane((((("<html>" + (UIManager.getString("OptionPane.css"))) + "<b>Do you want to save changes to this document ") + "before exiting?</b><p>") + "If you dont save, your changes will be lost."), JOptionPane.WARNING_MESSAGE);
+        Object[] options = new Object[]{ "Save", "Cancel", "Dont Save" };
+        pane.setOptions(options);
+        pane.setInitialValue(options[0]);
+        pane.putClientProperty("Quaqua.OptionPane.destructiveOption", new Integer(2));
+        JSheet.showSheet(pane, unsavedView.getComponent(), new SheetListener() {
+            public void optionSelected(SheetEvent evt) {
+                Object value = evt.getValue();
+                if ((value == null) || (value.equals("Cancel"))) {
+                    unsavedView.setEnabled(true);
+                    getApplication().setEnabled(true);
+                } else
+                    if (value.equals("Dont Save")) {
+                        getApplication().dispose(unsavedView);
+                        reviewNext();
+                    } else
+                        if (value.equals("Save")) {
+                            saveChangesAndReviewNext();
+                        }
+
+
+            }
+        });
+    } else {
+        getApplication().setEnabled(true);
+        System.out.println("review silently aborted");
+    }
+}

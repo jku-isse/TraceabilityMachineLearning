@@ -1,0 +1,7 @@
+/**
+ * Creates new form FontChooserMain
+ */
+public FontChooserMain() {
+    initComponents();
+    add(new JFontChooser());
+}

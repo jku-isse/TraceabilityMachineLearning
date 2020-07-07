@@ -1,0 +1,3 @@
+private ImporterFromGanttFile.BufferProject createBufferProject(final GanttProject targetProject, final UIFacade uiFacade) {
+    return new ImporterFromGanttFile.BufferProject(targetProject, uiFacade);
+}

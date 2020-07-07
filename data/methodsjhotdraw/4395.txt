@@ -1,0 +1,9 @@
+/**
+ * Overrides <code>FilterInputStream.read</code>
+ * to update the value after the read.
+ */
+public int read(byte[] b) throws IOException {
+    int nr = in.read(b);
+    incrementValue(nr);
+    return nr;
+}

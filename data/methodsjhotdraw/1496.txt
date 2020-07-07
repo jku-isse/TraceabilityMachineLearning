@@ -1,0 +1,19 @@
+@Override
+public void draw(Graphics2D g) {
+    Graphics2D gg = ((Graphics2D) (g.create()));
+    gg.transform(view.getDrawingToViewTransform());
+    for (Connector c : connectors) {
+        c.draw(gg);
+    }
+    if ((createdConnection) == null) {
+        drawCircle(g, getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTOR_HANDLE_FILL_COLOR), getEditor().getHandleAttribute(HandleAttributeKeys.DISCONNECTED_CONNECTOR_HANDLE_STROKE_COLOR));
+    } else {
+        drawCircle(g, getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTOR_HANDLE_FILL_COLOR), getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTOR_HANDLE_STROKE_COLOR));
+        Point p = view.drawingToView(createdConnection.getEndPoint());
+        g.setColor(((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTOR_HANDLE_FILL_COLOR))));
+        int width = getHandlesize();
+        g.fillOval(((p.x) - (width / 2)), ((p.y) - (width / 2)), width, width);
+        g.setColor(((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.CONNECTED_CONNECTOR_HANDLE_STROKE_COLOR))));
+        g.drawOval(((p.x) - (width / 2)), ((p.y) - (width / 2)), width, width);
+    }
+}

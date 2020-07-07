@@ -1,0 +1,21 @@
+private void updateMatcher() {
+    TeddyView view = ((TeddyView) (app.getActiveView()));
+    if (view != null) {
+        MatchType matchType;
+        switch (modeCombo.getSelectedIndex()) {
+            case 0 :
+                matchType = MatchType.CONTAINS;
+                break;
+            case 1 :
+                matchType = MatchType.STARTS_WITH;
+                break;
+            case 2 :
+            default :
+                matchType = MatchType.FULL_WORD;
+                break;
+        }
+        matcher = new Matcher(view.getDocument(), findField.getText(), (!(ignoreCaseCheck.isSelected())), matchType);
+    } else {
+        matcher = null;
+    }
+}

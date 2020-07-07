@@ -1,0 +1,25 @@
+/**
+ * Invokes the specified parameterless method if it exists.
+ *
+ * @param clazz
+ * 		The class on which to invoke the method.
+ * @param methodName
+ * 		The name of the method.
+ * @param types
+ * 		The parameter types.
+ * @param values
+ * 		The parameter values.
+ * @param defaultValue
+ * 		The default value.
+ * @return The return value of the method or the default value if the method
+does not exist or is not accessible.
+ */
+public static Object invokeStatic(String clazz, String methodName, Class[] types, Object[] values, Object defaultValue) {
+    try {
+        return Methods.invokeStatic(Class.forName(clazz), methodName, types, values);
+    } catch (ClassNotFoundException e) {
+        return defaultValue;
+    } catch (NoSuchMethodException e) {
+        return defaultValue;
+    }
+}

@@ -1,0 +1,6 @@
+private boolean canEnableTestAction(GPOptionGroup ftpGroup) {
+    final DefaultStringOption usernameOption = ((DefaultStringOption) (ftpGroup.getOption(DocumentCreator.USERNAME_OPTION_ID)));
+    final DefaultStringOption servernameOption = ((DefaultStringOption) (ftpGroup.getOption(DocumentCreator.SERVERNAME_OPTION_ID)));
+    final DefaultStringOption passwordOption = ((DefaultStringOption) (ftpGroup.getOption(DocumentCreator.PASSWORD_OPTION_ID)));
+    return (((servernameOption.getUncommitedValue()) != null) && ((usernameOption.getUncommitedValue()) != null)) && ((passwordOption.getUncommitedValue()) != null);
+}

@@ -1,0 +1,3 @@
+protected File getSelectedFile() {
+    return myChooser.getFile();
+}

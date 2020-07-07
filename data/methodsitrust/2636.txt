@@ -1,0 +1,8 @@
+public void testAppointmentPatientConflict() throws Exception {
+    List<ApptBean> conflicts = apptDAO.getAllConflictsForPatient(patientMID);
+    assertEquals(0, conflicts.size());
+    apptDAO.scheduleAppt(a1);
+    apptDAO.scheduleAppt(a2);
+    conflicts = apptDAO.getAllConflictsForPatient(patientMID);
+    assertEquals(2, conflicts.size());
+}

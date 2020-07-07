@@ -1,0 +1,3 @@
+public Document getDefaultDocument() {
+    return myDefaultDocument;
+}

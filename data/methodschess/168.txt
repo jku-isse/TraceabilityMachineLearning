@@ -1,0 +1,8 @@
+/**
+ * Get the maximum search time.
+ *
+ * @return The maximum search time.
+ */
+public final int getMaximumSearchTime() {
+    return _maxSearchTime;
+}

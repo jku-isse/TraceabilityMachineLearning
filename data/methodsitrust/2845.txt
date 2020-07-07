@@ -1,0 +1,4 @@
+public ApptTypeDAO(DAOFactory factory) {
+    this.factory = factory;
+    this.atLoader = new ApptTypeBeanLoader();
+}

@@ -1,0 +1,6 @@
+public void commit() {
+    if (!(isLocked())) {
+        throw new IllegalStateException("Cant commit not locked option");
+    }
+    setLocked(false);
+}

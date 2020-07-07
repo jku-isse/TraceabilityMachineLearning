@@ -1,0 +1,30 @@
+protected IXMLElement createTextArea(IXMLElement doc, double x, double y, double w, double h, StyledDocument text, Map<AttributeKey, Object> attributes) throws IOException {
+    IXMLElement elem = doc.createElement("textArea");
+    writeAttribute(elem, "x", SVGOutputFormat.toNumber(x), "0");
+    writeAttribute(elem, "y", SVGOutputFormat.toNumber(y), "0");
+    writeAttribute(elem, "width", SVGOutputFormat.toNumber(w), "0");
+    writeAttribute(elem, "height", SVGOutputFormat.toNumber(h), "0");
+    String str;
+    try {
+        str = text.getText(0, text.getLength());
+    } catch (BadLocationException e) {
+        InternalError error = new InternalError(e.getMessage());
+        error.initCause(e);
+        throw error;
+    }
+    String[] lines = str.split("
+");
+    for (int i = 0; i < (lines.length); i++) {
+        if (i != 0) {
+            elem.addChild(doc.createElement("tbreak"));
+        }
+        IXMLElement contentElement = doc.createElement(null);
+        contentElement.setContent(lines[i]);
+        elem.addChild(contentElement);
+    }
+    writeShapeAttributes(elem, attributes);
+    writeTransformAttribute(elem, attributes);
+    writeOpacityAttribute(elem, attributes);
+    writeFontAttributes(elem, attributes);
+    return elem;
+}

@@ -1,0 +1,3 @@
+public DefaultFontChooserModel() {
+    root = new DefaultMutableTreeNode();
+}

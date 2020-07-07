@@ -1,0 +1,6 @@
+public ResourceTagHandler(ResourceManager resourceManager, RoleManager roleManager, CustomPropertyManager resourceCustomPropertyManager) {
+    myResourceManager = ((HumanResourceManager) (resourceManager));
+    myCustomPropertyManager = resourceCustomPropertyManager;
+    // myResourceManager.clear(); //CleanUP the old stuff
+    myRoleManager = roleManager;
+}

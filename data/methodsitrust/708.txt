@@ -1,0 +1,17 @@
+/**
+ * Returns a list of hospitals to which the given mid is currently assigned
+ *
+ * @param midString
+ * 		
+ * @return list of HosptialBeans
+ * @throws iTrustException
+ * 		
+ */
+public List<HospitalBean> getAssignedHospitals(String midString) throws iTrustException {
+    try {
+        long mid = Long.valueOf(midString);
+        return personnelDAO.getHospitals(mid);
+    } catch (NumberFormatException e) {
+        throw new iTrustException("HCPs MID not a number");
+    }
+}

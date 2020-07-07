@@ -1,0 +1,6 @@
+private void modeChanged(ItemEvent evt) {
+    // GEN-FIRST:event_modeChanged
+    if ((prefs) != null) {
+        prefs.putInt("find.mode", modeCombo.getSelectedIndex());
+    }
+}// GEN-LAST:event_modeChanged

@@ -1,0 +1,14 @@
+public ReferralBean toReferralBean() {
+    ReferralBean bean = new ReferralBean();
+    bean.setId(id);
+    bean.setPatientID(patientID);
+    bean.setSenderID(senderID);
+    bean.setReceiverID(receiverID);
+    bean.setReferralDetails(referralDetails);
+    bean.setOvid(ovid);
+    bean.setViewedByPatient(viewedByPatient);
+    bean.setViewedByHCP(viewedByHCP);
+    bean.setTimeStamp(timeStamp);
+    bean.setPriority(priority);
+    return bean;
+}

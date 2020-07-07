@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public ToggleLineNumbersAction(Application app) {
+    super(app);
+    labels.configureAction(this, ToggleLineNumbersAction.ID);
+    setPropertyName("lineNumbersVisible");
+}

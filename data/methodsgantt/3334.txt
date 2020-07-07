@@ -1,0 +1,4 @@
+TaskComboItem(Task task) {
+    myTask = task;
+    myText = (("[#" + (task.getTaskID())) + "] ") + (task.getName());
+}

@@ -1,0 +1,17 @@
+public void testAddReport() throws iTrustException, SQLException {
+    // String body = "UNIT TEST - SendMessageActionText";
+    AdverseEventBean aBean = new AdverseEventBean();
+    // Timestamp timestamp = new Timestamp(this.gCal.getTimeInMillis());
+    aBean.setMID("2");
+    aBean.setDrug("Prioglitazone");
+    aBean.setDescription("It Burns!");
+    try {
+        advAction.addReport(aBean);
+    } catch (FormValidationException e) {
+        e.printStackTrace();
+    }
+    List<AdverseEventBean> adList = adverseDAO.getReportsFor(pateientId);
+    assertEquals(1, adList.size());
+    AdverseEventBean adBeanDB = adList.get(0);
+    assertEquals("It Burns!", adBeanDB.getDescription());
+}

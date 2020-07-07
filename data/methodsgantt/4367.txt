@@ -1,0 +1,3 @@
+TaskLength getDuration() {
+    return (myDurationChange) == null ? this.myLength : ((TaskLength) (myDurationChange.myFieldValue));
+}

@@ -1,0 +1,4 @@
+protected void write(char c) throws IOException {
+    connect();
+    _os.write(c);
+}

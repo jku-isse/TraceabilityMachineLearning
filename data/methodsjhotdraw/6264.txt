@@ -1,0 +1,14 @@
+/**
+ * Undoes or redoes the last edit event.
+ * The UndoRedoManager ignores all incoming UndoableEdit events,
+ * while undo or redo is in progress.
+ */
+public void undoOrRedo() throws CannotRedoException, CannotUndoException {
+    undoOrRedoInProgress = true;
+    try {
+        super.undoOrRedo();
+    } finally {
+        undoOrRedoInProgress = false;
+        updateActions();
+    }
+}

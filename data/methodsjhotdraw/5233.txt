@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((SVGDrawingPanelBeanInfo.beanDescriptor) == null)
+        SVGDrawingPanelBeanInfo.beanDescriptor = new BeanDescriptor(SVGDrawingPanelBeanInfo.class);
+
+    SVGDrawingPanelBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    SVGDrawingPanelBeanInfo.beanDescriptor.setDisplayName("SVGDrawingPanel");
+    return SVGDrawingPanelBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

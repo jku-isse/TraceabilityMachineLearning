@@ -1,0 +1,29 @@
+/**
+ * This method is invoked before the rendered image of the figure is
+ * composited.
+ */
+public void drawFigure(Graphics2D g) {
+    AffineTransform savedTransform = null;
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        savedTransform = g.getTransform();
+        g.transform(AttributeKeys.TRANSFORM.get(this));
+    }
+    if ((ODGAttributeKeys.FILL_STYLE.get(this)) != (ODGConstants.FillStyle.NONE)) {
+        Paint paint = ODGAttributeKeys.getFillPaint(this);
+        if (paint != null) {
+            g.setPaint(paint);
+            drawFill(g);
+        }
+    }
+    if ((ODGAttributeKeys.STROKE_STYLE.get(this)) != (ODGConstants.StrokeStyle.NONE)) {
+        Paint paint = ODGAttributeKeys.getStrokePaint(this);
+        if (paint != null) {
+            g.setPaint(paint);
+            g.setStroke(ODGAttributeKeys.getStroke(this));
+            drawStroke(g);
+        }
+    }
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        g.setTransform(savedTransform);
+    }
+}

@@ -1,0 +1,3 @@
+public int compareTo(PatientBean o) {
+    return ((int) ((o.MID) - (this.MID)));
+}

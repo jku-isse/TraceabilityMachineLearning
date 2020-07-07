@@ -1,0 +1,3 @@
+public void addAll(Collection<? extends Figure> figures) {
+    addAll(getChildCount(), figures);
+}

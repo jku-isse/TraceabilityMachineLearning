@@ -1,0 +1,10 @@
+/**
+ * Delete the custom column whose name is given in parameter from the
+ * treetable.
+ *
+ * @param name
+ * 		Name of the column to delete.
+ */
+public void deleteCustomColumn(String name) {
+    myStorage.removeCustomColumn(name);
+}

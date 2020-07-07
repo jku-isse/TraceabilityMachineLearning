@@ -1,0 +1,13 @@
+/**
+ * Return tru if the Project has tasks and false is no tasks on the project
+ */
+public boolean hasTasks() {
+    Enumeration e = rootNode.preorderEnumeration();
+    while (e.hasMoreElements()) {
+        Object next = e.nextElement();
+        if (((rootNode) != ((DefaultMutableTreeNode) (next))) && (next instanceof TaskNode))
+            return true;
+
+    } 
+    return false;
+}

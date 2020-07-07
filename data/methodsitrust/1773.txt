@@ -1,0 +1,8 @@
+/**
+ * Gets the MIDs of the recipients for this Message
+ *
+ * @return 
+ */
+public long getTo() {
+    return to;
+}

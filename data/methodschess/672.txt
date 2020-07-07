@@ -1,0 +1,15 @@
+/**
+ * Toggle the timer for one player to the other.
+ */
+public void toggle() {
+    if (_whiteActive) {
+        setBlackClockRunning();
+        _white.stop();
+        _black.start();
+    } else {
+        setWhiteClockRunning();
+        _black.stop();
+        _white.start();
+    }
+    _whiteActive = !(_whiteActive);
+}

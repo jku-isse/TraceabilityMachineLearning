@@ -1,0 +1,36 @@
+/**
+ * Add a particular user to the system. Does not add user-specific information (e.g. Patient or HCP).
+ * Initially sets security question to a random set of characters, so that nobody should be able to guess
+ * its value.
+ *
+ * @param mid
+ * 		The users MID as a Long.
+ * @param role
+ * 		The role of the user as a Role enum {@link Role}
+ * @param password
+ * 		The password for the new user.
+ * @return A string representing the newly added randomly-generated password.
+ * @throws DBException
+ * 		
+ */
+public String addUser(Long mid, Role role, String password) throws DBException {
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    try {
+        conn = factory.getConnection();
+        pstmt = conn.prepareStatement("INSERT INTO users (MID, PASSWORD, ROLE, sQuestion, sAnswer) VALUES (?,?,?,?,?)");
+        pstmt.setLong(1, mid);
+        String hashedPassword = DigestUtils.shaHex(password);
+        pstmt.setString(2, hashedPassword);
+        pstmt.setString(3, role.toString());
+        pstmt.setString(4, "Enter the random password given in your account email");
+        pstmt.setString(5, password);
+        pstmt.executeUpdate();
+        return password;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, pstmt);
+    }
+}

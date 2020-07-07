@@ -1,0 +1,7 @@
+public Date getEndDate() {
+    try {
+        return new SimpleDateFormat("MM/dd/yyyy").parse(endDateStr);
+    } catch (ParseException e) {
+        return null;
+    }
+}

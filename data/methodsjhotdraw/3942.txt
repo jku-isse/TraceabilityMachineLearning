@@ -1,0 +1,24 @@
+public void layoutContainer(Container parent) {
+    Dimension ps = preferredLayoutSize(parent);
+    Insets insets = parent.getInsets();
+    int w = ((ps.width) - (insets.left)) - (insets.right);
+    int h = ((ps.height) - (insets.top)) - (insets.bottom);
+    int x = insets.left;
+    int y = insets.top;
+    switch (axis) {
+        case ToolBarLayout.Y_AXIS :
+            for (Component c : parent.getComponents()) {
+                ps = c.getPreferredSize();
+                c.setBounds(x, y, w, ps.height);
+                y += ps.height;
+            }
+            break;
+        case ToolBarLayout.X_AXIS :
+        default :
+            for (Component c : parent.getComponents()) {
+                ps = c.getPreferredSize();
+                c.setBounds(x, y, ps.width, h);
+                x += ps.width;
+            }
+    }
+}

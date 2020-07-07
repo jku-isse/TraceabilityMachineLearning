@@ -1,0 +1,333 @@
+/**
+ * Constructor
+ */
+public GanttProject(boolean isOnlyViewer, boolean isApplet) {
+    System.err.println("Creating main frame...");
+    ToolTipManager.sharedInstance().setInitialDelay(200);
+    ToolTipManager.sharedInstance().setDismissDelay(60000);
+    TaskSelectionManager taskSelectionManager = new TaskSelectionManager();
+    Mediator.registerTaskSelectionManager(taskSelectionManager);
+    /* [bbaranne] I add a Mediator object so that we can get the GanttProject
+    singleton whereever we are in the source code. Perhaps some of you
+    dont like this, but I believe that it is practical...
+     */
+    Mediator.registerGanttProject(this);
+    this.isOnlyViewer = isOnlyViewer;
+    if (!isOnlyViewer)
+        setTitle(language.getText("appliTitle"));
+    else
+        setTitle("GanttViewer");
+
+    setFocusable(true);
+    System.err.println("1. loading looknfeels");
+    lookAndFeel = GanttLookAndFeels.getGanttLookAndFeels().getDefaultInfo();
+    options = new GanttOptions(getRoleManager(), getDocumentManager(), isOnlyViewer);
+    myUIConfiguration = options.getUIConfiguration();
+    class TaskManagerConfigImpl implements TaskManagerConfig {
+        public Color getDefaultColor() {
+            return myUIConfiguration.getTaskColor();
+        }
+
+        public GPCalendar getCalendar() {
+            return GanttProject.this.getActiveCalendar();
+        }
+
+        public TimeUnitStack getTimeUnitStack() {
+            return GanttProject.this.getTimeUnitStack();
+        }
+
+        public ResourceManager getResourceManager() {
+            return GanttProject.this.getHumanResourceManager();
+        }
+
+        public URL getProjectDocumentURL() {
+            try {
+                return getDocument().getURI().toURL();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+    }
+    TaskManagerConfig taskConfig = new TaskManagerConfigImpl();
+    myTaskManager = TaskManager.Access.newInstance(new TaskContainmentHierarchyFacade.Factory() {
+        public TaskContainmentHierarchyFacade createFacede() {
+            return GanttProject.this.getTaskContainment();
+        }
+    }, taskConfig, getCustomColumnsStorage());
+    ImageIcon icon = new ImageIcon(getClass().getResource("/icons/ganttproject.png"));
+    setIconImage(icon.getImage());
+    // Create each objects
+    myFacadeInvalidator = new FacadeInvalidator(getTree().getJTree().getModel());
+    getProject().addProjectEventListener(myFacadeInvalidator);
+    area = new GanttGraphicArea(this, getTree(), getTaskManager(), getZoomManager(), getUndoManager());
+    options.addOptionGroups(getUIFacade().getGanttChart().getOptionGroups());
+    options.addOptionGroups(getUIFacade().getResourceChart().getOptionGroups());
+    options.addOptionGroups(new GPOptionGroup[]{ getProjectUIFacade().getOptionGroup() });
+    options.addOptionGroups(getDocumentManager().getNetworkOptionGroups());
+    myRowHeightAligner = new GanttProjectBase.RowHeightAligner(tree, area.getMyChartModel());
+    area.getMyChartModel().addOptionChangeListener(myRowHeightAligner);
+    System.err.println("2. loading options");
+    initOptions();
+    area.setUIConfiguration(myUIConfiguration);
+    getTree().setGraphicArea(area);
+    // 
+    miChartOptions = new JMenuItem(area.getOptionsDialogAction());
+    getZoomManager().addZoomListener(area.getZoomListener());
+    /* myCopyAction = new CopyAction((GanttTree2) getTree(), options
+    .getIconSize());
+     */
+    // myCopyAction = new CopyAction(this, options.getIconSize());
+    // 
+    // /*myPasteAction = new PasteAction((GanttTree2) getTree(), options
+    // .getIconSize());*/
+    // 
+    // myPasteAction = new PasteAction(this, options.getIconSize());
+    // 
+    // /*myCutAction = new CutAction((GanttTree2) getTree(), options
+    // .getIconSize());*/
+    // 
+    // myCutAction = new CutAction(this, options.getIconSize());
+    System.err.println("3. creating menu...");
+    myRefreshAction = new RefreshViewAction(getUIFacade(), options);
+    // myRolloverActions.add(myCopyAction);
+    // myRolloverActions.add(myPasteAction);
+    // myRolloverActions.add(myCutAction);
+    myRolloverActions.add(myRefreshAction);
+    getTree().setActions();
+    // Create the menus
+    bar = new JMenuBar();
+    if (!isOnlyViewer)
+        setJMenuBar(bar);
+
+    // Allocation of the menus
+    mProject = new JMenu();
+    mMRU = new JMenu();
+    mMRU.setIcon(new ImageIcon(getClass().getResource("/icons/recent_16.gif")));
+    mEdit = new JMenu();
+    // mView = new JMenu ();
+    mTask = new JMenu();
+    mHuman = new JMenu();
+    mHelp = new JMenu();
+    mCalendar = new JMenu();
+    miUndo = new JMenuItem(new UndoAction(getUndoManager(), "16", this));
+    mEdit.add(miUndo);
+    // miUndo.setEnabled(false);
+    miRedo = new JMenuItem(new RedoAction(getUndoManager(), "16", this));
+    mEdit.add(miRedo);
+    // miRedo.setEnabled(false);
+    mEdit.addSeparator();
+    createProjectMenu();
+    miRefresh = new JMenuItem(myRefreshAction);
+    // miRefresh.setAccelerator((KeyStroke)myRefreshAction.getValue(Action.ACCELERATOR_KEY));
+    mEdit.add(miRefresh);
+    mEdit.addSeparator();
+    // miCut = new JMenuItem(myCutAction);
+    mEdit.add(getViewManager().getCutAction());
+    // miCopy = new JMenuItem(myCopyAction);
+    mEdit.add(getViewManager().getCopyAction());
+    // miPaste = new JMenuItem(myPasteAction);
+    mEdit.add(getViewManager().getPasteAction());
+    mEdit.addSeparator();
+    miOptions = createNewItem("/icons/settings_16.gif");
+    mEdit.add(miOptions);
+    myNewTaskAction = new NewTaskAction(((IGanttProject) (this)));
+    mTask.add(myNewTaskAction);
+    miDeleteTask = createNewItem("/icons/delete_16.gif");
+    mTask.add(miDeleteTask);
+    myTaskPropertiesAction = new TaskPropertiesAction(getProject(), Mediator.getTaskSelectionManager(), getUIFacade());
+    mTask.add(myTaskPropertiesAction);
+    getTree().setTaskPropertiesAction(myTaskPropertiesAction);
+    getResourcePanel().setTaskPropertiesAction(myTaskPropertiesAction);
+    // 
+    // 
+    myNewHumanAction = new NewHumanAction(getHumanResourceManager(), getRoleManager(), this, this) {
+        public void actionPerformed(ActionEvent event) {
+            super.actionPerformed(event);
+            getTabs().setSelectedIndex(UIFacade.RESOURCES_INDEX);
+        }
+    };
+    mHuman.add(myNewHumanAction);
+    myDeleteHumanAction = getResourceActions().getDeleteHumanAction();
+    miDelHuman = new JMenuItem(myDeleteHumanAction);
+    mHuman.add(miDelHuman);
+    // miPropHuman = createNewItem("/icons/properties_16.gif");
+    // mHuman.add(miPropHuman);
+    mHuman.add(getResourcePanel().getResourcePropertiesAction());
+    miSendMailHuman = createNewItem("/icons/send_mail_16.gif");
+    mHuman.add(miSendMailHuman);
+    mHuman.add(new ImportResources(getHumanResourceManager(), getTaskManager(), getRoleManager(), this));
+    miEditCalendar = createNewItem("/icons/clock_16.gif");
+    mCalendar.add(miEditCalendar);
+    miPrjCal = createNewItem("/icons/default_calendar_16.gif");
+    mCalendar.add(miPrjCal);
+    miWebPage = createNewItem("/icons/home_16.gif");
+    mHelp.add(miWebPage);
+    miManual = createNewItem("/icons/help_16.gif");
+    try {
+        // See if helpgui library is on the classpath
+        Class.forName("net.sourceforge.helpgui.HelpGui");
+        mHelp.add(miManual);
+        miManual.setAccelerator(KeyStroke.getKeyStroke("F1"));
+    } catch (Exception ex) {
+        // Not add the help button on the ui
+    }
+    miTips = createNewItem("/icons/about_16.gif");
+    mHelp.add(miTips);
+    miAbout = createNewItem("/icons/manual_16.gif");
+    mHelp.add(miAbout);
+    if (!isApplet) {
+        bar.add(mProject);// for a applet veiwer, Project menu is not
+
+        // neccessary By CL
+    }
+    bar.add(mEdit);
+    JMenu viewMenu = createViewMenu();
+    if (viewMenu != null)
+        bar.add(viewMenu);
+
+    // bar.add (mView);
+    bar.add(mTask);
+    bar.add(mHuman);
+    // bar.add(mCalendar);
+    bar.add(mHelp);
+    setMemonic();
+    // to create a default project
+    // createDefaultTree(tree);
+    System.err.println("4. creating views...");
+    myGanttChartTabContent = new GanttChartTabContentPanel(getProject(), getUIFacade(), tree, area);
+    GPView ganttView = getViewManager().createView(myGanttChartTabContent, new ImageIcon(getClass().getResource("/icons/tasks_16.gif")));
+    ganttView.setVisible(true);
+    myResourceChartTabContent = new ResourceChartTabContentPanel(getResourcePanel(), getResourcePanel().area);
+    GPView resourceView = getViewManager().createView(myResourceChartTabContent, new ImageIcon(getClass().getResource("/icons/res_16.gif")));
+    resourceView.setVisible(true);
+    getTabs().setSelectedIndex(0);
+    this.resp.setActions();
+    // pert area
+    // getTabs().setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+    getTabs().addChangeListener(new ChangeListener() {
+        public void stateChanged(ChangeEvent e) {
+            bCritical.setEnabled(((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)));
+            bScrollCenter.setEnabled(((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)));
+            bComparePrev.setEnabled(((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)));
+            bSaveCurrent.setEnabled(((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)));
+            bNewTask.setEnabled((((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) || ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX))));
+            bDelete.setEnabled((((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) || ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX))));
+            bProperties.setEnabled((((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) || ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX))));
+            bZoomIn.setEnabled((((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) || ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX))));
+            bZoomOut.setEnabled((((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) || ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX))));
+            bPrev.setEnabled((((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) || ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX))));
+            bNext.setEnabled((((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) || ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX))));
+            if ((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) {
+                // Gantt
+                // Chart
+                bNewTask.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("createTask"))));
+                bDelete.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("deleteTask"))));
+                bProperties.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("propertiesTask"))));
+                if ((options.getButtonShow()) != (GanttOptions.ICONS)) {
+                    bNewTask.setText(GanttProject.correctLabel(language.getText("createTask")));
+                    bDelete.setText(GanttProject.correctLabel(language.getText("deleteTask")));
+                    bProperties.setText(GanttProject.correctLabel(language.getText("propertiesTask")));
+                }
+            } else
+                if ((getTabs().getSelectedIndex()) == (UIFacade.RESOURCES_INDEX)) {
+                    // Resources
+                    // Chart
+                    bNewTask.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("newHuman"))));
+                    bDelete.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("deleteHuman"))));
+                    bProperties.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("propertiesHuman"))));
+                    if ((options.getButtonShow()) != (GanttOptions.ICONS)) {
+                        bNewTask.setText(GanttProject.correctLabel(language.getText("newHuman")));
+                        bDelete.setText(GanttProject.correctLabel(language.getText("deleteHuman")));
+                        bProperties.setText(GanttProject.correctLabel(language.getText("propertiesHuman")));
+                    }
+                }
+
+        }
+    });
+    // Add tabpan on the content pane
+    getContentPane().add(getTabs(), BorderLayout.CENTER);
+    // Add toolbar
+    toolBar = new GPToolBar("GanttProject", options.getToolBarPosition(), getOptions());
+    toolBar.addComponentListener(new ComponentListener() {
+        public void componentResized(ComponentEvent arg0) {
+            setHiddens();
+            refresh();
+        }
+
+        public void componentMoved(ComponentEvent arg0) {
+        }
+
+        public void componentShown(ComponentEvent arg0) {
+        }
+
+        public void componentHidden(ComponentEvent arg0) {
+        }
+    });
+    this.addButtons(toolBar);
+    getContentPane().add(toolBar, ((toolBar.getOrientation()) == (JToolBar.HORIZONTAL) ? BorderLayout.NORTH : BorderLayout.WEST));
+    // add the status bar
+    if (!isOnlyViewer)
+        getContentPane().add(getStatusBar(), BorderLayout.SOUTH);
+
+    getStatusBar().setVisible(options.getShowStatusBar());
+    // add a keyboard listener
+    addKeyListener(this);
+    SwitchViewAction switchAction = new SwitchViewAction(this);
+    JMenuItem invisibleItem = new JMenuItem(switchAction);
+    invisibleItem.setVisible(false);
+    bar.add(invisibleItem);
+    // update 18-03-2003
+    addWindowListener(new WindowAdapter() {
+        public void windowClosing(WindowEvent evt) {
+            exitForm(evt);
+        }
+
+        public void windowOpened(WindowEvent e) {
+            myRowHeightAligner.optionsChanged();
+        }
+    });
+    // update 18-03-2003
+    System.err.println("5. calculating size and packing...");
+    setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    Dimension windowSize = getPreferredSize();
+    // Put the frame at the middle of the screen
+    setLocation((((screenSize.width) / 2) - ((windowSize.width) / 2)), (((screenSize.height) / 2) - ((windowSize.height) / 2)));
+    this.pack();
+    System.err.println("6. changing language ...");
+    changeLanguage();
+    // changeUndoNumber ();
+    System.err.println("7. changing looknfeel ...");
+    changeLookAndFeel(lookAndFeel);
+    changeLookAndFeel(lookAndFeel);// Twice call for update font on menu
+
+    if (options.isLoaded()) {
+        setBounds(options.getX(), options.getY(), options.getWidth(), options.getHeight());
+    }
+    if ((options.getOpenTips()) && (!(GanttProject.byCommandLine))) {
+        TipsDialog tips = new TipsDialog(this, options.getOpenTips());
+        tips.show();
+        tips.toFront();// somehow assure, that the TipsDialog is the top
+
+        // window an MacOS
+    }
+    System.err.println("8. finalizing...");
+    applyComponentOrientation(GanttLanguage.getInstance().getComponentOrientation());
+    myTaskManager.addTaskListener(new TaskModelModificationListener(this));
+    if ((GanttProject.ourWindowListener) != null) {
+        addWindowListener(GanttProject.ourWindowListener);
+    }
+    addMouseListenerToAllContainer(this.getComponents());
+    myDelayManager = new DelayManager(myTaskManager, tree);
+    Mediator.registerDelayManager(myDelayManager);
+    myDelayManager.addObserver(tree);
+    myTaskManager.addTaskListener(myDelayManager);
+    getRootPane().getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_F5, 0), "refresh");
+    getRootPane().getActionMap().put("refresh", new AbstractAction() {
+        public void actionPerformed(ActionEvent e) {
+            getActiveChart().reset();
+            repaint();
+        }
+    });
+}

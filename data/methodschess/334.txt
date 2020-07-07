@@ -1,0 +1,19 @@
+/**
+ * Prepare the test(s).
+ */
+protected void setUp() {
+    // Create a new game.
+    _game = new GameImpl();
+    // Create a new board.
+    _board = new BitBoardImpl();
+    // Create a engine instance.
+    _engine = new ChessEngineImpl(_game, null, _board, false);
+    // Set the pieces on their initial positions.
+    _board.initialPosition();
+    // Move the white pawn from e2 - e4
+    doPly(new PlyImpl(new PositionImpl(12), new PositionImpl((12 + 16)), false));
+    // Move the black knight to f6
+    doPly(new PlyImpl(new PositionImpl(62), new PositionImpl((62 - 17)), false));
+    // Move the white pawn to e5
+    doPly(new PlyImpl(new PositionImpl((12 + 16)), new PositionImpl(((12 + 16) + 8)), false));
+}

@@ -1,0 +1,10 @@
+public int getRowNumber(String description) {
+    TransactionType[] values = TransactionType.values();
+    int rownumber = 0;
+    for (int i = 0; i < (values.length); i++) {
+        if (description.equals(values[i].getDescription()))
+            rownumber = i + 1;
+
+    }
+    return rownumber;
+}

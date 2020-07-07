@@ -1,0 +1,7 @@
+/**
+ * Set a new scrore for this ply.
+ *
+ * @param score
+ * 		The new score for this ply.
+ */
+void setScore(short score);

@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public TriangleFigure() {
+    this(0, 0, 0, 0);
+}

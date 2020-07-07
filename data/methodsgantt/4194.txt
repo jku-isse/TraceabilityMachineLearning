@@ -1,0 +1,23 @@
+public void commit() {
+    List mutations = new ArrayList(myQueue.values());
+    Collections.sort(mutations);
+    for (int i = 0; i < (mutations.size()); i++) {
+        ResourceAssignmentCollectionImpl.MutationInfo next = ((ResourceAssignmentCollectionImpl.MutationInfo) (mutations.get(i)));
+        switch (next.myOperation) {
+            case ResourceAssignmentCollectionImpl.MutationInfo.DELETE :
+                {
+                    myAssignments.remove(next.myResource);
+                    break;
+                }
+            case ResourceAssignmentCollectionImpl.MutationInfo.ADD :
+                {
+                    ResourceAssignment result = auxAddAssignment(next.myResource);
+                    result.setLoad(next.myAssignment.getLoad());
+                    result.setCoordinator(next.myAssignment.isCoordinator());
+                    result.setRoleForAssignment(next.myAssignment.getRoleForAssignment());
+                }
+            default :
+                break;
+        }
+    }
+}

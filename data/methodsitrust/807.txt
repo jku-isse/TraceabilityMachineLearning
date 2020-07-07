@@ -1,0 +1,14 @@
+/**
+ * Checks if the answer param is null
+ *
+ * @param answer
+ * 		the users security answer
+ * @return answer if not null, else return null
+ */
+public String checkAnswerNull(String answer) {
+    if ((answer == null) || ("".equals(answer)))
+        return null;
+    else
+        return answer;
+
+}

@@ -1,0 +1,11 @@
+private void findRoleSet(String roleSetName) {
+    if (roleSetName == null) {
+        myRoleSet = myRoleManager.getProjectRoleSet();
+    } else {
+        myRoleSet = myRoleManager.getRoleSet(roleSetName);
+        if ((myRoleSet) == null) {
+            myRoleSet = myRoleManager.createRoleSet(roleSetName);
+        }
+        myRoleSet.setEnabled(true);
+    }
+}

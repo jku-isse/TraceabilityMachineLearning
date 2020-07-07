@@ -1,0 +1,5 @@
+public void setTransformable(boolean newValue) {
+    boolean oldValue = isTransformable;
+    isTransformable = newValue;
+    firePropertyChange("transformable", oldValue, newValue);
+}

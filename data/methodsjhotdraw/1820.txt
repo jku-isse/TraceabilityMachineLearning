@@ -1,0 +1,7 @@
+/**
+ * Brings a figure to the front.
+ *
+ * @param figure
+ * 		that is part of the drawing
+ */
+void bringToFront(Figure figure);

@@ -1,0 +1,10 @@
+/* Handles the quit menu option (defaults to command-q) the same way
+choosing Project->Quit does.
+ */
+public void handleQuit(ApplicationEvent event) {
+    myProj.quitApplication();
+    /* Not a typo. Must set handled to false else the app will still quit
+    even if we say "cancel" on confirmation.
+     */
+    event.setHandled(false);
+}

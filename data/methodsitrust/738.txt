@@ -1,0 +1,27 @@
+/**
+ * Returns a list of reports between specified dates
+ *
+ * @param isPrescription
+ * 		Boolean to return prescriptions or immunizations
+ * @param start
+ * 		The starting date
+ * @param end
+ * 		The ending date
+ * @return the list of events
+ * @throws iTrustException
+ * 		
+ * @throws FormValidationException
+ * 		
+ * @throws SQLException
+ * 		
+ * @throws ParseException
+ * 		
+ */
+public List<AdverseEventBean> getReports(boolean isPrescription, String start, String end) throws FormValidationException, iTrustException, SQLException, ParseException {
+    if (isPrescription) {
+        return adverseEventDAO.getPerscriptions(start, end);
+    } else {
+        // is Immunization
+        return adverseEventDAO.getImmunizations(start, end);
+    }
+}

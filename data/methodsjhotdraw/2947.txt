@@ -1,0 +1,8 @@
+// DRAWING
+// SHAPE AND BOUNDS
+// ATTRIBUTES
+// EDITING
+// CONNECTING
+public Connector findConnector(Point2D.Double p, ConnectionFigure prototype) {
+    return new ChopTriangleConnector(this);
+}

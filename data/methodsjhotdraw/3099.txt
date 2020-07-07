@@ -1,0 +1,36 @@
+public static AbstractButton createZoomButton(final DrawingEditor editor) {
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    final JPopupButton zoomPopupButton = new JPopupButton();
+    labels.configureToolBarButton(zoomPopupButton, "view.zoomFactor");
+    zoomPopupButton.setFocusable(false);
+    if ((editor.getDrawingViews().size()) == 0) {
+        zoomPopupButton.setText("100 %");
+    } else {
+        zoomPopupButton.setText((((int) ((editor.getDrawingViews().iterator().next().getScaleFactor()) * 100)) + " %"));
+    }
+    editor.addPropertyChangeListener(new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            // String constants are interned
+            if ((evt.getPropertyName()) == (DrawingEditor.ACTIVE_VIEW_PROPERTY)) {
+                if ((evt.getNewValue()) == null) {
+                    zoomPopupButton.setText("100 %");
+                } else {
+                    zoomPopupButton.setText((((int) ((editor.getActiveView().getScaleFactor()) * 100)) + " %"));
+                }
+            }
+        }
+    });
+    double[] factors = new double[]{ 16, 8, 5, 4, 3, 2, 1.5, 1.25, 1, 0.75, 0.5, 0.25, 0.1 };
+    for (int i = 0; i < (factors.length); i++) {
+        zoomPopupButton.add(new ZoomEditorAction(editor, factors[i], zoomPopupButton) {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                super.actionPerformed(e);
+                zoomPopupButton.setText((((int) ((editor.getActiveView().getScaleFactor()) * 100)) + " %"));
+            }
+        });
+    }
+    // zoomPopupButton.setPreferredSize(new Dimension(16,16));
+    zoomPopupButton.setFocusable(false);
+    return zoomPopupButton;
+}

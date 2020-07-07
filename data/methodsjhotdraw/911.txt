@@ -1,0 +1,3 @@
+public void addInputFormat(InputFormat format) {
+    inputFormats.add(format);
+}

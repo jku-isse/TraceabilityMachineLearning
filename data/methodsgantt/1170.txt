@@ -1,0 +1,18 @@
+/**
+ * deletes a custom column from the datamodel
+ */
+public ResourceColumn deleteCustomColumn(String name) {
+    ResourceColumn toDel = null;
+    Collection vals = columns.values();
+    Iterator i = vals.iterator();
+    while (i.hasNext()) {
+        toDel = ((ResourceColumn) (i.next()));
+        if (name.equals(toDel.getTitle())) {
+            ((HumanResourceManager) (myResourceManager)).removeCustomField(toDel.getTitle());
+            /* this deletes the object from the Hashtable too */
+            vals.remove(toDel);
+            return toDel;
+        }
+    } 
+    return null;
+}

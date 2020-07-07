@@ -1,0 +1,6 @@
+public void testEditPersonnelSpecialty() throws Exception {
+    PersonnelBean p = personnelDAO.getPersonnel(8000000009L);
+    p.setSpecialty("chocolate");
+    personnelDAO.editPersonnel(p);
+    assertEquals("chocolate", p.getSpecialty());
+}

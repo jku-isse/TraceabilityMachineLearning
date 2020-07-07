@@ -1,0 +1,16 @@
+/**
+ * Get the plies for a given board and color.
+ * Passing the last ply is suboptimal, since its slower than
+ * accessing the game history.
+ *
+ * @param lastPly
+ * 		The ply, that lead to the given board.
+ * @param board
+ * 		The board with the game position.
+ * @param white
+ * 		true, if white has the next move.
+ */
+public final Ply[] getPliesForColor(BitBoard board, boolean white) {
+    setBoard(board);
+    return getPliesForColor(white);
+}

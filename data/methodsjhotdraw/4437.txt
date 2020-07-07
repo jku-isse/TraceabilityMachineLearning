@@ -1,0 +1,6 @@
+/**
+ * Set the start position of the current token.
+ */
+public void setStartPosition(int p) {
+    startpos = p;
+}

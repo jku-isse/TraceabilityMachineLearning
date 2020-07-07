@@ -1,0 +1,14 @@
+@Override
+public void doIt(final View view) {
+    view.setEnabled(false);
+    view.execute(new Worker() {
+        public Object construct() {
+            view.clear();
+            return null;
+        }
+
+        public void finished(Object value) {
+            view.setEnabled(true);
+        }
+    });
+}

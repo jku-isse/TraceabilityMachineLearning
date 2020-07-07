@@ -1,0 +1,6 @@
+/**
+ * Constructs a transferrable tree path object for the specified path.
+ */
+public GanttTransferableTreePath(TreePath path) {
+    _path = path;
+}

@@ -1,0 +1,12 @@
+private void checkRepresented(long loggedInMID, String repPIDString) throws iTrustException {
+    try {
+        long repee = Long.valueOf(repPIDString);
+        if (!(patientDAO.represents(loggedInMID, repee)))
+            throw new iTrustException(Messages.getString("ViewOfficeVisitAction.0"));
+        // $NON-NLS-1$
+
+    } catch (NumberFormatException e) {
+        throw new iTrustException(Messages.getString("ViewOfficeVisitAction.1"));// $NON-NLS-1$
+
+    }
+}

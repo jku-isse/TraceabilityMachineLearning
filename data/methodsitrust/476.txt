@@ -1,0 +1,18 @@
+/**
+ * Test if prescription has been deleted
+ *
+ * @throws Exception
+ * 		
+ */
+public void testDeletePrescription() throws Exception {
+    action = new EditPrescriptionsAction(factory, 9000000000L, "2", "955");
+    List<PrescriptionBean> list = action.getPrescriptions();
+    assertEquals(3, list.size());
+    PrescriptionBean bean = list.get(2);
+    assertEquals("647641512", bean.getMedication().getNDCode());
+    action.deletePrescription(bean);
+    list = action.getPrescriptions();
+    assertEquals(2, list.size());
+    assertEquals("009042407", list.get(0).getMedication().getNDCode());
+    assertEquals("009042407", list.get(1).getMedication().getNDCode());
+}

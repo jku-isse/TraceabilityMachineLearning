@@ -1,0 +1,5 @@
+public void testGetFilterValue() {
+    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.PROCEDURE, "city!", factory);
+    String expected = "city!";
+    assertEquals(expected, filter.getFilterValue());
+}

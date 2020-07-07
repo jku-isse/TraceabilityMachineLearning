@@ -1,0 +1,30 @@
+@Override
+public void mousePressed(MouseEvent evt) {
+    super.mousePressed(evt);
+    DrawingView view = getView();
+    if (evt.isShiftDown()) {
+        view.setHandleDetailLevel(0);
+        view.toggleSelection(anchorFigure);
+        if (!(view.isFigureSelected(anchorFigure))) {
+            anchorFigure = null;
+        }
+    } else
+        if (!(view.isFigureSelected(anchorFigure))) {
+            view.setHandleDetailLevel(0);
+            view.clearSelection();
+            view.addToSelection(anchorFigure);
+        }
+
+    if (!(view.getSelectedFigures().isEmpty())) {
+        dragRect = null;
+        for (Figure f : view.getSelectedFigures()) {
+            if ((dragRect) == null) {
+                dragRect = f.getBounds();
+            } else {
+                dragRect.add(f.getBounds());
+            }
+        }
+        anchorPoint = previousPoint = view.viewToDrawing(anchor);
+        anchorOrigin = previousOrigin = new Point2D.Double(dragRect.x, dragRect.y);
+    }
+}

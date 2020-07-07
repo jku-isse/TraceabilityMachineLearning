@@ -1,0 +1,4 @@
+/**
+ * Returns a list of the figures in Z-Order from front to back.
+ */
+List<Figure> getFiguresFrontToBack();

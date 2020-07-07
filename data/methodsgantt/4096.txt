@@ -1,0 +1,27 @@
+/**
+ * Add a custom column.
+ *
+ * @param col
+ * 		CustomColumn to be added.
+ * @throws CustomColumnsException
+ * 		A CustomColumnsException of type
+ * 		CustomColumnsException.ALREADY_EXIST could be thrown if the
+ * 		CustomColumn that should be added has a name that already
+ * 		exists.
+ */
+public void addCustomColumn(CustomColumn col) {
+    if (getCustomColumnsNames().contains(col.getName())) {
+        return;
+    }
+    String id = col.getId();
+    while (id == null) {
+        id = (CustomColumnsStorage.ID_PREFIX) + ((CustomColumnsStorage.nextId)++);
+        if (existsForID(id))
+            id = null;
+
+    } 
+    mapIdCustomColum.put(id, col);
+    col.setId(id);
+    CustomColumEvent event = new CustomColumEvent(CustomColumEvent.EVENT_ADD, col);
+    fireCustomColumnsChange(event);
+}

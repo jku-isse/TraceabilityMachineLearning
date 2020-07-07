@@ -1,0 +1,7 @@
+public void actionPerformed(ActionEvent e) {
+    try {
+        myMainFrame.saveProject();
+    } catch (IOException e1) {
+        myMainFrame.getUIFacade().showErrorDialog(e1);
+    }
+}

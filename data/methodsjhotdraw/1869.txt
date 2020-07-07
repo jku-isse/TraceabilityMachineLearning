@@ -1,0 +1,3 @@
+public PageFormat getPageFormat(int pageIndex) throws IndexOutOfBoundsException {
+    return pageFormat;
+}

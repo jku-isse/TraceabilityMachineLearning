@@ -1,0 +1,22 @@
+public List getVisibleNodes(/* <Task> */
+JTree jtree, int minHeight, int maxHeight, int nodeHeight) {
+    List preorderedNodes = Collections.list(((DefaultMutableTreeNode) (jtree.getModel().getRoot())).preorderEnumeration());
+    List result = new ArrayList();
+    int currentHeight = 0;
+    for (int i = 1; i < (preorderedNodes.size()); i++) {
+        DefaultMutableTreeNode nextNode = ((DefaultMutableTreeNode) (preorderedNodes.get(i)));
+        if (false == ((nextNode.getUserObject()) instanceof Task)) {
+            continue;
+        }
+        if (((currentHeight + nodeHeight) > minHeight) && (jtree.isVisible(new TreePath(nextNode.getPath())))) {
+            result.add(nextNode.getUserObject());
+        }
+        if (jtree.isVisible(new TreePath(nextNode.getPath()))) {
+            currentHeight += nodeHeight;
+        }
+        if (currentHeight > (minHeight + maxHeight)) {
+            break;
+        }
+    }
+    return result;
+}

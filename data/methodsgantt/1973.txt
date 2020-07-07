@@ -1,0 +1,6 @@
+/**
+ * Returns the ColorModel of the image.
+ */
+public ColorModel getColorModel() {
+    return colorModel;
+}

@@ -1,0 +1,6 @@
+public HCPVisitBean() {
+    HCPName = "";
+    HCPSpecialty = "";
+    HCPAddr = "";
+    OVDate = "";
+}

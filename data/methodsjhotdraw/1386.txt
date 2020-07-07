@@ -1,0 +1,7 @@
+/**
+ * Returns true if this composite figure contains the specified figure.
+ * <p>
+ * This is a convenience method for calling
+ * {@code getChildren().contains(f);}.
+ */
+public boolean contains(Figure f);

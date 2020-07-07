@@ -1,0 +1,4 @@
+/**
+ * This method check if the value has changed, and assk for commit changes.
+ */
+public abstract boolean applyChanges(boolean askForApply);

@@ -1,0 +1,3 @@
+public String getNameForCode(String code) throws DBException {
+    return adEventDAO.getNameForCode(code);
+}

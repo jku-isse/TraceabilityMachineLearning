@@ -1,0 +1,4 @@
+/**
+ * Returns the number of figures in this drawing.
+ */
+int getChildCount();

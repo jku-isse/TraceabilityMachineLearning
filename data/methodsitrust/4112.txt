@@ -1,0 +1,64 @@
+/**
+ * test acceptance scenario2
+ *  throws Exception
+ *
+ * @author student
+ * @author student
+ */
+public void testAcceptanceScenario2() throws Exception {
+    gen.officeVisit8();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // Select the patient
+    WebForm form = wr.getForms()[0];
+    form.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    form.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // click Yes, Document Office Visit
+    form = wr.getForms()[0];
+    form.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    /* WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(ADDRESS + "auth/hcp-uap/documentOfficeVisit.jsp", wr.getURL().toString());
+    wr.getLinkWith("02/01/2011").click();
+
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+     */
+    // Add the information to the form
+    form = wr.getFormWithID("mainForm");
+    form.setParameter("visitDate", "01/01/2011");
+    form.setParameter("hospitalID", "3");
+    form.setParameter("notes", "Complains of acute fatigue.");
+    form.getButtonWithID("update").click();
+    // Check that it was created
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Information Successfully Updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_CREATE, 9000000000L, 2L, "Office visit");
+    // add a prescription
+    form = wr.getFormWithID("prescriptionForm");
+    form.setParameter("medID", "081096");
+    form.setParameter("dosage", "200");
+    form.setParameter("startDate", "02/01/2011");
+    form.setParameter("endDate", "02/15/2011");
+    form.setParameter("instructions", "Take every six hours with food.");
+    wr = form.submit();
+    iTrustHTTPTest.assertNotLogged(TransactionType.PRESCRIPTION_ADD, 9000000000L, 2L, "");
+    // there was an allergy warning
+    assertTrue(wr.getText().contains("Allergy: Aspirin"));
+    form = wr.getFormWithID("prescriptionForm");
+    form.getButtonWithID("cancel").click();
+    // remain on the same page
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    iTrustHTTPTest.assertNotLogged(TransactionType.PRESCRIPTION_ADD, 9000000000L, 2L, "");
+    PrescriptionsDAO pDAO = factory.getPrescriptionsDAO();
+    long ovid = getVisitID(wr);
+    assertEquals(0, pDAO.getList(ovid).size());
+}

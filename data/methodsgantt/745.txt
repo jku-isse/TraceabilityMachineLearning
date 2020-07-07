@@ -1,0 +1,3 @@
+public void resourceAssignmentsChanged(ResourceEvent e) {
+    model.resourceAssignmentsChanged(e.getResources());
+}

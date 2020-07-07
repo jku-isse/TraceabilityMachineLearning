@@ -1,0 +1,5 @@
+public void restoreTransformTo(Object geometry) {
+    Point2D.Double p = ((Point2D.Double) (geometry));
+    origin.x = p.x;
+    origin.y = p.y;
+}

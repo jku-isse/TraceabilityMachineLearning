@@ -1,0 +1,11 @@
+private TimeUnit getTopUnit(Date startDate) {
+    TimeUnit result = myTopUnit;
+    if ((myTopUnit) instanceof TimeUnitFunctionOfDate) {
+        if (startDate == null) {
+            throw new RuntimeException("No date is set");
+        } else {
+            result = ((TimeUnitFunctionOfDate) (myTopUnit)).createTimeUnit(startDate);
+        }
+    }
+    return result;
+}

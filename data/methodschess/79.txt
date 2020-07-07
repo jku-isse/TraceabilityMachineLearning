@@ -1,0 +1,12 @@
+// ////////////////////////////////////////////////////////
+// //////////////////// Constructor //////////////////////
+// //////////////////////////////////////////////////////
+private DialogAbout() {
+    try {
+        jbInit();
+        this.setTitle("About Java-Chess");
+        this.setSize(400, 380);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}

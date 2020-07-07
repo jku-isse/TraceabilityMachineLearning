@@ -1,0 +1,9 @@
+/**
+ * Start the game
+ */
+public void start() {
+    _black.start();
+    _whiteActive = false;
+    setBlackClockRunning();
+    setRunning(true);
+}

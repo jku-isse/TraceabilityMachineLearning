@@ -1,0 +1,14 @@
+/**
+ * as the operation completes
+ */
+public void dragDropEnd(DragSourceDropEvent dsde) {
+    DragSourceContext dsc = dsde.getDragSourceContext();
+    JComponent c = ((JComponent) (dsc.getComponent()));
+    DefaultDrawingViewTransferHandler th = ((DefaultDrawingViewTransferHandler) (c.getTransferHandler()));
+    if (dsde.getDropSuccess()) {
+        th.exportDone(c, dsc.getTransferable(), dsde.getDropAction());
+    } else {
+        th.exportDone(c, dsc.getTransferable(), TransferHandler.NONE);
+    }
+    c.setAutoscrolls(scrolls);
+}

@@ -1,0 +1,10 @@
+public Insets getBorderInsets(Component c) {
+    Insets insets;
+    String segmentPosition = getSegmentPosition(c);
+    if ((segmentPosition == "first") || (segmentPosition == "middle")) {
+        insets = new Insets(3, 3, 3, 2);
+    } else {
+        insets = new Insets(3, 3, 3, 3);
+    }
+    return insets;
+}

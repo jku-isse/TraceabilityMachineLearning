@@ -1,0 +1,9 @@
+public void testAddBadPrescription() throws Exception {
+    PrescriptionBean bean = new PrescriptionBean();
+    bean.setVisitID((-1));
+    try {
+        dao.add(bean);
+        fail("Expected an exception.");
+    } catch (DBException e) {
+    }
+}

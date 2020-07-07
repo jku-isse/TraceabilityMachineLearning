@@ -1,0 +1,35 @@
+public void selectTask(Task task, boolean multipleSelection) {
+    DefaultMutableTreeNode taskNode = null;
+    for (Enumeration nodes = rootNode.preorderEnumeration(); nodes.hasMoreElements();) {
+        DefaultMutableTreeNode nextNode = ((DefaultMutableTreeNode) (nodes.nextElement()));
+        if (!(nextNode instanceof TaskNode))
+            continue;
+
+        if (nextNode.getUserObject().equals(task)) {
+            taskNode = nextNode;
+            break;
+        }
+    }
+    if (taskNode != null) {
+        TreePath taskPath = new TreePath(taskNode.getPath());
+        if (multipleSelection)
+            if (treetable.getTree().getSelectionModel().isPathSelected(taskPath))
+                treetable.getTree().getSelectionModel().removeSelectionPath(taskPath);
+            else
+                treetable.getTree().getSelectionModel().addSelectionPath(taskPath);
+
+        else
+            treetable.getTree().getSelectionModel().setSelectionPath(taskPath);
+
+    }
+    TreePath[] paths = treetable.getTree().getSelectionModel().getSelectionPaths();
+    Mediator.getTaskSelectionManager().clear();
+    if (paths != null)
+        for (int i = 0; i < (paths.length); i++) {
+            TaskNode tn = ((TaskNode) (paths[i].getLastPathComponent()));
+            if (!(tn.isRoot()))
+                Mediator.getTaskSelectionManager().addTask(((Task) (tn.getUserObject())));
+
+        }
+
+}

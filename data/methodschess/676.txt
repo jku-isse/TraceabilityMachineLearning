@@ -1,0 +1,11 @@
+/**
+ * Moves one half move back in the game history
+ */
+private void moveOnePlyBack() {
+    /**
+     *
+     *
+     * @unknown still to implement
+     */
+    // System.out.println( "Einen Halbzug zur?ck" );
+}

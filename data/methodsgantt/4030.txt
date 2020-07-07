@@ -1,0 +1,7 @@
+void importData(RoleSet original) {
+    Role[] originalRoles = original.getRoles();
+    for (int i = 0; i < (originalRoles.length); i++) {
+        Role nextRole = originalRoles[i];
+        createRole(nextRole.getName(), nextRole.getID());
+    }
+}

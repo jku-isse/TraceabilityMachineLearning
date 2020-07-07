@@ -1,0 +1,3 @@
+public void setAvgWaitingRoomMinutes(float waitingRoomMinutes) {
+    this.avgWaitingRmMinutes = waitingRoomMinutes;
+}

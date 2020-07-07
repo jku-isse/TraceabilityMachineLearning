@@ -1,0 +1,9 @@
+/**
+ * Set a new reader for a file.
+ *
+ * @param reader
+ * 		The new reader.
+ */
+private final void setReader(Reader reader) {
+    _reader = reader;
+}

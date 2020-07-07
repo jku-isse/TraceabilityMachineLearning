@@ -1,0 +1,4 @@
+﻿ public GanttTask createTask() {
+        GanttTask result = createTask(-1);
+        return result;
+    }

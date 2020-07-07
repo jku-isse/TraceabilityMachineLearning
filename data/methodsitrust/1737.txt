@@ -1,0 +1,3 @@
+public void setNumericalResultUnit(String numericalResultUnit) {
+    this.numericalResultUnit = numericalResultUnit;
+}

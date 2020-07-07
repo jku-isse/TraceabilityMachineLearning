@@ -1,0 +1,4 @@
+public DefaultHandleTracker(Handle master, Collection<Handle> handles) {
+    masterHandle = master;
+    multicaster = new HandleMulticaster(handles);
+}

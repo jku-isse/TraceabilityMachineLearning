@@ -1,0 +1,9 @@
+/**
+ * Set the flag, if this move captures a piece.
+ *
+ * @param capture
+ * 		true, if this move capures a piece.
+ */
+public final void setCapture(boolean capture) {
+    _capture = capture;
+}

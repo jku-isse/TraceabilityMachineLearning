@@ -1,0 +1,4 @@
+public String toString() {
+    return (((((("From activity=" + (myDependency.getActivityBinding().getDependantActivity())) + " (vector=") + (myDependantVector)) + ")
+ to activity=") + (myDependency.getActivityBinding().getDependeeActivity())) + " (vector=") + (myDependeeVector);
+}

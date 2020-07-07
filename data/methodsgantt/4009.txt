@@ -1,0 +1,3 @@
+public String asString() {
+    return ((myRoleSetID) + (RolePersistentID.ROLESET_DELIMITER)) + (myRoleID);
+}

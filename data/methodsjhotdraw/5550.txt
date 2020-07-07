@@ -1,0 +1,3 @@
+public double[] getRotates() {
+    return ((double[]) (rotates.clone()));
+}

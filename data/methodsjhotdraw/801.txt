@@ -1,0 +1,3 @@
+public void basicAdd(Figure figure) {
+    basicAdd(getChildCount(), figure);
+}

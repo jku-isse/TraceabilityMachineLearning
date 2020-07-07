@@ -1,0 +1,1 @@
+abstract Point getPoint(int i);

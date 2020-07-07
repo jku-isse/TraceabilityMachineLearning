@@ -1,0 +1,24 @@
+/**
+ * Checks if the HCP is a LT if it is then check to see if a hospital is assigned to them
+ *
+ * @param hcpID
+ * 		the String to be checked
+ * @return true If the LT has an assigned hospital
+ * @return false If the LT does not have an assigned hospital
+ * @throws iTrustException
+ * 		
+ */
+public boolean checkLTHospital(String hcpID) throws iTrustException {
+    try {
+        long pid = Long.valueOf(hcpID);
+        if (personnelDAO.getPersonnel(pid).getRole().toString().equals("LT")) {
+            if (hospitalsDAO.checkLTHasHospital(pid)) {
+                return true;
+            }
+            return false;
+        }
+    } catch (NumberFormatException e) {
+        throw new iTrustException(("LT ID is not a number: " + (e.getMessage())));
+    }
+    return false;
+}

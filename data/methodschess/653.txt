@@ -1,0 +1,8 @@
+/**
+ * Get the current text of the panel.
+ *
+ * @return The current text of the panel.
+ */
+public final String getText() {
+    return this.jtEngine.getText();
+}

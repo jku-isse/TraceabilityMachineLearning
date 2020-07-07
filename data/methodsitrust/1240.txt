@@ -1,0 +1,10 @@
+/**
+ * Returns a PatientBean for the currently logged in personnel
+ *
+ * @return The PatientBean
+ * @throws iTrustException
+ * 		
+ */
+public List<Email> getEmailHistory() throws iTrustException {
+    return emailDAO.getEmailsByPerson(personnelDAO.getPersonnel(loggedInMID).getEmail());
+}

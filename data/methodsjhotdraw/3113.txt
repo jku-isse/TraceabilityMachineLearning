@@ -1,0 +1,29 @@
+public void paintIcon(Component c, Graphics g, int x, int y) {
+    // Graphics2D g = (Graphics2D) gr;
+    if ((fillColor) == null) {
+        if (((width) == (ColorIcon.noColorImage.getWidth())) && ((height) == (ColorIcon.noColorImage.getHeight()))) {
+            g.drawImage(ColorIcon.noColorImage, x, y, c);
+        } else {
+            g.setColor(Color.WHITE);
+            g.fillRect((x + 1), (y + 1), ((width) - 2), ((height) - 2));
+            g.setColor(Color.red);
+            int[] xpoints = new int[]{ x + 2, (x + (width)) - 5, (x + (width)) - 3, (x + (width)) - 3, x + 4, x + 2 };
+            int[] ypoints = new int[]{ (y + (height)) - 5, y + 2, y + 2, y + 4, (y + (height)) - 3, (y + (height)) - 3 };
+            g.fillPolygon(xpoints, ypoints, xpoints.length);
+        }
+    } else {
+        // g.setColor(Color.WHITE);
+        // g.fillRect(x + 1, y + 1, width - 2, height - 2);
+        g.setColor(fillColor);
+        // g.fillRect(x + 2, y + 2, width - 4, height - 4);
+        g.fillRect((x + 1), (y + 1), ((width) - 2), ((height) - 2));
+    }
+    g.setColor(new Color(6710886));
+    // Draw the rectangle using drawLine to work around a drawing bug in
+    // Apples MRJ for Java 1.5
+    // g.drawRect(x, y, getIconWidth() - 1, getIconHeight() - 1);
+    g.drawLine(x, y, ((x + (width)) - 1), y);
+    g.drawLine(((x + (width)) - 1), y, ((x + (width)) - 1), ((y + (width)) - 1));
+    g.drawLine(((x + (width)) - 1), ((y + (height)) - 1), x, ((y + (height)) - 1));
+    g.drawLine(x, ((y + (height)) - 1), x, y);
+}

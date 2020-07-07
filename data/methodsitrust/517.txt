@@ -1,0 +1,6 @@
+public void testRemoveNothing() throws Exception {
+    action = new EditRepresentativesAction(factory, 9000000000L, "2");
+    assertEquals("No change made", action.removeRepresentative("2"));
+    JUnitiTrustUtils.assertTransactionsNone();
+    assertEquals(1, action.getRepresented(2).size());
+}

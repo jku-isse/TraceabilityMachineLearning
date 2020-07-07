@@ -1,0 +1,3 @@
+public boolean isLeaf() {
+    return children.isEmpty();
+}

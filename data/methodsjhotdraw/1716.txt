@@ -1,0 +1,17 @@
+@Override
+public int getSourceActions(JComponent c) {
+    int retValue;
+    if (c instanceof DrawingView) {
+        DrawingView view = ((DrawingView) (c));
+        if (DefaultDrawingViewTransferHandler.DEBUG) {
+            System.out.println((((this) + ".getSourceActions outputFormats.size=") + (view.getDrawing().getOutputFormats().size())));
+        }
+        retValue = (((view.getDrawing().getOutputFormats().size()) > 0) && ((view.getSelectionCount()) > 0)) ? (TransferHandler.COPY) | (TransferHandler.MOVE) : TransferHandler.NONE;
+    } else {
+        retValue = super.getSourceActions(c);
+    }
+    if (DefaultDrawingViewTransferHandler.DEBUG) {
+        System.out.println((((this) + ".getSourceActions:") + retValue));
+    }
+    return retValue;
+}

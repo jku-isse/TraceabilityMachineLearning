@@ -1,0 +1,3 @@
+public boolean stopCellEditing() {
+    return myProxiedEditor.stopCellEditing();
+}

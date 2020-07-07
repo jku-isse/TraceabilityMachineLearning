@@ -1,0 +1,5 @@
+public ResourceAssignment addAssignment(ProjectResource resource) {
+    ResourceAssignment result = new ResourceAssignmentCollectionImpl.ResourceAssignmentStub(resource);
+    myQueue.put(resource, new ResourceAssignmentCollectionImpl.MutationInfo(result, ResourceAssignmentCollectionImpl.MutationInfo.ADD));
+    return result;
+}

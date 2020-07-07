@@ -1,0 +1,10 @@
+public void testAddLabProcedure() throws Exception {
+    long id = lpDAO.addLabProcedure(l);
+    LabProcedureBean procedures = lpDAO.getLabProcedure(id);
+    assertEquals(LabProcedureBean.Completed, procedures.getStatus());
+    assertEquals(1L, procedures.getPid());
+    assertEquals(905L, l.getOvID());
+    assertEquals("10763-1", procedures.getLoinc());
+    assertEquals("Awaiting results", procedures.getCommentary());
+    assertEquals("Good", procedures.getResults());
+}

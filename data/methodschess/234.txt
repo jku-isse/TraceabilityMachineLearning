@@ -1,0 +1,6 @@
+/**
+ * Reset the ply buffer.
+ */
+private final void resetPlies() {
+    _plyCounter = 0;
+}

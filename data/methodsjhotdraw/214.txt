@@ -1,0 +1,7 @@
+/**
+ * Gets rid of all the resources of the view.
+ * No other methods should be invoked on the view afterwards.
+ * A view must not consume many resources after method dispose() has been called.
+ * This is crucial for the responsivenes of an application.
+ */
+public void dispose();

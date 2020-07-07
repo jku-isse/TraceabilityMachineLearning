@@ -1,0 +1,6 @@
+static void loadActionMap(PaletteLazyActionMap map) {
+    map.put(new PaletteToolBarUI.Actions(PaletteToolBarUI.Actions.NAVIGATE_RIGHT));
+    map.put(new PaletteToolBarUI.Actions(PaletteToolBarUI.Actions.NAVIGATE_LEFT));
+    map.put(new PaletteToolBarUI.Actions(PaletteToolBarUI.Actions.NAVIGATE_UP));
+    map.put(new PaletteToolBarUI.Actions(PaletteToolBarUI.Actions.NAVIGATE_DOWN));
+}

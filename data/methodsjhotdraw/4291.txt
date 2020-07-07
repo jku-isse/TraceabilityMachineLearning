@@ -1,0 +1,4 @@
+public void setFloatingLocation(int x, int y) {
+    floatingX = x;
+    floatingY = y;
+}

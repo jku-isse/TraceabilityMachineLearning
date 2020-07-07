@@ -1,0 +1,3 @@
+public void hcp_diagnosis_data() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/hcp_diagnosis_data.sql"));
+}

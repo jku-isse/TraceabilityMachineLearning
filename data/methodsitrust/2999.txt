@@ -1,0 +1,28 @@
+/**
+ * Return a list of all immunization procedures for a given patient
+ *
+ * @param pid
+ * 		The MID of the patient in question.
+ * @return A java.util.List of the procedures.
+ * @throws DBException
+ * 		
+ */
+public List<ProcedureBean> getImmunizationProcedures(long pid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (pid == 0L)
+            throw new SQLException("pid cannot be 0");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("Select * From ovprocedure ovp, officevisits ov, cptcodes cpt " + ("Where ovp.VisitID=ov.ID and cpt.code=ovp.cptcode and ov.patientID=? and cpt.attribute=immunization" + "ORDER BY ov.visitDate desc")));
+        ps.setLong(1, pid);
+        ResultSet rs = ps.executeQuery();
+        return procedureLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

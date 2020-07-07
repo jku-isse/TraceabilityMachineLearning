@@ -1,0 +1,4 @@
+/**
+ * Creates an object from the specified element name.
+ */
+public Object create(String name);

@@ -1,0 +1,28 @@
+/**
+ * Returns whether or not an office visit actually exists
+ *
+ * @param ovID
+ * 		The ID of the office visit to be checked.
+ * @param pid
+ * 		The MID of the patient associated with this transaction.
+ * @return A boolean indicating its existence.
+ * @throws DBException
+ * 		
+ */
+public boolean checkOfficeVisitExists(long ovID, long pid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM officevisits WHERE ID=? AND PatientID=?");
+        ps.setLong(1, ovID);
+        ps.setLong(2, pid);
+        ResultSet rs = ps.executeQuery();
+        return rs.next();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,10 @@
+public void handleRequestSecondaryHandles(HandleEvent e) {
+    secondaryHandleOwner = e.getHandle();
+    secondaryHandles.clear();
+    secondaryHandles.addAll(secondaryHandleOwner.createSecondaryHandles());
+    for (Handle h : secondaryHandles) {
+        h.setView(this);
+        h.addHandleListener(eventHandler);
+    }
+    repaint();
+}

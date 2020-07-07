@@ -1,0 +1,3 @@
+private String todayOffsetStr(int offset) {
+    return dateOffsetStr(new Date(), offset);
+}

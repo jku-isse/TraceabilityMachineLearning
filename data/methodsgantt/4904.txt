@@ -1,0 +1,5 @@
+private void initFormats() {
+    myLongFormat = GanttLanguage.getInstance().createDateFormat("MMMM yyyy");
+    myMediumFormat = GanttLanguage.getInstance().createDateFormat("MMM - yy");
+    myShortFormat = GanttLanguage.getInstance().createDateFormat("MM - yy");
+}

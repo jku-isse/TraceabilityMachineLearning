@@ -1,0 +1,15 @@
+/**
+ * Prints the contents of the DOMOutput into the specified print writer.
+ */
+public void print(PrintWriter out) {
+    XMLWriter writer = new XMLWriter(out);
+    try {
+        // writer.write(document);
+        writer.write(((XMLElement) (document.getChildren().get(0))), true);
+    } catch (IOException e) {
+        InternalError error = new InternalError();
+        error.initCause(e);
+        throw error;
+    }
+    // ((XMLElement) document.getChildren().get(0)).print(out);
+}

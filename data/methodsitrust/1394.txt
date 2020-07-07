@@ -1,0 +1,6 @@
+public void testTotalCholesterol() throws Exception {
+    HealthRecord r = new HealthRecord();
+    r.setCholesterolHDL(5);
+    r.setCholesterolLDL(6);
+    r.setCholesterolTri(7);
+}

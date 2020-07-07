@@ -1,0 +1,14 @@
+/**
+ * Informs that a figure changed the area of its display box.
+ */
+public void changed() {
+    if ((changingDepth) == 1) {
+        validate();
+        fireFigureChanged(getDrawingArea());
+    } else
+        if ((changingDepth) < 0) {
+            throw new InternalError("changed was called without a prior call to willChange.");
+        }
+
+    (changingDepth)--;
+}

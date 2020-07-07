@@ -1,0 +1,5 @@
+public TimeUnitImpl(String name, TimeUnitGraph graph, TimeUnit directAtomUnit) {
+    myName = name;
+    myGraph = graph;
+    myDirectAtomUnit = directAtomUnit;
+}

@@ -1,0 +1,12 @@
+private void writeTextAreaElement(IXMLElement parent, SVGTextAreaFigure f) throws IOException {
+    IXMLElement elem = parent.createElement("AREA");
+    Rectangle2D.Double rect = f.getBounds();
+    double grow = SVGAttributeKeys.getPerpendicularHitGrowth(f);
+    rect.x -= grow;
+    rect.y -= grow;
+    rect.width += grow;
+    rect.height += grow;
+    if (writeRectAttributes(elem, f, rect)) {
+        parent.addChild(elem);
+    }
+}

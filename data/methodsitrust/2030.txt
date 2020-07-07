@@ -1,0 +1,3 @@
+public ProcedureBean(String code) {
+    CPTCode = code;
+}

@@ -1,0 +1,6 @@
+/**
+ * Get some extended PGN compatible info on the game.
+ *
+ * @return Extended PGN compatible info on the game.
+ */
+String getPGNheader();

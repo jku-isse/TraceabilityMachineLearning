@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public GeometryEdit(Figure owner, Object oldGeometry, Object newGeometry) {
+    this.owner = owner;
+    this.oldGeometry = oldGeometry;
+    this.newGeometry = newGeometry;
+}

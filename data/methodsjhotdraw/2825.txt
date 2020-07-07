@@ -1,0 +1,4 @@
+/**
+ * Sets the font size of the text held by the TextHolderFigure.
+ */
+public void setFontSize(float size);

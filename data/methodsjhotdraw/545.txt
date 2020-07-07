@@ -1,0 +1,4 @@
+public void setVerticalValue(float newValue) {
+    isPixelsValid = (isPixelsValid) && ((verticalValue) == newValue);
+    verticalValue = newValue;
+}

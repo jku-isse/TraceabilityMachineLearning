@@ -1,0 +1,6 @@
+@Override
+public int hashCode() {
+    assert false : "hashCode not implemented";
+    return apptID;// any arbitrary constant will do
+
+}

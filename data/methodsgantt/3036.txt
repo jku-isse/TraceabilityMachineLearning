@@ -1,0 +1,13 @@
+/**
+ * Add a new separator.
+ */
+private void separatorButtonActionPerformed(ActionEvent evt) {
+    int index = 0;
+    if ((list.getSelectedIndex()) != (-1))
+        index = list.getSelectedIndex();
+
+    iconList.add(index, GPToolBar.SEPARATOR_OBJECT);
+    buttonList.add(index, GPToolBar.SEPARATOR_OBJECT);
+    list.setSelectedIndex(index);
+    bIconMoved = true;
+}

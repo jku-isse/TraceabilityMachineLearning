@@ -1,0 +1,15 @@
+public Rectangle2D.Double calculateLayout(CompositeFigure compositeFigure, Point2D.Double anchor, Point2D.Double lead) {
+    Insets2D.Double layoutInsets = AttributeKeys.LAYOUT_INSETS.get(compositeFigure);
+    Rectangle2D.Double layoutBounds = new Rectangle2D.Double(anchor.x, anchor.y, 0, 0);
+    for (Figure child : compositeFigure.getChildren()) {
+        if (child.isVisible()) {
+            Dimension2DDouble preferredSize = child.getPreferredSize();
+            Insets2D.Double ins = getInsets(child);
+            layoutBounds.height = Math.max(layoutBounds.height, (((preferredSize.height) + (ins.top)) + (ins.bottom)));
+            layoutBounds.width += ((preferredSize.width) + (ins.left)) + (ins.right);
+        }
+    }
+    layoutBounds.width += (layoutInsets.left) + (layoutInsets.right);
+    layoutBounds.height += (layoutInsets.top) + (layoutInsets.bottom);
+    return layoutBounds;
+}

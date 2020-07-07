@@ -1,0 +1,1 @@
+void setContext(IGanttProject project, UIFacade uiFacade);

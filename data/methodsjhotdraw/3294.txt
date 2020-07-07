@@ -1,0 +1,9 @@
+/**
+ * Creates a new instance.
+ */
+public ToggleGridAction(DrawingEditor editor) {
+    super(editor);
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    labels.configureAction(this, ToggleGridAction.ID);
+    updateViewState();
+}

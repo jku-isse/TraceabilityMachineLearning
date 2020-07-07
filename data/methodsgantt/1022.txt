@@ -1,0 +1,3 @@
+public void renameCustomColumn(String oldName, String newName) {
+    customColumns.set(customColumns.indexOf(oldName), newName);
+}

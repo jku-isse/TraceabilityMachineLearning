@@ -1,0 +1,8 @@
+/**
+ * Get the HCP id.
+ *
+ * @return the HCP id
+ */
+public long getHcpid() {
+    return hcpid;
+}

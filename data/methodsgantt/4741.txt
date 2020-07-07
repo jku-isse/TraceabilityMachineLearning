@@ -1,0 +1,23 @@
+public TaskDependencyConstraint.Collision getCollision() {
+    TaskDependencyConstraint.Collision result = null;
+    Task dependee = getDependency().getDependee();
+    Task dependant = getDependency().getDependant();
+    GanttCalendar dependeeEnd = dependee.getEnd();
+    GanttCalendar dependantEnd = dependant.getEnd();
+    // 
+    int difference = getDependency().getDifference();
+    GanttCalendar comparisonDate = dependeeEnd.Clone();
+    comparisonDate.add(difference);
+    boolean isActive = ((getDependency().getHardness()) == (TaskDependency.Hardness.RUBBER)) ? (dependantEnd.compareTo(comparisonDate)) < 0 : (dependantEnd.compareTo(comparisonDate)) != 0;
+    GanttCalendar acceptableStart = dependant.getStart().Clone();
+    // GanttCalendar acceptableStart = dependant.getStart();
+    if (isActive) {
+        Task clone = dependee.unpluggedClone();
+        TaskMutator mutator = clone.createMutator();
+        mutator.shift((-(dependant.getDuration().getLength())));
+        acceptableStart = clone.getEnd();
+    }
+    addDelay(acceptableStart);
+    result = new TaskDependencyConstraint.DefaultCollision(acceptableStart, TaskDependencyConstraint.Collision.START_LATER_VARIATION, isActive);
+    return result;
+}

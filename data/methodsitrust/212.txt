@@ -1,0 +1,13 @@
+/**
+ * Gives the full name of the patient
+ *
+ * @return Full name of the patient who we are checking
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ * @author Andy Meneely
+ */
+public String getUserName() throws DBException, iTrustException {
+    return authDAO.getUserName(pid);
+}

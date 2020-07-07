@@ -1,0 +1,3 @@
+private Task getPrecomputedShift(float unitCount) {
+    return null;
+}

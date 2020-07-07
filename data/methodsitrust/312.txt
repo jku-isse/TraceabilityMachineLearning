@@ -1,0 +1,4 @@
+public void editLabProcedure(LabProcedureBean bean) throws iTrustException {
+    verifySaved();
+    labProcedureDAO.updateLabProcedure(bean);
+}

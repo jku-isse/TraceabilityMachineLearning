@@ -1,0 +1,10 @@
+public void testAddDuplicate() throws Exception {
+    final String code = "0000F";
+    final String descrip0 = "description 0";
+    ProcedureBean proc = new ProcedureBean(code, descrip0);
+    assertEquals(getAddCodeSuccessString(proc), action.addCPTCode(proc));
+    proc.setDescription("description 1");
+    assertEquals("Error: Code already exists.", action.addCPTCode(proc));
+    proc = factory.getCPTCodesDAO().getCPTCode(code);
+    assertEquals(descrip0, proc.getDescription());
+}

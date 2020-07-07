@@ -1,0 +1,13 @@
+public void startElement(String namespaceURI, String sName, String qName, Attributes attrs) throws FileFormatException {
+    if (ProxyDocument.PortfolioTagHandler.PORTFOLIO_TAG.equals(qName)) {
+        isReadingPortfolio = true;
+        return;
+    }
+    if ((ProxyDocument.PortfolioTagHandler.PROJECT_TAG.equals(qName)) && (isReadingPortfolio)) {
+        String locationAsString = attrs.getValue(ProxyDocument.PortfolioTagHandler.LOCATION_ATTR);
+        if (locationAsString != null) {
+            Document document = myCreator.getDocument(locationAsString);
+            getPortfolioImpl().setDefaultDocument(document);
+        }
+    }
+}

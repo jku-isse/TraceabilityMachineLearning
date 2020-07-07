@@ -1,0 +1,7 @@
+/**
+ * Set new window position (top left corner)
+ */
+public void setWindowPosition(int x, int y) {
+    this.x = x;
+    this.y = y;
+}

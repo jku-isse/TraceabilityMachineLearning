@@ -1,0 +1,50 @@
+/**
+ * This method parses the list of DiagnosisStatistics Beans to initialize the
+ * chart data set.
+ *
+ * @param Map
+ * 		parameters passed from CeWolf (though not actually used locally)
+ * @return A data set containing information to be graphed
+ * @throws DatasetProduceException
+ * 		
+ */
+public Object produceDataset(Map params) throws DatasetProduceException {
+    // The DefaultCategoryDataset is used for bar charts.
+    // This data set class may change based on the type of chart you wish to produce.
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset() {
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
+
+        /**
+         *
+         *
+         * @see java.lang.Object#finalize()
+         */
+        @Override
+        protected void finalize() throws Throwable {
+            super.finalize();
+        }
+    };
+    if ((epidemic) == false) {
+        seriesName = new String[2];
+        dataset.addValue(values[0], diagnosisName, "Zipcode Cases");
+        dataset.addValue(values[1], diagnosisName, "Region Cases");
+        seriesName[0] = "Zipcode Case";
+        seriesName[1] = "Region Cases";
+    } else
+        if ((epidemic) == true) {
+            seriesName = new String[4];
+            dataset.addValue(values[0], diagnosisName, "Current Week Zipcode Cases");
+            dataset.addValue(values[1], diagnosisName, "Average Prior Zipcode Cases");
+            dataset.addValue(values[2], diagnosisName, "Current Week Region Cases");
+            dataset.addValue(values[3], diagnosisName, "Average Prior Region Cases");
+            seriesName[0] = "Current Week Zipcode Cases";
+            seriesName[1] = "Average Prior Zipcode Cases";
+            seriesName[2] = "Current Week Region Cases";
+            seriesName[3] = "Average Prior Region Cases";
+        }
+
+    return dataset;
+}

@@ -1,0 +1,6 @@
+/**
+ * Return the dot product of vectors a and b.
+ */
+private static double v2Dot(Point2D.Double a, Point2D.Double b) {
+    return ((a.x) * (b.x)) + ((a.y) * (b.y));
+}

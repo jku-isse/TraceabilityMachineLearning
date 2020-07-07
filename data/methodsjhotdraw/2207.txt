@@ -1,0 +1,6 @@
+public void read(InputStream in, Drawing drawing, boolean replace) throws IOException {
+    if (replace) {
+        drawing.removeAllChildren();
+    }
+    drawing.basicAdd(createImageHolder(in));
+}

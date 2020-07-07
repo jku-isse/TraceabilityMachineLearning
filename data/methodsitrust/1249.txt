@@ -1,0 +1,12 @@
+/**
+ * Returns the prescribing HCP for a prescription
+ *
+ * @param prescription
+ * 		item in question
+ * @return HCP who prescribed the prescription
+ * @throws iTrustException
+ * 		
+ */
+public PersonnelBean getPrescribingDoctor(PrescriptionBean prescription) throws iTrustException {
+    return personnelDAO.getPrescribingDoctor(prescription);
+}

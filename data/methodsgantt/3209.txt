@@ -1,0 +1,6 @@
+public void removeItem() {
+    int index = nameComboBox.getSelectedIndex();
+    nameComboBox.removeItemAt(index);
+    ((GanttPreviousState) (myPreviousStates.get((index - 1)))).remove();
+    myPreviousStates.remove((index - 1));
+}

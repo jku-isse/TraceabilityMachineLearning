@@ -1,0 +1,8 @@
+/**
+ * Constructor.
+ */
+public GanttXFIGSaver(IGanttProject project) {
+    // this.area = area;
+    // this.prjInfos = prjInfos;
+    myTaskManager = project.getTaskManager();
+}

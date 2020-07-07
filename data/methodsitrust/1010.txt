@@ -1,0 +1,9 @@
+public void testGetDiagnosisStatisticsInvalidDate() throws Exception {
+    try {
+        action.getDiagnosisStatistics("06-28/2011", "09/28/2011", "487.00", "27606");
+        fail("Should have failed but didnt");
+    } catch (FormValidationException e) {
+        assertEquals(1, e.getErrorList().size());
+        assertEquals("Enter dates in MM/dd/yyyy", e.getErrorList().get(0));
+    }
+}

@@ -1,0 +1,5 @@
+boolean _isLooping(TaskDependency dep) {
+    Set tasksInvolved = new HashSet();
+    tasksInvolved.add(dep.getDependee());
+    return _isLooping(dep, tasksInvolved);
+}

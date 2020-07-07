@@ -1,0 +1,8 @@
+/**
+ * Returns the DrawingView to which this FigureAttributeEditorHandler is
+ * attached. Returns null, if the FigureAttributeEditorHandler is attached
+ * to all views of the DrawingEditor.
+ */
+public DrawingView getView() {
+    return view;
+}

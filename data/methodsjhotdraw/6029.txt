@@ -1,0 +1,12 @@
+/**
+ * Gets a unique ID for the specified element.
+ */
+public String getId(IXMLElement element) {
+    if (identifiedElements.containsKey(element)) {
+        return identifiedElements.get(element);
+    } else {
+        String id = Integer.toString(((nextId)++), Character.MAX_RADIX);
+        identifiedElements.put(element, id);
+        return id;
+    }
+}

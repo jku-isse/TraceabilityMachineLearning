@@ -1,0 +1,6 @@
+protected void drawText(Graphics2D g) {
+    if (((getText()) != null) || (isEditable())) {
+        TextLayout layout = getTextLayout();
+        layout.draw(g, ((float) (origin.x)), ((float) ((origin.y) + (layout.getAscent()))));
+    }
+}

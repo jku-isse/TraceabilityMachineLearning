@@ -1,0 +1,4 @@
+/**
+ * Method when finish to parse an attibute
+ */
+public void endElement(String namespaceURI, String sName, String qName);

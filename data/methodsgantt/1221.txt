@@ -1,0 +1,46 @@
+private int printTask(Graphics g, List child) {
+    int rowCount = 0;
+    final int h = getTree().getTreeTable().getRowHeight();
+    Stack nestingStack = new Stack();
+    // int x = 5;
+    final int fourEmWidth = new TextLengthCalculatorImpl(g).getTextLength("mmmm");
+    int y = (getTree().getTable().getTableHeader().getHeight()) + (TaskTreeImageGenerator.HEADER_OFFSET);
+    for (Iterator tasks = child.iterator(); tasks.hasNext();) {
+        DefaultMutableTreeNode nextTreeNode = ((DefaultMutableTreeNode) (tasks.next()));
+        boolean blankline = nextTreeNode instanceof BlankLineNode;
+        Task next = null;
+        if (!blankline) {
+            next = ((Task) (nextTreeNode.getUserObject()));
+            while (!(nestingStack.isEmpty())) {
+                DefaultMutableTreeNode topStackNode = ((DefaultMutableTreeNode) (nestingStack.pop()));
+                if ((nextTreeNode.getParent()) == topStackNode) {
+                    nestingStack.push(topStackNode);
+                    break;
+                }
+            } 
+            nestingStack.push(nextTreeNode);
+        }
+        if (blankline || (isVisible(next))) {
+            if ((rowCount % 2) == 1) {
+                g.setColor(new Color(((float) (0.933)), ((float) (0.933)), ((float) (0.933))));
+                g.fillRect(0, y, ((getWidth()) - (h / 2)), h);
+            }
+            g.setColor(Color.black);
+            g.drawRect(0, y, ((getWidth()) - (h / 2)), h);
+            if (!blankline) {
+                int charH = ((int) (g.getFontMetrics().getLineMetrics(next.getName(), g).getAscent()));
+                int x = (((nestingStack.size()) - 1) * fourEmWidth) + 5;
+                g.drawString(next.getName(), x, ((y + charH) + ((h - charH) / 2)));
+            }
+            g.setColor(new Color(((float) (0.807)), ((float) (0.807)), ((float) (0.807))));
+            g.drawLine(1, ((y + h) - 1), ((getWidth()) - 11), ((y + h) - 1));
+            y += h;
+            rowCount++;
+            // if (nextTreeNode.getChildCount() != 0) {
+            // y = printTask(g, x + (h / 2), y, getTree().getAllChildTask(
+            // nextTreeNode));
+            // }
+        }
+    }
+    return y;
+}

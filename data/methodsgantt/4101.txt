@@ -1,0 +1,3 @@
+public boolean existsForID(String id) {
+    return this.mapIdCustomColum.keySet().contains(id);
+}

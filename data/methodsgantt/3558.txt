@@ -1,0 +1,3 @@
+public Event(GanttLanguage language) {
+    super(language);
+}

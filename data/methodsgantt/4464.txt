@@ -1,0 +1,9 @@
+void fireTaskPropertiesChanged(Task task) {
+    if (areEventsEnabled) {
+        TaskPropertyEvent e = new TaskPropertyEvent(task);
+        for (int i = 0; i < (myListeners.size()); i++) {
+            TaskListener next = ((TaskListener) (myListeners.get(i)));
+            next.taskPropertiesChanged(e);
+        }
+    }
+}

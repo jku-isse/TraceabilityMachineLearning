@@ -1,0 +1,1 @@
+void saveProjectAs(IGanttProject project);

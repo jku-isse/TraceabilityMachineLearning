@@ -1,0 +1,3 @@
+protected void setActiveInteraction(ChartComponentBase.MouseInteraction myActiveInteraction) {
+    this.myActiveInteraction = myActiveInteraction;
+}

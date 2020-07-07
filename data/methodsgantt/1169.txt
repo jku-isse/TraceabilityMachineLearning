@@ -1,0 +1,3 @@
+void decreaseCustomPropertyIndex(int i) {
+    ResourceTreeTableModel.index -= i;
+}

@@ -1,0 +1,21 @@
+public void testBadDiscovers() throws Exception {
+    // login patient 2
+    WebConversation wc = login("1", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 1L, 0L, "");
+    // click on My Demographics
+    wr = wr.getLinkWith("My Demographics").click();
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_VIEW, 1L, 1L, "");
+    WebForm form = wr.getForms()[0];
+    form.setParameter("creditCardType", "DISCOVER");
+    form.setParameter("creditCardNumber", "5593090746812380");// Legit Mastercard
+
+    wr = form.submit();
+    assertTrue(wr.getText().contains("not properly filled in: [Credit Card Number]"));
+    iTrustHTTPTest.assertNotLogged(TransactionType.DEMOGRAPHICS_EDIT, 1L, 1L, "");
+    form.setParameter("creditCardNumber", "6437693863890467");
+    wr = form.submit();
+    assertTrue(wr.getText().contains("not properly filled in: [Credit Card Number]"));
+    iTrustHTTPTest.assertNotLogged(TransactionType.DEMOGRAPHICS_EDIT, 1L, 1L, "");
+}

@@ -1,0 +1,7 @@
+public Object getTransformRestoreData() {
+    LinkedList<Object> list = new LinkedList<Object>();
+    for (Figure child : getChildren()) {
+        list.add(child.getTransformRestoreData());
+    }
+    return list;
+}

@@ -1,0 +1,5 @@
+private void prepareOVIDs(PreparedStatement ps, List<Long> ovIDs) throws SQLException {
+    for (int i = 0; i < (ovIDs.size()); i++) {
+        ps.setLong((i + 2), ovIDs.get(i));
+    }
+}

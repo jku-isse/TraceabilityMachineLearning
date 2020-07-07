@@ -1,0 +1,10 @@
+/**
+ * Gets all the messages for the logged in user and sorts name in descending order
+ *
+ * @return a list of all the users messages
+ * @throws SQLException
+ * 		
+ */
+public List<MessageBean> getAllMySentMessagesNameDescending() throws SQLException {
+    return messageDAO.getMessagesFromNameDescending(loggedInMID);
+}

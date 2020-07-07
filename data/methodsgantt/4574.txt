@@ -1,0 +1,3 @@
+public ShiftTaskTreeAlgorithm getShiftTaskTreeAlgorithm() {
+    return myShiftTaskTreeAlgorithm;
+}

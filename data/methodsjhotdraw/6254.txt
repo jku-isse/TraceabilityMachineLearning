@@ -1,0 +1,6 @@
+public static ResourceBundleUtil getLabels() {
+    if ((UndoRedoManager.labels) == null) {
+        UndoRedoManager.labels = ResourceBundleUtil.getBundle("org.jhotdraw.undo.Labels");
+    }
+    return UndoRedoManager.labels;
+}

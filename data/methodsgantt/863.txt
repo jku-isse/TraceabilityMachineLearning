@@ -1,0 +1,12 @@
+public DefaultMutableTreeNode removeChild(DefaultMutableTreeNode node) {
+    DefaultMutableTreeNode nodeCopy = new DefaultMutableTreeNode(node.getUserObject());
+    Enumeration children = node.children();
+    while (children.hasMoreElements()) {
+        DefaultMutableTreeNode child = ((DefaultMutableTreeNode) (children.nextElement()));
+        DefaultMutableTreeNode childCopy = this.removeChild(child);
+        nodeCopy.add(childCopy);
+        child.removeFromParent();
+        treeModel.nodesWereRemoved(node, new int[]{ 0 }, new Object[]{ child });
+    } 
+    return nodeCopy;
+}

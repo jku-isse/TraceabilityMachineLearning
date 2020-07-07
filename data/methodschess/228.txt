@@ -1,0 +1,44 @@
+/**
+ * Get the plies for a given game position and color.
+ *
+ * @param white
+ * 		true, if white has the next move.
+ */
+public final Ply[] getPliesForColor(boolean white) {
+    resetPlies();
+    _white = white;// Store the color of the current player.
+
+    // Compute some bitmasks, so we dont have to compute them again for each piece type.
+    _emptySquares = getBoard().getEmptySquares();// Get the positions of the empty squares.
+
+    _attackablePieces = (getBoard().getAllPiecesForColor((!(_white)))) & (~(getBoard().getPositionOfPieces((((Piece.KING) << 1) | (_white ? 0 : 1)))));
+    // Add the possible plies for all piece types.
+    // I tried to sort this list according to the probality for a check, so
+    // the analyzer has a better chance to find it early.
+    addPliesForKnights();
+    addPliesForBishops();
+    addPliesForRooks();
+    addPliesForQueens();
+    addPliesForPawns();
+    addPliesForKing();
+    // Check, if theres a good ply for this board in the hash table.
+    Ply hashtablePly = getHashtable().getPly(getBoard(), _white);
+    if (hashtablePly != null) {
+        // If so, increase the score of this ply.
+        for (int index = 0; index < (_plyCounter); index++) {
+            if (_currentPlies[index].getPly().equals(hashtablePly)) {
+                _currentPlies[index].setScore(HASHTABLE_PLY);
+                break;
+            }
+        }
+    }
+    // Presort the plies
+    presortPlies();
+    // Convert the plies to a array of the correct size
+    Ply[] plies = new Ply[_plyCounter];
+    int destIndex = 0;
+    for (int sourceIndex = (_plyCounter) - 1; sourceIndex >= 0;) {
+        plies[(destIndex++)] = _currentPlies[(sourceIndex--)].getPly();
+    }
+    return plies;
+}

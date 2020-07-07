@@ -1,0 +1,9 @@
+@Override
+protected void setUp() throws Exception {
+    super.setUp();
+    TestDataGenerator gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.standardData();
+    this.factory = TestDAOFactory.getTestInstance();
+    this.action = new GenerateCalendarAction(factory, mId);
+}

@@ -1,0 +1,12 @@
+public void testloadSingle() {
+    try {
+        expect(rs.getLong("RoomID")).andReturn(1L).once();
+        expect(rs.getLong("OccupiedBy")).andReturn(1L).once();
+        expect(rs.getLong("InWard")).andReturn(1L).once();
+        expect(rs.getString("roomName")).andReturn("CleanRoom").once();
+        expect(rs.getString("Status")).andReturn("Clean").once();
+        ctrl.replay();
+        wbl.loadSingle(rs);
+    } catch (SQLException e) {
+    }
+}

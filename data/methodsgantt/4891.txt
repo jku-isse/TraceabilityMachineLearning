@@ -1,0 +1,17 @@
+/**
+ * From super
+ *
+ * @param year
+ * 		
+ * @param month
+ * 		
+ * @param date
+ * 		
+ * @param hour
+ * 		
+ * @param minute
+ * 		
+ */
+public GregorianCalendar(int year, int month, int date, int hour, int minute) {
+    super(year, month, date, hour, minute);
+}

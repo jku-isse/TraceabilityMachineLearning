@@ -1,0 +1,43 @@
+/**
+ * Removes points which are closer together than the specified minimal
+ * distance.
+ * <p>
+ * The minimal distance should be chosen dependent on the size and resolution of the
+ * display device, and on the sampling rate. A good value for mouse input
+ * on a display with 100% Zoom factor is 2.
+ * <p>
+ * The purpose of this method, is to remove points, which add no additional
+ * information about the shape of the curve from the list of digitized points.
+ * <p>
+ * The cleaned up set of digitized points gives better results, when used
+ * as input for method {@link #splitAtCorners}.
+ *
+ * @param digitizedPoints
+ * 		Digitized points
+ * @param minDistance
+ * 		minimal distance between two points. If minDistance is
+ * 		0, this method only removes sequences of coincident points.
+ * @return Digitized points with a minimal distance.
+ */
+public static ArrayList<Point2D.Double> removeClosePoints(List<Point2D.Double> digitizedPoints, double minDistance) {
+    if (minDistance == 0) {
+        return Bezier.removeCoincidentPoints(digitizedPoints);
+    } else {
+        double squaredDistance = minDistance * minDistance;
+        ArrayList<Point2D.Double> cleaned = new ArrayList<Point2D.Double>();
+        if ((digitizedPoints.size()) > 0) {
+            Point2D.Double prev = digitizedPoints.get(0);
+            cleaned.add(prev);
+            for (Point2D.Double p : digitizedPoints) {
+                if ((Bezier.v2SquaredDistanceBetween2Points(prev, p)) > squaredDistance) {
+                    cleaned.add(p);
+                    prev = p;
+                }
+            }
+            if (!(prev.equals(digitizedPoints.get(((digitizedPoints.size()) - 1))))) {
+                cleaned.set(((cleaned.size()) - 1), digitizedPoints.get(((digitizedPoints.size()) - 1)));
+            }
+        }
+        return cleaned;
+    }
+}

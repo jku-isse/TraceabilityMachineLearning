@@ -1,0 +1,11 @@
+public void testGetAllMyMessagesFromNameAscending() throws SQLException {
+    List<MessageBean> mbList = action2.getAllMySentMessagesNameAscending();
+    List<MessageBean> mbList2 = action.getAllMySentMessagesNameAscending();
+    assertEquals(2, mbList.size());
+    assertEquals(3, mbList2.size());
+    try {
+        assertTrue(((action2.getName(mbList.get(0).getFrom()).compareTo(action2.getName(mbList.get(1).getFrom()))) >= 0));
+    } catch (iTrustException e) {
+        e.printStackTrace();
+    }
+}

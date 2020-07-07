@@ -1,0 +1,33 @@
+/**
+ * Find the index of highest set bit in a long bitmask.
+ *
+ * @param bitmask
+ * 		The bitmask to operate on.
+ * @return The index of the highest set bit or 0, if no bits are set.
+ */
+public static final int getHighestBit(long bitmask) {
+    int highestBit = 0;
+    // The following 3 statements split the 64 bit word down to
+    // a byte.
+    int dwordPart = ((int) (bitmask >>> 32));
+    if (dwordPart != 0) {
+        highestBit += 32;
+    } else {
+        dwordPart = ((int) (bitmask));
+    }
+    int wordPart = (dwordPart >>> 16) & 65535;
+    if (wordPart != 0) {
+        highestBit += 16;
+    } else {
+        wordPart = dwordPart & 65535;
+    }
+    int bytePart = (wordPart >>> 8) & 255;
+    if (bytePart != 0) {
+        highestBit += 8;
+    } else {
+        bytePart = wordPart & 255;
+    }
+    // Use the byte as a index for a precomputed array
+    // of bit indexes.
+    return highestBit + (BitUtils._highestBit[bytePart]);
+}

@@ -1,0 +1,6 @@
+/**
+ * Gets the changed drawing.
+ */
+public CompositeFigure getCompositeFigure() {
+    return ((CompositeFigure) (getSource()));
+}

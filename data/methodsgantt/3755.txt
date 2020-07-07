@@ -1,0 +1,23 @@
+private void changeScale() {
+    String str = myComboScale.getSelectedItem().toString();
+    if (str.endsWith("%"))
+        str = str.substring(0, ((str.length()) - 1));
+
+    str = str.trim();
+    myScale = 0;
+    try {
+        myScale = Integer.parseInt(str);
+    } catch (NumberFormatException ex) {
+        return;
+    }
+    Component[] comps = myPreviewContainer.getComponents();
+    for (int k = 0; k < (comps.length); k++) {
+        if (!((comps[k]) instanceof PrintPreview.PagePreview))
+            continue;
+
+        PrintPreview.PagePreview pp = ((PrintPreview.PagePreview) (comps[k]));
+        pp.setScale(myScale);
+    }
+    myPreviewContainer.doLayout();
+    myPreviewContainer.getParent().getParent().validate();
+}

@@ -1,0 +1,5 @@
+public void mouseClicked(MouseEvent evt) {
+    if (((getView()) != null) && (getView().isEnabled())) {
+        tracker.mouseClicked(evt);
+    }
+}

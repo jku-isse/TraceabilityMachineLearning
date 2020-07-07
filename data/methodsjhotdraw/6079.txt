@@ -1,0 +1,6 @@
+private void ignoreCasePerformed(ActionEvent evt) {
+    // GEN-FIRST:event_ignoreCasePerformed
+    if ((prefs) != null) {
+        prefs.putBoolean("find.ignoreCase", ignoreCaseCheck.isSelected());
+    }
+}// GEN-LAST:event_ignoreCasePerformed

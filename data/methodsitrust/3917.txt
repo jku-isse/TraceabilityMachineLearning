@@ -1,0 +1,11 @@
+public void testGetVisitReminders_TestInitialPage() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Office Visit Reminders").click();
+    assertEquals("iTrust - Visit Reminders", wr.getTitle());
+    assertTrue(wr.getText().contains("<h2>Patients Needing Visits</h2>"));
+    assertTrue(wr.getElementsWithName("ReminderType")[0].getText().contains("Diagnosed Care Needers"));
+    assertTrue(wr.getElementsWithName("ReminderType")[0].getText().contains("Flu Shot Needers"));
+    assertTrue(wr.getElementsWithName("ReminderType")[0].getText().contains("Immunization Needers"));
+    assertEquals("Get Reminders", wr.getElementsWithName("getReminders")[0].getAttribute("value"));
+}

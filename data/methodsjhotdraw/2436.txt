@@ -1,0 +1,3 @@
+public int indexOf(Figure figure) {
+    return children.indexOf(figure);
+}

@@ -1,0 +1,16 @@
+public GanttTreeDropListener() {
+    cueLineColor = new Color(SystemColor.controlShadow.getRed(), SystemColor.controlShadow.getGreen(), SystemColor.controlShadow.getBlue(), 64);
+    // Set up a hover timer, so that a node will be automatically
+    // expanded or collapsed
+    // if the user lingers on it for more than a short time
+    hoverTimer = new Timer(1000, new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            if (!(treetable.getTree().isExpanded(lastPath))) {
+                treetable.getTree().expandPath(lastPath);
+            }
+        }
+    });
+    // Set timer to one-shot mode - it will be restartet when the
+    // cursor is over a new node
+    hoverTimer.setRepeats(false);
+}

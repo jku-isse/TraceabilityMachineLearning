@@ -1,0 +1,11 @@
+@Override
+public Rectangle getDrawingArea() {
+    if ((getConnection()) != null) {
+        Rectangle r = new Rectangle(view.drawingToView(getConnection().getEndPoint()));
+        r.grow(getHandlesize(), getHandlesize());
+        return r;
+    } else {
+        return new Rectangle();// empty rectangle
+
+    }
+}

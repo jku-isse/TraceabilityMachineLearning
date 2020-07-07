@@ -1,0 +1,3 @@
+public StartStartConstraintImpl() {
+    super(GanttTaskRelationship.SS, GanttLanguage.getInstance().getText("startstart"));
+}

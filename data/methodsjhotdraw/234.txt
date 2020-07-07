@@ -1,0 +1,5 @@
+/**
+ * Sets the file of the view.
+ * This is a bound property.
+ */
+public void setFile(File newValue);

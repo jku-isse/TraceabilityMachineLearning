@@ -1,0 +1,11 @@
+public CustomPropertyDefinition createDefinition(String id, String typeAsString, String name, String defaultValueAsString) {
+    final ResourceColumn newColumn = newResourceColumn(Integer.valueOf(id).intValue());
+    newColumn.setTitle(name);
+    final CustomPropertyDefinition stubDefinition = CustomPropertyManager.PropertyTypeEncoder.decodeTypeAndDefaultValue(typeAsString, defaultValueAsString);
+    newColumn.setType(stubDefinition.getType());
+    newColumn.setDefaultVal(stubDefinition.getDefaultValue());
+    assert String.valueOf(newColumn.getIndex()).equals(id);
+    addCustomColumn(newColumn);
+    List definitions = myResourceManager.getDefinitions();
+    return ((CustomPropertyDefinition) (definitions.get(((definitions.size()) - 1))));
+}

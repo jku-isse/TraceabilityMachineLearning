@@ -1,0 +1,19 @@
+public String getLineSeparator() {
+    String lineSeparator;
+    switch (charSetCombo.getSelectedIndex()) {
+        case 0 :
+        default :
+            lineSeparator = "
+";
+            break;
+        case 1 :
+            lineSeparator = "";
+            break;
+        case 2 :
+            lineSeparator = "
+";
+            break;
+    }
+    CharacterSetAccessory.prefs.put("lineSeparator", lineSeparator);
+    return lineSeparator;
+}

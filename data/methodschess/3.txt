@@ -1,0 +1,14 @@
+/**
+ * Let the computer make a move.
+ */
+public final boolean computerPly() {
+    Ply nextPly = getEngine().computeBestPly();
+    if (nextPly == null) {
+        System.out.println("No computer move returned");
+        return false;
+    } else {
+        doPly(nextPly);
+        getEngine().startPermanentBrain();
+        return true;
+    }
+}

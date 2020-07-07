@@ -1,0 +1,8 @@
+public void addLabProcedure(LabProcedureBean bean) throws iTrustException {
+    verifySaved();
+    // TODO: choose lab tech if not assigned in bean
+    if ("".equals(bean.getStatus())) {
+        bean.setStatus(LabProcedureBean.In_Transit);
+    }
+    labProcedureDAO.addLabProcedure(bean);
+}

@@ -1,0 +1,7 @@
+/**
+ * Office VisitID	Identifier that specifies the office visit in
+ * which the laboratory procedure was ordered
+ */
+public void setOvID(long ovID) {
+    this.ovID = ovID;
+}

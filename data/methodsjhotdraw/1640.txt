@@ -1,0 +1,3 @@
+public String getEmptyDrawingMessage() {
+    return (emptyDrawingLabel) == null ? null : emptyDrawingLabel.getText();
+}

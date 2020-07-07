@@ -1,0 +1,3 @@
+public void update() {
+    fireContentsChanged(this, 0, myIntervalsModel.getIntervals().length);
+}

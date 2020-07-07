@@ -1,0 +1,6 @@
+public HCPDiagnosisBean() {
+    numPatients = 0;
+    visitSat = 0;
+    treatmentSat = 0;
+    surveyCount = 0;
+}

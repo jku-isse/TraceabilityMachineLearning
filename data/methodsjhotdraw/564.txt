@@ -1,0 +1,4 @@
+public float getComponentValue(int componentIndex) {
+    BoundedRangeModel brm = componentModels[componentIndex];
+    return ((brm.getValue()) - (brm.getMinimum())) / ((float) ((brm.getMaximum()) - (brm.getMinimum())));
+}

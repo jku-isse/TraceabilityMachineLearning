@@ -1,0 +1,9 @@
+private Email getTestEmail() {
+    Email email = new Email();
+    email.setBody("this is the body");
+    email.setFrom("from address");
+    email.setSubject("this is the subject");
+    email.setToList(Arrays.asList("first", "second", "third"));
+    email.setTimeAdded(new Timestamp(date.getTime()));
+    return email;
+}

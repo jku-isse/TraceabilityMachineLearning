@@ -1,0 +1,8 @@
+public void setValue(String value) {
+    if (!(isLocked())) {
+        throw new IllegalStateException("Lock option before setting value");
+    }
+    ChangeValueEvent event = new ChangeValueEvent(getID(), myLockedValue, value);
+    myLockedValue = value;
+    fireChangeValueEvent(event);
+}

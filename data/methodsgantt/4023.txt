@@ -1,0 +1,6 @@
+public void changeRole(String name, int roleID) {
+    Role role = findRole(roleID);
+    if (role != null) {
+        role.setName(name);
+    }
+}

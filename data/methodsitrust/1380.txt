@@ -1,0 +1,5 @@
+public void testGetPatientNames() {
+    List<String> p = bean.getPatientNames();
+    assertTrue(((p.size()) == 1));
+    assertEquals("Random Person", p.get(0));
+}

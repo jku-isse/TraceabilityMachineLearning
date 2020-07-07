@@ -1,0 +1,3 @@
+public ChopDiamondConnector(Figure owner) {
+    super(owner);
+}

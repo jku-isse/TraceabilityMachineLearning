@@ -1,0 +1,9 @@
+public Object getElementAt(int index) {
+    DateIntervalListEditor.DateInterval interval = myIntervalsModel.getIntervals()[index];
+    StringBuffer result = new StringBuffer(GanttLanguage.getInstance().getDateFormat().format(interval.start));
+    if (!(interval.end.equals(interval.start))) {
+        result.append("...");
+        result.append(GanttLanguage.getInstance().getDateFormat().format(interval.end));
+    }
+    return result.toString();
+}

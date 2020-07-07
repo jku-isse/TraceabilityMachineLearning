@@ -1,0 +1,23 @@
+/**
+ * Draws cells of the bottom line in the time line
+ */
+private void renderBottomUnits() {
+    int curX = 0;
+    Date curDate = getChartModel().getStartDate();
+    final int topUnitHeight = getChartModel().getChartUIConfiguration().getSpanningHeaderHeight();
+    boolean firstWeekendDay = true;
+    for (int i = 0; i < (getChartModel().getBottomUnitOffsets().size()); i++) {
+        ChartModelBase.Offset nextOffset = ((ChartModelBase.Offset) (getChartModel().getBottomUnitOffsets().get(i)));
+        TimeUnitText timeUnitText = nextOffset.getOffsetUnit().format(curDate);
+        String unitText = timeUnitText.getText((-1));
+        int posY = (2 * topUnitHeight) - 5;
+        GraphicPrimitiveContainer.Text text = myPrimitiveContainer.createText((curX + 2), posY, unitText);
+        myPrimitiveContainer.bind(text, timeUnitText);
+        text.setMaxLength(((nextOffset.getOffsetPixels()) - curX));
+        text.setFont(getChartModel().getChartUIConfiguration().getSpanningHeaderFont());
+        myPrimitiveContainer.createLine(curX, topUnitHeight, curX, (2 * topUnitHeight));
+        firstWeekendDay = true;
+        curX = nextOffset.getOffsetPixels();
+        curDate = nextOffset.getOffsetEnd();
+    }
+}

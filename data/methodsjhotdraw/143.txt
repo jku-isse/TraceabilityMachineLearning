@@ -1,0 +1,19 @@
+/**
+ * Updates the "File &gt; Open Recent" menu.
+ *
+ * @param openRecentMenu
+ * 		
+ */
+protected void updateOpenRecentMenu(JMenu openRecentMenu) {
+    if ((openRecentMenu.getItemCount()) > 0) {
+        JMenuItem clearRecentFilesItem = ((JMenuItem) (openRecentMenu.getItem(((openRecentMenu.getItemCount()) - 1))));
+        openRecentMenu.removeAll();
+        for (File f : recentFiles()) {
+            openRecentMenu.add(new OpenRecentAction(this, f));
+        }
+        if ((recentFiles().size()) > 0) {
+            openRecentMenu.addSeparator();
+        }
+        openRecentMenu.add(clearRecentFilesItem);
+    }
+}

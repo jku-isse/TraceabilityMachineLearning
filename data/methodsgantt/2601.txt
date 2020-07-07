@@ -1,0 +1,6 @@
+/**
+ * Return The selected date.
+ */
+public GanttCalendar getDate() {
+    return ddd.date;
+}

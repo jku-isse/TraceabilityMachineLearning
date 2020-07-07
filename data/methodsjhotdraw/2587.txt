@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public RotateHandle(Figure owner) {
+    super(owner);
+}

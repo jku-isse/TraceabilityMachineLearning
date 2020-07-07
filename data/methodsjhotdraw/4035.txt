@@ -1,0 +1,3 @@
+public TreeNode getChildAt(int childIndex) {
+    throw new IndexOutOfBoundsException(("" + childIndex));
+}

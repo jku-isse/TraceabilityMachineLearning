@@ -1,0 +1,21 @@
+/* (non-Javadoc)
+
+@see net.sourceforge.ganttproject.document.Document#releaseLock()
+ */
+public void releaseLock() {
+    if (null == (getWebdavResource()))
+        return;
+
+    try {
+        locked = false;
+        getWebdavResource().unlockMethod();
+    } catch (HttpException e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+    } catch (IOException e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+public void setWidth(double newValue) {
+    double oldValue = width;
+    width = newValue;
+    firePropertyChange("width", oldValue, newValue);
+    fireStateChanged();
+}

@@ -1,0 +1,3 @@
+public PaletteRootLayout(JRootPane rootPane) {
+    this.rootPane = rootPane;
+}

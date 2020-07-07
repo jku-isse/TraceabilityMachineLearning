@@ -1,0 +1,4 @@
+public void testShrink2Inches() throws Exception {
+    hr.setHeight(69);
+    assertTrue(factor.hasRiskFactor());
+}

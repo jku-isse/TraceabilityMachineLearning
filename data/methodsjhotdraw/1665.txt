@@ -1,0 +1,12 @@
+// End of variables declaration//GEN-END:variables
+public void setActiveHandle(Handle newValue) {
+    Handle oldValue = activeHandle;
+    if (oldValue != null) {
+        repaint(oldValue.getDrawingArea());
+    }
+    activeHandle = newValue;
+    if (newValue != null) {
+        repaint(newValue.getDrawingArea());
+    }
+    firePropertyChange(DrawingView.ACTIVE_HANDLE_PROPERTY, oldValue, newValue);
+}

@@ -1,0 +1,6 @@
+/**
+ * Returns the start point of the connection.
+ */
+protected Point2D.Double getLocation() {
+    return getOwner().getStartPoint();
+}

@@ -1,0 +1,3 @@
+private void clearCPTCodes() throws SQLException {
+    new DBBuilder().executeSQL(Arrays.asList("DELETE FROM cptcodes;"));
+}

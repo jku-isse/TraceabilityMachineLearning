@@ -1,0 +1,10 @@
+/**
+ * Return The selected date.
+ */
+public GanttCalendar getDate() {
+    GanttCalendar result = panel.getDate();
+    // System.err.println("[GanttDialogDate] getDate():
+    // fixed="+myFixedDate);
+    result.setFixed(myFixedDate);
+    return result;
+}

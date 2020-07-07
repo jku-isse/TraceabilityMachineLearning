@@ -1,0 +1,3 @@
+public TaskSelectionContext getTaskSelectionContext() {
+    return myFallbackDelegate.getTaskSelectionContext();
+}

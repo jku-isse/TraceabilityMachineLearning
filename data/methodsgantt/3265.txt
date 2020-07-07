@@ -1,0 +1,15 @@
+public void actionPerformed(ActionEvent e) {
+    // Counting number of selected days of the week.
+    int count = 0;
+    for (int i = 0; i < (myCheckBoxes.length); i++) {
+        if (myCheckBoxes[i].isSelected()) {
+            count++;
+        }
+    }
+    if (count == (myCheckBoxes.length)) {
+        // If all days of the week are marked as weekend unmark selected the last.
+        myModel.setSelected(false);
+    } else {
+        this.myCalendar.setWeekDayType(myDay, (myModel.isSelected() ? GPCalendar.DayType.WEEKEND : GPCalendar.DayType.WORKING));
+    }
+}

@@ -1,0 +1,10 @@
+public ReportRequestBean loadSingle(ResultSet rs) throws SQLException {
+    ReportRequestBean b = new ReportRequestBean();
+    b.setID(rs.getLong("ID"));
+    b.setRequesterMID(rs.getLong("RequesterMID"));
+    b.setPatientMID(rs.getLong("PatientMID"));
+    b.setRequestedDate(rs.getTimestamp("RequestedDate"));
+    b.setViewedDate(rs.getTimestamp("ViewedDate"));
+    b.setStatus(rs.getString("Status"));
+    return b;
+}

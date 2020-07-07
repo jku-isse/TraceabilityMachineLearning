@@ -1,0 +1,17 @@
+/**
+ * Creates a new instance.
+ */
+public ToggleVisibleAction(Component c, String name) {
+    this.component = c;
+    putValue(Action.NAME, name);
+    putValue(Actions.SELECTED_KEY, c.isVisible());
+    c.addComponentListener(new ComponentAdapter() {
+        public void componentShown(ComponentEvent e) {
+            putValue(Actions.SELECTED_KEY, component.isVisible());
+        }
+
+        public void componentHidden(ComponentEvent e) {
+            putValue(Actions.SELECTED_KEY, component.isVisible());
+        }
+    });
+}

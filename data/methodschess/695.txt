@@ -1,0 +1,10 @@
+/**
+ * Get the position renderer for a given square.
+ *
+ * @param squareIndex
+ * 		The index of the square.
+ * @return The position renderer for the given square.
+ */
+final PositionRenderer getPositionRenderer(int squareIndex) {
+    return _square[squareIndex];
+}

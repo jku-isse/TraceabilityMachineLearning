@@ -1,0 +1,47 @@
+/**
+ * Shows the table column.
+ */
+void show() {
+    boolean reloadInfo = false;
+    getTable().getColumnModel().addColumn(column);
+    try {
+        int columnViewIndexOld = index;
+        int columnModelIndexActual = column.getModelIndex();
+        if (column.getIdentifier().equals(GanttTreeTableModel.strColInfo))
+            reloadInfo = true;
+
+        int columnViewIndexActual = getTable().convertColumnIndexToView(columnModelIndexActual);
+        getTable().moveColumn(columnViewIndexActual, columnViewIndexOld);
+    } catch (IllegalArgumentException e) {
+        index = (getTable().getModel().getColumnCount()) - 1;
+    }
+    isShown = true;
+    String name = ((String) (column.getHeaderValue()));
+    String id = getIdForName(name);
+    boolean found = false;
+    Iterator it = listDisplayedColumns.iterator();
+    while (it.hasNext()) {
+        GanttTreeTable.DisplayedColumn dc = ((GanttTreeTable.DisplayedColumn) (it.next()));
+        if (dc.getID().equals(id)) {
+            dc.setDisplayed(true);
+            found = true;
+        }
+    } 
+    if ((!found) && (id != null)) {
+        GanttTreeTable.DisplayedColumn dc = new GanttTreeTable.DisplayedColumn(id);
+        dc.setDisplayed(true);
+        listDisplayedColumns.add(dc);
+    }
+    if (reloadInfo)
+        if ((Mediator.getDelayManager()) != null)
+            Mediator.getDelayManager().fireDelayObservation();
+
+
+    // Thread t = new Thread(){
+    // public void run(){
+    calculateWidth();
+    revalidate();
+    // }
+    // };
+    // SwingUtilities.invokeLater(t);
+}

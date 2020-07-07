@@ -1,0 +1,18 @@
+public void testMIDShown1() throws Exception {
+    // login uap
+    WebConversation wc = login("8000000009", "uappass1");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - UAP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 8000000009L, 0L, "");
+    // choose Edit Patient
+    wr = wr.getLinkWith("Edit Patient").click();
+    // choose patient 2
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    // get the current page
+    wr = wc.getCurrentPage();
+    // confirm no MID in url
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/editPatient.jsp"), wr.getURL().toString());
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_VIEW, 8000000009L, 2L, "");
+}

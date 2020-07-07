@@ -1,0 +1,5 @@
+@Override
+@SuppressWarnings("unchecked")
+protected Set<Figure> getEditedFigures() {
+    return ((Set<Figure>) ((activeView) == null ? Collections.emptySet() : activeView.getSelectedFigures()));
+}

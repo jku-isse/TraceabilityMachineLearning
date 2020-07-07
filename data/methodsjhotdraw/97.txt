@@ -1,0 +1,4 @@
+/**
+ * Returns the copyright of the application.
+ */
+public String getCopyright();

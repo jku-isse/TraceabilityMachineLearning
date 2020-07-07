@@ -1,0 +1,10 @@
+/**
+ * Sent when a region used by the figure needs to be repainted.
+ * The implementation of this method assumes that the handle
+ * is located on the bounds of the figure or inside the figure.
+ * If the handle is located elsewhere this method must be reimpleted
+ * by the subclass.
+ */
+public void areaInvalidated(FigureEvent evt) {
+    updateBounds();
+}

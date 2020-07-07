@@ -1,0 +1,6 @@
+private void writeObject(ObjectOutputStream out) throws IOException {
+    // The call to getImageData() ensures that we have serializable data
+    // in the imageData array.
+    getImageData();
+    out.defaultWriteObject();
+}

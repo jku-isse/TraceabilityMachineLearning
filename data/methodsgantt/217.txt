@@ -1,0 +1,3 @@
+public ChartModelImpl getMyChartModel() {
+    return myChartModel;
+}

@@ -1,0 +1,7 @@
+protected void cdataElement(String name, String cdata, AttributesImpl attrs, TransformerHandler handler) throws SAXException {
+    startElement(name, handler);
+    handler.startCDATA();
+    handler.characters(cdata.toCharArray(), 0, cdata.length());
+    handler.endCDATA();
+    endElement(name, handler);
+}

@@ -1,0 +1,3 @@
+public String[] getValueNames() {
+    throw new IllegalStateException("should not be hit!");
+}

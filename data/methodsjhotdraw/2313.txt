@@ -1,0 +1,8 @@
+@Override
+public void read(DOMInput in) throws IOException {
+    readAttributes(in);
+    readLiner(in);
+    // Note: Points must be read after Liner, because Liner influences
+    // the location of the points.
+    readPoints(in);
+}

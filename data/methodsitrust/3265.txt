@@ -1,0 +1,8 @@
+public void testGetDeclaredHCPsException() throws Exception {
+    try {
+        evilDAO.getDeclaredHCPs(0L);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals("pid cannot be 0", e.getSQLException().getMessage());
+    }
+}

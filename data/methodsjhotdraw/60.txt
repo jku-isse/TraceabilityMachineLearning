@@ -1,0 +1,6 @@
+/**
+ * Starts the view.
+ * This method does nothing, subclasses dont neet to call super.
+ */
+public void start() {
+}

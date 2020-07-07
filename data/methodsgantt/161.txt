@@ -1,0 +1,6 @@
+/**
+ * Return the year
+ */
+public int getYear() {
+    return this.get(Calendar.YEAR);
+}

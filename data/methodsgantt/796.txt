@@ -1,0 +1,34 @@
+/**
+ * add an object with the expand information
+ */
+public DefaultMutableTreeNode addObjectWithExpand(Object child, DefaultMutableTreeNode parent) {
+    DefaultMutableTreeNode childNode = new TaskNode(((Task) (child)));
+    if (parent == null)
+        parent = rootNode;
+
+    treeModel.insertNodeInto(childNode, parent, parent.getChildCount());
+    // forwardScheduling();
+    Task task = ((Task) (childNode.getUserObject()));
+    boolean res = true;
+    if (parent == null)
+        res = false;
+
+    // test for expantion
+    while (parent != null) {
+        Task taskFather = ((Task) (parent.getUserObject()));
+        if (!(taskFather.getExpand())) {
+            res = false;
+            break;
+        }
+        parent = ((DefaultMutableTreeNode) (parent.getParent()));
+    } 
+    treetable.getTree().scrollPathToVisible(new TreePath(childNode.getPath()));
+    if ((!res) && (parent != null)) {
+        treetable.getTree().collapsePath(new TreePath(parent.getPath()));
+    }
+    // else
+    // task.setExpand(false);
+    (nbTasks)++;
+    appli.refreshProjectInfos();
+    return childNode;
+}

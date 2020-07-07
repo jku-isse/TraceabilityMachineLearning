@@ -1,0 +1,19 @@
+public List<LabProcedureBean> getAllLabProceduresLOINC(long id) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (id == 0L)
+            throw new SQLException("PatientMID cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM labprocedure WHERE PatientMID = ? ORDER BY LaboratoryProcedureCode ASC");
+        ps.setLong(1, id);
+        ResultSet rs = ps.executeQuery();
+        return labProcedureLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

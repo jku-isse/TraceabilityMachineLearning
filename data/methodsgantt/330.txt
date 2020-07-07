@@ -1,0 +1,24 @@
+// Move the move on the area
+public void mouseMoved(MouseEvent e) {
+    ChartItem itemUnderPoint = myMouseSupport.getChartItemUnderMousePoint(e.getX(), e.getY());
+    Task taskUnderPoint = (itemUnderPoint == null) ? null : itemUnderPoint.getTask();
+    // System.err.println("[OldMouseMotionListenerImpl] mouseMoved:
+    // taskUnderPoint="+taskUnderPoint);
+    if (taskUnderPoint == null) {
+        setDefaultCursor();
+    } else {
+        if (itemUnderPoint instanceof TaskBoundaryChartItem) {
+            Cursor cursor = (((TaskBoundaryChartItem) (itemUnderPoint)).isStartBoundary()) ? GanttGraphicArea.W_RESIZE_CURSOR : GanttGraphicArea.E_RESIZE_CURSOR;
+            setCursor(cursor);
+        } else// special cursor
+
+            if (itemUnderPoint instanceof TaskProgressChartItem) {
+                setCursor(GanttGraphicArea.CHANGE_PROGRESS_CURSOR);
+            } else {
+                setDefaultCursor();
+            }
+
+        // getUIFacade().repaint2();
+        appli.repaint();
+    }
+}

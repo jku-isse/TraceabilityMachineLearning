@@ -1,0 +1,3 @@
+public int getTextLength(String text) {
+    return TextLengthCalculatorImpl.getTextLength(myGraphics, text);
+}

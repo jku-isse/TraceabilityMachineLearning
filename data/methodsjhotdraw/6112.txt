@@ -1,0 +1,6 @@
+private CharacterSetAccessory getAccessory() {
+    if ((characterSetAccessory) == null) {
+        characterSetAccessory = new CharacterSetAccessory();
+    }
+    return characterSetAccessory;
+}

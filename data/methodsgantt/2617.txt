@@ -1,0 +1,10 @@
+public void setErrorNotifier(Runnable notifier) {
+    if ((notifier == null) && ((myErrorNotifier) != null)) {
+        clearErrorNotification();
+        return;
+    }
+    if ((myErrorNotifier) == null) {
+        createErrorNotification(notifier);
+    }
+    myErrorNotifier = notifier;
+}

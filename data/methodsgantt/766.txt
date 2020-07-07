@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return a clone of the Task
+ */
+public GanttTask Clone() {
+    return new GanttTask(this);
+}

@@ -1,0 +1,55 @@
+/**
+ * Insert the cloned node and its children
+ */
+private TaskNode insertClonedNode(DefaultMutableTreeNode parent, DefaultMutableTreeNode child, int location, boolean first) {
+    if (parent == null) {
+        return null;// it is the root node
+
+    }
+    if (first) {
+        GanttTask _t = ((GanttTask) (parent.getUserObject()));
+        if (_t.isMilestone()) {
+            _t.setMilestone(false);
+            GanttTask _c = ((GanttTask) (child.getUserObject()));
+            _t.setLength(_c.getLength());
+            _t.setStart(_c.getStart());
+        }
+    }
+    GanttTask originalTask = ((GanttTask) (child.getUserObject()));
+    GanttTask newTask = originalTask.Clone();
+    newTask.setName(((first ? (language.getText("copy2")) + "_" : "") + (newTask.toString())));
+    TaskManagerImpl tmi = ((TaskManagerImpl) (getTaskManager()));
+    newTask.setTaskID(((tmi.getMaxID()) + 1));
+    mapOriginalIDCopyID.put(new Integer(originalTask.getTaskID()), new Integer(newTask.getTaskID()));
+    // copyID.add (new Integer (originalTask.getTaskID()));
+    // pasteID.add (new Integer (newTask.getTaskID()));
+    ResourceAssignment[] assignment = newTask.getAssignments();
+    for (int i = 0; i < (assignment.length); i++) {
+        assignment[i].delete();
+    }
+    getTaskManager().registerTask(newTask);
+    DefaultMutableTreeNode cloneChildNode = new TaskNode(newTask);
+    for (int i = 0; i < (child.getChildCount()); i++) {
+        insertClonedNode(cloneChildNode, ((DefaultMutableTreeNode) (child.getChildAt(i))), i, false);
+    }
+    // if(child.getParent() != null)
+    // if(!child.getParent().equals(parent))
+    // parent = (DefaultMutableTreeNode)parent.getParent();
+    // 
+    // 
+    if (parent == null)
+        location = 0;
+
+    if ((parent.getChildCount()) < location)
+        location = parent.getChildCount();
+
+    ((GanttTreeTableModel) (treeModel)).insertNodeInto(cloneChildNode, parent, location);
+    treetable.getTree().scrollPathToVisible(new TreePath(cloneChildNode.getPath()));
+    // Remove the node from the expand list
+    /* int index = expand.indexOf(new
+    Integer(newTask.getTaskID())cloneChildNode.toString()); if (index >=
+    0) expand.remove(index);
+     */
+    newTask.setExpand(false);
+    return ((TaskNode) (cloneChildNode));
+}

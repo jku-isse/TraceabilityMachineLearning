@@ -1,0 +1,6 @@
+/**
+ * Finds a handle at the given coordinates.
+ *
+ * @return A handle, null if no handle is found.
+ */
+public Handle findHandle(Point p);

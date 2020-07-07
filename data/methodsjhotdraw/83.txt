@@ -1,0 +1,7 @@
+/**
+ * Removes a view from this application and removes it from the users
+ * view.
+ * Fires a "documentCount" property change event.
+ * Invokes method setApplication(null) on the view object.
+ */
+public void remove(View p);

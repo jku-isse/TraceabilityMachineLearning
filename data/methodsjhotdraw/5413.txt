@@ -1,0 +1,3 @@
+protected void drawChildren(Graphics2D g) {
+    // empty
+}

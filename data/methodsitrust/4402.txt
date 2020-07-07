@@ -1,0 +1,10 @@
+public void testQualifies() throws Exception {
+    checker = new Type1DiabetesRisks(factory, 2L);
+    assertFalse(checker.qualifiesForDisease());
+    PatientBean p = factory.getPatientDAO().getPatient(2L);
+    p.setDateOfBirthStr(DateUtil.yearsAgo(10));
+    factory.getPatientDAO().editPatient(p, 9000000003L);
+    checker = new Type1DiabetesRisks(factory, 2L);
+    assertTrue(checker.qualifiesForDisease());
+    assertTrue(checker.isAtRisk());
+}

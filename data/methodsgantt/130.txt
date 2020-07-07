@@ -1,0 +1,8 @@
+protected TableColumnExt newTableColumnExt(int modelIndex) {
+    TableColumnExt result = new TableColumnExt(modelIndex);
+    TableCellEditor defaultEditor = getTreeTable().getDefaultEditor(getTreeTableModel().getColumnClass(modelIndex));
+    if (defaultEditor != null) {
+        result.setCellEditor(new TreeTableCellEditorImpl(defaultEditor));
+    }
+    return result;
+}

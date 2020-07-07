@@ -1,0 +1,2 @@
+public void addPalette(Window palette) {
+}

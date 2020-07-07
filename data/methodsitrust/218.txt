@@ -1,0 +1,11 @@
+/**
+ * Lists the declared HCPs for this current patient
+ *
+ * @return Returns a list of the declared HCPs
+ * @throws iTrustException
+ * 		
+ * @author Andy Meneely
+ */
+public List<PersonnelBean> getDeclaredHCPS() throws iTrustException {
+    return patientDAO.getDeclaredHCPs(loggedInMID);
+}

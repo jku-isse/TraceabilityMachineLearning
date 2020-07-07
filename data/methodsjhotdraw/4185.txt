@@ -1,0 +1,3 @@
+public Color getColor(String key) {
+    return ((Color) (get(key)));
+}

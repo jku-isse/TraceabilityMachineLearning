@@ -1,0 +1,4 @@
+/**
+ * Method when start to parse an attibute
+ */
+public void startElement(String namespaceURI, String sName, String qName, Attributes attrs) throws FileFormatException;

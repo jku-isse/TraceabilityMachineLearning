@@ -1,0 +1,16 @@
+/**
+ * Brings up an information-message sheet.
+ *
+ * @param parentComponent
+ * 		determines the <code>Frame</code> in
+ * 		which the dialog is displayed; if <code>null</code>,
+ * 		or if the <code>parentComponent</code> has no
+ * 		<code>Frame</code>, the sheet is displayed as a dialog.
+ * @param message
+ * 		the <code>Object</code> to display
+ * @param listener
+ * 		This listener is notified when the sheet is dismissed.
+ */
+public static void showMessageSheet(Component parentComponent, Object message, SheetListener listener) {
+    JSheet.showMessageSheet(parentComponent, message, JOptionPane.INFORMATION_MESSAGE, listener);
+}

@@ -1,0 +1,4 @@
+public void setColorSliderModel(ColorSliderModel colorizer) {
+    this.colorizer = colorizer;
+    isDirty = true;
+}

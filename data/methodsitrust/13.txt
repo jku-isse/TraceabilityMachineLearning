@@ -1,0 +1,8 @@
+/**
+ * Returns the ArrayList of ArrayLists of Strings containing the CSV data fields
+ *
+ * @return ArrayList of ArrayLists Strings containing CSV data fields
+ */
+public ArrayList<ArrayList<String>> getData() {
+    return CSVData;
+}

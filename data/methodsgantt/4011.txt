@@ -1,0 +1,3 @@
+public String getRoleSetID() {
+    return myRoleSetID;
+}

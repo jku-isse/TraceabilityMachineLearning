@@ -1,0 +1,4 @@
+public Vertical(DrawingEditor editor) {
+    super(editor);
+    labels.configureAction(this, "edit.alignVertical");
+}

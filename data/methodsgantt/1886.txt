@@ -1,0 +1,6 @@
+Text(int leftX, int bottomY, String text) {
+    myLeftX = leftX;
+    myBottomY = bottomY;
+    myText = text;
+    myMaxLength = -1;
+}

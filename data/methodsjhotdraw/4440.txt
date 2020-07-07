@@ -1,0 +1,39 @@
+/**
+ * Returns the string representation of the current stream token.
+ *
+ * @return a string representation of the token specified by the
+<code>ttype</code>, <code>nval</code>, and <code>sval</code>
+fields.
+ * @see java.io.StreamTokenizer#nval
+ * @see java.io.StreamTokenizer#sval
+ * @see java.io.StreamTokenizer#ttype
+ */
+public String toString() {
+    String ret;
+    switch (ttype) {
+        case StreamPosTokenizer.TT_EOF :
+            ret = "EOF";
+            break;
+        case StreamPosTokenizer.TT_EOL :
+            ret = "EOL";
+            break;
+        case StreamPosTokenizer.TT_WORD :
+            ret = sval;
+            break;
+        case StreamPosTokenizer.TT_NUMBER :
+            ret = "n=" + (nval);
+            break;
+        case StreamPosTokenizer.TT_NOTHING :
+            ret = "NOTHING";
+            break;
+        default :
+            {
+                char[] s = new char[3];
+                s[0] = s[2] = ;
+                s[1] = ((char) (ttype));
+                ret = new String(s);
+                break;
+            }
+    }
+    return (("Token[" + ret) + "], line ") + (lineno);
+}

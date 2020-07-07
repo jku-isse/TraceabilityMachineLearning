@@ -1,0 +1,8 @@
+public void testGetSurveyDataException() throws Exception {
+    try {
+        surveyDAO.getSurveyData(0L);
+        fail("DBException should have been thrown");
+    } catch (DBException ex) {
+        assertEquals(EvilDAOFactory.MESSAGE, ex.getSQLException().getMessage());
+    }
+}

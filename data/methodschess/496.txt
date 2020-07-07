@@ -1,0 +1,3 @@
+public PGNParser(TokenStream lexer) {
+    this(lexer, 2);
+}

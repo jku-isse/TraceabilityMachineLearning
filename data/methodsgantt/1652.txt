@@ -1,0 +1,3 @@
+ChartModelBase.Offset[] calculateOffsets(TimeFrame timeFrame, TimeUnit frameBottomUnit, Date bottomUnitStartDate, TimeUnit offsetUnit, int frameBottomUnitWidth) {
+    return myCachingOffsetCalculator.calculateOffsets(timeFrame, frameBottomUnit, bottomUnitStartDate, offsetUnit, frameBottomUnitWidth);
+}

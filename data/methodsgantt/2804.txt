@@ -1,0 +1,5 @@
+public void setIcon(Icon iconOn, Icon iconOff) {
+    setIcon(iconOff);
+    _iconOn = iconOn;
+    _iconOff = iconOff;
+}

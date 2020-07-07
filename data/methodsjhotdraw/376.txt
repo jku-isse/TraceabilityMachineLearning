@@ -1,0 +1,58 @@
+/**
+ * On Mac OS X with the Quartz rendering engine, the following code achieves
+ * the best results.
+ */
+public void printQuartz() {
+    Frame frame = ((Frame) (SwingUtilities.getWindowAncestor(getActiveView().getComponent())));
+    final Pageable pageable = ((Pageable) (Methods.invokeGetter(getActiveView(), "createPageable", null)));
+    final double resolution = 300.0;
+    JobAttributes jobAttr = new JobAttributes();
+    // FIXME - PageAttributes should be retrieved from View
+    PageAttributes pageAttr = new PageAttributes();
+    pageAttr.setMedia(PageAttributes.MediaType.A4);
+    pageAttr.setPrinterResolution(((int) (resolution)));
+    final PrintJob pj = frame.getToolkit().getPrintJob(frame, "Job Title", jobAttr, pageAttr);
+    getActiveView().setEnabled(false);
+    new Worker() {
+        public Object construct() {
+            // Compute page format from settings of the print job
+            Paper paper = new Paper();
+            paper.setSize((((pj.getPageDimension().width) / resolution) * 72.0), (((pj.getPageDimension().height) / resolution) * 72.0));
+            paper.setImageableArea(64.0, 32.0, ((paper.getWidth()) - 96.0), ((paper.getHeight()) - 64));
+            PageFormat pageFormat = new PageFormat();
+            pageFormat.setPaper(paper);
+            // Print the job
+            try {
+                for (int i = 0, n = pageable.getNumberOfPages(); i < n; i++) {
+                    PageFormat pf = pageable.getPageFormat(i);
+                    pf = pageFormat;
+                    Graphics g = pj.getGraphics();
+                    if (g instanceof Graphics2D) {
+                        pageable.getPrintable(i).print(g, pf, i);
+                    } else {
+                        BufferedImage buf = new BufferedImage(((int) (((pf.getImageableWidth()) * resolution) / 72.0)), ((int) (((pf.getImageableHeight()) * resolution) / 72.0)), BufferedImage.TYPE_INT_RGB);
+                        Graphics2D bufG = buf.createGraphics();
+                        bufG.setBackground(Color.WHITE);
+                        bufG.fillRect(0, 0, buf.getWidth(), buf.getHeight());
+                        bufG.scale((resolution / 72.0), (resolution / 72.0));
+                        bufG.translate((-(pf.getImageableX())), (-(pf.getImageableY())));
+                        pageable.getPrintable(i).print(bufG, pf, i);
+                        bufG.dispose();
+                        g.drawImage(buf, ((int) (((pf.getImageableX()) * resolution) / 72.0)), ((int) (((pf.getImageableY()) * resolution) / 72.0)), null);
+                        buf.flush();
+                    }
+                    g.dispose();
+                }
+            } catch (Throwable t) {
+                t.printStackTrace();
+            } finally {
+                pj.end();
+            }
+            return null;
+        }
+
+        public void finished(Object value) {
+            getActiveView().setEnabled(true);
+        }
+    }.start();
+}

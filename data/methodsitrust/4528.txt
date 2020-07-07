@@ -1,0 +1,26 @@
+public void testGroupReportGeneratorServletPost() throws Exception {
+    String demo = new String();
+    String med = new String();
+    String pers = new String();
+    GroupReportGeneratorTest.LittleDelegatorServlet servlet = new GroupReportGeneratorTest.LittleDelegatorServlet();
+    expect(grga.getReportHeaders()).andReturn(headers);
+    expect(grga.getReportData()).andReturn(data);
+    expect(req.getParameter("demoparams")).andReturn(demo).anyTimes();
+    expect(req.getParameter("medparams")).andReturn(med).anyTimes();
+    expect(req.getParameter("persparams")).andReturn(pers).anyTimes();
+    resp.sendRedirect("");
+    expectLastCall();
+    resp.setContentType("application/x-download");
+    expectLastCall();
+    resp.setHeader(((String) (EasyMock.anyObject())), ((String) (EasyMock.anyObject())));
+    expectLastCall();
+    ServletOutputStream sos = ctrl.createMock(ServletOutputStream.class);
+    sos.write(((byte[]) (EasyMock.anyObject())), EasyMock.anyInt(), EasyMock.anyInt());
+    expectLastCall().anyTimes();
+    sos.flush();
+    expectLastCall().anyTimes();
+    expect(resp.getOutputStream()).andReturn(sos);
+    ctrl.replay();
+    servlet.setUp();
+    servlet.doPost(req, resp);
+}

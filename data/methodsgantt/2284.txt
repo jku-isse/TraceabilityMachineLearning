@@ -1,0 +1,4 @@
+public HttpDocumentOutputStream(WebdavResource webdavResource) {
+    super();
+    this.webdavResource = webdavResource;
+}

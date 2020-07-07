@@ -1,0 +1,4 @@
+/**
+ * Returns the owner of this handle.
+ */
+public Figure getOwner();

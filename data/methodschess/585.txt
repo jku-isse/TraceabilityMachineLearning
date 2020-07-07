@@ -1,0 +1,10 @@
+/**
+ * Convert the ply into something human readable. Its not exactly chess
+ * notation, since we dont have a board to check, if it is a move or
+ * a attack.
+ *
+ * @return The ply as a string.
+ */
+public String toString() {
+    return ((getSource().toSquareName()) + "-") + (getDestination().toSquareName());
+}

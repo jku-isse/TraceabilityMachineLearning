@@ -1,0 +1,16 @@
+// ///////////////////////////////////////////////////////////////////////////////
+/**
+ * Constructor
+ *
+ * @param taskID
+ * 		
+ */
+public GanttTask(String name, GanttCalendar start, long length, TaskManager taskManager, int taskID) {
+    super(taskManager, taskID);
+    TaskMutator mutator = createMutator();
+    mutator.setName(name);
+    mutator.setStart(start);
+    mutator.setDuration(taskManager.createLength(length));
+    mutator.commit();
+    enableEvents(true);
+}

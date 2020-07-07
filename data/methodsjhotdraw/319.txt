@@ -1,0 +1,19 @@
+/**
+ * Creates a new instance.
+ */
+public FocusAction(View view) {
+    this.view = view;
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+    labels.configureAction(this, FocusAction.ID);
+    // setEnabled(false);
+    setEnabled((view != null));
+    view.addPropertyChangeListener(new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+            String name = evt.getPropertyName();
+            if (name.equals(View.FILE_PROPERTY)) {
+                putValue(Action.NAME, ((evt.getNewValue()) == null ? labels.getString("unnamedFile") : ((File) (evt.getNewValue())).getName()));
+            }
+        }
+    });
+}

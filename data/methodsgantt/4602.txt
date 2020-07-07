@@ -1,0 +1,6 @@
+private void modifyTaskStart(Task task, GanttCalendar newStart) {
+    TaskMutator mutator = task.createMutatorFixingDuration();
+    mutator.setStart(newStart);
+    mutator.commit();
+    myModifiedTasks.add(task);
+}

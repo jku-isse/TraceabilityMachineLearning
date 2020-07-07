@@ -1,0 +1,4 @@
+@Override
+protected String getUserField() {
+    return "referrals.PatientID";
+}

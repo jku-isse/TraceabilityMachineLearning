@@ -1,0 +1,16 @@
+public void testSubmitReceived() throws Exception {
+    LabProcedureBean lp = new LabProcedureBean();
+    lp.setLoinc("10763-1");
+    lp.setCommentary("");
+    lp.setOvID(902L);
+    lp.setPid(2L);
+    lp.setResults("");
+    lp.allow();
+    lp.statusInTransit();
+    lp.setLTID(5000000005L);
+    long id = lpDAO.addLabProcedure(lp);
+    lp.setProcedureID(id);
+    assertTrue(action.submitReceived(("" + id)));
+    LabProcedureBean procedures = lpDAO.getLabProcedure(id);
+    assertEquals("Received", procedures.getStatus());
+}

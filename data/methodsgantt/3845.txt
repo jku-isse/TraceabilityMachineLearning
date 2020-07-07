@@ -1,0 +1,8 @@
+CustomPropertyDefinitionImpl(String name, String id, CustomPropertyDefinition stub) {
+    myName = name;
+    myID = id;
+    myDefaultValue = stub.getDefaultValue();
+    myDefaultValueAsString = stub.getDefaultValueAsString();
+    myType = stub.getType();
+    myTypeAsString = stub.getTypeAsString();
+}

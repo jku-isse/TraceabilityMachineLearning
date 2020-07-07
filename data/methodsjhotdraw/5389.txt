@@ -1,0 +1,9 @@
+private Shape getTransformedShape() {
+    if ((cachedTransformedShape) == null) {
+        cachedTransformedShape = ((Shape) (rectangle.clone()));
+        if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+            cachedTransformedShape = AttributeKeys.TRANSFORM.get(this).createTransformedShape(cachedTransformedShape);
+        }
+    }
+    return cachedTransformedShape;
+}

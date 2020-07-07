@@ -1,0 +1,8 @@
+/**
+ * Check if a ply made by the user is valid.
+ *
+ * @param ply
+ * 		The user ply.
+ * @return true, if the ply is valid. false otherwise.
+ */
+boolean validateUserPly(Ply ply);

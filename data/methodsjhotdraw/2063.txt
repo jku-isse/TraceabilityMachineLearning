@@ -1,0 +1,7 @@
+/**
+ * Default constructor which uses nothing as presentation
+ * figure. This constructor is needed by the Storable mechanism.
+ */
+public GraphicalCompositeFigure() {
+    this(null);
+}

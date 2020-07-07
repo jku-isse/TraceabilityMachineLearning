@@ -1,0 +1,3 @@
+private void clearHospitals() throws SQLException {
+    new DBBuilder(factory).executeSQL(Arrays.asList("DELETE FROM hospitals;"));
+}

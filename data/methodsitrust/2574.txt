@@ -1,0 +1,15 @@
+public void testAddWard() {
+    WardBean wb = new WardBean(0L, "name", 0L);
+    try {
+        assertTrue(wd1.addWard(wb));
+    } catch (DBException e) {
+    } catch (iTrustException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.addWard(wb);
+        fail();
+    } catch (Exception e) {
+    }
+}

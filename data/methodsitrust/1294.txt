@@ -1,0 +1,6 @@
+public ViewSentReferralsAction(DAOFactory factory, long hcpid) throws iTrustException {
+    this.hcpid = hcpid;
+    referralDAO = factory.getReferralDAO();
+    patientDAO = factory.getPatientDAO();
+    personnelDAO = factory.getPersonnelDAO();
+}

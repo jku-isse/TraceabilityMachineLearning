@@ -1,0 +1,3 @@
+public TaskLength createLength(long count) {
+    return new TaskLengthImpl(getConfig().getTimeUnitStack().getDefaultTimeUnit(), count);
+}

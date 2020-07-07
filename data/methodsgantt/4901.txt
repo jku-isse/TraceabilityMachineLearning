@@ -1,0 +1,3 @@
+public TimeUnitPair[] getTimeUnitPairs() {
+    return null;
+}

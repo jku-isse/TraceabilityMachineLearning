@@ -1,0 +1,45 @@
+/**
+ * test Prescrition instructions
+ *  throws Exception
+ *
+ * @author student
+ * @author student
+ */
+public void testPrescriptionNoInstructions() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // select the patient
+    WebForm form = wr.getForms()[0];
+    form.getScriptableObject().setParameterValue("UID_PATIENTID", "1");
+    form.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // click Yes, Document Office Visit
+    form = wr.getForms()[0];
+    form.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    // add a new office visit
+    form = wr.getFormWithID("mainForm");
+    String dateString = "02/02/2011";
+    form.setParameter("visitDate", dateString);
+    form.setParameter("hospitalID", "2");
+    form.setParameter("notes", "Its a sunny day.");
+    form.getButtonWithID("update").click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    iTrustHTTPTest.assertNotLogged(TransactionType.PRESCRIPTION_ADD, 9000000000L, 1L, "");
+    // add a prescription, but without instructions
+    form = wr.getFormWithID("prescriptionForm");
+    form.setParameter("medID", "081096");
+    form.setParameter("dosage", "200");
+    form.setParameter("startDate", "02/02/2011");
+    form.setParameter("endDate", "02/09/2011");
+    wr = form.submit();
+    iTrustHTTPTest.assertNotLogged(TransactionType.PRESCRIPTION_ADD, 9000000000L, 1L, "");
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Instructions: Up to 300 alphanumeric characters, with space, and other punctuation"));
+}

@@ -1,0 +1,6 @@
+protected boolean canUngroup() {
+    if (super.canUngroup()) {
+        return (((CompositeFigure) (getView().getSelectedFigures().iterator().next())).getChildCount()) > 1;
+    }
+    return false;
+}

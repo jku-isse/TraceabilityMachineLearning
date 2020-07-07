@@ -1,0 +1,7 @@
+/**
+ * Return the date to A string
+ */
+public String toString() {
+    return language.formatShortDate(this);
+    // return (language.formatDate(this));
+}

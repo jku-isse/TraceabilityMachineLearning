@@ -1,0 +1,5 @@
+private void rollback() {
+    for (int i = 0; i < (myGroups.length); i++) {
+        myGroups[i].rollback();
+    }
+}

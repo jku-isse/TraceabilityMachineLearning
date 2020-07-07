@@ -1,0 +1,13 @@
+public void testAddRemoteMonitoringDataBloodPressureOnlyUAP() throws Exception {
+    gen.uap1();
+    gen.remoteMonitoringUAP();
+    AddRemoteMonitoringDataAction actionUAP = new AddRemoteMonitoringDataAction(TestDAOFactory.getTestInstance(), Long.parseLong("8000000009"), 2);
+    try {
+        RemoteMonitoringDataBean b = new RemoteMonitoringDataBean();
+        b.setSystolicBloodPressure(100);
+        b.setDiastolicBloodPressure(80);
+        actionUAP.addRemoteMonitoringData(b);
+    } catch (FormValidationException e) {
+        fail();
+    }
+}

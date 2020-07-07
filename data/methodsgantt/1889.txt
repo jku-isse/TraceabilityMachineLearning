@@ -1,0 +1,3 @@
+public GraphicPrimitiveContainer.HAlignment getHAlignment() {
+    return myHAlignment;
+}

@@ -1,0 +1,5 @@
+public void testGetLabProcedures() throws DBException {
+    assertEquals(2, action.getLabProcedures().size());
+    assertEquals(LabProcedureBean.Allow, action.getLabProcedures().get(0).getRights());
+    assertEquals(LabProcedureBean.Allow, action.getLabProcedures().get(1).getRights());
+}

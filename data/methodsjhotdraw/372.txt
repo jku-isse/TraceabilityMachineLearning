@@ -1,0 +1,10 @@
+public void actionPerformed(ActionEvent evt) {
+    View view = getActiveView();
+    view.setEnabled(false);
+    if (System.getProperty("apple.awt.graphics.UseQuartz", "false").equals("true")) {
+        printQuartz();
+    } else {
+        printJava2D();
+    }
+    view.setEnabled(true);
+}

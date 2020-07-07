@@ -1,0 +1,3 @@
+ResourceAssignmentCollectionImpl copy() {
+    return new ResourceAssignmentCollectionImpl(this);
+}

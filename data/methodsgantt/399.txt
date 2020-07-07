@@ -1,0 +1,6 @@
+/**
+ * set new automatic launch value.
+ */
+public void setAutomatic(boolean automatic) {
+    this.automatic = automatic;
+}

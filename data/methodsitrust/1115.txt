@@ -1,0 +1,10 @@
+/**
+ * Returns a list of lab procedures
+ *
+ * @return a list of lab procedures for the logged in patient
+ * @throws DBException
+ * 		
+ */
+public List<LabProcedureBean> getLabs() throws iTrustException {
+    return labDAO.getLabProceduresForPatient(loggedInMID);
+}

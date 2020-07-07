@@ -1,0 +1,4 @@
+protected void startElement(String name, AttributesImpl attrs, TransformerHandler handler) throws SAXException {
+    handler.startElement("", name, name, attrs);
+    attrs.clear();
+}

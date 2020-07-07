@@ -1,0 +1,4 @@
+/**
+ * Returns the application model.
+ */
+public ApplicationModel getModel();

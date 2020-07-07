@@ -1,0 +1,11 @@
+public String getToListStr() {
+    String str = "";
+    for (String addr : toList) {
+        str += addr + ",";
+    }
+    if ((str.length()) < 1)
+        return str;
+    else
+        return str.substring(0, ((str.length()) - 1));
+
+}

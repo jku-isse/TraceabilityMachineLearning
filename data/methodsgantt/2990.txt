@@ -1,0 +1,4 @@
+public void setSelectedItem(Object item) {
+    mySelectedItem = ((EnumerationOptionComboBoxModel.Item) (item));
+    myOption.setValue(mySelectedItem.myID);
+}

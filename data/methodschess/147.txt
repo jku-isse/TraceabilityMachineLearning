@@ -1,0 +1,7 @@
+/**
+ * Set the board.
+ *
+ * @param board
+ * 		The new board.
+ */
+void setBoard(Board board);

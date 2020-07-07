@@ -1,0 +1,7 @@
+/**
+ * Gets the image data.
+ *
+ * @return imageData The image data, or null, if the ImageHolderFigure does
+not have an image.
+ */
+public byte[] getImageData();

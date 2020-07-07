@@ -1,0 +1,3 @@
+public GPCalendar.DayType getDayType() {
+    return myDayType;
+}

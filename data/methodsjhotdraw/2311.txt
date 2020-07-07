@@ -1,0 +1,33 @@
+/**
+ * Handles a mouse click.
+ */
+@Override
+public boolean handleMouseClick(Point2D.Double p, MouseEvent evt, DrawingView view) {
+    if (((getLiner()) == null) && ((evt.getClickCount()) == 2)) {
+        willChange();
+        final int index = splitSegment(p, ((float) (5.0F / (view.getScaleFactor()))));
+        if (index != (-1)) {
+            final BezierPath.Node newNode = getNode(index);
+            fireUndoableEditHappened(new AbstractUndoableEdit() {
+                @Override
+                public void redo() throws CannotRedoException {
+                    super.redo();
+                    willChange();
+                    addNode(index, newNode);
+                    changed();
+                }
+
+                @Override
+                public void undo() throws CannotUndoException {
+                    super.undo();
+                    willChange();
+                    removeNode(index);
+                    changed();
+                }
+            });
+            changed();
+            return true;
+        }
+    }
+    return false;
+}

@@ -1,0 +1,17 @@
+/**
+ * New Method to check and make sure LTs only have 1 hospital
+ *
+ * @throws iTrustException
+ * 		
+ * @throws FileNotFoundException
+ * 		
+ * @throws IOException
+ * 		
+ * @throws SQLException
+ * 		
+ */
+public void testCheckLTHospital() throws iTrustException, FileNotFoundException, IOException, SQLException {
+    assertTrue(ltAction.checkLTHospital("5000000001"));
+    gen.clearHospitalAssignments();
+    assertFalse(ltAction.checkLTHospital("5000000001"));
+}

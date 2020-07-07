@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public ColorSliderUI(JSlider b) {
+    super(b);
+}

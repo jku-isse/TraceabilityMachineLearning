@@ -1,0 +1,22 @@
+/**
+ * Returns list of personnel who are Lab Techs.
+ *
+ * @return List of personnel beans.
+ * @throws DBException
+ * 		
+ */
+public List<PersonnelBean> getLabTechs() throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM personnel WHERE role = lt ");
+        ResultSet rs = ps.executeQuery();
+        return personnelLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

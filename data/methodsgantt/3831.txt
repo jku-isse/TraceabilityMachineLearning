@@ -1,0 +1,3 @@
+public CustomPropertyManager getCustomPropertyManager() {
+    return this;
+}

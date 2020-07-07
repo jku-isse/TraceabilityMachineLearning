@@ -1,0 +1,6 @@
+public void testBodyMass() throws Exception {
+    HealthRecord r = new HealthRecord();
+    r.setHeight(71);
+    r.setWeight(200);
+    assertEquals(27.89, r.getBodyMassIndex(), 0.01);
+}

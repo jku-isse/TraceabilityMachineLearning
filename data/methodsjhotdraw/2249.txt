@@ -1,0 +1,9 @@
+public void setLabelFor(TextHolderFigure target) {
+    if ((this.target) != null) {
+        this.target.removeFigureListener(this);
+    }
+    this.target = target;
+    if ((this.target) != null) {
+        this.target.addFigureListener(this);
+    }
+}

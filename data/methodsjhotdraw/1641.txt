@@ -1,0 +1,3 @@
+public int getHandleDetailLevel() {
+    return detailLevel;
+}

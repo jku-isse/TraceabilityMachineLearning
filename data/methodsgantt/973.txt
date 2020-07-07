@@ -1,0 +1,15 @@
+public boolean add(Object o) {
+    if (o instanceof GanttTreeTable.DisplayedColumn) {
+        GanttTreeTable.DisplayedColumn dc1 = ((GanttTreeTable.DisplayedColumn) (o));
+        Iterator it = this.iterator();
+        while (it.hasNext()) {
+            GanttTreeTable.DisplayedColumn dc = ((GanttTreeTable.DisplayedColumn) (it.next()));
+            if (dc.getID().equals(dc1.getID())) {
+                this.remove(dc);
+                return super.add(dc1);
+            }
+        } 
+        return super.add(dc1);
+    }
+    return false;
+}

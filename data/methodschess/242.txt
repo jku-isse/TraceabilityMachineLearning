@@ -1,0 +1,6 @@
+/**
+ * Get the current number of entries.
+ *
+ * @return The current number of entries.
+ */
+int getSize();

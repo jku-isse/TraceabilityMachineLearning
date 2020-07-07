@@ -1,0 +1,13 @@
+/**
+ * Puts an action with the specified id.
+ */
+public void putAction(String id, Action action) {
+    if ((actions) == null) {
+        actions = new HashMap<String, Action>();
+    }
+    if (action == null) {
+        actions.remove(id);
+    } else {
+        actions.put(id, action);
+    }
+}

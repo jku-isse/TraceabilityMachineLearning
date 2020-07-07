@@ -1,0 +1,12 @@
+public void testAddDuplicate() throws DBException, FormValidationException {
+    final String code = "99997";
+    final String descrip0 = "description 0";
+    OverrideReasonBean orc = new OverrideReasonBean(code, descrip0);
+    String result = action.addORCode(orc);
+    assert result.contains("Success");
+    orc.setDescription("description 1");
+    result = action.addORCode(orc);
+    assertEquals("Error: Code already exists.", result);
+    orc = factory.getORCodesDAO().getORCode(code);
+    assertEquals(descrip0, orc.getDescription());
+}

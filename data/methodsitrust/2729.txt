@@ -1,0 +1,8 @@
+public void testAddHospital() throws DBException, iTrustException {
+    final String id = "9191919192";
+    final String name = "testAddHospital Hospital ";
+    genericAdd(id, name);
+    List<HospitalBean> allCodes = hospitalDAO.getAllHospitals();
+    assertEquals(id, allCodes.get(((allCodes.size()) - 1)).getHospitalID());
+    assertEquals(name, allCodes.get(((allCodes.size()) - 1)).getHospitalName());
+}

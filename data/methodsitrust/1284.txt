@@ -1,0 +1,12 @@
+/**
+ * Get prescription list for the given patient
+ *
+ * @param pid
+ * 		the patient of interest
+ * @return list of prescriptions
+ * @throws iTrustException
+ * 		
+ */
+public List<PrescriptionBean> getPrescriptions(long pid) throws iTrustException {
+    return patientDAO.getCurrentPrescriptions(pid);
+}

@@ -1,0 +1,10 @@
+/**
+ * Returns a list of AllergyBeans for the currently logged in patient
+ *
+ * @return a list of AllergyBeans for the currently logged in patient
+ * @throws iTrustException
+ * 		
+ */
+public List<AllergyBean> getAllergies() throws iTrustException {
+    return allergyDAO.getAllergies(loggedInMID);
+}

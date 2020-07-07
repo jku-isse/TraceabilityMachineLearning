@@ -1,0 +1,17 @@
+/**
+ * Enables or disables the action. The enabled state of the action
+ * depends on the value that is set here and on the enabled state of
+ * the application.
+ *
+ * @param newValue
+ * 		true to enable the action, false to
+ * 		disable it
+ * @see Action#setEnabled
+ */
+@Override
+public void setEnabled(boolean newValue) {
+    boolean oldValue = this.enabled;
+    this.enabled = newValue;
+    boolean projIsEnabled = ((getActiveView()) != null) && (getActiveView().isEnabled());
+    firePropertyChange(AbstractViewAction.ENABLED_PROPERTY, Boolean.valueOf((oldValue && projIsEnabled)), Boolean.valueOf((newValue && projIsEnabled)));
+}

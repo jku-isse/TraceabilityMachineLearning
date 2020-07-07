@@ -1,0 +1,7 @@
+@Override
+public void deactivate(DrawingEditor editor) {
+    super.deactivate(editor);
+    getView().setCursor(Cursor.getDefaultCursor());
+    getView().setActiveHandle(null);
+    clearHoverHandles();
+}

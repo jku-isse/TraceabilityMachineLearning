@@ -1,0 +1,3 @@
+public void addRoleListener(RoleManager.Listener listener) {
+    myListeners.add(listener);
+}

@@ -1,0 +1,14 @@
+/**
+ * Gets a clone of the value from the Figure.
+ */
+@SuppressWarnings("unchecked")
+public T getClone(Figure f) {
+    T value = get(f);
+    try {
+        return value == null ? null : clazz.cast(Methods.invoke(value, "clone"));
+    } catch (NoSuchMethodException ex) {
+        InternalError e = new InternalError();
+        e.initCause(ex);
+        throw e;
+    }
+}

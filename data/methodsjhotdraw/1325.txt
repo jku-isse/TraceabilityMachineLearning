@@ -1,0 +1,3 @@
+protected Connector getTargetConnector() {
+    return targetConnector;
+}

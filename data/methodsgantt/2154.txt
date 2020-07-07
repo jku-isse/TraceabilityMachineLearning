@@ -1,0 +1,4 @@
+public void taskAdded(TaskHierarchyEvent e) {
+    // ourCriticProcess = true;
+    fireDelayObservation();
+}

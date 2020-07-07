@@ -1,0 +1,13 @@
+/**
+ * Adds patient Philip Fry for testing purposes.
+ *
+ * @throws FileNotFoundException
+ * 		
+ * @throws SQLException
+ * 		
+ * @throws IOException
+ * 		
+ */
+public void patient26() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/patient26.sql"));
+}// NEW

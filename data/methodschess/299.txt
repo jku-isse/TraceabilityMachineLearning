@@ -1,0 +1,15 @@
+/**
+ * Start the computation of a response to the next user ply.
+ */
+public final void startComputation() {
+    // Stop the computation, if it was a reset.
+    stopComputation();
+    // Reset the permanent brain for the next user move.
+    resetUserPlies();
+    _computedPlies = new PreComputedPly[getUserPlies().length];
+    if ((_searchThread) == null) {
+        // Should always be null
+        _searchThread = new Thread(this);
+        _searchThread.start();
+    }
+}

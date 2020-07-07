@@ -1,0 +1,9 @@
+public ExportFileAction(UIFacade uiFacade, IGanttProject project, GanttOptions options) {
+    super(null, "16");
+    /* putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_E,
+    MENU_MASK));
+     */
+    myProject = project;
+    myUIFacade = uiFacade;
+    myOptions = options;
+}

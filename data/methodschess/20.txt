@@ -1,0 +1,10 @@
+/**
+ * Signal the end if the game.
+ *
+ * @param gameOverMessage
+ * 		Some info how and why the game has ended.
+ */
+public final void signalGameOver(String gameOverMessage) {
+    System.out.print(((char) (7)));
+    JOptionPane.showMessageDialog(null, gameOverMessage, "Game over", JOptionPane.INFORMATION_MESSAGE);
+}

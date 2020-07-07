@@ -1,0 +1,6 @@
+/**
+ * Constructs a connector with the given owner figure.
+ */
+public AbstractConnector(Figure owner) {
+    this.owner = owner;
+}

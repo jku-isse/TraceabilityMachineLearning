@@ -1,0 +1,8 @@
+public void actionPerformed(ActionEvent e) {
+    if (column.isVisible())
+        hideColumn(column);
+    else
+        showColumn(column);
+
+    getProject().setModified();
+}

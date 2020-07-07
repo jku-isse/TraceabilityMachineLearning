@@ -1,0 +1,3 @@
+public void setActionText(String newActionText) {
+    this.jlAction.setText(newActionText);
+}

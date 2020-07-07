@@ -1,0 +1,22 @@
+/**
+ * Returns a list of hospitals to which the given mid is not currently assigned
+ *
+ * @param midString
+ * 		
+ * @return list of HospitalBeans
+ * @throws iTrustException
+ * 		
+ */
+public List<HospitalBean> getAvailableHospitals(String midString) throws iTrustException {
+    try {
+        long mid = Long.valueOf(midString);
+        List<HospitalBean> allHospitals = hospitalsDAO.getAllHospitals();
+        List<HospitalBean> ourHospitals = personnelDAO.getHospitals(mid);
+        while (!(ourHospitals.isEmpty())) {
+            allHospitals.remove(ourHospitals.remove(0));
+        } 
+        return allHospitals;
+    } catch (NumberFormatException e) {
+        throw new iTrustException("HCPs MID not a number");
+    }
+}

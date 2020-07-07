@@ -1,0 +1,3 @@
+protected UIFacade getUIFacade() {
+    return myUIFacade;
+}

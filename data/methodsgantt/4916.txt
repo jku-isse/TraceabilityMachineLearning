@@ -1,0 +1,30 @@
+private void fillLine(TimeFrameImpl.LineHeader higherHeader, TimeFrameImpl.LineHeader header) {
+    if (higherHeader == null) {
+        Date startDate = myStartDate;
+        Date endDate = ((DateFrameable) (myTopUnit)).adjustRight(myBaseDate);
+        // System.err.println("filling line="+header+" endDate="+endDate);
+        TimeFrameImpl.LineItem item = createLineItem(startDate, endDate);
+        header.myFirstItem = item;
+    } else {
+        // System.err.println("filling line="+header);
+        for (TimeFrameImpl.LineItem higherItem = higherHeader.myFirstItem; higherItem != null; higherItem = higherItem.myNextItem) {
+            int unitCount = getUnitCount(higherHeader, header, higherItem);
+            Date curStartDate = higherItem.myStartDate;
+            TimeFrameImpl.LineItem curItem = null;
+            // System.err.println("unit count="+unitCount+"
+            // startDate="+curStartDate);
+            for (int i = 0; (i < unitCount) && ((curStartDate.compareTo(higherItem.myEndDate)) < 0); i++) {
+                Date nextEndDate = ((DateFrameable) (header.myUnit)).adjustRight(curStartDate);
+                TimeFrameImpl.LineItem newItem = createLineItem(curStartDate, nextEndDate);
+                if (curItem == null) {
+                    header.myFirstItem = newItem;
+                } else {
+                    curItem.myNextItem = newItem;
+                }
+                curItem = newItem;
+                curStartDate = nextEndDate;
+            }
+            // System.err.println("result: "+header.fullDump());
+        }
+    }
+}

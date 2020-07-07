@@ -1,0 +1,3 @@
+public void setResourceOverloadColor(Color myResOverColor) {
+    this.myResOverColor = myResOverColor;
+}

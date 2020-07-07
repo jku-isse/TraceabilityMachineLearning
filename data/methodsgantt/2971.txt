@@ -1,0 +1,3 @@
+public boolean getTaskDuration() {
+    return cbTaskDuration.isSelected();
+}

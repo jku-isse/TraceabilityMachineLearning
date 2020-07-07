@@ -1,0 +1,3 @@
+public void setDifference(int difference) {
+    this.difference = difference;
+}

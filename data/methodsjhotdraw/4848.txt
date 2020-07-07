@@ -1,0 +1,33 @@
+public boolean contains(Point2D.Double p) {
+    getPath();
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        try {
+            p = ((Point2D.Double) (AttributeKeys.TRANSFORM.get(this).inverseTransform(p, new Point2D.Double())));
+        } catch (NoninvertibleTransformException ex) {
+            ex.printStackTrace();
+        }
+    }
+    /* return cachedPath.contains(p2); */
+    boolean isClosed = AttributeKeys.CLOSED.get(getChild(0));
+    double tolerance = Math.max(2.0F, ((AttributeKeys.getStrokeTotalWidth(this)) / 2.0));
+    if (isClosed) {
+        if (getPath().contains(p)) {
+            return true;
+        }
+        double grow = (AttributeKeys.getPerpendicularHitGrowth(this)) * 2.0;
+        GrowStroke gs = new GrowStroke(((float) (grow)), ((float) ((AttributeKeys.getStrokeTotalWidth(this)) * (AttributeKeys.STROKE_MITER_LIMIT.get(this)))));
+        if (gs.createStrokedShape(getPath()).contains(p)) {
+            return true;
+        } else {
+            if (isClosed) {
+                return false;
+            }
+        }
+    }
+    if (!isClosed) {
+        if (Shapes.outlineContains(getPath(), p, tolerance)) {
+            return true;
+        }
+    }
+    return false;
+}

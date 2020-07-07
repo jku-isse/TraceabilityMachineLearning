@@ -1,0 +1,7 @@
+// TODO: 1.12 refactor and get rid of using concrete implementations of
+// gantt view model
+// and tree view
+public RowHeightAligner(GanttTree2 treeView, ChartModelImpl ganttViewModel) {
+    myGanttViewModel = ganttViewModel;
+    myTreeView = treeView;
+}

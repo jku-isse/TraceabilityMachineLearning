@@ -1,0 +1,17 @@
+/**
+ * React on mouseclick
+ */
+public void actionPerformed(ActionEvent ae) {
+    if (ae.getSource().equals(jbStart))
+        moveToStart();
+
+    if (ae.getSource().equals(jbBack))
+        moveOnePlyBack();
+
+    if (ae.getSource().equals(jbForward))
+        moveOnePlyForward();
+
+    if (ae.getSource().equals(jbEnd))
+        moveToEnd();
+
+}

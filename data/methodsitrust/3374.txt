@@ -1,0 +1,12 @@
+public void testStoreRetrievePatientNormalData() throws Exception {
+    RemoteMonitoringDataBean b = new RemoteMonitoringDataBean();
+    b.setSystolicBloodPressure(100);
+    b.setDiastolicBloodPressure(70);
+    b.setGlucoseLevel(80);
+    rmDAO.storePatientData(2, b, "self-reported", 2);
+    List<RemoteMonitoringDataBean> d = rmDAO.getPatientsData(9000000000L);
+    assertEquals(2, d.get(0).getPatientMID());
+    assertEquals(100, d.get(0).getSystolicBloodPressure());
+    assertEquals(70, d.get(0).getDiastolicBloodPressure());
+    assertEquals(80, d.get(0).getGlucoseLevel());
+}

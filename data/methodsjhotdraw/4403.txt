@@ -1,0 +1,27 @@
+/**
+ * Ignored: The value is always zero.
+ *
+ * Sets the models current value to <code>newValue</code> if <code>newValue</code>
+ * satisfies the models constraints. Those constraints are:
+ * <pre>
+ * minimum <= value <= value+extent <= maximum
+ * </pre>
+ * Otherwise, if <code>newValue</code> is less than <code>minimum</code>
+ * its set to <code>minimum</code>, if its greater than
+ * <code>maximum</code> then its set to <code>maximum</code>, and
+ * if its greater than <code>value+extent</code> then its set to
+ * <code>value+extent</code>.
+ * <p>
+ * When a BoundedRange model is used with a scrollbar the value
+ * specifies the origin of the scrollbar knob (aka the "thumb" or
+ * "elevator").  The value usually represents the origin of the
+ * visible part of the object being scrolled.
+ * <p>
+ * Notifies any listeners if the model changes.
+ *
+ * @param newValue
+ * 		the models new value
+ * @see #getValue
+ */
+public void setValue(int newValue) {
+}

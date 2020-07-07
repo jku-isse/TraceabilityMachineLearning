@@ -1,0 +1,7 @@
+public TaskHierarchyItem(Task myTask, TaskHierarchyItem containerItem) {
+    this.myTask = myTask;
+    this.myContainerItem = containerItem;
+    if ((myContainerItem) != null) {
+        myContainerItem.addNestedItem(this);
+    }
+}

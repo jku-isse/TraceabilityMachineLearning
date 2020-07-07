@@ -1,0 +1,13 @@
+public void testMarkViewed() throws Exception {
+    LabProcedureBean bean = new LabProcedureBean();
+    bean.setPid(1);
+    bean.statusComplete();
+    bean.setViewedByPatient(false);
+    long id = lpDAO.addLabProcedure(bean);
+    bean = lpDAO.getLabProcedure(id);
+    assertEquals(false, bean.isViewedByPatient());
+    bean.setViewedByPatient(true);
+    lpDAO.markViewed(bean);
+    bean = lpDAO.getLabProcedure(id);
+    assertEquals(true, bean.isViewedByPatient());
+}

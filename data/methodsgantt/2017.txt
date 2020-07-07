@@ -1,0 +1,47 @@
+public void paint(GraphicPrimitiveContainer.Text next) {
+    Font graphicFont = myGraphics.getFont();
+    int requestedMaxLength = next.getMaxLength();
+    Color foreColor = next.getForegroundColor();
+    if (foreColor == null) {
+        foreColor = Color.BLACK;
+    }
+    myGraphics.setColor(foreColor);
+    if ((next.getFont()) != null) {
+        myGraphics.setFont(next.getFont());
+    } else {
+        myGraphics.setFont(myConfig.getChartFont());
+    }
+    // myGraphics.setFont(myConfig.getChartFont().deriveFont(10f));
+    if (((next.getStyle()) != null) && (next.getStyle().equals("text.ganttinfo")))
+        myGraphics.setFont(myConfig.getChartFont());
+
+    int actualLength;
+    String nextTextString = next.getText();
+    if ((next.getModelObject()) != null) {
+        TimeUnitText nextText = ((TimeUnitText) (next.getModelObject()));
+        nextTextString = nextText.getText(requestedMaxLength, myTextLengthCalculator);
+        actualLength = requestedMaxLength;
+    } else {
+        actualLength = TextLengthCalculatorImpl.getTextLength(myGraphics, next.getText());
+        if ((requestedMaxLength >= 0) && (actualLength > requestedMaxLength)) {
+            return;
+        }
+    }
+    int fontHeight = myGraphics.getFont().getSize();
+    int xleft = next.getLeftX();
+    int ybottom = next.getBottomY();
+    if ((GraphicPrimitiveContainer.HAlignment.CENTER) == (next.getHAlignment())) {
+        xleft -= actualLength / 2;
+    }
+    if ((GraphicPrimitiveContainer.HAlignment.RIGHT) == (next.getHAlignment())) {
+        xleft -= actualLength;
+    }
+    if ((GraphicPrimitiveContainer.VAlignment.CENTER) == (next.getVAlignment())) {
+        ybottom += fontHeight / 2;
+    }
+    if ((GraphicPrimitiveContainer.VAlignment.TOP) == (next.getVAlignment())) {
+        ybottom += fontHeight;
+    }
+    myGraphics.drawString(nextTextString, xleft, ybottom);
+    myGraphics.setFont(graphicFont);
+}

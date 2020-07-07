@@ -1,0 +1,23 @@
+public void saveProject(IGanttProject project) {
+    if ((project.getDocument()) == null) {
+        saveProjectAs(project);
+        return;
+    }
+    Document document = project.getDocument();
+    if (!(document.canWrite())) {
+        myWorkbenchFacade.showErrorDialog(i18n.getText("msg10"));
+        saveProjectAs(project);
+        return;
+    }
+    if (!(document.acquireLock())) {
+        myWorkbenchFacade.showErrorDialog(i18n.getText("msg14"));
+        saveProjectAs(project);
+        return;
+    }
+    try {
+        saveProject(project.getDocument());
+        afterSaveProject(project);
+    } catch (Throwable e) {
+        myWorkbenchFacade.showErrorDialog(e);
+    }
+}

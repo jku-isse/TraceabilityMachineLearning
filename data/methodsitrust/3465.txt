@@ -1,0 +1,10 @@
+// note - testing the actual loader is done elsewhere. Just check that were getting the right
+// ones here
+public void testGetAllAccesses() throws Exception {
+    List<TransactionBean> transactions = tranDAO.getAllRecordAccesses(2L, (-1), false);
+    assertEquals(5, transactions.size());
+    for (int i = 0; i < 5; i++) {
+        assertEquals(9000000000L, transactions.get(i).getLoggedInMID());
+        assertEquals(2L, transactions.get(i).getSecondaryMID());
+    }
+}

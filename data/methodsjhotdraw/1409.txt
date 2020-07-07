@@ -1,0 +1,12 @@
+/**
+ * Returns the radius of the decorator.
+ * This is used to crop the end of the line, to prevent it from being
+ * drawn it over the decorator.
+ */
+public double getDecorationRadius(Figure f) {
+    double radius = 0;
+    for (LineDecoration decoration : decorations) {
+        radius = Math.max(radius, decoration.getDecorationRadius(f));
+    }
+    return radius;
+}

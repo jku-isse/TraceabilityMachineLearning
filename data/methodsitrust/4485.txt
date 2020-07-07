@@ -1,0 +1,9 @@
+@Override
+public boolean hasFactor() {
+    try {
+        return factory.getRiskDAO().hadPriorDiagnoses(patientID, lowerICDCode, upperICDCode);
+    } catch (DBException e) {
+        e.printStackTrace();
+        return false;
+    }
+}

@@ -1,0 +1,3 @@
+public EditApptAction(DAOFactory factory, long loggedInMID) {
+    super(factory, loggedInMID);
+}

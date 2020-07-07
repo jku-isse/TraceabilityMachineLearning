@@ -1,0 +1,4 @@
+public TransformEdit(Collection<Figure> figures, AffineTransform tx) {
+    this.figures = figures;
+    this.tx = ((AffineTransform) (tx.clone()));
+}

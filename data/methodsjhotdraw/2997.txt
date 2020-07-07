@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public AlignAction(DrawingEditor editor) {
+    super(editor);
+}

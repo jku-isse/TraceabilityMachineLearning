@@ -1,0 +1,11 @@
+/**
+ * Returns the models extent, the length of the inner range that
+ * begins at the models value.
+ *
+ * @return the value of the models extent property
+ * @see #setExtent
+ * @see #setValue
+ */
+public int getExtent() {
+    return 0;
+}

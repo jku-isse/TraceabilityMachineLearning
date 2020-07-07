@@ -1,0 +1,3 @@
+public void setMessage(String message) {
+    messageLabel.setText(message);
+}

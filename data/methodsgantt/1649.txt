@@ -1,0 +1,3 @@
+public void addOptionChangeListener(GPOptionChangeListener listener) {
+    myOptionListeners.add(listener);
+}

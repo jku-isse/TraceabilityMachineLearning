@@ -1,0 +1,46 @@
+/* Authenticate HCP
+MID: 9000000000
+Password: pw
+Choose Edit Basic Health History
+enter 0000000002 and confirm
+Enter fields:
+Height: **
+Weight: 400 pounds
+Blood Pressure: 999/000
+Smokes: Y
+HDL: 50
+LDL: 200
+Triglycerides: 200
+Confirm and approve entries
+ */
+public void testCreatePHIRecord6() throws Exception {
+    // login as hcp
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getResponse(((iTrustHTTPTest.ADDRESS) + "auth/hcp/home.jsp"));
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    // click on Edit Basic Health Information
+    wr = wr.getLinkWith("Basic Health Information").click();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/getPatientID.jsp?forward=hcp-uap/editBasicHealth.jsp"), wr.getURL().toString());
+    // Choose patient 2
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/editBasicHealth.jsp"), wr.getURL().toString());
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_HEALTH_INFORMATION_VIEW, 9000000000L, 2L, "");
+    // attempt to add a record with invalid height
+    WebForm form = wr.getForms()[0];
+    form.getButtons()[0].click();
+    form.setParameter("height", "**");
+    form.setParameter("weight", "400");
+    form.setParameter("isSmoker", "1");
+    form.setParameter("bloodPressureN", "999");
+    form.setParameter("bloodPressureD", "000");
+    form.setParameter("cholesterolHDL", "50");
+    form.setParameter("cholesterolLDL", "200");
+    form.setParameter("cholesterolTri", "200");
+    form.getButtons()[0].click();
+    WebResponse add = wc.getCurrentPage();
+    assertTrue(add.getText().contains("Height: Up to 3-digit number + up to 1 decimal place"));
+}

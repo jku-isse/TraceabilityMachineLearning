@@ -1,0 +1,3 @@
+public void setVersionInfo(String newVersionText) {
+    this.jlVersion.setText(newVersionText);
+}

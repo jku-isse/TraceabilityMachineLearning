@@ -1,0 +1,16 @@
+public void setPalette(Window newValue) {
+    if ((palette) != null) {
+        palette.removeWindowListener(windowHandler);
+    }
+    palette = newValue;
+    if ((palette) != null) {
+        palette.addWindowListener(windowHandler);
+        if ((getValue(Actions.SELECTED_KEY)) == (Boolean.TRUE)) {
+            app.addPalette(palette);
+            palette.setVisible(true);
+        } else {
+            app.removePalette(palette);
+            palette.setVisible(false);
+        }
+    }
+}

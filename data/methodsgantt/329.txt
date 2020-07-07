@@ -1,0 +1,21 @@
+public void mouseDragged(MouseEvent e) {
+    if (appli.isOnlyViewer)
+        return;
+
+    super.mouseDragged(e);
+    /* Add the repaint in order to repaint the treetable when an action
+    occurs on the GraphicArea. here mousedragged because all actions
+    modifying task properties on the graphics are made through
+    mousedragged (I think !)
+     */
+    // Mediator.getGanttProjectSingleton().repaint();
+    // getUIFacade().repaint2();
+    if (myUIConfiguration.isCriticalPathOn()) {
+        ChartComponentBase.MouseInteraction mi = myChartComponentImpl.getActiveInteraction();
+        if (((mi instanceof GanttGraphicArea.ChangeTaskBoundaryInteraction) || (mi instanceof GanttGraphicArea.MoveTaskInteraction)) || (mi instanceof GanttGraphicArea.MoveTaskInteractions))
+            appli.recalculateCriticalPath();
+
+    }
+    this.repaint();
+    // avant
+}

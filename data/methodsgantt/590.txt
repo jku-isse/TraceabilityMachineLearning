@@ -1,0 +1,3 @@
+public static void setWindowListener(WindowListener windowListener) {
+    GanttProject.ourWindowListener = windowListener;
+}

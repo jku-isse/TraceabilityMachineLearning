@@ -1,0 +1,12 @@
+public ImportResources(ResourceManager resourceManager, TaskManager taskManager, RoleManager roleManager, GanttProject project) {
+    myTaskManager = taskManager;
+    myRoleManager = roleManager;
+    GanttLanguage language = GanttLanguage.getInstance();
+    this.putValue(AbstractAction.NAME, language.getText("importResources"));
+    myResourceManager = resourceManager;
+    URL iconUrl = this.getClass().getClassLoader().getResource("icons/impres_16.gif");
+    if (iconUrl != null) {
+        this.putValue(Action.SMALL_ICON, new ImageIcon(iconUrl));
+    }
+    myproject = project;
+}

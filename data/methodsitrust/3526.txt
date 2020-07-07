@@ -1,0 +1,3 @@
+public void drugInteractions() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/drugInteractions.sql"));
+}

@@ -1,0 +1,7 @@
+@Override
+protected void installDefaults(JSlider slider) {
+    super.installDefaults(slider);
+    PaletteLookAndFeel laf = PaletteLookAndFeel.getInstance();
+    PaletteLookAndFeel.installBorder(slider, "Slider.border");
+    PaletteLookAndFeel.installColors(slider, "Slider.background", "Slider.foreground");
+}

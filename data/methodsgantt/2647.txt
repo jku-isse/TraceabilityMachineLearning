@@ -1,0 +1,19 @@
+public void worked(final int work) {
+    /* catch (InterruptedException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+    } catch (InvocationTargetException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+    }
+     */
+    try {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                myWorked += work;
+                myProgressDialog.setProgress(myWorked);
+            }
+        });
+    } finally {
+    }
+}

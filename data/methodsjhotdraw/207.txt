@@ -1,0 +1,7 @@
+private void showPalettes() {
+    for (Window palette : palettes) {
+        if (!(palette.isVisible())) {
+            palette.setVisible(true);
+        }
+    }
+}

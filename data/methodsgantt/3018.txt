@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return 
+ */
+public String getTitle() {
+    return myTitle;
+}

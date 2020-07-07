@@ -1,0 +1,18 @@
+public void flattenTransform() {
+    willChange();
+    AffineTransform tx = AttributeKeys.TRANSFORM.get(this);
+    if (tx != null) {
+        for (Figure child : getChildren()) {
+            // ((SVGBezierFigure) child).transform(tx);
+            ((SVGBezierFigure) (child)).flattenTransform();
+        }
+    }
+    if ((SVGAttributeKeys.FILL_GRADIENT.get(this)) != null) {
+        SVGAttributeKeys.FILL_GRADIENT.get(this).transform(tx);
+    }
+    if ((SVGAttributeKeys.STROKE_GRADIENT.get(this)) != null) {
+        SVGAttributeKeys.STROKE_GRADIENT.get(this).transform(tx);
+    }
+    AttributeKeys.TRANSFORM.basicSet(this, null);
+    changed();
+}

@@ -1,0 +1,3 @@
+public QuadTree(Rectangle2D.Double bounds) {
+    root = new QuadNode(bounds);
+}

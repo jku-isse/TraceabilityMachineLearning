@@ -1,0 +1,3 @@
+protected void setSelectedFile(File file) {
+    myChooser.setFile(file);
+}

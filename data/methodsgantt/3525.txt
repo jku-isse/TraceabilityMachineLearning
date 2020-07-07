@@ -1,0 +1,4 @@
+private void saveHistory(TransformerHandler handler) throws IOException, ParserConfigurationException, SAXException {
+    List history = ((GanttProject) (myProject)).getPreviouStates();
+    new HistorySaver().save(history, handler);
+}

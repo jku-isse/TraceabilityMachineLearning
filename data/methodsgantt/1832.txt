@@ -1,0 +1,7 @@
+public void scrollLeft() {
+    Calendar c = CalendarFactory.newCalendar();
+    c.setTime(myStartDate);
+    c.add(Calendar.MILLISECOND, (-1));
+    Date scrolledDate = c.getTime();
+    setStartDate(scrolledDate);
+}

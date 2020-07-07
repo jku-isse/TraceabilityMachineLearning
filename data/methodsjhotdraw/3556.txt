@@ -1,0 +1,4 @@
+/**
+ * {@inheritDoc }
+ */
+public abstract Rectangle2D getBounds2D();

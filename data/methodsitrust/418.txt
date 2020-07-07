@@ -1,0 +1,16 @@
+public void testEditCOD() throws Exception {
+    gen.patient1();
+    action = new EditPatientAction(factory, 1L, "1");
+    PatientDAO po = TestDAOFactory.getTestInstance().getPatientDAO();
+    PatientBean pb = po.getPatient(1L);
+    assertEquals("Random", pb.getFirstName());
+    assertEquals("", pb.getCauseOfDeath());
+    assertEquals("", pb.getDateOfDeathStr());
+    pb.setCauseOfDeath("79.1");
+    pb.setDateOfDeathStr("01/03/2006");
+    action.updateInformation(pb);
+    PatientBean pb2 = po.getPatient(1L);
+    assertEquals("Random", pb2.getFirstName());
+    assertEquals("79.1", pb2.getCauseOfDeath());
+    assertEquals("01/03/2006", pb2.getDateOfDeathStr());
+}

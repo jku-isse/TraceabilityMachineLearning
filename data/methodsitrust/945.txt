@@ -1,0 +1,31 @@
+/**
+ * Removes a ND Code (prescription) from the list
+ *
+ * @param med
+ * 		The ND Code to be removed
+ * @return Status message
+ * @throws DBException
+ * 		
+ */
+public String removeNDCode(MedicationBean med) throws DBException {
+    try {
+        if ((ndDAO.getNDCode(med.getNDCode())) == null) {
+            return "Drug does not exist or already has been removed from the database.";
+        }
+    } catch (DBException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    }
+    try {
+        if (ndDAO.removeNDCode(med)) {
+            return ((("Success: " + (med.getNDCode())) + " - ") + (med.getDescription())) + " removed";
+        } else
+            return "The database has become corrupt. Please contact the system administrator for assistance.";
+
+    } catch (DBException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    } catch (iTrustException e) {
+        return e.getMessage();
+    }
+}

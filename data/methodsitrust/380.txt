@@ -1,0 +1,21 @@
+/**
+ * Checks to see if a particular family member has high cholesterol
+ *
+ * @param member
+ * 		the family member to check
+ * @return true if the family member has high cholesterol.  False if there are no records or the family member does not
+ * @throws iTrustException
+ * 		
+ */
+public boolean doesFamilyMemberHaveHighCholesterol(FamilyMemberBean member) throws iTrustException {
+    List<HealthRecord> records = hrDAO.getAllHealthRecords(member.getMid());
+    if ((records.size()) == 0)
+        return false;
+
+    for (HealthRecord record : records) {
+        if (((record.getCholesterolHDL()) < 35) || ((record.getCholesterolLDL()) > 250))
+            return true;
+
+    }
+    return false;
+}

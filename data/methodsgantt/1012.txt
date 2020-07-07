@@ -1,0 +1,16 @@
+/**
+ *
+ *
+ * @unknown 
+ */
+public Task[] getNestedTasks(Task container) {
+    TaskNode r = ((TaskNode) (root));
+    Enumeration e = r.children();
+    Vector v = new Vector();
+    while (e.hasMoreElements())
+        v.add(((TaskNode) (e.nextElement())));
+
+    Task[] res = new Task[v.size()];
+    v.toArray(res);
+    return res;
+}

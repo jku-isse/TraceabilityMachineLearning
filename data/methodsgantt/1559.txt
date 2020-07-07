@@ -1,0 +1,9 @@
+boolean load(InputStream inputStream) throws IOException, ParserConfigurationException, SAXException {
+    // Use an instance of ourselves as the SAX event handler
+    DefaultHandler handler = new XMLCalendarOpen.GanttXMLParser();
+    // Use the default (non-validating) parser
+    SAXParserFactory factory = SAXParserFactory.newInstance();
+    SAXParser saxParser = factory.newSAXParser();
+    saxParser.parse(inputStream, handler);
+    return true;
+}

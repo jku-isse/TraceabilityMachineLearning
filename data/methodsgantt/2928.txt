@@ -1,0 +1,12 @@
+public Object getValueAt(int row, int col) {
+    AboutJavaInfosPanel.SystemInfo info = ((AboutJavaInfosPanel.SystemInfo) (data.elementAt(row)));
+    if (col == 0)
+        return info.getName();
+    else
+        if (col == 1)
+            return info.getValue();
+        else
+            return null;
+
+
+}

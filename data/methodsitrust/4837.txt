@@ -1,0 +1,5 @@
+public void testBadLength() throws Exception {
+    String value = "1234567890123456789012345678901";
+    String errorMessage = EmailValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, EmailValidatorTest.VALIDATION_FORMAT, false));
+}

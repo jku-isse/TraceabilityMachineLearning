@@ -1,0 +1,3 @@
+public void treeNodesInserted(TreeModelEvent e) {
+    isValid = false;
+}

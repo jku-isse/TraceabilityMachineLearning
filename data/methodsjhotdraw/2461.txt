@@ -1,0 +1,23 @@
+public Figure findFigureExcept(Point2D.Double p, Figure ignore) {
+    Collection<Figure> c = quadTree.findContains(p);
+    switch (c.size()) {
+        case 0 :
+            {
+                return null;
+            }
+        case 1 :
+            {
+                Figure f = c.iterator().next();
+                return (f == ignore) || (!(f.contains(p))) ? null : f;
+            }
+        default :
+            {
+                for (Figure f : getFiguresFrontToBack()) {
+                    if ((f != ignore) && (f.contains(p))) {
+                        return f;
+                    }
+                }
+                return null;
+            }
+    }
+}

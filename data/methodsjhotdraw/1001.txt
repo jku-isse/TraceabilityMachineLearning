@@ -1,0 +1,6 @@
+/**
+ * Sent when a figure requests to be removed.
+ */
+public void figureRequestRemove(FigureEvent e) {
+    // Empty
+}

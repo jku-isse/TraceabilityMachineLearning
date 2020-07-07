@@ -1,0 +1,5 @@
+public Transferable createTransferable(Drawing drawing, List<Figure> figures, double scaleFactor) throws IOException {
+    ByteArrayOutputStream buf = new ByteArrayOutputStream();
+    write(buf, drawing, figures);
+    return new InputStreamTransferable(new DataFlavor(SVGConstants.SVG_MIMETYPE, "Image SVG"), buf.toByteArray());
+}

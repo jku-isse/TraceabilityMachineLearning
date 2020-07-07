@@ -1,0 +1,9 @@
+/**
+ * Sets up defaults
+ *
+ * @param factory
+ * 		The DAOFactory used to create the DAOs used in this action.
+ */
+public UpdateLOINCListAction(DAOFactory factory) {
+    lDAO = factory.getLOINCDAO();
+}

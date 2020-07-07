@@ -1,0 +1,3 @@
+public Color getResourceOverloadColor() {
+    return myProjectConfig.getResourceOverloadColor();
+}

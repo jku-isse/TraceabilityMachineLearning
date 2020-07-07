@@ -1,0 +1,3 @@
+public PGNLexer(InputBuffer ib) {
+    this(new antlr.LexerSharedInputState(ib));
+}

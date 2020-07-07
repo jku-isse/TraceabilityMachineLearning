@@ -1,0 +1,7 @@
+/**
+ * Convenience method for creating a formatter factory with a
+ * 8@code FontFormatter}.
+ */
+public static JFormattedTextField.AbstractFormatterFactory createFormatterFactory(boolean allowsNullValue) {
+    return new DefaultFormatterFactory(new FontFormatter(allowsNullValue));
+}

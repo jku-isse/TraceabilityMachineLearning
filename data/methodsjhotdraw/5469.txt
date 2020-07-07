@@ -1,0 +1,4 @@
+public boolean isEmpty() {
+    Rectangle2D.Double b = getBounds();
+    return ((b.width) <= 0) || ((b.height) <= 0);
+}

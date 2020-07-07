@@ -1,0 +1,8 @@
+@Override
+public Object getTransformRestoreData() {
+    ArrayList<Object> paths = new ArrayList<Object>(getChildCount());
+    for (int i = 0, n = getChildCount(); i < n; i++) {
+        paths.add(getChild(i).getTransformRestoreData());
+    }
+    return new Object[]{ paths, AttributeKeys.TRANSFORM.getClone(this), SVGAttributeKeys.FILL_GRADIENT.getClone(this), SVGAttributeKeys.STROKE_GRADIENT.getClone(this) };
+}

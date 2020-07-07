@@ -1,0 +1,10 @@
+private void update(MouseEvent e) {
+    if ((selectedIndex) != (-1)) {
+        float[] hsb = getColorAt(e.getX(), e.getY());
+        hsb[1] = harmonicModel.get(selectedIndex).getComponent(1);
+        // if (hsb != null) {
+        harmonicModel.set(selectedIndex, new CompositeColor(harmonicModel.getColorSystem(), hsb));
+        // }
+        repaint();
+    }
+}

@@ -1,0 +1,3 @@
+public long getCreationTime() {
+    throw new IllegalStateException("should not be hit!");
+}

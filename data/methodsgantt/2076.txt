@@ -1,0 +1,6 @@
+private void processFirstActivity(TaskActivity taskActivity) {
+    boolean stop = (taskActivity.getIntensity()) == 0.0F;
+    if (!stop) {
+        processRegularActivity(taskActivity);
+    }
+}

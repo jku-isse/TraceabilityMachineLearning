@@ -1,0 +1,26 @@
+@Override
+public void keyPressed(KeyEvent evt) {
+    Rectangle2D.Double r = getOwner().getBounds();
+    switch (evt.getKeyCode()) {
+        case KeyEvent.VK_UP :
+            setBounds(new Point2D.Double(r.x, ((r.y) - 1)), new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height))));
+            evt.consume();
+            break;
+        case KeyEvent.VK_DOWN :
+            if ((r.height) > 1) {
+                setBounds(new Point2D.Double(r.x, ((r.y) + 1)), new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height))));
+            }
+            evt.consume();
+            break;
+        case KeyEvent.VK_LEFT :
+            setBounds(new Point2D.Double(((r.x) - 1), r.y), new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height))));
+            evt.consume();
+            break;
+        case KeyEvent.VK_RIGHT :
+            if ((r.width) > 1) {
+                setBounds(new Point2D.Double(((r.x) + 1), r.y), new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height))));
+            }
+            evt.consume();
+            break;
+    }
+}

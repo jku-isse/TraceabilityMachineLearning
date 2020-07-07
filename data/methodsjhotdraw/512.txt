@@ -1,0 +1,9 @@
+public void generateColorTrack() {
+    if (isHorizontal) {
+        generateHorizontalColorTrack();
+    } else {
+        generateVerticalColorTrack();
+    }
+    newPixels();
+    isDirty = false;
+}

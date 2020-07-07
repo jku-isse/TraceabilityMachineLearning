@@ -1,0 +1,11 @@
+/**
+ * Search for a coef on the arraylist
+ */
+public int indexOf(ArrayList listOfParam, String coef) {
+    for (int i = 0; i < (listOfParam.size()); i++)
+        if (coef == (listOfParam.get(i).toString()))
+            return i;
+
+
+    return -1;
+}

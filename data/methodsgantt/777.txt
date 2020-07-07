@@ -1,0 +1,11 @@
+// getters and setters
+/**
+ * get the predecessor task
+ */
+public GanttTask getPredecessorTask() {
+    if ((predecessorTaskID) != (-1)) {
+        return getManager().getTask(predecessorTaskID);
+    } else {
+        return null;
+    }
+}

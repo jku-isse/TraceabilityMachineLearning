@@ -1,0 +1,14 @@
+/**
+ * Overriden to create no toolbars.
+ *
+ * @param app
+ * 		
+ * @param p
+ * 		
+ * @return An empty list.
+ */
+@Override
+public List<JToolBar> createToolBars(Application app, View p) {
+    LinkedList<JToolBar> list = new LinkedList<JToolBar>();
+    return list;
+}

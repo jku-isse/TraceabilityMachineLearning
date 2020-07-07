@@ -1,0 +1,3 @@
+private PresentationFigureHandler(GraphicalCompositeFigure owner) {
+    this.owner = owner;
+}

@@ -1,0 +1,8 @@
+public void testGetLabProceduresReceivedForLabTech() {
+    try {
+        dao.getLabProceduresReceivedForLabTech(1);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

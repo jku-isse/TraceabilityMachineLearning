@@ -1,0 +1,9 @@
+@Override
+public void paint(Graphics g, JComponent c) {
+    AbstractButton button = ((AbstractButton) (c));
+    if ((button.isBorderPainted()) && ((c.getBorder()) instanceof BackdropBorder)) {
+        BackdropBorder bb = ((BackdropBorder) (c.getBorder()));
+        bb.getBackdropBorder().paintBorder(c, g, 0, 0, c.getWidth(), c.getHeight());
+    }
+    super.paint(g, c);
+}

@@ -1,0 +1,3 @@
+public String getURLPath() {
+    return myPhysicalDocument.getURLPath();
+}

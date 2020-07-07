@@ -1,0 +1,5 @@
+PrintAction(GanttProject mainFrame) {
+    super("print");
+    myMainFrame = mainFrame;
+    putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_P, GPAction.MENU_MASK));
+}

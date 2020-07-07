@@ -1,0 +1,3 @@
+public boolean hasNestedTasks(Task container) {
+    return (myRoot) == null ? false : myRoot.isMilestone();
+}

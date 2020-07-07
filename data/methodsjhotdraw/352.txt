@@ -1,0 +1,5 @@
+public void actionPerformed(ActionEvent e) {
+    if ((palette) != null) {
+        putValue(Actions.SELECTED_KEY, (!(palette.isVisible())));
+    }
+}

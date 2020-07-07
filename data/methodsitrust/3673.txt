@@ -1,0 +1,5 @@
+Role(String userRolesString, String dbTable, long midFirstDigit) {
+    this.userRolesString = userRolesString;
+    this.dbTable = dbTable;
+    this.midFirstDigit = midFirstDigit;
+}

@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public DragHandle(Figure owner) {
+    super(owner);
+}

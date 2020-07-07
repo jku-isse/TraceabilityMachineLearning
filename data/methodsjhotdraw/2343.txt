@@ -1,0 +1,9 @@
+/**
+ * Creates Handles for the Liner.
+ * The ConnectionFigure can provide these handles to the user, in order
+ * to let her control the lineout.
+ *
+ * @param path
+ * 		The path for which to create handles.
+ */
+public Collection<Handle> createHandles(BezierPath path);

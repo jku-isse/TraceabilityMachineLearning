@@ -1,0 +1,11 @@
+private void loadTaskDisplay(Attributes atts) {
+    String id = atts.getValue(myIDPropertyName);
+    String orderStr = atts.getValue(myOrderPropertyName);
+    if (orderStr == null) {
+        orderStr = String.valueOf(myBuffer.getSize());
+    }
+    String widthStr = atts.getValue(myWidthPropertyName);
+    int order = Integer.parseInt(orderStr);
+    int width = (widthStr == null) ? -1 : Integer.parseInt(widthStr);
+    myBuffer.add(id, order, width);
+}

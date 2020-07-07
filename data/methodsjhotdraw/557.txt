@@ -1,0 +1,3 @@
+protected void addColorSlider(JSlider slider) {
+    sliders.add(slider);
+}

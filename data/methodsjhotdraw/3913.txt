@@ -1,0 +1,25 @@
+/**
+ * Uninstalls the sheet on the owner.
+ * This method is invoked immediately after the JSheet is hidden.
+ */
+protected void uninstallSheet() {
+    if (isInstalled) {
+        Window owner = getOwner();
+        if (owner != null) {
+            // Note: We mustnt change the windows focusable state because
+            // this also affects the focusable state of the JSheet.
+            // owner.setFocusableWindowState(true);
+            owner.setEnabled(true);
+            // ((JFrame) owner).setResizable(true);
+            owner.removeComponentListener(ownerMovementHandler);
+            if ((shiftBackLocation) != null) {
+                owner.setLocation(shiftBackLocation);
+            }
+            if ((oldFocusOwner) != null) {
+                owner.toFront();
+                oldFocusOwner.requestFocus();
+            }
+        }
+        isInstalled = false;
+    }
+}

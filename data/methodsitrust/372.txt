@@ -1,0 +1,17 @@
+public void testUpdateInformationNewOfficeVisit() throws Exception {
+    action = new EditOfficeVisitAction(factory, 9000000001L, "1");
+    assertEquals(true, action.isUnsaved());
+    assertEquals((-1), action.getOvID());
+    EditOfficeVisitForm frm = new EditOfficeVisitForm();
+    frm.setHcpID("9000000001");
+    frm.setPatientID("1");
+    frm.setVisitDate("05/02/2001");
+    frm.setNotes("That was a doctors visit");
+    try {
+        action.updateInformation(frm, false);
+    } catch (FormValidationException e) {
+        fail(e.getMessage());
+    }
+    assertEquals(false, action.isUnsaved());
+    assertFalse(((-1) == (action.getOvID())));
+}

@@ -1,0 +1,26 @@
+protected void drawRectangle(Graphics2D g, Color fill, Color stroke) {
+    if (fill != null) {
+        Rectangle r = getBounds();
+        g.setColor(fill);
+        r.x += 1;
+        r.y += 1;
+        r.width -= 2;
+        r.height -= 2;
+        g.fill(r);
+    }
+    g.setStroke(new BasicStroke());
+    if (stroke != null) {
+        Rectangle r = getBounds();
+        r.width -= 1;
+        r.height -= 1;
+        g.setColor(stroke);
+        g.draw(r);
+        if ((getView().getActiveHandle()) == (this)) {
+            r.x += 2;
+            r.y += 2;
+            r.width -= 3;
+            r.height -= 3;
+            g.fill(r);
+        }
+    }
+}

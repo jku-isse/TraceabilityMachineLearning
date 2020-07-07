@@ -1,0 +1,34 @@
+/**
+ * Looks up up the given key in our Hashtable and resolves LazyValues
+ * or ActiveValues.
+ */
+public Object get(Object key) {
+    UIDefaults defaults = getCachedDefaults();
+    /* Quickly handle the common case, without grabbing
+    a lock.
+     */
+    Object value = defaults.get(key);
+    if ((!(value instanceof UIDefaults.ActiveValue)) && (!(value instanceof UIDefaults.LazyValue))) {
+        return value;
+    }
+    /* At this point we know that the value of key was
+    a LazyValue or an ActiveValue.
+     */
+    if (value instanceof UIDefaults.LazyValue) {
+        try {
+            /* If an exception is thrown well just put the LazyValue
+            back in the table.
+             */
+            value = ((UIDefaults.LazyValue) (value)).createValue(defaults);
+        } finally {
+            if (value == null) {
+                defaults.remove(key);
+            } else {
+                defaults.put(key, value);
+            }
+        }
+    } else {
+        value = ((UIDefaults.ActiveValue) (value)).createValue(defaults);
+    }
+    return value;
+}

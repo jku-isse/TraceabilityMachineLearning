@@ -1,0 +1,3 @@
+public void ltData2() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/lt2.sql"));
+}

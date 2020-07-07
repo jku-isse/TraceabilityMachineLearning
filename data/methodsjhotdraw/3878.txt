@@ -1,0 +1,34 @@
+/**
+ * Notify all listeners that have registered interest for
+ *   notification on this event type.  The event instance
+ *   is lazily created using the parameters passed into
+ *   the fire method.
+ */
+protected void fireOptionSelected(JOptionPane pane) {
+    Object value = pane.getValue();
+    int option;
+    if (value == null) {
+        option = JOptionPane.CLOSED_OPTION;
+    } else {
+        if ((pane.getOptions()) == null) {
+            if (value instanceof Integer) {
+                option = ((Integer) (value)).intValue();
+            } else {
+                option = JOptionPane.CLOSED_OPTION;
+            }
+        } else {
+            option = JOptionPane.CLOSED_OPTION;
+            Object[] options = pane.getOptions();
+            for (int i = 0, n = options.length; i < n; i++) {
+                if (options[i].equals(value)) {
+                    option = i;
+                    break;
+                }
+            }
+            if (option == (JOptionPane.CLOSED_OPTION)) {
+                value = null;
+            }
+        }
+    }
+    fireOptionSelected(pane, option, value, pane.getInputValue());
+}

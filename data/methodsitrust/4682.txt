@@ -1,0 +1,5 @@
+public void testCheckIsNullable() throws Exception {
+    String value = null;
+    String errorMessage = "";
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.NAME, true));
+}

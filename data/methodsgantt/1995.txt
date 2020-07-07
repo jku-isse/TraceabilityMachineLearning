@@ -1,0 +1,6 @@
+/**
+ * Returns the width of a tile.
+ */
+public int getTileWidth() {
+    return tileWidth;
+}

@@ -1,0 +1,3 @@
+public AffineTransform getTransform() {
+    return transform;
+}

@@ -1,0 +1,7 @@
+public Object getAttributesRestoreData() {
+    LinkedList<Object> data = new LinkedList<Object>();
+    for (Figure child : getChildren()) {
+        data.add(child.getAttributesRestoreData());
+    }
+    return data;
+}

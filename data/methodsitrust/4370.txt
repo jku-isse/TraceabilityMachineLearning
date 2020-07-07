@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @param patients
+ * 		
+ * @return 
+ */
+public abstract List<PatientBean> filter(List<PatientBean> patients);

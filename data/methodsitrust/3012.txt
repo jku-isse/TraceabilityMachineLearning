@@ -1,0 +1,31 @@
+/**
+ * Returns all patients with names "LIKE" (as in SQL) the passed in parameters.
+ *
+ * @param first
+ * 		The patients first name.
+ * @param last
+ * 		The patients last name.
+ * @return A java.util.List of PatientBeans.
+ * @throws DBException
+ * 		
+ */
+public List<PatientBean> searchForPatientsWithName(String first, String last) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    if ((first.equals("%")) && (last.equals("%")))
+        return new Vector<PatientBean>();
+
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM patients WHERE firstName LIKE ? AND lastName LIKE ?");
+        ps.setString(1, first);
+        ps.setString(2, last);
+        ResultSet rs = ps.executeQuery();
+        return patientLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

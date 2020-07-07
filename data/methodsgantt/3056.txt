@@ -1,0 +1,13 @@
+public Component createStandaloneOptionPanel(GPOption option) {
+    JPanel optionPanel = new JPanel(new BorderLayout());
+    Component optionComponent = createOptionComponent(option);
+    if (needsLabel(option)) {
+        optionPanel.add(createOptionLabel(option), BorderLayout.WEST);
+        optionPanel.add(optionComponent, BorderLayout.CENTER);
+    } else {
+        optionPanel.add(optionComponent, BorderLayout.WEST);
+    }
+    JPanel result = new JPanel(new BorderLayout());
+    result.add(optionPanel, BorderLayout.NORTH);
+    return result;
+}

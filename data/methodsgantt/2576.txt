@@ -1,0 +1,42 @@
+public void show(IGanttProject project, final UIFacade uiFacade) {
+    // super(parent, GanttLanguage.getInstance().getText("propertiesFor")
+    // + " " + tasksNames + "", true);
+    final GanttTaskPropertiesBean taskPropertiesBean = new GanttTaskPropertiesBean(myTasks, project, uiFacade);
+    final Action[] actions = new Action[]{ new OkAction() {
+        public void actionPerformed(ActionEvent arg0) {
+            uiFacade.getUndoManager().undoableEdit("Properties changed", new Runnable() {
+                public void run() {
+                    Task[] returnTask = taskPropertiesBean.getReturnTask();
+                    // System.err.println("[GanttDialogProperties]
+                    // returnTask="+returnTask);
+                    // returnTask.setTaskID(this.task.getTaskID());
+                    // getTaskManager().setTask(returnTask);
+                    // DefaultMutableTreeNode father;
+                    // for (int i = 0; i < returnTask.length; i++) {
+                    // tree.getNode(myTasks[i].getTaskID())
+                    // .setUserObject(returnTask[i]);
+                    // // Refresh all father
+                    // father = tree.getFatherNode(tree
+                    // .getNode(myTasks[i].getTaskID()));
+                    // while (father != null) {
+                    // tree.forwardScheduling();
+                    // father = tree.getFatherNode(father);
+                    // }
+                    // }
+                }
+            });
+        }
+    }, new CancelAction() {
+        public void actionPerformed(ActionEvent arg0) {
+        }
+    } };
+    StringBuffer taskNames = new StringBuffer();
+    for (int i = 0; i < (myTasks.length); i++) {
+        if (i > 0) {
+            taskNames.append(,);
+        }
+        taskNames.append(myTasks[i].getName());
+    }
+    final String title = (((GanttLanguage.getInstance().getText("propertiesFor")) + " ") + taskNames) + "";
+    uiFacade.showDialog(taskPropertiesBean, actions, title);
+}

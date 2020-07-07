@@ -1,0 +1,3 @@
+protected void enableEvents(boolean enabled) {
+    myEventsEnabled = enabled;
+}

@@ -1,0 +1,3 @@
+public int getMiddleX() {
+    return (myLeftX) + ((myWidth) / 2);
+}

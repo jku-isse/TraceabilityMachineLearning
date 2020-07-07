@@ -1,0 +1,9 @@
+/**
+ * Creates an instance of GTextField.
+ */
+public GTextField() {
+    super();
+    super.setColumns(15);
+    this.setDocument(new GPlainDocument(null));
+    this.setHorizontalAlignment(SwingConstants.RIGHT);
+}

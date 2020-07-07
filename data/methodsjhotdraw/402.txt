@@ -1,0 +1,12 @@
+public void actionPerformed(ActionEvent evt) {
+    View p = getActiveView();
+    Object value = getCurrentValue();
+    Object newValue = ((value == (selectedPropertyValue)) || (((value != null) && ((selectedPropertyValue) != null)) && (value.equals(selectedPropertyValue)))) ? deselectedPropertyValue : selectedPropertyValue;
+    try {
+        p.getClass().getMethod(setterName, parameterClass).invoke(p, new Object[]{ newValue });
+    } catch (Throwable e) {
+        InternalError error = new InternalError(((("No " + (setterName)) + " method on ") + p));
+        error.initCause(e);
+        throw error;
+    }
+}

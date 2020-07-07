@@ -1,0 +1,12 @@
+/**
+ * Gets a users appointments
+ *
+ * @param mid
+ * 		the MID of the user
+ * @return a list of the users appointments
+ * @throws SQLException
+ * 		
+ */
+public List<ApptBean> getAppointments(long MID) throws SQLException {
+    return apptDAO.getApptsFor(MID);
+}

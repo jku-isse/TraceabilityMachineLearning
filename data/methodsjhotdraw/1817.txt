@@ -1,0 +1,12 @@
+/**
+ * Reinserts the specified figures which were temporarily removed from
+ * the drawing.
+ *
+ * @param index
+ * 		The insertion index.
+ * @param figures
+ * 		A collection of figures which are part of the drawing
+ * 		and should be reinserted.
+ * @see #basicRemoveAll(Collection)
+ */
+void basicAddAll(int index, Collection<? extends Figure> figures);

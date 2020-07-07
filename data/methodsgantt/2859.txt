@@ -1,0 +1,3 @@
+public void setWeekEndColor(Color myWeekEndColor) {
+    this.myWeekEndColor = myWeekEndColor;
+}

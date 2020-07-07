@@ -1,0 +1,13 @@
+private String getPassword(long mid) throws SQLException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("SELECT password from users WHERE MID=" + mid));
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return rs.getString("password");
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,10 @@
+/**
+ * Method to get a {@code SelectAreaTracker} which handles user interaction
+ * for selecting an area on the drawing.
+ */
+protected SelectAreaTracker getSelectAreaTracker() {
+    if ((selectAreaTracker) == null) {
+        selectAreaTracker = new DefaultSelectAreaTracker();
+    }
+    return selectAreaTracker;
+}

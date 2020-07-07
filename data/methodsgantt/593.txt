@@ -1,0 +1,14 @@
+/**
+ * Updates the last open file menu items.
+ */
+private void updateMenuMRU() {
+    mMRU.removeAll();
+    int index = 0;
+    Iterator iterator = documentsMRU.iterator();
+    while (iterator.hasNext()) {
+        index++;
+        Document document = ((Document) (iterator.next()));
+        JMenuItem mi = new JMenuItem(new OpenDocumentAction(index, document, this));
+        mMRU.add(mi);
+    } 
+}

@@ -1,0 +1,32 @@
+protected Point getColorLocation(float hue, float saturation, float brightness, int width, int height) {
+    float radial;
+    float angular;
+    switch (angularIndex) {
+        case 0 :
+        default :
+            angular = hue;
+            break;
+        case 1 :
+            angular = saturation;
+            break;
+        case 2 :
+            angular = brightness;
+            break;
+    }
+    switch (radialIndex) {
+        case 0 :
+        default :
+            radial = hue;
+            break;
+        case 1 :
+            radial = saturation;
+            break;
+        case 2 :
+            radial = brightness;
+            break;
+    }
+    float radius = (Math.min(width, height)) / 2.0F;
+    radial = Math.max(0.0F, Math.min(1.0F, radial));
+    Point p = new Point(((width / 2) + ((int) ((radius * radial) * (Math.cos(((angular * (Math.PI)) * 2.0)))))), ((height / 2) - ((int) ((radius * radial) * (Math.sin(((angular * (Math.PI)) * 2.0)))))));
+    return p;
+}

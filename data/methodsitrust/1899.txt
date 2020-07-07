@@ -1,0 +1,3 @@
+public void setIcAddress1(String icAddress1) {
+    this.icAddress1 = icAddress1;
+}

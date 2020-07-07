@@ -1,0 +1,3 @@
+Point getPoint(int diff) {
+    return new Point(((getPoint().x) - diff), getPoint().y);
+}

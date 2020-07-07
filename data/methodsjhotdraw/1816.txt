@@ -1,0 +1,11 @@
+/**
+ * Reinserts a figure which was temporarily removed using basicRemove.
+ * <p>
+ * This is a convenience method for calling
+ * {@code basicAdd(size(), figure)}.
+ *
+ * @param figure
+ * 		that is part of the drawing and should be removed
+ * @see #basicRemove(Figure)
+ */
+void basicAdd(Figure figure);

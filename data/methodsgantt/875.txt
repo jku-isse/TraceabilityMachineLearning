@@ -1,0 +1,4 @@
+// 
+public void setUnlinkTasksAction(Action action) {
+    myUnlinkTasksAction = action;
+}

@@ -1,0 +1,18 @@
+/**
+ * Locates a position on the provided figure.
+ *
+ * @return a Point2D.Double on the figure.
+ */
+public Point2D.Double locate(Figure owner) {
+    Point2D.Double p = ((Point2D.Double) (owner.getStartPoint().clone()));
+    if (owner instanceof TextHolderFigure) {
+        p.y += ((TextHolderFigure) (owner)).getFontSize();
+        p.y += ((TextHolderFigure) (owner)).getInsets().top;
+    } else {
+        p.y += AttributeKeys.FONT_SIZE.get(owner);
+    }
+    if ((AttributeKeys.TRANSFORM.get(owner)) != null) {
+        AttributeKeys.TRANSFORM.get(owner).transform(p, p);
+    }
+    return p;
+}

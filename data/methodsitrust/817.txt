@@ -1,0 +1,5 @@
+public void testCheckAnswerNull() throws Exception {
+    assertEquals("empty", null, action.checkAnswerNull(""));
+    assertEquals("null", null, action.checkAnswerNull(null));
+    assertEquals("answer", action.checkAnswerNull("answer"));
+}

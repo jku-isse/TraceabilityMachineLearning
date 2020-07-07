@@ -1,0 +1,24 @@
+/**
+ * Updates the information in a particular office visit.
+ *
+ * @param ov
+ * 		The Office Visit bean representing the changes.
+ * @throws DBException
+ * 		
+ */
+public void update(OfficeVisitBean ov) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("UPDATE officevisits SET VisitDate=?, Notes=?, HCPID=?, " + "PatientID=?, HospitalID=? WHERE ID=?"));
+        setValues(ps, ov);
+        ps.setLong(6, ov.getID());
+        ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

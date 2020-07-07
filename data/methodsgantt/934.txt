@@ -1,0 +1,8 @@
+/**
+ * Returns the vertical scrollbar.
+ *
+ * @return The vertical scrollbar.
+ */
+public JScrollBar getVerticalScrollBar() {
+    return scrollPane.getVerticalScrollBar();
+}

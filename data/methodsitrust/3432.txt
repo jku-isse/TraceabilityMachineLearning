@@ -1,0 +1,5 @@
+public void testGetNDCode() throws DBException {
+    MedicationBean proc = ndDAO.getNDCode("081096");
+    assertEquals("081096", proc.getNDCode());
+    assertEquals("Aspirin", proc.getDescription());
+}

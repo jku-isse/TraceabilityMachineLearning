@@ -1,0 +1,6 @@
+/**
+ * Constructor
+ */
+public ShapePaint(ShapePaint pattern) {
+    this(pattern.width, pattern.height, pattern.array, pattern.foreground, pattern.background);
+}

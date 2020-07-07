@@ -1,0 +1,5 @@
+// Rationale: cant say they have the risk factor if the info is missing
+public void testZeroHeight() throws Exception {
+    hr.setHeight(0);
+    assertFalse(factor.hasRiskFactor());
+}

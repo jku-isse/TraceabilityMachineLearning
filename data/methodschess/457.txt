@@ -1,0 +1,8 @@
+/**
+ * Get the reader for the current file.
+ *
+ * @return The current reader.
+ */
+private final Reader getReader() {
+    return _reader;
+}

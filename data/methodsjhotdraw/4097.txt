@@ -1,0 +1,4 @@
+public int getIconWidth() {
+    generateIconsFromTiledImage();
+    return icons[0].getIconWidth();
+}

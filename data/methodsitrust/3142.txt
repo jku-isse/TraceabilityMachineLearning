@@ -1,0 +1,29 @@
+/**
+ * Returns a Ward specified by the id
+ *
+ * @param wardID
+ * 		The id of the ward to get
+ * @return A WardBean with the ID specified
+ * @throws DBException
+ * 		
+ */
+public WardBean getWard(String wardID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM wards where wardid = ?");
+        ps.setString(1, wardID);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return wardLoader.loadSingle(rs);
+        } else {
+            return null;
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

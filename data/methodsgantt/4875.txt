@@ -1,0 +1,3 @@
+protected TimeUnitText createTimeUnitText(Date adjustedLeft) {
+    return new TimeUnitText(MessageFormat.format("{0}", new Object[]{ "" + (adjustedLeft.getDate()) }));
+}

@@ -1,0 +1,4 @@
+public void invalidate() {
+    bezier = null;
+    segments = null;
+}

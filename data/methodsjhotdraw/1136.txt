@@ -1,0 +1,23 @@
+/**
+ * Returns a stroke which is useful for hit-testing.
+ * The stroke reflects the stroke width, but not the stroke dashes
+ * attribute.
+ *
+ * @param f
+ * 		
+ * @return A stroke suited for creating a shape for hit testing.
+ */
+public static Stroke getHitStroke(Figure f) {
+    double strokeWidth = Math.max(1, AttributeKeys.STROKE_WIDTH.get(f));
+    float miterLimit = ((float) (AttributeKeys.getStrokeTotalMiterLimit(f)));
+    double dashFactor = (AttributeKeys.IS_STROKE_DASH_FACTOR.get(f)) ? strokeWidth : 1.0;
+    switch (AttributeKeys.STROKE_TYPE.get(f)) {
+        case BASIC :
+        default :
+            return new BasicStroke(((float) (strokeWidth)), AttributeKeys.STROKE_CAP.get(f), AttributeKeys.STROKE_JOIN.get(f), miterLimit, null, Math.max(0, ((float) ((AttributeKeys.STROKE_DASH_PHASE.get(f)) * dashFactor))));
+            // not reached
+        case DOUBLE :
+            return new DoubleStroke(((float) ((AttributeKeys.STROKE_INNER_WIDTH_FACTOR.get(f)) * strokeWidth)), ((float) (strokeWidth)), AttributeKeys.STROKE_CAP.get(f), AttributeKeys.STROKE_JOIN.get(f), miterLimit, null, Math.max(0, ((float) ((AttributeKeys.STROKE_DASH_PHASE.get(f).floatValue()) * dashFactor))));
+            // not reached
+    }
+}

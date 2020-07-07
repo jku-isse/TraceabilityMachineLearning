@@ -1,0 +1,6 @@
+/**
+ * Informs the view that it has been added to the specified editor.
+ * The view must draw the tool of the editor, if getActiveView() of the
+ * editor returns the view.
+ */
+public void addNotify(DrawingEditor editor);

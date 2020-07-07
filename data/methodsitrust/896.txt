@@ -1,0 +1,12 @@
+/**
+ * Updates hospital
+ *
+ * @param hosp
+ * 		new information
+ * @return id for the updated hospital
+ * @throws DBException
+ * 		
+ */
+private int updateHospital(HospitalBean hosp) throws DBException {
+    return hospDAO.updateHospital(hosp);
+}

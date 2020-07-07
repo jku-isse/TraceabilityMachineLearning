@@ -1,0 +1,11 @@
+/**
+ *
+ *
+ * @unknown 
+ */
+public String toString() {
+    if ((resource) != null)
+        return resource.getName();
+
+    return "-";
+}

@@ -1,0 +1,6 @@
+/**
+ * Change the month of the date
+ */
+public void setMonth(int m) {
+    this.set(Calendar.MONTH, m);
+}

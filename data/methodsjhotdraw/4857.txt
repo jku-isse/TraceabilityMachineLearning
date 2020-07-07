@@ -1,0 +1,78 @@
+@Override
+public Collection<Action> getActions(Point2D.Double p) {
+    final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+    LinkedList<Action> actions = new LinkedList<Action>();
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+                ODGPathFigure.this.willChange();
+                fireUndoableEditHappened(AttributeKeys.TRANSFORM.setUndoable(ODGPathFigure.this, null));
+                ODGPathFigure.this.changed();
+            }
+        });
+        actions.add(new AbstractAction(labels.getString("edit.flattenTransform.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                // CompositeEdit edit = new CompositeEdit(labels.getString("flattenTransform"));
+                // TransformEdit edit = new TransformEdit(ODGPathFigure.this, )
+                final Object restoreData = getTransformRestoreData();
+                UndoableEdit edit = new AbstractUndoableEdit() {
+                    public String getPresentationName() {
+                        return labels.getString("flattenTransform");
+                    }
+
+                    public void undo() throws CannotUndoException {
+                        super.undo();
+                        willChange();
+                        restoreTransformTo(restoreData);
+                        changed();
+                    }
+
+                    public void redo() throws CannotRedoException {
+                        super.redo();
+                        willChange();
+                        restoreTransformTo(restoreData);
+                        flattenTransform();
+                        changed();
+                    }
+                };
+                willChange();
+                flattenTransform();
+                changed();
+                fireUndoableEditHappened(edit);
+            }
+        });
+    }
+    actions.add(new AbstractAction(labels.getString("closePath")) {
+        public void actionPerformed(ActionEvent evt) {
+            for (Figure child : getChildren()) {
+                ODGPathFigure.this.willChange();
+                getDrawing().fireUndoableEditHappened(AttributeKeys.CLOSED.setUndoable(child, true));
+                ODGPathFigure.this.changed();
+            }
+        }
+    });
+    actions.add(new AbstractAction(labels.getString("openPath")) {
+        public void actionPerformed(ActionEvent evt) {
+            for (Figure child : getChildren()) {
+                ODGPathFigure.this.willChange();
+                getDrawing().fireUndoableEditHappened(AttributeKeys.CLOSED.setUndoable(child, false));
+                ODGPathFigure.this.changed();
+            }
+        }
+    });
+    actions.add(new AbstractAction(labels.getString("windingRule.evenOdd")) {
+        public void actionPerformed(ActionEvent evt) {
+            ODGPathFigure.this.willChange();
+            getDrawing().fireUndoableEditHappened(AttributeKeys.WINDING_RULE.setUndoable(ODGPathFigure.this, AttributeKeys.WindingRule.EVEN_ODD));
+            ODGPathFigure.this.changed();
+        }
+    });
+    actions.add(new AbstractAction(labels.getString("windingRule.nonZero")) {
+        public void actionPerformed(ActionEvent evt) {
+            AttributeKeys.WINDING_RULE.set(ODGPathFigure.this, AttributeKeys.WindingRule.NON_ZERO);
+            getDrawing().fireUndoableEditHappened(AttributeKeys.WINDING_RULE.setUndoable(ODGPathFigure.this, AttributeKeys.WindingRule.EVEN_ODD));
+        }
+    });
+    return actions;
+}

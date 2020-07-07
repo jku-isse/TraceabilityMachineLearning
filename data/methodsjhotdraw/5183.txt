@@ -1,0 +1,3 @@
+protected SVGDrawingPanel getDrawingComponent() {
+    return drawingComponent;
+}

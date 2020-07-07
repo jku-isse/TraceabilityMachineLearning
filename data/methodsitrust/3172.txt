@@ -1,0 +1,6 @@
+public void testGetWithNotRightPID() throws Exception {
+    List<Long> ovIDs = Arrays.asList(5L, 2L);
+    List<PrescriptionReportBean> prescriptions = preportDAO.byOfficeVisitAndPatient(ovIDs, 1L);// injection!
+
+    assertEquals(0, prescriptions.size());
+}

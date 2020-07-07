@@ -1,0 +1,3 @@
+public String getEmergencyName() {
+    return emergencyName;
+}

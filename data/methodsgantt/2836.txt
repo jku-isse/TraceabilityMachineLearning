@@ -1,0 +1,3 @@
+public Font getMenuFont() {
+    return myMenuFont;
+}

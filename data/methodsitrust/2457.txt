@@ -1,0 +1,7 @@
+public List<VisitReminderReturnForm> loadList(ResultSet rs) throws SQLException {
+    ArrayList<VisitReminderReturnForm> list = new ArrayList<VisitReminderReturnForm>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

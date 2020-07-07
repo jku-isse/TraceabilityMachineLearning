@@ -1,0 +1,8 @@
+@Override
+public Dimension getPreferredHorizontalSize() {
+    Dimension horizDim = ((Dimension) (PaletteLookAndFeel.getInstance().get("Slider.horizontalSize")));
+    if (horizDim == null) {
+        horizDim = new Dimension(100, 21);
+    }
+    return horizDim;
+}

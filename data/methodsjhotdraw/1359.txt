@@ -1,0 +1,4 @@
+private float getStrokeWidth(Figure f) {
+    Double w = AttributeKeys.STROKE_WIDTH.get(f);
+    return w == null ? 1.0F : w.floatValue();
+}

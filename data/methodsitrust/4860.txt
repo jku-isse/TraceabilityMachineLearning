@@ -1,0 +1,5 @@
+public void testGoodICD() throws Exception {
+    String value = "1.0";
+    String errorMessage = ICD9CMValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ICD9CMValidatorTest.VALIDATION_FORMAT, false));
+}

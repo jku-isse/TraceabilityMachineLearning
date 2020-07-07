@@ -1,0 +1,3 @@
+public AdjustTaskBoundsAlgorithm getAdjustTaskBoundsAlgorithm() {
+    return myAdjustTaskBoundsAlgorithm;
+}

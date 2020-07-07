@@ -1,0 +1,3 @@
+public void setRoleForAssigment(Role role) {
+    resourceAssignment.setRoleForAssignment(role);
+}

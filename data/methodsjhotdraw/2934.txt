@@ -1,0 +1,41 @@
+/**
+ * Returns the direction from the provided start point to the end point.
+ * Returns null, if both points are at the same location.
+ */
+public static TranslationDirection getDirection(Point startPoint, Point endPoint) {
+    int dx = (endPoint.x) - (startPoint.x);
+    int dy = (endPoint.y) - (startPoint.y);
+    if (dx == 0) {
+        if (dy == 0) {
+            return null;
+        } else
+            if (dy > 0) {
+                return TranslationDirection.SOUTH;
+            } else {
+                return TranslationDirection.NORTH;
+            }
+
+    } else
+        if (dx > 0) {
+            if (dy == 0) {
+                return TranslationDirection.EAST;
+            } else
+                if (dy > 0) {
+                    return TranslationDirection.SOUTH_EAST;
+                } else {
+                    return TranslationDirection.NORTH_EAST;
+                }
+
+        } else {
+            if (dy == 0) {
+                return TranslationDirection.WEST;
+            } else
+                if (dy > 0) {
+                    return TranslationDirection.SOUTH_WEST;
+                } else {
+                    return TranslationDirection.NORTH_WEST;
+                }
+
+        }
+
+}

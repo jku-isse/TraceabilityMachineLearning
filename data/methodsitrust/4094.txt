@@ -1,0 +1,23 @@
+public void testUC19() throws Exception {
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    wr = wr.getLinkWith("Prescription Records").click();
+    assertEquals("iTrust - Get My Prescription Report", wr.getTitle());
+    WebForm viewForm = wr.getForms()[0];
+    viewForm.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.PRESCRIPTION_REPORT_VIEW, 2L, 2L, "");
+    assertTrue(wr.getText().contains("Prioglitazone"));
+    /* If you fail here, you need to make the first column a link */
+    assertTrue("First column in prescription table must be a link", ((wr.getLinkWith("64764-1512")) != null));
+    wr = wr.getLinkWith("64764-1512").click();
+    /* The rest of this test must be written once an instruction-modifying
+    jsp has been specd out.
+     */
+    assertTrue(wr.getText().contains("Prescription Information"));
+    WebTable wt = wr.getTableStartingWith("Prescription Information");
+    assertEquals("5mg", wt.getTableCell(2, 2).getText());
+    assertEquals("Take twice daily", wt.getTableCell(2, 4).getText());
+}

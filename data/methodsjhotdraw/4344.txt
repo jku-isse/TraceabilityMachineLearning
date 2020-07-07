@@ -1,0 +1,10 @@
+public static final void endGraphics(Graphics2D graphics2d, Object oldHints) {
+    /* if (true) {
+    graphics2d.setTransform((AffineTransform) oldHints);
+    return;
+    }
+     */
+    if (oldHints != null) {
+        graphics2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, oldHints);
+    }
+}

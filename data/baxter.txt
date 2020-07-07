@@ -1,0 +1,43 @@
+Baxter (robot)
+
+Baxter is an industrial robot built by Rethink Robotics, a start-up company founded by Rodney Brooks. It was introduced in September 2012. Baxter is a 3-foot tall (without pedestal; 5'10" - 6'3" with pedestal), two-armed robot with an animated face. It weighs 165 lbs without the pedestal and 306 lbs with the pedestal.[1] It is used for simple industrial jobs such as loading, unloading, sorting, and handling of materials. Brooks stated that Baxter was designed to perform the dull tasks on a production line.[2] It is intended to be sold to small and medium-sized companies.
+
+Technology
+
+Its face is an animated screen that allows Baxter to express itself by making several facial expressions. Its face can show what it is focused on, and its current status. Baxter can even express its confusion when something isn't right. Baxter also has sensors surrounding its head that allow him to sense people nearby. The sensors around its head also give the Baxter Research Robot the ability to adapt to its environment, unlike other industrial robots which will either continue to do their one task repeatedly, or will shut down and stop working at the slightest change in their environment. For example, Baxter is adaptive enough to know that it cannot continue with its job if it drops a tool, whereas some robots will simply continue to attempt to perform their job despite lacking the proper tools.[3] Baxter runs on the open-source Robot Operating System on a regular, personal computer which is embedded in its chest.[4] Baxter can be placed on a four-legged pedestal with wheels to become mobile. Baxter also has extra sensors in its hands that allow it to pay very close attention to detail.
+
+Teaching Baxter
+
+Baxter is also different from other industrial robots because it can learn. A worker could teach Baxter how to perform a task by moving its hands in the desired motion and having Baxter memorize them. Extra dials, buttons, and controls are available on Baxter's arm for more precision and features. Any regular worker could program Baxter and it only takes a matter of minutes, unlike usual industrial robots that take extensive programs and coding in order to be used. This means Baxter needs no programming in order to operate. No software engineers are needed. This also means Baxter can be taught to perform multiple, more complicated tasks.
+
+Research
+
+Many Universities are now using Baxter as part of their courses within Robotics, Mechanical Engineering and Computational Sciences to give students the experience using current robotics technology to provide practical applications in the real world. Baxter provides many advantages over traditional robots in that no cages are required for usage and students can work alongside him in a classroom environment without the potential for accidents. This feature is also useful for Baxter's application in commercial usage.[5] Researchers are now using the Baxter robot to try and find solutions to current problems being faced by Ebola workers in West Africa to create a robotic solution to reduce risk of infection for aid workers.[6] Currently, the head mounted camera, sonar head sensors, and IR hand lighting is only available for use on the Research Robot model of Baxter.
+
+Safety
+
+Other industrial robots are built to perform one task rapidly with many fast-moving parts that make them unsafe for humans to work next to. Baxter doesn't just perform exactly the same movement repeatedly and at a rapid pace. It has sensors in its hands and around its arms allowing it to be able to adapt to its surroundings. If Baxter hits something, it is able to sense the collision early enough to reduce the force before the impact. This is due to a motor driving a spring, and that spring driving Baxter's arm instead of just a motor driving its arms. Extra sensors and cameras within Baxter's hands allow it to pay attention to detail while working with its hands. These extra sensors and abilities that Baxter has means that it does not need to be put into a safety cage.
+
+Cost
+
+Baxter has a base-price of $25,000 (£19,000/ €22,000),[7] the equivalent of an average US production worker's annual salary.[8] Rethink Robotics also sells additional parts to add to a customer's Baxter as well as extended warranties. Extra parts available include: an electric parallel gripper, a vacuum cup gripper and the mobile pedestal. One of the main reasons Baxter is so affordable is because no programming or software engineer is needed.[9]
+
+Controversy
+
+There is controversy about the introduction of Baxter into production lines. People are concerned about Baxter taking low-wage workers jobs.[10] Others are not worried about Baxter taking jobs because humans are still needed to supervise and teach Baxter to perform tasks.
+
+According to Rodney Brooks, Baxter is not a threat to human jobs, because there are still tasks that people can do better, such as quality assurance or small assembly where things such as sensing tension are important; the robot is designed to do repetitive tasks, the people do the tasks they are good at, and together, the factory excels.[11]
+
+References
+
+1. "Baxter - Redefining Robotics and Manufacturing - Rethink Robotics". Rethink Robotics.
+2. "Robots: Brave New World moves a step closer". BBC News.
+3. http://www.technologyreview.com/news/429248/this-robot-could-transform-manufacturing/
+4. http://www.technologyreview.com/featuredstory/513746/baxter-the-blue-collar-robot/
+5. "Baxter robot review by Dr Michael Walters". Active8 Robots.
+6. "Baxter - research solutions for Ebola with robotics". Active8 Robots.
+7. "Baxter Research Robot". Active Robots.
+8. "Transformers: Supply Chain 3.0 and How Automation will Transform the Rules of the Global Supply Chain - The European Business Review".
+9. "Adaptive". Rethink Robotics.
+10. "How robots are eating the last of America’s—and the world’s—traditional manufacturing jobs : Quartz".
+11. "Could This Robot Save Your Job? : All Tech Considered : NPR". NPR.

@@ -1,0 +1,49 @@
+public BezierPath getBezierPath() {
+    Rectangle2D.Double r = ((Rectangle2D.Double) (rectangle.clone()));
+    BezierPath triangle = new BezierPath();
+    switch (AttributeKeys.ORIENTATION.get(this)) {
+        case NORTH :
+        default :
+            triangle.moveTo(((float) ((r.x) + ((r.width) / 2))), ((float) (r.y)));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) ((r.y) + (r.height))));
+            triangle.lineTo(((float) (r.x)), ((float) ((r.y) + (r.height))));
+            break;
+        case NORTH_EAST :
+            triangle.moveTo(((float) (r.x)), ((float) (r.y)));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) (r.y)));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) ((r.y) + (r.height))));
+            break;
+        case EAST :
+            triangle.moveTo(((float) (r.x)), ((float) (r.y)));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) ((r.y) + ((r.height) / 2.0))));
+            triangle.lineTo(((float) (r.x)), ((float) ((r.y) + (r.height))));
+            break;
+        case SOUTH_EAST :
+            triangle.moveTo(((float) ((r.x) + (r.width))), ((float) (r.y)));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) ((r.y) + (r.height))));
+            triangle.lineTo(((float) (r.x)), ((float) ((r.y) + (r.height))));
+            break;
+        case SOUTH :
+            triangle.moveTo(((float) ((r.x) + ((r.width) / 2))), ((float) ((r.y) + (r.height))));
+            triangle.lineTo(((float) (r.x)), ((float) (r.y)));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) (r.y)));
+            break;
+        case SOUTH_WEST :
+            triangle.moveTo(((float) ((r.x) + (r.width))), ((float) ((r.y) + (r.height))));
+            triangle.lineTo(((float) (r.x)), ((float) ((r.y) + (r.height))));
+            triangle.lineTo(((float) (r.x)), ((float) (r.y)));
+            break;
+        case WEST :
+            triangle.moveTo(((float) (r.x)), ((float) ((r.y) + ((r.height) / 2))));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) (r.y)));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) ((r.y) + (r.height))));
+            break;
+        case NORTH_WEST :
+            triangle.moveTo(((float) (r.x)), ((float) ((r.y) + (r.height))));
+            triangle.lineTo(((float) (r.x)), ((float) (r.y)));
+            triangle.lineTo(((float) ((r.x) + (r.width))), ((float) (r.y)));
+            break;
+    }
+    triangle.setClosed(true);
+    return triangle;
+}

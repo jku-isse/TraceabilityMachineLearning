@@ -1,0 +1,3 @@
+public CompositeColor get(int index) {
+    return colors.get(index);
+}

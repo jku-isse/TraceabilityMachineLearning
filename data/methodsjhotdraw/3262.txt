@@ -1,0 +1,9 @@
+protected void installDefaults() {
+    super.installDefaults();
+    defaultTextIconGap = 0;// Should be from table
+
+    // menuItem.setBorderPainted(false);
+    // menuItem.setBorder(null);
+    arrowIcon = null;
+    checkIcon = null;
+}

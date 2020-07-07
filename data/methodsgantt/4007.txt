@@ -1,0 +1,3 @@
+public void removeRoleListener(RoleManager.Listener listener) {
+    myListeners.remove(listener);
+}

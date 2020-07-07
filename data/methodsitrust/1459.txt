@@ -1,0 +1,9 @@
+public void testLoadParameters() {
+    try {
+        wbl.loadParameters(null, null);
+        fail();
+    } catch (IllegalStateException e) {
+    } catch (SQLException e) {
+    }
+    assertTrue(true);
+}

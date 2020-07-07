@@ -1,0 +1,18 @@
+/**
+ * Start saving the csv document.
+ */
+public void beginToSave(OutputStreamWriter out) throws IOException {
+    resources = myHrManager.getResources();
+    bFixedSize = csvOptions.bFixedSize;
+    if (csvOptions.bFixedSize)
+        getMaxSize();
+
+    writeTasks(out);
+    out.write("
+
+
+");
+    writeResources(out);
+    out.write("
+");
+}

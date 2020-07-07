@@ -1,0 +1,6 @@
+/**
+ * Opens a new path segment at the specified position.
+ */
+public void moveTo(Object xm1, Object ym1) {
+    add(new EnhancedPath.Segment(EnhancedPath.SegType.MOVETO, xm1, ym1));
+}

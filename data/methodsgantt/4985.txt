@@ -1,0 +1,10 @@
+public void undo() throws CannotUndoException {
+    try {
+        restoreDocument(myDocumentBefore);
+    } catch (IOException e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+        throw new CannotRedoException();
+    }
+}

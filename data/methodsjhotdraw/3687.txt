@@ -1,0 +1,3 @@
+public FigureAttributeEditorHandler(AttributeKey<T> key, Map<AttributeKey, Object> defaultAttributes, AttributeEditor<T> attributeEditor, DrawingEditor drawingEditor, boolean updateDrawingEditorDefaults) {
+    super(key, defaultAttributes, attributeEditor, drawingEditor, updateDrawingEditorDefaults);
+}

@@ -1,0 +1,13 @@
+/**
+ * Set up defaults
+ *
+ * @param factory
+ * 		The DAOFactory used to create the DAOs used in this action.
+ * @param loggedInMID
+ * 		The MID of the person retrieving personnel beans.
+ */
+public ViewPersonnelAction(DAOFactory factory, long loggedInMID) {
+    this.emailDAO = factory.getFakeEmailDAO();
+    this.personnelDAO = factory.getPersonnelDAO();
+    this.loggedInMID = loggedInMID;
+}

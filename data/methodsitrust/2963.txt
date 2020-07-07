@@ -1,0 +1,20 @@
+/**
+ * Gets all the messages for a certain user MID sorted by ascending time.
+ *
+ * @param mid
+ * 		The MID of the user to be looked up.
+ * @return A java.util.List of MessageBeans.
+ * @throws SQLException
+ * 		
+ */
+public List<MessageBean> getMessagesFromTimeAscending(long mid) throws SQLException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    conn = factory.getConnection();
+    ps = conn.prepareStatement("SELECT * FROM message WHERE from_id = ? ORDER BY sent_date ASC");
+    ps.setLong(1, mid);
+    ResultSet rs = ps.executeQuery();
+    List<MessageBean> mbList = this.mbLoader.loadList(rs);
+    DBUtil.closeConnection(conn, ps);
+    return mbList;
+}

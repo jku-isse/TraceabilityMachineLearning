@@ -1,0 +1,6 @@
+/**
+ * Returns the untransformed logicalbounds of the figure as a Rectangle.
+ * The handle bounds are used by Handle objects for adjusting the
+ * figure and for aligning the figure on a grid.
+ */
+public Rectangle2D.Double getBounds();

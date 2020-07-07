@@ -1,0 +1,11 @@
+/**
+ *
+ *
+ * @return A boolean indicating whether the patient has the increased risk.
+ */
+public boolean hasRiskFactor() {
+    if ((hasRisk) == null)
+        hasRisk = hasFactor();
+
+    return hasRisk;
+}

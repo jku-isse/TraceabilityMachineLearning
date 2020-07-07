@@ -1,0 +1,18 @@
+/**
+ * Adds a new LOINC
+ *
+ * @param diagn
+ * 		New LOINC
+ * @return Status message
+ * @throws FormValidationException
+ * 		
+ */
+public String add(LOINCbean diagn) throws FormValidationException, iTrustException {
+    validator.validate(diagn);
+    List<LOINCbean> lblist = lDAO.getProcedures(diagn.getLabProcedureCode());
+    if (!(lblist.isEmpty())) {
+        throw new FormValidationException("Error: Code already exists.");
+    }
+    lDAO.addLOINC(diagn);
+    return ("Success: " + (diagn.getLabProcedureCode())) + " added";
+}

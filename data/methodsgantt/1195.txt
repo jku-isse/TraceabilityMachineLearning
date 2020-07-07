@@ -1,0 +1,18 @@
+public TaskContainmentHierarchyFacadeImpl(GanttTree2 tree) {
+    /* <DefaultMutableTreeNode> */
+    ArrayList allTasks = tree.getAllTasks();
+    // comboBox.addItem("no set");
+    // for (int i = 0; i < allTasks.size(); i++) {
+    // DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode)
+    // allTasks.get(i);
+    for (int i = 0; i < (allTasks.size()); i++) {
+        DefaultMutableTreeNode treeNode = ((DefaultMutableTreeNode) (allTasks.get(i)));
+        Task task = ((Task) (treeNode.getUserObject()));
+        if (treeNode.isRoot()) {
+            myRootTask = task;
+        }
+        myTask2treeNode.put(task, treeNode);
+        myTask2index.put(task, new Integer(i));
+    }
+    myTree = tree;
+}

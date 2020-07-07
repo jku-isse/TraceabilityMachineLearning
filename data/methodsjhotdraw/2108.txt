@@ -1,0 +1,6 @@
+/**
+ * Spacing between major grid lines.
+ */
+public int getMajorGridSpacing() {
+    return majorGridSpacing;
+}

@@ -1,0 +1,26 @@
+/**
+ * Updates a particular wards information. Returns the number of rows affected (should be 1)
+ *
+ * @param ward
+ * 		The WardBean to update.
+ * @return An int indicating the number of affected rows.
+ * @throws DBException
+ * 		
+ */
+public int updateWard(WardBean ward) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("UPDATE wards SET RequiredSpecialty=?, InHospital=? " + "WHERE WardID = ?"));
+        ps.setString(1, ward.getRequiredSpecialty());
+        ps.setLong(2, ward.getInHospital());
+        ps.setLong(3, ward.getWardID());
+        return ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

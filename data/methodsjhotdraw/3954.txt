@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public AbstractTransferable(DataFlavor flavor) {
+    this.flavors = new DataFlavor[]{ flavor };
+}

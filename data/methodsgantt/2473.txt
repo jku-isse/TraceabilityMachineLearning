@@ -1,0 +1,3 @@
+public GanttMSProjectLFileFilter() {
+    super("mpx|xml", "MS-Project files (.mpx, .xml)");
+}

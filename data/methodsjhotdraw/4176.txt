@@ -1,0 +1,3 @@
+public void put(Action action) {
+    put(action.getValue(Action.NAME), action);
+}

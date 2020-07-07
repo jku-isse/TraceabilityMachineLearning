@@ -1,0 +1,4 @@
+/**
+ * Configures a JSlider.
+ */
+public void configureSlider(int componentIndex, JSlider slider);

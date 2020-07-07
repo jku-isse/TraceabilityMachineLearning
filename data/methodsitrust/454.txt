@@ -1,0 +1,43 @@
+/**
+ * Checks to see if the given prescription has an interaction with any
+ * other previously prescribed prescriptions.
+ *
+ * @param newPrescription
+ * 		
+ * @return A list of interaction warning messages.  The list is empty if no
+interactions were detected.
+ * @throws iTrustException
+ * 		
+ */
+private List<String> checkInteraction(PrescriptionBean newPrescription) throws iTrustException {
+    ArrayList<String> warnings = new ArrayList<String>();
+    try {
+        SimpleDateFormat needed = new SimpleDateFormat("yyyy/MM/dd");
+        String startdate = needed.format(newPrescription.getStartDate());
+        String enddate = needed.format(newPrescription.getEndDate());
+        String drug = newPrescription.getMedication().getNDCode();
+        startdate = startdate.replaceAll("/", "-");
+        enddate = enddate.replaceAll("/", "-");
+        List<PrescriptionReportBean> prBeanList = rptDAO.byDate(getPid(), startdate, enddate);
+        List<DrugInteractionBean> dBeanList = interactionsDAO.getInteractions(drug);
+        for (PrescriptionReportBean prBean : prBeanList) {
+            String oldDrug = prBean.getPrescription().getMedication().getNDCode();
+            PrescriptionBean oldPrescription = prBean.getPrescription();
+            for (DrugInteractionBean dBean : dBeanList) {
+                String intDrug1 = dBean.getFirstDrug();
+                String intDrug2 = dBean.getSecondDrug();
+                if ((oldDrug.equals(intDrug1)) && (drug.equals(intDrug2))) {
+                    warnings.add(formatInteractionWarning(newPrescription, oldPrescription, dBean));
+                } else
+                    if ((oldDrug.equals(intDrug2)) && (drug.equals(intDrug1))) {
+                        warnings.add(formatInteractionWarning(newPrescription, oldPrescription, dBean));
+                    }
+
+            }
+        }
+    } catch (DBException e) {
+        e.printStackTrace();
+        throw new iTrustException(e.getMessage());
+    }
+    return warnings;
+}

@@ -1,0 +1,16 @@
+/**
+ * Creates a new instance.
+ */
+public ToggleToolBarAction(JToolBar toolBar, String label) {
+    super(label);
+    propertyHandler = new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            String name = evt.getPropertyName();
+            if (name.equals("visible")) {
+                putValue(Actions.SELECTED_KEY, evt.getNewValue());
+            }
+        }
+    };
+    putValue(Actions.SELECTED_KEY, true);
+    setToolBar(toolBar);
+}

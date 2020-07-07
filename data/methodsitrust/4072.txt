@@ -1,0 +1,10 @@
+public void testAddER() throws Exception {
+    // login admin
+    WebConversation wc = login("9000000001", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Admin Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000001L, 0L, "");
+    // click on Add ER
+    wr = wr.getLinkWith("Add ER").click();
+    assertEquals("iTrust - Add ER", wr.getTitle());
+}

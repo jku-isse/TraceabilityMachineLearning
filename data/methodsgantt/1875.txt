@@ -1,0 +1,3 @@
+public void setForegroundColor(Color myForegroundColor) {
+    this.myForegroundColor = myForegroundColor;
+}

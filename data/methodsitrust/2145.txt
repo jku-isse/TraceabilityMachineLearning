@@ -1,0 +1,3 @@
+public String getHCPcity() {
+    return hcpCity;
+}

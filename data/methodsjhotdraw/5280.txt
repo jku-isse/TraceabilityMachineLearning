@@ -1,0 +1,7 @@
+public void actionPerformed(ActionEvent e) {
+    if (isCombineAction) {
+        combineActionPerformed(e);
+    } else {
+        splitActionPerformed(e);
+    }
+}

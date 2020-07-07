@@ -1,0 +1,9 @@
+public void testSetViewedToZero() throws Exception {
+    action = new ViewMyReportRequestsAction(factory, 9000000000L);
+    try {
+        action.setViewed(0);
+        fail("Should have throw exception");
+    } catch (iTrustException ex) {
+        assertEquals("A database exception has occurred. Please see the log in the console for stacktrace", ex.getMessage());
+    }
+}

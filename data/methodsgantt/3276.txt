@@ -1,0 +1,3 @@
+protected void onOkPressed() {
+    getCurrentPage().setActive(false);
+}

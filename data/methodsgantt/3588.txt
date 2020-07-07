@@ -1,0 +1,3 @@
+private TaskManager getTaskManager() {
+    return myTaskManager;
+}

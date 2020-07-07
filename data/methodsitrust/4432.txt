@@ -1,0 +1,4 @@
+@Override
+public boolean hasFactor() {
+    return (((record.getCholesterolHDL()) < (CholesterolFactor.hdlThreshold)) || ((record.getCholesterolLDL()) > (CholesterolFactor.ldlThreshold))) || ((record.getCholesterolTri()) > (CholesterolFactor.triThreshold));
+}

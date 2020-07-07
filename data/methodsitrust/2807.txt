@@ -1,0 +1,9 @@
+public void testFailLabProcedure() throws Exception {
+    l.setPid(0);
+    try {
+        lpDAO.updateLabProcedure(l);
+        fail();
+    } catch (DBException e) {
+        assertEquals("PatientMID cannot be null", e.getExtendedMessage());
+    }
+}

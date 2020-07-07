@@ -1,0 +1,8 @@
+/**
+ * The language has changed.
+ */
+public void itemStateChanged(ItemEvent e) {
+    if ((e.getStateChange()) == (ItemEvent.SELECTED))
+        this.bHasChange = true;
+
+}

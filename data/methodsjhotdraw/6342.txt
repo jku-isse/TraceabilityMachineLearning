@@ -1,0 +1,3 @@
+public static void installPrefsHandler(Preferences prefs, String string, JTabbedPane tabbedPane) {
+    throw new UnsupportedOperationException("Not yet implemented");
+}

@@ -1,0 +1,29 @@
+public List<JMenu> createMenus(Application a, View pr) {
+    // FIXME - Add code for unconfiguring the menus!! We leak memory!
+    PertView p = ((PertView) (pr));
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+    // JMenuBar mb = new JMenuBar();
+    LinkedList<JMenu> mb = new LinkedList<JMenu>();
+    JMenu m;
+    JMenu m2;
+    JMenuItem mi;
+    JRadioButtonMenuItem rbmi;
+    JCheckBoxMenuItem cbmi;
+    ButtonGroup group;
+    mb.add(createEditMenu(a, pr));
+    m = new JMenu();
+    labels.configureMenu(m, "view");
+    cbmi = new JCheckBoxMenuItem(getAction("toggleGrid"));
+    Actions.configureJCheckBoxMenuItem(cbmi, getAction("toggleGrid"));
+    m.add(cbmi);
+    m2 = new JMenu("Zoom");
+    for (double sf : PertApplicationModel.scaleFactors) {
+        String id = ((int) (sf * 100)) + "%";
+        cbmi = new JCheckBoxMenuItem(getAction(id));
+        Actions.configureJCheckBoxMenuItem(cbmi, getAction(id));
+        m2.add(cbmi);
+    }
+    m.add(m2);
+    mb.add(m);
+    return mb;
+}

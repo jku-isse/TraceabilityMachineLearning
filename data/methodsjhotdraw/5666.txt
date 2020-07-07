@@ -1,0 +1,4 @@
+/**
+ * Returns the component of the DrawingComponent.
+ */
+public JComponent getComponent();

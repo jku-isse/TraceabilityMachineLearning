@@ -1,0 +1,3 @@
+public ResourceContext getContext() {
+    return myContext;
+}

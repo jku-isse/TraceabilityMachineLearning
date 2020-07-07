@@ -1,0 +1,17 @@
+/**
+ *
+ *
+ * @param iWhiteBlack
+ * 		1 = edit white players name
+ * @param currentString
+ * 		The string which already is displayed above the notation panel
+ */
+public PlayerDialog(int iWhiteBlack, String currentString) {
+    this.iWhite = iWhiteBlack;
+    this.sCurrentString = currentString;
+    try {
+        jbInit();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}

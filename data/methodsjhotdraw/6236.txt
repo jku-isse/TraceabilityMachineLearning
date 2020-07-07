@@ -1,0 +1,24 @@
+/**
+ * If this edit is inProgress, accepts anEdit and returns
+ * true.
+ *
+ * <p>The last edit added to this CompositeEdit is given a
+ * chance to addEdit(anEdit). If it refuses (returns false), anEdit is
+ * given a chance to replaceEdit the last edit. If anEdit returns
+ * false here, it is added to edits.</p>
+ *
+ * <p>If the CompositeEdit is added to itself, then method end()
+ * is called, and true is returned.</p>
+ */
+public boolean addEdit(UndoableEdit anEdit) {
+    if (anEdit == (this)) {
+        end();
+        return true;
+    } else
+        if ((isInProgress()) && (anEdit instanceof CompositeEdit)) {
+            return true;
+        } else {
+            return super.addEdit(anEdit);
+        }
+
+}

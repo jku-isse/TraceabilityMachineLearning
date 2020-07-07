@@ -1,0 +1,6 @@
+void onTaskMoved(TaskImpl task) {
+    if (!(isRegistered(task))) {
+        registerTask(task);
+    }
+    myTaskMap.setDirty();
+}

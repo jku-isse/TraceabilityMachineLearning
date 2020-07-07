@@ -1,0 +1,7 @@
+public Date getProjectStart() {
+    if (myTaskMap.isEmpty()) {
+        return myRoot.getStart().getTime();
+    }
+    ProjectBoundsAlgorithm.Result result = getAlgorithmCollection().getProjectBoundsAlgorithm().getBounds(Arrays.asList(myTaskMap.getTasks()));
+    return result.lowerBound;
+}

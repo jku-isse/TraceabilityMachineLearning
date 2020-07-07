@@ -1,0 +1,5 @@
+@SuppressWarnings("unchecked")
+public void restoreAttributesTo(Object restoreData) {
+    attributes.clear();
+    setAttributes(((HashMap<AttributeKey, Object>) (restoreData)));
+}

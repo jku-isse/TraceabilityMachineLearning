@@ -1,0 +1,3 @@
+protected TableHeaderUIFacade getVisibleFields() {
+    return null;
+}

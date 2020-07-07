@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public DefaultHandleTracker(Handle handle) {
+    masterHandle = handle;
+    multicaster = new HandleMulticaster(handle);
+}

@@ -1,0 +1,13 @@
+/**
+ * Log a transaction, just giving it the person who is logged in and the type
+ *
+ * @param type
+ * 		The {@link TransactionType} enum representing the type this transaction is.
+ * @param loggedInMID
+ * 		The MID of the user who is logged in.
+ * @throws DBException
+ * 		
+ */
+public void logTransaction(TransactionType type, long loggedInMID) throws DBException {
+    logTransaction(type, loggedInMID, 0L, "");
+}

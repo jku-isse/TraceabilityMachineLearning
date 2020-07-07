@@ -1,0 +1,15 @@
+/**
+ * Change the label for menuItem, in fact check in the label contains a
+ * mnemonic
+ */
+public JMenuItem changeMenuLabel(JMenuItem menu, String label) {
+    int index = label.indexOf($);
+    if ((index != (-1)) && (((label.length()) - index) > 1)) {
+        menu.setText(label.substring(0, index).concat(label.substring((++index))));
+        menu.setMnemonic(Character.toLowerCase(label.charAt(index)));
+    } else {
+        menu.setText(label);
+        // menu.setMnemonic();
+    }
+    return menu;
+}

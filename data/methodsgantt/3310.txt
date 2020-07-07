@@ -1,0 +1,3 @@
+public void nameChanged(String newName) {
+    nameField3.setText(newName);
+}

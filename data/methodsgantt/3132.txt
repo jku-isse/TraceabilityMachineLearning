@@ -1,0 +1,4 @@
+public void lock() {
+    super.lock();
+    myLockedValue = myValue;
+}

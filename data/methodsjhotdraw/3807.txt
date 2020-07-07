@@ -1,0 +1,3 @@
+public JFormattedTextField.AbstractFormatterFactory getFormatterFactory() {
+    return formattedTextFieldAdapter.getFormatterFactory();
+}

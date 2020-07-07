@@ -1,0 +1,3 @@
+public void removeSelectionListener(ChartSelectionListener listener) {
+    getImplementation().removeSelectionListener(listener);
+}

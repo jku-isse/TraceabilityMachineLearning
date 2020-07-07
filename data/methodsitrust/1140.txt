@@ -1,0 +1,4 @@
+public void testGetFamily() throws iTrustException {
+    List<FamilyMemberBean> fmbList = action.getFamily();
+    assertEquals(9, fmbList.size());
+}

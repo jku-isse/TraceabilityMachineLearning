@@ -1,0 +1,6 @@
+public void setWeekDayType(int day, GPCalendar.DayType type) {
+    if (type != (myTypes[(day - 1)])) {
+        myWeekendDaysCount += (type == (GPCalendar.DayType.WEEKEND)) ? 1 : -1;
+    }
+    myTypes[(day - 1)] = type;
+}

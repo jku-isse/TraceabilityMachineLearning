@@ -1,0 +1,3 @@
+protected void emptyComment(TransformerHandler handler) throws SAXException {
+    handler.comment(new char[]{   }, 0, 1);
+}

@@ -1,0 +1,15 @@
+/**
+ * Creates the ConnectionFigure. By default the figure prototype is
+ * cloned.
+ */
+@SuppressWarnings("unchecked")
+protected ConnectionFigure createFigure() {
+    ConnectionFigure f = ((ConnectionFigure) (prototype.clone()));
+    getEditor().applyDefaultAttributesTo(f);
+    if ((prototypeAttributes) != null) {
+        for (Map.Entry<AttributeKey, Object> entry : prototypeAttributes.entrySet()) {
+            entry.getKey().basicSet(f, entry.getValue());
+        }
+    }
+    return f;
+}

@@ -1,0 +1,16 @@
+public static JPopupButton createStrokeJoinButton(DrawingEditor editor, ResourceBundleUtil labels) {
+    JPopupButton popupButton = new JPopupButton();
+    labels.configureToolBarButton(popupButton, "attribute.strokeJoin");
+    popupButton.setFocusable(false);
+    HashMap<AttributeKey, Object> attr;
+    attr = new HashMap<AttributeKey, Object>();
+    attr.put(AttributeKeys.STROKE_JOIN, BasicStroke.JOIN_BEVEL);
+    popupButton.add(new AttributeAction(editor, attr, labels.getString("attribute.strokeJoin.bevel"), null));
+    attr = new HashMap<AttributeKey, Object>();
+    attr.put(AttributeKeys.STROKE_JOIN, BasicStroke.JOIN_ROUND);
+    popupButton.add(new AttributeAction(editor, attr, labels.getString("attribute.strokeJoin.round"), null));
+    attr = new HashMap<AttributeKey, Object>();
+    attr.put(AttributeKeys.STROKE_JOIN, BasicStroke.JOIN_MITER);
+    popupButton.add(new AttributeAction(editor, attr, labels.getString("attribute.strokeJoin.miter"), null));
+    return popupButton;
+}

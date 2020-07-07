@@ -1,0 +1,8 @@
+/**
+ * Get the current chess engine.
+ *
+ * @return The current chess engine.
+ */
+final ChessEngine getEngine() {
+    return _engine;
+}

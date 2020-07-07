@@ -1,0 +1,6 @@
+/**
+ * One of (NOT YET RECEIVED, PENDING, COMPLETED)
+ */
+public String getStatus() {
+    return status;
+}

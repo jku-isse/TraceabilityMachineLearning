@@ -1,0 +1,10 @@
+public LoadDistribution(ProjectResource resource) {
+    myLoads.add(new LoadDistribution.Load(null, null, 0, null));
+    myDaysOff.add(new LoadDistribution.Load(null, null, 0, null));
+    myResource = resource;
+    ResourceAssignment[] assignments = myResource.getAssignments();
+    for (int j = 0; j < (assignments.length); j++) {
+        processAssignment(assignments[j]);
+    }
+    processDaysOff(myResource);
+}

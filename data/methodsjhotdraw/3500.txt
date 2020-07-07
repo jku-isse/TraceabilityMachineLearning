@@ -1,0 +1,8 @@
+/**
+ * Converts a polar to a point
+ */
+public static Point2D.Double polarToPoint2D(double angle, double fx, double fy) {
+    double si = Math.sin(angle);
+    double co = Math.cos(angle);
+    return new Point2D.Double(((fx * co) + 0.5), ((fy * si) + 0.5));
+}

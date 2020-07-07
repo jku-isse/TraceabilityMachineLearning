@@ -1,0 +1,9 @@
+protected void readLiner(DOMInput in) throws IOException {
+    if ((in.getElementCount("liner")) > 0) {
+        in.openElement("liner");
+        liner = ((Liner) (in.readObject()));
+        in.closeElement();
+    } else {
+        liner = null;
+    }
+}

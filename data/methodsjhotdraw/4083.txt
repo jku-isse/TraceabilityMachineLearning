@@ -1,0 +1,3 @@
+public UIResource(Border foregroundBorder, Border backgroundBorder) {
+    super(foregroundBorder, backgroundBorder);
+}

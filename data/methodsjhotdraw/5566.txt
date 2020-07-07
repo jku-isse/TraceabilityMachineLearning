@@ -1,0 +1,3 @@
+public void setEditable(boolean b) {
+    this.editable = b;
+}

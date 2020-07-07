@@ -1,0 +1,4 @@
+/* <Load> */
+public List getLoads() {
+    return myLoads;
+}

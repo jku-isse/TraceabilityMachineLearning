@@ -1,0 +1,35 @@
+public void trackEnd(Point anchor, Point lead, int modifiersEx) {
+    final BezierFigure f = getOwner();
+    BezierPath.Node oldValue = ((BezierPath.Node) (oldNode.clone()));
+    BezierPath.Node newValue = f.getNode(index);
+    // Change node type
+    if (((modifiersEx & ((((InputEvent.META_DOWN_MASK) | (InputEvent.CTRL_DOWN_MASK)) | (InputEvent.ALT_DOWN_MASK)) | (InputEvent.SHIFT_DOWN_MASK))) != 0) && ((modifiersEx & (InputEvent.BUTTON2_MASK)) == 0)) {
+        f.willChange();
+        if ((((index) > 0) && ((index) < (f.getNodeCount()))) || (f.isClosed())) {
+            newValue.mask = ((newValue.mask) + 3) % 4;
+        } else
+            if ((index) == 0) {
+                newValue.mask = (((newValue.mask) & (BezierPath.C2_MASK)) == 0) ? BezierPath.C2_MASK : 0;
+            } else {
+                newValue.mask = (((newValue.mask) & (BezierPath.C1_MASK)) == 0) ? BezierPath.C1_MASK : 0;
+            }
+
+        f.setNode(index, newValue);
+        f.changed();
+        fireHandleRequestSecondaryHandles();
+    }
+    view.getDrawing().fireUndoableEditHappened(new BezierNodeEdit(f, index, oldValue, newValue) {
+        @Override
+        public void redo() throws CannotRedoException {
+            super.redo();
+            fireHandleRequestSecondaryHandles();
+        }
+
+        @Override
+        public void undo() throws CannotUndoException {
+            super.undo();
+            fireHandleRequestSecondaryHandles();
+        }
+    });
+    view.getDrawing().fireUndoableEditHappened(edit);
+}

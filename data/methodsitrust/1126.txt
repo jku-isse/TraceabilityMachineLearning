@@ -1,0 +1,12 @@
+/**
+ * Has a survey been created for this office visit
+ *
+ * @param visitID
+ * 		ID of the office visit in question
+ * @return true if the survey has been completed, otherwise false
+ * @throws iTrustException
+ * 		
+ */
+public boolean isSurveyCompleted(long visitID) throws iTrustException {
+    return surveyDAO.isSurveyCompleted(visitID);
+}

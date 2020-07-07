@@ -1,0 +1,3 @@
+public CustomColumnsManager getTaskCustomColumnManager() {
+    return myTaskCustomColumnManager;
+}

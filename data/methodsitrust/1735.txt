@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param lowerBound
+ * 		the lowerBound to set
+ */
+public void setLowerBound(String lowerBound) {
+    this.lowerBound = lowerBound;
+}

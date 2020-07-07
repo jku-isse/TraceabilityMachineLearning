@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public GeneralPathTip(GeneralPath path, double decorationRadius) {
+    this(path, decorationRadius, false, true, false);
+}

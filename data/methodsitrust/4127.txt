@@ -1,0 +1,95 @@
+public void testHCPViewSentReferrals() throws Exception {
+    gen.hcp4();
+    gen.hcp5();
+    gen.referral_sort_testdata();
+    WebConversation wc = login("9000000003", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    wr = wr.getLinkWith("Sent Referrals").click();
+    assertEquals("iTrust - View Sent Referrals", wr.getTitle());
+    WebTable tbl = wr.getTableWithID("sentReferralsTable");
+    assertEquals(11, tbl.getRowCount());
+    // original sort is by time stamp (descending)
+    int updatedColumn = 2;
+    assertEquals("12/22/2011
+00:00 AM", tbl.getCellAsText(2, updatedColumn));
+    assertEquals("12/10/2011
+00:00 AM", tbl.getCellAsText(3, updatedColumn));
+    assertEquals("12/01/2010
+00:00 AM", tbl.getCellAsText(4, updatedColumn));
+    assertEquals("11/10/2010
+00:00 AM", tbl.getCellAsText(5, updatedColumn));
+    assertEquals("10/13/2010
+00:00 AM", tbl.getCellAsText(6, updatedColumn));
+    assertEquals("08/10/2010
+00:00 AM", tbl.getCellAsText(7, updatedColumn));
+    assertEquals("11/30/2009
+00:00 AM", tbl.getCellAsText(8, updatedColumn));
+    assertEquals("09/10/2009
+00:00 AM", tbl.getCellAsText(9, updatedColumn));
+    assertEquals("10/10/2008
+00:00 AM", tbl.getCellAsText(10, updatedColumn));
+    // Sort by receiving HCP
+    wr.getFormWithID("sortByReceivingHCP").getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - View Sent Referrals", wr.getTitle());
+    tbl = wr.getTableWithID("sentReferralsTable");
+    assertEquals(11, tbl.getRowCount());
+    int receivingColumn = 0;
+    assertEquals("Beaker Beaker", tbl.getCellAsText(2, receivingColumn));
+    assertEquals("Beaker Beaker", tbl.getCellAsText(3, receivingColumn));
+    assertEquals("Kelly Doctor", tbl.getCellAsText(4, receivingColumn));
+    assertEquals("Kelly Doctor", tbl.getCellAsText(5, receivingColumn));
+    assertEquals("Antonio Medico", tbl.getCellAsText(6, receivingColumn));
+    assertEquals("Antonio Medico", tbl.getCellAsText(7, receivingColumn));
+    assertEquals("Antonio Medico", tbl.getCellAsText(8, receivingColumn));
+    assertEquals("Sarah Soulcrusher", tbl.getCellAsText(9, receivingColumn));
+    assertEquals("Sarah Soulcrusher", tbl.getCellAsText(10, receivingColumn));
+    // Sort by receiving HCP in reverse
+    wr.getFormWithID("sortByReceivingHCP").getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - View Sent Referrals", wr.getTitle());
+    tbl = wr.getTableWithID("sentReferralsTable");
+    assertEquals(11, tbl.getRowCount());
+    assertEquals("Beaker Beaker", tbl.getCellAsText(10, receivingColumn));
+    assertEquals("Beaker Beaker", tbl.getCellAsText(9, receivingColumn));
+    assertEquals("Kelly Doctor", tbl.getCellAsText(8, receivingColumn));
+    assertEquals("Kelly Doctor", tbl.getCellAsText(7, receivingColumn));
+    assertEquals("Antonio Medico", tbl.getCellAsText(6, receivingColumn));
+    assertEquals("Antonio Medico", tbl.getCellAsText(5, receivingColumn));
+    assertEquals("Antonio Medico", tbl.getCellAsText(4, receivingColumn));
+    assertEquals("Sarah Soulcrusher", tbl.getCellAsText(3, receivingColumn));
+    assertEquals("Sarah Soulcrusher", tbl.getCellAsText(2, receivingColumn));
+    // Sort by patient
+    wr.getFormWithID("sortByPatient").getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - View Sent Referrals", wr.getTitle());
+    tbl = wr.getTableWithID("sentReferralsTable");
+    assertEquals(11, tbl.getRowCount());
+    int patientColumn = 1;
+    assertEquals("Fozzie Bear", tbl.getCellAsText(2, patientColumn));
+    assertEquals("Fozzie Bear", tbl.getCellAsText(3, patientColumn));
+    assertEquals("Fozzie Bear", tbl.getCellAsText(4, patientColumn));
+    assertEquals("Random Person", tbl.getCellAsText(5, patientColumn));
+    assertEquals("Random Person", tbl.getCellAsText(6, patientColumn));
+    assertEquals("Random Person", tbl.getCellAsText(7, patientColumn));
+    assertEquals("Andy Programmer", tbl.getCellAsText(8, patientColumn));
+    assertEquals("Andy Programmer", tbl.getCellAsText(9, patientColumn));
+    assertEquals("Andy Programmer", tbl.getCellAsText(10, patientColumn));
+    // Sort by priority
+    wr.getFormWithID("sortByPriority").getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - View Sent Referrals", wr.getTitle());
+    tbl = wr.getTableWithID("sentReferralsTable");
+    assertEquals(11, tbl.getRowCount());
+    int priorityColumn = 3;
+    assertEquals("1", tbl.getCellAsText(2, priorityColumn));
+    assertEquals("1", tbl.getCellAsText(3, priorityColumn));
+    assertEquals("1", tbl.getCellAsText(4, priorityColumn));
+    assertEquals("2", tbl.getCellAsText(5, priorityColumn));
+    assertEquals("2", tbl.getCellAsText(6, priorityColumn));
+    assertEquals("2", tbl.getCellAsText(7, priorityColumn));
+    assertEquals("3", tbl.getCellAsText(8, priorityColumn));
+    assertEquals("3", tbl.getCellAsText(9, priorityColumn));
+    assertEquals("3", tbl.getCellAsText(10, priorityColumn));
+}

@@ -1,0 +1,11 @@
+public boolean equals(Object obj) {
+    boolean res = false;
+    if ((this) == obj)
+        return true;
+
+    if (obj instanceof ResourceNode) {
+        ResourceNode rn = ((ResourceNode) (obj));
+        res = ((rn.getUserObject()) != null) && (rn.getUserObject().equals(this.getUserObject()));
+    }
+    return res;
+}

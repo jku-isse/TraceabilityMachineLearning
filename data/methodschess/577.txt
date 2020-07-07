@@ -1,0 +1,16 @@
+// Constructors
+/**
+ * Construct a new ply from a source and a destination.
+ *
+ * @param source
+ * 		The source of the ply.
+ * @param destination
+ * 		The destination of the ply.
+ * @param capture
+ * 		Flag to indicate, if this ply captures another piece.
+ */
+public PlyImpl(Position source, Position destination, boolean capture) {
+    setSource(source);
+    setDestination(destination);
+    setCapture(capture);
+}

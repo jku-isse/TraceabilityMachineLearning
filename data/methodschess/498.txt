@@ -1,0 +1,8 @@
+public final void blackTag() throws RecognitionException, TokenStreamException {
+    Token name = null;
+    match(PGNTokenTypes.TAG_BLACK);
+    whiteSpaces();
+    name = LT(1);
+    match(PGNTokenTypes.STRING_LITERAL);
+    getNotation().setPlayerInfo(name.getText(), false);
+}

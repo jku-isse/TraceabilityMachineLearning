@@ -1,0 +1,9 @@
+/**
+ * Spacing between major grid lines.
+ */
+public void setMajorGridSpacing(int newValue) {
+    int oldValue = majorGridSpacing;
+    majorGridSpacing = newValue;
+    firePropertyChange("majorGridSpacing", oldValue, newValue);
+    fireStateChanged();
+}

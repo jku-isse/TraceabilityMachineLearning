@@ -1,0 +1,3 @@
+public GPSaver newSaver() {
+    return null;
+}

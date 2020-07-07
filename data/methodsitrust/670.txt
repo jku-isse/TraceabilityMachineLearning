@@ -1,0 +1,3 @@
+public List<LabProcedureBean> viewInTransitProcedures(long id) throws DBException {
+    return lpDAO.getLabProceduresInTransitForLabTech(id);
+}

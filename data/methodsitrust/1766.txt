@@ -1,0 +1,8 @@
+/**
+ * Gets the MID of the sender for this message
+ *
+ * @return 
+ */
+public long getFrom() {
+    return from;
+}

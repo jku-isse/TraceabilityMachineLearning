@@ -1,0 +1,10 @@
+/**
+ * Gets all the messages for the logged in user and sorts by ascending time
+ *
+ * @return a list of all the users messages
+ * @throws SQLException
+ * 		
+ */
+public List<MessageBean> getAllMyMessagesTimeAscending() throws SQLException {
+    return messageDAO.getMessagesTimeAscending(loggedInMID);
+}

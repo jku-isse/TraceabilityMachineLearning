@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public RestoreDataEdit(Figure figure, Object oldRestoreData) {
+    this.figure = figure;
+    this.oldRestoreData = oldRestoreData;
+    this.newRestoreData = figure.getTransformRestoreData();
+}

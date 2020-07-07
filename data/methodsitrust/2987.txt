@@ -1,0 +1,16 @@
+public void addHistory(long pid, long hcpid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO historypatients SELECT null, CURDATE(), ?, p.* FROM patients p WHERE p.mid=?");
+        ps.setLong(1, hcpid);
+        ps.setLong(2, pid);
+        ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

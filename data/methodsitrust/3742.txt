@@ -1,0 +1,13 @@
+public void testInvalidPatientEmail() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wc.getResponse(AddPatientTest.ADDRESS);
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.setParameter("firstName", "John");
+    patientForm.setParameter("lastName", "Doe");
+    patientForm.setParameter("email", "---@---.com");
+    patientForm.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("This form has not been validated correctly."));
+}

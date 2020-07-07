@@ -1,0 +1,11 @@
+public ProjectMenu(GanttProject mainFrame) {
+    myMainFrame = mainFrame;
+    myNewProjectAction = new NewProjectAction(mainFrame);
+    myOpenProjectAction = new OpenProjectAction(mainFrame);
+    mySaveProjectAction = new SaveProjectAction(mainFrame);
+    mySaveProjectAsAction = new SaveProjectAsAction(mainFrame);
+    myOpenURLAction = new OpenURLAction(mainFrame);
+    mySaveURLAction = new SaveURLAction(mainFrame);
+    myPrintAction = new PrintAction(mainFrame);
+    myExitAction = new ExitAction(mainFrame);
+}

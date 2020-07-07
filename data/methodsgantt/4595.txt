@@ -1,0 +1,3 @@
+public RecalculateTaskScheduleAlgorithm(AdjustTaskBoundsAlgorithm adjuster) {
+    myAdjuster = adjuster;
+}

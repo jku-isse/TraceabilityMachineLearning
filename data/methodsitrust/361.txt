@@ -1,0 +1,21 @@
+/**
+ * Updates the office visit.
+ *
+ * @param form
+ * 		form with all the information
+ * @throws DBException
+ * 		
+ * @throws FormValidationException
+ * 		
+ */
+private void updateOv(EditOfficeVisitForm form, boolean isERIncident) throws DBException, FormValidationException, iTrustException {
+    validator.validate(form);
+    OfficeVisitBean ov = getBean();
+    ov.setNotes(form.getNotes());
+    ov.setVisitDateStr(form.getVisitDate());
+    ov.setHcpID(Long.valueOf(form.getHcpID()));
+    ov.setPatientID(Long.valueOf(form.getPatientID()));
+    ov.setHospitalID(form.getHospitalID());
+    ov.setERIncident(isERIncident);
+    updateBean(ov);
+}

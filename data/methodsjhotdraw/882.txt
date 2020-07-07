@@ -1,0 +1,11 @@
+/**
+ * Disconnects the connection.
+ */
+public void trackStart(Point anchor, int modifiersEx) {
+    savedTarget = getTarget();
+    start = anchor;
+    savedLiner = getOwner().getLiner();
+    getOwner().setLiner(null);
+    // disconnect();
+    fireHandleRequestSecondaryHandles();
+}

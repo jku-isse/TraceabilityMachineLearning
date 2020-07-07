@@ -1,0 +1,6 @@
+public void testGetUnremovedAdverseEventsByCode() throws Exception {
+    List<AdverseEventBean> beanList = action.getUnremovedAdverseEventsByCode("548684985");
+    assertNotNull(beanList);
+    assertFalse(beanList.isEmpty());
+    assertEquals(beanList.get(0).getDescription(), "Stomach cramps and migraine headaches after taking this drug");
+}

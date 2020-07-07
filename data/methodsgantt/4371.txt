@@ -1,0 +1,3 @@
+public TaskInfo getTaskInfo() {
+    return myTaskInfo;
+}

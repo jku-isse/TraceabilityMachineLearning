@@ -1,0 +1,3 @@
+public void taskMoved(TaskHierarchyEvent e) {
+    myGanttProject.setModified();
+}

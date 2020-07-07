@@ -1,0 +1,15 @@
+/**
+ * Writes the figures to the specified output stream.
+ * This method applies the specified transform to the drawing, and draws
+ * it on an image of the specified size.
+ */
+public void write(OutputStream out, Drawing drawing, List<Figure> figures, AffineTransform drawingTransform, Dimension imageSize) throws IOException {
+    BufferedImage img;
+    if ((drawingTransform == null) || (imageSize == null)) {
+        img = toImage(drawing, figures, 1.0, false);
+    } else {
+        img = toImage(drawing, figures, drawingTransform, imageSize);
+    }
+    ImageIO.write(img, formatName, out);
+    img.flush();
+}

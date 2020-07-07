@@ -1,0 +1,3 @@
+public static void setLockDAVMinutes(int i) {
+    HttpDocument.lockDAVMinutes = i;
+}

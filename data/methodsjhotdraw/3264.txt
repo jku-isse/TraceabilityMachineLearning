@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public PickAttributesAction(DrawingEditor editor) {
+    super(editor);
+    labels.configureAction(this, "edit.pickAttributes");
+    setEnabled(true);
+}

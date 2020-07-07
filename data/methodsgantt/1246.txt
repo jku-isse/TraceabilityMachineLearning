@@ -1,0 +1,3 @@
+public GanttChart getGanttChart() {
+    return myFallbackDelegate.getGanttChart();
+}

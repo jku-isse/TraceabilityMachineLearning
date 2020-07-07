@@ -1,0 +1,20 @@
+public void validatePR(long representativeMID, long patientMID) throws iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM representatives WHERE RepresenterMID=? AND RepresenteeMID=?");
+        ps.setLong(1, representativeMID);
+        ps.setLong(2, patientMID);
+        ResultSet rs = ps.executeQuery();
+        // no rows
+        if (!(rs.next()))
+            throw new iTrustException(("Representer is not valid for patient " + patientMID));
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

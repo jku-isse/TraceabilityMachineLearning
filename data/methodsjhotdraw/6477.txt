@@ -1,0 +1,10 @@
+/**
+ * Closes the current element of the DOM Document.
+ * The parent of the current element becomes the current element.
+ *
+ * @exception IllegalArgumentException if the provided tagName does
+not match the tag name of the element.
+ */
+public void closeElement() {
+    current = ((XMLElement) (stack.pop()));
+}

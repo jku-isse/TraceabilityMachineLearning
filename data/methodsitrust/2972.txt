@@ -1,0 +1,26 @@
+/**
+ * Removes a ND code, returns whether or not the change was made.
+ *
+ * @param med
+ * 		The medication bean to be removed.
+ * @return A boolean indicating success or failure.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public boolean removeNDCode(MedicationBean med) throws DBException, iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("DELETE FROM ndcodes WHERE Code=?");
+        ps.setString(1, med.getNDCode());
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

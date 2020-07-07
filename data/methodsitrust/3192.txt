@@ -1,0 +1,12 @@
+public void testAddRemoveOneOVProcedure() throws Exception {
+    assertEquals("no current procedures on office vist 1", 0, procDAO.getList(1).size());
+    ProcedureBean bean = new ProcedureBean();
+    bean.setVisitID(1);
+    bean.setCPTCode("1270F");
+    long ovPID = procDAO.add(bean);
+    List<ProcedureBean> procs = procDAO.getList(1);
+    assertEquals("now theres 1", 1, procs.size());
+    assertEquals("test the description", "Injection procedure", procs.get(0).getDescription());
+    procDAO.remove(ovPID);
+    assertEquals("now theres none", 0, procDAO.getList(1).size());
+}

@@ -1,0 +1,3 @@
+public void addChangeValueListener(ChangeValueListener listener) {
+    myListeners.add(listener);
+}

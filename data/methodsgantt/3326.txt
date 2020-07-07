@@ -1,0 +1,8 @@
+private void createDependency(Object value) throws TaskDependencyException {
+    if (value instanceof DependencyTableModel.TaskComboItem) {
+        Task selectedTask = ((DependencyTableModel.TaskComboItem) (value)).myTask;
+        TaskDependency dep = myMutator.createDependency(myTask, selectedTask, new FinishStartConstraintImpl());
+        myDependencies.add(dep);
+        fireTableRowsInserted(myDependencies.size(), myDependencies.size());
+    }
+}

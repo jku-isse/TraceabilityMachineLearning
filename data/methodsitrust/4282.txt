@@ -1,0 +1,11 @@
+public void testFilterByEmerContactName() throws Exception {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.EMER_CONTACT_NAME, "Mum", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertEquals(6, res.size());
+    assertTrue(((res.get(0).getMID()) == 3L));
+    assertTrue(((res.get(1).getMID()) == 4L));
+    assertTrue(((res.get(2).getMID()) == 5L));
+    assertTrue(((res.get(3).getMID()) == 6L));
+    assertTrue(((res.get(4).getMID()) == 7L));
+    assertTrue(((res.get(5).getMID()) == 8L));
+}

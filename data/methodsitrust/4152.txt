@@ -1,0 +1,10 @@
+public void testLoginHash() throws Exception {
+    // Kelly Doctor logs into iTrust
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    // Ensure password pw is hashed correctly and stored in the database
+    wr = wr.getLinkWith("Display Database").click();
+    assertEquals(DigestUtils.shaHex("pw"), wr.getTableWithID("users").getCellAsText(1, 1));
+}

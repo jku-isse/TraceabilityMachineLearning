@@ -1,0 +1,6 @@
+/**
+ * Deactivates the view.
+ * This occurs, when the user closes the view, or activated another view.
+ * This method is only invoked on a started view.
+ */
+public void deactivate();

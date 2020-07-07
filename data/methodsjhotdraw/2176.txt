@@ -1,0 +1,18 @@
+/**
+ * Gets the buffered image. If necessary, this method creates the buffered
+ * image from the image data.
+ */
+public BufferedImage getBufferedImage() {
+    if (((bufferedImage) == null) && ((imageData) != null)) {
+        try {
+            bufferedImage = ImageIO.read(new ByteArrayInputStream(imageData));
+        } catch (IOException e) {
+            e.printStackTrace();
+            // If we cant create a buffered image from the image data,
+            // there is no use to keep the image data and try again, so
+            // we drop the image data.
+            imageData = null;
+        }
+    }
+    return bufferedImage;
+}

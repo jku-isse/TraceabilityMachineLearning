@@ -1,0 +1,30 @@
+/**
+ * Reverses configuration which was done on the specified component during
+ * <code>installUI</code>.  This method is invoked when this
+ * <code>UIComponent</code> instance is being removed as the UI delegate
+ * for the specified component.  This method should undo the
+ * configuration performed in <code>installUI</code>, being careful to
+ * leave the <code>JComponent</code> instance in a clean state (no
+ * extraneous listeners, look-and-feel-specific property objects, etc.).
+ * This should include the following:
+ * <ol>
+ * <li>Remove any UI-set borders from the component.
+ * <li>Remove any UI-set layout managers on the component.
+ * <li>Remove any UI-added sub-components from the component.
+ * <li>Remove any UI-added event/property listeners from the component.
+ * <li>Remove any UI-installed keyboard UI from the component.
+ * <li>Nullify any allocated instance data objects to allow for GC.
+ * </ol>
+ *
+ * @param c
+ * 		the component from which this UI delegate is being removed;
+ * 		this argument is often ignored,
+ * 		but might be used if the UI object is stateless
+ * 		and shared by multiple components
+ * @see #installUI
+ * @see javax.swing.JComponent#updateUI
+ */
+public void uninstallUI(JComponent c) {
+    uninstallListeners(fontChooser);
+    uninstallComponents(fontChooser);
+}

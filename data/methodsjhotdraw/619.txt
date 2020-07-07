@@ -1,0 +1,11 @@
+@Override
+public void generateColorWheel() {
+    float radius = ((float) (Math.min(w, h)));
+    for (int index = 0; index < (pixels.length); index++) {
+        if ((alphas[index]) != 0) {
+            pixels[index] = (alphas[index]) | (16777215 & (colorSystem.toRGB(angulars[index], radials[index], brights[index])));
+        }
+    }
+    newPixels();
+    isPixelsValid = false;
+}

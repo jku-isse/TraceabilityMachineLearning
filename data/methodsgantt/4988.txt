@@ -1,0 +1,38 @@
+/**
+ * Display an URL in the system browser. If you want to display a file, you
+ * must include the absolute path name.
+ *
+ * @param url
+ * 		the documents url (the url must start with either "http://"
+ * 		or "file://").
+ */
+public static boolean displayURL(String url) {
+    // Opening a browser, even when running sandbox-restricted
+    // in JavaWebStart.
+    try {
+        Class serManClass = Class.forName("javax.jnlp.ServiceManager");
+        Class basSerClass = Class.forName("javax.jnlp.BasicService");
+        Class[] stringParam = new Class[]{ String.class };
+        Class[] urlParam = new Class[]{ URL.class };
+        Object basicService = serManClass.getMethod("lookup", stringParam).invoke(serManClass, new Object[]{ "javax.jnlp.BasicService" });
+        basSerClass.getMethod("showDocument", urlParam).invoke(basicService, new Object[]{ new URL(url) });
+        return true;
+    } catch (Exception e) {
+        // Not running in JavaWebStart or service is not supported.
+        // We continue with the methods below ...
+    }
+    String[] cmd = null;
+    switch (BrowserControl.getPlatform()) {
+        case BrowserControl.WIN_ID :
+            return BrowserControl.runCmdLine(BrowserControl.replaceToken(BrowserControl.WIN_CMDLINE, BrowserControl.URLTOKEN, url));
+        case BrowserControl.MAC_ID :
+            return BrowserControl.runCmdLine(BrowserControl.replaceToken(BrowserControl.MAC_CMDLINE, BrowserControl.URLTOKEN, url));
+        default :
+            for (int i = 0; i < (BrowserControl.OTHER_CMDLINES.length); i++) {
+                if (BrowserControl.runCmdLine(BrowserControl.replaceToken(BrowserControl.OTHER_CMDLINES[i], BrowserControl.URLTOKEN, url), BrowserControl.replaceToken(BrowserControl.OTHER_FALLBACKS[i], BrowserControl.URLTOKEN, url)))
+                    return true;
+
+            }
+    }
+    return false;
+}

@@ -1,0 +1,4 @@
+/**
+ * Clears the current selection.
+ */
+public void clearSelection();

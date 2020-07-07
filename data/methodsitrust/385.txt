@@ -1,0 +1,13 @@
+/**
+ * Returns a list of diseases for which the patient is at risk
+ *
+ * @return list of RiskCheckers
+ * @throws iTrustException
+ * 		
+ * @throws DBException
+ * 		
+ */
+public List<RiskChecker> getDiseasesAtRisk() throws DBException, NoHealthRecordsException, iTrustException {
+    this.diseaseMediator = new ChronicDiseaseMediator(factory, pid);
+    return diseaseMediator.getDiseaseAtRisk();
+}

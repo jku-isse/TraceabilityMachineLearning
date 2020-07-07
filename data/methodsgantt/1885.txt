@@ -1,0 +1,3 @@
+public String toString() {
+    return (((((("leftx=" + (myLeftX)) + " topy=") + (myTopY)) + " width=") + (myWidth)) + " height=") + (myHeight);
+}

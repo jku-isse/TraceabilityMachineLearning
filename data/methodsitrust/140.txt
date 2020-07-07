@@ -1,0 +1,16 @@
+/**
+ * Adds an empty office visit
+ *
+ * @param loggedInMID
+ * 		For logging purposes
+ * @return Office visit ID (primary key) of the new office visit
+ * @throws DBException
+ * 		
+ */
+public long addEmptyOfficeVisit(long loggedInMID) throws DBException {
+    OfficeVisitBean ov = new OfficeVisitBean();
+    ov.setHcpID(loggedInMID);
+    ov.setPatientID(pid);
+    long visitID = ovDAO.add(ov);
+    return visitID;
+}

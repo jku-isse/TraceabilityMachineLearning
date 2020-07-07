@@ -1,0 +1,21 @@
+/**
+ * Installs rollover borders on all the child components of the JComponent.
+ * <p>
+ * This is a convenience method to call <code>setBorderToRollover</code>
+ * for each child component.
+ *
+ * @param c
+ * 		container which holds the child components (usally a JToolBar)
+ * @see #setBorderToRollover
+ * @since 1.4
+ */
+protected void installRolloverBorders(JComponent c) {
+    // Put rollover borders on buttons
+    Component[] components = c.getComponents();
+    for (int i = 0; i < (components.length); ++i) {
+        if ((components[i]) instanceof JComponent) {
+            ((JComponent) (components[i])).updateUI();
+            setBorderToRollover(components[i]);
+        }
+    }
+}

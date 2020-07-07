@@ -1,0 +1,10 @@
+/**
+ * Add a custom column to the model.
+ *
+ * @param title
+ * 		
+ */
+public void addCustomColumn(String title) {
+    customColumns.add(title);
+    (nbColTot)++;
+}

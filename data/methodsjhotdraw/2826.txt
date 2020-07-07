@@ -1,0 +1,7 @@
+/**
+ * Sets the text of the Text Holder.
+ *
+ * @param text
+ * 		
+ */
+public void setText(String text);

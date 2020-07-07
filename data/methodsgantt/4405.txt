@@ -1,0 +1,3 @@
+public TimeUnit getTimeUnit() {
+    return myUnit;
+}

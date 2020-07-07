@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param apptID
+ * 		the apptID to set
+ */
+public void setApptID(int apptID) {
+    this.apptID = apptID;
+}

@@ -1,0 +1,6 @@
+private void clearRubberBand() {
+    if (!(rubberband.isEmpty())) {
+        fireAreaInvalidated(rubberband);
+        rubberband.width = -1;
+    }
+}

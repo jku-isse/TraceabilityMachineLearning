@@ -1,0 +1,20 @@
+/**
+ * Sets the line-wrapping policy of the text area.  If set
+ * to true the lines will be wrapped if they are too long
+ * to fit within the allocated width.  If set to false,
+ * the lines will always be unwrapped.  A <code>PropertyChange</code>
+ * event ("lineWrap") is fired when the policy is changed.
+ * By default this property is false.
+ *
+ * @param newValue
+ * 		indicates if lines should be wrapped
+ * @see #getLineWrap
+ */
+public void setLineWrap(boolean newValue) {
+    boolean oldValue = wrap;
+    if (oldValue != newValue) {
+        this.wrap = newValue;
+        firePropertyChange("lineWrap", oldValue, newValue);
+        rebuildView();
+    }
+}

@@ -1,0 +1,27 @@
+/* This prints at 72 DPI only. We might need this for some JVM versions on
+Mac OS X.
+ */
+public void printJava2DAlternative() {
+    Pageable pageable = ((Pageable) (Methods.invokeGetter(getActiveView(), "createPageable", null)));
+    if (pageable == null) {
+        throw new InternalError("View does not have a method named java.awt.Pageable createPageable()");
+    }
+    try {
+        final PrinterJob job = PrinterJob.getPrinterJob();
+        PrintRequestAttributeSet attr = new HashPrintRequestAttributeSet();
+        attr.add(new PrinterResolution(300, 300, PrinterResolution.DPI));
+        job.setPageable(pageable);
+        if (job.printDialog(attr)) {
+            try {
+                job.print();
+            } catch (PrinterException e) {
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                JSheet.showMessageSheet(getActiveView().getComponent(), labels.getFormatted("couldntPrint", e));
+            }
+        } else {
+            System.out.println("JOB ABORTED!");
+        }
+    } catch (Throwable t) {
+        t.printStackTrace();
+    }
+}

@@ -1,0 +1,8 @@
+/**
+ * Gets the lab techs ID
+ *
+ * @return The id of the assigned lab tech
+ */
+public long getLTID() {
+    return LTID;
+}

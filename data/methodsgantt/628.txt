@@ -1,0 +1,3 @@
+public GanttTabbedPane getTabs() {
+    return myTabPane;
+}

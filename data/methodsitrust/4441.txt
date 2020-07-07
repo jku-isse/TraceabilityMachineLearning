@@ -1,0 +1,9 @@
+@Override
+public boolean hasFactor() {
+    for (Ethnicity ethnicity : atRisk) {
+        if ((patient.getEthnicity().equals(ethnicity)) && (!(Ethnicity.NotSpecified.equals(ethnicity))))
+            return true;
+
+    }
+    return false;
+}

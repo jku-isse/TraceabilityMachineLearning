@@ -1,0 +1,8 @@
+private void addMouseListenerToAllContainer(Component[] cont) {
+    for (int i = 0; i < (cont.length); i++) {
+        cont[i].addMouseListener(getStopEditingMouseListener());
+        if ((cont[i]) instanceof Container)
+            addMouseListenerToAllContainer(((Container) (cont[i])).getComponents());
+
+    }
+}

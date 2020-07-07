@@ -1,0 +1,3 @@
+public void paste(ChartSelection selection) {
+    tree.pasteNode();
+}

@@ -1,0 +1,10 @@
+public CommandLineExportApplication() {
+    Exporter[] exporters = Mediator.getPluginManager().getExporters();
+    for (int i = 0; i < (exporters.length); i++) {
+        Exporter next = exporters[i];
+        List nextExtensions = Arrays.asList(next.getFileExtensions());
+        for (int j = 0; j < (nextExtensions.size()); j++) {
+            myFlag2exporter.put(("-" + (nextExtensions.get(j))), next);
+        }
+    }
+}

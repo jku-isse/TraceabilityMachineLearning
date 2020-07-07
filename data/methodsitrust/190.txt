@@ -1,0 +1,10 @@
+public void testRepresentativeReportStatus() throws Exception {
+    action = new AddRemoteMonitoringDataAction(TestDAOFactory.getTestInstance(), 2, 1);
+    try {
+        RemoteMonitoringDataBean b = new RemoteMonitoringDataBean();
+        b.setPedometerReading(100);
+        action.addRemoteMonitoringData(b);
+    } catch (iTrustException e) {
+        fail();
+    }
+}

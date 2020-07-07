@@ -1,0 +1,6 @@
+/**
+ * Returns the figures of the drawing.
+ *
+ * @return A Collection of Figures.
+ */
+List<Figure> getChildren();

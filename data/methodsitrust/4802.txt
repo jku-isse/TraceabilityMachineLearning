@@ -1,0 +1,8 @@
+public void testValidateOk() {
+    // Ensure the bean used throughout this test case really is valid.
+    try {
+        validator.validate(bean);
+    } catch (FormValidationException e) {
+        fail("Validation should have passed.");
+    }
+}

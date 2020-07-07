@@ -1,0 +1,19 @@
+public void actionPerformed(ActionEvent e) {
+    myProjectFrame.getTabs().setSelectedIndex(UIFacade.RESOURCES_INDEX);
+    final ResourceAssignment[] context = myContext.getResourceAssignments();
+    if ((context != null) && ((context.length) > 0)) {
+        UIFacade.Choice choice = myProjectFrame.getUIFacade().showConfirmationDialog(((((getI18n("msg23")) + " ") + (DeleteAssignmentAction.getDisplayName(context))) + "?"), getI18n("warning"));
+        if (choice == (UIFacade.Choice.YES)) {
+            myProjectFrame.getUIFacade().getUndoManager().undoableEdit("Resource removed", new Runnable() {
+                public void run() {
+                    deleteAssignments(context);
+                    myProjectFrame.setAskForSave(true);
+                    myProjectFrame.refreshProjectInfos();
+                    myProjectFrame.repaint2();
+                }
+            });
+        }
+    } else {
+        myProjectFrame.deleteResources();
+    }
+}

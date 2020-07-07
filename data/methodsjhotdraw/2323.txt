@@ -1,0 +1,4 @@
+@Override
+public void setPoint(int index, Point2D.Double p) {
+    setPoint(index, 0, p);
+}

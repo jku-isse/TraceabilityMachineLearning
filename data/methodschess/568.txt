@@ -1,0 +1,15 @@
+// Constructors
+/**
+ * Create a new en passant ply instance.
+ *
+ * @param source
+ * 		The source square of the attacking pawn.
+ * @param destination
+ * 		The destination square of the attacking pawn.
+ * @param attackedPosition
+ * 		The position of the attacked pawn.
+ */
+public EnPassantPlyImpl(Position source, Position destination, Position attackedPosition) {
+    super(source, destination, true);
+    setAttackedPosition(attackedPosition);
+}

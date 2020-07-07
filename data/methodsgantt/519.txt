@@ -1,0 +1,5 @@
+// ///////////////////////////////////////////////////////
+// IGanttProject implementation
+public String getProjectName() {
+    return prjInfos._sProjectName;
+}

@@ -1,0 +1,3 @@
+public double getBodyMassIndex() {
+    return 703 * ((weight) / ((height) * (height)));
+}

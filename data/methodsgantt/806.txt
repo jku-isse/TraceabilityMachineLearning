@@ -1,0 +1,24 @@
+/**
+ * Displays the hidden tasks.
+ */
+public void displayHiddenTasks() {
+    for (int i = 0; i < (hiddenTask.size()); i++) {
+        GanttTree2.HiddenTask ht = ((GanttTree2.HiddenTask) (hiddenTask.get(i)));
+        DefaultMutableTreeNode node = ht.getNode();
+        DefaultMutableTreeNode parent = ht.getParent();
+        node.setParent(parent);
+    }
+    Collections.sort(hiddenTask);
+    for (int i = 0; i < (hiddenTask.size()); i++) {
+        GanttTree2.HiddenTask ht = ((GanttTree2.HiddenTask) (hiddenTask.get(i)));
+        DefaultMutableTreeNode node = ht.getNode();
+        DefaultMutableTreeNode parent = ht.getParent();
+        int index = ht.getIndex();
+        node.setParent(null);
+        ((GanttTreeTableModel) (getTreeTable().getTreeTableModel())).insertNodeInto(node, parent, index);
+        if (node instanceof TaskNode)
+            restoreExpand(((TaskNode) (node)));
+
+    }
+    hiddenTask.clear();
+}

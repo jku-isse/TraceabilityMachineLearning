@@ -1,0 +1,12 @@
+/**
+ * Creates a new instance.
+ */
+public OSXPaletteHandler(DefaultOSXApplication app) {
+    this.app = app;
+    timer = new Timer(60, new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            maybeHidePalettes();
+        }
+    });
+    timer.setRepeats(false);
+}

@@ -1,0 +1,18 @@
+public void run(Task[] tasks) {
+    HashSet taskSet = new HashSet(Arrays.asList(tasks));
+    myModifiedTasks.addAll(taskSet);
+    TaskContainmentHierarchyFacade containmentFacade = createContainmentFacade();
+    while (!(taskSet.isEmpty())) {
+        recalculateSupertaskScheduleBottomUp(taskSet, containmentFacade);
+        taskSet.clear();
+        for (Iterator modified = myModifiedTasks.iterator(); modified.hasNext();) {
+            Task nextTask = ((Task) (modified.next()));
+            Task supertask = containmentFacade.getContainer(nextTask);
+            if (supertask != null) {
+                taskSet.add(supertask);
+            }
+        }
+        myModifiedTasks.clear();
+    } 
+    myModifiedTasks.clear();
+}

@@ -1,0 +1,1 @@
+void showDialog(Component content, Action[] buttonActions, String title);

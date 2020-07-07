@@ -1,0 +1,4 @@
+/**
+ * Finds a top level Figure which is behind the specified Figure.
+ */
+Figure findFigureBehind(Point2D.Double p, Figure figure);

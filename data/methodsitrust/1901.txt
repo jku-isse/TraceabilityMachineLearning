@@ -1,0 +1,3 @@
+public void setIcCity(String icCity) {
+    this.icCity = icCity;
+}

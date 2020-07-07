@@ -1,0 +1,9 @@
+/**
+ * Set the ply, that lead to this game status.
+ *
+ * @param ply
+ * 		The ply, that lead to this game status.
+ */
+final void setPly(Ply ply) {
+    _ply = ply;
+}

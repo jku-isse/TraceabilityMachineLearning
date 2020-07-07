@@ -1,0 +1,22 @@
+/**
+ * Constructor.
+ */
+public MessagePanel(int size, boolean separator) {
+    super(new FlowLayout());
+    message = new JLabel() {
+        public void paint(Graphics g) {
+            Graphics2D g2 = ((Graphics2D) (g));
+            g2.setColor(textColor);
+            g2.drawString(getText(), 0, 12);
+        }
+    };
+    if (size != (-1)) {
+        message.setPreferredSize(new Dimension(size, 16));
+        message.setMaximumSize(new Dimension(size, 16));
+        message.setMaximumSize(new Dimension(size, 16));
+    }
+    if (separator)
+        add(new JLabel("|"));
+
+    add(message);
+}

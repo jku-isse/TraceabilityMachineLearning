@@ -1,0 +1,21 @@
+/**
+ * Hide the text by decrease the color.
+ */
+public void hideText() {
+    try {
+        Color cPanel = getBackground();
+        Color cBlack = Color.BLACK;
+        int step = 50;
+        float dRed = ((float) (cPanel.getRed())) / ((float) (step));
+        float dGreen = ((float) (cPanel.getGreen())) / ((float) (step));
+        float dBlue = ((float) (cPanel.getBlue())) / ((float) (step));
+        for (int i = 0; i < step; i++) {
+            textColor = new Color(((int) (dRed * ((float) (i)))), ((int) (dGreen * ((float) (i)))), ((int) (dBlue * ((float) (i)))));
+            repaint();
+            Thread.sleep(20);
+        }
+        textColor = Color.BLACK;
+    } catch (Exception e) {
+        // exception for the thread.sleep
+    }
+}

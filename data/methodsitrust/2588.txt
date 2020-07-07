@@ -1,0 +1,15 @@
+public void testgetAllWardsByHCP() {
+    List<WardBean> list = new ArrayList<WardBean>();
+    try {
+        list = wd1.getAllWardsByHCP(1L);
+        assertNotNull(list);
+    } catch (DBException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.getAllWardsByHCP(1L);
+        fail();
+    } catch (Exception e) {
+    }
+}

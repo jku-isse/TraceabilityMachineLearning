@@ -1,0 +1,9 @@
+/**
+ * Subtracts the specified insets from the current insets.
+ *
+ * @param i
+ * 		The insets to be subtracted.
+ */
+public void subtract(Insets2D i) {
+    set(((getTop()) - (i.getTop())), ((getLeft()) - (i.getLeft())), ((getBottom()) - (i.getBottom())), ((getRight()) - (i.getRight())));
+}

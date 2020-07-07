@@ -1,0 +1,3 @@
+public String getFileTypeDescription() {
+    return MessageFormat.format(GanttLanguage.getInstance().getText("impex.image.description"), new Object[]{ proposeFileExtension() });
+}

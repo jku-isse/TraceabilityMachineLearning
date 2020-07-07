@@ -1,0 +1,5 @@
+public void testNotInt() throws Exception {
+    String value = "123a4";
+    String errorMessage = CPTCodeValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, CPTCodeValidatorTest.VALIDATION_FORMAT, false));
+}

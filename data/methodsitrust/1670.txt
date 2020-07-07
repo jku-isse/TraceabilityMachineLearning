@@ -1,0 +1,3 @@
+public void setDateRecorded(Timestamp dateRecorded) {
+    this.dateRecorded = dateRecorded;
+}

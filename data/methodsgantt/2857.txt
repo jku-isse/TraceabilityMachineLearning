@@ -1,0 +1,3 @@
+public void setResourceUnderloadColor(Color myResUnderColor) {
+    this.myResUnderColor = myResUnderColor;
+}

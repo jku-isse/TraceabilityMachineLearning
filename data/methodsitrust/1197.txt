@@ -1,0 +1,11 @@
+/**
+ * Returns the office visit as an OfficeVisitBean for the ovID that was initially passed to the
+ * constructor
+ *
+ * @return the OfficeVisitBean for the ovID
+ * @throws iTrustException
+ * 		
+ */
+public OfficeVisitBean getOfficeVisit() throws iTrustException {
+    return ovDAO.getOfficeVisit(ovID);
+}

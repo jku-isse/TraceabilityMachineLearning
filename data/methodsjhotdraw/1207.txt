@@ -1,0 +1,3 @@
+public void restoreTransformTo(Object geometry) {
+    path.setTo(((BezierPath) (geometry)));
+}

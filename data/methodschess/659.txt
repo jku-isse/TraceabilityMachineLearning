@@ -1,0 +1,13 @@
+/**
+ * Get a event from one of the timers.
+ *
+ * ActionEvent event The event.
+ */
+public void actionPerformed(ActionEvent event) {
+    if (!("interrupted".equals(event.getActionCommand()))) {
+        // This event means, that the timer sending the event has stopped,
+        // so stop the entire timer for now.
+        stop();
+        notifyListeners(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, ((event.getSource()) == (_white) ? "timeout white" : "timeout black")));
+    }
+}

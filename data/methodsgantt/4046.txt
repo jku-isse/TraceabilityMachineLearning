@@ -1,0 +1,3 @@
+public void setPattern(ShapePaint pattern) {
+    this.pattern = pattern;
+}

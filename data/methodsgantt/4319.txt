@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @unknown 
+ */
+public boolean isCritical() {
+    return this.critical;
+}

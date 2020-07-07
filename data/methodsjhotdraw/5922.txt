@@ -1,0 +1,6 @@
+private void writeGElement(IXMLElement parent, SVGGroupFigure f) throws IOException {
+    // Note: Image map elements need to be written from front to back
+    for (Figure child : new ReversedList<Figure>(f.getChildren())) {
+        writeElement(parent, child);
+    }
+}

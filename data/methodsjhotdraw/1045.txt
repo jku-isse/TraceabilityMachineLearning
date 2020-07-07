@@ -1,0 +1,6 @@
+public Point getLocation() {
+    if ((location) == null) {
+        return view.drawingToView(getOrigin());
+    }
+    return location;
+}

@@ -1,0 +1,13 @@
+/**
+ *
+ *
+ * @param filterType
+ * 		
+ * @param filterValue
+ * 		
+ */
+public DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType filterType, String filterValue, DAOFactory factory) {
+    this.filterType = filterType;
+    this.filterValue = filterValue;
+    fDAO = factory.getFamilyDAO();
+}

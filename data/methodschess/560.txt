@@ -1,0 +1,8 @@
+// Static variables
+// Methods
+/**
+ * Check, if this castling goes to the left side of the board.
+ *
+ * @return true, if the castling goes to the left side, false otherwise.
+ */
+boolean isLeftCastling();

@@ -1,0 +1,3 @@
+public boolean canDock(Component c, Point p) {
+    return (p != null) && ((getDockingConstraint(c, p)) != null);
+}

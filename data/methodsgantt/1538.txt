@@ -1,0 +1,20 @@
+protected List getActivitiesBackward(Date startDate, TimeUnit timeUnit, long unitCount) {
+    List result = new LinkedList();
+    Date unitStart = timeUnit.adjustLeft(startDate);
+    while (unitCount > 0) {
+        Date prevUnitStart = timeUnit.jumpLeft(unitStart);
+        boolean isWeekendState = isNonWorkingDay(prevUnitStart);
+        if (isWeekendState) {
+            Date lastWorkingUnitStart = getStateChangeDate(prevUnitStart, timeUnit, false, false);
+            Date firstWeekendUnitStart = timeUnit.adjustRight(lastWorkingUnitStart);
+            Date lastWeekendUnitEnd = unitStart;
+            result.add(0, new CalendarActivityImpl(firstWeekendUnitStart, lastWeekendUnitEnd, false));
+            unitStart = firstWeekendUnitStart;
+        } else {
+            result.add(0, new CalendarActivityImpl(prevUnitStart, unitStart, true));
+            unitCount--;
+            unitStart = prevUnitStart;
+        }
+    } 
+    return result;
+}

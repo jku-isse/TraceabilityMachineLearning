@@ -1,0 +1,3 @@
+protected String getVersion() {
+    return NetApplet.class.getPackage().getImplementationVersion();
+}

@@ -1,0 +1,13 @@
+// Methods
+/**
+ * Reset to a given time.
+ *
+ * @param time
+ * 		The time to reset to.
+ */
+public void reset(int time) {
+    stop();// Stop the timer.
+
+    setCountdown(time);
+    setNoClockRunning();
+}

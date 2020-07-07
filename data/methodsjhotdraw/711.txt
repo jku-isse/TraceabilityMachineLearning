@@ -1,0 +1,25 @@
+public void mousePressed(MouseEvent e) {
+    int x = e.getX();
+    int y = e.getY();
+    int closestIndex = -1;
+    if (((harmonicModel) != null) && ((harmonicModel.size()) > 0)) {
+        int closestError = Integer.MAX_VALUE;
+        for (int i = 0, n = harmonicModel.size(); i < n; i++) {
+            CompositeColor c = harmonicModel.get(i);
+            if (c != null) {
+                Point p = getColorLocation(harmonicModel.get(i));
+                int error = (((p.x) - x) * ((p.x) - x)) + (((p.y) - y) * ((p.y) - y));
+                if (error < closestError) {
+                    closestIndex = i;
+                    closestError = error;
+                }
+            }
+        }
+        if (closestIndex != (-1)) {
+            if (closestError > 20) {
+                closestIndex = -1;
+            }
+        }
+    }
+    setSelectedIndex(closestIndex);
+}

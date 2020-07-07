@@ -1,0 +1,4 @@
+public void testGetLabs() throws iTrustException {
+    List<LabProcedureBean> lpbList = action.getLabs();
+    assertEquals(1, lpbList.size());
+}

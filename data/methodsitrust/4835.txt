@@ -1,0 +1,5 @@
+public void testBadFormat() throws Exception {
+    String value = "---@---.com";
+    String errorMessage = EmailValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, EmailValidatorTest.VALIDATION_FORMAT, false));
+}

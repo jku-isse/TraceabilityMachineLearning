@@ -1,0 +1,3 @@
+public AttributeKey<T> getAttributeKey() {
+    return attributeKey;
+}

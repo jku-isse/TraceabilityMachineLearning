@@ -1,0 +1,6 @@
+/**
+ * Returns the height of a tile.
+ */
+public int getTileHeight() {
+    return tileHeight;
+}

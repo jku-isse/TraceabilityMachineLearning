@@ -1,0 +1,6 @@
+/**
+ * Get the number of plies in this game.
+ *
+ * @return The number of plies in this game.
+ */
+int getNumberOfPlies();

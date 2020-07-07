@@ -1,0 +1,7 @@
+/**
+ * Convenience method for creating a formatter factory with a
+ * 8@code ColorFormatter}.
+ */
+public static JFormattedTextField.AbstractFormatterFactory createFormatterFactory(ColorFormatter.Format outputFormat, boolean allowsNullValue, boolean isAdaptive) {
+    return new DefaultFormatterFactory(new ColorFormatter(outputFormat, allowsNullValue, isAdaptive));
+}

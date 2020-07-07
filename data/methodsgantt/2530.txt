@@ -1,0 +1,10 @@
+/**
+ * Creates an instance of GPlainDocument with a valid character string.
+ *
+ * @param validchars
+ * 		
+ */
+public GPlainDocument(String validchars) {
+    super();
+    this.valid_characters = validchars;
+}

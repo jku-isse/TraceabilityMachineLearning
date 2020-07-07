@@ -1,0 +1,18 @@
+protected void show0() {
+    JRootPane rp = null;
+    if ((getOwner()) instanceof JFrame) {
+        rp = ((JFrame) (getOwner())).getRootPane();
+    } else
+        if ((getOwner()) instanceof JDialog) {
+            rp = ((JDialog) (getOwner())).getRootPane();
+        }
+
+    if ((rp != null) && (!(JSheet.isDocumentModalitySupported()))) {
+        ownersGlassPane = rp.getGlassPane();
+        JPanel blockingPanel = new JPanel();
+        blockingPanel.setOpaque(false);
+        rp.setGlassPane(blockingPanel);
+        blockingPanel.setVisible(true);
+    }
+    super.show();
+}

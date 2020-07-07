@@ -1,0 +1,6 @@
+MoveTaskInteraction(MouseEvent e, Task task) {
+    super(e);
+    myTask = task;
+    myMutator = task.createMutator();
+    myInitialStart = myTask.getStart();
+}

@@ -1,0 +1,9 @@
+// public void setStartFixed(boolean isFixed) {
+// isStartFixed = isFixed;
+// }
+// public void setFinishFixed(boolean isFixed) {
+// isFinishFixed = isFixed;
+// }
+public void setShape(ShapePaint shape) {
+    myShape = shape;
+}

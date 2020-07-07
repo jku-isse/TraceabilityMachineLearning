@@ -1,0 +1,6 @@
+public void resourceAssignmentsChanged(ProjectResource[] resources) {
+    for (int i = 0; i < (resources.length); i++) {
+        ResourceNode nextNode = exists(resources[i]);
+        buildAssignmentsSubtree(nextNode);
+    }
+}

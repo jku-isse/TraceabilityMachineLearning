@@ -1,0 +1,3 @@
+public void setParentMessageId(long parentMsgId) {
+    this.parentMsgId = parentMsgId;
+}

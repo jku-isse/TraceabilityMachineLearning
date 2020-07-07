@@ -1,0 +1,8 @@
+public StatusPanel(String sVersionNumber) {
+    this.sVersion = sVersionNumber;
+    try {
+        jbInit();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}

@@ -1,0 +1,3 @@
+public Tool getTool() {
+    return target.getTool();
+}

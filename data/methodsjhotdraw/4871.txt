@@ -1,0 +1,4 @@
+@Override
+public final void write(DOMOutput out) throws IOException {
+    throw new UnsupportedOperationException("Use ODGStorableOutput to write this Figure.");
+}

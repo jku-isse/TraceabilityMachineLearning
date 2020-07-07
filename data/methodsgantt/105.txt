@@ -1,0 +1,3 @@
+void add(Throwable e) {
+    myErrors.add(e.getMessage());
+}

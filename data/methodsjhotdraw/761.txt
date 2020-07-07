@@ -1,0 +1,3 @@
+protected Rectangle2D.Double getFigureDrawingArea() {
+    return super.getDrawingArea();
+}

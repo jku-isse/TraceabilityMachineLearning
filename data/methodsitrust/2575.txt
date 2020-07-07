@@ -1,0 +1,15 @@
+public void testAddWardRoom() {
+    WardRoomBean wb = new WardRoomBean(0, 0, 0, "name1", "status");
+    try {
+        assertTrue(wd1.addWardRoom(wb));
+    } catch (DBException e) {
+    } catch (iTrustException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.addWardRoom(wb);
+        fail();
+    } catch (Exception e) {
+    }
+}

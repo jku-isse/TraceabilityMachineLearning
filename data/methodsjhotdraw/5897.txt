@@ -1,0 +1,5 @@
+public Figure createEllipse(double cx, double cy, double rx, double ry, Map<AttributeKey, Object> a) {
+    SVGEllipseFigure figure = new SVGEllipseFigure((cx - rx), (cy - ry), (rx * 2.0), (ry * 2.0));
+    figure.setAttributes(a);
+    return figure;
+}

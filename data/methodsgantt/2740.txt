@@ -1,0 +1,70 @@
+private Component getComponent() {
+    JPanel result = new JPanel();
+    GridBagConstraints constraints = new GridBagConstraints();
+    OptionsPageBuilder builder = new OptionsPageBuilder();
+    labelDefaultValue = new JLabel(((ResourceDialogCustomColumn.language.getText("defaultValue")) + ": "));
+    {
+        // Text
+        textArea = new JTextArea();
+        textArea.setWrapStyleWord(true);
+        textArea.setLineWrap(true);
+        textArea.setColumns(25);
+        textArea.setRows(5);
+        JScrollPane jsp = new JScrollPane(textArea);
+        panelText = new JPanel(new BorderLayout());
+        panelText.add(jsp, BorderLayout.CENTER);
+    }
+    {
+        // Boolean
+        radioTrue = new JRadioButton(ResourceDialogCustomColumn.language.getText("yes"));
+        radioFalse = new JRadioButton(ResourceDialogCustomColumn.language.getText("no"));
+        ButtonGroup group = new ButtonGroup();
+        group.add(radioFalse);
+        group.add(radioTrue);
+        radioTrue.setSelected(true);
+        panelBoolean = new JPanel(new GridBagLayout());
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        panelBoolean.add(radioTrue, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        panelBoolean.add(radioFalse, constraints);
+    }
+    {
+        // Integer
+        fieldInteger = new GTextField();
+        fieldInteger.setPattern(GTextField.PATTERN_INTEGER);
+        fieldInteger.setColumns(10);
+        panelInteger = new JPanel(new GridBagLayout());
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        panelInteger.add(fieldInteger, constraints);
+    }
+    {
+        // Double
+        fieldDouble = new GTextField();
+        fieldDouble.setPattern(GTextField.PATTERN_DOUBLE);
+        fieldDouble.setColumns(10);
+        panelDouble = new JPanel(new GridBagLayout());
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        panelDouble.add(fieldDouble, constraints);
+    }
+    {
+        panelDate = builder.createStandaloneOptionPanel(myDate);
+        cardLayoutDefaultValue = new CardLayout();
+        panelDefaultValue = new JPanel(cardLayoutDefaultValue);
+        panelDefaultValue.add(ResourceDialogCustomColumn.cardText, panelText);
+        panelDefaultValue.add(ResourceDialogCustomColumn.cardBoolean, panelBoolean);
+        panelDefaultValue.add(ResourceDialogCustomColumn.cardInteger, panelInteger);
+        panelDefaultValue.add(ResourceDialogCustomColumn.cardDouble, panelDouble);
+        panelDefaultValue.add(ResourceDialogCustomColumn.cardDate, panelDate);
+    }
+    Component optionsComponent = builder.buildPlanePage(new GPOptionGroup[]{ myOptionGroup });
+    result.setLayout(new BorderLayout());
+    result.add(optionsComponent, BorderLayout.CENTER);
+    result.add(panelDefaultValue, BorderLayout.SOUTH);
+    return result;
+}// TODO change the default value for custom columns.

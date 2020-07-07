@@ -1,0 +1,26 @@
+/**
+ * Adds a prescription bean to the database.
+ *
+ * @param pres
+ * 		The prescription bean to be added.
+ * @return The unique ID of the newly added bean.
+ * @throws DBException
+ * 		
+ */
+public long add(OverrideReasonBean pres) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO ovreactionoverride (OVMedicationID,OverrideCode) VALUES (?,?)");
+        ps.setLong(1, pres.getPresID());
+        ps.setString(2, pres.getORCode());
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

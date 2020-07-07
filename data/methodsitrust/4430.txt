@@ -1,0 +1,3 @@
+public CholesterolFactor(HealthRecord currentHealthRecord) {
+    this.record = currentHealthRecord;
+}

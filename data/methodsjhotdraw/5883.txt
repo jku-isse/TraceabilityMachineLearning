@@ -1,0 +1,16 @@
+/**
+ * adds cookies to the request
+ *
+ * @param cookies
+ * 		array of cookie names and values (cookies[2*i] is a name, cookies[2*i + 1] is a value)
+ * @throws IOException
+ * 		
+ */
+public void setCookies(String[] cookies) throws IOException {
+    if (cookies == null)
+        return;
+
+    for (int i = 0; i < ((cookies.length) - 1); i += 2) {
+        setCookie(cookies[i], cookies[(i + 1)]);
+    }
+}

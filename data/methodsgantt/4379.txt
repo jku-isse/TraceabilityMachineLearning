@@ -1,0 +1,3 @@
+public void setIsolationLevel(int level) {
+    myIsolationLevel = level;
+}

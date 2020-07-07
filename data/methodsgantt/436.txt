@@ -1,0 +1,22 @@
+// iconListAsIntArray = initIconList ();
+/**
+ * Constructor. public GanttOptions(Color c, int x, int y, int width, int
+ * height, GanttLookAndFeelInfo lookAndFeel, boolean automatic, boolean
+ * dragTime, String xslDir, String xslFo,String workingDir, boolean tips,
+ * boolean redline, int lockDAVMinutes, DocumentsMRU documentsMRU,
+ * UIConfiguration uiConfiguration, RoleManager roleManager) { myRoleManager =
+ * roleManager; color = c; this.x = x; this.y = y; this.width = width;
+ * this.height = height; this.lookAndFeel = lookAndFeel;
+ * this.automatic=automatic; this.dragTime=dragTime; this.openTips=tips;
+ * this.redline=redline; this.lockDAVMinutes=lockDAVMinutes; this.myUIConfig =
+ * uiConfiguration; if(xslFo!=null) this.xslFo=xslFo; if (xslDir != null)
+ * this.xslDir = xslDir; try { this.workingDir =
+ * System.getProperty("user.home"); } catch (AccessControlException e) { //
+ * This can happen when running in a sandbox (Java WebStart)
+ * System.err.println (e + ": " + e.getMessage()); } if (workingDir != null &&
+ * new File(workingDir).exists()) this.workingDir = workingDir;
+ * this.documentsMRU = documentsMRU; }
+ */
+private void startElement(String name, Attributes attrs, TransformerHandler handler) throws SAXException {
+    handler.startElement("", name, name, attrs);
+}

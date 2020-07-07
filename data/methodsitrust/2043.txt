@@ -1,0 +1,3 @@
+public void setCPTCode(String code) {
+    CPTCode = code;
+}

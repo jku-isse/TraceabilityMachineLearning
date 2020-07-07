@@ -1,0 +1,3 @@
+public String getScaleType() {
+    return scaleType;
+}

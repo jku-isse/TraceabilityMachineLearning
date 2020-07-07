@@ -1,0 +1,16 @@
+void addDependency(TaskDependency dep) throws TaskDependencyException {
+    if (myDependencies.contains(dep)) {
+        throw new TaskDependencyException((("Dependency=" + dep) + " already exists"));
+    }
+    if (this.isLooping(dep)) {
+        throw new TaskDependencyException((("Dependency=" + dep) + " is looping"));
+    }
+    if (false == (getTaskHierarchy().areUnrelated(dep.getDependant(), dep.getDependee()))) {
+        throw new TaskDependencyException((("In dependency=" + dep) + " one of participants is a supertask of another"));
+    }
+    myDependencies.add(dep);
+    // 
+    mySearchKey2dependency.put(new SearchKey(SearchKey.DEPENDANT, ((TaskDependencyImpl) (dep))), dep);
+    mySearchKey2dependency.put(new SearchKey(SearchKey.DEPENDEE, ((TaskDependencyImpl) (dep))), dep);
+    myEventDispatcher.fireDependencyAdded(dep);
+}

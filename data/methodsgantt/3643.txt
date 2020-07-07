@@ -1,0 +1,3 @@
+public FileFormatException(Throwable cause) {
+    super(cause);
+}

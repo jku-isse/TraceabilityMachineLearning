@@ -1,0 +1,4 @@
+/**
+ * Returns the visual component of the view.
+ */
+public JComponent getComponent();

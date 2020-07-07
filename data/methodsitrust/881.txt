@@ -1,0 +1,24 @@
+/**
+ * Adds a new cpt code (med procedure)
+ *
+ * @param proc
+ * 		ProcedureBean that holds the new cpt code
+ * @return status message
+ * @throws FormValidationException
+ * 		
+ */
+public String addCPTCode(ProcedureBean proc) throws FormValidationException {
+    validator.validate(proc);
+    try {
+        if (cptDAO.addCPTCode(proc)) {
+            return ((("Success: " + (proc.getCPTCode())) + " - ") + (proc.getDescription())) + " added";
+        } else
+            return "The database has become corrupt. Please contact the system administrator for assistance.";
+
+    } catch (DBException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    } catch (iTrustException e) {
+        return e.getMessage();
+    }
+}

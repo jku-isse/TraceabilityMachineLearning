@@ -1,0 +1,4 @@
+public void addBlankLine(final DefaultMutableTreeNode select, final int index) {
+    treeModel.insertNodeInto(new BlankLineNode(), (select == null ? getRoot() : ((DefaultMutableTreeNode) (select.getParent()))), (index == (-1) ? getRoot().getChildCount() : index));
+    appli.setAskForSave(true);
+}

@@ -1,0 +1,11 @@
+/**
+ * Creates a new instance.
+ */
+public NetFactory() {
+    for (Object[] o : NetFactory.classTagArray) {
+        addStorableClass(((String) (o[1])), ((Class) (o[0])));
+    }
+    for (Object[] o : NetFactory.enumTagArray) {
+        addEnumClass(((String) (o[1])), ((Class) (o[0])));
+    }
+}

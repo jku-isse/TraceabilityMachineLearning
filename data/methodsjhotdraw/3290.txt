@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public StrokeIcon(Stroke stroke) {
+    this.stroke = stroke;
+}

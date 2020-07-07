@@ -1,0 +1,6 @@
+public Date jumpLeft(Date baseDate) {
+    Calendar c = CalendarFactory.newCalendar();
+    c.setTime(baseDate);
+    c.add(myCalendarField, (-1));
+    return c.getTime();
+}

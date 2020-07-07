@@ -1,0 +1,12 @@
+public void testViewDiagnosisEchoVirus() throws Exception {
+    WebConversation wc = login("1", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 1L, 0L, "");
+    wr = wr.getLinkWith("My Diagnoses").click();
+    assertEquals("iTrust - My Diagnoses", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.DIAGNOSES_LIST_VIEW, 1L, 1L, "");
+    wr = wr.getLinkWith("Echovirus(79.10)").click();
+    wr = wr.getLinkWith("Transaction Log").click();
+    assertTrue(wr.getText().contains("Find LHCPs with experience with a diagnosis"));
+}

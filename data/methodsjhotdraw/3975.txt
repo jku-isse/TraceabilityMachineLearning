@@ -1,0 +1,6 @@
+/**
+ * Returns the input value that the JOptionPane returned, if it wants input.
+ */
+public Object getInputValue() {
+    return inputValue;
+}

@@ -1,0 +1,12 @@
+@Override
+public <T> void setAttribute(AttributeKey<T> key, T newValue) {
+    if (key == (AttributeKeys.CLOSED)) {
+        path.setClosed(((Boolean) (newValue)));
+    } else
+        if (key == (AttributeKeys.WINDING_RULE)) {
+            path.setWindingRule((newValue == (AttributeKeys.WindingRule.EVEN_ODD) ? GeneralPath.WIND_EVEN_ODD : GeneralPath.WIND_NON_ZERO));
+        }
+
+    super.setAttribute(key, newValue);
+    invalidate();
+}

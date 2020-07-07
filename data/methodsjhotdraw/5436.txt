@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public SVGPathOutlineHandle(SVGPathFigure owner, boolean isHoverHandle) {
+    super(owner);
+    this.isHoverHandle = isHoverHandle;
+}

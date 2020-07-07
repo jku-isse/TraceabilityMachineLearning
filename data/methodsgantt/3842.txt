@@ -1,0 +1,8 @@
+public void removeCustomField(String title) {
+    customFields.remove(title);
+    /* the property field is removed from all the existant resources */
+    Iterator it = resources.iterator();
+    while (it.hasNext()) {
+        ((HumanResource) (it.next())).removeCustomField(title);
+    } 
+}

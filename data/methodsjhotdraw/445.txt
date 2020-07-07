@@ -1,0 +1,3 @@
+public void setDerivedIndices(int... indices) {
+    this.derivedIndices = indices;
+}

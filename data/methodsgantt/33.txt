@@ -1,0 +1,10 @@
+public ChartComponentBase.MouseInteraction finishInteraction() {
+    try {
+        if ((getActiveInteraction()) != null) {
+            getActiveInteraction().finish();
+        }
+        return getActiveInteraction();
+    } finally {
+        setActiveInteraction(null);
+    }
+}

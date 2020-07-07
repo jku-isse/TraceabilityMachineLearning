@@ -1,0 +1,22 @@
+public JPanel constructDaysOffPanel() {
+    myDaysOffModel = new DateIntervalListEditor.DefaultDateIntervalModel() {
+        public int getMaxIntervalLength() {
+            return 2;
+        }
+
+        public void add(DateIntervalListEditor.DateInterval interval) {
+            super.add(interval);
+        }
+
+        public void remove(DateIntervalListEditor.DateInterval interval) {
+            super.remove(interval);
+        }
+    };
+    DefaultListModel daysOff = person.getDaysOff();
+    for (int i = 0; i < (daysOff.getSize()); i++) {
+        GanttDaysOff next = ((GanttDaysOff) (daysOff.get(i)));
+        myDaysOffModel.add(new DateIntervalListEditor.DateInterval(next.getStart().getTime(), next.getFinish().getTime()));
+    }
+    DateIntervalListEditor editor = new DateIntervalListEditor(myDaysOffModel);
+    return editor;
+}

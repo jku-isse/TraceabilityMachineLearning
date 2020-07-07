@@ -1,0 +1,8 @@
+/**
+ * Allows to determine, if a special shape is defined for this task.
+ *
+ * @return true, if this task has its own shape defined.
+ */
+public boolean shapeDefined() {
+    return (myShape) != null;
+}

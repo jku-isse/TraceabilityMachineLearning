@@ -1,0 +1,13 @@
+public void testGetConflictForAppointment() throws Exception {
+    List<ApptBean> conflicts = apptDAO.getAllHCPConflictsForAppt(doctorMID, a1);
+    assertEquals(0, conflicts.size());
+    apptDAO.scheduleAppt(a1);
+    conflicts = apptDAO.getAllHCPConflictsForAppt(doctorMID, a1);
+    assertEquals(1, conflicts.size());
+    ApptBean a1new = conflicts.get(0);
+    conflicts = apptDAO.getAllHCPConflictsForAppt(doctorMID, a1new);
+    assertEquals(0, conflicts.size());
+    apptDAO.scheduleAppt(a2);
+    conflicts = apptDAO.getAllHCPConflictsForAppt(doctorMID, a1new);
+    assertEquals(1, conflicts.size());
+}

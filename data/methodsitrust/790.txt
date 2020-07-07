@@ -1,0 +1,11 @@
+public void testNotFull() throws Exception {
+    action = new PrescriptionReportAction(factory, 9000000000L, "2");
+    List<OfficeVisitBean> officeVisits = action.getAllOfficeVisits();
+    Map params = new HashMap();
+    params.put("ov0", new String[]{ "on" });
+    params.put("ov1", new String[]{ "on" });
+    params.put("ov2", new String[]{ "unchecked" });
+    params.put("ov3", new String[]{ "unchecked" });
+    params.put("ov4", new String[]{ "on" });
+    assertEquals("&n=3&ovOff0=0&ovOff1=1&ovOff2=4", action.getQueryString(params, officeVisits));
+}

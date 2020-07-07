@@ -1,0 +1,10 @@
+/**
+ * Returns a list of DiagnosisBeans for the patient
+ *
+ * @return the list of DiagnosisBeans
+ * @throws DBException
+ * 		
+ */
+public List<DiagnosisBean> getDiagnoses() throws DBException {
+    return patientDAO.getDiagnoses(loggedInMID);
+}

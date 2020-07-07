@@ -1,0 +1,123 @@
+/**
+ * Creates new form.
+ */
+public JMixer() {
+    initComponents();
+    DefaultComboBoxModel presets = new DefaultComboBoxModel();
+    presets.addElement(new JMixer.Preset("Powerful", 4));
+    presets.addElement(new JMixer.Preset("Rich", 1));
+    presets.addElement(new JMixer.Preset("Romantic", 7));
+    presets.addElement(new JMixer.Preset("Vital", 12));
+    presets.addElement(new JMixer.Preset("Earthy", 10));
+    presets.addElement(new JMixer.Preset("Friendly", 20));
+    presets.addElement(new JMixer.Preset("Soft", 22));
+    presets.addElement(new JMixer.Preset("Welcoming", 28));
+    presets.addElement(new JMixer.Preset("Moving", 36));
+    presets.addElement(new JMixer.Preset("Elegant", 39));
+    presets.addElement(new JMixer.Preset("Fresh", 52));
+    presets.addElement(new JMixer.Preset("Traditional", 49));
+    presets.addElement(new JMixer.Preset("Refreshing", 60));
+    presets.addElement(new JMixer.Preset("Tropical", 62));
+    presets.addElement(new JMixer.Preset("Classic", 68));
+    presets.addElement(new JMixer.Preset("Dependable", 65));
+    presets.addElement(new JMixer.Preset("Calm", 70));
+    presets.addElement(new JMixer.Preset("Regal", 76));
+    presets.addElement(new JMixer.Preset("Magical", 84));
+    presets.addElement(new JMixer.Preset("Energetic", 92));
+    presets.addElement(new JMixer.Preset("Subdued", 94));
+    presetCombo.setModel(presets);
+    Font smallFont = new Font("Lucida Grande", Font.PLAIN, 11);
+    for (Component c : mixerPanel.getComponents()) {
+        c.setFont(smallFont);
+    }
+    // Create a list, overriding the getToolTipText() method
+    swatchesList = new JList() {
+        // This method is called as the cursor moves within the list.
+        @Override
+        public String getToolTipText(MouseEvent evt) {
+            // Get item index
+            int index = locationToIndex(evt.getPoint());
+            // Get item
+            Object item = getModel().getElementAt(index);
+            JComponent c = ((JComponent) (getCellRenderer().getListCellRendererComponent(this, item, index, false, false)));
+            // Return the tool tip text
+            return c.getToolTipText();
+        }
+    };
+    swatchesList.setLayoutOrientation(JList.VERTICAL_WRAP);
+    swatchesList.setVisibleRowCount(5);
+    scrollPane.setViewportView(swatchesList);
+    harmonicWheel.setColorSystem(new HSLRGBColorSystem());
+    ColorSliderModel m = harmonicWheel.getModel();
+    scrollPane.setPreferredSize(new Dimension(100, 100));
+    swatchesList.setModel(((ListModel) (harmonicWheel.getHarmonicColorModel())));
+    swatchesList.setCellRenderer(new ColorListCellRenderer());
+    harmonicWheel.getHarmonicColorModel().addPropertyChangeListener(new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            String name = evt.getPropertyName();
+        }
+    });
+    sliderModel = new DefaultColorSliderModel(harmonicWheel.getHarmonicColorModel().getColorSystem());
+    sliderModel.configureSlider(1, saturationSlider);
+    harmonicWheel.getHarmonicColorModel().addListDataListener(new ListDataListener() {
+        public void intervalAdded(ListDataEvent e) {
+        }
+
+        public void intervalRemoved(ListDataEvent e) {
+        }
+
+        public void contentsChanged(ListDataEvent e) {
+            (adjusting)++;
+            HarmonicColorModel hcm = harmonicWheel.getHarmonicColorModel();
+            CompositeColor cc = hcm.get(e.getIndex0());
+            if (cc != null) {
+                sliderModel.setCompositeColor(cc);
+            }
+            (adjusting)--;
+        }
+    });
+    harmonicWheel.addPropertyChangeListener(new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            String name = evt.getPropertyName();
+            if (name == (JHarmonicColorWheel.SELECTED_INDEX_PROPERTY)) {
+                (adjusting)++;
+                int index = harmonicWheel.getSelectedIndex();
+                HarmonicColorModel hcm = harmonicWheel.getHarmonicColorModel();
+                if (index != (-1)) {
+                    sliderModel.setCompositeColor(hcm.get(index));
+                }
+                (adjusting)--;
+            }
+        }
+    });
+    sliderModel.addChangeListener(new ChangeListener() {
+        public void stateChanged(ChangeEvent e) {
+            if (((adjusting)++) == 0) {
+                HarmonicColorModel hcm = harmonicWheel.getHarmonicColorModel();
+                if (!(hcm.isAdjusting())) {
+                    int index = harmonicWheel.getSelectedIndex();
+                    if (index != (-1)) {
+                        CompositeColor cc = sliderModel.getCompositeColor();
+                        CompositeColor oldValue = hcm.get(index);
+                        CompositeColor newValue = new CompositeColor(oldValue.getSystem(), oldValue.getComponent(0), cc.getComponent(1), oldValue.getComponent(2));
+                        hcm.set(index, newValue);
+                    }
+                }
+            }
+            (adjusting)--;
+        }
+    });
+    harmonicWheel.setSelectedIndex(0);
+    harmonicWheel.getHarmonicColorModel().setSize(25);
+    // updateRules();
+    HarmonicColorModel h = harmonicWheel.getHarmonicColorModel();
+    ColorSystem sys = h.getColorSystem();
+    h.set(0, new CompositeColor(sys, new Color(0, 19, 148)));
+    h.set(1, new CompositeColor(sys, new Color(218, 37, 26)));
+    h.set(2, new CompositeColor(sys, new Color(70, 148, 27)));
+    h.set(3, new CompositeColor(sys, new Color(174, 46, 248)));
+    h.set(4, new CompositeColor(sys, new Color(255, 252, 76)));
+    h.set(5, new CompositeColor(sys, new Color(234, 155, 65)));
+    h.set(6, new CompositeColor(sys, new Color(51, 51, 51)));
+    h.set(7, new CompositeColor(sys, new Color(153, 153, 153)));
+}

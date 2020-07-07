@@ -1,0 +1,14 @@
+public Rectangle2D.Double getDrawingArea() {
+    if ((cachedDrawingArea) == null) {
+        cachedDrawingArea = super.getDrawingArea();
+        for (Figure child : getChildrenFrontToBack()) {
+            if (child.isVisible()) {
+                Rectangle2D.Double childBounds = child.getDrawingArea();
+                if (!(childBounds.isEmpty())) {
+                    cachedDrawingArea.add(childBounds);
+                }
+            }
+        }
+    }
+    return ((Rectangle2D.Double) (cachedDrawingArea.clone()));
+}

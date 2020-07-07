@@ -1,0 +1,4 @@
+/**
+ * Returns the specified point.
+ */
+public Point2D.Double getPoint(int index);

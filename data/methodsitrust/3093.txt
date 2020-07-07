@@ -1,0 +1,25 @@
+/**
+ * Return remote monitoring list data for a given patient.
+ *
+ * @param patientMID
+ * 		Patient to retrieve data for.
+ * @return List of TelemedicineBeans
+ * @throws DBException
+ * 		
+ */
+public List<TelemedicineBean> getTelemedicineBean(long patientMID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM remotemonitoringlists WHERE PatientMID=?");
+        ps.setLong(1, patientMID);
+        ResultSet rs = ps.executeQuery();
+        return rmListLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

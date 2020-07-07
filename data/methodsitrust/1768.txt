@@ -1,0 +1,4 @@
+public long getOriginalMessageId() {
+    // NEW
+    return this.originalMsgId;
+}

@@ -1,0 +1,20 @@
+/**
+ * doPost method that takes a user request and serves them a downloadable xml based on their defined search criteria.
+ */
+protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    grga = new GroupReportGeneratorAction(factory, request);
+    try {
+        grga.generateReport();
+        doc = XmlGenerator.generateXml(grga.getReportHeaders(), grga.getReportData());
+        // Set the headers.
+        response.setContentType("application/x-download");
+        response.setHeader("Content-Disposition", (("attachment; filename=patientReport-" + (Calendar.getInstance().getTimeInMillis())) + ".xml"));
+        DOMSource source = new DOMSource(doc);
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        Writer writer = new OutputStreamWriter(response.getOutputStream());
+        StreamResult result = new StreamResult(writer);
+        transformer.transform(source, result);
+    } catch (Exception e) {
+        System.out.println(e);
+    }
+}

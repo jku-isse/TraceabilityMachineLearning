@@ -1,0 +1,20 @@
+/**
+ * Returns an array containing the critical tasks.
+ *
+ * @return An array containing the critical tasks.
+ */
+public Task[] getCriticalTasks() {
+    // System.out.println("getCriticalTasks");
+    List lastTasks = getLastTasks();
+    List res = new ArrayList(lastTasks);
+    // System.out.println("lastTasks " + lastTasks);;
+    Iterator it = lastTasks.iterator();
+    while (it.hasNext()) {
+        Task t = ((Task) (it.next()));
+        res.add(t);
+        checkCriticalTasks(t, res);
+    } 
+    Task[] r = new Task[res.size()];
+    res.toArray(r);
+    return r;
+}

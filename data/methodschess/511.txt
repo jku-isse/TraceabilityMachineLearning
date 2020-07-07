@@ -1,0 +1,9 @@
+/**
+ * Set a new buffer for the game notation.
+ *
+ * @param notation
+ * 		The new notation buffer.
+ */
+public final void setNotation(GameNotation notation) {
+    _notation = notation;
+}

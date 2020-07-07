@@ -1,0 +1,10 @@
+/**
+ * Gets the side of the connection that is unaffected by
+ * the change.
+ */
+protected Connector getSource() {
+    if ((getTarget()) == (getOwner().getStartConnector())) {
+        return getOwner().getEndConnector();
+    }
+    return getOwner().getStartConnector();
+}

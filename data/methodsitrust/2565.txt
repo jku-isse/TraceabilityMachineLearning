@@ -1,0 +1,4 @@
+public void testCanAccessProductionDriver() throws Exception {
+    // Should never be able to do this because JUnit is not running under Tomcat
+    assertFalse(DBUtil.canObtainProductionInstance());
+}

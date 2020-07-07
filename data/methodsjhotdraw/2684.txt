@@ -1,0 +1,4 @@
+@Override
+protected Point2D.Double chop(Figure target, Point2D.Double from) {
+    return Geom.angleToPoint(target.getBounds(), angle);
+}

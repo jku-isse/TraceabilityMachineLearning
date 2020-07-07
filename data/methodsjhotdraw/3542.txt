@@ -1,0 +1,5 @@
+/**
+ * Creates an empty polygon.
+ */
+public Polygon2D() {
+}

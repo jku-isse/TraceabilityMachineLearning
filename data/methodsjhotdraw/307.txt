@@ -1,0 +1,23 @@
+protected void reviewNext() {
+    int unsavedViewsCount = 0;
+    View documentToBeReviewed = null;
+    for (View p : getApplication().views()) {
+        if (p.hasUnsavedChanges()) {
+            if (p.isEnabled()) {
+                documentToBeReviewed = p;
+            }
+            unsavedViewsCount++;
+        }
+    }
+    if (unsavedViewsCount == 0) {
+        doExit();
+    } else
+        if (documentToBeReviewed != null) {
+            unsavedView = documentToBeReviewed;
+            reviewChanges();
+        } else {
+            getApplication().setEnabled(true);
+            // System.out.println("exit silently aborted");
+        }
+
+}

@@ -1,0 +1,11 @@
+protected void drawStroke(Graphics2D g) {
+    Ellipse2D.Double r = ((Ellipse2D.Double) (ellipse.clone()));
+    double grow = AttributeKeys.getPerpendicularDrawGrowth(this);
+    r.x -= grow;
+    r.y -= grow;
+    r.width += grow * 2;
+    r.height += grow * 2;
+    if (((r.width) > 0) && ((r.height) > 0)) {
+        g.draw(r);
+    }
+}

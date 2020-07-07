@@ -1,0 +1,3 @@
+public int getBottomUnitWidth() {
+    return myBottomUnitWidth;
+}

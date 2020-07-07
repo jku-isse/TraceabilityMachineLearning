@@ -1,0 +1,10 @@
+/**
+ * Get a referral query for a receiving HCP.
+ *
+ * @param mid
+ * 		The HCP id.
+ * @return A ReferralListQuery object.
+ */
+public ReferralDAO.ReferralListQuery getReceiverQuery(long mid) {
+    return new ReferralDAO.ReceiverReferralListQuery(this.factory, mid);
+}

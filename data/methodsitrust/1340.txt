@@ -1,0 +1,17 @@
+/**
+ * Constructs an action that is initially unsaved.  Like the three-argument
+ * constructor except that the office visit id is a sentinel value and does
+ * not represent a valid office visit.
+ *
+ * @param factory
+ * 		
+ * @param pidString
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public OfficeVisitBaseAction(DAOFactory factory, String pidString) throws iTrustException {
+    super(factory, pidString);
+    this.ovDAO = factory.getOfficeVisitDAO();
+    this.ovID = OfficeVisitBaseAction.UNSAVED_VISIT_ID;
+}

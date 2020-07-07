@@ -1,0 +1,3 @@
+public void setHCPspecialty(String specialty) {
+    this.hcpSpecialty = specialty;
+}

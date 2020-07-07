@@ -1,0 +1,3 @@
+public boolean isRedlineOn() {
+    return myProjectConfig.isRedlineOn();
+}

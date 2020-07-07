@@ -1,0 +1,10 @@
+private LinkedList getDefaultOffsetsInRange(/* <Offset> */
+ChartModelBase.Offset offsetBefore, ChartModelBase.Offset offsetAfter) {
+    /* <Offset> */
+    LinkedList result = /* <Offset> */
+    new LinkedList(getChartModel().getDefaultUnitOffsetsInRange(offsetBefore, offsetAfter));
+    if (offsetBefore != null) {
+        result.addFirst(offsetBefore);
+    }
+    return result;
+}

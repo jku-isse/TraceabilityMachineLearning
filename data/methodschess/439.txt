@@ -1,0 +1,16 @@
+// Constructors
+/**
+ * Create a new ply notation instance.
+ *
+ * @param ply
+ * 		The ply to render.
+ * @param piece
+ * 		The moved piece.
+ */
+public PlyNotationImpl(Ply ply, Piece piece) {
+    setPly(ply);
+    setPiece(piece);
+    // Render the string representation only once and not during
+    // the toString() call.
+    computeStringRepresentation();
+}

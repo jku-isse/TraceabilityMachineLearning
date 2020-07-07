@@ -1,0 +1,20 @@
+public long getHCPMID(int id) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM adverseevents WHERE id=?");
+        ps.setInt(1, id);
+        ResultSet rs = ps.executeQuery();
+        long hcpMID = 0;
+        if (rs.next()) {
+            hcpMID = rs.getLong("Prescriber");
+        }
+        return hcpMID;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

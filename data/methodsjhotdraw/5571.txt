@@ -1,0 +1,11 @@
+/**
+ * Creates new form.
+ */
+public AbstractToolBar() {
+    initComponents();
+    try {
+        prefs = Preferences.userNodeForPackage(getClass());
+    } catch (SecurityException e) {
+        // prefs is null, because we are not permitted to read preferences
+    }
+}

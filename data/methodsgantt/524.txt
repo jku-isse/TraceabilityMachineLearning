@@ -1,0 +1,9 @@
+public GanttResourcePanel getResourcePanel() {
+    if ((this.resp) == null) {
+        this.resp = new GanttResourcePanel(this, getTree(), getUIFacade());
+        this.resp.setResourceActions(getResourceActions());// TODO pass
+
+        getHumanResourceManager().addView(this.resp);
+    }
+    return this.resp;
+}

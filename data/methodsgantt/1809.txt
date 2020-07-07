@@ -1,0 +1,3 @@
+public Color getSpanningHeaderBackgroundColor() {
+    return mySpanningHeaderBackgroundColor;
+}

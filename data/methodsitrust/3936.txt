@@ -1,0 +1,16 @@
+public void testDocumentImmunization() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Document Office Visit").click();
+    assertEquals("iTrust - Please Select a Patient", wr.getTitle());
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "6");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    wr = wr.getLinkWith("07/10/2004").click();
+    WebTable table = wr.getTableStartingWith("[Top]Immunizations");
+    assertEquals("90649", table.getCellAsText(2, 0));
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_VIEW, 9000000000L, 6L, "Office visit");
+}

@@ -1,0 +1,10 @@
+private TaskNode[] getOnlyTaskNodes(DefaultMutableTreeNode[] array) {
+    List resAsList = new ArrayList();
+    for (int i = 0; i < (array.length); i++) {
+        DefaultMutableTreeNode next = array[i];
+        if (next instanceof TaskNode)
+            resAsList.add(next);
+
+    }
+    return ((TaskNode[]) (resAsList.toArray(new TaskNode[0])));
+}

@@ -1,0 +1,3 @@
+public String getFileTypeDescription() {
+    return GanttLanguage.getInstance().getText("ganttprojectFiles");
+}

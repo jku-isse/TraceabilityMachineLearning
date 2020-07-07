@@ -1,0 +1,1 @@
+ShapePaint getShape();

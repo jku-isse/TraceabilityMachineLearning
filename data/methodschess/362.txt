@@ -1,0 +1,16 @@
+/**
+ * Run the actual test.
+ */
+private void generatorTest() {
+    // Get the plies for white
+    Ply[] plies = _plyGenerator.getPliesForColor(true);
+    // Check if d3 x h7 was delivered as a potential ply.
+    boolean containsCapture = false;
+    for (int i = 0; i < (plies.length); i++) {
+        if ((19 == (plies[i].getSource().getSquareIndex())) && (55 == (plies[i].getDestination().getSquareIndex()))) {
+            containsCapture = true;
+            break;
+        }
+    }
+    assertTrue("PlyGenerator computes capture d3 x h7", containsCapture);
+}

@@ -1,0 +1,11 @@
+/**
+ * Return the selected node
+ */
+public DefaultMutableTreeNode getSelectedNode() {
+    TreePath currentSelection = treetable.getTree().getSelectionPath();
+    if (currentSelection == null) {
+        return null;
+    }
+    DefaultMutableTreeNode dmtnselected = ((DefaultMutableTreeNode) (currentSelection.getLastPathComponent()));
+    return dmtnselected;
+}

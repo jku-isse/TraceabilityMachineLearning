@@ -1,0 +1,14 @@
+public boolean addApptType(ApptTypeBean apptType) throws SQLException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    conn = factory.getConnection();
+    ps = conn.prepareStatement(("INSERT INTO appointmenttype (appt_type, duration) " + "VALUES (?, ?)"));
+    this.atLoader.loadParameters(ps, apptType);
+    int x = ps.executeUpdate();
+    DBUtil.closeConnection(conn, ps);
+    if (x > 0)
+        return true;
+    else
+        return false;
+
+}

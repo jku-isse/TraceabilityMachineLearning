@@ -1,0 +1,5 @@
+@Override
+public String getToolTipText(Point p) {
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    return labels.getString("handle.resize.toolTipText");
+}

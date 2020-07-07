@@ -1,0 +1,3 @@
+public void setOfficeVisit(OfficeVisitBean officeVisit) {
+    this.officeVisit = officeVisit;
+}

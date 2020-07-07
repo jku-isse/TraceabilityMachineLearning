@@ -1,0 +1,8 @@
+public GanttProjectImpl() {
+    myResourceManager = new HumanResourceManager(net.sourceforge.ganttproject.roles.RoleManager.Access.getInstance().getDefaultRole());
+    myTaskManagerConfig = new GanttProjectImpl.TaskManagerConfigImpl(myResourceManager, GanttLanguage.getInstance());
+    myTaskManager = TaskManager.Access.newInstance(null, myTaskManagerConfig);
+    myUIConfiguration = new UIConfiguration(Fonts.DEFAULT_MENU_FONT, Fonts.DEFAULT_CHART_FONT, Color.BLUE, true);
+    myTaskCustomColumnStorage = new CustomColumnsStorage();
+    myTaskCustomColumnManager = new CustomColumnsManager(myTaskCustomColumnStorage);
+}

@@ -1,0 +1,41 @@
+protected TableCellEditor newDateCellEditor() {
+    return new GPTreeTableBase.DateCellEditor() {
+        protected Date parseDate(String dateString) {
+            DateFormat[] formats = new DateFormat[]{ GanttLanguage.getInstance().getLongDateFormat(), GanttLanguage.getInstance().getMediumDateFormat(), GanttLanguage.getInstance().getShortDateFormat() };
+            for (int i = 0; i < (formats.length); i++) {
+                try {
+                    Date typedDate = formats[i].parse(dateString);
+                    Calendar typedCal = CalendarFactory.newCalendar();
+                    typedCal.setTime(typedDate);
+                    Calendar projectStartCal = CalendarFactory.newCalendar();
+                    projectStartCal.setTime(myProject.getTaskManager().getProjectStart());
+                    int yearDiff = Math.abs(((typedCal.get(Calendar.YEAR)) - (projectStartCal.get(Calendar.YEAR))));
+                    if (yearDiff > 1500) {
+                        AttributedCharacterIterator iter = formats[i].formatToCharacterIterator(typedDate);
+                        int additionalZeroes = -1;
+                        StringBuffer result = new StringBuffer();
+                        for (char c = iter.first(); c != (iter.DONE); c = iter.next()) {
+                            if (((iter.getAttribute(DateFormat.Field.YEAR)) != null) && (additionalZeroes == (-1))) {
+                                additionalZeroes = (iter.getRunLimit(DateFormat.Field.YEAR)) - (iter.getIndex());
+                                for (int j = 0; j < additionalZeroes; j++) {
+                                    result.append(0);
+                                }
+                            }
+                            result.append(c);
+                        }
+                        if (!(result.toString().equals(dateString))) {
+                            typedCal.add(Calendar.YEAR, 2000);
+                            return typedCal.getTime();
+                        }
+                    }
+                    return typedDate;
+                } catch (ParseException e) {
+                    if ((i + 1) == (formats.length)) {
+                        return null;
+                    }
+                }
+            }
+            return null;
+        }
+    };
+}

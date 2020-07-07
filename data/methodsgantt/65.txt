@@ -1,0 +1,3 @@
+protected MouseInteractionBase(MouseEvent e) {
+    myStartX = e.getX();
+}

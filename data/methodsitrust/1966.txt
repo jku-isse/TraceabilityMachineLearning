@@ -1,0 +1,14 @@
+/* public int compareTo(PersonnelBean other) {
+if (MID == other.getMID()) return 0;
+if (MID > other.getMID()) return 1;
+return -1;
+}
+ */
+public int getIndexIn(List<PersonnelBean> list) {
+    for (int i = 0; i < (list.size()); i++) {
+        if ((list.get(i).MID) == (this.MID))
+            return i;
+
+    }
+    return -1;
+}

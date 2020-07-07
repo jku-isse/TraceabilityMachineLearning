@@ -1,0 +1,7 @@
+SaveProjectAction(GanttProject mainFrame) {
+    super("saveProject", "16");
+    myMainFrame = mainFrame;
+    mainFrame.addProjectEventListener(this);
+    putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_S, GPAction.MENU_MASK));
+    setEnabled(false);
+}

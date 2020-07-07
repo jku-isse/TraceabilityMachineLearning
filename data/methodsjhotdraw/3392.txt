@@ -1,0 +1,8 @@
+/**
+ * Gets winding rule for filling the bezier path.
+ *
+ * @return GeneralPath.WIND_EVEN_ODD or GeneralPath.WIND_NON_ZERO.
+ */
+public int getWindingRule() {
+    return windingRule;
+}

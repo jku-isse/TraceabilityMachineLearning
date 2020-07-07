@@ -1,0 +1,4 @@
+/**
+ * Stop the entire timer.
+ */
+void stop();

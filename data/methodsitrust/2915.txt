@@ -1,0 +1,29 @@
+/**
+ * Updates a particular hospitals description. Returns the number of rows affected (should be 1)
+ *
+ * @param hosp
+ * 		The HospitalBean to update.
+ * @return An int indicating the number of affected rows.
+ * @throws DBException
+ * 		
+ */
+public int updateHospital(HospitalBean hosp) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("UPDATE hospitals SET HospitalName=?,Address=?,City=?,State=?,Zip=?" + "WHERE HospitalID = ?"));
+        ps.setString(1, hosp.getHospitalName());
+        ps.setString(2, hosp.getHospitalAddress());
+        ps.setString(3, hosp.getHospitalCity());
+        ps.setString(4, hosp.getHospitalState());
+        ps.setString(5, hosp.getHospitalZip());
+        ps.setString(6, hosp.getHospitalID());
+        return ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

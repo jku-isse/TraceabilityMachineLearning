@@ -1,0 +1,6 @@
+/**
+ * Return the selected project name
+ */
+public String getProjectName() {
+    return tfName.getText();
+}

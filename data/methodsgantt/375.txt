@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return if you want to open the tips at the start of GP.
+ */
+public boolean getOpenTips() {
+    return openTips;
+}

@@ -1,0 +1,5 @@
+private static MethodDescriptor[] getMdescriptor() {
+    // GEN-HEADEREND:Methods
+    // Here you can add code for customizing the methods array.
+    return JAttributeTextFieldBeanInfo.methods;
+}// GEN-LAST:Methods

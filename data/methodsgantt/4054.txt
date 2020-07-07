@@ -1,0 +1,17 @@
+public void valueChanged(ListSelectionEvent event) {
+    if (event.getValueIsAdjusting())
+        return;
+
+    Object source = event.getSource();
+    if (source == (patternList)) {
+        preview.setPattern(((ShapePaint) (patternList.getSelectedPaint())));
+    }
+    if (source == (foregroundList)) {
+        preview.setForeground(((Color) (foregroundList.getSelectedPaint())));
+    }
+    if (source == (backgroundList)) {
+        preview.setBackground(((Color) (backgroundList.getSelectedPaint())));
+    }
+    fireActionEvent();
+    preview.repaint();
+}

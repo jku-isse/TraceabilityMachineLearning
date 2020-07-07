@@ -1,0 +1,6 @@
+public Role createRole(String name, int persistentID) {
+    RoleImpl result = new RoleImpl(persistentID, name, this);
+    myRoles.add(result);
+    myRoleManager.fireRolesChanged(this);
+    return result;
+}

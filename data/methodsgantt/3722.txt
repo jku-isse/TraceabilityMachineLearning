@@ -1,0 +1,13 @@
+private void loadTaskProperty(Attributes atts) {
+    String name = atts.getValue("name");
+    String id = atts.getValue("id");
+    String type = atts.getValue("valuetype");
+    if (atts.getValue("type").equals("custom")) {
+        CustomColumn cc;
+        String valueStr = atts.getValue("defaultvalue");
+        CustomPropertyDefinition stubDefinition = net.sourceforge.ganttproject.CustomPropertyManager.PropertyTypeEncoder.decodeTypeAndDefaultValue(type, valueStr);
+        cc = new CustomColumn(name, stubDefinition.getType(), stubDefinition.getDefaultValue());
+        cc.setId(id);
+        myColumnStorage.addCustomColumn(cc);
+    }
+}

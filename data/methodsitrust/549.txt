@@ -1,0 +1,11 @@
+public void testBaseCase() throws iTrustException {
+    assertEquals("Andy Programmer", action.getPatientName());
+    assertEquals("O-", action.getBloodType());
+    List<AllergyBean> lab = action.getAllergies();
+    assertEquals(2, lab.size());
+    List<PrescriptionBean> lpb = action.getCurrentPrescriptions();
+    assertEquals(1, lpb.size());
+    assertEquals("Prioglitazone", lpb.get(0).getMedication().getDescription());
+    List<DiagnosisBean> ldb = action.getWarningDiagnoses();
+    assertEquals(2, ldb.size());
+}

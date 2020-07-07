@@ -1,0 +1,5 @@
+/**
+ * as the hotspot exits a platform dependent drop site
+ */
+public void dragExit(DragSourceEvent dsde) {
+}

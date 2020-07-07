@@ -1,0 +1,3 @@
+private ResourceManager getResourceManager() {
+    return myResourceManager;
+}

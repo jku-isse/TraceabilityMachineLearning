@@ -1,0 +1,9 @@
+private void adjustLength() {
+    myUnpluggedClone.setStart(this.start);
+    myUnpluggedClone.setEnd(this.end);
+    length = ((int) (myUnpluggedClone.getDuration().getLength()));
+    durationField1.setText(("" + (length)));
+    // durationField2.setText(""+length);
+    myAllocationsPanel[0].durationChanged(length);
+    durationFieldNotes.setText(("" + (length)));
+}

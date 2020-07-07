@@ -1,0 +1,13 @@
+public void testEditLabProcedure() throws Exception {
+    action = new EditLabProceduresAction(factory, 9000000000L, "2", "952");
+    assertEquals(1, action.getLabProcedures().size());
+    LabProcedureBean bean = action.getLabProcedures().get(0);
+    assertEquals("Performed the procedure", bean.getCommentary());
+    bean.setCommentary("But I dont want to be a pirate!");
+    bean.setOvID(952);
+    bean.setPid(2);
+    action.editLabProcedure(bean);
+    assertEquals(1, action.getLabProcedures().size());
+    bean = action.getLabProcedures().get(0);
+    assertEquals("But I dont want to be a pirate!", bean.getCommentary());
+}

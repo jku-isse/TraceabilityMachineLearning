@@ -1,0 +1,3 @@
+protected TimeUnit getTopUnit() {
+    return myTopUnit;
+}

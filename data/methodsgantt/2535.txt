@@ -1,0 +1,12 @@
+/**
+ * Creates an instance of GTextField with a default text.
+ *
+ * @param text
+ * 		Text to be put into the text field.
+ */
+public GTextField(String text) {
+    super();
+    this.setDocument(new GPlainDocument(null));
+    this.setText(text);
+    this.setHorizontalAlignment(SwingConstants.RIGHT);
+}

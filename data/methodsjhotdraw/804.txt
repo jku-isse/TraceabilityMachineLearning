@@ -1,0 +1,10 @@
+/**
+ * Removes all children.
+ *
+ * @see #add
+ */
+public void basicRemoveAll(Collection<? extends Figure> figures) {
+    for (Figure f : figures) {
+        basicRemove(f);
+    }
+}

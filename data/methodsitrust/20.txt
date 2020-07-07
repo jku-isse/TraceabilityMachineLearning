@@ -1,0 +1,13 @@
+public void testCSVEndsWhileInQuote() {
+    Scanner CSVHeader = new Scanner("test1,test2,test3
+testing,testing,"123");
+    CSVParser test = null;
+    try {
+        test = new CSVParser(CSVHeader);
+    } catch (Exception e) {
+        assertTrue(false);
+    }
+    ArrayList<ArrayList<String>> data = test.getData();
+    assertEquals(0, data.size());
+    assertEquals("[Line ended while inside quotes on line 2]", test.getErrors().toString());
+}

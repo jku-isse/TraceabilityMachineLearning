@@ -1,0 +1,3 @@
+public boolean contains(Point p) {
+    return getBounds().contains(p);
+}

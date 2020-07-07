@@ -1,0 +1,6 @@
+public DeleteAssignmentAction(ResourceManager hrManager, AssignmentContext context, GanttProject projectFrame) {
+    myProjectFrame = projectFrame;
+    // this.putValue(AbstractAction.NAME, GanttProject
+    // .correctLabel(getLanguage().getText("deleteAssignment")));
+    myContext = context;
+}

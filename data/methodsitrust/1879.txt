@@ -1,0 +1,3 @@
+public void setBloodType(BloodType bloodType) {
+    this.bloodType = bloodType;
+}

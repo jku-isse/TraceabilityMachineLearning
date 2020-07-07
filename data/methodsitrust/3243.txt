@@ -1,0 +1,6 @@
+public void testGetPatient2() throws Exception {
+    List<DiagnosisBean> diagnoses = patientDAO.getDiagnoses(2L);
+    assertEquals(6, diagnoses.size());
+    assertEquals("250.10", diagnoses.get(0).getICDCode());
+    assertEquals("Diabetes with ketoacidosis", diagnoses.get(0).getDescription());
+}

@@ -1,0 +1,3 @@
+protected Rectangle basicGetBounds() {
+    return getView().drawingToView(getOwner().getDrawingArea());
+}

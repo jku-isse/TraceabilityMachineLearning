@@ -1,0 +1,30 @@
+/**
+ * This is a default implementation that chops the point at the rectangle
+ * returned by getBounds() of the figure.
+ * <p>
+ * Figures which have a non-rectangular shape need to override this method.
+ * <p>
+ * This method takes the following attributes into account:
+ * AttributeKeys.STROKE_COLOR, AttributeKeys.STROKE_PLACEMENT, and
+ * AttributeKeys.StrokeTotalWidth.
+ */
+public Point2D.Double chop(Point2D.Double from) {
+    Rectangle2D.Double r = getBounds();
+    if ((AttributeKeys.STROKE_COLOR.get(this)) != null) {
+        double grow;
+        switch (AttributeKeys.STROKE_PLACEMENT.get(this)) {
+            case CENTER :
+            default :
+                grow = AttributeKeys.getStrokeTotalWidth(this);
+                break;
+            case OUTSIDE :
+                grow = AttributeKeys.getStrokeTotalWidth(this);
+                break;
+            case INSIDE :
+                grow = 0.0;
+                break;
+        }
+        Geom.grow(r, grow, grow);
+    }
+    return Geom.angleToPoint(r, Geom.pointToAngle(r, from));
+}

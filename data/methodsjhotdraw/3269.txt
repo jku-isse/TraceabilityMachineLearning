@@ -1,0 +1,9 @@
+/**
+ * Creates a new instance.
+ */
+public SelectSameAction(DrawingEditor editor) {
+    super(editor);
+    labels.configureAction(this, SelectSameAction.ID);
+    // putValue(AbstractAction.NAME, labels.getString("editSelectSame"));
+    // putValue(AbstractAction.MNEMONIC_KEY, labels.getString("editSelectSameMnem"));
+}

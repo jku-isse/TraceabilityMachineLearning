@@ -1,0 +1,29 @@
+/**
+ * Splits the segment at the given Point2D.Double if a segment was hit.
+ *
+ * @return the index of the segment or -1 if no segment was hit.
+ */
+public int splitSegment(Point2D.Double split, double tolerance) {
+    int i = findSegment(split, tolerance);
+    int nextI = (i + 1) % (size());
+    if (i != (-1)) {
+        if ((((get(i).mask) & (BezierPath.C2_MASK)) == (BezierPath.C2_MASK)) && (((get(nextI).mask) & (BezierPath.C1_MASK)) == 0)) {
+            // quadto
+            add((i + 1), new BezierPath.Node(BezierPath.C2_MASK, split, split, split));
+        } else
+            if ((((get(i).mask) & (BezierPath.C2_MASK)) == 0) && (((get(nextI).mask) & (BezierPath.C1_MASK)) == (BezierPath.C1_MASK))) {
+                // quadto
+                add((i + 1), new BezierPath.Node(BezierPath.C1_MASK, split, split, split));
+            } else
+                if ((((get(i).mask) & (BezierPath.C2_MASK)) == (BezierPath.C2_MASK)) && (((get(nextI).mask) & (BezierPath.C1_MASK)) == (BezierPath.C1_MASK))) {
+                    // cubicto
+                    add((i + 1), new BezierPath.Node(((BezierPath.C1_MASK) | (BezierPath.C2_MASK)), split, split, split));
+                } else {
+                    // lineto
+                    add((i + 1), new BezierPath.Node(split));
+                }
+
+
+    }
+    return i + 1;
+}

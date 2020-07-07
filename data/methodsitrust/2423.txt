@@ -1,0 +1,10 @@
+public ProcedureBean loadSingle(ResultSet rs) throws SQLException {
+    ProcedureBean procedure = new ProcedureBean(rs.getString("Code"));
+    procedure.setDescription(rs.getString("Description"));
+    procedure.setAttribute(rs.getString("Attribute"));
+    if (loadOVProcedureID) {
+        procedure.setOvProcedureID(rs.getLong("ID"));
+        procedure.setDate(rs.getDate("visitDate"));
+    }
+    return procedure;
+}

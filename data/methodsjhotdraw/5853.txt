@@ -1,0 +1,14 @@
+/**
+ * Creates a new multipart POST HTTP request on a freshly opened URLConnection
+ *
+ * @param connection
+ * 		an already open URL connection
+ * @throws IOException
+ * 		
+ */
+public ClientHttpRequest(URLConnection connection) throws IOException {
+    this._connection = connection;
+    connection.setDoOutput(true);
+    connection.setDoInput(true);
+    connection.setRequestProperty("Content-Type", ("multipart/form-data; boundary=" + (boundary)));
+}

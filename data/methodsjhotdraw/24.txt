@@ -1,0 +1,2 @@
+public void removePalette(Window palette) {
+}

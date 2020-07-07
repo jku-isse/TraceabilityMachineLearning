@@ -1,0 +1,17 @@
+public Object[] getExtensions(String extensionPointID, Class extensionPointInterface) {
+    IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
+    IConfigurationElement[] configElements = extensionRegistry.getConfigurationElementsFor(extensionPointID);
+    ArrayList extensions = new ArrayList();
+    for (int i = 0; i < (configElements.length); i++) {
+        try {
+            Object nextExtension = configElements[i].createExecutableExtension("class");
+            assert (nextExtension != null) && (extensionPointInterface.isAssignableFrom(nextExtension.getClass()));
+            extensions.add(nextExtension);
+        } catch (CoreException e) {
+            if (!(GPLogger.log(e))) {
+                e.printStackTrace(System.err);
+            }
+        }
+    }
+    return extensions.toArray(((Object[]) (Array.newInstance(extensionPointInterface, 0))));
+}

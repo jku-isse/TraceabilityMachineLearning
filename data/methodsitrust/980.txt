@@ -1,0 +1,3 @@
+public ViewAdverseEventAction(DAOFactory factory) {
+    this.adEventDAO = factory.getAdverseEventDAO();
+}

@@ -1,0 +1,23 @@
+/**
+ * Action on click the down button.
+ */
+private void downButtonActionPerformed(ActionEvent evt) {
+    Object[] objects = list.getSelectedValues();
+    int[] selection = list.getSelectedIndices();
+    if ((objects.length) > 0) {
+        if ((selection[((selection.length) - 1)]) != ((iconList.size()) - 1)) {
+            list.ensureIndexIsVisible(selection[((selection.length) - 1)]);
+            for (int i = (objects.length) - 1; i > (-1); i--) {
+                int index = selection[i];
+                iconList.setElementAt(iconList.getElementAt((index + 1)), index);
+                iconList.setElementAt(objects[i], (index + 1));
+                Object object = buttonList.getElementAt(index);
+                buttonList.setElementAt(buttonList.getElementAt((index + 1)), index);
+                buttonList.setElementAt(object, (index + 1));
+                selection[i] = index + 1;
+            }
+            list.setSelectedIndices(selection);
+        }
+        bIconMoved = true;
+    }
+}

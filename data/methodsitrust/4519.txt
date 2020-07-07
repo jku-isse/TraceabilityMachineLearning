@@ -1,0 +1,8 @@
+@Override
+protected void setUp() throws Exception {
+    ctrl = createControl();
+    mockContext = ctrl.createMock(PageContext.class);
+    mockWriter = ctrl.createMock(JspWriter.class);
+    mockParent = ctrl.createMock(Tag.class);
+    expect(mockContext.getOut()).andReturn(mockWriter).anyTimes();
+}

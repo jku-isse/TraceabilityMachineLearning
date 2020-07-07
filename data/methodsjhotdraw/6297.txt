@@ -1,0 +1,17 @@
+/**
+ * Invokes the specified accessible parameterless method if it exists.
+ *
+ * @param clazz
+ * 		The class on which to invoke the method.
+ * @param methodName
+ * 		The name of the method.
+ * @return The return value of the method.
+ * @return NoSuchMethodException if the method does not exist or is not accessible.
+ */
+public static Object invokeStatic(String clazz, String methodName) throws NoSuchMethodException {
+    try {
+        return Methods.invokeStatic(Class.forName(clazz), methodName);
+    } catch (ClassNotFoundException e) {
+        throw new NoSuchMethodException((("class " + clazz) + " not found"));
+    }
+}

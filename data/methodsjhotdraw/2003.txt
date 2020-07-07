@@ -1,0 +1,6 @@
+/**
+ * Gets the bounds of the invalidated area on the drawing.
+ */
+public Rectangle2D.Double getInvalidatedArea() {
+    return invalidatedArea;
+}

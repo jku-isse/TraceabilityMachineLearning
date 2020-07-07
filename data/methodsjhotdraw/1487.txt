@@ -1,0 +1,8 @@
+/**
+ * Gets the anchor of the connector.
+ * This is a point at the center or at the bounds of the figure, where
+ * the start or the end point will most likely be attached.
+ * The purpose of this method is to give the user a hint, where the
+ * connector will most likely be attached to the owner of the connector.
+ */
+public Point2D.Double getAnchor();

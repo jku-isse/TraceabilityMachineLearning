@@ -1,0 +1,5 @@
+public void setGraphics(Graphics g) {
+    Graphics2D g2 = ((Graphics2D) (g));
+    myGraphics = g2;
+    myState = null;
+}

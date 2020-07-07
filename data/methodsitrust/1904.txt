@@ -1,0 +1,3 @@
+public void setIcPhone(String icPhone) {
+    this.icPhone = icPhone;
+}

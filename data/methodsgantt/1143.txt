@@ -1,0 +1,5 @@
+private ResourceColumn newResourceColumn(int id) {
+    TableColumnExt col = newTableColumnExt(ttModel.useNextIndex());
+    ResourceColumn result = new ResourceColumn(col, id);
+    return result;
+}

@@ -1,0 +1,7 @@
+public Object getValue(String key) {
+    if ((key == (Action.NAME)) && ((view) != null)) {
+        return getTitle();
+    } else {
+        return super.getValue(key);
+    }
+}

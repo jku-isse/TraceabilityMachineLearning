@@ -1,0 +1,8 @@
+private TimeUnitText getUnitText(TimeUnit unitLine, Date startDate) {
+    String result = null;
+    return unitLine.format(startDate);
+    // if (unitLine.equals(GregorianTimeUnitStack.DAY)) {
+    // result = ""+startDate.getDate();
+    // }
+    // return result;
+}

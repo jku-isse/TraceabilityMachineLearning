@@ -1,0 +1,6 @@
+/**
+ * Return the value of the JTrees Scrollbar
+ */
+public int getScrollBar() {
+    return margY;
+}

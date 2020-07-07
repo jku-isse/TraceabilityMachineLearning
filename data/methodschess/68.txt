@@ -1,0 +1,12 @@
+/**
+ * Get the piece of a given position, or null of the square is empty.
+ *
+ * @param position
+ * 		The position of the piece.
+ * @return The piece of the square or null, of the square is empty.
+ */
+public final Piece getPiece(Position position) {
+    int bitpos = position.getSquareIndex();
+    int pieceType = ((((int) ((_boardLayer[1]) >> bitpos)) & 1) | ((((int) ((_boardLayer[2]) >> bitpos)) & 1) << 1)) | ((((int) ((_boardLayer[3]) >> bitpos)) & 1) << 2);
+    return pieceType == 0 ? null : new PieceImpl(((byte) ((pieceType << 1) | (((_boardLayer[0]) >> bitpos) & 1))));
+}

@@ -1,0 +1,8 @@
+/**
+ * Gets a list of the filter values used in the report.
+ *
+ * @return List of filter values used in the report
+ */
+public ArrayList<String> getReportFilterValues() {
+    return reportFilterValues;
+}

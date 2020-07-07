@@ -1,0 +1,3 @@
+void addTagHandler(TagHandler handler) {
+    myTagHandlers.add(handler);
+}

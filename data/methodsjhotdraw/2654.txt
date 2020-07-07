@@ -1,0 +1,10 @@
+/**
+ * Creates a new instance using the specified parameters.
+ */
+public SerializationInputOutputFormat(String description, String fileExtension, Drawing prototype) {
+    this.description = description;
+    this.fileExtension = fileExtension;
+    this.mimeType = DataFlavor.javaSerializedObjectMimeType;
+    this.prototype = prototype;
+    this.dataFlavor = new DataFlavor(prototype.getClass(), description);
+}

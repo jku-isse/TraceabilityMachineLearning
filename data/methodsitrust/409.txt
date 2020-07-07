@@ -1,0 +1,3 @@
+public List<PatientHistoryBean> getHistory() throws DBException {
+    return patientDAO.getPatientHistory(this.getPid());
+}

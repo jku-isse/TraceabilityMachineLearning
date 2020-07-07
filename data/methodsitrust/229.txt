@@ -1,0 +1,5 @@
+public void testGetDeclared() throws Exception {
+    List<PersonnelBean> decs = action.getDeclaredHCPS();
+    assertEquals(1, decs.size());
+    assertEquals(9000000003L, decs.get(0).getMID());
+}

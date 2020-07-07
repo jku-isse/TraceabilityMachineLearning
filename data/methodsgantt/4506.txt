@@ -1,0 +1,4 @@
+TaskMap(TaskManagerImpl taskManager) {
+    myComparator = new TaskDocumentOrderComparator(taskManager);
+    myManager = taskManager;
+}

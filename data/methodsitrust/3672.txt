@@ -1,0 +1,8 @@
+public static boolean isAlert(String code) {
+    for (PrescriptionAlerts thisone : PrescriptionAlerts.values()) {
+        if (thisone.getNDCode().equals(code))
+            return true;
+
+    }
+    return false;
+}

@@ -1,0 +1,6 @@
+void removeCustomColumn(String name) {
+    CustomColumn column = getCustomColumn(name);
+    if (column != null) {
+        removeCustomColumn(column);
+    }
+}

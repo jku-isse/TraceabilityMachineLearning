@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return this DAOFactorys PrescriptionReportDAO
+ */
+public PrescriptionReportDAO getPrescriptionReportDAO() {
+    return new PrescriptionReportDAO(this);
+}

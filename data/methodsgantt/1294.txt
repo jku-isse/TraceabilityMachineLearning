@@ -1,0 +1,3 @@
+public CancelAction() {
+    super(GanttLanguage.getInstance().getText("cancel"));
+}

@@ -1,0 +1,3 @@
+public void setEmergencyPhone(String emergencyPhone) {
+    this.emergencyPhone = emergencyPhone;
+}

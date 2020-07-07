@@ -1,0 +1,11 @@
+public void testGetHCPByDiagnosis() throws Exception {
+    action = new MyDiagnosisAction(factory, 1L);
+    List<HCPDiagnosisBean> diags = action.getHCPByDiagnosis("79.1");
+    assertEquals(9000000004L, diags.get(0).getHCP());
+    assertTrue(diags.get(0).getHCPName().equals("Jason Frankenstein"));
+    assertEquals(2, diags.get(0).getNumPatients());
+    assertEquals(1, diags.get(0).getMedList().size());
+    assertEquals(0, diags.get(0).getLabList().size());
+    assertEquals("3.0", diags.get(0).getVisitSatisfaction());
+    assertEquals("4.0", diags.get(0).getTreatmentSatisfaction());
+}

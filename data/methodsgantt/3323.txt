@@ -1,0 +1,21 @@
+public void setValueAt(Object o, int row, int col) {
+    String oldName;
+    Vector v = ((Vector) (dataVector.get(row)));
+    oldName = ((String) (v.get(0)));
+    if (col == 0) {
+        if (!(((String) (o)).equals(oldName))) {
+            if (!(customColumnStorage.exists(((String) (o))))) {
+                v.setElementAt(o, col);
+                myColumnManager.changeCustomColumnName(oldName, ((String) (o)));
+            }
+        }
+    }
+    if (col == 2) {
+        try {
+            myColumnManager.changeCustomColumnDefaultValue(oldName, o);
+            v.setElementAt(o, col);
+        } catch (CustomColumnsException e) {
+            myUIfacade.showErrorDialog(e);
+        }
+    }
+}

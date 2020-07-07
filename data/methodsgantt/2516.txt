@@ -1,0 +1,3 @@
+public static void center(JFrame frame) {
+    DialogAligner.centerOnScreen(frame);
+}

@@ -1,0 +1,21 @@
+public void testPatientViewReferralsWithDetails() throws Exception {
+    gen.patient2();
+    gen.referrals();
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    wr = wr.getLinkWith("My Referrals").click();
+    // Check to see that a referral exists with a receiving HCP of Gandalf Stormcrow
+    wr = wc.getCurrentPage();
+    WebTable tbl = wr.getTableWithID("patientReferralsTable");
+    assertTrue(tbl.getTableCell(3, 1).getText().contains("Gandalf Stormcrow"));
+    // Click to see details about the referral and check to see Sending HCP as Kelly Doctor
+    // Receiving doctor again is Gandalf Stormcrow
+    tbl.getTableCell(3, 3).getLinkWith("View").click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - View Referrals", wr.getTitle());
+    WebTable reftbl = wr.getTableWithID("patientViewingReferral");
+    assertTrue(reftbl.getTableCell(2, 1).getText().contains("Kelly Doctor"));
+    assertTrue(reftbl.getTableCell(2, 2).getText().contains("Gandalf"));
+    assertTrue(reftbl.getTableCell(2, 4).getText().contains("Gandalf will make sure that the virus"));
+}

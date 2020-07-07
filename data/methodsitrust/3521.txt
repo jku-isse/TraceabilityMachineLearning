@@ -1,0 +1,3 @@
+public void clearProfilePhotos() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/clearphotos.sql"));
+}

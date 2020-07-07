@@ -1,0 +1,13 @@
+/**
+ * Sets a clone of the value to the Figure without firing events.
+ */
+@SuppressWarnings("unchecked")
+public void setClone(Map<AttributeKey, Object> a, T value) {
+    try {
+        set(a, (value == null ? null : ((T) (Methods.invoke(value, "clone")))));
+    } catch (NoSuchMethodException ex) {
+        InternalError e = new InternalError();
+        e.initCause(ex);
+        throw e;
+    }
+}

@@ -1,0 +1,1 @@
+CustomPropertyManager getResourceCustomPropertyManager();

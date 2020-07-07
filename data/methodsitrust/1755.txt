@@ -1,0 +1,4 @@
+public MedicationBean(String code, String description) {
+    NDCode = code;
+    this.description = description;
+}

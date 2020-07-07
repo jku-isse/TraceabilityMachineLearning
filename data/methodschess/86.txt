@@ -1,0 +1,3 @@
+DialogAbout_CloseButton_keyAdapter(DialogAbout adaptee) {
+    this.adaptee = adaptee;
+}

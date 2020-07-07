@@ -1,0 +1,5 @@
+public void testHospitalIDGood() throws Exception {
+    String value = "0000000000";
+    String errorMessage = HospitalIDValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Hospital ID", value, ValidationFormat.HOSPITAL_ID, false));
+}

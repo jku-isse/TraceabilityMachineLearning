@@ -1,0 +1,3 @@
+protected int getAnchorWidth() {
+    return ConnectionTool.ANCHOR_WIDTH;
+}

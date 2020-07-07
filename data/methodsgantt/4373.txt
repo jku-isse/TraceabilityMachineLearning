@@ -1,0 +1,7 @@
+public void setColor(final Color color) {
+    myCommands.add(new Runnable() {
+        public void run() {
+            TaskImpl.this.setColor(color);
+        }
+    });
+}

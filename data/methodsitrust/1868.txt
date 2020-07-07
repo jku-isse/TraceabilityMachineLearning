@@ -1,0 +1,3 @@
+public String getReligion() {
+    return religion;
+}

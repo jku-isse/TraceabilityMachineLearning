@@ -1,0 +1,34 @@
+/**
+ * Returns true if <code>value</code> is between the min/max.
+ *
+ * @param wantsCCE
+ * 		If false, and a ClassCastException is thrown in
+ * 		comparing the values, the exception is consumed and
+ * 		false is returned.
+ */
+@SuppressWarnings("unchecked")
+boolean isValidValue(Object value, boolean wantsCCE) {
+    Comparable min = getMinimum();
+    try {
+        if ((min != null) && ((min.compareTo(value)) > 0)) {
+            return false;
+        }
+    } catch (ClassCastException cce) {
+        if (wantsCCE) {
+            throw cce;
+        }
+        return false;
+    }
+    Comparable max = getMaximum();
+    try {
+        if ((max != null) && ((max.compareTo(value)) < 0)) {
+            return false;
+        }
+    } catch (ClassCastException cce) {
+        if (wantsCCE) {
+            throw cce;
+        }
+        return false;
+    }
+    return true;
+}

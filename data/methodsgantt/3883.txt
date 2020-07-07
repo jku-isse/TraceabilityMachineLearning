@@ -1,0 +1,12 @@
+/**
+ * Removes the assignment objects associated to this ProjectResource
+ *  and those associated to its Tasks
+ */
+private void removeAllAssignments() {
+    List copy = new ArrayList(myAssignments);
+    for (int i = 0; i < (copy.size()); i++) {
+        ProjectResource.ResourceAssignmentImpl next = ((ProjectResource.ResourceAssignmentImpl) (copy.get(i)));
+        next.myAssignmentToTask.delete();
+    }
+    resetLoads();
+}

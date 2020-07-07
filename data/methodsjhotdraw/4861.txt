@@ -1,0 +1,9 @@
+@Override
+@SuppressWarnings("unchecked")
+public Object getTransformRestoreData() {
+    ArrayList<BezierPath> paths = new ArrayList<BezierPath>(getChildCount());
+    for (int i = 0, n = getChildCount(); i < n; i++) {
+        paths.add(getChild(i).getBezierPath());
+    }
+    return new Object[]{ paths, AttributeKeys.TRANSFORM.getClone(this), ODGAttributeKeys.FILL_GRADIENT.getClone(this), ODGAttributeKeys.STROKE_GRADIENT.getClone(this) };
+}

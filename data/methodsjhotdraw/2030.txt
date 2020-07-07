@@ -1,0 +1,6 @@
+/**
+ * Adds an action listener
+ */
+public void addActionListener(ActionListener listener) {
+    textField.addActionListener(listener);
+}

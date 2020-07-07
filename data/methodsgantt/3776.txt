@@ -1,0 +1,3 @@
+public void setLabel1(String label) {
+    label1.setText(label);
+}

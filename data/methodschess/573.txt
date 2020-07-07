@@ -1,0 +1,8 @@
+// Static variables
+// Methods
+/**
+ * Get the source of the ply.
+ *
+ * @return The source square of this ply.
+ */
+Position getSource();

@@ -1,0 +1,9 @@
+/**
+ * Set the new piece type after the transformation.
+ *
+ * @param pieceType
+ * 		The new piece type after the transformation.
+ */
+public final void setTypeAfterTransformation(byte pieceType) {
+    _newPieceType = pieceType;
+}

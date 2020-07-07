@@ -1,0 +1,5 @@
+/**
+ * Invoked when a key has been typed.
+ */
+public void keyTyped(KeyEvent e) {
+}

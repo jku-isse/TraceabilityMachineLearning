@@ -1,0 +1,3 @@
+public boolean getTaskSD() {
+    return cbStartDate.isSelected();
+}

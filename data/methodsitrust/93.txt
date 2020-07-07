@@ -1,0 +1,36 @@
+/**
+ * Verifies that certain transactions from the DLHCP are hidden in the activity feed per use case 43.
+ *
+ * @throws Exception
+ * 		
+ */
+public void testHiddenActivityFromDLHCP() throws Exception {
+    gen.clearAllTables();
+    gen.standardData();
+    action = new ActivityFeedAction(TestDAOFactory.getTestInstance(), 2L);
+    List<TransactionBean> accesses = action.getTransactions(new Date(), 1);
+    for (TransactionBean tb : accesses)
+        if (((tb.getRole()) != null) && (tb.getRole().equals("DLHCP"))) {
+            assertFalse(((tb.getTransactionType()) == (TransactionType.DEMOGRAPHICS_VIEW)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.DEMOGRAPHICS_EDIT)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.OFFICE_VISIT_CREATE)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.OFFICE_VISIT_EDIT)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.OFFICE_VISIT_VIEW)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.RISK_FACTOR_VIEW)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.PATIENT_HEALTH_INFORMATION_EDIT)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.PATIENT_HEALTH_INFORMATION_VIEW)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.PRESCRIPTION_REPORT_VIEW)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.COMPREHENSIVE_REPORT_ADD)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.COMPREHENSIVE_REPORT_VIEW)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.LAB_PROCEDURE_ADD)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.LAB_PROCEDURE_EDIT)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.LAB_PROCEDURE_REMOVE)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.PRECONFIRM_PRESCRIPTION_RENEWAL)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.PRESCRIPTION_ADD)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.PRESCRIPTION_EDIT)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.PATIENT_REMINDERS_VIEW)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.EMERGENCY_REPORT_CREATE)));
+            assertFalse(((tb.getTransactionType()) == (TransactionType.EMERGENCY_REPORT_VIEW)));
+        }
+
+}

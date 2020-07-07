@@ -1,0 +1,14 @@
+public void testUpdateICDInformation0() throws Exception {
+    String code = "98323-7";
+    String com = "Malaria";
+    String kop = "VOL";
+    LOINCbean proc = new LOINCbean();
+    proc.setLabProcedureCode(code);
+    proc.setComponent(com);
+    proc.setKindOfProperty(kop);
+    assertEquals(getAddCodeSuccessString(proc), action.add(proc));
+    proc.setKindOfProperty("Per");
+    assertEquals((("Success: " + (proc.getLabProcedureCode())) + " updated"), action.updateInformation(proc));
+    proc = factory.getLOINCDAO().getProcedures(code).get(0);
+    assertEquals("Per", proc.getKindOfProperty());
+}

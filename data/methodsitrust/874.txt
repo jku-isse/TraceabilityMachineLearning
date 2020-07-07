@@ -1,0 +1,8 @@
+public void testNotUserID() throws Exception {
+    try {
+        action = new SetSecurityQuestionAction(factory, 500L);
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("MID 500 is not a user!", e.getMessage());
+    }
+}

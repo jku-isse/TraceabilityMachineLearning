@@ -1,0 +1,12 @@
+/**
+ * Creates new form PaletteFontChooserPreviewPanel
+ */
+public PaletteFontChooserPreviewPanel() {
+    initComponents();
+    previewLabel.setUI(((LabelUI) (PaletteLabelUI.createUI(previewLabel))));
+    previewLabel.setBackground(Color.WHITE);
+    previewLabel.setForeground(Color.BLACK);
+    previewLabel.setOpaque(true);
+    setPreferredSize(new Dimension(100, 50));
+    setMinimumSize(new Dimension(100, 50));
+}

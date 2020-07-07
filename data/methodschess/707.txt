@@ -1,0 +1,15 @@
+// Constructors
+/**
+ * Create a new timer panel.
+ *
+ * @param countdown
+ * 		Flag to indicate, if we count downwards.
+ */
+public TimerPanel(boolean countdown) {
+    setCountingDirection(countdown);
+    _actionListeners = new ArrayList();
+    _display = new JLabel("0:00:00", JLabel.RIGHT);
+    _display.setPreferredSize(new Dimension(TimerPanel._displayWidth, TimerPanel._displayHeight));
+    _display.setHorizontalTextPosition(SwingConstants.CENTER);
+    add(_display);
+}

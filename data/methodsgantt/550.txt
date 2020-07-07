@@ -1,0 +1,58 @@
+/**
+ * Create a new task
+ */
+public Task newTask() {
+    getTabs().setSelectedIndex(UIFacade.GANTT_INDEX);
+    int index = -1;
+    MutableTreeNode selectedNode = getTree().getSelectedNode();
+    if (selectedNode != null) {
+        DefaultMutableTreeNode parent1 = ((DefaultMutableTreeNode) (selectedNode.getParent()));
+        index = (parent1.getIndex(selectedNode)) + 1;
+        tree.getTreeTable().getTree().setSelectionPath(new TreePath(parent1.getPath()));
+        tree.getTreeTable().getTreeTable().editingStopped(new ChangeEvent(tree.getTreeTable().getTreeTable()));
+    }
+    GanttCalendar cal = new GanttCalendar(area.getViewState().getStartDate());
+    DefaultMutableTreeNode node = tree.getSelectedNode();
+    GanttLanguage lang = GanttLanguage.getInstance();
+    String nameOfTask = options.getTaskNamePrefix();// language.getText("newTask");
+
+    // if (current != null) {
+    // current.setMilestone(false);
+    // node = (TaskNode) tree.getSelectedNode();
+    // cal = current.getStart();
+    // if (!node.isRoot())
+    // nameOfTask = current.toString();
+    // }
+    GanttTask task = getTaskManager().createTask();
+    task.setStart(cal);
+    task.setLength(1);
+    getTaskManager().registerTask(task);// create a new task in the tab
+
+    // paneneed to register it
+    task.setName(((nameOfTask + "_") + (task.getTaskID())));
+    task.setColor(area.getTaskColor());
+    // if (current != null) {
+    // if (current.colorDefined()) {
+    // task.setColor(current.getColor());
+    // }
+    // if (current.shapeDefined())
+    // task.setShape(current.getShape());
+    // }
+    TaskNode taskNode = tree.addObject(task, node, index);
+    /* this will add new custom columns to the newly created task. */
+    getCustomColumnsStorage().processNewTask(task);
+    AdjustTaskBoundsAlgorithm alg = getTaskManager().getAlgorithmCollection().getAdjustTaskBoundsAlgorithm();
+    alg.run(task);
+    RecalculateTaskCompletionPercentageAlgorithm alg2 = getTaskManager().getAlgorithmCollection().getRecalculateTaskCompletionPercentageAlgorithm();
+    alg2.run(task);
+    area.repaint();
+    setAskForSave(true);
+    getUIFacade().setStatusText(language.getText("createNewTask"));
+    // setQuickSave(true);
+    tree.setEditingTask(task);
+    if (options.getAutomatic()) {
+        propertiesTask();
+    }
+    repaint2();
+    return task;
+}

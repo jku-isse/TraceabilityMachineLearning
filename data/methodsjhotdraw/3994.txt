@@ -1,0 +1,3 @@
+public Object getChild(Object parent, int index) {
+    return ((TreeNode) (parent)).getChildAt(index);
+}

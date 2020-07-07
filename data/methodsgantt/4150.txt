@@ -1,0 +1,1 @@
+void setCoordinator(boolean responsible);

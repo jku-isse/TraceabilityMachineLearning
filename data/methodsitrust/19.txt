@@ -1,0 +1,15 @@
+public void testCSVCommaInField() {
+    Scanner CSVHeader = new Scanner(""test,1","test,2","test,3"");
+    CSVParser test = null;
+    try {
+        test = new CSVParser(CSVHeader);
+    } catch (Exception e) {
+        assertTrue(false);
+    }
+    ArrayList<String> header = test.getHeader();
+    assertEquals(3, header.size());
+    assertEquals("test,1", header.get(0));
+    assertEquals("test,2", header.get(1));
+    assertEquals("test,3", header.get(2));
+    assertFalse(test.getErrors().hasErrors());
+}

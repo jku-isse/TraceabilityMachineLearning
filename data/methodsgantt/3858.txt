@@ -1,0 +1,20 @@
+/* <Task, List<Load>> */
+public Map getSeparatedTaskLoads() {
+    /* <Task,List<Load>> */
+    HashMap result = /* <Task, List<Load>> */
+    new HashMap();
+    List taskLoads = getTasksLoads();
+    for (int i = 0; i < (taskLoads.size()); i++) {
+        LoadDistribution.Load nextLoad = ((LoadDistribution.Load) (taskLoads.get(i)));
+        Task nextTask = nextLoad.refTask;
+        /* <Load> */
+        List partition = ((List) (result.get(nextTask)));
+        if (partition == null) {
+            partition = /* <Load> */
+            new ArrayList();
+            result.put(nextTask, partition);
+        }
+        partition.add(nextLoad);
+    }
+    return result;
+}

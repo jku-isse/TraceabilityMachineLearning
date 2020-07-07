@@ -1,0 +1,7 @@
+private void fireCustomColumnsChange(CustomColumEvent event) {
+    Iterator it = myListeners.iterator();
+    while (it.hasNext()) {
+        CustomColumsListener listener = ((CustomColumsListener) (it.next()));
+        listener.customColumsChange(event);
+    } 
+}

@@ -1,0 +1,30 @@
+/**
+ * Reads a &lt;document-content&gt; element from the specified
+ * XML element.
+ *
+ * @param elem
+ * 		A &lt;document-content&gt; element.
+ */
+private void readDocumentContentElement(IXMLElement elem) throws IOException {
+    if (ODGStylesReader.DEBUG)
+        System.out.println((("ODGStylesReader <" + (elem.getName())) + " ...>"));
+
+    for (IXMLElement child : elem.getChildren()) {
+        String ns = child.getNamespace();
+        String name = child.getName();
+        if ((name.equals("automatic-styles")) && ((ns == null) || (ns.equals(ODGConstants.OFFICE_NAMESPACE)))) {
+            readAutomaticStylesElement(child);
+        } else
+            if ((name.equals("master-styles")) && ((ns == null) || (ns.equals(ODGConstants.OFFICE_NAMESPACE)))) {
+                readStylesElement(child);
+            } else
+                if ((name.equals("styles")) && ((ns == null) || (ns.equals(ODGConstants.OFFICE_NAMESPACE)))) {
+                    readStylesElement(child);
+                }
+
+
+    }
+    if (ODGStylesReader.DEBUG)
+        System.out.println((("ODGStylesReader </" + (elem.getName())) + ">"));
+
+}

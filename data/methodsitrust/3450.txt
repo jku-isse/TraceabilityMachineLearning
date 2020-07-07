@@ -1,0 +1,8 @@
+public void testAddSurveyDataException() throws Exception {
+    try {
+        surveyDAO.addCompletedSurvey(null, Calendar.getInstance().getTime());
+        fail("DBException should have been thrown");
+    } catch (DBException ex) {
+        assertEquals(EvilDAOFactory.MESSAGE, ex.getSQLException().getMessage());
+    }
+}

@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public BezierTool(BezierFigure prototype, Map<AttributeKey, Object> attributes) {
+    this(prototype, attributes, null);
+}

@@ -1,0 +1,27 @@
+/**
+ * Gets the point on a rectangle that corresponds to the given angle.
+ */
+public static Point2D.Double angleToPoint(Rectangle2D.Double r, double angle) {
+    double si = Math.sin(angle);
+    double co = Math.cos(angle);
+    double e = 1.0E-4;
+    double x = 0;
+    double y = 0;
+    if ((Math.abs(si)) > e) {
+        x = ((1.0 + (co / (Math.abs(si)))) / 2.0) * (r.width);
+        x = Geom.range(0, r.width, x);
+    } else
+        if (co >= 0.0) {
+            x = r.width;
+        }
+
+    if ((Math.abs(co)) > e) {
+        y = ((1.0 + (si / (Math.abs(co)))) / 2.0) * (r.height);
+        y = Geom.range(0, r.height, y);
+    } else
+        if (si >= 0.0) {
+            y = r.height;
+        }
+
+    return new Point2D.Double(((r.x) + x), ((r.y) + y));
+}

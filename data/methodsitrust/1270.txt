@@ -1,0 +1,3 @@
+public int getReferralsForReceivingHCPUnread() throws DBException {
+    return referralDAO.getReferralsForReceivingHCPUnread(hcpID).size();
+}

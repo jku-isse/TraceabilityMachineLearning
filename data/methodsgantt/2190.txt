@@ -1,0 +1,6 @@
+/**
+ * Gets the username used to authenticate to the storage container
+ *
+ * @return username
+ */
+public String getUsername();

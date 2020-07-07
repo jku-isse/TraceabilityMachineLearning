@@ -1,0 +1,4 @@
+public TaskPropertyEvent(Object source) {
+    super(source);
+    myTask = ((Task) (source));
+}

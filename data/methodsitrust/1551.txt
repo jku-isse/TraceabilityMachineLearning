@@ -1,0 +1,3 @@
+public void setURL(String newURL) {
+    URL = newURL;
+}

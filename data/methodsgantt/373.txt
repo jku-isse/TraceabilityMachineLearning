@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the lookAndFeel infos.
+ */
+public GanttLookAndFeelInfo getLnfInfos() {
+    return lookAndFeel;
+}

@@ -1,0 +1,6 @@
+/**
+ * Gets the path to the document.
+ *
+ * @return the path to the document
+ */
+public String getPath();

@@ -1,0 +1,16 @@
+/**
+ * Returns the patients name
+ *
+ * @param MID
+ * 		the MID of the patient to return the name for.
+ * @return 
+ */
+public String getName(long MID) {
+    try {
+        return patientDAO.getName(MID);
+    } catch (DBException e) {
+        return "";
+    } catch (iTrustException e) {
+        return "Patient no longer exists";
+    }
+}

@@ -1,0 +1,3 @@
+public void insert(MutableTreeNode child, int index) {
+    throw new UnsupportedOperationException("Not allowed.");
+}

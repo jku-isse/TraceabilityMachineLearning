@@ -1,0 +1,18 @@
+public void testAddDiagnosisBlank() throws Exception {
+    // login UAP
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // click All Patients
+    wr = wr.getLinkWith("All Patients").click();
+    // Select Trend Setter
+    wr = wr.getLinkWith("Trend Setter").click();
+    // Edit visit
+    wr = wr.getLinkWith("Aug 30, 2011").click();
+    // Submit add diagnosis form
+    WebForm diagnosisForm = wr.getFormWithID("diagnosisForm");
+    wr = diagnosisForm.submit();
+    // Should show a validation error
+    assertNotNull(wr.getElementWithID("iTrustFooter"));
+    assertNotNull(wr.getElementWithID("diagnosisForm"));
+}

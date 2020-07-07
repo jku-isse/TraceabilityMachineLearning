@@ -1,0 +1,46 @@
+private void constructResourcesPanel(ResourceAssignmentCollection assignments) {
+    resourcesPanel = new JPanel(new GridBagLayout());
+    myResourcesTableModel = new ResourcesTableModel(assignments);
+    resourcesTable = new JXTable(myResourcesTableModel);
+    setUpResourcesComboColumn(resourcesTable);// set column editor
+
+    setUpCoordinatorBooleanColumn(resourcesTable);
+    setUpRolesComboColumn(resourcesTable);
+    resourcesTable.setRowHeight(23);
+    resourcesTable.getColumnModel().getColumn(0).setPreferredWidth(10);
+    resourcesTable.getColumnModel().getColumn(1).setPreferredWidth(240);
+    resourcesTable.getColumnModel().getColumn(2).setPreferredWidth(60);
+    resourcesTable.getColumnModel().getColumn(3).setPreferredWidth(60);
+    resourcesTable.getColumnModel().getColumn(4).setPreferredWidth(100);
+    resourcesTable.setHighlighters(new org.jdesktop.swing.decorator.HighlighterPipeline(new Highlighter[]{ new Highlighter(new Color(255, 255, 255), null) }));
+    resourcesScrollPane = new JScrollPane(resourcesTable);
+    resourcesScrollPane.setPreferredSize(new Dimension(500, 130));
+    JPanel secondResourcesScrollPane = new JPanel();
+    secondResourcesScrollPane.setBorder(new TitledBorder(new EtchedBorder(), GanttProject.correctLabel(getLanguage().getText("human"))));
+    secondResourcesScrollPane.add(resourcesScrollPane);
+    JButton bremove = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/delete_16.gif")));
+    bremove.setToolTipText(GanttProject.getToolTip(getLanguage().getText("removeResources")));
+    bremove.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            int[] selectedRow = resourcesTable.getSelectedRows();
+            for (int i = 0; i < (selectedRow.length); ++i) {
+                resourcesTable.getModel().setValueAt(null, selectedRow[i], 1);
+            }
+        }
+    });
+    secondResourcesScrollPane.add(bremove);
+    GridBagConstraints gbc = new GridBagConstraints();
+    gbc.anchor = GridBagConstraints.WEST;
+    gbc.insets.right = 15;
+    gbc.insets.left = 10;
+    gbc.insets.top = 10;
+    gbc.weighty = 0;
+    JPanel commonFields = setupCommonFields(onlyOneTask);
+    addUsingGBL(resourcesPanel, commonFields, gbc, 0, 0, 1, 1);
+    gbc.gridx = 0;
+    gbc.gridy = 1;
+    gbc.gridwidth = 8;
+    gbc.gridheight = 1;
+    gbc.weighty = 1;
+    resourcesPanel.add(secondResourcesScrollPane, gbc);
+}

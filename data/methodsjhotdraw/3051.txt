@@ -1,0 +1,17 @@
+/**
+ * Creates toolbar buttons and adds them to the specified JToolBar
+ */
+public static void addAttributesButtonsTo(JToolBar bar, DrawingEditor editor) {
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    JButton b;
+    b = bar.add(new PickAttributesAction(editor));
+    b.setFocusable(false);
+    b = bar.add(new ApplyAttributesAction(editor));
+    b.setFocusable(false);
+    bar.addSeparator();
+    ButtonFactory.addColorButtonsTo(bar, editor);
+    bar.addSeparator();
+    ButtonFactory.addStrokeButtonsTo(bar, editor);
+    bar.addSeparator();
+    ButtonFactory.addFontButtonsTo(bar, editor);
+}

@@ -1,0 +1,32 @@
+/**
+ * Returns the name for the given MID
+ *
+ * @param mid
+ * 		The MID of the patient in question.
+ * @return A String representing the patients first name and last name.
+ * @throws iTrustException
+ * 		
+ * @throws DBException
+ * 		
+ */
+public String getName(long mid) throws DBException, iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT firstName, lastName FROM patients WHERE MID=?");
+        ps.setLong(1, mid);
+        ResultSet rs;
+        rs = ps.executeQuery();
+        if (rs.next()) {
+            return ((rs.getString("firstName")) + " ") + (rs.getString("lastName"));
+        } else {
+            throw new iTrustException("User does not exist");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

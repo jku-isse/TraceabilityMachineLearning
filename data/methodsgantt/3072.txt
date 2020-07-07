@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the automatic launch value.
+ */
+public boolean getAutomatic() {
+    return cbAutomatic.isSelected();
+}

@@ -1,0 +1,13 @@
+public void setThird(final GanttCalendar third, final int thirdDateConstraint) {
+    myCommands.add(new Runnable() {
+        public void run() {
+            TaskImpl.this.setThirdDateConstraint(thirdDateConstraint);
+        }
+    });
+    if ((myThirdChange) == null) {
+        myThirdChange = new TaskImpl.FieldChange();
+        myThirdChange.myEventSender = myPropertiesEventSender;
+    }
+    myThirdChange.setValue(third);
+    myActivities = null;
+}

@@ -1,0 +1,10 @@
+public void add(ProjectResource resource) {
+    if ((resource.getId()) == (-1)) {
+        resource.setId(nextFreeId);
+    }
+    if ((resource.getId()) >= (nextFreeId)) {
+        nextFreeId = (resource.getId()) + 1;
+    }
+    resources.add(resource);
+    fireResourceAdded(resource);
+}

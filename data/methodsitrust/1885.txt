@@ -1,0 +1,3 @@
+public void setCreditCardType(String creditCardType) {
+    this.creditCardType = creditCardType;
+}

@@ -1,0 +1,9 @@
+public void testParseInvalidLOINCFile() throws Exception {
+    List<String> expected = new ArrayList<String>();
+    expected.add("ERROR, LINE 2: "10054-5"	"I skip rest of fields" This form has not been validated correctly. The following field are not properly filled in: [You must have a Lab Procedure Code, Component and Kind Of Property]");
+    expected.add("Successfully added 2 lines of new LOINC data. Updated 0 lines of existing LOINC data.");
+    String filename = "./testing-files/sample_loinc/invalidLine.txt";
+    FileInputStream stream = new FileInputStream(filename);
+    List<String> actual = action.parseLOINCFile(stream, false);
+    assertEquals(expected, actual);
+}

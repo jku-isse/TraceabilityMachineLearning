@@ -1,0 +1,1 @@
+public Figure createText(Point2D.Double[] coordinates, double[] rotate, StyledDocument text, Map<AttributeKey, Object> attributes);

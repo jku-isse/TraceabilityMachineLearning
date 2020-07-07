@@ -1,0 +1,12 @@
+public void testWardRoomCRUDServletPutFail() throws Exception {
+    WardRoomCRUDServletTest.LittleDelegatorServlet servlet = new WardRoomCRUDServletTest.LittleDelegatorServlet();
+    servlet.setUp();
+    expect(req.getParameter("inWard")).andReturn("").once();
+    expect(req.getParameter("roomName")).andReturn("").once();
+    expect(req.getParameter("status")).andReturn("clean").once();
+    expect(req.getParameter("occupiedBy")).andReturn("1").once();
+    resp.sendRedirect("");
+    expectLastCall();
+    ctrl.replay();
+    servlet.doPut(req, resp);
+}

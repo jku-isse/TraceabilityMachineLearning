@@ -1,0 +1,34 @@
+public void testGetVisitReminders_FluShotNeeders() throws Exception {
+    gen.standardData();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Office Visit Reminders").click();
+    assertEquals("iTrust - Visit Reminders", wr.getTitle());
+    WebForm wf = wr.getFormWithID("reminderForm");
+    wf.setParameter("ReminderType", "Flu Shot Needers");
+    wf.getButtonWithID("getReminders").click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Visit Reminders", wr.getTitle());
+    assertEquals(4, wr.getTables().length);
+    boolean thisYear = DateUtil.currentlyInMonthRange(8, 11);
+    String pretext = "Missed";
+    if (thisYear)
+        pretext = "Currently Missing";
+
+    WebTable table = wr.getTables()[0];
+    assertEquals("NoRecords Has", table.getCellAsText(1, 1));
+    assertEquals("919-971-0000", table.getCellAsText(2, 1));
+    assertEquals((pretext + " Medication:    Flu Shot"), table.getCellAsText(3, 1));
+    table = wr.getTables()[1];
+    assertEquals("Bad Horse", table.getCellAsText(1, 1));
+    assertEquals("919-123-4567", table.getCellAsText(2, 1));
+    assertEquals((pretext + " Medication:    Flu Shot"), table.getCellAsText(3, 1));
+    table = wr.getTables()[2];
+    assertEquals("Care Needs", table.getCellAsText(1, 1));
+    assertEquals("919-971-0000", table.getCellAsText(2, 1));
+    assertEquals((pretext + " Medication:    Flu Shot"), table.getCellAsText(3, 1));
+    table = wr.getTables()[3];
+    assertEquals("Random Person", table.getCellAsText(1, 1));
+    assertEquals("919-971-0000", table.getCellAsText(2, 1));
+    assertEquals((pretext + " Medication:    Flu Shot"), table.getCellAsText(3, 1));
+}

@@ -1,0 +1,30 @@
+/**
+ * If inProgress, inserts anEdit at indexOfNextAdd, and removes
+ * any old edits that were at indexOfNextAdd or later. The die
+ * method is called on each edit that is removed is sent, in the
+ * reverse of the order the edits were added. Updates
+ * indexOfNextAdd.
+ *
+ * <p>If not inProgress, acts as a CompoundEdit</p>
+ *
+ * <p>Regardless of inProgress, if undoOrRedoInProgress,
+ * calls die on each edit that is sent.</p>
+ *
+ * @see CompoundEdit#end
+ * @see CompoundEdit#addEdit
+ */
+public boolean addEdit(UndoableEdit anEdit) {
+    if (UndoRedoManager.DEBUG)
+        System.out.println(("UndoRedoManager.add " + anEdit));
+
+    if (undoOrRedoInProgress) {
+        anEdit.die();
+        return true;
+    }
+    boolean success = super.addEdit(anEdit);
+    updateActions();
+    if ((success && (anEdit.isSignificant())) && ((editToBeUndone()) == anEdit)) {
+        setHasSignificantEdits(true);
+    }
+    return success;
+}

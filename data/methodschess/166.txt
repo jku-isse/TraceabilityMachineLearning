@@ -1,0 +1,8 @@
+/**
+ * Returns the hash size
+ *
+ * @return The hashsize
+ */
+public int getHashSize() {
+    return this.getHashtable().getMaximumSize();
+}

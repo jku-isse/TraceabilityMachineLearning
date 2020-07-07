@@ -1,0 +1,6 @@
+public void stop() {
+    for (View p : new LinkedList<View>(views())) {
+        dispose(p);
+    }
+    System.exit(0);
+}

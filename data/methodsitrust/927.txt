@@ -1,0 +1,23 @@
+/**
+ * Updates a LOINC
+ *
+ * @param diagn
+ * 		new information to update (but same code)
+ * @return Status message
+ * @throws FormValidationException
+ * 		
+ */
+public String updateInformation(LOINCbean diagn) throws FormValidationException {
+    validator.validate(diagn);
+    try {
+        int rows = lDAO.update(diagn);
+        if (0 == rows) {
+            return "Error: Code not found.";
+        } else {
+            return ("Success: " + (diagn.getLabProcedureCode())) + " updated";
+        }
+    } catch (DBException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    }
+}

@@ -1,0 +1,6 @@
+/**
+ * Change the color of the task
+ */
+public void setProjectLevelTaskColor(Color c) {
+    myUIConfiguration.setProjectLevelTaskColor(c);
+}

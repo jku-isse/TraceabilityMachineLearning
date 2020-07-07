@@ -1,0 +1,3 @@
+protected void tearDown() throws FileNotFoundException, IOException, SQLException {
+    gen.uc47TearDown();
+}

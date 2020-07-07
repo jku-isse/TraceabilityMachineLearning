@@ -1,0 +1,8 @@
+public Object clone() {
+    GanttTreeTable.DisplayedColumnsList l = new GanttTreeTable.DisplayedColumnsList();
+    Iterator it = this.iterator();
+    while (it.hasNext())
+        l.add(((GanttTreeTable.DisplayedColumn) (it.next())).clone());
+
+    return l;
+}

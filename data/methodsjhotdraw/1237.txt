@@ -1,0 +1,6 @@
+public BezierNodeHandle(BezierFigure owner, int index, Figure transformOwner) {
+    super(owner);
+    this.index = index;
+    this.transformOwner = transformOwner;
+    transformOwner.addFigureListener(this);
+}

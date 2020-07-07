@@ -1,0 +1,8 @@
+/**
+ * Returns the horizontal index of the leftmost column of tiles.
+ * getMinTileX() is implemented in terms of getMinX()
+ * and so does not need to be implemented by subclasses.
+ */
+public int getMinTileX() {
+    return XToTileX(getMinX());
+}

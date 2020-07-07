@@ -1,0 +1,5 @@
+public ODGGroupFigure clone() {
+    ODGGroupFigure that = ((ODGGroupFigure) (super.clone()));
+    that.attributes = new HashMap<AttributeKey, Object>(this.attributes);
+    return that;
+}

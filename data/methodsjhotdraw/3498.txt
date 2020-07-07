@@ -1,0 +1,8 @@
+/**
+ * Gets the angle of a point relative to a rectangle.
+ */
+public static double pointToAngle(Rectangle2D.Double r, Point2D.Double p) {
+    double px = (p.x) - ((r.x) + ((r.width) / 2));
+    double py = (p.y) - ((r.y) + ((r.height) / 2));
+    return Math.atan2((py * (r.width)), (px * (r.height)));
+}

@@ -1,0 +1,11 @@
+public void testParseFilters() {
+    HttpServletRequest request = EasyMock.createMock(HttpServletRequest.class);
+    EasyMock.expect(request.getParameter("demoparams")).andReturn("MID").anyTimes();
+    EasyMock.expect(request.getParameter("medparams")).andReturn("ALLERGY").anyTimes();
+    EasyMock.expect(request.getParameter("persparams")).andReturn(" ").anyTimes();
+    EasyMock.expect(request.getParameter("MID")).andReturn("1").anyTimes();
+    EasyMock.expect(request.getParameterValues("ALLERGY")).andReturn(new String[0]).anyTimes();
+    EasyMock.expect(request.getParameter("ALLERGY")).andReturn(" ").anyTimes();
+    EasyMock.replay(request);
+    GroupReportGeneratorAction grga = new GroupReportGeneratorAction(factory, request);
+}

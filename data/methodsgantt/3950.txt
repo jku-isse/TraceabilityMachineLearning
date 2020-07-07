@@ -1,0 +1,6 @@
+public String getPhone() {
+    if ((resource) instanceof HumanResource)
+        return ((HumanResource) (resource)).getPhone();
+
+    return null;
+}

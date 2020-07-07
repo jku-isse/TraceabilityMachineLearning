@@ -1,0 +1,4 @@
+public void testGetAllHealthRecords() throws iTrustException {
+    List<HealthRecord> hrList = action.getAllHealthRecords();
+    assertEquals(2, hrList.size());
+}

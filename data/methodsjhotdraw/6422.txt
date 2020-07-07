@@ -1,0 +1,6 @@
+/**
+ * Reads an object from the current element.
+ */
+public Object readObject() throws IOException {
+    return readObject(0);
+}

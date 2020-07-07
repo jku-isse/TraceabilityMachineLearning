@@ -1,0 +1,3 @@
+public int compareTo(Calendar o) {
+    return compareTo(((GanttCalendar) (o)));
+}

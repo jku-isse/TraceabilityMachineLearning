@@ -1,0 +1,17 @@
+/**
+ * Called by the UI when the user hits the Approve button
+ * (labeled "Open" or "Save", by default). This can also be
+ * called by the programmer.
+ * This method causes an action event to fire
+ * with the command string equal to
+ * <code>APPROVE_SELECTION</code>.
+ *
+ * @see #APPROVE_SELECTION
+ */
+public void approveSelection() {
+    returnValue = JFontChooser.APPROVE_OPTION;
+    if ((dialog) != null) {
+        dialog.setVisible(false);
+    }
+    fireActionPerformed(JFontChooser.APPROVE_SELECTION);
+}

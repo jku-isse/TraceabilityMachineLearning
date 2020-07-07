@@ -1,0 +1,3 @@
+public boolean isIndeterminate() {
+    return progressBar.isIndeterminate();
+}

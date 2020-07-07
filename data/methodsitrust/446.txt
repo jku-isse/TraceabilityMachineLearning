@@ -1,0 +1,9 @@
+public void testNull() throws Exception {
+    try {
+        gen.hcp0();
+        personnelEditor = new EditPersonnelAction(factory, 0L, null);
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("Personnel ID is not a number: null", e.getMessage());
+    }
+}

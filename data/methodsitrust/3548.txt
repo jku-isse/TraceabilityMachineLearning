@@ -1,0 +1,3 @@
+public void immunization_data() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/immunization.sql"));
+}

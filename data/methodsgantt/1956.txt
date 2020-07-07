@@ -1,0 +1,3 @@
+public float getLoad() {
+    return load;
+}

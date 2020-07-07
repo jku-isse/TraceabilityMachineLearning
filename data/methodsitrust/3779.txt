@@ -1,0 +1,33 @@
+public void testHCPViewAppointmentCalendarDetails() throws Exception {
+    // Login
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    // Click Calendar
+    wr = wr.getLinkWith("Appointment Calendar").click();
+    // check title
+    assertTrue(wr.getTitle().contains("Appointment Calendar"));
+    iTrustHTTPTest.assertLogged(TransactionType.CALENDAR_VIEW, 9000000000L, 0L, "");
+    WebLink[] links = wr.getLinks();
+    int count = 0;
+    // get the second link with General Checkup-5
+    for (WebLink link : links) {
+        if (link.getName().contains("General Checkup-5")) {
+            count++;
+            if (count == 2) {
+                wr = link.click();
+                break;
+            }
+        }
+    }
+    // ensure proper data is showing up
+    assertTrue(wr.getText().contains("Andy Programmer"));
+    assertTrue(wr.getText().contains("General Checkup"));
+    assertTrue(wr.getText().contains("45 minutes"));
+    assertTrue(wr.getText().contains("No Comment"));
+    // get the current month and year
+    Calendar cal = Calendar.getInstance();
+    int month1 = (cal.get(Calendar.MONTH)) + 1;
+    int day1 = 5;
+    int year1 = cal.get(Calendar.YEAR);
+    assertTrue(wr.getText().contains((((((month1 + "/0") + day1) + "/") + year1) + " 09:10 AM")));
+}

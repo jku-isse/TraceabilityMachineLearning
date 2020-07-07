@@ -1,0 +1,3 @@
+public Handle getActiveHandle() {
+    return activeHandle;
+}

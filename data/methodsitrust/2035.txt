@@ -1,0 +1,8 @@
+/**
+ * Gets the CPT Code for this procedure
+ *
+ * @return The CPT Code for this procedure
+ */
+public String getCPTCode() {
+    return CPTCode;
+}

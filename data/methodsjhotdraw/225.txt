@@ -1,0 +1,11 @@
+/**
+ * Initializes the view.
+ * This is invoked right before the application shows the view.
+ * A view must not consume many resources before method init() is called.
+ * This is crucial for the responsivenes of an application.
+ * <p>
+ * After a view has been initialized using init(),
+ * either method clear() must be called
+ * or method read, in order to fully initialize a  View.
+ */
+public void init();

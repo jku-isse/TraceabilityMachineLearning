@@ -1,0 +1,3 @@
+public DependencyTableModel getTableModel() {
+    return myTableModel;
+}

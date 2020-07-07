@@ -1,0 +1,3 @@
+BooleanOption getPublishInWebOption() {
+    return myPublishInWebOption;
+}

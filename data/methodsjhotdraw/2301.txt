@@ -1,0 +1,26 @@
+@Override
+public LineConnectionFigure clone() {
+    LineConnectionFigure that = ((LineConnectionFigure) (super.clone()));
+    that.connectionHandler = new LineConnectionFigure.ConnectionHandler(that);
+    if ((this.liner) != null) {
+        that.liner = ((Liner) (this.liner.clone()));
+    }
+    // FIXME - For safety reasons, we clone the connectors, but they would
+    // work, if we continued to use them. Maybe we should state somewhere
+    // whether connectors should be reusable, or not.
+    // To work properly, that must be registered as a figure listener
+    // to the connected figures.
+    if ((this.startConnector) != null) {
+        that.startConnector = ((Connector) (this.startConnector.clone()));
+        that.getStartFigure().addFigureListener(that.connectionHandler);
+    }
+    if ((this.endConnector) != null) {
+        that.endConnector = ((Connector) (this.endConnector.clone()));
+        that.getEndFigure().addFigureListener(that.connectionHandler);
+    }
+    if (((that.startConnector) != null) && ((that.endConnector) != null)) {
+        // that.handleConnect(that.getStartConnector(), that.getEndConnector());
+        that.updateConnection();
+    }
+    return that;
+}

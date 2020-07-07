@@ -1,0 +1,3 @@
+public void setFont(Font font) {
+    myFont = font;
+}

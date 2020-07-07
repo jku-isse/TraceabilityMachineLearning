@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public MaximizeAction(Application app) {
+    super(app);
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+    labels.configureAction(this, MaximizeAction.ID);
+}

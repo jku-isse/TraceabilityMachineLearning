@@ -1,0 +1,12 @@
+/**
+ * Same as <code>Applet.getParameter()</code> but doesnt throw a
+ * NullPointerException when used without an Applet context.
+ */
+public String getParameter(String name, String defaultValue) {
+    try {
+        String value = super.getParameter(name);
+        return value == null ? defaultValue : value;
+    } catch (NullPointerException e) {
+        return defaultValue;
+    }
+}

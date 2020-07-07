@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public FigureSelectionEvent(DrawingView source, Set<Figure> oldValue, Set<Figure> newValue) {
+    super(source);
+    this.oldValue = oldValue;
+    this.newValue = newValue;
+}

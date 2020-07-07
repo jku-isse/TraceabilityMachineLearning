@@ -1,0 +1,4 @@
+// SHAPE AND BOUNDS
+public double getX() {
+    return rectangle.x;
+}

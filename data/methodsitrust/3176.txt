@@ -1,0 +1,12 @@
+public void testAddRemoveOneOVDiagnosis() throws Exception {
+    assertEquals("no current diagnoses on office vist 1", 0, diagDAO.getList(1).size());
+    DiagnosisBean bean = new DiagnosisBean();
+    bean.setICDCode("250.1");
+    bean.setVisitID(1);
+    long ovDID = diagDAO.add(bean);
+    List<DiagnosisBean> diagnoses = diagDAO.getList(1);
+    assertEquals("now theres 1", 1, diagnoses.size());
+    assertEquals("test the description", "Diabetes with ketoacidosis", diagnoses.get(0).getDescription());
+    diagDAO.remove(ovDID);
+    assertEquals("now theres none", 0, diagDAO.getList(1).size());
+}

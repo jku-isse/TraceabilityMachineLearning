@@ -1,0 +1,19 @@
+private void drawDateLine(Date unitStart, int unitIndex, Date lineDate, ChartModelBase.Offset[] offsets, Color color, int horizontalOffset) {
+    int redLineOffset = -1;
+    if ((unitStart.before(lineDate)) && (myCurrentFrame.getUnitFinish(myCurrentUnit, unitIndex).after(lineDate))) {
+        for (int i = 0; i < (offsets.length); i++) {
+            if (offsets[i].getOffsetEnd().equals(lineDate)) {
+                redLineOffset = offsets[i].getOffsetPixels();
+                break;
+            }
+        }
+    } else
+        if (unitStart.equals(lineDate)) {
+            redLineOffset = 0;
+        }
+
+    if (redLineOffset >= 0) {
+        GraphicPrimitiveContainer.Line redLine = getPrimitiveContainer().createLine((((myPosX) + redLineOffset) + horizontalOffset), 0, (((myPosX) + redLineOffset) + horizontalOffset), getHeight());
+        redLine.setForegroundColor(color);
+    }
+}

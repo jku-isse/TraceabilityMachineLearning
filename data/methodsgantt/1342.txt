@@ -1,0 +1,3 @@
+public void languageChanged(GanttLanguage.Event event) {
+    setText(event.getLanguage());
+}

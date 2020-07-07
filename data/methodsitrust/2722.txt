@@ -1,0 +1,8 @@
+public void testGetChildrenWithPerson() throws Exception {
+    List<FamilyMemberBean> children = familyDAO.getChildren(3);
+    assertEquals(2, children.size());
+    Collections.sort(children, this);
+    assertEquals("Kid1", children.get(0).getFirstName());
+    assertEquals("Kid2", children.get(1).getFirstName());
+    assertEquals("Child", children.get(0).getRelation());
+}

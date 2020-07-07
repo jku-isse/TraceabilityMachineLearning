@@ -1,0 +1,3 @@
+public void setScaleFactor(double newValue) {
+    scaleFactor = newValue;
+}

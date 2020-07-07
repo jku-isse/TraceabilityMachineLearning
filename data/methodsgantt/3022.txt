@@ -1,0 +1,45 @@
+/**
+ * Constructor.
+ */
+public LanguageSettingsPanel(GanttProject parent) {
+    super(GanttLanguage.getInstance().getText("languages"), GanttLanguage.getInstance().getText("settingsLanguages"), parent);
+    appli = parent;
+    // create the combo box with all languages
+    cbLanguage = new JComboBox();
+    cbLanguage.addItem("Traditional Chinese");
+    cbLanguage.addItem("Simplified Chinese");
+    cbLanguage.addItem("u0411u044au043bu0433u0430u0440u0441u043au0438");
+    cbLanguage.addItem("u010cesky");
+    cbLanguage.addItem("Dansk");
+    cbLanguage.addItem("Deutsch");
+    cbLanguage.addItem("English");
+    cbLanguage.addItem("English (United Kingdom)");
+    cbLanguage.addItem("Espau00f1ol");
+    cbLanguage.addItem("Estonian");
+    cbLanguage.addItem("Finnish");
+    cbLanguage.addItem("Franu00e7ais");
+    cbLanguage.addItem("Greek");
+    cbLanguage.addItem("Hrvatski");
+    cbLanguage.addItem("Hungarian");
+    cbLanguage.addItem("Korean");
+    cbLanguage.addItem("u05e2u05d1u05e8u05d9u05ea");
+    cbLanguage.addItem("Italiano");
+    cbLanguage.addItem("Japanese");
+    cbLanguage.addItem("Nederlands");
+    cbLanguage.addItem("Norsk");
+    cbLanguage.addItem("Polski");
+    cbLanguage.addItem("Portuguu00eas");
+    cbLanguage.addItem("Portuguu00eas do Brasil");
+    cbLanguage.addItem("u0420u0443u0441u0441u043au0438u0439");
+    cbLanguage.addItem("Romanian");
+    cbLanguage.addItem("Slovenu0161u010dina");
+    cbLanguage.addItem("Slovensky");
+    cbLanguage.addItem("Svenska");
+    cbLanguage.addItem("Tu00fcrku00e7e");
+    cbLanguage.addItem("Tiu1ebfng anh");
+    cbLanguage.addItemListener(this);
+    JPanel languagePanel = new JPanel(new BorderLayout());
+    languagePanel.add(cbLanguage, BorderLayout.NORTH);
+    vb.add(languagePanel);
+    applyComponentOrientation(language.getComponentOrientation());
+}

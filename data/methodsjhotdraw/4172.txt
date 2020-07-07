@@ -1,0 +1,24 @@
+/**
+ * Installs an ActionMap that will be populated by invoking the
+ * <code>loadActionMap</code> method on the specified Class
+ * when necessary.
+ * <p>
+ * This should be used if the ActionMap can be shared.
+ *
+ * @param c
+ * 		JComponent to install the ActionMap on.
+ * @param loaderClass
+ * 		Class object that gets loadActionMap invoked
+ * 		on.
+ * @param defaultsKey
+ * 		Key to use to defaults table to check for
+ * 		existing map and what resulting Map will be registered on.
+ */
+static void installLazyActionMap(JComponent c, Class loaderClass, String defaultsKey) {
+    ActionMap map = ((ActionMap) (UIManager.get(defaultsKey)));
+    if (map == null) {
+        map = new PaletteLazyActionMap(loaderClass);
+        UIManager.getLookAndFeelDefaults().put(defaultsKey, map);
+    }
+    SwingUtilities.replaceUIActionMap(c, map);
+}

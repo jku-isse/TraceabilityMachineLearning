@@ -1,0 +1,139 @@
+/**
+ * Checks a patient to see what immunizations they need
+ *
+ * @param pid
+ * 		patient to be checked
+ * @return patient list of those lacking immunizations according to the schedule
+ */
+private String checkImmunizations(long pid) throws iTrustException {
+    String reason = "";
+    List<ProcedureBean> procs = patientDAO.getProcedures(pid);
+    PatientBean patient = patientDAO.getPatient(pid);
+    // long patientAge = patient.getAgeInWeeks();
+    Date patientDOB = patient.getDateOfBirth();
+    Gender gen = patient.getGender();
+    int hepB = 0;
+    long hepBTime = 0;
+    int rota = 0;
+    long rotaTime = 0;
+    int diptet = 0;
+    long deptetTime = 0;
+    int haemoflu = 0;
+    long haemofluTime = 0;
+    long haemofluTimeFirst = 0;
+    int pneumo = 0;
+    long pneumoTime = 0;
+    long pneumofluTimeFirst = 0;
+    int polio = 0;
+    long polioTime = 0;
+    int measles = 0;
+    long measlesTime = 0;
+    int varicella = 0;
+    long varicellaTime = 0;
+    int hepA = 0;
+    long hepATime = 0;
+    int hpv = 0;
+    long hpvTime = 0;
+    for (ProcedureBean proc : procs) {
+        String cpt = proc.getCPTCode();
+        // Hep B (90371)
+        if (cpt.equals("90371")) {
+            hepB++;
+            hepBTime = proc.getDate().getTime();
+        } else// Rotavirus (90681)
+
+            if (cpt.equals("90681")) {
+                rota++;
+                rotaTime = proc.getDate().getTime();
+            } else// Diptheria, Tetanus, Pertussis (90696)
+
+                if (cpt.equals("90696")) {
+                    diptet++;
+                    deptetTime = proc.getDate().getTime();
+                } else// Haemophilus influenza (90645)
+
+                    if (cpt.equals("90645")) {
+                        if (0 == haemoflu)
+                            haemofluTimeFirst = proc.getDate().getTime();
+
+                        haemoflu++;
+                        haemofluTime = proc.getDate().getTime();
+                    } else// Pneumococcal (90669)
+
+                        if (cpt.equals("90669")) {
+                            if (0 == pneumo)
+                                pneumofluTimeFirst = proc.getDate().getTime();
+
+                            pneumo++;
+                            pneumoTime = proc.getDate().getTime();
+                        } else// Poliovirus (90712)
+
+                            if (cpt.equals("90712")) {
+                                polio++;
+                                polioTime = proc.getDate().getTime();
+                            } else// Measles, Mumps, Rubella (90707)
+
+                                if (cpt.equals("90707")) {
+                                    measles++;
+                                    measlesTime = proc.getDate().getTime();
+                                } else// Varicella (90396)
+
+                                    if (cpt.equals("90396")) {
+                                        varicella++;
+                                        varicellaTime = proc.getDate().getTime();
+                                    } else// Hep A (90633)
+
+                                        if (cpt.equals("90633")) {
+                                            hepA++;
+                                            hepATime = proc.getDate().getTime();
+                                        } else// Human Papillomaavirus (90649)
+
+                                            if (cpt.equals("90649")) {
+                                                hpv++;
+                                                hpvTime = proc.getDate().getTime();
+                                            }
+
+
+
+
+
+
+
+
+
+    }
+    if (3 > hepB) {
+        reason += GetVisitRemindersAction.testHepB(hepB, patientDOB, hepBTime);
+    }
+    if (3 > rota) {
+        reason += GetVisitRemindersAction.testRotaVirus(rota, patientDOB, rotaTime);
+    }
+    if (6 > diptet) {
+        reason += GetVisitRemindersAction.testDipTet(diptet, patientDOB, deptetTime);
+    }
+    if (3 > haemoflu) {
+        reason += GetVisitRemindersAction.testHaemoFlu(haemoflu, patientDOB, haemofluTime, haemofluTimeFirst);
+    }
+    if (4 > pneumo) {
+        reason += GetVisitRemindersAction.testPneumo(pneumo, patientDOB, pneumoTime, pneumofluTimeFirst);
+    }
+    if (3 > polio) {
+        reason += GetVisitRemindersAction.testPolio(polio, patientDOB, polioTime);
+    }
+    if (2 > measles) {
+        reason += GetVisitRemindersAction.testMeasles(measles, patientDOB, measlesTime);
+    }
+    if (2 > varicella) {
+        reason += GetVisitRemindersAction.testVaricella(varicella, patientDOB, varicellaTime);
+    }
+    if (2 > hepA) {
+        reason += GetVisitRemindersAction.testHepA(hepA, patientDOB, hepATime);
+    }
+    if ((3 > hpv) && (gen.getName().equals("Female"))) {
+        reason += GetVisitRemindersAction.testHPV(hpv, patientDOB, hpvTime);
+    }
+    if ((reason.length()) > 2)
+        return reason.substring(0, ((reason.length()) - 2));
+
+    return reason;
+}

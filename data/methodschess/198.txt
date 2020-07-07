@@ -1,0 +1,10 @@
+/**
+ * Start a new thread to search for a ply.
+ */
+public void start() {
+    if ((_searchThread) == null) {
+        setSearchStop(false);
+        _searchThread = new Thread(this);
+        _searchThread.start();
+    }
+}

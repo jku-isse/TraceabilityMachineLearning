@@ -1,0 +1,9 @@
+/**
+ * Creates the overlay within the given container.
+ *
+ * @param view
+ * 		the DrawingView
+ */
+public void createOverlay(DrawingView view) {
+    createOverlay(view, null);
+}

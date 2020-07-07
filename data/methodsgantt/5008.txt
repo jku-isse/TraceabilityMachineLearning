@@ -1,0 +1,11 @@
+public static int getTextLength(Graphics g, String text) {
+    if ((text.length()) == 0)
+        return 0;
+
+    Graphics2D g2 = ((Graphics2D) (g));
+    FontRenderContext frc = g2.getFontRenderContext();
+    Font font = g.getFont();
+    TextLayout layout = new TextLayout(text, font, frc);
+    Rectangle2D bounds = layout.getBounds();
+    return ((int) (bounds.getWidth())) + 1;
+}

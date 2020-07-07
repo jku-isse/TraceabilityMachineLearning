@@ -1,0 +1,6 @@
+private Document parseXML(BufferedReader reader) throws Exception {
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    factory.setValidating(false);
+    DocumentBuilder builder = factory.newDocumentBuilder();
+    return builder.parse(new InputSource(reader));
+}

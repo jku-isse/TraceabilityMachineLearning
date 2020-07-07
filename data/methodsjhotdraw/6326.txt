@@ -1,0 +1,8 @@
+/**
+ * Returns the wrapped resource bundle.
+ *
+ * @return The wrapped resource bundle.
+ */
+public ResourceBundle getWrappedBundle() {
+    return resource;
+}

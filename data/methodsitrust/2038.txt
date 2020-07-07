@@ -1,0 +1,8 @@
+/**
+ * Gets the HCP ID of the HCP administering the immunization
+ *
+ * @return String
+ */
+public String getHcpid() {
+    return hcpid;
+}

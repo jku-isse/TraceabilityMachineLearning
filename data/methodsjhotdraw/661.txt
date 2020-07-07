@@ -1,0 +1,4 @@
+protected float[] getColorAt(int x, int y) {
+    float[] cc = colorWheelProducer.getColorAt((x - (wheelInsets.left)), (y - (wheelInsets.top)), (((getWidth()) - (wheelInsets.left)) - (wheelInsets.right)), (((getHeight()) - (wheelInsets.top)) - (wheelInsets.bottom)));
+    return cc;
+}

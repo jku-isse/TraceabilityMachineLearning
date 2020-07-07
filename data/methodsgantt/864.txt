@@ -1,0 +1,17 @@
+/**
+ * Remove the current node.
+ *
+ * @param current
+ * 		
+ */
+void removeCurrentNode(DefaultMutableTreeNode currentNode) {
+    DefaultMutableTreeNode parent = ((DefaultMutableTreeNode) (currentNode.getParent()));
+    getTaskManager().deleteTask(((Task) (currentNode.getUserObject())));
+    if (parent != null) {
+        ((GanttTreeTableModel) (treeModel)).removeNodeFromParent(currentNode);
+        forwardScheduling();
+        (nbTasks)--;
+        appli.refreshProjectInfos();
+        return;
+    }
+}

@@ -1,0 +1,7 @@
+/**
+ * Remove a listener for selection changes in this DrawingView.
+ *
+ * @param fsl
+ * 		jhotdraw.framework.FigureSelectionListener
+ */
+public void removeFigureSelectionListener(FigureSelectionListener fsl);

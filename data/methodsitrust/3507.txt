@@ -1,0 +1,3 @@
+public void adverseEvent2() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/adverseEvent2.sql"));
+}

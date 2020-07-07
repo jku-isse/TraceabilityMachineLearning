@@ -1,0 +1,10 @@
+public void testGetEpidemicStatisticsInvalidThreshold() {
+    try {
+        ArrayList<DiagnosisStatisticsBean> dsList = action.getEpidemicStatistics(("11/02/" + (thisYear)), "84.50", "27606", "");
+        fail("FormValidationException should have been thrown.");
+    } catch (FormValidationException e) {
+        // This should be thrown
+    } catch (DBException e) {
+        fail("DB Exception thrown");
+    }
+}

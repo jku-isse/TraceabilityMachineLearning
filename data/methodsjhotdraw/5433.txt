@@ -1,0 +1,26 @@
+public void transform(AffineTransform tx) {
+    if (((AttributeKeys.TRANSFORM.get(this)) != null) || (((tx.getType()) & (AffineTransform.TYPE_TRANSLATION)) != (tx.getType()))) {
+        if ((AttributeKeys.TRANSFORM.get(this)) == null) {
+            AttributeKeys.TRANSFORM.basicSetClone(this, tx);
+        } else {
+            AffineTransform t = AttributeKeys.TRANSFORM.getClone(this);
+            t.preConcatenate(tx);
+            AttributeKeys.TRANSFORM.basicSet(this, t);
+        }
+    } else {
+        for (Figure f : getChildren()) {
+            f.transform(tx);
+        }
+        if (((SVGAttributeKeys.FILL_GRADIENT.get(this)) != null) && (!(SVGAttributeKeys.FILL_GRADIENT.get(this).isRelativeToFigureBounds()))) {
+            Gradient g = SVGAttributeKeys.FILL_GRADIENT.getClone(this);
+            g.transform(tx);
+            SVGAttributeKeys.FILL_GRADIENT.basicSet(this, g);
+        }
+        if (((SVGAttributeKeys.STROKE_GRADIENT.get(this)) != null) && (!(SVGAttributeKeys.STROKE_GRADIENT.get(this).isRelativeToFigureBounds()))) {
+            Gradient g = SVGAttributeKeys.STROKE_GRADIENT.getClone(this);
+            g.transform(tx);
+            SVGAttributeKeys.STROKE_GRADIENT.basicSet(this, g);
+        }
+    }
+    invalidate();
+}

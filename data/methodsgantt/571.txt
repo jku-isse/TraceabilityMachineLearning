@@ -1,0 +1,10 @@
+protected void saveAsPreviousState() {
+    getUIFacade().setStatusText(GanttLanguage.getInstance().getText("saveCurrent"));
+    GanttDialogSaveAsPreviousState ps = new GanttDialogSaveAsPreviousState(this);
+    ps.show();
+    if (ps.isSaved()) {
+        bSaveCurrent.setEnabled(false);
+        bComparePrev.setEnabled(true);
+        myPreviousStates.add(ps.getPreviousState());
+    }
+}

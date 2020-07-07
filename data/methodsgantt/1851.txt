@@ -1,0 +1,3 @@
+public boolean getDraw() {
+    return draw;
+}

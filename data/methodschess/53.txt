@@ -1,0 +1,11 @@
+// Constructors
+/**
+ * Create a new action instance.
+ *
+ * @param gameNotation
+ * 		The notation of the game.
+ */
+public SaveGameAsAction(GameNotation gameNotation) {
+    super("Save game as...", gameNotation);
+    _gameNotation = gameNotation;
+}

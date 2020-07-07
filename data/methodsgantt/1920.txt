@@ -1,0 +1,10 @@
+RegularFrameOffsetBuilder(TimeUnitStack timeUnitStack, GPCalendar calendar, TimeUnit topUnit, TimeUnit bottomUnit, Date startDate, int bottomUnitWidth, int chartWidth, float weekendDecreaseFactor) {
+    myTimeUnitStack = timeUnitStack;
+    myCalendar = calendar;
+    myStartDate = startDate;
+    myTopUnit = topUnit;
+    myBottomUnit = bottomUnit;
+    myBottomUnitWidth = bottomUnitWidth;
+    myChartWidth = chartWidth;
+    myWeekendDecreaseFactor = weekendDecreaseFactor;
+}

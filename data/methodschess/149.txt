@@ -1,0 +1,7 @@
+/**
+ * Set the color of the engine.
+ *
+ * @param white
+ * 		flag to indicate if the engine operates on the white pieces.
+ */
+void setWhite(boolean white);

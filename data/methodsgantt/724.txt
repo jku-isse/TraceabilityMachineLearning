@@ -1,0 +1,5 @@
+private Point getPopupMenuPoint(MouseEvent popupTriggerEvent) {
+    final int x = ((popupTriggerEvent.getX()) - (scrollpane.getHorizontalScrollBar().getValue())) + (vbar.isVisible() ? vbar.getWidth() : 0);
+    final int y = ((popupTriggerEvent.getY()) + (table.getRowHeight())) + (+(myImagePanel.getHeight()));
+    return new Point(x, y);
+}

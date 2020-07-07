@@ -1,0 +1,8 @@
+// public void removeById(int Id);
+/**
+ * Retrieves a list of all resources available.
+ *
+ * @return ArrayList filled with ProjectResource ancestors.
+ * @see ProjectResource
+ */
+public List getResources();

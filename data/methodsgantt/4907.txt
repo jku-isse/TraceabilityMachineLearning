@@ -1,0 +1,5 @@
+public UnitInfo(int myTruncatedCount, int myRoundedCount, Date lastDate) {
+    this.myTruncatedCount = myTruncatedCount;
+    this.myRoundedCount = myRoundedCount;
+    this.lastDate = lastDate;
+}

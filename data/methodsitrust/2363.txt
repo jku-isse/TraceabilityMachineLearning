@@ -1,0 +1,15 @@
+public PreparedStatement loadParameters(PreparedStatement ps, HealthRecord bean) throws SQLException {
+    int i = 1;
+    ps.setLong((i++), bean.getPatientID());
+    ps.setDouble((i++), bean.getHeight());
+    ps.setDouble((i++), bean.getWeight());
+    ps.setInt((i++), (bean.isSmoker() ? 1 : 0));
+    ps.setInt((i++), bean.getSmokingStatus());
+    ps.setInt((i++), bean.getBloodPressureN());
+    ps.setInt((i++), bean.getBloodPressureD());
+    ps.setInt((i++), bean.getCholesterolHDL());
+    ps.setInt((i++), bean.getCholesterolLDL());
+    ps.setInt((i++), bean.getCholesterolTri());
+    ps.setLong((i++), bean.getPersonnelID());
+    return ps;
+}

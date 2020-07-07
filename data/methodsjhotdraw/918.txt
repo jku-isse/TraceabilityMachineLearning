@@ -1,0 +1,7 @@
+/**
+ * The drawing view synchronizes on the lock when drawing a drawing.
+ */
+@Override
+public Object getLock() {
+    return AbstractDrawing.lock;
+}

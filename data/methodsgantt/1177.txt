@@ -1,0 +1,10 @@
+/**
+ * {@inheritDoc }
+ */
+public Class getColumnClass(int colIndex) {
+    if (colIndex == 0) {
+        return hierarchicalColumnClass;
+    }
+    ResourceColumn column = ((ResourceColumn) (columns.get(new Integer(colIndex))));
+    return column == null ? String.class : column.getType();
+}

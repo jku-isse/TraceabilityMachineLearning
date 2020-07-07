@@ -1,0 +1,3 @@
+public boolean isSupertask() {
+    return myManager.getTaskHierarchy().hasNestedTasks(this);
+}

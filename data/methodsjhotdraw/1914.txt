@@ -1,0 +1,4 @@
+/**
+ * Sets the active handle.
+ */
+public void setActiveHandle(Handle newValue);

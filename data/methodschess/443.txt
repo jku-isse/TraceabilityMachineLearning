@@ -1,0 +1,8 @@
+/**
+ * Get the ply of this notation.
+ *
+ * @return The ply for this notation.
+ */
+public final Ply getPly() {
+    return _ply;
+}

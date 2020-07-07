@@ -1,0 +1,7 @@
+public void testGetRequestedAppt() {
+    ApptBean b = req.getRequestedAppt();
+    assertNull(b);
+    req.setRequestedAppt(apt);
+    b = req.getRequestedAppt();
+    assertEquals(apt, b);
+}

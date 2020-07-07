@@ -1,0 +1,4 @@
+/**
+ * Gets output formats for the Drawing in order of preferred formats.
+ */
+List<OutputFormat> getOutputFormats();

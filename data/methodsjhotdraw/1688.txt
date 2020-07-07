@@ -1,0 +1,9 @@
+public void figureRemoved(CompositeFigureEvent evt) {
+    if (((drawing.getChildCount()) == 0) && ((getEmptyDrawingMessage()) != null)) {
+        repaint();
+    } else {
+        repaintDrawingArea(evt.getInvalidatedArea());
+    }
+    removeFromSelection(evt.getChildFigure());
+    invalidateDimension();
+}

@@ -1,0 +1,3 @@
+public void malaria_epidemic() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/malariaEpidemic.sql"));
+}

@@ -1,0 +1,17 @@
+public void run() throws TaskDependencyException {
+    if (!(isEnabled())) {
+        return;
+    }
+    myDistance2dependencyList.clear();
+    isRunning = true;
+    TaskContainmentHierarchyFacade facade = createContainmentFacade();
+    Set independentTasks = new HashSet();
+    traverse(facade, facade.getRootTask(), independentTasks);
+    for (Iterator it = independentTasks.iterator(); it.hasNext();) {
+        Task next = ((Task) (it.next()));
+        buildDistanceGraph(next);
+    }
+    fulfilDependencies();
+    myDistance2dependencyList.clear();
+    isRunning = false;
+}

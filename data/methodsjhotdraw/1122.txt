@@ -1,0 +1,8 @@
+/**
+ * Returns a localized human friendly presentation of the key.
+ *
+ * @return the presentation name of the key.
+ */
+public String getPresentationName() {
+    return (labels) == null ? key : labels.getString((("attribute." + (key)) + ".text"));
+}

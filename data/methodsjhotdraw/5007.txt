@@ -1,0 +1,23 @@
+/**
+ * Reads a &lt;document-styles&gt; element from the specified
+ * XML element.
+ *
+ * @param root
+ * 		A &lt;document&gt; element or a
+ * 		&lt;document-styles&gt; element.
+ */
+public void read(IXMLElement root) throws IOException {
+    String name = root.getName();
+    String ns = root.getNamespace();
+    if ((name.equals("document-content")) && ((ns == null) || (ns.equals(ODGConstants.OFFICE_NAMESPACE)))) {
+        readDocumentContentElement(root);
+    } else
+        if ((name.equals("document-styles")) && ((ns == null) || (ns.equals(ODGConstants.OFFICE_NAMESPACE)))) {
+            readDocumentStylesElement(root);
+        } else {
+            if (ODGStylesReader.DEBUG)
+                System.out.println(("ODGStylesReader unsupported root element " + root));
+
+        }
+
+}

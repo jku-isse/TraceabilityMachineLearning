@@ -1,0 +1,8 @@
+public void testWrongFormat() throws Exception {
+    try {
+        action = new EditPatientAction(factory, 0L, "hello!");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("Patient ID is not a number: hello!", e.getMessage());
+    }
+}

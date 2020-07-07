@@ -1,0 +1,3 @@
+public void setVisibleIfCreationTool(boolean newValue) {
+    isVisibleIfCreationTool = newValue;
+}

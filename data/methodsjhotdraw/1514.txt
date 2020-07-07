@@ -1,0 +1,12 @@
+/**
+ * Constrains the placement of a rectangle towards the closest constrainment
+ * in any direction.
+ * <p>
+ * This method changes the location of the rectangle which is passed as a
+ * parameter. This method does not change the size of the rectangle.
+ *
+ * @param r
+ * 		A rectangle on the drawing.
+ * @return Returns the constrained rectangle.
+ */
+public Rectangle2D.Double constrainRectangle(Rectangle2D.Double r);

@@ -1,0 +1,6 @@
+// TaskLength getOffsetLength() {
+// return null;
+// }
+Date getOffsetAnchor() {
+    return myOffsetAnchor;
+}

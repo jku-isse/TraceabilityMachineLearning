@@ -1,0 +1,3 @@
+public HarmonicColorModel getHarmonicColorModel() {
+    return harmonicModel;
+}

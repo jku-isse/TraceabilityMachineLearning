@@ -1,0 +1,9 @@
+/**
+ * Constructs an event for the given source Figure.
+ */
+public FigureEvent(Figure source, AttributeKey attribute, Object oldValue, Object newValue) {
+    super(source);
+    this.attribute = attribute;
+    this.oldValue = oldValue;
+    this.newValue = newValue;
+}

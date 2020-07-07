@@ -1,0 +1,11 @@
+/**
+ * Add the plies for rooks.
+ */
+public final void addPliesForRooks() {
+    long rookPositions = getBoard().getPositionOfPieces((_white ? ((Piece.ROOK) << 1) | 1 : (Piece.ROOK) << 1));
+    while (rookPositions != 0) {
+        int highestBit = BitUtils.getHighestBit(rookPositions);
+        addPliesForRookPos(highestBit);
+        rookPositions &= ~(1L << highestBit);
+    } 
+}

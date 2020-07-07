@@ -1,0 +1,7 @@
+@Override
+public void read(DOMInput in) throws IOException {
+    setBounds(new Point2D.Double(in.getAttribute("x", 0.0), in.getAttribute("y", 0.0)), new Point2D.Double(0, 0));
+    readAttributes(in);
+    readDecorator(in);
+    invalidate();
+}

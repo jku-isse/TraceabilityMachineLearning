@@ -1,0 +1,3 @@
+private Locator getLocator(Figure f) {
+    return LocatorLayouter.LAYOUT_LOCATOR.get(f);
+}

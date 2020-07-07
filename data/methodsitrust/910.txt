@@ -1,0 +1,7 @@
+public void testUpdateNonExistent() throws Exception {
+    String id = "9999999999";
+    HospitalBean hosp = new HospitalBean(id, "shouldnt be here");
+    assertEquals("Error: Hospital not found.", action.updateInformation(hosp));
+    assertEquals(null, factory.getHospitalsDAO().getHospital(id));
+    assertEquals(9, factory.getHospitalsDAO().getAllHospitals().size());
+}

@@ -1,0 +1,3 @@
+public boolean getTaskID() {
+    return cbTaskID.isSelected();
+}

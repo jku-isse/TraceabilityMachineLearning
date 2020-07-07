@@ -1,0 +1,6 @@
+/**
+ * Sets the value of the specified color componentIndex.
+ */
+public void setSliderValue(int componentIndex, int value) {
+    componentModels[componentIndex].setValue(value);
+}

@@ -1,0 +1,4 @@
+void addTask(Task task) {
+    myId2task.put(new Integer(task.getTaskID()), task);
+    isModified = true;
+}

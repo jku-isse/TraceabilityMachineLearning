@@ -1,0 +1,34 @@
+@SuppressWarnings("unchecked")
+protected void updateFigures() {
+    if (((updateDepth)++) == 0) {
+        Set<Figure> figures = getEditedFigures();
+        if (((activeView) == null) || (figures.isEmpty())) {
+        } else {
+            T value = attributeEditor.getAttributeValue();
+            if ((attributeRestoreData) == null) {
+                attributeRestoreData = new LinkedList<Object>();
+                for (Figure f : figures) {
+                    attributeRestoreData.add(f.getAttributesRestoreData());
+                }
+            }
+            for (Figure f : figures) {
+                f.willChange();
+                attributeKey.basicSet(f, value);
+                for (Map.Entry<AttributeKey, Object> entry : defaultAttributes.entrySet()) {
+                    entry.getKey().basicSet(f, entry.getValue());
+                }
+                f.changed();
+            }
+            if (((drawingEditor) != null) && (isUpdateDrawingEditorDefaults)) {
+                drawingEditor.setDefaultAttribute(attributeKey, value);
+            }
+            // 
+            // 
+            getActiveView().getDrawing().fireUndoableEditHappened(new AbstractAttributeEditorHandler.UndoableAttributeEdit<T>(new HashSet<Figure>(figures), attributeKey, value, attributeRestoreData));
+            if (!(attributeEditor.getValueIsAdjusting())) {
+                attributeRestoreData = null;
+            }
+        }
+    }
+    (updateDepth)--;
+}

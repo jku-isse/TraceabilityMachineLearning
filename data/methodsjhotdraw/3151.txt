@@ -1,0 +1,3 @@
+public DrawingView getActiveView() {
+    return (target) == null ? null : target.getActiveView();
+}

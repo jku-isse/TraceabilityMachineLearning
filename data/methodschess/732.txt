@@ -1,0 +1,12 @@
+// Methods
+/**
+ * Get the only instance of this class.
+ *
+ * @return The only instance of this class.
+ */
+public static final ResourceLoader getInstance() {
+    if ((ResourceLoader._instance) == null) {
+        ResourceLoader._instance = new ResourceLoader();
+    }
+    return ResourceLoader._instance;
+}

@@ -1,0 +1,9 @@
+public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+    final RoleSet roleSet = ((RoleSet) (value));
+    final JCheckBox result = new JCheckBox(myI18n.getRoleSetDisplayName(roleSet), roleSet.isEnabled());
+    if (isTheOnlyEnabled(roleSet)) {
+        result.setEnabled(false);
+    }
+    result.setToolTipText(createTooltipText(roleSet));
+    return result;
+}

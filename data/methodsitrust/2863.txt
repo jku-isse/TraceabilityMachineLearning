@@ -1,0 +1,30 @@
+/**
+ * Record a reset password failure, which blacklists the ipAddress. Uses the database table like a hash
+ * table where the key is the users IP address. If the users IP address is not in the table, a row with
+ * "1" is added.
+ *
+ * @param ipAddr
+ * 		The IP address of the user as a String.
+ * @throws DBException
+ * 		
+ */
+public void recordResetPasswordFailure(String ipAddr) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("UPDATE resetpasswordfailures SET failurecount=failurecount+1 WHERE ipaddress=?");
+        ps.setString(1, ipAddr);
+        int numUpdated = ps.executeUpdate();
+        // if there wasnt an empty row to begin with
+        if (numUpdated == 0)
+            insertResetPasswordRow(ipAddr, 1, conn);
+        // now they have a row AND a strike against
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,11 @@
+public void testEditProcedure() throws Exception {
+    action = new EditProceduresAction(factory, 9000000000L, "2", "955");
+    ProcedureBean bean = action.getProcedures().get(0);
+    assertEquals("1270F", bean.getCPTCode());
+    bean.setCPTCode("87");
+    bean.setVisitID(955);
+    bean.setHcpid("9000000000");
+    action.editProcedure(bean);
+    bean = action.getProcedures().get(0);
+    assertEquals("87", bean.getCPTCode());
+}

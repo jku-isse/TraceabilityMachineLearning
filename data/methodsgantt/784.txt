@@ -1,0 +1,6 @@
+/**
+ * set the relationship type
+ */
+public void setRelationshipType(int relationshipType) {
+    this.relationshipType = relationshipType;
+}

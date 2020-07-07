@@ -1,0 +1,4 @@
+public void undo() throws CannotUndoException {
+    mySwingUndoManager.undo();
+    fireUndoOrRedoHappened();
+}

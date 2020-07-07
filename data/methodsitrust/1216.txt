@@ -1,0 +1,15 @@
+/**
+ * Set up defaults
+ *
+ * @param factory
+ * 		The DAOFactory used to create the DAOs used in this action.
+ * @param loggedInMID
+ * 		The MID of the person viewing the office visits.
+ */
+public ViewPatientOfficeVisitHistoryAction(DAOFactory factory, long loggedInMID) {
+    this.loggedInMID = loggedInMID;
+    this.personnelDAO = factory.getPersonnelDAO();
+    officevisitDAO = factory.getOfficeVisitDAO();
+    this.patientDAO = factory.getPatientDAO();
+    visits = new ArrayList<PatientVisitBean>();
+}

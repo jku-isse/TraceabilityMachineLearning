@@ -1,0 +1,3 @@
+public void testCheckInt() {
+    assertEquals("", validatorProxy.checkInt("null", null, 0, 1, true));
+}

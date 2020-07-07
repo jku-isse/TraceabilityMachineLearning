@@ -1,0 +1,5 @@
+public SVGRectRadiusUndoableEdit(SVGRectFigure owner, Dimension2DDouble oldArc, Dimension2DDouble newArc) {
+    this.owner = owner;
+    this.oldArc = oldArc;
+    this.newArc = newArc;
+}

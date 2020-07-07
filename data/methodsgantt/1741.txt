@@ -1,0 +1,3 @@
+TaskContainmentHierarchyFacade getTaskContainment() {
+    return myTaskContainment;
+}

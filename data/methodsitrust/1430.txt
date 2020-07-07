@@ -1,0 +1,4 @@
+public void testOVDate() {
+    p1.setLastOVDate("date");
+    assertEquals("date", p1.getLastOVDate());
+}

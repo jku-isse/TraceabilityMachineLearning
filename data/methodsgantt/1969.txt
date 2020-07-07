@@ -1,0 +1,12 @@
+/**
+ * Converts a pixels Y coordinate into a vertical tile index.
+ * This is a convenience method.  No attempt is made to detect
+ * out-of-range coordinates.
+ *
+ * @param y
+ * 		the Y coordinate of a pixel.
+ * @return the Y index of the tile containing the pixel.
+ */
+public int YToTileY(int y) {
+    return SimpleRenderedImage.YToTileY(y, getTileGridYOffset(), getTileHeight());
+}

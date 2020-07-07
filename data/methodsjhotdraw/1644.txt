@@ -1,0 +1,3 @@
+public double getScaleFactor() {
+    return scaleFactor;
+}

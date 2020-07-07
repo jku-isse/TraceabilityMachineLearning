@@ -1,0 +1,114 @@
+Roomba
+
+Roomba is a series of autonomous robotic vacuum cleaners sold by iRobot.
+
+Roomba was introduced in 2002.[1] As of Feb 2014, over 10 million units have been sold worldwide.[2] Roomba features a set of basic sensors that help it perform tasks. For instance, the Roomba is able to change direction on encountering obstacles, to detect dirty spots on the floor, and to sense steep drops to keep it from falling down stairs. It uses two independently operating wheels that allow 360° turns in place. Additionally, it can adapt to perform other more creative tasks using an embedded computer in conjunction with the Roomba Open Interface.
+
+Description
+
+All Roomba models are disc-shaped, 34 cm (13") in diameter and less than 9 cm (3.5") high. A large contact-sensing mechanical bumper is mounted on the front half of the unit, with an omnidirectional infrared sensor at its top front center. A recessed carrying handle is fitted on the top of most units.[3]
+
+As of 2015, there have been six generations of Roomba units: the first-generation Original Series, the second-generation 400 & Discovery Series, the third-generation Professional & 500 Series, the fourth-generation 600 Series, the fifth-generation 700 Series, and the sixth-generation 800 Series. [4] All models have a pair of brushes, rotating in opposite directions, to pick up debris from the floor. In most models, the brushes are followed by a squeegee vacuum, which directs the airflow through a narrow slit to increase its velocity in order to collect fine dust. A horizontally mounted "side spinner" brush on the right side of the unit sweeps against walls to reach debris not accessible by the main brushes and vacuum. In the first generation of robots, the dirty air passes through the fan before reaching the filter, while later models use a fan-bypass vacuum.
+
+The Roomba is powered by a removable NiMH battery, which must be recharged regularly from a wall power adapter. Newer second- and third-generation models have a self-charging homebase that the unit searches for at the end of a cleaning session via infrared beacons. Charging on the homebase takes about three hours. Four infrared "cliff sensors" on the bottom of the Roomba prevent it from falling off ledges such as stairways. Most second- and third-generation models have internal acoustic-based dirt sensors that allow them to detect particularly dirty spots and focus on those areas accordingly. Fourth-generation models have an optical sensor located in front of the vacuum bin allowing detection of wider and smaller messes.[5] Many second- and third-generation Roombas come packaged with infrared remote controls, allowing a human operator to "drive" the robot to areas to be specially cleaned.
+
+Some higher-end 500, 700 and 800 series robots are compatible with Virtual Wall Lighthouses,[6] which use radio signals to communicate. These more advanced accessories confine a Roomba to a fixed area to be cleaned, yet allow the robot to later proceed to the next space to be cleaned.[7]
+
+There are several types of dust and debris collection bins for the 500 series robots. The standard vacuum bin incorporates a squeegee vacuum. The high-capacity sweeper bin does not include a vacuum, but has greater debris capacity. The Aerovac Bin directs suction airflow through the main brushes instead of using a squeegee, which is thought to keep the brushes cleaner.
+
+Operation
+
+All roomba models can be operated by manually carrying them to the room to be cleaned and pressing a button. Later models introduced several new operating modes. Clean mode is the normal cleaning program, starting in a spiral and then following a wall, until the room is determined to be clean. Spot mode cleans a small area using an outward-then-inward spiral. Max mode runs the standard cleaning algorithm until the battery is depleted. Dock mode, introduced with the third generation, instructs the robot to seek a charging base for recharging. The availability of the modes varies by model.
+
+The robot's bumper prevents it from bumping into walls and furniture by reversing or changing path accordingly. The third- and fourth-generations, which move faster than previous models, have additional forward-looking infrared sensors to detect obstacles. These slow down when nearing obstacles to reduce its force of impact.[8] Additionally, this technology is able to distinguish between soft and solid barriers. After a sufficient period of time cleaning, the Roomba will either search for and dock with the base, or stop where it is.
+
+The cleaning time depends on room size and, for models equipped with dirt sensors, volume of dirt. First-generation models must be told the room size, while second- and third-generation models estimate room size by measuring the longest straight-line run they can perform without bumping into an object. When finished cleaning, or when the battery is nearly depleted, a second- or third-generation Roomba will try to return to a base if one is detected. A second-generation Roomba may also be used with a scheduler accessory, allowing cleaning to start at the time of day and on days of the week that the owner desires. Most 500 Series robots support scheduling through buttons on the unit itself, and higher-end models allow the use of a remote to program schedules.
+
+Unlike the Electrolux Trilobite vacuuming robots, Roombas do not map out the rooms they are cleaning. Instead, iRobot developed a technology called iAdapt Responsive Cleaning Technology.[9] Roombas rely on a few simple algorithms such as spiral cleaning (spiraling), room crossing, wall-following and random walk angle-changing after bumping into an object or wall. This design is based on MIT researcher and iRobot CTO Rodney Brooks's philosophy that robots should be like insects, equipped with simple control mechanisms tuned to their environments. The result is that although Roombas are effective at cleaning rooms, they take several times longer to do the job than a person would. The Roomba may cover some areas many times, and other areas only once or twice. The virtual wall accessories project beams which the Roomba will not cross.
+
+The Roomba is not designed for deep-pile carpet. Also, the first- and second-generation Roombas can get stuck on rug tassels and electrical cords. The third-generation is able to reverse its brushes to escape entangled cords and tassels. Additionally, all models are designed to be low enough to go under a bed or most other items of furniture. If at any time the unit senses that it has become stuck, no longer senses the floor beneath it, or it decides that it has worked its way into a narrow area from which it is unable to escape, it stops and sounds an error to help someone find it. Early models use only flashing lights to indicate specific problems, while later models use a voice to announce a problem and a suggested solution.[10]
+
+Battery life
+
+Battery reliability is a frequently mentioned complaint on customer review websites. Battery replacements from iRobot cost a significant fraction of the purchase price of a new Roomba, though compatible third-party batteries are available at a lower price. The iRobot customer support website offers advice on maximizing battery performance and longevity.[11] All batteries will gradually lose energy capacity, resulting in shorter cleaning runs, eventually necessitating replacement. Roomba batteries are end-user-replaceable within minutes.
+
+Models
+
+Original series
+
+Introduced in 2002, the first-generation Roomba had three buttons for room size. The first-generation units comprise the original, silver-colored Roomba, the blue Roomba Pro, and the maroon Roomba Pro Elite. The latter two models included additional accessories, but all three use the same core robot and cleaning system.
+
+400 series
+
+The second-generation Roombas ("Discovery", later called 400 series) replaced their predecessors in July 2004, added a larger dust bin, improved software that calculates room size, dirt detection, and fast charging in the home base. All second-generation Roombas are functionally identical, though some have more or fewer buttons, accessories, or different external designs. Version 2.1 contained updated software and a new front wheel and was released in 2005. The low-end models continued to be available after the introduction of the 500-series with new, three-digit model names.
+
+Roomba budget models (Dirt Dog and Model 401) have a simplified interface (a single button) and lack some of the software-controlled flexibility of other versions. They are less expensive for first time purchasers. The Roomba Dirt Dog contains sweeping brushes and a larger dust bin, but lacks the vacuum motor. It uses the space that would be required for the vacuum for additional dust bin volume. It was designed for a home shop or garage environment.[6] The Dirt Dog was discontinued in 2010. The Roomba Model 401 is similar but has a standard size dust bin and vacuum system. Budget models are upwards compatible with the extended life batteries, fast charger, and schedulers of the 400 series.
+
+500 series
+
+The third-generation 500 series Roomba was introduced in August 2007[6] and features a forward-looking infrared sensor to detect obstacles and reduce speed, a dock button, improved mechanical components, smoother operation, and a modular design making part replacement trivial.[6][12] It also introduced customizable decorative face plates.[6] The Roomba 530 includes two virtual walls and a recharging dock.[6]
+
+600 series
+
+The 500 series have been superseded by the 600 series since August 2012. All models come with the aerovac bin and the advanced cleaning head.
+
+700 series
+
+Since May 2011 there have been the 700 series, though largely similar to the 500 series, includes improvements of a more robust cleaning system, improved aerovac bin with HEPA filter and improved battery life.
+
+Like the 500 series, the 700 series includes robots with different technologies and accessories. The Roomba 760 is the simplest of the robots, and Roomba 790[13] is the second newest and advanced with both scheduling and a large range of accessories including lighthouses, wireless command center and extra brushes and filters. Besides these two models, Roomba 770 and 780 are available, with both scheduling, dirtdetect, and full bin indicator.
+
+800 series
+
+The 800 series, introduced in 2013, is similar to the 700 series and its predecessors, but contains updated technology.
+
+The aeroforce performance cleaning system, the iRobot XLife battery are some of the new features. The 800 series Roombas contain all of the older technology that hasn't been updated from before, such as the cliff detection sensors and the bumper sensor and are consistent with the previous series.
+
+Hacking and extending Roomba
+
+From the earliest models on, Roomba vacuum cleaning robots have been hacked to extend their functionality. The first adaptations were based on a microcontroller that was directly connected to the motor drivers and sensors.[14] Versions manufactured after October 2005 contain an electronic and software interface that allows hackers to more easily control or modify behavior and remotely monitor its sensors.[15] One early application was using the device to map a room.[16] The native code for Roomba is written in a dialect of Lisp[17]
+
+Models with an interface (400 series since October 2007 plus 500 and 700 series) come with a Mini-DIN connector supporting a serial interface, which is electrically and physically incompatible with standard PC/Mac serial ports and cables. However, third-party adapters are available to access the Roomba's computer via Bluetooth, USB, or RS-232 (PC/Mac serial).[18] Roombas pre-October 2005 upgraded with the OSMO hacker[19] device allow monitoring many sensors and modifying the unit's behavior. The Roomba open interface (formerly Roomba serial command interface) allows programmers and roboticists to create their own enhancements.[20][21] Several projects are described on Roomba hacking sites.[22]
+
+In response to the growing interest of hackers in their product, the company developed the iRobot Create. In this model the vacuum cleaner motor is replaced by a "cargo bay" for mounting devices like TV cameras, lasers and other robotic parts. It provides a greatly enhanced 25-pin interface providing both analog and digital bidirectional communication with the hosted device allowing use as the mobile base for completely new robots. Together with a computing platform like a netbook or handheld device with wireless networking, it can be remotely controlled through a network.[23]
+
+In popular culture
+
+Jesse Pinkman, of the AMC series Breaking Bad, owns a Roomba, which startles his friends in "Thirty-Eight Snub" (S4/E2) and later plays a role in his and Walter White's search for the "ricin cigarette" that may have poisoned Brock Cantillo.[24][25]
+
+In the 15th episode of the second season of Parks and Recreation Tom Haverford creates what he describes as a moving robot that plays music called "DJ Roomba" by attaching an iPod to a Roomba.[26][27][28][29]
+
+In the anime adaptation of Miss Monochrome, the title character's only friend is a Roomba. The XKCD strip Vet[30] features a Roomba which its owner believes to be a dog.
+
+References
+
+1. "iRobot Corporation: Our History". Irobot.com. Retrieved 2013-11-24.
+2. "About iRobot". Irobot.com. Retrieved 2014-02-11.
+3. "iRobot Roomba 560 Video Review". Robot Reviews. Retrieved 18 September 2013.
+4. "iRobot Store". iRobot. Retrieved 30 May 2015.
+5. "What is Roomba's Dirt Detect technology?". Uksupport.irobot.com. Retrieved 2013-01-29.
+6. [1] Archived September 15, 2011 at the Wayback Machine
+7. "What are Roomba® Virtual Walls®?". iRobot Customer Care. iRobot. Retrieved 2012-03-04.
+8. "iRobot: Customer Care - Roomba® 500/600/700 Series Light Touch Technology". Homesupport.irobot.com. Retrieved 2013-01-29.
+9. https://web.archive.org/web/20130511232754/http://www.irobot.com/EngineeringAwesome/images/iAdapt%20Fast%20Facts.pdf
+10. "How can I prevent Roomba from getting stuck?". iRobot Customer Care. iRobot. Retrieved 2012-03-04.
+11. "Roomba® 500/600/700 Series Battery Maintenance Tips". iRobot Customer Care. iRobot. Retrieved 2012-03-04.
+12. "Official iRobot Website". Homesupport.irobot.com. Retrieved 2009-06-09.
+13. "iRobot Corporation: Roomba 790". Irobot.com. Retrieved 1 July 2012.
+14. "Discussing and Dissecting the Roomba 780 ad Scooba 230". Roomba Community. Retrieved 2012-03-04.
+15. "iRobot Roomba Serial Command Interface (SCI) Specification" (PDF). Irobot.com. Retrieved 2013-11-24.
+16. Gerkey, Brian (2006-03-31). "Robotic mapping for Roomba". Artificial Intelligence Center. SRI International. Retrieved 2013-06-13.
+17. "Why Lisp?".
+18. "Roomba Development Tools". Archived from the original on 2006-07-11. Retrieved February 1, 2007.
+19. "OSMO - RoombaDevTools.com". Web.archive.org. 2007-01-15. Archived from the original on January 15, 2007. Retrieved 2013-11-25.
+20. "iRobot Roomba Serial Command Interface (SCI) Specification" (PDF). iRobot Corporation. October 2005. Retrieved February 1, 2012.
+21. "iRobot Corporation: Roomba Open Interface" (PDF). iRobot. 2006. Retrieved 2015-09-07.
+22. "Roomba hacking projects". Hackingroomba.com. Retrieved February 6, 2013.
+23. "Roomba Robot project". Irobot.com. Retrieved 2012-03-04.
+24. "The 25 Best Moments In Breaking Bad: (9) The Roomba Vacuum Cam". Empire Online. p. 9.
+25. Margaret Lyons (August 26, 2013). "What Jesse Knows — and What We Still Don’t Know — About the Ricin on Breaking Bad". Vulture.
+26. http://www.webcitation.org/5wMPHBBjd
+27. "'Parks and Recreation' recap: R.I.P. DJ Roomba". Entertainment Weekly's EW.com. Retrieved 25 May 2015.
+28. "The Many Faces of DJ Roomba - Parks and Recreation - NBC". NBC. Retrieved 25 May 2015.
+29. "'Parks And Recreation': DJ Roomba Returning In Season 5". The Huffington Post. Retrieved 25 May 2015.
+30. "Vet". Retrieved 31 July 2015.

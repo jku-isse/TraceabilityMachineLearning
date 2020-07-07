@@ -1,0 +1,4 @@
+/* constructor */
+public GanttCalendarDays(ArrayList dayList) {
+    this.dayList = dayList;
+}

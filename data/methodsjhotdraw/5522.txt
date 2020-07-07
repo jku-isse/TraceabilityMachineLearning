@@ -1,0 +1,8 @@
+public void restoreTransformTo(Object geometry) {
+    Object[] restoreData = ((Object[]) (geometry));
+    bounds = ((Rectangle2D.Double) (((Rectangle2D.Double) (restoreData[0])).clone()));
+    AttributeKeys.TRANSFORM.basicSetClone(this, ((AffineTransform) (restoreData[1])));
+    SVGAttributeKeys.FILL_GRADIENT.basicSetClone(this, ((Gradient) (restoreData[2])));
+    SVGAttributeKeys.STROKE_GRADIENT.basicSetClone(this, ((Gradient) (restoreData[3])));
+    invalidate();
+}

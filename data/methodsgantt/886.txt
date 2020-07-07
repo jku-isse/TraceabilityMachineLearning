@@ -1,0 +1,3 @@
+public boolean isDataFlavorSupported(DataFlavor flavor) {
+    return Arrays.asList(_flavors).contains(flavor);
+}

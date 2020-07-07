@@ -1,0 +1,3 @@
+public PrescriptionBeanLoader() {
+    medLoader = new MedicationBeanLoader();
+}

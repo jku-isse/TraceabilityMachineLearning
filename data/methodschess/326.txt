@@ -1,0 +1,7 @@
+// Constructors
+/**
+ * Create a new instance of this test.
+ */
+public KingInKnightCheckTest() {
+    super("King is in knight check test");
+}

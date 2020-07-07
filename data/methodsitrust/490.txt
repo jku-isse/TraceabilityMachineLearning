@@ -1,0 +1,9 @@
+public void testAddProcedure() throws Exception {
+    action = new EditProceduresAction(factory, 9000000000L, "1", "11");
+    assertEquals(0, action.getProcedures().size());
+    ProcedureBean bean = new ProcedureBean("1270F", "Injection procedure", null, "9000000000");
+    bean.setVisitID(11);
+    action.addProcedure(bean);
+    assertEquals(1, action.getProcedures().size());
+    assertEquals("1270F", action.getProcedures().get(0).getCPTCode());
+}

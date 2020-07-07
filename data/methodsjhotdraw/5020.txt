@@ -1,0 +1,17 @@
+/**
+ * Reads a &lt;style:paragraph-properties&gt; element from the specified
+ * XML element.
+ * <p>
+ * The properties described in this section can be contained within
+ * paragraph styles (see section 14.8.2), but also within other styles, like
+ * cell styles (see section 14.12.4) They are contained in a
+ * &lt;style:paragraph-properties&gt; element.
+ *
+ * @param elem
+ * 		A &lt;paragraph-properties&gt; element.
+ * @param a
+ * 		Style attributes to be filled in by this method.
+ */
+private void readParagraphPropertiesElement(IXMLElement elem, HashMap<AttributeKey, Object> a) throws IOException {
+    // if (DEBUG) System.out.println("ODGStylesReader unsupported <"+elem.getName()+"> element.");
+}

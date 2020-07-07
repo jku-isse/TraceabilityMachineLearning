@@ -1,0 +1,6 @@
+public SelectionColorIcon(DrawingEditor editor, AttributeKey<Color> key, Image image, Shape colorShape) {
+    super(image);
+    this.editor = editor;
+    this.key = key;
+    this.colorShape = colorShape;
+}

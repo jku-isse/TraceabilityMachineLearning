@@ -1,0 +1,3 @@
+public void setHospitalZip(String hospitalZip) {
+    this.hospitalZip = hospitalZip;
+}

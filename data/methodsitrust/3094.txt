@@ -1,0 +1,28 @@
+/**
+ * Remove a patient from the list of HCPs monitoring lists of Patients
+ *
+ * @param patientMID
+ * 		The MID of the patient
+ * @param HCPMID
+ * 		The MID of the HCP
+ * @return true if removed successfully, false if not in list
+ */
+public boolean removePatientFromList(long patientMID, long HCPMID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("DELETE FROM remotemonitoringlists WHERE PatientMID = ? AND HCPMID = ?");
+        ps.setLong(1, patientMID);
+        ps.setLong(2, HCPMID);
+        if ((ps.executeUpdate()) == 0)
+            return false;
+
+        return true;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

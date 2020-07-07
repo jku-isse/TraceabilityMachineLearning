@@ -1,0 +1,13 @@
+/**
+ * Builds the sort portion of the SQL query (i.e. the ORDER BY... portion).
+ *
+ * @param sortField
+ * 		The pseudo-field to sort on.
+ * @param dir
+ * 		The sort direction.
+ * @return A string which can be a part of an SQL query.
+ */
+protected String buildSort(String sortField, SortDirection dir) {
+    String sortexp = sortColumns.get(sortField);
+    return String.format(" ORDER BY %s %s ", sortexp, dir);
+}

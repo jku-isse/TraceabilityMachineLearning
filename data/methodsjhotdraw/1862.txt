@@ -1,0 +1,6 @@
+/**
+ * Sets a default attribute of the editor.
+ * The default attribute will be used by creation tools, to create a new
+ * figure.
+ */
+public <T> void setDefaultAttribute(AttributeKey<T> key, T value);

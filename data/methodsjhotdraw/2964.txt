@@ -1,0 +1,18 @@
+public Rectangle2D.Double calculateLayout(CompositeFigure layoutable, Point2D.Double anchor, Point2D.Double lead) {
+    Insets2D.Double layoutInsets = AttributeKeys.LAYOUT_INSETS.get(layoutable);
+    if (layoutInsets == null) {
+        layoutInsets = new Insets2D.Double(0, 0, 0, 0);
+    }
+    Rectangle2D.Double layoutBounds = new Rectangle2D.Double(anchor.x, anchor.y, 0, 0);
+    for (Figure child : layoutable.getChildren()) {
+        if (child.isVisible()) {
+            Dimension2DDouble preferredSize = child.getPreferredSize();
+            Insets2D.Double ins = getInsets(child);
+            layoutBounds.width = Math.max(layoutBounds.width, (((preferredSize.width) + (ins.left)) + (ins.right)));
+            layoutBounds.height += ((preferredSize.height) + (ins.top)) + (ins.bottom);
+        }
+    }
+    layoutBounds.width += (layoutInsets.left) + (layoutInsets.right);
+    layoutBounds.height += (layoutInsets.top) + (layoutInsets.bottom);
+    return layoutBounds;
+}

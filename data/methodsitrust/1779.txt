@@ -1,0 +1,9 @@
+/**
+ * Sets read for this message
+ *
+ * @param read
+ * 		
+ */
+public void setRead(int read) {
+    this.read = read;
+}

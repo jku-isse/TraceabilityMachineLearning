@@ -1,0 +1,1 @@
+public abstract void validate(T bean) throws FormValidationException;

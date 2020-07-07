@@ -1,0 +1,13 @@
+/**
+ * Creates a new action by initializing the office visit
+ * database access object.
+ *
+ * @param factory
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public EditPrescriptionsAction(DAOFactory factory, long hcpid, String pidString, String ovIDString) throws iTrustException {
+    super(factory, hcpid, pidString, ovIDString);
+    init(factory);
+}

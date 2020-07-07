@@ -1,0 +1,29 @@
+/**
+ * Checks to see if a given date is within a range of months <strong>INCLUSIVELY</strong>, agnostic of
+ * the year. <br />
+ * <br />
+ *
+ * The range "wraps" so that if the first month is after the second month, then the definition of "is in
+ * month range" is:<br />
+ * the date falls outside of secondMonth, firstMonth, but including secondMonth and firstMonth.
+ *
+ * Modular arithmetic is used to adjust month values into the valid range.
+ *
+ * @param date
+ * 		
+ * @param firstMonth
+ * 		
+ * @param secondMonth
+ * 		
+ * @return 
+ */
+public static boolean isInMonthRange(Date date, int firstMonth, int secondMonth) {
+    Calendar cal = new GregorianCalendar();
+    cal.setTime(date);
+    firstMonth %= 12;
+    secondMonth %= 12;
+    if (secondMonth >= firstMonth) {
+        return ((cal.get(Calendar.MONTH)) >= firstMonth) && ((cal.get(Calendar.MONTH)) <= secondMonth);
+    }
+    return ((cal.get(Calendar.MONTH)) >= firstMonth) || ((cal.get(Calendar.MONTH)) <= secondMonth);
+}

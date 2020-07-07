@@ -1,0 +1,4 @@
+protected Point2D.Double chop(Figure target, Point2D.Double from) {
+    BezierFigure bf = ((BezierFigure) (getConnectorTarget(target)));
+    return bf.chop(from);
+}

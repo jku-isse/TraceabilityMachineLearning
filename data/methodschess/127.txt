@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the currently analyzed board.
+ *
+ * @return The currently analyzed board.
+ */
+public final BitBoard getBoard() {
+    return _board;
+}

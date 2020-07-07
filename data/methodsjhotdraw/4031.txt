@@ -1,0 +1,4 @@
+@SuppressWarnings("unchecked")
+public Enumeration children() {
+    return Collections.enumeration(Collections.EMPTY_LIST);
+}

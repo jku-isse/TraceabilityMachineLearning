@@ -1,0 +1,8 @@
+public void testGetSecurityAnswer() throws Exception {
+    try {
+        evilDAO.getSecurityQuestion(0L);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

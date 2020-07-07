@@ -1,0 +1,7 @@
+public void restoreTransformTo(Object geometry) {
+    Ellipse2D.Double r = ((Ellipse2D.Double) (geometry));
+    ellipse.x = r.x;
+    ellipse.y = r.y;
+    ellipse.width = r.width;
+    ellipse.height = r.height;
+}

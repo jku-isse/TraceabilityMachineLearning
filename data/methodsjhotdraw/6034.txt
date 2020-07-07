@@ -1,0 +1,12 @@
+public static String toColor(Color color) {
+    if (color == null) {
+        return "none";
+    }
+    String value;
+    value = "000000" + (Integer.toHexString(color.getRGB()));
+    value = "#" + (value.substring(((value.length()) - 6)));
+    if ((((value.charAt(1)) == (value.charAt(2))) && ((value.charAt(3)) == (value.charAt(4)))) && ((value.charAt(5)) == (value.charAt(6)))) {
+        value = (("#" + (value.charAt(1))) + (value.charAt(3))) + (value.charAt(5));
+    }
+    return value;
+}

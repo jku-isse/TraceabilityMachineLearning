@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @unknown Shows the popupMenu to hide/show columns and to add
+custom columns.
+ */
+public void mousePressed(MouseEvent e) {
+    handlePopupTrigger(e);
+}

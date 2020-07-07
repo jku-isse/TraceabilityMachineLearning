@@ -1,0 +1,11 @@
+// /**
+// * Returns the number of custom columns.
+// * @return
+// */
+// public int getCustomColumnCount()
+// {
+// return customColumns.size();
+// }
+public int getColumnCount() {
+    return nbCol;
+}

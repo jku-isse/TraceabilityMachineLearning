@@ -1,0 +1,7 @@
+/**
+ * Creates a layout manager that will lay out components along the
+ * X-axis.
+ */
+public ToolBarLayout() {
+    this(ToolBarLayout.X_AXIS);
+}

@@ -1,0 +1,27 @@
+/**
+ * Sets the number of minutes it would take for a session to timeout.
+ *
+ * @param mins
+ * 		An int specifying the number of minutes
+ * @throws DBException
+ * 		
+ */
+public void setSessionTimeoutMins(int mins) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("UPDATE globalvariables SET Value=? WHERE Name=Timeout");
+        ps.setInt(1, mins);
+        int numUpdated = ps.executeUpdate();
+        // no value in the table
+        if (numUpdated == 0)
+            insertDefaultTimeout(conn, mins);
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

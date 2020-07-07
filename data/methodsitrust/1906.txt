@@ -1,0 +1,3 @@
+public void setIcZip(String icZip) {
+    this.icZip = icZip;
+}

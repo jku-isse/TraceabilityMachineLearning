@@ -1,0 +1,14 @@
+@Override
+public void draw(Graphics2D g) {
+    synchronized(getLock()) {
+        ensureSorted();
+        ArrayList<Figure> toDraw = new ArrayList<Figure>(getChildren().size());
+        Rectangle clipRect = g.getClipBounds();
+        for (Figure f : getChildren()) {
+            if (f.getDrawingArea().intersects(clipRect)) {
+                toDraw.add(f);
+            }
+        }
+        draw(g, toDraw);
+    }
+}

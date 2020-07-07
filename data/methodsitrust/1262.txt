@@ -1,0 +1,6 @@
+public void testDBException() throws Exception {
+    factory = EvilDAOFactory.getEvilInstance();
+    action = new ViewPrescriptionRenewalNeedsAction(factory, (-1L));
+    List<PatientBean> patients = action.getRenewalNeedsPatients();
+    assert (patients.size()) == 0;
+}

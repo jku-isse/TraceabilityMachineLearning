@@ -1,0 +1,3 @@
+public ResourceManager getManager() {
+    return myManager;
+}

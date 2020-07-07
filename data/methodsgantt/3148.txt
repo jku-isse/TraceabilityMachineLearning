@@ -1,0 +1,4 @@
+public DefaultEnumerationOption(String id, String[] values) {
+    super(id);
+    myValues = values;
+}

@@ -1,0 +1,8 @@
+/**
+ * Get the destination of the piece.
+ *
+ * @return The destination of the piece.
+ */
+public final Position getDestination() {
+    return _destination;
+}

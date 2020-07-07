@@ -1,0 +1,8 @@
+public void testCodeInjection() throws Exception {
+    WebConversation wc = login("2", "pw");
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    WebResponse wr = wc.getResponse(((iTrustHTTPTest.ADDRESS) + "auth/patient/myDiagnoses.jsp?icd=%3Cscript%3Ewindow.location=%22http://bit.ly/4kb77v%22%3C/script%3E"));
+    assertFalse(wr.getText().contains("RickRollD"));
+    assertTrue(wr.getTitle().contains("iTrust - My Diagnoses"));
+    iTrustHTTPTest.assertLogged(TransactionType.DIAGNOSES_LIST_VIEW, 2L, 2L, "");
+}

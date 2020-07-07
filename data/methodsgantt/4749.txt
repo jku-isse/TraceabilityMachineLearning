@@ -1,0 +1,7 @@
+public TaskDependency.ActivityBinding getActivityBinding() {
+    TaskActivity[] dependantActivities = getDependency().getDependant().getActivities();
+    TaskActivity[] dependeeActivities = getDependency().getDependee().getActivities();
+    TaskActivity theDependant = dependantActivities[0];
+    TaskActivity theDependee = dependeeActivities[0];
+    return new DependencyActivityBindingImpl(theDependant, theDependee, new Date[]{ theDependant.getStart(), theDependee.getStart() });
+}

@@ -1,0 +1,4 @@
+private void addOption(String name) {
+    TaskRendererImpl.ourInfoList.add(name);
+    updateOptions();
+}

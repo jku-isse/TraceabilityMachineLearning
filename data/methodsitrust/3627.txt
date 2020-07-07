@@ -1,0 +1,3 @@
+public void reportRequests() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/reportRequests.sql"));
+}

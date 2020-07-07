@@ -1,0 +1,32 @@
+/**
+ * post the POST request to the server, with the specified parameters
+ *
+ * @param name1
+ * 		first parameter name
+ * @param value1
+ * 		first parameter value
+ * @param name2
+ * 		second parameter name
+ * @param value2
+ * 		second parameter value
+ * @param name3
+ * 		third parameter name
+ * @param value3
+ * 		third parameter value
+ * @param name4
+ * 		fourth parameter name
+ * @param value4
+ * 		fourth parameter value
+ * @return input stream with the server response
+ * @throws IOException
+ * 		
+ * @see #setParameter
+ */
+public InputStream post(String name1, Object value1, String name2, Object value2, String name3, Object value3, String name4, Object value4) throws IOException {
+    postCookies();
+    setParameter(name1, value1);
+    setParameter(name2, value2);
+    setParameter(name3, value3);
+    setParameter(name4, value4);
+    return doPost();
+}

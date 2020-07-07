@@ -1,0 +1,11 @@
+@Override
+public void addWindow(Window window, final View p) {
+    if (window instanceof JFrame) {
+        ((JFrame) (window)).setJMenuBar(createMenuBar(p));
+    } else
+        if (window instanceof JDialog) {
+            // ((JDialog) window).setJMenuBar(createMenuBar(null));
+        }
+
+    paletteHandler.add(window, p);
+}

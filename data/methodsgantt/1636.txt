@@ -1,0 +1,1 @@
+void setBottomUnitWidth(int pixelsWidth);

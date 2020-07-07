@@ -1,0 +1,3 @@
+public void testGetPatientName() throws iTrustException {
+    assertEquals("Andy Programmer", action.getName(this.mId));
+}

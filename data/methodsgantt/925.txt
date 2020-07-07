@@ -1,0 +1,17 @@
+/**
+ * Delete permanently a custom column.
+ *
+ * @param name
+ * 		Name of the column to delete.
+ */
+public void deleteCustomColumn(CustomColumn column) {
+    final String name = column.getName();
+    // the column has to be displayed to be removed.
+    this.displayColumn(name);
+    deleteColumnFromUI(name);
+    // Every tasks
+    TaskContainmentHierarchyFacade tchf = Mediator.getGanttProjectSingleton().getTaskManager().getTaskHierarchy();
+    tchf.getRootTask().getCustomValues().removeCustomColumn(name);
+    removeCustomColumnToAllNestedTask(tchf, tchf.getRootTask(), name);
+    Mediator.getGanttProjectSingleton().setAskForSave(true);
+}

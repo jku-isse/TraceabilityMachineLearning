@@ -1,0 +1,3 @@
+private static boolean firstDoseAfter(Date patientDOB, Date ageFirst, int years, int months, int weeks) {
+    return GetVisitRemindersAction.endBefore(patientDOB, ageFirst, years, months, weeks);
+}

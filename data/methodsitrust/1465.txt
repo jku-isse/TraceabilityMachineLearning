@@ -1,0 +1,4 @@
+public void testSpecialty() {
+    testBean.setRequiredSpecialty("special");
+    assertEquals(testBean.getRequiredSpecialty(), "special");
+}

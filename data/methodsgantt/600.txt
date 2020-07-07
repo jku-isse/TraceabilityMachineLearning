@@ -1,0 +1,28 @@
+protected GanttProjectBase() {
+    super("Gantt Chart");
+    statusBar = new GanttStatusBar(this);
+    myTabPane = new GanttTabbedPane();
+    myViewManager = new GanttProjectBase.ViewManagerImpl(myTabPane);
+    addProjectEventListener(myViewManager);
+    myTimeUnitStack = new GPTimeUnitStack(getLanguage());
+    myUIFacade = new UIFacadeImpl(this, statusBar, getProject(), ((UIFacade) (this)));
+    GPLogger.setUIFacade(myUIFacade);
+    myDocumentManager = new DocumentCreator(this, getUIFacade(), null) {
+        protected ParserFactory getParserFactory() {
+            return GanttProjectBase.this.getParserFactory();
+        }
+
+        protected TableHeaderUIFacade getVisibleFields() {
+            return getUIFacade().getTaskTree().getVisibleFields();
+        }
+    };
+    myUndoManager = new UndoManagerImpl(((IGanttProject) (this)), null, myDocumentManager) {
+        protected ParserFactory getParserFactory() {
+            return GanttProjectBase.this.getParserFactory();
+        }
+    };
+    Mediator.registerUndoManager(myUndoManager);
+    myProjectUIFacade = new ProjectUIFacadeImpl(myUIFacade, myDocumentManager, myUndoManager);
+    myTaskCustomColumnStorage = new CustomColumnsStorage();
+    myTaskCustomColumnManager = new CustomColumnsManager(myTaskCustomColumnStorage);
+}

@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @see org.jfree.chart.tooltips.CategoryToolTipGenerator#generateToolTip(CategoryDataset, int, int)
+ */
+public String generateToolTip(CategoryDataset arg0, int series, int arg2) {
+    return months[series];
+}

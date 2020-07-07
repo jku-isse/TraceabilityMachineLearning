@@ -1,0 +1,3 @@
+public DefaultAttributeAction(DrawingEditor editor, AttributeKey[] keys) {
+    this(editor, keys, null, null);
+}

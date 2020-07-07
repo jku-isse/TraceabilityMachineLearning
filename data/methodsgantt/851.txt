@@ -1,0 +1,12 @@
+public boolean hasAProjectTaskDescendant(DefaultMutableTreeNode node) {
+    ArrayList child = getAllChildTask(node);
+    for (int i = 0; i < (child.size()); i++) {
+        if (((Task) (((DefaultMutableTreeNode) (child.get(i))).getUserObject())).isProjectTask())
+            return true;
+
+        if (hasAProjectTaskDescendant(((DefaultMutableTreeNode) (child.get(i)))))
+            return true;
+
+    }
+    return false;
+}

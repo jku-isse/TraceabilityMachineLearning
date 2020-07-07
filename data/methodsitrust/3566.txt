@@ -1,0 +1,3 @@
+public void ndCodes3() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/ndCodes3.sql"));
+}

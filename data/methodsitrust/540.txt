@@ -1,0 +1,11 @@
+/**
+ * Returns a list of prescriptions the patient is currently taking
+ *
+ * @return a list of PrescriptionBeans for which the patient is currently taking
+ * @throws iTrustException
+ * 		
+ */
+public List<ProcedureBean> getImmunizations() throws iTrustException {
+    List<ProcedureBean> allImmunizations = patientDAO.getImmunizationProcedures(this.pid);
+    return allImmunizations;
+}

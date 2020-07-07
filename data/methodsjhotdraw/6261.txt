@@ -1,0 +1,5 @@
+public void setHasSignificantEdits(boolean newValue) {
+    boolean oldValue = hasSignificantEdits;
+    hasSignificantEdits = newValue;
+    firePropertyChange("hasSignificantEdits", oldValue, newValue);
+}

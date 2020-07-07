@@ -1,0 +1,28 @@
+/**
+ * Moves the information from the form to a HealthRecord
+ *
+ * @param pid
+ * 		Patient of interest
+ * @param form
+ * 		Form to be translated
+ * @return a HealthRecord containing all the information in the form
+ * @throws FormValidationException
+ * 		
+ */
+private HealthRecord transferForm(long pid, HealthRecordForm form) throws FormValidationException {
+    HealthRecord record = new HealthRecord();
+    record.setPatientID(pid);
+    record.setPersonnelID(loggedInMID);
+    record.setBloodPressureD(Integer.valueOf(form.getBloodPressureD()));
+    record.setBloodPressureN(Integer.valueOf(form.getBloodPressureN()));
+    record.setCholesterolHDL(Integer.valueOf(form.getCholesterolHDL()));
+    record.setCholesterolLDL(Integer.valueOf(form.getCholesterolLDL()));
+    record.setCholesterolTri(Integer.valueOf(form.getCholesterolTri()));
+    if (((record.getTotalCholesterol()) < 100) || ((record.getTotalCholesterol()) > 600))
+        throw new FormValidationException("Total cholesterol must be in [100,600]");
+
+    record.setHeight(Double.valueOf(form.getHeight()));
+    record.setWeight(Double.valueOf(form.getWeight()));
+    record.setSmoker(Integer.valueOf(form.getIsSmoker()));
+    return record;
+}

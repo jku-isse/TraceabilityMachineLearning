@@ -1,0 +1,6 @@
+@Override
+protected void installMouseListeners() {
+    mouseHandler = new JHarmonicColorWheel.MouseHandler();
+    addMouseListener(mouseHandler);
+    addMouseMotionListener(mouseHandler);
+}

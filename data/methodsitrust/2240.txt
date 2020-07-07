@@ -1,0 +1,3 @@
+public void setInHospital(long inHospital) {
+    this.inHospital = inHospital;
+}

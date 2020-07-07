@@ -1,0 +1,8 @@
+/**
+ * Get a bitmask with all the free squares.
+ *
+ * @return A bitmask with all the empty squares marked by a 1 bit.
+ */
+public final long getEmptySquares() {
+    return ~(((_boardLayer[1]) | (_boardLayer[2])) | (_boardLayer[3]));
+}

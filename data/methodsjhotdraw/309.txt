@@ -1,0 +1,22 @@
+protected void saveChangesAndReviewNext() {
+    if ((unsavedView.getFile()) == null) {
+        JFileChooser fileChooser = unsavedView.getSaveChooser();
+        // int option = fileChooser.showSaveDialog(this);
+        JSheet.showSaveSheet(fileChooser, unsavedView.getComponent(), new SheetListener() {
+            public void optionSelected(final SheetEvent evt) {
+                if ((evt.getOption()) == (JFileChooser.APPROVE_OPTION)) {
+                    final File file = evt.getFileChooser().getSelectedFile();
+                    saveToFileAndReviewNext(file);
+                } else {
+                    unsavedView.setEnabled(true);
+                    if ((oldFocusOwner) != null) {
+                        oldFocusOwner.requestFocus();
+                    }
+                    getApplication().setEnabled(true);
+                }
+            }
+        });
+    } else {
+        saveToFileAndReviewNext(unsavedView.getFile());
+    }
+}

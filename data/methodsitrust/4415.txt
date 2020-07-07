@@ -1,0 +1,5 @@
+@Override
+protected void setUp() throws Exception {
+    p = new PatientBean();
+    factor = new AgeFactor(p, 45);
+}

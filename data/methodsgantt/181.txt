@@ -1,0 +1,7 @@
+GanttChartTabContentPanel(IGanttProject project, UIFacade workbenchFacade, TaskTreeUIFacade treeFacade, Component ganttChart) {
+    myProject = project;
+    myWorkbenchFacade = workbenchFacade;
+    myTreeFacade = treeFacade;
+    myTaskTree = treeFacade.getTreeComponent();
+    myGanttChart = ganttChart;
+}

@@ -1,0 +1,10 @@
+/**
+ * This method sorts by LOINC and returns the list
+ *
+ * @param id
+ * 		the ID to sort the list by
+ * @return List sorted by LOINC
+ */
+public List<LabProcedureBean> sortByLOINC(long id) throws DBException {
+    return lpDAO.getAllLabProceduresLOINC(id);
+}

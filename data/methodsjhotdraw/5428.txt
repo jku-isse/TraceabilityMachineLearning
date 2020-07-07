@@ -1,0 +1,9 @@
+public boolean isEmpty() {
+    for (Figure child : getChildren()) {
+        SVGBezierFigure b = ((SVGBezierFigure) (child));
+        if ((b.getNodeCount()) > 0) {
+            return false;
+        }
+    }
+    return true;
+}

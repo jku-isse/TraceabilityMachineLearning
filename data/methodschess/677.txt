@@ -1,0 +1,11 @@
+/**
+ * Moves one half move forward in the game
+ */
+private void moveOnePlyForward() {
+    /**
+     *
+     *
+     * @unknown still to implement
+     */
+    System.out.println("Einen Halbzug vor");
+}

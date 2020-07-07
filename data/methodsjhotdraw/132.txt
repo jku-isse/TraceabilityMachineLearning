@@ -1,0 +1,35 @@
+/* protected void addStandardActionsTo(JToolBar tb) {
+JButton b;
+ApplicationModel model = getModel();
+b = tb.add(model.getAction(NewAction.ID));
+b.setFocusable(false);
+b = tb.add(model.getAction(OpenAction.ID));
+b.setFocusable(false);
+b = tb.add(model.getAction(SaveAction.ID));
+tb.addSeparator();
+b = tb.add(model.getAction(UndoAction.ID));
+b.setFocusable(false);
+b = tb.add(model.getAction(RedoAction.ID));
+b.setFocusable(false);
+tb.addSeparator();
+b = tb.add(model.getAction(CutAction.ID));
+b.setFocusable(false);
+b = tb.add(model.getAction(CopyAction.ID));
+b.setFocusable(false);
+b = tb.add(model.getAction(PasteAction.ID));
+b.setFocusable(false);
+}
+ */
+/**
+ * Creates a menu bar.
+ */
+protected JMenuBar createMenuBar() {
+    JMenuBar mb = new JMenuBar();
+    mb.add(createFileMenu());
+    for (JMenu mm : getModel().createMenus(this, null)) {
+        mb.add(mm);
+    }
+    mb.add(createWindowMenu());
+    mb.add(createHelpMenu());
+    return mb;
+}

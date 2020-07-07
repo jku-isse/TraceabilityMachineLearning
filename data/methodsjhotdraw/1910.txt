@@ -1,0 +1,7 @@
+/**
+ * Removes a property change listener to the drawing view.
+ *
+ * @param listener
+ * 		
+ */
+public void removePropertyChangeListener(PropertyChangeListener listener);

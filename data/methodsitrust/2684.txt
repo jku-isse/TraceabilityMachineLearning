@@ -1,0 +1,4 @@
+public void testGetLoginFailuresNoEntry() throws Exception {
+    authDAO.recordLoginFailure(ipAddr);
+    assertEquals(1, authDAO.getLoginFailures(ipAddr));
+}

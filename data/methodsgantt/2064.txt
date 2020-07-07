@@ -1,0 +1,3 @@
+public GraphicPrimitiveContainer.Rectangle getPrimitive(TaskActivity activity) {
+    return ((GraphicPrimitiveContainer.Rectangle) (getContainerFor(activity.getTask()).getPrimitive(activity)));
+}

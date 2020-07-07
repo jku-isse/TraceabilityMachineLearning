@@ -1,0 +1,6 @@
+public TaskContainmentHierarchyFacade getTaskHierarchy() {
+    // if (myTaskContainment==null) {
+    return myFacadeFactory.createFacede();
+    // }
+    // return myTaskContainment;
+}

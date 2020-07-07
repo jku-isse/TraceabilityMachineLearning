@@ -1,0 +1,7 @@
+public void move(Task targetSupertask) {
+    TaskImpl supertaskImpl = ((TaskImpl) (targetSupertask));
+    TaskHierarchyItem targetItem = supertaskImpl.myTaskHierarchyItem;
+    myTaskHierarchyItem.delete();
+    targetItem.addNestedItem(myTaskHierarchyItem);
+    myManager.onTaskMoved(this);
+}

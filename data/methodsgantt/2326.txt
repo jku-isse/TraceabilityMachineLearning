@@ -1,0 +1,3 @@
+public void setUserInfo(String user, String pass) {
+    myPhysicalDocument.setUserInfo(user, pass);
+}

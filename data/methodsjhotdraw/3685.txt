@@ -1,0 +1,3 @@
+public FigureAttributeEditorHandler(AttributeKey<T> key, AttributeEditor<T> attributeEditor, DrawingEditor drawingEditor) {
+    super(key, attributeEditor, drawingEditor);
+}

@@ -1,0 +1,9 @@
+public void testDefaultWithList() throws Exception {
+    String today = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
+    ArrayList<TransactionBean> list = new ArrayList<TransactionBean>();
+    TransactionBean t = new TransactionBean();
+    t.setTimeLogged(new Timestamp(System.currentTimeMillis()));
+    list.add(t);
+    assertEquals(today, action.getDefaultStart(list));
+    assertEquals(today, action.getDefaultEnd(list));
+}

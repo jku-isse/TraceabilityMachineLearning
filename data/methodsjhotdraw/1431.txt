@@ -1,0 +1,7 @@
+/**
+ * Checks if this {@code ConnectionFigure} can be connect to the specified
+ * {@code Connector}.
+ * This is used to provide an early feedback to the user, when he/she
+ * creates a new connection.
+ */
+public boolean canConnect(Connector start);

@@ -1,0 +1,9 @@
+/**
+ * Creates a new instance of HumanResource
+ */
+HumanResource(String name, int id, HumanResourceManager manager) {
+    super(id);
+    this.name = name;
+    customFields = new HashMap();
+    myManager = manager;
+}

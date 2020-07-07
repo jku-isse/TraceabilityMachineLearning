@@ -1,0 +1,9 @@
+/**
+ * Set the flag to indicate, if we are still in the opening book.
+ *
+ * @param inBook
+ * 		true, if we are still in the opening book. False otherwise.
+ */
+private final void setInOpeningBook(boolean inBook) {
+    _inOpeningBook = inBook;
+}

@@ -1,0 +1,3 @@
+public void setExplicitlyHiddenTasks(Set hiddenTasks) {
+    myHiddenTasks = hiddenTasks;
+}

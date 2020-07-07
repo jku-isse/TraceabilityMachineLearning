@@ -1,0 +1,8 @@
+/**
+ *
+ */
+@Override
+public String toString() {
+    String out = (("Filter by " + (filterType.toString())) + " with value ") + (filterValue);
+    return out;
+}

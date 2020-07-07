@@ -1,0 +1,3 @@
+public void setExamRoomMinutes(int examRoomMinutes) {
+    this.examRoomMinutes = examRoomMinutes;
+}

@@ -1,0 +1,13 @@
+public void groupFigures(DrawingView view, CompositeFigure group, Collection<Figure> figures) {
+    Collection<Figure> sorted = view.getDrawing().sort(figures);
+    int index = view.getDrawing().indexOf(sorted.iterator().next());
+    view.getDrawing().basicRemoveAll(figures);
+    view.clearSelection();
+    view.getDrawing().add(index, group);
+    group.willChange();
+    for (Figure f : sorted) {
+        group.basicAdd(f);
+    }
+    group.changed();
+    view.addToSelection(group);
+}

@@ -1,0 +1,4 @@
+public ChartRendererBase(ChartModelBase model) {
+    myPrimitiveContainer = new GraphicPrimitiveContainer();
+    myChartModel = model;
+}

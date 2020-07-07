@@ -1,0 +1,10 @@
+public void testInsertReport1() throws Exception {
+    action = new ViewMyReportRequestsAction(evilFactory, 9000000000L);
+    try {
+        action.addReportRequest(0);
+        fail("Should have throw exception");
+    } catch (iTrustException e) {
+        DBException dbe = ((DBException) (e));
+        assertEquals(EvilDAOFactory.MESSAGE, dbe.getSQLException().getMessage());
+    }
+}

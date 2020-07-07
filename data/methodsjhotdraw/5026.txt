@@ -1,0 +1,19 @@
+/**
+ * Reads a color style attribute.
+ * &lt;define name="color"&gt;
+ * &lt;data type="string"&gt;
+ * &lt;param name="pattern"&gt;#[0-9a-fA-F]{6}&lt;/param&gt;
+ * &lt;/data&gt;
+ * &lt;/define&gt;
+ */
+private Color toColor(String value) throws IOException {
+    String str = value;
+    if (str == null) {
+        return null;
+    }
+    if ((str.startsWith("#")) && ((str.length()) == 7)) {
+        return new Color(Integer.decode(str));
+    } else {
+        return null;
+    }
+}

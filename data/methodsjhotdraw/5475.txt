@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public SVGRectRadiusHandle(Figure owner) {
+    super(owner);
+}

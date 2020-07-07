@@ -1,0 +1,14 @@
+public void testGetInteractions2() throws Exception {
+    gen.standardData();
+    action.reportInteraction("009042407", "081096", "Tetra and Aspirin");
+    action.reportInteraction("009042407", "647641512", "Tetra and Prio");
+    action.reportInteraction("548684985", "647641512", "Cital and Prio");
+    List<DrugInteractionBean> beans = action.getInteractions("647641512");
+    assertEquals(beans.size(), 2);
+    assertTrue(beans.get(0).getDescription().equals("Tetra and Prio"));
+    assertTrue(beans.get(0).getFirstDrug().equals("009042407"));
+    assertTrue(beans.get(0).getSecondDrug().equals("647641512"));
+    assertTrue(beans.get(1).getDescription().equals("Cital and Prio"));
+    assertTrue(beans.get(1).getFirstDrug().equals("548684985"));
+    assertTrue(beans.get(1).getSecondDrug().equals("647641512"));
+}

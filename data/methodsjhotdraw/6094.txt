@@ -1,0 +1,3 @@
+public StyledEditorKit getStyledEditorKit() {
+    return ((StyledEditorKit) (getEditorKit()));
+}

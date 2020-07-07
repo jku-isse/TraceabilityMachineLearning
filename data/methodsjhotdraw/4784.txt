@@ -1,0 +1,21 @@
+@SuppressWarnings("unchecked")
+@Override
+public void groupFigures(DrawingView view, CompositeFigure group, Collection<Figure> figures) {
+    Collection<Figure> sorted = view.getDrawing().sort(figures);
+    view.getDrawing().basicRemoveAll(figures);
+    view.clearSelection();
+    view.getDrawing().add(group);
+    group.willChange();
+    ((ODGPathFigure) (group)).removeAllChildren();
+    for (Map.Entry<AttributeKey, Object> entry : figures.iterator().next().getAttributes().entrySet()) {
+        group.setAttribute(entry.getKey(), entry.getValue());
+    }
+    for (Figure f : sorted) {
+        ODGPathFigure path = ((ODGPathFigure) (f));
+        for (Figure child : path.getChildren()) {
+            group.basicAdd(child);
+        }
+    }
+    group.changed();
+    view.addToSelection(group);
+}

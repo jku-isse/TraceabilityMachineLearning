@@ -1,0 +1,5 @@
+protected void installMouseListeners() {
+    mouseHandler = new JColorWheel.MouseHandler();
+    addMouseListener(mouseHandler);
+    addMouseMotionListener(mouseHandler);
+}

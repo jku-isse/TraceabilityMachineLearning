@@ -1,0 +1,14 @@
+protected GeneralPath getDecoratorPath(Figure f) {
+    // FIXME - This should take the stroke join an the outer radius into
+    // account to compute the offset properly.
+    double offset = (isStroked()) ? 1 : 0;
+    GeneralPath path = new GeneralPath();
+    path.moveTo(((float) ((outerRadius) * (Math.sin((-(angle)))))), ((float) (offset + ((outerRadius) * (Math.cos((-(angle))))))));
+    path.lineTo(0, ((float) (offset)));
+    path.lineTo(((float) ((outerRadius) * (Math.sin(angle)))), ((float) (offset + ((outerRadius) * (Math.cos(angle))))));
+    if ((innerRadius) != 0) {
+        path.lineTo(0, ((float) ((innerRadius) + offset)));
+        path.closePath();
+    }
+    return path;
+}

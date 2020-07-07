@@ -1,0 +1,4 @@
+public void setProjectName(String projectName) {
+    prjInfos._sProjectName = projectName;
+    setAskForSave(true);
+}

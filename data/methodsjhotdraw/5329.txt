@@ -1,0 +1,26 @@
+/**
+ * Splits the segment at the given Point2D.Double if a segment was hit.
+ *
+ * @return the index of the segment or -1 if no segment was hit.
+ * @param split
+ * 		a Point on (or near) a segment of the bezier path
+ * @param tolerance
+ * 		a tolerance, tolerance should take into account
+ * 		the line width, plus 2 divided by the zoom factor.
+ */
+@Override
+public int splitSegment(Point2D.Double split, double tolerance) {
+    // Apply inverse of transform to point
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        try {
+            split = ((Point2D.Double) (AttributeKeys.TRANSFORM.get(this).inverseTransform(split, new Point2D.Double())));
+        } catch (NoninvertibleTransformException ex) {
+            System.err.println("Warning: SVGBezierFigure.findSegment. Figure has noninvertible Transform.");
+        }
+    }
+    int i = getBezierPath().findSegment(split, tolerance);
+    if (i != (-1)) {
+        addNode((i + 1), new BezierPath.Node(split));
+    }
+    return i + 1;
+}

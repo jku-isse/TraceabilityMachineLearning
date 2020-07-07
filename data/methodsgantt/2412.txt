@@ -1,0 +1,3 @@
+public String getTitle() {
+    return language.getText("option.exporter.title");
+}

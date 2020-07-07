@@ -1,0 +1,36 @@
+// change by G. Herrmann
+public void setAskForSave(boolean afs) {
+    if (isOnlyViewer)
+        return;
+
+    fireProjectModified(afs);
+    String title = getTitle();
+    // String last = title.substring(title.length() - 11, title.length());
+    if ((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX)) {
+        if (afs)
+            bSaveCurrent.setEnabled(afs);
+
+        if ((myPreviousStates.size()) != 0)
+            bComparePrev.setEnabled(true);
+
+    }
+    askForSave = afs;
+    try {
+        if ((System.getProperty("mrj.version")) != null) {
+            rootPane.putClientProperty("windowModified", Boolean.valueOf(afs));
+            // see http://developer.apple.com/qa/qa2001/qa1146.html
+        } else {
+            if (askForSave) {
+                /* if (!last.equals(" (modified)")) { setTitle(getTitle() + "
+                (modified)"); }
+                 */
+                if (!(title.endsWith(" *"))) {
+                    setTitle(((getTitle()) + " *"));
+                }
+            }
+        }
+    } catch (AccessControlException e) {
+        // This can happen when running in a sandbox (Java WebStart)
+        System.err.println(((e + ": ") + (e.getMessage())));
+    }
+}

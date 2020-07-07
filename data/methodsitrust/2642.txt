@@ -1,0 +1,16 @@
+public void testAddApptRequest() throws Exception {
+    gen.clearAllTables();
+    ApptBean bean = new ApptBean();
+    bean.setApptType("General Checkup");
+    bean.setHcp(9000000000L);
+    bean.setPatient(2L);
+    bean.setDate(new Timestamp(System.currentTimeMillis()));
+    ApptRequestBean req = new ApptRequestBean();
+    req.setRequestedAppt(bean);
+    arDAO.addApptRequest(req);
+    List<ApptRequestBean> reqs = arDAO.getApptRequestsFor(9000000000L);
+    assertEquals(1, reqs.size());
+    assertEquals(bean.getPatient(), reqs.get(0).getRequestedAppt().getPatient());
+    assertTrue(reqs.get(0).isPending());
+    assertFalse(reqs.get(0).isAccepted());
+}

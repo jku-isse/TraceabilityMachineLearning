@@ -1,0 +1,4 @@
+ZoomEvent(ZoomManager manager, ZoomManager.ZoomState newZoomState) {
+    super(manager);
+    myNewZoomState = newZoomState;
+}

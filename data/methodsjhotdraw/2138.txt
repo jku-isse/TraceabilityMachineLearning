@@ -1,0 +1,4 @@
+/**
+ * Tracks a double click.
+ */
+public void trackDoubleClick(Point p, int modifiersEx);

@@ -1,0 +1,10 @@
+private Component createBooleanComponent(BooleanOption option) {
+    JCheckBox result = new JCheckBox(new BooleanOptionAction(option));
+    result.setText(myi18n.getOptionLabel(option));
+    result.setHorizontalAlignment(JCheckBox.LEFT);
+    result.setHorizontalTextPosition(SwingConstants.TRAILING);
+    result.setSelected(option.isChecked());
+    ComponentOrientation componentOrientation = GanttLanguage.getInstance().getComponentOrientation();
+    result.setComponentOrientation(componentOrientation);
+    return result;
+}

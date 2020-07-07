@@ -1,0 +1,14 @@
+public void testRejectApptRequest() throws Exception {
+    List<ApptRequestBean> list = action.getApptRequests();
+    assertEquals(1, list.size());
+    assertEquals(2L, list.get(0).getRequestedAppt().getPatient());
+    String res = action.rejectApptRequest(list.get(0).getRequestedAppt().getApptID());
+    assertEquals("The appointment request you selected has been rejected.", res);
+    list = action.getApptRequests();
+    assertEquals(1, list.size());
+    assertEquals(2L, list.get(0).getRequestedAppt().getPatient());
+    assertFalse(list.get(0).isAccepted());
+    List<MessageBean> msgs = mDAO.getMessagesFor(list.get(0).getRequestedAppt().getPatient());
+    assertEquals(list.get(0).getRequestedAppt().getHcp(), msgs.get(0).getFrom());
+    assertTrue(msgs.get(0).getBody().contains("has been rejected."));
+}

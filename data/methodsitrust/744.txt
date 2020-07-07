@@ -1,0 +1,4 @@
+public void testGetImmunizations() throws Exception {
+    List<AdverseEventBean> beanList = action.getReports(false, "11/08/2008", "11/10/2010");
+    assertEquals("Hepatitis B", beanList.get(0).getDrug());
+}

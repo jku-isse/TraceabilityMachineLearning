@@ -1,0 +1,22 @@
+// Methods
+public void paintComponent(Graphics g) {
+    // g.setColor( new Color( 190, 190, 140) );
+    // g.setColor( new Color( 229, 229, 225) );
+    g.setColor(new Color(247, 247, 245));
+    g.fillRect(0, 0, _boardSize, _boardSize);
+    // g.setColor( new Color( 122, 80, 44));
+    // g.setColor( new Color( 250, 105, 86));
+    // g.setColor( new Color( 235, 142, 9));
+    g.setColor(new Color(249, 134, 89));
+    for (int i = 0; i < 8; i++)
+        for (int j = 0; j < 8; j++)
+            if (((i % 2) != 0) && ((j % 2) == 0))
+                g.fillRect((i * (_squareSize)), (j * (_squareSize)), _squareSize, _squareSize);
+            else
+                if (((i % 2) == 0) && ((j % 2) != 0))
+                    g.fillRect((i * (_squareSize)), (j * (_squareSize)), _squareSize, _squareSize);
+
+
+
+
+}

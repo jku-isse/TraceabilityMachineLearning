@@ -1,0 +1,12 @@
+public void testResetPassword() throws Exception {
+    gen.patient1();
+    gen.hcp0();
+    assertEquals("Answer did not match", action.resetPassword(1L, "patient", "wrong", "12345678", "12345678", "127.0.0.1"));
+    assertEquals("Answer did not match", action.resetPassword(9000000000L, "hcp", "wrong", "12345678", "12345678", "127.0.0.1"));
+    assertEquals("Invalid role", action.resetPassword(9000000000L, "a", "a", "12345678", "12345678", "127.0.0.1"));
+    assertEquals("Password changed", action.resetPassword(1L, "patient", "blue", "12345678", "12345678", "127.0.0.1"));
+    List<Email> list = feDAO.getAllEmails();
+    assertEquals("Dear Random Person, 
+ You have chosen to change your iTrust password for user 1", list.get(0).getBody());
+    assertEquals("Role mismatch", action.resetPassword(9000000000L, "uap", "a", "12345678", "12345678", "127.0.0.1"));
+}

@@ -1,0 +1,3 @@
+public void clearTransactionLog() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/clearTransactionLog.sql"));
+}

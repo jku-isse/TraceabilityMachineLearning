@@ -1,0 +1,3 @@
+public String getDeletedPositions() {
+    return myDeletedPositions;
+}

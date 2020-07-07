@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @return 
+ */
+public List<String> getPatientNames() {
+    List<String> out = new ArrayList<String>();
+    for (PatientBean patient : patients) {
+        out.add(patient.getFullName());
+    }
+    return out;
+}

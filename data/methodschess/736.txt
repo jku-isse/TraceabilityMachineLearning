@@ -1,0 +1,29 @@
+/**
+ * Constructor
+ *
+ * @param characterCount
+ * 		The number of allowed character to enter in the JTextField
+ * @param checkForNumbers
+ * 		Flag whether the string to enter has to be parsed for
+ * 		numbers >0 only
+ */
+// public StringTextDocument(int characterCount, boolean checkForNumbers)
+// {
+// super();
+// this.iCharacterCount = characterCount;
+// this.bCheckForNumbers = checkForNumbers;
+// }
+/**
+ * This method has to be overwritten for personal use. The code below is taken
+ * from the source mentioned in the class description
+ */
+public void insertString(int offset, String s, AttributeSet attributeSet) throws BadLocationException {
+    if (s == null)
+        return;
+
+    String oldString = getText(0, getLength());
+    String newString = ((oldString.substring(0, offset)) + s) + (oldString.substring(offset));
+    if (canBecomeValid(newString))
+        super.insertString(offset, s, attributeSet);
+
+}

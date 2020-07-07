@@ -1,0 +1,6 @@
+/**
+ * Invalidates the sort order.
+ */
+private void invalidateSortOrder() {
+    needsSorting = true;
+}

@@ -1,0 +1,9 @@
+/**
+ * Sets the priority of the lab procedure
+ *
+ * @param priorityCode
+ * 		
+ */
+public void setPriorityCode(int priorityCode) {
+    this.priorityCode = priorityCode;
+}

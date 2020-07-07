@@ -1,0 +1,11 @@
+/**
+ * Return default handles from the presentation figure.
+ */
+public Collection<Handle> createHandles(int detailLevel) {
+    LinkedList<Handle> handles = new LinkedList<Handle>();
+    if (detailLevel == 0) {
+        MoveHandle.addMoveHandles(this, handles);
+    }
+    return handles;
+    // return getPresentationFigure().getHandles();
+}

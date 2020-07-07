@@ -1,0 +1,7 @@
+/**
+ * Adds a DOMStorable prototype to the DOMFactory.
+ */
+public void addStorable(String name, DOMStorable prototype) {
+    DefaultDOMFactory.nameToPrototypeMap.put(name, prototype);
+    DefaultDOMFactory.classToNameMap.put(prototype.getClass(), name);
+}

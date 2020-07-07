@@ -1,0 +1,3 @@
+public void beginChangeTaskStartInteraction(MouseEvent e, TaskBoundaryChartItem taskBoundary) {
+    setActiveInteraction(new GanttGraphicArea.ChangeTaskStartInteraction(e, taskBoundary));
+}

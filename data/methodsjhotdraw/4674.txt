@@ -1,0 +1,5 @@
+@Override
+public int getLayer() {
+    return -1;// stay below ConnectionFigures
+
+}

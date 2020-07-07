@@ -1,0 +1,3 @@
+public boolean isWeightAllowed() {
+    return weightAllowed;
+}

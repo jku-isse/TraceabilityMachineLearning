@@ -1,0 +1,3 @@
+public static PluginManager getPluginManager() {
+    return Mediator.pluginManager;
+}

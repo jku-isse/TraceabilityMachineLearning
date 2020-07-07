@@ -1,0 +1,3 @@
+SwingDragGestureRecognizer(DragGestureListener dgl) {
+    super(DragSource.getDefaultDragSource(), null, TransferHandler.NONE, dgl);
+}

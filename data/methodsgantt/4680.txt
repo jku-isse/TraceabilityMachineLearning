@@ -1,0 +1,5 @@
+public TaskDependency createDependency(Task dependant, Task dependee, TaskDependencyConstraint constraint) throws TaskDependencyException {
+    TaskDependency result = auxCreateDependency(dependant, dependee, constraint);
+    myQueue.put(result, new TaskDependencyCollectionImpl.MutationInfo(result, TaskDependencyCollectionImpl.MutationInfo.ADD));
+    return result;
+}

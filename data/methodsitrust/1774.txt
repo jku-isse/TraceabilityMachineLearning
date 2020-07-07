@@ -1,0 +1,9 @@
+/**
+ * Sets the body of this message
+ *
+ * @param body
+ * 		
+ */
+public void setBody(String body) {
+    this.body = body;
+}

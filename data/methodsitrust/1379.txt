@@ -1,0 +1,5 @@
+public void testGetFilters() {
+    List<ReportFilter> f = bean.getFilters();
+    assertTrue(((f.size()) == 1));
+    assertEquals(DemographicReportFilter.DemographicReportFilterType.LAST_NAME, ((DemographicReportFilter) (f.get(0))).getFilterType());
+}

@@ -1,0 +1,16 @@
+@Override
+public Point2D.Double findStart(ConnectionFigure connection) {
+    Figure startFigure = connection.getStartConnector().getOwner();
+    Point2D.Double from;
+    if (((connection.getNodeCount()) <= 2) || ((connection.getLiner()) != null)) {
+        if ((connection.getEndConnector()) == null) {
+            from = connection.getEndPoint();
+        } else {
+            Rectangle2D.Double r1 = getConnectorTarget(connection.getEndConnector().getOwner()).getBounds();
+            from = new Point2D.Double(((r1.x) + ((r1.width) / 2)), ((r1.y) + ((r1.height) / 2)));
+        }
+    } else {
+        from = connection.getPoint(1);
+    }
+    return chop(startFigure, from);
+}

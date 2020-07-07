@@ -1,0 +1,36 @@
+Turtlebot
+
+TurtleBot is a low-cost, personal robot kit with open source software. TurtleBot was created at Willow Garage by Melonee Wise and Tully Foote in November 2010.[1]
+
+The TurtleBot kit consists of a mobile base, 3D Sensor, laptop computer, and the TurtleBot mounting hardware kit. In addition to the TurtleBot kit, users can download the TurtleBot SDK from the ROS wiki.[2] TurtleBot is designed to be easy to buy, build, and assemble, using off the shelf consumer products and parts that easily can be created from standard materials. As an entry level mobile robotics platform, TurtleBot has many of the same capabilities of the company's larger robotics platforms, like PR2, Care-O-Bot. With TurtleBot, users can drive around and map their environment, see in 3D, and have enough horsepower to create their own applications.
+
+Technology
+
+With the standard TurtleBot components users can use TurtleBot to do realtime obstacle avoidance and autonomous navigation. TurtleBot can run standard Simultaneous localization and mapping (SLAM) algorithms to build a map and can be controlled remotely from a laptop or Android-based smart phone. TurtleBot can also follow a person’s legs as they walk in a room.[3] Also accessories are available to leverage the ROS arm navigation capabilities, an arm attachment has been developed for manipulating wooden blocks and other objects.
+
+TurtleBot 1
+
+TurtleBot 1 consists of an iRobot Create base, a 3000 mAh battery pack, a TurtleBot power board with gyro, a Kinect sensor, an Asus 1215N laptop with a dual core processor, and a hardware mounting kit attaching everything together and adding future sensors. Assembling the kit is quick and easy using a single allen wrench (included in the kit).
+
+TurtleBot 2
+
+TurtleBot 2 consists of an Yujin Kobuki base, a 2200 mAh battery pack, a Kinect sensor, an Asus 1215N laptop with a dual core processor, fast charger, and a hardware mounting kit attaching everything together and adding future sensors. Assembling the kit is quick and easy using a single allen wrench (included in the kit). Additionally TurtleBot 2 comes with a fast charging dock that TurtleBot can autonomously dock with, enabling continuous operation.
+
+Community
+
+As with many other ROS platforms, one of the biggest strengths of the TurtleBot is its support community. TurtleBot has a worldwide community is constantly growing with thousands of TurtleBots around the world.[4] TurtleBot has been adopted by many research labs for doing multi-robot research and human robot interaction research. Additionally many universities are using the TurtleBot to teach introductory robotics courses.[5][6][7]
+
+Licensing
+
+TurtleBot is a licensed trademark that is maintained by the Open Source Robotics Foundation. The Open Source Robotics Foundation licenses the use of the TurtleBot trademark for manufacturing and distributing TurtleBot branded products.[8]
+
+References
+
+1. "Interview: TurtleBot Inventors Tell Us Everything About the Robot". IEEE Spectrum.
+2. "turtlebot". Open Source Robotics Foundation. Retrieved 20 November 2014.
+3. "TurtleBot 2: Unboxing". IEEE Spectrum.
+4. "TurtleBots Around the World". Google Maps.
+5. "University of South Carolina: CSCE574 Robotics". University of South Carolina.
+6. "Johns Hopkins University: ME530707". Johns Hopkins University.
+7. "School of Engineering Students Leading Robotics Research at St. Thomas". University of St. Thomas.
+8. "Become a TurtleBot Manufacturer or Distributor". Open Source Robotics Foundation.

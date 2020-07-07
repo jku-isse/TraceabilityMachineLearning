@@ -1,0 +1,6 @@
+// private void setDefaultBottomUnitWidth() {
+// myBottomUnitWidth = 20;
+// }
+public Date getStartDate() {
+    return myStartDate;
+}

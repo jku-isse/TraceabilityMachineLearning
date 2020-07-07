@@ -1,0 +1,15 @@
+/**
+ * Set up defaults
+ *
+ * @param factory
+ * 		The DAOFactory used to create the DAOs used in this action.
+ * @param loggedInMID
+ * 		The MID of the user who is viewing their messages.
+ */
+public ViewMyMessagesAction(DAOFactory factory, long loggedInMID) {
+    this.loggedInMID = loggedInMID;
+    this.patientDAO = factory.getPatientDAO();
+    this.personnelDAO = factory.getPersonnelDAO();
+    this.messageDAO = factory.getMessageDAO();
+    this.referralDAO = factory.getReferralDAO();
+}

@@ -1,0 +1,3 @@
+public TaskDependencyConstraint getConstraint() {
+    return myConstraint;
+}

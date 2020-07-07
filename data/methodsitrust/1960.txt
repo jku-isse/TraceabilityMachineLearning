@@ -1,0 +1,3 @@
+public long getAMID() {
+    return AMID;
+}

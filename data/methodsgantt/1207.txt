@@ -1,0 +1,3 @@
+public void dependencyAdded(TaskDependencyEvent e) {
+    myGanttProject.setModified();
+}

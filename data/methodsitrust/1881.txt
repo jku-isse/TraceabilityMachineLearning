@@ -1,0 +1,3 @@
+public void setCauseOfDeath(String causeOfDeath) {
+    this.causeOfDeath = causeOfDeath;
+}

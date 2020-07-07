@@ -1,0 +1,77 @@
+/**
+ * Creates a color button, with an action region and a popup menu. The
+ * button works like the color button in Adobe Fireworks:
+ * <ul>
+ * <li>When the user clicks at the button a popup menu with a color palette
+ * is displayed.
+ * Choosing a color from the palette changes the default color of the
+ * editor and also changes the color of the selected figures.</li>
+ * <li>A shape on the color button displays the color of the selected
+ * figures. If no figures are selected, the default color of the
+ * DrawingEditor is displayed.</li>
+ * </ul>
+ *
+ * @param editor
+ * 		The DrawingEditor.
+ * @param attributeKey
+ * 		The AttributeKey of the color.
+ * @param swatches
+ * 		A list with labeled colors containing the color palette
+ * 		of the popup menu. The actual labels are retrieved from the supplied
+ * 		resource bundle. This is usually a LinkedHashMap, so that the colors have
+ * 		a predictable order.
+ * @param columnCount
+ * 		The number of columns of the color palette.
+ * @param labelKey
+ * 		The resource bundle key used for retrieving the icon and
+ * 		the tooltip of the button.
+ * @param labels
+ * 		The resource bundle.
+ * @param defaultAttributes
+ * 		A set of attributes which are also applied to
+ * 		the selected figures, when a color is selected. This can be used, to
+ * 		set attributes that otherwise prevent the color from being shown. For
+ * 		example, when the color attribute is set, we want the gradient attribute
+ * 		of the Figure to be cleared.
+ * @param colorShape
+ * 		This shape is superimposed on the icon of the button.
+ * 		The shape is drawn with the default color of the DrawingEditor.
+ */
+public static JPopupButton createSelectionColorButton(DrawingEditor editor, AttributeKey<Color> attributeKey, List<ColorIcon> swatches, int columnCount, String labelKey, ResourceBundleUtil labels, Map<AttributeKey, Object> defaultAttributes, Shape colorShape) {
+    final JPopupButton popupButton = new JPopupButton();
+    if (defaultAttributes == null) {
+        defaultAttributes = new HashMap<AttributeKey, Object>();
+    }
+    popupButton.setColumnCount(columnCount, false);
+    boolean hasNullColor = false;
+    for (ColorIcon swatch : swatches) {
+        AttributeAction a;
+        HashMap<AttributeKey, Object> attributes = new HashMap<AttributeKey, Object>(defaultAttributes);
+        attributes.put(attributeKey, swatch.getColor());
+        if ((swatch.getColor()) == null) {
+            hasNullColor = true;
+        }
+        popupButton.add((a = new AttributeAction(editor, attributes, labels.getToolTipTextProperty(labelKey), swatch)));
+        a.putValue(Action.SHORT_DESCRIPTION, swatch.getName());
+    }
+    // No color
+    if (!hasNullColor) {
+        AttributeAction a;
+        HashMap<AttributeKey, Object> attributes = new HashMap<AttributeKey, Object>(defaultAttributes);
+        attributes.put(attributeKey, null);
+        popupButton.add((a = new AttributeAction(editor, attributes, labels.getToolTipTextProperty("attribute.color.noColor"), new ColorIcon(null, labels.getToolTipTextProperty("attribute.color.noColor")))));
+        a.putValue(Action.SHORT_DESCRIPTION, labels.getToolTipTextProperty("attribute.color.noColor"));
+    }
+    // Color chooser
+    ImageIcon chooserIcon = new ImageIcon(ButtonFactory.class.getResource("/org/jhotdraw/draw/action/images/attribute.color.colorChooser.png"));
+    Action a;
+    popupButton.add((a = new SelectionColorChooserAction(editor, attributeKey, labels.getToolTipTextProperty("attribute.color.colorChooser"), chooserIcon, defaultAttributes)));
+    a.putValue(Action.SHORT_DESCRIPTION, labels.getToolTipTextProperty("attribute.color.colorChooser"));
+    labels.configureToolBarButton(popupButton, labelKey);
+    Icon icon = new SelectionColorIcon(editor, attributeKey, labels.getIconProperty(labelKey, ButtonFactory.class).getImage(), colorShape);
+    popupButton.setIcon(icon);
+    popupButton.setDisabledIcon(icon);
+    popupButton.setFocusable(false);
+    new SelectionComponentRepainter(editor, popupButton);
+    return popupButton;
+}

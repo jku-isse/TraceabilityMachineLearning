@@ -1,0 +1,19 @@
+public void updateStartTime() {
+    willChange();
+    int oldValue = getStartTime();
+    int newValue = 0;
+    for (TaskFigure pre : getPredecessors()) {
+        newValue = Math.max(newValue, ((pre.getStartTime()) + (pre.getDuration())));
+    }
+    getStartTimeFigure().setText(Integer.toString(newValue));
+    if (newValue != oldValue) {
+        for (TaskFigure succ : getSuccessors()) {
+            // The if-statement here guards against
+            // cyclic task dependencies.
+            if (!(this.isDependentOf(succ))) {
+                succ.updateStartTime();
+            }
+        }
+    }
+    changed();
+}

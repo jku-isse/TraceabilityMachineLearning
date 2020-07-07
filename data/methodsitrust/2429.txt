@@ -1,0 +1,7 @@
+public List<RemoteMonitoringDataBean> loadList(ResultSet rs) throws SQLException {
+    List<RemoteMonitoringDataBean> list = new ArrayList<RemoteMonitoringDataBean>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

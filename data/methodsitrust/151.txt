@@ -1,0 +1,13 @@
+/**
+ * Sets up defaults
+ */
+@Override
+protected void setUp() throws Exception {
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    personnel = new PersonnelBean();
+    personnel.setFirstName("Bob");
+    personnel.setLastName("Blah");
+    personnel.setEmail("bobblah@blarg.com");
+    personnel.setRole(Role.PHA);
+}

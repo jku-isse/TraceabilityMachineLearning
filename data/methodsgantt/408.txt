@@ -1,0 +1,3 @@
+public void setExportName(boolean exportName) {
+    bExportName = exportName;
+}

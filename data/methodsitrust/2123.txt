@@ -1,0 +1,6 @@
+public String getSurveyDateString() {
+    if ((surveyDate) == null)
+        return "";
+
+    return new SimpleDateFormat(SurveyBean.dateFormat).format(getSurveyDate());
+}

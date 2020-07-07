@@ -1,0 +1,5 @@
+public void setScaleFactor(double newValue) {
+    double oldValue = getScaleFactor();
+    view.setScaleFactor(newValue);
+    firePropertyChange("scaleFactor", oldValue, newValue);
+}

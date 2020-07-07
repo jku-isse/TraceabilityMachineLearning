@@ -1,0 +1,3 @@
+public static JPopupButton createFontButton(DrawingEditor editor) {
+    return ButtonFactory.createFontButton(editor, ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+}

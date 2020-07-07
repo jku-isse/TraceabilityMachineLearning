@@ -1,0 +1,11 @@
+/**
+ * Check if the game is over.
+ *
+ * @param white
+ * 		True, if white is about to move.
+ * @return true, if the game is over.
+ */
+private final boolean gameOver(boolean white) {
+    _gameState = getEngine().getCurrentGameState(white);
+    return ((_gameState) == (GameState.CHECKMATE)) || ((_gameState) == (GameState.DRAW));
+}

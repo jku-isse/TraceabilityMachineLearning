@@ -1,0 +1,16 @@
+public List<PrescriptionBean> getList(long visitID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("Select * From ovmedication,ndcodes Where ovmedication.VisitID = ? " + "AND ndcodes.Code=ovmedication.NDCode"));
+        ps.setLong(1, visitID);
+        ResultSet rs = ps.executeQuery();
+        return loader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

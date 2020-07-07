@@ -1,0 +1,5 @@
+// EVENT HANDLING
+public void invalidate() {
+    super.invalidate();
+    cachedDrawingArea = null;
+}

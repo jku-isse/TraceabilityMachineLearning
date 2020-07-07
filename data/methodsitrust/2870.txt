@@ -1,0 +1,31 @@
+/**
+ * Adds a new CPT code, returns that it was added successfully
+ *
+ * @param proc
+ * 		A ProcedureBean representing the new code information.
+ * @return A boolean for whether the operation was successful.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public boolean addCPTCode(ProcedureBean proc) throws DBException, iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("INSERT INTO cptcodes (Code, Description, Attribute) " + "VALUES (?,?,?)"));
+        ps.setString(1, proc.getCPTCode());
+        ps.setString(2, proc.getDescription());
+        ps.setString(3, proc.getAttribute());
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        e.printStackTrace();
+        if (1062 == (e.getErrorCode()))
+            throw new iTrustException("Error: Code already exists.");
+
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

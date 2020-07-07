@@ -1,0 +1,12 @@
+public void apply(MouseEvent event) {
+    float diff = getChartModel().calculateLengthNoWeekends(getStartX(), event.getX());
+    TaskLength bottomUnitLength = getTaskManager().createLength(getViewState().getBottomTimeUnit(), diff);
+    TaskLength taskLength = myTask.translateDuration(bottomUnitLength);
+    int dayDiff = ((int) (taskLength.getValue()));
+    // System.err.println("[MoveTaskInteraction] apply():
+    // dayDiff="+dayDiff+" bottomUnitLength="+bottomUnitLength+"
+    // translated="+taskLength);
+    if (dayDiff != 0) {
+        myMutator.shift(dayDiff);
+    }
+}

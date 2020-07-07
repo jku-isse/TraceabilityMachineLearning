@@ -1,0 +1,7 @@
+/**
+ * Return the priority level of the task
+ */
+public int getPriority() {
+    priority = priorityComboBox.getSelectedIndex();
+    return priority;
+}

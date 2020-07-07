@@ -1,0 +1,11 @@
+protected Point getLocation() {
+    if ((getBezierFigure().getNodeCount()) > (index)) {
+        Point2D.Double p = getBezierFigure().getPoint(index, controlPointIndex);
+        if ((AttributeKeys.TRANSFORM.get(getTransformOwner())) != null) {
+            AttributeKeys.TRANSFORM.get(getTransformOwner()).transform(p, p);
+        }
+        return view.drawingToView(p);
+    } else {
+        return new Point(10, 10);
+    }
+}

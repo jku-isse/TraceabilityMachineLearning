@@ -1,0 +1,10 @@
+/**
+ *
+ *
+ * @return The EditLabProceduresAction sub action associated with this office visit.
+ * @throws iTrustException
+ * 		
+ */
+public EditLabProceduresAction labProcedures() throws iTrustException {
+    return labProceduresAction;
+}

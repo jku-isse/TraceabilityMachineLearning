@@ -1,0 +1,7 @@
+/**
+ * Convenience method for creating a formatter factory with a
+ * {@code ScalableNumberFormatter} and a Java-style DecimalFormat.
+ */
+public static JFormattedTextField.AbstractFormatterFactory createFormatterFactory(double min, double max, double scaleFactor, boolean allowsNullValue, boolean appendsDotZero) {
+    return new DefaultFormatterFactory(new JavaNumberFormatter(min, max, scaleFactor, allowsNullValue, appendsDotZero));
+}

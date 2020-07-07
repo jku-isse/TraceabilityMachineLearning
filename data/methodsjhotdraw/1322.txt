@@ -1,0 +1,7 @@
+/**
+ * Gets the figure that was actually added
+ * Note, this can be a different figure from the one which has been created.
+ */
+protected Figure getCreatedFigure() {
+    return createdFigure;
+}

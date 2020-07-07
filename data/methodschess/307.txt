@@ -1,0 +1,9 @@
+/**
+ * Set the used search depth.
+ *
+ * @param searchDepth
+ * 		The used search depth.
+ */
+private final void setSearchDepth(int searchDepth) {
+    _searchDepth = searchDepth;
+}

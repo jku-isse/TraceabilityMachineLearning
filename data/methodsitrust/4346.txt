@@ -1,0 +1,5 @@
+public void testFilterByProcedureNoResult() {
+    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.PROCEDURE, "Dalpe", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertTrue(res.isEmpty());
+}

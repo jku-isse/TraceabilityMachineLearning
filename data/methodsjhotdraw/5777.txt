@@ -1,0 +1,4 @@
+public void setMinSelectionCount(int newValue) {
+    minSelectionCount = newValue;
+    updateVisibility();
+}

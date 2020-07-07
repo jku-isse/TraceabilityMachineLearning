@@ -1,0 +1,36 @@
+/**
+ * Private helper method (since all three are alike)
+ *
+ * @param pid
+ * 		
+ * @param relation
+ * 		
+ * @param query
+ * 		
+ * @param secondParam
+ * 		-
+ * 		add the pid as the second parameter (the 3rd query was a little different)
+ * @return A java.util.List of FamilyMemberBeans.
+ * @throws DBException
+ * 		
+ */
+private List<FamilyMemberBean> getFamilyMembers(long pid, String relation, String query, boolean secondParam) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    familyBeanLoader = new FamilyBeanLoader(relation);
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(query);
+        ps.setLong(1, pid);
+        if (secondParam)
+            ps.setLong(2, pid);
+
+        ResultSet rs = ps.executeQuery();
+        return familyBeanLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

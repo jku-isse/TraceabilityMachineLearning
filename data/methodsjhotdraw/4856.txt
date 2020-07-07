@@ -1,0 +1,12 @@
+public void flattenTransform() {
+    willChange();
+    AffineTransform tx = AttributeKeys.TRANSFORM.get(this);
+    if (tx != null) {
+        for (Figure child : getChildren()) {
+            ((ODGBezierFigure) (child)).transform(tx);
+            ((ODGBezierFigure) (child)).flattenTransform();
+        }
+    }
+    AttributeKeys.TRANSFORM.basicSet(this, null);
+    changed();
+}

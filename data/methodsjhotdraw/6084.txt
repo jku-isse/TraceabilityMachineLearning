@@ -1,0 +1,10 @@
+private void replace(ActionEvent evt) {
+    // GEN-FIRST:event_replace
+    TeddyView view = ((TeddyView) (app.getActiveView()));
+    if (view != null) {
+        CompositeEdit edit = new CompositeEdit("Replace");
+        view.fireEdit(edit);
+        view.replaceRange(replaceField.getText(), view.getSelectionStart(), view.getSelectionEnd());
+        view.fireEdit(edit);
+    }
+}// GEN-LAST:event_replace

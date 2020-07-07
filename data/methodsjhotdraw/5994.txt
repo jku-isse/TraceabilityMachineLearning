@@ -1,0 +1,206 @@
+/* Reads shape attributes for the SVG "use" element. */
+private void readUseShapeAttributes(IXMLElement elem, HashMap<AttributeKey, Object> a) throws IOException {
+    Object objectValue;
+    String value;
+    double doubleValue;
+    // color
+    // Value:  	<color> | inherit
+    // Initial:  	 depends on user agent
+    // Applies to:  	None. Indirectly affects other properties via currentColor
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified <color> value, except inherit
+    // 
+    // value = readInheritAttribute(elem, "color", "black");
+    // if (DEBUG) System.out.println("color="+value);
+    // color-rendering
+    // Value:  	 auto | optimizeSpeed | optimizeQuality | inherit
+    // Initial:  	 auto
+    // Applies to:  	 container elements , graphics elements and animateColor
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    // 
+    // value = readInheritAttribute(elem, "color-rendering", "auto");
+    // if (DEBUG) System.out.println("color-rendering="+value);
+    // fill
+    // Value:  	<paint> | inherit (See Specifying paint)
+    // Initial:  	 black
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 "none", system paint, specified <color> value or absolute IRI
+    objectValue = readInheritColorAttribute(elem, "fill", null);
+    if (objectValue != null) {
+        objectValue = toPaint(elem, ((String) (objectValue)));
+        if (objectValue instanceof Color) {
+            AttributeKeys.FILL_COLOR.set(a, ((Color) (objectValue)));
+        } else
+            if (objectValue instanceof Gradient) {
+                SVGAttributeKeys.FILL_GRADIENT.set(a, ((Gradient) (objectValue)));
+            } else
+                if (objectValue == null) {
+                    AttributeKeys.FILL_COLOR.set(a, null);
+                } else {
+                    AttributeKeys.FILL_COLOR.set(a, null);
+                    if (SVGInputFormat.DEBUG) {
+                        System.out.println(("SVGInputFormat not implemented  fill=" + objectValue));
+                    }
+                }
+
+
+    }
+    // fill-opacity
+    // Value:  	 <opacity-value> | inherit
+    // Initial:  	 1
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    objectValue = readInheritAttribute(elem, "fill-opacity", null);
+    if (objectValue != null) {
+        SVGAttributeKeys.FILL_OPACITY.set(a, toDouble(elem, ((String) (objectValue)), 1.0, 0.0, 1.0));
+    }
+    // fill-rule
+    // Value:	 nonzero | evenodd | inherit
+    // Initial: 	 nonzero
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    value = readInheritAttribute(elem, "fill-rule", null);
+    if (value != null) {
+        AttributeKeys.WINDING_RULE.set(a, SVGConstants.SVG_FILL_RULES.get(value));
+    }
+    // stroke
+    // Value:  	<paint> | inherit (See Specifying paint)
+    // Initial:  	 none
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 "none", system paint, specified <color> value
+    // or absolute IRI
+    objectValue = toPaint(elem, readInheritColorAttribute(elem, "stroke", null));
+    if (objectValue != null) {
+        if (objectValue instanceof Color) {
+            AttributeKeys.STROKE_COLOR.set(a, ((Color) (objectValue)));
+        } else
+            if (objectValue instanceof Gradient) {
+                SVGAttributeKeys.STROKE_GRADIENT.set(a, ((Gradient) (objectValue)));
+            }
+
+    }
+    // stroke-dasharray
+    // Value:  	 none | <dasharray> | inherit
+    // Initial:  	 none
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes (non-additive)
+    // Computed value:  	 Specified value, except inherit
+    value = readInheritAttribute(elem, "stroke-dasharray", null);
+    if ((value != null) && (!(value.equals("none")))) {
+        String[] values = SVGInputFormat.toCommaSeparatedArray(value);
+        double[] dashes = new double[values.length];
+        for (int i = 0; i < (values.length); i++) {
+            dashes[i] = toNumber(elem, values[i]);
+        }
+        AttributeKeys.STROKE_DASHES.set(a, dashes);
+    }
+    // stroke-dashoffset
+    // Value:  	<length> | inherit
+    // Initial:  	 0
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    objectValue = readInheritAttribute(elem, "stroke-dashoffset", null);
+    if (objectValue != null) {
+        doubleValue = toNumber(elem, ((String) (objectValue)));
+        AttributeKeys.STROKE_DASH_PHASE.set(a, doubleValue);
+        AttributeKeys.IS_STROKE_DASH_FACTOR.set(a, false);
+    }
+    // stroke-linecap
+    // Value:  	 butt | round | square | inherit
+    // Initial:  	 butt
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    value = readInheritAttribute(elem, "stroke-linecap", null);
+    if (value != null) {
+        AttributeKeys.STROKE_CAP.set(a, SVGConstants.SVG_STROKE_LINECAPS.get(value));
+    }
+    // stroke-linejoin
+    // Value:  	 miter | round | bevel | inherit
+    // Initial:  	 miter
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    value = readInheritAttribute(elem, "stroke-linejoin", null);
+    if (value != null) {
+        AttributeKeys.STROKE_JOIN.set(a, SVGConstants.SVG_STROKE_LINEJOINS.get(value));
+    }
+    // stroke-miterlimit
+    // Value:  	 <miterlimit> | inherit
+    // Initial:  	 4
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    objectValue = readInheritAttribute(elem, "stroke-miterlimit", null);
+    if (objectValue != null) {
+        doubleValue = toDouble(elem, ((String) (objectValue)), 4.0, 1.0, Double.MAX_VALUE);
+        AttributeKeys.STROKE_MITER_LIMIT.set(a, doubleValue);
+        AttributeKeys.IS_STROKE_MITER_LIMIT_FACTOR.set(a, false);
+    }
+    // stroke-opacity
+    // Value:  	 <opacity-value> | inherit
+    // Initial:  	 1
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    objectValue = readInheritAttribute(elem, "stroke-opacity", null);
+    if (objectValue != null) {
+        SVGAttributeKeys.STROKE_OPACITY.set(a, toDouble(elem, ((String) (objectValue)), 1.0, 0.0, 1.0));
+    }
+    // stroke-width
+    // Value:  	<length> | inherit
+    // Initial:  	 1
+    // Applies to:  	 shapes and text content elements
+    // Inherited:  	 yes
+    // Percentages:  	 N/A
+    // Media:  	 visual
+    // Animatable:  	 yes
+    // Computed value:  	 Specified value, except inherit
+    objectValue = readInheritAttribute(elem, "stroke-width", null);
+    if (objectValue != null) {
+        doubleValue = toNumber(elem, ((String) (objectValue)));
+        AttributeKeys.STROKE_WIDTH.set(a, doubleValue);
+    }
+}

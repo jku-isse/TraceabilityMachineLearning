@@ -1,0 +1,4 @@
+public TaskLengthImpl(TimeUnit unit, long count) {
+    myUnit = unit;
+    myCount = count;
+}

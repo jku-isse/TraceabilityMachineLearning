@@ -1,0 +1,5 @@
+public void setShowing(boolean newValue) {
+    boolean oldValue = isShowing;
+    isShowing = newValue;
+    firePropertyChange(View.SHOWING_PROPERTY, oldValue, newValue);
+}

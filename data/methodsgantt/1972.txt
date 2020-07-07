@@ -1,0 +1,6 @@
+/**
+ * Returns a Rectangle indicating the image bounds.
+ */
+public Rectangle getBounds() {
+    return new Rectangle(getMinX(), getMinY(), getWidth(), getHeight());
+}

@@ -1,0 +1,10 @@
+public Date jumpLeft(Date baseDate) {
+    Calendar c = CalendarFactory.newCalendar();
+    c.setTime(myDayFramer.adjustLeft(baseDate));
+    int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+    do {
+        baseDate = myDayFramer.jumpLeft(baseDate);
+        c.setTime(baseDate);
+    } while ((c.get(Calendar.DAY_OF_WEEK)) != dayOfWeek );
+    return c.getTime();
+}

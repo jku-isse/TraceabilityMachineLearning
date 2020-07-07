@@ -1,0 +1,6 @@
+public void mouseReleased(MouseEvent e) {
+    if ((myWorker) != null) {
+        myWorker.interrupt();
+        myWorker = null;
+    }
+}

@@ -1,0 +1,24 @@
+/**
+ * Creates a rollover border for toolbar components. The
+ * rollover border will be installed if rollover borders are
+ * enabled.
+ * <p>
+ * Override this method to provide an alternate rollover border.
+ *
+ * @since 1.4
+ */
+protected Border createRolloverBorder() {
+    Object border = UIManager.get("ToolBar.rolloverBorder");
+    if (border != null) {
+        return ((Border) (border));
+    }
+    UIDefaults table = UIManager.getLookAndFeelDefaults();
+    return new EmptyBorder(0, 0, 0, 0);
+    /* return new CompoundBorder(new BasicBorders.RolloverButtonBorder(
+    table.getColor("controlShadow"),
+    table.getColor("controlDkShadow"),
+    table.getColor("controlHighlight"),
+    table.getColor("controlLtHighlight")),
+    new BasicBorders.RolloverMarginBorder());
+     */
+}

@@ -1,0 +1,8 @@
+public void testAddThenRetrieveReport() throws Exception {
+    long id = dao.addReportRequest(9000000000L, 2, new SimpleDateFormat(ReportRequestBean.dateFormat).parse("06/06/2008 13:00"));
+    ReportRequestBean b2 = dao.getReportRequest(id);
+    assertEquals(9000000000L, b2.getRequesterMID());
+    assertEquals(2, b2.getPatientMID());
+    assertEquals("06/06/2008 13:00", b2.getRequestedDateString());
+    assertEquals(ReportRequestBean.Requested, b2.getStatus());
+}

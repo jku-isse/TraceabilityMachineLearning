@@ -1,0 +1,3 @@
+public static Point west(Rectangle r) {
+    return new Point(r.x, ((r.y) + ((r.height) / 2)));
+}

@@ -1,0 +1,24 @@
+@Override
+public boolean canImport(JComponent comp, DataFlavor[] transferFlavors) {
+    if (DefaultDrawingViewTransferHandler.DEBUG) {
+        System.out.println((((this) + ".canImport ") + (Arrays.asList(transferFlavors))));
+    }
+    boolean retValue;
+    if (comp instanceof DrawingView) {
+        DrawingView view = ((DrawingView) (comp));
+        Drawing drawing = view.getDrawing();
+        // Search for a suitable input format
+        retValue = false;
+        SearchLoop : for (InputFormat format : drawing.getInputFormats()) {
+            for (DataFlavor flavor : transferFlavors) {
+                if ((flavor.isFlavorJavaFileListType()) || (format.isDataFlavorSupported(flavor))) {
+                    retValue = true;
+                    break SearchLoop;
+                }
+            }
+        }
+    } else {
+        retValue = super.canImport(comp, transferFlavors);
+    }
+    return retValue;
+}

@@ -1,0 +1,3 @@
+public GPOptionGroup[] getOptionGroups(IGanttProject project, UIFacade uiFacade) {
+    return uiFacade.getResourceChart().getOptionGroups();
+}

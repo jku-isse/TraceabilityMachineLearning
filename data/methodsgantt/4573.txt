@@ -1,0 +1,3 @@
+public RecalculateTaskScheduleAlgorithm getRecalculateTaskScheduleAlgorithm() {
+    return myRecalculateTaskScheduleAlgorithm;
+}

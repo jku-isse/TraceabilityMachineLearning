@@ -1,0 +1,3 @@
+public void setOnlySelectedItem(boolean selected) {
+    onlySelectedItems = selected;
+}

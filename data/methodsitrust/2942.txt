@@ -1,0 +1,29 @@
+/**
+ * Get a list of the lab procedures in transit associated with a given Lab Tech.
+ *
+ * @param id
+ * 		The MID of the LT as a long.
+ * @return A java.util.List of LabProcedureBeans
+ * @throws DBException
+ * 		
+ */
+public List<LabProcedureBean> getLabProceduresInTransitForLabTech(long id) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (id == 0L)
+            throw new SQLException("LabTechID cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM labprocedure WHERE LabTechID = ? AND Status = ? ORDER BY UpdatedDate ASC");
+        ps.setLong(1, id);
+        ps.setString(2, LabProcedureBean.In_Transit);
+        ResultSet rs = ps.executeQuery();
+        return labProcedureLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

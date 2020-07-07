@@ -1,0 +1,6 @@
+private void updateHolidays(List holidays) {
+    myProject.getActiveCalendar().getPublicHolidays().clear();
+    for (int i = 0; i < (holidays.size()); i++) {
+        myProject.getActiveCalendar().setPublicHoliDayType(((GanttCalendar) (holidays.get(i))).getTime());
+    }
+}

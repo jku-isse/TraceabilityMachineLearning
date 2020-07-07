@@ -1,0 +1,3 @@
+public boolean getResourceName() {
+    return cbResName.isSelected();
+}

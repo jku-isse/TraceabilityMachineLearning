@@ -1,0 +1,12 @@
+/**
+ * Returns true, if the user may remove this figure.
+ * If this operation returns false, Tools should not remove this
+ * figure on behalf of the user.
+ * <p>
+ * Please note, that even if this method returns false, the Figure
+ * may be removed from the Drawing for other reasons. For example,
+ * if the Figure is used to display a warning message, the Figure
+ * can be removed from the Drawing, when the warning message is
+ * no longer relevant.
+ */
+public boolean isRemovable();

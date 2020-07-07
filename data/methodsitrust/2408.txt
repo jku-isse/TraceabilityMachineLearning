@@ -1,0 +1,7 @@
+public List<PersonnelBean> loadList(ResultSet rs) throws SQLException {
+    List<PersonnelBean> list = new ArrayList<PersonnelBean>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

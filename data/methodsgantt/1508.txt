@@ -1,0 +1,1 @@
+void setPublicHoliDayType(int month, int date);

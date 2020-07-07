@@ -1,0 +1,14 @@
+// Constructors
+/**
+ * Create a new instance of this class.
+ *
+ * @param notation
+ * 		The notation of the current game.
+ */
+public OpeningBookImpl(GameNotation notation) {
+    setNotation(notation);
+    // Create a new dynamic array for the openings.
+    _openings = new ArrayList();
+    // Reset the opening book.
+    reset();
+}

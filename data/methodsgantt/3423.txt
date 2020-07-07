@@ -1,0 +1,9 @@
+BufferProject(GanttProject targetProject, UIFacade uiFacade) {
+    myDocumentManager = new DocumentCreator(this, uiFacade, this) {
+        protected TableHeaderUIFacade getVisibleFields() {
+            return myVisibleFields;
+        }
+    };
+    myTaskManager = targetProject.getTaskManager().emptyClone();
+    myUIfacade = uiFacade;
+}

@@ -1,0 +1,3 @@
+int getDividerLocation() {
+    return mySplitPane.getDividerLocation();
+}

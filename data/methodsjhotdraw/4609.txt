@@ -1,0 +1,3 @@
+public void restoreTransformTo(Object restoreData) {
+    line = ((Line2D.Double) (((Line2D.Double) (restoreData)).clone()));
+}
