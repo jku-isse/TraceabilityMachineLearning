@@ -15,7 +15,7 @@ from sklearn.pipeline import Pipeline
 
 DataDependencies=True
 CompleteCallersCalleesCallersCallersCalleesCallees=False
-SeparateProjectLearning=True
+SeparateProjectLearning=False
 def main(): 
     X_train={}
     X_test={}

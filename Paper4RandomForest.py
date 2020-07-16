@@ -4,11 +4,19 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.model_selection import train_test_split
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler
-matrixHeaders=False
 SeparateProjectLearning=False
-CompleteCallersCallees=False
-CompleteCallersCalleesCallersCallersCalleesCallees=False
-DataDependencies=False
+
+TrainCompTestIncomp=False
+TrainIncompTestComp=False
+TrainCompTestCompIncomp=False
+TrainInCompTestCompIncomp=False
+TrainCompIncompTestIncomp=False
+TrainCompIncompTestComp=True
+
+WeakenedCompleteCallersCallees=True
+
+RandomTrainingTestSet=False
+
 def main():
     X_train={}
     X_test={}
@@ -20,8 +28,7 @@ def main():
     dataset['Program'] = dataset['Program'].astype('category').cat.codes
     dataset['classGold'] = dataset['classGold'].astype('category').cat.codes
     dataset['MethodType'] = dataset['MethodType'].astype('category').cat.codes
-    dataset['Top'] = dataset['Top'].astype('category').cat.codes
-    dataset['Side'] = dataset['Side'].astype('category').cat.codes
+    
     dataset['CallersT'] = dataset['CallersT'].astype('category').cat.codes
     dataset['CallersN'] = dataset['CallersN'].astype('category').cat.codes
     dataset['CallersU'] = dataset['CallersU'].astype('category').cat.codes
@@ -34,25 +41,14 @@ def main():
     dataset['CalleesCalleesT'] = dataset['CalleesCalleesT'].astype('category').cat.codes
     dataset['CalleesCalleesN'] = dataset['CalleesCalleesN'].astype('category').cat.codes
     dataset['CalleesCalleesU'] = dataset['CalleesCalleesU'].astype('category').cat.codes
-    if DataDependencies==True:
-        dataset['FieldMethods'] = dataset['FieldMethods'].astype('category').cat.codes
-        dataset['Parameters'] = dataset['Parameters'].astype('category').cat.codes
-        dataset['ReturnType'] = dataset['ReturnType'].astype('category').cat.codes
-        dataset['Parents'] = dataset['Parents'].astype('category').cat.codes
-        dataset['Children'] = dataset['Children'].astype('category').cat.codes
-    else:
-        dataset=dataset.drop(columns=['FieldMethods', 'Parameters','ReturnType','Parents','Children'])
-        #print(dataset.head())
-    if matrixHeaders==True: 
-        dataset=dataset.drop(columns=['CallersT','CallersN','CallersU','CallersCallersT','CallersCallersN','CallersCallersU','CalleesT','CalleesN','CalleesU','CalleesCalleesT',
-                                        'CalleesCalleesN','CalleesCalleesU','CompleteCallersCallees','CompleteCallersCalleesCallersCallersCalleesCallees','classGold'])
+
+    
     pd.set_option('display.max_columns', None)
 
 
     #print(dataset.head())
     row_count, column_count = dataset.shape
-    if matrixHeaders==True:
-        column_count=6
+ 
    
     X = dataset.iloc[:, 1:column_count].values
     y = dataset.iloc[:, 0].values
@@ -68,12 +64,19 @@ def main():
         SeparateProjectLearningTestTrainSet('JHotDraw', dataset, X_train, X_test, y_test, y_train,'ProgramName')
 
 
-    elif CompleteCallersCallees==True: 
-        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'CompleteCallersCallees')
-    elif CompleteCallersCalleesCallersCallersCalleesCallees==True: 
-        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'CompleteCallersCalleesCallersCallersCalleesCallees')
-    
-    else:      
+    elif TrainCompTestIncomp==True: 
+        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainCompTestIncomp')
+   
+    elif TrainCompTestCompIncomp==True:
+        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainCompTestCompIncomp')
+    elif TrainInCompTestCompIncomp==True:
+        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainInCompTestCompIncomp')
+    elif TrainCompIncompTestIncomp==True:
+        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainCompIncompTestIncomp')
+    elif TrainCompIncompTestComp==True:
+        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainCompIncompTestComp')
+  
+    elif RandomTrainingTestSet==True:      
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)      
         XtrainYtrainXtestYtest(X_train, X_test, y_test, y_train, Xcol)
         
@@ -81,6 +84,29 @@ def main():
 
 def SeparateProjectLearningTestTrainSet(ProgramName, dataset, X_train, X_test, y_test, y_train,Type):
     #Test Set=Chess
+    row_count, column_count = dataset.shape
+
+    if WeakenedCompleteCallersCallees==True: 
+       CompleteSet = dataset[((dataset['CallersU'] == 0) | (dataset['CallersU'] == 2)) 
+       & ((dataset['CalleesU']==0) | (dataset['CalleesU']==2))]
+
+       
+       IncompleteSet = dataset[((dataset['CallersU'] == 1) | (dataset['CallersU'] == 3)) 
+       & ((dataset['CalleesU']==1) | (dataset['CalleesU']==3))]
+       
+       
+       
+       
+
+   
+    else:   
+        CompleteSet=dataset.loc[dataset['CompleteCallersCallees'] == 1] 
+        IncompleteSet=dataset.loc[dataset['CompleteCallersCallees'] == 0]
+        
+    CompleteSet_X = CompleteSet.iloc[:, 1:column_count]
+    CompleteSet_Y = CompleteSet.iloc[:, 0]
+    IncompleteSet_X = IncompleteSet.iloc[:, 1:column_count]
+    IncompleteSet_Y = IncompleteSet.iloc[:, 0]
     if Type=='ProgramName':    
         if ProgramName=='Chess':
             TestSet=dataset.loc[dataset['Program'] == 0]
@@ -95,26 +121,59 @@ def SeparateProjectLearningTestTrainSet(ProgramName, dataset, X_train, X_test, y
             TestSet=dataset.loc[dataset['Program'] == 3]
             TrainingSet=dataset.loc[dataset['Program'].isin([0,1,2])]
       
-    elif Type=='CompleteCallersCallees':
-        TrainingSet=dataset.loc[dataset['CompleteCallersCallees'] == 1]
-        TestSet=dataset.loc[dataset['CompleteCallersCallees'] == 0]
-    elif Type=='CompleteCallersCalleesCallersCallersCalleesCallees':
-        TrainingSet=dataset.loc[dataset['CompleteCallersCalleesCallersCallersCalleesCallees'] == 1]
-        TestSet=dataset.loc[dataset['CompleteCallersCalleesCallersCallersCalleesCallees'] == 0]
-
-    row_count, column_count = dataset.shape
-    X_test=TestSet.iloc[:, 1:column_count].values
-    #print('TEST SET===', X_test)
-    y_test=TestSet.iloc[:, 0].values
-    #print('TEST SET===', y_test)
+    elif Type=='TrainCompTestIncomp':
+        #Train on complete data + test on incomplete data
+        TrainingSet=CompleteSet
+        TestSet=IncompleteSet
+    elif Type=='TrainIncompTestcomp':
+        #Train on incomplete data + test on complete data
+        TrainingSet=IncompleteSet
+        TestSet=CompleteSet
+    elif Type=='TrainCompTestCompIncomp':
+        #Train on complete data + test on both complete and incomplete data
+       
+        X_train, X_test, y_train, y_test = train_test_split(CompleteSet_X, CompleteSet_Y, test_size = 0.2, random_state = 0)
+        X_test1=IncompleteSet.iloc[:, 1:column_count]
+        X_test=pd.concat([X_test1,X_test])
+        y_test1=IncompleteSet.iloc[:, 0]
+        y_test=pd.concat([y_test1, y_test])
+    elif Type=='TrainInCompTestCompIncomp':
+        #Train on incomplete data + test on both complete and incomplete data
+      
+        X_train, X_test, y_train, y_test = train_test_split(IncompleteSet_X, IncompleteSet_Y, test_size = 0.2, random_state = 0)
+        X_test1=CompleteSet.iloc[:, 1:column_count]
+        X_test=pd.concat([X_test1,X_test])
+        y_test1=CompleteSet.iloc[:, 0]
+        y_test=pd.concat([y_test1, y_test]) 
+    elif Type=='TrainCompIncompTestIncomp':
+      
+        X_train, X_test, y_train, y_test = train_test_split(IncompleteSet_X, IncompleteSet_Y, test_size = 0.8, random_state = 0)
+        X_training1=CompleteSet.iloc[:, 1:column_count]
+        X_train=pd.concat([X_training1,X_train])
+        y_training1=CompleteSet.iloc[:, 0]
+        y_train=pd.concat([y_training1, y_train])
+    elif Type=='TrainCompIncompTestComp':
         
-    X_train=TrainingSet.iloc[:, 1:column_count].values
-   # print('TRAINING SET===', X_train)
-    y_train=TrainingSet.iloc[:, 0].values
-    #print('TRAINING SET===', y_train)
-    print('*****************************************************')
-    print('*****************************************************')
-    print('*****************************************************')
+        X_train, X_test, y_train, y_test = train_test_split(CompleteSet_X, CompleteSet_Y, test_size = 0.8, random_state = 0)
+        X_training1=IncompleteSet.iloc[:, 1:column_count]
+        X_train=pd.concat([X_training1,X_train])
+        y_training1=IncompleteSet.iloc[:, 0]
+        y_train=pd.concat([y_training1, y_train])
+   
+    if Type=='TrainCompTestIncomp' or Type=='ProgramName' or Type=='TrainIncompTestComp':
+        row_count, column_count = dataset.shape
+        X_test=TestSet.iloc[:, 1:column_count].values
+        #print('TEST SET===', X_test)
+        y_test=TestSet.iloc[:, 0].values
+        #print('TEST SET===', y_test)
+            
+        X_train=TrainingSet.iloc[:, 1:column_count].values
+       # print('TRAINING SET===', X_train)
+        y_train=TrainingSet.iloc[:, 0].values
+        #print('TRAINING SET===', y_train)
+        print('*****************************************************')
+        print('*****************************************************')
+        print('*****************************************************')
 
     print(ProgramName)
     Xcol = dataset.iloc[:, 1:column_count]
@@ -148,7 +207,7 @@ def XtrainYtrainXtestYtest(X_train, X_test, y_test, y_train, Xcol):
     from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
     
     y_pred_original = classifier.predict(X_test)
-    probs = classifier.predict_proba(X_test)
+    probs= classifier.predict_proba(X_test)
     print('confusion matrix\n',confusion_matrix(y_test,y_pred_original))
     print('classification report\n', classification_report(y_test,y_pred_original))
     print('accuracy score', accuracy_score(y_test, y_pred_original))

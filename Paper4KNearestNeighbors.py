@@ -35,7 +35,7 @@ from sklearn import svm
 
 DataDependencies=True
 CompleteCallersCalleesCallersCallersCalleesCallees=False
-SeparateProjectLearning=True
+SeparateProjectLearning=False
 
 # Function to split the dataset 
 def splitdataset(balance_data, column_count, ProgramName): 

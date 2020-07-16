@@ -32,7 +32,7 @@ import collections
 
 DataDependencies=True
 CompleteCallersCalleesCallersCallersCalleesCallees=False
-SeparateProjectLearning=True
+SeparateProjectLearning=False
 
 # Function to split the dataset 
 

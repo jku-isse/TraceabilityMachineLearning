@@ -24,7 +24,7 @@ import collections
 import pydotplus
 DataDependencies=True
 CompleteCallersCalleesCallersCallersCalleesCallees=False
-SeparateProjectLearning=True
+SeparateProjectLearning=False
 
 # Function importing Dataset 
 column_count =0 
