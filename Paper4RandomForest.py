@@ -6,16 +6,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 SeparateProjectLearning=False
 
+RandomTrainingTestSet=False
 TrainCompTestIncomp=False
 TrainIncompTestComp=False
-TrainCompTestCompIncomp=False
-TrainInCompTestCompIncomp=False
-TrainCompIncompTestIncomp=False
-TrainCompIncompTestComp=True
+TrainIncompTestRandom=True
 
-WeakenedCompleteCallersCallees=True
+WeakenedCompleteCallersCallees=False
 
-RandomTrainingTestSet=False
 
 def main():
     X_train={}
@@ -24,8 +21,9 @@ def main():
     y_test={}
     dataset = pd.read_csv( 'InputData.txt', sep= ',', index_col=False) 
     #convert T into 1 and N into 0
+    dataset=dataset.drop(columns=['Program'], axis=1)
     dataset['gold'] = dataset['gold'].astype('category').cat.codes
-    dataset['Program'] = dataset['Program'].astype('category').cat.codes
+    #dataset['Program'] = dataset['Program'].astype('category').cat.codes
     dataset['classGold'] = dataset['classGold'].astype('category').cat.codes
     dataset['MethodType'] = dataset['MethodType'].astype('category').cat.codes
     
@@ -58,31 +56,27 @@ def main():
     if SeparateProjectLearning==True: 
         
 
-        SeparateProjectLearningTestTrainSet('Chess', dataset, X_train, X_test, y_test, y_train,'ProgramName')
-        SeparateProjectLearningTestTrainSet('Gantt', dataset, X_train, X_test, y_test, y_train,'ProgramName')
-        SeparateProjectLearningTestTrainSet('iTrust', dataset, X_train, X_test, y_test, y_train,'ProgramName')
-        SeparateProjectLearningTestTrainSet('JHotDraw', dataset, X_train, X_test, y_test, y_train,'ProgramName')
+        SeparateProjectLearningTestTrainSet('Chess', dataset,X, y, X_train, X_test, y_test, y_train,'ProgramName')
+        SeparateProjectLearningTestTrainSet('Gantt', dataset,X, y, X_train, X_test, y_test, y_train,'ProgramName')
+        SeparateProjectLearningTestTrainSet('iTrust', dataset,X, y, X_train, X_test, y_test, y_train,'ProgramName')
+        SeparateProjectLearningTestTrainSet('JHotDraw', dataset,X, y, X_train, X_test, y_test, y_train,'ProgramName')
 
+    elif TrainIncompTestComp==True:
+        SeparateProjectLearningTestTrainSet('Complete', dataset,X, y, X_train, X_test, y_test, y_train,'TrainIncompTestComp')
 
     elif TrainCompTestIncomp==True: 
-        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainCompTestIncomp')
+        SeparateProjectLearningTestTrainSet('Complete', dataset,X, y, X_train, X_test, y_test, y_train,'TrainCompTestIncomp')
    
-    elif TrainCompTestCompIncomp==True:
-        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainCompTestCompIncomp')
-    elif TrainInCompTestCompIncomp==True:
-        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainInCompTestCompIncomp')
-    elif TrainCompIncompTestIncomp==True:
-        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainCompIncompTestIncomp')
-    elif TrainCompIncompTestComp==True:
-        SeparateProjectLearningTestTrainSet('Complete', dataset, X_train, X_test, y_test, y_train,'TrainCompIncompTestComp')
-  
+    elif TrainIncompTestRandom==True:
+        SeparateProjectLearningTestTrainSet('Complete', dataset,X, y, X_train, X_test, y_test, y_train,'TrainIncompTestRandom')
+   
     elif RandomTrainingTestSet==True:      
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)      
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)      
         XtrainYtrainXtestYtest(X_train, X_test, y_test, y_train, Xcol)
         
    
 
-def SeparateProjectLearningTestTrainSet(ProgramName, dataset, X_train, X_test, y_test, y_train,Type):
+def SeparateProjectLearningTestTrainSet(ProgramName, dataset, X, y, X_train, X_test, y_test, y_train,Type):
     #Test Set=Chess
     row_count, column_count = dataset.shape
 
@@ -102,11 +96,13 @@ def SeparateProjectLearningTestTrainSet(ProgramName, dataset, X_train, X_test, y
     else:   
         CompleteSet=dataset.loc[dataset['CompleteCallersCallees'] == 1] 
         IncompleteSet=dataset.loc[dataset['CompleteCallersCallees'] == 0]
-        
+        print('Complete ',len(CompleteSet))
+        print('Incomplete ',len(IncompleteSet))
     CompleteSet_X = CompleteSet.iloc[:, 1:column_count]
     CompleteSet_Y = CompleteSet.iloc[:, 0]
     IncompleteSet_X = IncompleteSet.iloc[:, 1:column_count]
     IncompleteSet_Y = IncompleteSet.iloc[:, 0]
+    
     if Type=='ProgramName':    
         if ProgramName=='Chess':
             TestSet=dataset.loc[dataset['Program'] == 0]
@@ -124,41 +120,31 @@ def SeparateProjectLearningTestTrainSet(ProgramName, dataset, X_train, X_test, y
     elif Type=='TrainCompTestIncomp':
         #Train on complete data + test on incomplete data
         TrainingSet=CompleteSet
-        TestSet=IncompleteSet
-    elif Type=='TrainIncompTestcomp':
+        TestSet=IncompleteSet.sample(frac=.5)
+    elif Type=='TrainIncompTestComp':
         #Train on incomplete data + test on complete data
-        TrainingSet=IncompleteSet
+        print('incomp',len(IncompleteSet))
+        TrainingSet=IncompleteSet.sample(frac=.5)
+        print('train',len(TrainingSet))
         TestSet=CompleteSet
-    elif Type=='TrainCompTestCompIncomp':
-        #Train on complete data + test on both complete and incomplete data
-       
-        X_train, X_test, y_train, y_test = train_test_split(CompleteSet_X, CompleteSet_Y, test_size = 0.2, random_state = 0)
-        X_test1=IncompleteSet.iloc[:, 1:column_count]
-        X_test=pd.concat([X_test1,X_test])
-        y_test1=IncompleteSet.iloc[:, 0]
-        y_test=pd.concat([y_test1, y_test])
-    elif Type=='TrainInCompTestCompIncomp':
-        #Train on incomplete data + test on both complete and incomplete data
-      
-        X_train, X_test, y_train, y_test = train_test_split(IncompleteSet_X, IncompleteSet_Y, test_size = 0.2, random_state = 0)
-        X_test1=CompleteSet.iloc[:, 1:column_count]
-        X_test=pd.concat([X_test1,X_test])
-        y_test1=CompleteSet.iloc[:, 0]
-        y_test=pd.concat([y_test1, y_test]) 
-    elif Type=='TrainCompIncompTestIncomp':
-      
-        X_train, X_test, y_train, y_test = train_test_split(IncompleteSet_X, IncompleteSet_Y, test_size = 0.8, random_state = 0)
-        X_training1=CompleteSet.iloc[:, 1:column_count]
-        X_train=pd.concat([X_training1,X_train])
-        y_training1=CompleteSet.iloc[:, 0]
-        y_train=pd.concat([y_training1, y_train])
-    elif Type=='TrainCompIncompTestComp':
+    elif Type=='TrainIncompTestRandom':
+    
+        X_train, X_test, y_train, y_test = train_test_split(IncompleteSet_X, IncompleteSet_Y, test_size=1-len(CompleteSet)/len(IncompleteSet), random_state=0)      
+        print('x_test ==> ',len(X_test), ' y_test ', len(y_test), ' x_train ', len(X_train), '  y_train ', len(y_train))     
+        remainingIncompleteSet = pd.concat([y_test, X_test], axis=1)
+
+        TestSet=pd.concat([CompleteSet, remainingIncompleteSet], axis=0).sample(frac=.5)
+
+        X_test=TestSet.iloc[:, 1:column_count].values
+        y_test=TestSet.iloc[:, 0].values
+        '''X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)      
         
-        X_train, X_test, y_train, y_test = train_test_split(CompleteSet_X, CompleteSet_Y, test_size = 0.8, random_state = 0)
-        X_training1=IncompleteSet.iloc[:, 1:column_count]
-        X_train=pd.concat([X_training1,X_train])
-        y_training1=IncompleteSet.iloc[:, 0]
-        y_train=pd.concat([y_training1, y_train])
+        
+        TrainingSet=IncompleteSet.sample(frac=len(CompleteSet)/len(IncompleteSet))
+        X_train=TrainingSet.iloc[:, 1:column_count]
+        y_train=TrainingSet.iloc[:, 0]'''
+
+        
    
     if Type=='TrainCompTestIncomp' or Type=='ProgramName' or Type=='TrainIncompTestComp':
         row_count, column_count = dataset.shape
