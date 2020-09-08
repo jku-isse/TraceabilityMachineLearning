@@ -9,19 +9,18 @@ from sklearn.metrics import precision_recall_fscore_support as score
 # Creates a list containing 5 lists, each of 8 items, all set to 0
  
 
-SeparateProjectLearningMixed=True
+SeparateProjectLearningMixed=False
 SeparateProjectLearningComplete=False
 
 
-RandomTrainingRandomTestSet=False
+RandomTrainingRandomTestSet=True
 TrainCompTestIncomp=False
 TrainIncompTestComp=False
 TrainIncompTestRandom=False
 TrainCompTestComp=False
 TrainIncompTestIncomp=False
 
-Percentages=True
-Amounts=True
+
 
 if SeparateProjectLearningMixed==False and SeparateProjectLearningComplete==False:
     columns, rows = 10, 6;
@@ -36,7 +35,6 @@ def main(index, row):
     y_train={}
     y_test={}
     dataset = pd.read_csv( 'InputData.txt', sep= ',', index_col=False) 
-    #dataset = pd.read_csv( 'InputData.txt', sep= ',', index_col=False) 
 
     #convert T into 1 and N into 0
     if SeparateProjectLearningMixed==False and SeparateProjectLearningComplete==False:
@@ -46,46 +44,23 @@ def main(index, row):
     dataset['gold'] = dataset['gold'].astype('category').cat.codes
     dataset['classGold'] = dataset['classGold'].astype('category').cat.codes
     dataset['MethodType'] = dataset['MethodType'].astype('category').cat.codes
-    if Amounts==True:
-        dataset['CallersT'] = dataset['CallersT'].astype('category').cat.codes
-        dataset['CallersN'] = dataset['CallersN'].astype('category').cat.codes
-        dataset['CallersU'] = dataset['CallersU'].astype('category').cat.codes
-        dataset['CallersCallersT'] = dataset['CallersCallersT'].astype('category').cat.codes
-        dataset['CallersCallersN'] = dataset['CallersCallersN'].astype('category').cat.codes
-        dataset['CallersCallersU'] = dataset['CallersCallersU'].astype('category').cat.codes
-        dataset['CalleesT'] = dataset['CalleesT'].astype('category').cat.codes
-        dataset['CalleesN'] = dataset['CalleesN'].astype('category').cat.codes
-        dataset['CalleesU'] = dataset['CalleesU'].astype('category').cat.codes
-        dataset['CalleesCalleesT'] = dataset['CalleesCalleesT'].astype('category').cat.codes
-        dataset['CalleesCalleesN'] = dataset['CalleesCalleesN'].astype('category').cat.codes
-        dataset['CalleesCalleesU'] = dataset['CalleesCalleesU'].astype('category').cat.codes
-    else:
-        dataset=dataset.drop(columns=['CallersT','CallersN','CallersU',
-                                      'CallersCallersT','CallersCallersN','CallersCallersU',
-                                      'CalleesT','CalleesN','CalleesU',
-                                      'CalleesCalleesT','CalleesCalleesN','CalleesCalleesU'], axis=1)
-    if Percentages==True:      
-        dataset['CallersTPercentage'] = dataset['CallersTPercentage'].astype('category').cat.codes
-        dataset['CallersNPercentage'] = dataset['CallersNPercentage'].astype('category').cat.codes
-        dataset['CallersUPercentage'] = dataset['CallersUPercentage'].astype('category').cat.codes
-        dataset['CallersCallersTPercentage'] = dataset['CallersCallersTPercentage'].astype('category').cat.codes
-        dataset['CallersCallersNPercentage'] = dataset['CallersCallersNPercentage'].astype('category').cat.codes
-        dataset['CallersCallersUPercentage'] = dataset['CallersCallersUPercentage'].astype('category').cat.codes
-        dataset['CalleesTPercentage'] = dataset['CalleesTPercentage'].astype('category').cat.codes
-        dataset['CalleesNPercentage'] = dataset['CalleesNPercentage'].astype('category').cat.codes
-        dataset['CalleesUPercentage'] = dataset['CalleesUPercentage'].astype('category').cat.codes
-        dataset['CalleesCalleesTPercentage'] = dataset['CalleesCalleesTPercentage'].astype('category').cat.codes
-        dataset['CalleesCalleesNPercentage'] = dataset['CalleesCalleesNPercentage'].astype('category').cat.codes
-        dataset['CalleesCalleesUPercentage'] = dataset['CalleesCalleesUPercentage'].astype('category').cat.codes
-    else:
-        dataset=dataset.drop(columns=['CallersTPercentage','CallersNPercentage','CallersUPercentage',
-                                      'CallersCallersTPercentage','CallersCallersNPercentage','CallersCallersUPercentage',
-                                      'CalleesTPercentage','CalleesNPercentage','CalleesUPercentage',
-                                      'CalleesCalleesTPercentage','CalleesCalleesNPercentage','CalleesCalleesUPercentage'], axis=1)     
+    dataset['CallersT'] = dataset['CallersT'].astype('category').cat.codes
+    dataset['CallersN'] = dataset['CallersN'].astype('category').cat.codes
+    dataset['CallersU'] = dataset['CallersU'].astype('category').cat.codes
+    dataset['CallersCallersT'] = dataset['CallersCallersT'].astype('category').cat.codes
+    dataset['CallersCallersN'] = dataset['CallersCallersN'].astype('category').cat.codes
+    dataset['CallersCallersU'] = dataset['CallersCallersU'].astype('category').cat.codes
+    dataset['CalleesT'] = dataset['CalleesT'].astype('category').cat.codes
+    dataset['CalleesN'] = dataset['CalleesN'].astype('category').cat.codes
+    dataset['CalleesU'] = dataset['CalleesU'].astype('category').cat.codes
+    dataset['CalleesCalleesT'] = dataset['CalleesCalleesT'].astype('category').cat.codes
+    dataset['CalleesCalleesN'] = dataset['CalleesCalleesN'].astype('category').cat.codes
+    dataset['CalleesCalleesU'] = dataset['CalleesCalleesU'].astype('category').cat.codes
+   
     pd.set_option('display.max_columns', None)
 
 
-    #print(dataset.head())
+    print(dataset.head())
     row_count, column_count = dataset.shape
  
    
@@ -256,7 +231,7 @@ def FormXandYTrainingTestSet(TestSet,TrainingSet,dataset,X_test,y_test,X_train,y
 
 def XtrainYtrainXtestYtest(X_train, X_test, y_test, y_train, Xcol,index,row):
     sc = StandardScaler()
-    #print('===',X_test)
+    print('===',X_test)
     X_train = sc.fit_transform(X_train)
     X_test = sc.transform(X_test)
     
