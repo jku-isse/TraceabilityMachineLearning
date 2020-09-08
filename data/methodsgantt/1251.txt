@@ -1,3 +1,0 @@
-public int getResourceDividerLocation() {
-    return myFallbackDelegate.getResourceDividerLocation();
-}

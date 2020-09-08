@@ -1,4 +1,0 @@
-public void setBottomTimeUnit(TimeUnit bottomTimeUnit) {
-    myBottomUnit = bottomTimeUnit;
-    myTimeFrames = null;
-}

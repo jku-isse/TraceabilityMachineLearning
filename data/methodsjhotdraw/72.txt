@@ -1,6 +1,0 @@
-/**
- * Returns the application component.
- * This may return null, if the application is not represented by a component
- * of its own on the user interface.
- */
-public Component getComponent();

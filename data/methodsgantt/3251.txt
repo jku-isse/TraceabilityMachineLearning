@@ -1,3 +1,0 @@
-ListCellRenderer getCellRenderer() {
-    return this;
-}

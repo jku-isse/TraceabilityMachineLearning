@@ -1,3 +1,0 @@
-public Object getTransformRestoreData() {
-    return bounds.clone();
-}

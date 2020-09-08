@@ -1,3 +1,0 @@
-public boolean isTextUp() {
-    return ((myLabelOptions[TaskRendererImpl.UP].getValue()) != null) && ((myLabelOptions[TaskRendererImpl.UP].getValue().length()) != 0);
-}

@@ -1,8 +1,0 @@
-public void testInsertReport2() throws Exception {
-    action = new ViewMyReportRequestsAction(factory, 9000000000L);
-    long id = action.addReportRequest(2);
-    ReportRequestBean b2 = action.getReportRequest(((int) (id)));
-    assertEquals(9000000000L, b2.getRequesterMID());
-    assertEquals(2, b2.getPatientMID());
-    assertEquals(ReportRequestBean.Requested, b2.getStatus());
-}

@@ -1,5 +1,0 @@
-public CustomProperty addCustomProperty(CustomPropertyDefinition definition, String valueAsString) {
-    final CustomPropertyDefinition stubDefinition = net.sourceforge.ganttproject.CustomPropertyManager.PropertyTypeEncoder.decodeTypeAndDefaultValue(definition.getTypeAsString(), valueAsString);
-    addCustomField(definition.getName(), stubDefinition.getDefaultValue());
-    return new HumanResource.CustomPropertyImpl(definition, stubDefinition.getDefaultValue());
-}

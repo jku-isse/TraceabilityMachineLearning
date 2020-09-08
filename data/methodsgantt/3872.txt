@@ -1,8 +1,0 @@
-public boolean equals(Object obj) {
-    boolean res = false;
-    if (obj instanceof ProjectResource) {
-        ProjectResource pr = ((ProjectResource) (obj));
-        res = (pr.id) == (id);
-    }
-    return res;
-}

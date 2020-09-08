@@ -1,3 +1,0 @@
-private String getAddCodeSuccessString(ProcedureBean proc) {
-    return ((("Success: " + (proc.getCPTCode())) + " - ") + (proc.getDescription())) + " added";
-}

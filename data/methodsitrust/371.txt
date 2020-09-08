@@ -1,8 +1,0 @@
-public void testUpdateInformationEmptyForm() {
-    try {
-        EditOfficeVisitForm frm = new EditOfficeVisitForm();
-        action.updateInformation(frm, false);
-        fail("should have thrown exception");
-    } catch (FormValidationException fve) {
-    }
-}

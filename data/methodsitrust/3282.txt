@@ -1,3 +1,0 @@
-public void testGetNonExistentRepresented() throws Exception {
-    assertEquals(0, patientDAO.getRepresented(500L).size());
-}

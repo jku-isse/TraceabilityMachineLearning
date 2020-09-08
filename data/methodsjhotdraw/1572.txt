@@ -1,8 +1,0 @@
-public Figure findFigure(Point2D.Double p) {
-    for (Figure f : getFiguresFrontToBack()) {
-        if ((f.isVisible()) && (f.contains(p))) {
-            return f;
-        }
-    }
-    return null;
-}

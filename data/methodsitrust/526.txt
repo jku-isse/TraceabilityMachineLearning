@@ -1,4 +1,0 @@
-public String getReceivingHCPSpecialty(ReferralBean bean) throws iTrustException {
-    String s = personnelDAO.getPersonnel(bean.getReceiverID()).getSpecialty();
-    return s == null ? "" : s;
-}

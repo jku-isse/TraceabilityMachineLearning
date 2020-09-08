@@ -1,3 +1,0 @@
-int getLen() {
-    return len;
-}

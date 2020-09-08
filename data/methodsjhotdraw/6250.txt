@@ -1,8 +1,0 @@
-/**
- * Discards all edits.
- */
-public void discardAllEdits() {
-    super.discardAllEdits();
-    updateActions();
-    setHasSignificantEdits(false);
-}

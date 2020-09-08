@@ -1,4 +1,0 @@
-public void testOneInfection() throws Exception {
-    addInfection(new Date(), 250.3);
-    assertTrue(factor.hasRiskFactor());
-}

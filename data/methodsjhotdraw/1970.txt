@@ -1,6 +1,0 @@
-/**
- * Returns the untransformed logical start point of the bounds.
- *
- * @see #setBounds
- */
-public Point2D.Double getStartPoint();

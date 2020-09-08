@@ -1,9 +1,0 @@
-/**
- *
- *
- * @return true if you want to export the complete percent of the task on
-the exported chart.
- */
-public boolean getExportComplete() {
-    return bExportComplete;
-}

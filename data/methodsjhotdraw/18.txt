@@ -1,3 +1,0 @@
-protected void initLabels() {
-    labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-}

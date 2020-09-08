@@ -1,3 +1,0 @@
-public int hashCode() {
-    return ((7 * (myFirstTaskID)) + (11 * (myType))) + (13 * (mySecondTaskID));
-}

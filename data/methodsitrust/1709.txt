@@ -1,3 +1,0 @@
-public void setTimeAspect(String aTimeAspect) {
-    timeAspect = aTimeAspect;
-}

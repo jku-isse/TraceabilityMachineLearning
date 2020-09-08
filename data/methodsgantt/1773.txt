@@ -1,3 +1,0 @@
-protected ChartUIConfiguration getConfig() {
-    return getChartModel().getChartUIConfiguration();
-}

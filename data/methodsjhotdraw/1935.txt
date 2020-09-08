@@ -1,6 +1,0 @@
-@Override
-public EllipseFigure clone() {
-    EllipseFigure that = ((EllipseFigure) (super.clone()));
-    that.ellipse = ((Ellipse2D.Double) (this.ellipse.clone()));
-    return that;
-}

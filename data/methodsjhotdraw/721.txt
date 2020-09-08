@@ -1,3 +1,0 @@
-public int getComponentIndex() {
-    return componentIndex;
-}

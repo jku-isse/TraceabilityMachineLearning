@@ -1,7 +1,0 @@
-public void testUpdateNonExistent() throws DBException, SQLException {
-    clearHospitals();
-    final String id = "0000000000";
-    HospitalBean hosp = new HospitalBean(id, "");
-    assertEquals(0, hospitalDAO.updateHospital(hosp));
-    assertEquals(0, hospitalDAO.getAllHospitals().size());
-}

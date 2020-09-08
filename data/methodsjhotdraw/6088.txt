@@ -1,6 +1,0 @@
-private void wrapAroundPerformed(ActionEvent evt) {
-    // GEN-FIRST:event_wrapAroundPerformed
-    if ((prefs) != null) {
-        prefs.putBoolean("find.wrapAround", wrapAroundCheck.isSelected());
-    }
-}// GEN-LAST:event_wrapAroundPerformed

@@ -1,3 +1,0 @@
-public int doEndTag() throws JspException {
-    return SKIP_BODY;
-}

@@ -1,8 +1,0 @@
-/**
- * modify a node
- */
-public void treeNodesChanged(TreeModelEvent e) {
-    if ((area) != null) {
-        area.repaint();
-    }
-}

@@ -1,8 +1,0 @@
-/**
- * Structur change.
- */
-public void treeStructureChanged(TreeModelEvent e) {
-    if ((area) != null) {
-        area.repaint();
-    }
-}

@@ -1,4 +1,0 @@
-public void changePoint2(int x2, int y2) {
-    this.x2 = x2;
-    this.y2 = y2;
-}

@@ -1,4 +1,0 @@
-private void zoomChanged(ChangeEvent evt) {
-    // GEN-FIRST:event_zoomChanged
-    canvas.repaint();
-}// GEN-LAST:event_zoomChanged

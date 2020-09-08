@@ -1,3 +1,0 @@
-private Color getDefaultColor() {
-    return Color.BLUE;
-}

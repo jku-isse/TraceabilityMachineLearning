@@ -1,3 +1,0 @@
-public void removeObserver(DelayObserver observer) {
-    myObservers.remove(observer);
-}

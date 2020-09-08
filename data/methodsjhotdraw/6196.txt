@@ -1,6 +1,0 @@
-/**
- * Gets the last used input format.
- */
-public ColorFormatter.Format getLastUsedInputFormat() {
-    return lastUsedInputFormat;
-}

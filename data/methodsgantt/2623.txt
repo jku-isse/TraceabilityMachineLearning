@@ -1,4 +1,0 @@
-void disableNotifier() {
-    remove(myLabel);
-    revalidate();
-}

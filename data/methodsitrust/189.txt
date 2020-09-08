@@ -1,9 +1,0 @@
-public void testAddRemoteMonitoringWeightDataOnly() throws Exception {
-    try {
-        RemoteMonitoringDataBean b = new RemoteMonitoringDataBean();
-        b.setWeight(100);
-        action.addRemoteMonitoringData(b);
-    } catch (FormValidationException e) {
-        fail();
-    }
-}

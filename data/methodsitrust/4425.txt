@@ -1,5 +1,0 @@
-public void testManyInfectionsDuringChildhood() throws Exception {
-    addInfection(new SimpleDateFormat("MM/dd/yyyy").parse(p.getDateOfBirthStr()), 250.3);
-    addInfection(new SimpleDateFormat("MM/dd/yyyy").parse(p.getDateOfBirthStr()), 487);
-    assertTrue(factor.hasRiskFactor());
-}

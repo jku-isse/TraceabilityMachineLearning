@@ -1,3 +1,0 @@
-public void showErrorDialog(String errorMessage) {
-    System.err.println(("[ConsoleUIFacade] ERROR: " + errorMessage));
-}

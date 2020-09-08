@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys ReportRequestDAO
- */
-public ReportRequestDAO getReportRequestDAO() {
-    return new ReportRequestDAO(this);
-}

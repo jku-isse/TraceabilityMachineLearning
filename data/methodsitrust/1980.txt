@@ -1,3 +1,0 @@
-public void setAMID(long amid) {
-    AMID = amid;
-}

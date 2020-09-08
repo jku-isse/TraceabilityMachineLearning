@@ -1,8 +1,0 @@
-public void add(int index, Figure figure) {
-    basicAdd(index, figure);
-    if ((getDrawing()) != null) {
-        figure.addNotify(getDrawing());
-    }
-    fireFigureAdded(figure, index);
-    invalidate();
-}

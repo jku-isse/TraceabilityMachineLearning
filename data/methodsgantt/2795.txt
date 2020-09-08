@@ -1,9 +1,0 @@
-/**
- * Setup the border (invisible initially)
- */
-private TestGanttRolloverButton(Icon iconOn, Icon iconOff) {
-    this();
-    setIcon(iconOff);
-    _iconOn = iconOn;
-    _iconOff = iconOff;
-}

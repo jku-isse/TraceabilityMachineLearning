@@ -1,7 +1,0 @@
-public boolean isCellEditable(int row, int col) {
-    boolean result = col > 0;
-    if (result) {
-        result = (col == 2) ? row < (myDependencies.size()) : row <= (myDependencies.size());
-    }
-    return result;
-}

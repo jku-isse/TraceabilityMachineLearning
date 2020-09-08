@@ -1,4 +1,0 @@
-public void setFile(File file) {
-    myFile = file;
-    myTextField.setText((file == null ? "" : file.getAbsolutePath()));
-}

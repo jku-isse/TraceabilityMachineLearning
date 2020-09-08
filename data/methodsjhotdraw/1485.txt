@@ -1,4 +1,0 @@
-/**
- * Finds the end point for the connection.
- */
-public Point2D.Double findEnd(ConnectionFigure connection);

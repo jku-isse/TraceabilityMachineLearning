@@ -1,4 +1,0 @@
-public CustomColumnsException(int type, String message) {
-    super(message);
-    this.type = type;
-}

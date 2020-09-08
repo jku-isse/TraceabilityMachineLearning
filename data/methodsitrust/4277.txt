@@ -1,5 +1,0 @@
-public void testFilterByCity1() throws Exception {
-    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.CITY, "", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertEquals(0, res.size());
-}

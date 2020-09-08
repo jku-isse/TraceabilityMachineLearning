@@ -1,3 +1,0 @@
-public FontUIResource getMenuTextFont() {
-    return font;
-}

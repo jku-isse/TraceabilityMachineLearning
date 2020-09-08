@@ -1,4 +1,0 @@
-public void testIsValidForLoginEvil() throws Exception {
-    action = new LoginFailureAction(evil, "192.168.1.1");
-    assertEquals(false, action.isValidForLogin());
-}

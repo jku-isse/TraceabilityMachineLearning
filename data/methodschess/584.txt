@@ -1,9 +1,0 @@
-/**
- * Set the source of the ply.
- *
- * @param The
- * 		new source of the piece.
- */
-public final void setSource(Position source) {
-    _source = source;
-}

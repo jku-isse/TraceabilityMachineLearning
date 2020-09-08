@@ -1,6 +1,0 @@
-/**
- * Return the number of day on the month
- */
-public int getNumberOfDay() {
-    return this.getActualMaximum(Calendar.DATE);
-}

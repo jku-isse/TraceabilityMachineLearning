@@ -1,3 +1,0 @@
-private Drawing getDrawing() {
-    return drawingPanel.getDrawing();
-}

@@ -1,3 +1,0 @@
-private HumanResourceManager getHumanResourceManager() {
-    return ((HumanResourceManager) (appli.getHumanResourceManager()));
-}

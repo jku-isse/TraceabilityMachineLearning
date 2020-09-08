@@ -1,6 +1,0 @@
-public TaskAllocationsPanel(Task task, HumanResourceManager hrManager, RoleManager roleMgr, boolean onlyOneTask) {
-    super(task);
-    myHRManager = hrManager;
-    myRoleManager = roleMgr;
-    this.onlyOneTask = onlyOneTask;
-}

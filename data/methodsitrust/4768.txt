@@ -1,9 +1,0 @@
-public void testLabProcedureAllCorrect() throws Exception {
-    LabProcedureBean l = new LabProcedureBean();
-    l.setCommentary("This is it");
-    l.setLoinc("00000-0");
-    l.setPid(1L);
-    l.statusPending();
-    l.allow();
-    new LabProcedureValidator().validate(l);
-}

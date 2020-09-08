@@ -1,4 +1,0 @@
-void setProgress(int work) {
-    myProgressBar.setValue(work);
-    myLabel.setText(getLabelText());
-}

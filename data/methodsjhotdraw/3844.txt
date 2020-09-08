@@ -1,8 +1,0 @@
-/**
- * Gets the popup anchor.
- *
- * @return SwingConstants.SOUTH_WEST or SOUTH_EAST.
- */
-public int getPopupAnchor() {
-    return popupAnchor;
-}

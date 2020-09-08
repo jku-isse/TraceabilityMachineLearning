@@ -1,7 +1,0 @@
-/**
- * Returns true if the border is opaque.
- * This implementation always returns false.
- */
-public boolean isBorderOpaque() {
-    return false;
-}

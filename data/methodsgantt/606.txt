@@ -1,3 +1,0 @@
-public void addProjectEventListener(ProjectEventListener listener) {
-    myModifiedStateChangeListeners.add(listener);
-}

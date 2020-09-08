@@ -1,4 +1,0 @@
-/**
- * This is a convenience method for removing a view and disposing it.
- */
-public void dispose(View p);

@@ -1,3 +1,0 @@
-public void mouseMoved(MouseEvent e) {
-    getHandler().mouseMoved(e);
-}

@@ -1,4 +1,0 @@
-@Override
-public void areaInvalidated(FigureEvent e) {
-    fireAreaInvalidated(e);
-}

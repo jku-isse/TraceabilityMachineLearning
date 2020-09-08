@@ -1,3 +1,0 @@
-public ZoomManager.ZoomState getZoomState() {
-    return myZoomStates[myZooming];
-}

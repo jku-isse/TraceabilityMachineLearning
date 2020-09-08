@@ -1,8 +1,0 @@
-/**
- * Returns the black players name
- *
- * @return The String for the black player
- */
-public String getBlackPlayerName() {
-    return this.jbBlack.getText();
-}

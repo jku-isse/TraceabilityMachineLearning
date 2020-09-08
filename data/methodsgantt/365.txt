@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return 
- */
-public String getFTPUser() {
-    return FTPUser;
-}

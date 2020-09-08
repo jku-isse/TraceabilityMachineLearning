@@ -1,7 +1,0 @@
-/**
- * Creates a new instance.
- */
-public ODGPathFigure() {
-    add(new ODGBezierFigure());
-    ODGAttributeKeys.setDefaults(this);
-}

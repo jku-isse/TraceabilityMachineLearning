@@ -1,3 +1,0 @@
-public Object getAttribute(String arg0) {
-    throw new IllegalStateException("should not be hit!");
-}

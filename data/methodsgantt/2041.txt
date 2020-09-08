@@ -1,3 +1,0 @@
-public void setString(String s) {
-    n = s;
-}

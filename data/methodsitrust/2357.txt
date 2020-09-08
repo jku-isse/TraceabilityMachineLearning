@@ -1,3 +1,0 @@
-public FamilyBeanLoader(String relation) {
-    this.relation = relation;
-}

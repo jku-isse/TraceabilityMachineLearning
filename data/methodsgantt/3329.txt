@@ -1,6 +1,0 @@
-/**
- * Return the numbers of rows
- */
-public int getRowCount() {
-    return (myDependencies.size()) + 1;
-}

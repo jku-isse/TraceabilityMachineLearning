@@ -1,5 +1,0 @@
-public void testParse() throws Exception {
-    for (TransactionType type : TransactionType.values()) {
-        assertEquals(type, TransactionType.parse(type.getCode()));
-    }
-}

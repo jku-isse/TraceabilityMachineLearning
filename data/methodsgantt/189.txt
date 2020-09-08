@@ -1,8 +1,0 @@
-public GanttExportSettings(boolean bName, boolean bPercent, boolean bDepend, boolean b3dBorders) {
-    name = bName;
-    percent = bPercent;
-    depend = bDepend;
-    border3d = b3dBorders;
-    ok = true;
-    onlySelectedItems = false;
-}

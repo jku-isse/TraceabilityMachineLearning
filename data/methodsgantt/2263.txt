@@ -1,3 +1,0 @@
-public void write() throws IOException {
-    throw new UnsupportedOperationException();
-}

@@ -1,4 +1,0 @@
-// SHAPE AND BOUNDS
-public void transform(AffineTransform tx) {
-    tx.transform(origin, origin);
-}

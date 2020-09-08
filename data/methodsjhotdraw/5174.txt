@@ -1,5 +1,0 @@
-public void setStops(double[] offsets, Color[] colors, double[] stopOpacities) {
-    this.stopOffsets = offsets;
-    this.stopColors = colors;
-    this.stopOpacities = stopOpacities;
-}

@@ -1,3 +1,0 @@
-public Role getRoleForAssigment() {
-    return resourceAssignment.getRoleForAssignment();
-}

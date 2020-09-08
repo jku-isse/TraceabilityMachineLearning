@@ -1,7 +1,0 @@
-public void testGetID() {
-    AllergyBean allergy = new AllergyBean();
-    allergy.setId(7L);
-    assertEquals(7L, allergy.getId());
-    allergy.setDescription("testing");
-    assertEquals("testing", allergy.toString());
-}

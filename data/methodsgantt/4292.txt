@@ -1,3 +1,0 @@
-public ResourceAssignmentCollection getAssignmentCollection() {
-    return myAssignments;
-}

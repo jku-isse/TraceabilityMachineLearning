@@ -1,9 +1,0 @@
-/**
- * Changes the scale factor of the number formatter.
- *
- * @param newValue
- * 		
- */
-public void setScaleFactor(double newValue) {
-    scaleFactor = newValue;
-}

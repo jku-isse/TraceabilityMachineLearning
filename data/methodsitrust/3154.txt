@@ -1,3 +1,0 @@
-public void testGetEmptyOfficeVisit() throws Exception {
-    assertNull(ovDAO.getOfficeVisit(0L));
-}

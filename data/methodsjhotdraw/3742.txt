@@ -1,3 +1,0 @@
-public void setAttributeValue(T newValue) {
-    setValue(newValue);
-}

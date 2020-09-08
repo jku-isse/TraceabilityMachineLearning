@@ -1,8 +1,0 @@
-/**
- * Return the send request for an AppointmentBean
- *
- * @return the send request for an AppointmentBean
- */
-public List<ApptBean> getSend() {
-    return send;
-}

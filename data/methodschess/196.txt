@@ -1,5 +1,0 @@
-public void setStatusPanel(StatusPanel myPanel) {
-    if ((this._statusPanel) != myPanel)
-        this._statusPanel = myPanel;
-
-}

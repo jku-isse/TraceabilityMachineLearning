@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys RiskDAO
- */
-public RiskDAO getRiskDAO() {
-    return new RiskDAO(this);
-}

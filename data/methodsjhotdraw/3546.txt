@@ -1,8 +1,0 @@
-public PolygonPathIteratorFloat(Polygon2D.Float pg, AffineTransform at) {
-    poly = pg;
-    transform = at;
-    if ((pg.npoints) == 0) {
-        // Prevent a spurious SEG_CLOSE segment
-        index = 1;
-    }
-}

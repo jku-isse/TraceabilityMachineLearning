@@ -1,3 +1,0 @@
-protected MouseMotionListener getMouseMotionListener() {
-    return getChartImplementation().getMouseMotionListener();
-}

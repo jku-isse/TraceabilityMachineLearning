@@ -1,3 +1,0 @@
-private JFrame getFrame() {
-    return ((JFrame) (SwingUtilities.getWindowAncestor(getActiveView().getComponent())));
-}

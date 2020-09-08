@@ -1,3 +1,0 @@
-public List<LabProcedureBean> viewReceivedProcedures(long id) throws DBException {
-    return lpDAO.getLabProceduresReceivedForLabTech(id);
-}

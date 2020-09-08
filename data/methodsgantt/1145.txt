@@ -1,3 +1,0 @@
-public void setRowHeight(int rowHeight) {
-    super.setRowHeight(rowHeight);
-}

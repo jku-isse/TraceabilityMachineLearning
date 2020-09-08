@@ -1,9 +1,0 @@
-public void nextPage() {
-    if ((myCurrentPage) < ((myPages.size()) - 1)) {
-        getCurrentPage().setActive(false);
-        (myCurrentPage)++;
-        getCurrentPage().setActive(true);
-        myCardLayout.next(myPagesContainer);
-    }
-    adjustButtonState();
-}

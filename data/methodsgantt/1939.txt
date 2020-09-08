@@ -1,3 +1,0 @@
-protected void paintChart(Graphics g) {
-    myChartImplementation.paintComponent(g);
-}

@@ -1,3 +1,0 @@
-public String toString() {
-    return (((("start=" + (this.startDate)) + " load=") + (this.load)) + " refTask = ") + (this.refTask);
-}

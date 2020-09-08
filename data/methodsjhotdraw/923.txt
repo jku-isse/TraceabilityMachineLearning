@@ -1,3 +1,0 @@
-public void setInputFormats(List<InputFormat> formats) {
-    this.inputFormats = new LinkedList<InputFormat>(formats);
-}

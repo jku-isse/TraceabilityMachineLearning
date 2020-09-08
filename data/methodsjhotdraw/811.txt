@@ -1,3 +1,0 @@
-protected AbstractCompositeFigure.EventHandler createEventHandler() {
-    return new AbstractCompositeFigure.EventHandler();
-}

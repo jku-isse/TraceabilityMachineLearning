@@ -1,8 +1,0 @@
-/**
- * Returns the start date of the task.
- *
- * @return The start date of the task.
- */
-public GanttCalendar getStart() {
-    return task.getStart();
-}

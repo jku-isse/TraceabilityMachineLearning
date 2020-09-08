@@ -1,4 +1,0 @@
-/**
- * Remove all the pieces from the board.
- */
-void emptyBoard();

@@ -1,4 +1,0 @@
-public North(DrawingEditor editor) {
-    super(editor);
-    labels.configureAction(this, "edit.alignNorth");
-}

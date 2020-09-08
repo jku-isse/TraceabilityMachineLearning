@@ -1,9 +1,0 @@
-public void actionPerformed(ActionEvent evt) {
-    if ((evt.getActionCommand()) == (JFontChooser.APPROVE_SELECTION)) {
-        applySelectedFontToFigures();
-    } else
-        if ((evt.getActionCommand()) == (JFontChooser.CANCEL_SELECTION)) {
-        }
-
-    popupMenu.setVisible(false);
-}

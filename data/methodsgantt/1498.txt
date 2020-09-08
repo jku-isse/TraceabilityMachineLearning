@@ -1,3 +1,0 @@
-public static Calendar newCalendar() {
-    return GanttLanguage.getInstance().newCalendar();
-}

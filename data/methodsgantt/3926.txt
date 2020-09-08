@@ -1,6 +1,0 @@
-/**
- *
- *
- * @return Resources selected at the moment
- */
-public ProjectResource[] getResources();

@@ -1,4 +1,0 @@
-public void testHospitalNameBadChars() {
-    String hName = "9 A very long Hospital Names!";
-    assertEquals(HospitalNameValidatorTest.FAILED, validatorProxy.checkFormat("Hospital Name", hName, HospitalNameValidatorTest.VALIDATION_FORMAT, false));
-}

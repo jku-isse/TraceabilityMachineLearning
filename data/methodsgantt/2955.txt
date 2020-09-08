@@ -1,7 +1,0 @@
-/**
- * This method check if the value has changed, and assk for commit changes.
- */
-public boolean applyChanges(boolean askForApply) {
-    // nothing to do :)
-    return bHasChange = false;
-}

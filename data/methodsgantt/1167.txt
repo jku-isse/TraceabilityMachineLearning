@@ -1,6 +1,0 @@
-public void changePeople(List peoples) {
-    Iterator it = peoples.iterator();
-    while (it.hasNext())
-        addResource(((ProjectResource) (it.next())));
-
-}

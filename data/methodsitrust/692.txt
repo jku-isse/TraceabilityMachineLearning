@@ -1,7 +1,0 @@
-public int getFailureCount() {
-    try {
-        return authDAO.getLoginFailures(ipAddr);
-    } catch (DBException e) {
-        return 0;
-    }
-}

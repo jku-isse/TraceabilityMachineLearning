@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the xsl-fo file.
- */
-public String getXslFo() {
-    return new File(xslFo).exists() ? xslFo : getClass().getResource("/xslfo/ganttproject.xsl").toString();
-}

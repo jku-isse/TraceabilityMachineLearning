@@ -1,2 +1,0 @@
-1( $anonymous0,  $anonymous1,  $anonymous2,  $anonymous3) {
-}

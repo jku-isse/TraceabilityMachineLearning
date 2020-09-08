@@ -1,3 +1,0 @@
-protected void writeImageElement(IXMLElement parent, SVGImageFigure f) throws IOException {
-    parent.addChild(createImage(document, f.getX(), f.getY(), f.getWidth(), f.getHeight(), f.getImageData(), f.getAttributes()));
-}

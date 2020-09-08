@@ -1,3 +1,0 @@
-protected TaskManager getTaskManager() {
-    return myProject.getTaskManager();
-}

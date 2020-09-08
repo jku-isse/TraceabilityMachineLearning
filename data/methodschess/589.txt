@@ -1,9 +1,0 @@
-// Methods
-/**
- * Get the new type of the piece after the transformation.
- *
- * @return The new piece after the transformation.
- */
-public final byte getTypeAfterTransformation() {
-    return _newPieceType;
-}

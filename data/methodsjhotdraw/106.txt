@@ -1,6 +1,0 @@
-public void hide(View v) {
-    v.deactivate();
-    v.stop();
-    applet.getContentPane().removeAll();
-    this.view = null;
-}

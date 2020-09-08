@@ -1,6 +1,0 @@
-/**
- * Sets the drawing on the drawing panel.
- */
-private void setDrawing(Drawing d) {
-    drawingComponent.setDrawing(d);
-}

@@ -1,3 +1,0 @@
-public void write(OutputStream out, Drawing drawing) throws IOException {
-    write(out, drawing, drawing.getChildren());
-}

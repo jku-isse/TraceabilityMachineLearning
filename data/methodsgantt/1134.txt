@@ -1,3 +1,0 @@
-public JScrollBar getVerticalScrollBar() {
-    return scrollPane.getVerticalScrollBar();
-}

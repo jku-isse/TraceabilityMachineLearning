@@ -1,3 +1,0 @@
-private int getScaledWidth() {
-    return ((int) (((myPageFormat.getWidth()) * (myScalePercents)) / 100));
-}

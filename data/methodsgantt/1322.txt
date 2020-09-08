@@ -1,7 +1,0 @@
-public void setIconSize(String iconSize) {
-    Icon icon = createIcon(iconSize);
-    if (icon != null) {
-        putValue(Action.SMALL_ICON, icon);
-        myIcon = icon;
-    }
-}

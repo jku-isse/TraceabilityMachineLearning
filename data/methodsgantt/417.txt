@@ -1,6 +1,0 @@
-/**
- * set a new value for web dav locking.
- */
-public void setLockDAVMinutes(int minuteslock) {
-    lockDAVMinutes = minuteslock;
-}

@@ -1,6 +1,0 @@
-public GPOptionGroup[] getChartOptionGroups() {
-    List result = new ArrayList();
-    GPOptionGroup[] superGroups = super.getChartOptionGroups();
-    result.add(myColorOptions);
-    return ((GPOptionGroup[]) (result.toArray(new GPOptionGroup[result.size()])));
-}

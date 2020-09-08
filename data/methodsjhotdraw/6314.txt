@@ -1,8 +1,0 @@
-/**
- * Get the appropriate ResourceBundle subclass.
- *
- * @see java.util.ResourceBundle
- */
-public static ResourceBundleUtil getBundle(String baseName) throws MissingResourceException {
-    return ResourceBundleUtil.getBundle(baseName, LocaleUtil.getDefault());
-}

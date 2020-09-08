@@ -1,7 +1,0 @@
-public void testRemoveHCPtoHospitalBadID() {
-    try {
-        action.removeHCPAssignmentToHospital("f", "1");
-        fail();
-    } catch (iTrustException e) {
-    }
-}

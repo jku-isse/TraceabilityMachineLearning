@@ -1,5 +1,0 @@
-public Rectangle2D getBounds2D() {
-    if ((bounds) == null) {
-    }
-    return ((Rectangle2D.Double) (bounds.clone()));
-}

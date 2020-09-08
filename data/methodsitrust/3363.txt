@@ -1,9 +1,0 @@
-public void testSenderQueryPatientSort() throws Exception {
-    ReferralDAO.ReferralListQuery query = dao.getSenderQuery(9000000000L);
-    List<VerboseReferralBean> list = query.query("patientName", SortDirection.ASCENDING);
-    assertEquals(4, list.size());
-    assertEquals("Random Person", list.get(0).getPatientName());
-    assertEquals("Andy Programmer", list.get(1).getPatientName());
-    assertEquals("Andy Programmer", list.get(2).getPatientName());
-    assertEquals("Baby Programmer", list.get(3).getPatientName());
-}

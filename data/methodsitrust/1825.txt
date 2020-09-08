@@ -1,3 +1,0 @@
-public void setORCode(String code) {
-    reasonCode = code;
-}

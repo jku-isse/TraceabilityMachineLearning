@@ -1,3 +1,0 @@
-public void setRoleForAssignment(Role role) {
-    myAssignmentToResource.setRoleForAssignment(role);
-}

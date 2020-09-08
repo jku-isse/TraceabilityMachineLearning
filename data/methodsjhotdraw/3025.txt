@@ -1,6 +1,0 @@
-/**
- * Set of attributes that is excluded when applying default attributes.
- */
-public void setExcludedAttributes(Set<AttributeKey> a) {
-    this.excludedAttributes = a;
-}

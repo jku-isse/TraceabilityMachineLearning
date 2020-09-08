@@ -1,5 +1,0 @@
-private String escape(String name) {
-    // Escape dollar characters by two full-stop characters
-    name = name.replaceAll("\$", "..");
-    return name;
-}

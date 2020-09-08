@@ -1,9 +1,0 @@
-/**
- * Create an item with an icon
- */
-public JMenuItem createNewItem(String icon) {
-    URL url = getClass().getResource(icon);
-    JMenuItem item = (url == null) ? new JMenuItem() : new JMenuItem(new ImageIcon(url));
-    item.addActionListener(this);
-    return item;
-}

@@ -1,3 +1,0 @@
-public <T> T getAttribute(AttributeKey<T> name) {
-    return null;
-}

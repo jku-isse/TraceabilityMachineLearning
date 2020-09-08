@@ -1,3 +1,0 @@
-public Map<AttributeKey, Object> getDefaultAttributes() {
-    return Collections.unmodifiableMap(defaultAttributes);
-}

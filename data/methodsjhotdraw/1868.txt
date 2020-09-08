@@ -1,3 +1,0 @@
-public int getNumberOfPages() {
-    return 1;
-}

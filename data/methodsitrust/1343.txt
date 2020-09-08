@@ -1,8 +1,0 @@
-/**
- * For obtaining the unique identifier of the office visit this action is associated with.
- *
- * @return A long of the identifier.
- */
-public long getOvID() {
-    return ovID;
-}

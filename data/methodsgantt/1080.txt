@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the web link for the project or for the company.
- */
-public String getWebLink() {
-    return _sWebLink;
-}

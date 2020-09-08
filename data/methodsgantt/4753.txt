@@ -1,6 +1,0 @@
-public TaskHierarchyEvent(Object source, Task myTask, Task myOldContainer, Task myNewContainer) {
-    super(source);
-    this.myNewContainer = myNewContainer;
-    this.myTask = myTask;
-    this.myOldContainer = myOldContainer;
-}

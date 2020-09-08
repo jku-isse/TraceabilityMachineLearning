@@ -1,4 +1,0 @@
-@Override
-public void add(final int index, final Figure figure) {
-    super.add(index, ((ODGBezierFigure) (figure)));
-}

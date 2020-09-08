@@ -1,9 +1,0 @@
-/**
- * Setup the border (invisible initially)
- */
-public TestGanttRolloverButton(Icon icon, String text) {
-    this();
-    setIcon(icon);
-    _iconOn = icon;
-    setText(text);
-}

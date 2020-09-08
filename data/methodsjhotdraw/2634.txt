@@ -1,9 +1,0 @@
-/**
- * Returns the value of the selectBehindEnabled property.
- * This is a bound property.
- *
- * @return The property value.
- */
-public boolean isSelectBehindEnabled() {
-    return isSelectBehindEnabled;
-}

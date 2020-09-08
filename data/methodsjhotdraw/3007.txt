@@ -1,4 +1,0 @@
-public Horizontal(DrawingEditor editor, ResourceBundleUtil labels) {
-    super(editor);
-    labels.configureAction(this, "edit.alignHorizontal");
-}

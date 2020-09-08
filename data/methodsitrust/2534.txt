@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys DiagnosesDAO
- */
-public DiagnosesDAO getDiagnosesDAO() {
-    return new DiagnosesDAO(this);
-}

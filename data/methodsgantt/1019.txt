@@ -1,3 +1,0 @@
-public void languageChanged(GanttLanguage.Event event) {
-    changeLanguage(event.getLanguage());
-}

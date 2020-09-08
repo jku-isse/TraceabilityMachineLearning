@@ -1,9 +1,0 @@
-public void removeAppt(ApptBean appt) throws SQLException {
-    Connection conn = null;
-    PreparedStatement ps = null;
-    conn = factory.getConnection();
-    ps = conn.prepareStatement("DELETE FROM appointment WHERE appt_id=?");
-    ps.setInt(1, appt.getApptID());
-    ps.executeUpdate();
-    DBUtil.closeConnection(conn, ps);
-}

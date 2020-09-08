@@ -1,4 +1,0 @@
-@Override
-public boolean equals(Object obj) {
-    return ((obj != null) && (obj.getClass().equals(this.getClass()))) && (this.equals(((HospitalBean) (obj))));
-}

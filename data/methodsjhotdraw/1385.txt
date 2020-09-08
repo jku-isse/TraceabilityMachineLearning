@@ -1,9 +1,0 @@
-/**
- * Removes the child at the specified index without firing events.
- * <p>
- * This method can be used to temporarily remove a child from this
- * CompositeFigure (for example to reorder the sequence of the children).
- * <p>
- * Returns the removed child figure.
- */
-public Figure basicRemoveChild(int index);

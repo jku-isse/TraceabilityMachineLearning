@@ -1,3 +1,0 @@
-public String getBloodPressureN() {
-    return bloodPressureN;
-}

@@ -1,7 +1,0 @@
-@Override
-public int hashCode() {
-    int hash = 7;
-    hash = (71 * hash) + ((int) ((Double.doubleToLongBits(this.relativeX)) ^ ((Double.doubleToLongBits(this.relativeX)) >>> 32)));
-    hash = (71 * hash) + ((int) ((Double.doubleToLongBits(this.relativeY)) ^ ((Double.doubleToLongBits(this.relativeY)) >>> 32)));
-    return hash;
-}

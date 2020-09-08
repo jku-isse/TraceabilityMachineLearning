@@ -1,8 +1,0 @@
-/**
- *
- *
- * @unknown 
- */
-public void columnAdded(TableColumnModelEvent arg0) {
-    (nbCol)++;
-}

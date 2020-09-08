@@ -1,5 +1,0 @@
-public void testGetPatients() {
-    List<PatientBean> p = bean.getPatients();
-    assertTrue(((p.size()) == 1));
-    assertTrue(((p.get(0).getMID()) == 1L));
-}

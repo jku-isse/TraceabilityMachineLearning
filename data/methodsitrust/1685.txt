@@ -1,3 +1,0 @@
-public String getHospitalName() {
-    return hospitalName;
-}

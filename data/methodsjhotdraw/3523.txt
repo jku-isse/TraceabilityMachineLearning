@@ -1,9 +1,0 @@
-/**
- * Sets the insets.
- *
- * @param i
- * 		The new insets.
- */
-public void set(Insets2D i) {
-    set(i.getTop(), i.getLeft(), i.getBottom(), i.getRight());
-}

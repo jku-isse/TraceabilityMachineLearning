@@ -1,8 +1,0 @@
-public void testGetUserRoleException() throws Exception {
-    try {
-        evilDAO.getUserRole(0L);
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

@@ -1,6 +1,0 @@
-/**
- * Gets the last error
- *
- * @return errormessage
- */
-public String getLastError();

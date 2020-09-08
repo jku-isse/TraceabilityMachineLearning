@@ -1,5 +1,0 @@
-public OverrideReasonBean loadSingle(ResultSet rs) throws SQLException {
-    OverrideReasonBean reason = new OverrideReasonBean();
-    reason.setORCode(rs.getString("OverrideCode"));
-    return reason;
-}

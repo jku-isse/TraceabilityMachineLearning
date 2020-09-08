@@ -1,4 +1,0 @@
-public AuthorsInfo(String name, String mail) {
-    this.name = name;
-    this.mail = mail;
-}

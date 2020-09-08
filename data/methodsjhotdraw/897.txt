@@ -1,3 +1,0 @@
-public boolean isConnectToDecorator() {
-    return isConnectToDecorator;
-}

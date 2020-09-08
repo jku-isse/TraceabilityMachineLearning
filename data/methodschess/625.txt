@@ -1,7 +1,0 @@
-/**
- * Repaint the board after a game position change.
- */
-public final void clearBoard() {
-    _piecesLayer.clearBoard();
-    repaint();
-}

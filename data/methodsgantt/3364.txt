@@ -1,3 +1,0 @@
-public boolean canZoomOut() {
-    return (myZooming) < ((myZoomStates.length) - 1);
-}

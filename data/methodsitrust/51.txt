@@ -1,3 +1,0 @@
-public EmailUtil(DAOFactory factory) {
-    this.factory = factory;
-}

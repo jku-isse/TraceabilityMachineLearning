@@ -1,4 +1,0 @@
-ImporterChooserPage(Importer[] importers, ImportFileWizardImpl.State state) {
-    myImporters = importers;
-    myState = state;
-}

@@ -1,8 +1,0 @@
-/**
- * Returns the end date of the task.
- *
- * @return The end date of the task.
- */
-public GanttCalendar getEnd() {
-    return task.getEnd();
-}

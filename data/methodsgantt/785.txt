@@ -1,9 +1,0 @@
-/**
- * set the successor task ID by the integer
- *
- * @param seccessorTaskID
- * 		id of the successor
- */
-public void setSuccessorTask(int seccessorTaskID) {
-    this.successorTaskID = seccessorTaskID;
-}

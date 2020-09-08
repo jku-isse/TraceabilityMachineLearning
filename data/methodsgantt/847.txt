@@ -1,3 +1,0 @@
-private GPUndoManager getUndoManager() {
-    return myUIFacade.getUndoManager();
-}

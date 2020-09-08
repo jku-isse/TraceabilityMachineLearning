@@ -1,9 +1,0 @@
-/**
- * The constructor
- */
-public GanttXMLSaver(IGanttProject project, GanttTree2 tree, GanttResourcePanel peop, GanttGraphicArea area, UIFacade uiFacade) {
-    this.tree = tree;
-    this.area = area;
-    myProject = project;
-    myUIFacade = uiFacade;
-}

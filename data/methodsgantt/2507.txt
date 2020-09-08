@@ -1,3 +1,0 @@
-public DateIntervalListEditor.DateInterval[] getIntervals() {
-    return ((DateIntervalListEditor.DateInterval[]) (myIntervals.toArray(new DateIntervalListEditor.DateInterval[myIntervals.size()])));
-}

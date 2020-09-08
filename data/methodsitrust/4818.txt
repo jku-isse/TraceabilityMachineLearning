@@ -1,5 +1,0 @@
-public void testNoNegative() throws Exception {
-    String value = "O";
-    String errorMessage = BloodTypeValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, BloodTypeValidatorTest.VALIDATION_FORMAT, false));
-}

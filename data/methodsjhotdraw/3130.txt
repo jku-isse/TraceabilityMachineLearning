@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public DrawingAttributeAction(DrawingEditor editor, AttributeKey key, Object value, String name) {
-    this(editor, key, value, name, null);
-}

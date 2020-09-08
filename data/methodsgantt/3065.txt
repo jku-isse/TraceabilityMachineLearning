@@ -1,3 +1,0 @@
-public String getOptionGroupLabel(GPOptionGroup group) {
-    return GanttLanguage.getInstance().getText((((myOptionGroupKeyPrefix) + (group.getID())) + ".label"));
-}

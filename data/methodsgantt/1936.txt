@@ -1,6 +1,0 @@
-public RenderedGanttChartImage(ChartModelBase chartModel, GanttGraphicArea.ChartImplementation chartImplementation, List tasks, BufferedImage taskImage, int chartWidth, int chartHeight) {
-    super(chartModel, taskImage, chartWidth, chartHeight);
-    myVisibleTasks = tasks;
-    myChartImplementation = chartImplementation;
-    // TODO Auto-generated constructor stub
-}

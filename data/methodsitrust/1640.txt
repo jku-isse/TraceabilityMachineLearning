@@ -1,3 +1,0 @@
-public void setHCPMID(long mid) {
-    hcpMID = mid;
-}

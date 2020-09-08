@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param firstDrug
- * 		the firstDrug to set
- */
-public void setFirstDrug(String firstDrug) {
-    this.firstDrug = firstDrug;
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys ApptRequestDAO
- */
-public ApptRequestDAO getApptRequestDAO() {
-    return new ApptRequestDAO(this);
-}

@@ -1,6 +1,0 @@
-public GanttTaskRelationship[] getSuccessors() {
-    return new GanttTaskRelationship[0];// To change body of implemented
-
-    // methods use Options | File
-    // Templates.
-}

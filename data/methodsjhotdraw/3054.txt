@@ -1,6 +1,0 @@
-public static void addFontButtonsTo(JToolBar bar, DrawingEditor editor) {
-    bar.add(ButtonFactory.createFontButton(editor));
-    bar.add(ButtonFactory.createFontStyleBoldButton(editor));
-    bar.add(ButtonFactory.createFontStyleItalicButton(editor));
-    bar.add(ButtonFactory.createFontStyleUnderlineButton(editor));
-}

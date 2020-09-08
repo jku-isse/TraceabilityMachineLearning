@@ -1,3 +1,0 @@
-public void setCholesterolLDL(String cholesterolLDL) {
-    this.cholesterolLDL = cholesterolLDL;
-}

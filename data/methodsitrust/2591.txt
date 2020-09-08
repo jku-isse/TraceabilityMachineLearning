@@ -1,9 +1,0 @@
-public void testAddLOINC() throws Exception {
-    LOINCbean lb = new LOINCbean();
-    try {
-        lDAO.addLOINC(lb);
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

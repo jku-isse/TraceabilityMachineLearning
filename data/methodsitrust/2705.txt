@@ -1,9 +1,0 @@
-public void testGetPersonException() throws Exception {
-    factory = EvilDAOFactory.getEvilInstance();
-    try {
-        factory.getFakeEmailDAO().getEmailsByPerson("gstormcrow@iTrust.org");
-        fail("exception should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

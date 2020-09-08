@@ -1,3 +1,0 @@
-public int getTabSize() {
-    return 8;
-}

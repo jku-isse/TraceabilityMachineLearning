@@ -1,3 +1,0 @@
-protected void firePropertyChange(String propertyName, int oldValue, int newValue) {
-    propertySupport.firePropertyChange(propertyName, oldValue, newValue);
-}

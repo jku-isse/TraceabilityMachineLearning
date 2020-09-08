@@ -1,5 +1,0 @@
-public Task getRootTask() {
-    if ((myRoot) == null) {
-    }
-    return myRoot;
-}

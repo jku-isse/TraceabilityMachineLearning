@@ -1,9 +1,0 @@
-public void testOperationProfileException() throws Exception {
-    TransactionDAO evilTranDAO = EvilDAOFactory.getEvilInstance().getTransactionDAO();
-    try {
-        evilTranDAO.getAllTransactions();
-        fail("exception should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

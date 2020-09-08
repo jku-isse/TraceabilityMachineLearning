@@ -1,6 +1,0 @@
-protected void write(String s) throws IOException {
-    connect();
-    // BEGIN PATCH W. Randelshofer 2008-05-23 use UTF-8
-    _os.write(s.getBytes("UTF-8"));
-    // END PATCH W. Randelshofer 2008-05-23 use UTF-8
-}

@@ -1,3 +1,0 @@
-public void add(String name, int order, int width) {
-    myFields.add(new TaskDisplayColumnsTagHandler.TaskFieldImpl(name, order, width));
-}

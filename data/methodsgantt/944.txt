@@ -1,8 +1,0 @@
-private void renameCustomColumnForAllNestedTask(TaskContainmentHierarchyFacade facade, Task root, String oldName, String newName) {
-    // root.getCustomValues().renameCustomColumn(oldName,newName);
-    Task[] tt = facade.getNestedTasks(root);
-    for (int i = 0; i < (tt.length); i++) {
-        tt[i].getCustomValues().renameCustomColumn(oldName, newName);
-        renameCustomColumnForAllNestedTask(facade, tt[i], oldName, newName);
-    }
-}

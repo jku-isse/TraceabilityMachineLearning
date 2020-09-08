@@ -1,3 +1,0 @@
-void commit() {
-    isCommited = true;
-}

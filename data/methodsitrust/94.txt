@@ -1,3 +1,0 @@
-public AddApptAction(DAOFactory factory, long loggedInMID) {
-    super(factory, loggedInMID);
-}

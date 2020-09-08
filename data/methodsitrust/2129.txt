@@ -1,3 +1,0 @@
-public void setSurveyDate(Date surveyDate) {
-    this.surveyDate = (surveyDate == null) ? null : ((Date) (surveyDate.clone()));
-}

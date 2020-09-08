@@ -1,3 +1,0 @@
-public Double getAttributeValue() {
-    return attributeValue;
-}

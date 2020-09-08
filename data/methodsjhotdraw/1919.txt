@@ -1,5 +1,0 @@
-/**
- * The detail level of the handles.
- * This is a bound property.
- */
-public void setHandleDetailLevel(int newValue);

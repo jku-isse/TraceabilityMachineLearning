@@ -1,3 +1,0 @@
-public Object getCellEditorValue() {
-    return myProxiedEditor.getCellEditorValue();
-}

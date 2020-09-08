@@ -1,3 +1,0 @@
-public Chart getResourceChart() {
-    return myFallbackDelegate.getResourceChart();
-}

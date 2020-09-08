@@ -1,3 +1,0 @@
-public void addFigureSelectionListener(FigureSelectionListener fsl) {
-    listenerList.add(FigureSelectionListener.class, fsl);
-}

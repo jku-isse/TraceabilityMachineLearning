@@ -1,8 +1,0 @@
-// Methods
-/**
- * Advance the game by one user ply.
- *
- * @param ply
- * 		The ply from the user.
- */
-void doUserPly(Ply ply);

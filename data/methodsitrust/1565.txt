@@ -1,9 +1,0 @@
-/**
- * Setter for Zip code count
- *
- * @param zipStats
- * 		The count of diagnoses to be stored
- */
-public void setZipStats(long zipStats) {
-    this.zipStats = zipStats;
-}

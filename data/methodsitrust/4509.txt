@@ -1,6 +1,0 @@
-/**
- * Must be declared for compliance with the interface. Not implemented.
- */
-public void sessionDestroyed(HttpSessionEvent arg0) {
-    // nothing to do here
-}

@@ -1,9 +1,0 @@
-/**
- *
- *
- * @return the button show attribute must be GanttOptions.ICONS or
-GanttOptions.TEXT ir GanttOptions.ICONS_TEXT
- */
-public int getButtonShow() {
-    return buttonsshow;
-}

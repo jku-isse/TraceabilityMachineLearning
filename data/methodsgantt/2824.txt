@@ -1,3 +1,0 @@
-public void setFileSelectionMode(int mode) {
-    myFileSelectionMode = mode;
-}

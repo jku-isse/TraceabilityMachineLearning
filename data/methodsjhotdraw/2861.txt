@@ -1,6 +1,0 @@
-/**
- * Gets the tool which is the source of the event.
- */
-public Tool getTool() {
-    return ((Tool) (getSource()));
-}

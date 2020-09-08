@@ -1,7 +1,0 @@
-public void setHCPSpecialty(String specialty) {
-    if (null != specialty) {
-        HCPSpecialty = specialty;
-    } else {
-        HCPSpecialty = "none";
-    }
-}

@@ -1,3 +1,0 @@
-public List<AdverseEventBean> getUnremovedAdverseEventsByCode(String code) throws DBException {
-    return adEventDAO.getUnremovedAdverseEventsByCode(code);
-}

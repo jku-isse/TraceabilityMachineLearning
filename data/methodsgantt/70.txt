@@ -1,3 +1,0 @@
-protected Action[] getPopupMenuActions() {
-    return new Action[0];
-}

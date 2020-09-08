@@ -1,5 +1,0 @@
-public void testCloseConnection() throws Exception {
-    DAOFactory df = TestDAOFactory.getTestInstance();
-    Connection c = df.getConnection();
-    DBUtil.closeConnection(c, null);
-}

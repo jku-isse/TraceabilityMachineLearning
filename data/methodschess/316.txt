@@ -1,7 +1,0 @@
-/**
- * Reset the game for a new score.
- */
-private final void reset() {
-    _game.reset();
-    _board.initialPosition();
-}

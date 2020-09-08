@@ -1,7 +1,0 @@
-/**
- * Adds a property change listener.
- *
- * @param l
- * 		
- */
-public void addPropertyChangeListener(PropertyChangeListener l);

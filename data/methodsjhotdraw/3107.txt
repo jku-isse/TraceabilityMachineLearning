@@ -1,3 +1,0 @@
-public ColorIcon(Color color, String name) {
-    this(color, name, 14, 14);
-}

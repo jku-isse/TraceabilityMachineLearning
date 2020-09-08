@@ -1,6 +1,0 @@
-/**
- * Starts the Worker on an internal worker thread.
- */
-public void start() {
-    new Thread(this).start();
-}

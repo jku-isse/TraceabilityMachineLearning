@@ -1,3 +1,0 @@
-public ProjectResource unpluggedClone() {
-    return new HumanResource(this);
-}

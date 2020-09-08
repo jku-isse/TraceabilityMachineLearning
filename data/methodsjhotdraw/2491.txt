@@ -1,6 +1,0 @@
-/**
- * Center.
- */
-public static Locator center() {
-    return new RelativeDecoratorLocator(0.5, 0.5);
-}

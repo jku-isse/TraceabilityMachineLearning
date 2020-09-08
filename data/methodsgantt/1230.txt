@@ -1,3 +1,0 @@
-public void removeCellEditorListener(CellEditorListener arg0) {
-    myProxiedEditor.removeCellEditorListener(arg0);
-}

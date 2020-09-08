@@ -1,3 +1,0 @@
-protected void writeRectElement(IXMLElement parent, SVGRectFigure f) throws IOException {
-    parent.addChild(createRect(document, f.getX(), f.getY(), f.getWidth(), f.getHeight(), f.getArcWidth(), f.getArcHeight(), f.getAttributes()));
-}

@@ -1,4 +1,0 @@
-@Override
-public String getToolTipText(Point p) {
-    return ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").getString("handle.fontSize.toolTipText");
-}

@@ -1,3 +1,0 @@
-public Collection getCommandLineFlags() {
-    return myFlag2exporter.keySet();
-}

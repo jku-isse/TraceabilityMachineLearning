@@ -1,3 +1,0 @@
-public void testHasHistory() throws Exception {
-    assertTrue(factor.hasRiskFactor());
-}

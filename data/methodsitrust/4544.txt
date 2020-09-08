@@ -1,3 +1,0 @@
-public boolean isNew() {
-    throw new IllegalStateException("should not be hit!");
-}

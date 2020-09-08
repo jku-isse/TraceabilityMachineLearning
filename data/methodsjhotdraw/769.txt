@@ -1,9 +1,0 @@
-/**
- * Applies all attributes of this figure to that figure.
- */
-@SuppressWarnings("unchecked")
-protected void applyAttributesTo(Figure that) {
-    for (Map.Entry<AttributeKey, Object> entry : attributes.entrySet()) {
-        entry.getKey().basicSet(that, entry.getValue());
-    }
-}

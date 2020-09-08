@@ -1,6 +1,0 @@
-/**
- * Unique identifier for a laboratory procedure of a patient
- */
-public long getProcedureID() {
-    return procedureID;
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the default string to configure the iconList
- */
-public String getDefaultDeletedIconListAsString() {
-    return "";
-}

@@ -1,6 +1,0 @@
-/**
- * Get some info on a player.
- *
- * @return Some info on a player.
- */
-String getPlayerInfo(boolean white);

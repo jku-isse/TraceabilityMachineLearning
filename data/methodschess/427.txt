@@ -1,8 +1,0 @@
-/**
- * Get the entire game as a string.
- *
- * @return The entire game as a string.
- */
-public final String toString() {
-    return _notation.toString();
-}

@@ -1,3 +1,0 @@
-public void setThirdDateConstraint(int thirdDateConstraint) {
-    myThirdDateConstraint = thirdDateConstraint;
-}

@@ -1,6 +1,0 @@
-public void setVisitFlags(VisitFlag[] visitFlags) {
-    this.visitFlags = new ArrayList<VisitFlag>();
-    for (VisitFlag flag : visitFlags) {
-        this.visitFlags.add(flag);
-    }
-}

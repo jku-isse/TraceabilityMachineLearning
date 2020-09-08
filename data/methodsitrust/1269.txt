@@ -1,3 +1,0 @@
-public List<ReferralBean> getReferralsForReceivingHCP() throws DBException {
-    return referralDAO.getReferralsForReceivingHCP(hcpID);
-}

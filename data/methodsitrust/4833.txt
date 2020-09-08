@@ -1,5 +1,0 @@
-public void testDateWithSpace() throws Exception {
-    String value = "05/19/1984 ";
-    String errorMessage = DateValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.DATE, false));
-}

@@ -1,8 +1,0 @@
-/**
- * Gets the subject of this message
- *
- * @return 
- */
-public String getSubject() {
-    return subject;
-}

@@ -1,4 +1,0 @@
-public DateInterval(Date start, Date end) {
-    this.start = start;
-    this.end = end;
-}

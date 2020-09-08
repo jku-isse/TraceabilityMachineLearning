@@ -1,5 +1,0 @@
-protected Rectangle basicGetBounds() {
-    Rectangle r = new Rectangle(locate());
-    r.grow((((getHandlesize()) / 2) + 1), (((getHandlesize()) / 2) + 1));
-    return r;
-}

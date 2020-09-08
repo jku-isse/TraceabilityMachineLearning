@@ -1,9 +1,0 @@
-/**
- * Set the position of the attacked pawn.
- *
- * @param position
- * 		The position of the attacked pawn.
- */
-public final void setAttackedPosition(Position attackedPosition) {
-    _attackedPosition = attackedPosition;
-}

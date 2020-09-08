@@ -1,3 +1,0 @@
-public void parsePlusAsNumber() {
-    ctype[+] |= StreamPosTokenizer.CT_DIGIT;
-}

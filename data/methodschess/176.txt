@@ -1,6 +1,0 @@
-/**
- * Increase the number of analyzed boards by 1.
- */
-public final void increaseAnalyzedBoards() {
-    (_analyzedBoards)++;
-}

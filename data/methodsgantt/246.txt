@@ -1,3 +1,0 @@
-protected float getInitialDuration() {
-    return myInitialDuration;
-}

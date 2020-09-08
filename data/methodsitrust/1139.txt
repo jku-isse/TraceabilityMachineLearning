@@ -1,4 +1,0 @@
-public void testGetEmailHistory() throws iTrustException {
-    List<Email> eList = action.getEmailHistory();
-    assertEquals(2, eList.size());
-}

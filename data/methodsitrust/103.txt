@@ -1,3 +1,0 @@
-public void testGetName2() throws iTrustException {
-    assertEquals("Random Person", action.getName(mid));
-}

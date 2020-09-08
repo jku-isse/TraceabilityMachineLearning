@@ -1,7 +1,0 @@
-public ResourceDialogCustomColumn(UIFacade uiFacade, ResourceColumn col) {
-    myUIFacade = uiFacade;
-    resourceColumn = col;
-    myOptionGroup.lock();
-    myDate.lock();
-    myOptionGroup.setTitled(false);
-}

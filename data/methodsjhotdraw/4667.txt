@@ -1,6 +1,0 @@
-@Override
-public NodeFigure clone() {
-    NodeFigure that = ((NodeFigure) (super.clone()));
-    that.createConnectors();
-    return that;
-}

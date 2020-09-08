@@ -1,4 +1,0 @@
-public TaskDependencyCollectionImpl(TaskContainmentHierarchyFacade.Factory taskHierarchyFactory, EventDispatcher myEventDispatcher) {
-    this.myEventDispatcher = myEventDispatcher;
-    myTaskHierarchyFactory = taskHierarchyFactory;
-}

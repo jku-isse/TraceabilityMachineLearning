@@ -1,6 +1,0 @@
-/**
- * Standardconstructor
- */
-public PlayerDialog() {
-    super();
-}

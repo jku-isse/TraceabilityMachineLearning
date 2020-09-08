@@ -1,4 +1,0 @@
-/**
- * Gets the save file chooser for the view.
- */
-public JFileChooser getSaveChooser();

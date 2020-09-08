@@ -1,5 +1,0 @@
-/**
- * Sets the editors active drawing view.
- * This can be set to null, if the editor has no views.
- */
-void setActiveView(DrawingView newValue);

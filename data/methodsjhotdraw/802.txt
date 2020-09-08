@@ -1,5 +1,0 @@
-public void basicAddAll(int index, Collection<? extends Figure> newFigures) {
-    for (Figure f : newFigures) {
-        basicAdd((index++), f);
-    }
-}

@@ -1,8 +1,0 @@
-public void testGetEmptyPatient() throws Exception {
-    try {
-        patientDAO.getName(0L);
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("User does not exist", e.getMessage());
-    }
-}

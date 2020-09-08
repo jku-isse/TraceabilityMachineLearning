@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param hcp
- * 		the hcp to set
- */
-public void setHcp(long hcp) {
-    this.hcp = hcp;
-}

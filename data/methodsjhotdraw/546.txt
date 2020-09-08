@@ -1,4 +1,0 @@
-public CompositeColor(ColorSystem system, float... components) {
-    this.system = system;
-    this.components = components.clone();
-}

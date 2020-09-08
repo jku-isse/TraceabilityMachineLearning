@@ -1,5 +1,0 @@
-public void testWithSpace() throws Exception {
-    String value = "12345678 ";
-    String errorMessage = PasswordValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, PasswordValidatorTest.VALIDATION_FORMAT, false));
-}

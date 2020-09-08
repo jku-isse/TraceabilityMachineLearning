@@ -1,3 +1,0 @@
-public DrawingEditor getEditor() {
-    return editor;
-}

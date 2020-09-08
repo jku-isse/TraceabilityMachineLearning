@@ -1,5 +1,0 @@
-public GanttDependStructure(int taskID, int successorID, int relationType) {
-    this.taskID = taskID;
-    this.successorTaskID = successorID;
-    this.dependType = relationType;
-}

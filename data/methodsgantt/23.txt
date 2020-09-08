@@ -1,3 +1,0 @@
-public ZoomListener getZoomListener() {
-    return getImplementation();
-}

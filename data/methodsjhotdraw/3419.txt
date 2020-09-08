@@ -1,7 +1,0 @@
-public boolean equals(Object o) {
-    if (o instanceof BezierPath.Node) {
-        BezierPath.Node that = ((BezierPath.Node) (o));
-        return (((that.mask) == (this.mask)) && (Arrays.equals(that.x, this.x))) && (Arrays.equals(that.y, this.y));
-    }
-    return false;
-}

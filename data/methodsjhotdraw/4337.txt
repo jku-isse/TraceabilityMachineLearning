@@ -1,3 +1,0 @@
-public void componentRemoved(ContainerEvent e) {
-    getHandler().componentRemoved(e);
-}

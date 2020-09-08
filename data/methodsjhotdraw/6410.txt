@@ -1,7 +1,0 @@
-/**
- * Gets an attribute of the current element of the DOM Document.
- */
-public String getAttribute(String name, String defaultValue) {
-    String value = ((Element) (current)).getAttribute(name);
-    return (value.length()) == 0 ? defaultValue : value;
-}

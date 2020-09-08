@@ -1,4 +1,0 @@
-private double getError() {
-    double error = 2.0 / (getZoomFactor());
-    return error;
-}

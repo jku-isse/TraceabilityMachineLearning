@@ -1,7 +1,0 @@
-/**
- * Returns the color value of the model.
- * This is a convenience method for calling getCompositeColor().getColor().
- *
- * @return color.
- */
-public Color getColor();

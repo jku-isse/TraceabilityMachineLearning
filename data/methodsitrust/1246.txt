@@ -1,5 +1,0 @@
-public void testViewPersonnel() throws Exception {
-    action = new ViewPersonnelAction(factory, 4L);
-    PersonnelBean hcp = action.getPersonnel("9000000003");
-    assertEquals(9000000003L, hcp.getMID());
-}

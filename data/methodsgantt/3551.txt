@@ -1,3 +1,0 @@
-private void writeTaskProperty(TransformerHandler handler, String id, String name, String type, String valueType) throws SAXException {
-    writeTaskProperty(handler, id, name, type, valueType, null);
-}

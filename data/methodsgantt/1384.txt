@@ -1,6 +1,0 @@
-public void actionPerformed(ActionEvent arg0) {
-    if (myZoomManager.canZoomIn()) {
-        myZoomManager.zoomIn();
-    }
-    setEnabled(myZoomManager.canZoomIn());
-}

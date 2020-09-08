@@ -1,4 +1,0 @@
-/**
- * This is used by Application to keep track if a view is showing.
- */
-public void setShowing(boolean newValue);

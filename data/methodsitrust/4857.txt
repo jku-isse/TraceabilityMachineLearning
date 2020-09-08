@@ -1,5 +1,0 @@
-public void testBadICDLengthFirst() throws Exception {
-    String value = "0159.02";
-    String errorMessage = ICD9CMValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ICD9CMValidatorTest.VALIDATION_FORMAT, false));
-}

@@ -1,6 +1,0 @@
-/**
- * Gets the drawing from the drawing panel.
- */
-private Drawing getDrawing() {
-    return drawingComponent.getDrawing();
-}

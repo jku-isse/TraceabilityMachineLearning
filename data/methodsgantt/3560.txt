@@ -1,3 +1,0 @@
-public void addListener(GanttLanguage.Listener listener) {
-    myListeners.add(listener);
-}

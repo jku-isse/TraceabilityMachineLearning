@@ -1,1 +1,0 @@
-GanttTaskRelationship[] getSuccessors();

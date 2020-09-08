@@ -1,3 +1,0 @@
-boolean reaches(Point targetPoint) {
-    return (targetPoint.x) >= (getPoint().x);
-}

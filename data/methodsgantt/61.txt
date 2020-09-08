@@ -1,6 +1,0 @@
-public void startMoveClipboardTransaction() {
-    if (isTransactionRunning) {
-        throw new IllegalStateException("Transaction is already running");
-    }
-    isTransactionRunning = true;
-}

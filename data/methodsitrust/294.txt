@@ -1,5 +1,0 @@
-public EditImmunizationsAction(DAOFactory factory, long hcpid, String pidString) throws iTrustException {
-    super(factory, hcpid, pidString);
-    proceduresDAO = factory.getProceduresDAO();
-    cptDAO = factory.getCPTCodesDAO();
-}

@@ -1,6 +1,0 @@
-/**
- * Loads an image from a File.
- * By convention this method is never invoked on the AWT Event Dispatcher
- * Thread.
- */
-public void loadImage(File f) throws IOException;

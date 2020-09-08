@@ -1,3 +1,0 @@
-public GanttTaskRelationship(TaskManager taskManager) {
-    myTaskManager = taskManager;
-}

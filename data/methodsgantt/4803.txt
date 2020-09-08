@@ -1,1 +1,0 @@
-void trimLeft(Date exactDate);

@@ -1,3 +1,0 @@
-public Point2D.Double findStart(ConnectionFigure connection) {
-    return findPoint(connection);
-}

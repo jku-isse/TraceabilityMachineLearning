@@ -1,3 +1,0 @@
-protected boolean isChanging() {
-    return (changingDepth) != 0;
-}

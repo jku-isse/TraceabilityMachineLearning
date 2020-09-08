@@ -1,8 +1,0 @@
-public void testGetSecurityQuestion() throws Exception {
-    gen.patient1();
-    gen.hcp0();
-    assertEquals("what is your favorite color?", action.getSecurityQuestion(1L));
-    assertEquals("first letter?", action.getSecurityQuestion(9000000000L));
-    assertEquals("first letter?", action.getSecurityQuestion(9000000000L));
-    // assertEquals("", action.getSecurityQuestion(9000000000L));
-}

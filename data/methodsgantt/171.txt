@@ -1,6 +1,0 @@
-/**
- * Change the date of the date
- */
-public void setDay(int d) {
-    this.set(Calendar.DAY_OF_MONTH, d);
-}

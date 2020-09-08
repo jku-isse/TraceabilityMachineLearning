@@ -1,4 +1,0 @@
-@Override
-public Cursor getCursor() {
-    return Cursor.getPredefinedCursor((getOwner().isTransformable() ? Cursor.S_RESIZE_CURSOR : Cursor.DEFAULT_CURSOR));
-}

@@ -1,5 +1,0 @@
-public ParameterizedTimeUnitImpl(Date myBaseDate) {
-    this.myBaseDate = myBaseDate;
-    this.myRightDate = this.adjustRight(myBaseDate);
-    this.myLeftDate = this.adjustLeft(myBaseDate);
-}

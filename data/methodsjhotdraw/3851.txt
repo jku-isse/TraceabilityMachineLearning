@@ -1,6 +1,0 @@
-public void setItemFont(Font newValue) {
-    itemFont = newValue;
-    if ((popupMenu) != null) {
-        updateFont(popupMenu);
-    }
-}

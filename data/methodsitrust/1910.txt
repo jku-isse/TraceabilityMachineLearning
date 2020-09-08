@@ -1,3 +1,0 @@
-public void setMotherMID(String motherMID) {
-    this.motherMID = motherMID;
-}

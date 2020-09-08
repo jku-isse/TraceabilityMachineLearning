@@ -1,3 +1,0 @@
-public Point2D.Double locate(Figure owner) {
-    return getRelativePoint(((BezierFigure) (owner)));
-}

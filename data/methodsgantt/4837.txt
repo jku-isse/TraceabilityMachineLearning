@@ -1,6 +1,0 @@
-public TimeUnitFunctionOfDate createTimeUnitFunctionOfDate(String name, TimeUnit atomUnit, DateFrameable framer) {
-    TimeUnitFunctionOfDate result;
-    result = new TimeUnitFunctionOfDateImpl(name, this, atomUnit, framer);
-    registerTimeUnit(result, (-1));
-    return result;
-}

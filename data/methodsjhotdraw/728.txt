@@ -1,5 +1,0 @@
-protected void drawChildren(Graphics2D g) {
-    for (Figure child : getChildren()) {
-        child.draw(g);
-    }
-}

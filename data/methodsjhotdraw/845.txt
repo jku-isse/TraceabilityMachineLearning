@@ -1,6 +1,0 @@
-public <T> void setAttribute(AttributeKey<T> key, T value) {
-    for (Figure child : getChildren()) {
-        child.setAttribute(key, value);
-    }
-    invalidate();
-}

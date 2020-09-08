@@ -1,3 +1,0 @@
-TaskDocumentOrderComparator(TaskManagerImpl taskManager) {
-    myManager = taskManager;
-}

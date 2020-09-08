@@ -1,3 +1,0 @@
-public void setTaskColor(Color myTaskColor) {
-    this.myTaskColor = myTaskColor;
-}

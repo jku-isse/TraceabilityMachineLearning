@@ -1,4 +1,0 @@
-public void areaInvalidated(ToolEvent evt) {
-    Rectangle r = evt.getInvalidatedArea();
-    evt.getView().getComponent().repaint(r.x, r.y, r.width, r.height);
-}

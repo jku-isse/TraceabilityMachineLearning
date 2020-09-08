@@ -1,7 +1,0 @@
-/**
- * Constructor.
- */
-public WelcomeSettingsPanel(GanttProject parent) {
-    super(GanttProject.correctLabel(GanttLanguage.getInstance().getText("settings")), GanttLanguage.getInstance().getText("settingsWelcome"), parent);
-    applyComponentOrientation(language.getComponentOrientation());
-}

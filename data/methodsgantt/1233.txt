@@ -1,9 +1,0 @@
-UIFacadeImpl(JFrame mainFrame, GanttStatusBar statusBar, IGanttProject project, UIFacade fallbackDelegate) {
-    myMainFrame = mainFrame;
-    myScrollingManager = new ScrollingManagerImpl();
-    myZoomManager = new ZoomManager(project.getTimeUnitStack());
-    myStatusBar = statusBar;
-    myFallbackDelegate = fallbackDelegate;
-    Platform.getJobManager().setProgressProvider(this);
-    myErrorNotifier = new ErrorNotifier(this);
-}

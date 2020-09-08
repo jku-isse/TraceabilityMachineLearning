@@ -1,9 +1,0 @@
-public void testWrongFormat() throws Exception {
-    try {
-        gen.hcp0();
-        personnelEditor = new EditPersonnelAction(factory, 0L, "hello!");
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("Personnel ID is not a number: For input string: "hello!"", e.getMessage());
-    }
-}

@@ -1,7 +1,0 @@
-private void update(MouseEvent e) {
-    float[] hsb = getColorAt(e.getX(), e.getY());
-    model.setComponentValue(angularIndex, hsb[angularIndex]);
-    model.setComponentValue(radialIndex, hsb[radialIndex]);
-    // FIXME - We should only repaint the damaged area
-    repaint();
-}

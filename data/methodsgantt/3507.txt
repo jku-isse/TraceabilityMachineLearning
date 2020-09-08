@@ -1,5 +1,0 @@
-public boolean load(String filename) {
-    boolean temp = load(new File(filename));
-    // constructRelationship();
-    return temp;
-}

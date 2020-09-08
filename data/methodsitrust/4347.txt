@@ -1,5 +1,0 @@
-public void testFilterTypeFromString() {
-    MedicalReportFilter.MedicalReportFilterType expected = MedicalReportFilter.MedicalReportFilterType.CURRENT_PRESCRIPTIONS;
-    MedicalReportFilter.MedicalReportFilterType actual = MedicalReportFilter.filterTypeFromString("CurrENt_PREscriptions");
-    assertEquals(expected, actual);
-}

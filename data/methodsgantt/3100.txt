@@ -1,6 +1,0 @@
-/* Used by makeCompactGrid. */
-private static SpringLayout.Constraints getConstraintsForCell(int row, int col, Container parent, int cols) {
-    SpringLayout layout = ((SpringLayout) (parent.getLayout()));
-    Component c = parent.getComponent(((row * cols) + col));
-    return layout.getConstraints(c);
-}

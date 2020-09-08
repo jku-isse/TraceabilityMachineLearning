@@ -1,9 +1,0 @@
-protected void initScreenMenuBar() {
-    ApplicationModel model = getModel();
-    Application mrjapp = Application.getInstance();
-    mrjapp.setFramelessJMenuBar(createMenuBar(null));
-    paletteHandler.add(SwingUtilities.getWindowAncestor(mrjapp.getFramelessJMenuBar()), null);
-    mrjapp.getAboutJMenuItem().setAction(model.getAction(AboutAction.ID));
-    mrjapp.getQuitJMenuItem().setAction(model.getAction(ExitAction.ID));
-    mrjapp.addOpenDocumentListener(model.getAction(OSXDropOnDockAction.ID));
-}

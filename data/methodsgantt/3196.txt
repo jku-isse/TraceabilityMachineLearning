@@ -1,3 +1,0 @@
-public void setTitled(boolean isTitled) {
-    this.isTitled = isTitled;
-}

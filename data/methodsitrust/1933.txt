@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the url
- */
-public String getUrl() {
-    return url;
-}

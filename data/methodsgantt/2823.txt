@@ -1,3 +1,0 @@
-public void setFileFilter(FileFilter filter) {
-    myFileFilter = filter;
-}

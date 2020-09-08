@@ -1,8 +1,0 @@
-public TaskMutator createMutator() {
-    if ((myMutator) != null) {
-        throw new RuntimeException(("Two mutators have been requested for task=" + (getName())), myException);
-    }
-    myMutator = new TaskImpl.MutatorImpl();
-    myException = new Exception();
-    return myMutator;
-}

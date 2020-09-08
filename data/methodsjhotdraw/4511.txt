@@ -1,8 +1,0 @@
-/**
- * Writes the view to the specified file.
- */
-public void write(File f) throws IOException {
-    Drawing drawing = view.getDrawing();
-    OutputFormat outputFormat = drawing.getOutputFormats().get(0);
-    outputFormat.write(f, drawing);
-}

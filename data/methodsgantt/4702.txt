@@ -1,8 +1,0 @@
-public boolean equals(Object obj) {
-    boolean result = obj instanceof TaskDependency;
-    if (result) {
-        TaskDependency rvalue = ((TaskDependency) (obj));
-        result = (myDependant.equals(rvalue.getDependant())) && (myDependee.equals(rvalue.getDependee()));
-    }
-    return result;
-}

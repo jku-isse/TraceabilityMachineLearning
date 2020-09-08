@@ -1,8 +1,0 @@
-/**
- * Convenience method for creating a formatter factory with a
- * {@code ScalableNumberFormatter} and a Java-style DecimalFormat.
- * Doesnt allow null values and doesnt append ".0" to double and float values.
- */
-public static JFormattedTextField.AbstractFormatterFactory createFormatterFactory(double min, double max, double scaleFactor) {
-    return JavaNumberFormatter.createFormatterFactory(min, max, scaleFactor, false, false);
-}

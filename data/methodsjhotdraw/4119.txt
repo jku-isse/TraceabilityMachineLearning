@@ -1,3 +1,0 @@
-public PaletteFontChooserUI(JFontChooser fontChooser) {
-    this.fontChooser = fontChooser;
-}

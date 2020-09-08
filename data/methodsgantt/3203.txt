@@ -1,4 +1,0 @@
-public GanttCompareToPreviousStateBean(GanttProject project) {
-    myPreviousStates = project.getPreviouStates();
-    init();
-}

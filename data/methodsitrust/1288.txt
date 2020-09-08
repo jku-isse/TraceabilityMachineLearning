@@ -1,5 +1,0 @@
-public void testGetDeclaredHCPs() throws Exception {
-    gen.hcp3();
-    List<PersonnelBean> list = action.getDeclaredHCPs(2L);
-    assertEquals(1, list.size());
-}

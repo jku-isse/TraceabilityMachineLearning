@@ -1,3 +1,0 @@
-public Object getCellEditorValue() {
-    return new GanttCalendar(((myDate) == null ? new Date() : myDate));
-}

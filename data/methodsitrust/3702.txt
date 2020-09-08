@@ -1,8 +1,0 @@
-/**
- * Returns the exceptions error message
- *
- * @return The error message from the exception
- */
-public String getMessage() {
-    return message;
-}

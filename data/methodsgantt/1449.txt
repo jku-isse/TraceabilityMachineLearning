@@ -1,9 +1,0 @@
-public void setContext(ResourceContext context) {
-    ProjectResource[] resources = context.getResources();
-    if ((resources.length) == 1) {
-        mySelectedResource = ((HumanResource) (resources[0]));
-        setEnabled(true);
-    } else {
-        setEnabled(false);
-    }
-}

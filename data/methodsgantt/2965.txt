@@ -1,3 +1,0 @@
-public boolean getResourceID() {
-    return cbResID.isSelected();
-}

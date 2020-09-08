@@ -1,8 +1,0 @@
-/**
- * Returns the maximum permissible value.
- *
- * @return Maximum legal value that can be input
- */
-public Comparable getMaximum() {
-    return max;
-}

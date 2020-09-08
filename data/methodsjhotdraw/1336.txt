@@ -1,3 +1,0 @@
-private void setTargetFigure(Figure newTarget) {
-    target = newTarget;
-}

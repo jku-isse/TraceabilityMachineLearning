@@ -1,4 +1,0 @@
-private void aboutDialog() {
-    AboutDialog agp = new AboutDialog(this);
-    agp.show();
-}

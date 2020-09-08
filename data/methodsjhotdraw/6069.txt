@@ -1,6 +1,0 @@
-@Override
-public void write(OutputStream out, Drawing drawing) throws IOException {
-    GZIPOutputStream gout = new GZIPOutputStream(out);
-    super.write(gout, drawing, drawing.getChildren());
-    gout.finish();
-}

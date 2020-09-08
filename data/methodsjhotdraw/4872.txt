@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public ODGPathOutlineHandle(ODGPathFigure owner) {
-    super(owner);
-}

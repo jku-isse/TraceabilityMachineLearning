@@ -1,3 +1,0 @@
-public String getRequiredSpecialty() {
-    return requiredSpecialty;
-}

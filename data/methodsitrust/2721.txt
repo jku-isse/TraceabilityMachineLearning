@@ -1,4 +1,0 @@
-public void testGetChildrenWithMom() throws Exception {
-    // Note that you dont get Patient 9
-    assertEquals(3, familyDAO.getChildren(4).size());
-}

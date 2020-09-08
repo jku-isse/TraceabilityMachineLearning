@@ -1,3 +1,0 @@
-public void loadValue(String legacyValue) {
-    loadPersistentValue(legacyValue);
-}

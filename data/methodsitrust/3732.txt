@@ -1,8 +1,0 @@
-public void testDLHCPActivityHiddenInFeed2() throws Exception {
-    WebConversation wc = login("23", "pw");
-    WebResponse wr = wc.getCurrentPage();
-    assertEquals("iTrust - Patient Home", wr.getTitle());
-    assertFalse(wr.getText().contains("Beaker Beaker</a> viewed your demographics"));
-    assertTrue(wr.getText().contains("Beaker Beaker</a> edited your demographics"));
-    assertFalse(wr.getText().contains("Beaker Beaker</a> added you to the telemedicine monitoring list"));
-}

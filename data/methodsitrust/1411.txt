@@ -1,5 +1,0 @@
-public void testShortCode() {
-    med = new MedicationBean();
-    med.setNDCode("1");
-    assertEquals("1", med.getNDCodeFormatted());
-}

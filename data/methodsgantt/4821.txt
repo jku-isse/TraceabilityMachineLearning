@@ -1,3 +1,0 @@
-public Date adjustRight(Date baseDate) {
-    return this.adjustRight(baseDate);
-}

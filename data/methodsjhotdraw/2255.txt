@@ -1,6 +1,0 @@
-public void addNotify(Drawing drawing) {
-    for (Figure child : new LinkedList<Figure>(children)) {
-        child.addNotify(drawing);
-    }
-    super.addNotify(drawing);
-}

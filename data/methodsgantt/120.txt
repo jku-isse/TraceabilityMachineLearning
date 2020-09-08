@@ -1,3 +1,0 @@
-public static void setUIFacade(UIFacade uifacade) {
-    GPLogger.ourUIFacade = uifacade;
-}

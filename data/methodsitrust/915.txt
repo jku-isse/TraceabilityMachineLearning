@@ -1,3 +1,0 @@
-private String getAddCodeSuccessString(DiagnosisBean proc) {
-    return ((("Success: " + (proc.getICDCode())) + " - ") + (proc.getDescription())) + " added";
-}

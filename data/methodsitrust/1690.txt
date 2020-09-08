@@ -1,3 +1,0 @@
-public void setHospitalCity(String hospitalCity) {
-    this.hospitalCity = hospitalCity;
-}

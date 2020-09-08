@@ -1,4 +1,0 @@
-public void testRoomID() {
-    wrb1.setRoomID(1L);
-    assertEquals(1L, wrb1.getRoomID());
-}

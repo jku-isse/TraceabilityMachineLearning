@@ -1,3 +1,0 @@
-public boolean isTextDown() {
-    return ((myLabelOptions[TaskRendererImpl.DOWN].getValue()) != null) && ((myLabelOptions[TaskRendererImpl.DOWN].getValue().length()) != 0);
-}

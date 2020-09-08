@@ -1,4 +1,0 @@
-public LocatorConnector(Figure owner, Locator l) {
-    super(owner);
-    locator = l;
-}

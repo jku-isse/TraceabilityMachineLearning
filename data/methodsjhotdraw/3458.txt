@@ -1,3 +1,0 @@
-public DoubleStroke(float innerWidth, float outlineWidth) {
-    this(innerWidth, outlineWidth, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_BEVEL, 10.0F, null, 0.0F);
-}

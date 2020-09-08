@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys RemoteMonitoringDAO
- */
-public RemoteMonitoringDAO getRemoteMonitoringDAO() {
-    return new RemoteMonitoringDAO(this);
-}

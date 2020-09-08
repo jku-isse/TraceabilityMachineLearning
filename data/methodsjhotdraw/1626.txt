@@ -1,3 +1,0 @@
-public Collection<Figure> findFigures(Rectangle r) {
-    return getDrawing().findFigures(viewToDrawing(r));
-}

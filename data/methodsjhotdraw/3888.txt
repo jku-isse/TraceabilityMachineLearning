@@ -1,3 +1,0 @@
-protected boolean isShowAsSheet() {
-    return UIManager.getBoolean("Sheet.showAsSheet");
-}

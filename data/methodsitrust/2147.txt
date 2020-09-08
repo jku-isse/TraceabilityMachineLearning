@@ -1,3 +1,0 @@
-public String getHCPspecialty() {
-    return hcpSpecialty;
-}

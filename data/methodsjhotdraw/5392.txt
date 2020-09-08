@@ -1,3 +1,0 @@
-public double getY() {
-    return rectangle.y;
-}

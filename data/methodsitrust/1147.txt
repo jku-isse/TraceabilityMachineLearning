@@ -1,4 +1,0 @@
-public void testGetReportRequests() throws iTrustException {
-    List<ReportRequestBean> rrbList = action.getReportRequests();
-    assertEquals(4, rrbList.size());
-}

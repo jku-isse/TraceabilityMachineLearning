@@ -1,4 +1,0 @@
-/**
- * Returns the action with the specified id.
- */
-public Action getAction(String id);

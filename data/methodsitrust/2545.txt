@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys DrugReactionOverrideCodesDAO
- */
-public DrugReactionOverrideCodesDAO getORCodesDAO() {
-    return new DrugReactionOverrideCodesDAO(this);
-}

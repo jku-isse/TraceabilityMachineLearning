@@ -1,1 +1,0 @@
-void setGanttDividerLocation(int location);

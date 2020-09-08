@@ -1,4 +1,0 @@
-public void testWardID() {
-    testBean.setWardID(1);
-    assertEquals(testBean.getWardID(), 1L);
-}

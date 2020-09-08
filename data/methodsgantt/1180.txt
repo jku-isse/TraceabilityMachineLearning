@@ -1,4 +1,0 @@
-public ArrayList getColumns() {
-    ArrayList res = new ArrayList(columns.values());
-    return res;
-}

@@ -1,3 +1,0 @@
-public void admin3() throws FileNotFoundException, IOException, SQLException {
-    new DBBuilder(factory).executeSQLFile(((DIR) + "/admin3.sql"));
-}

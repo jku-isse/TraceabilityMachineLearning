@@ -1,7 +1,0 @@
-public DependencyDrawData(TaskDependency dependency, GraphicPrimitiveContainer.GraphicPrimitive dependantPrimitive, GraphicPrimitiveContainer.GraphicPrimitive dependeePrimitive, TaskRendererImpl.PointVector dependantVector, TaskRendererImpl.PointVector dependeeVector) {
-    myDependency = dependency;
-    myDependantRectangle = ((GraphicPrimitiveContainer.Rectangle) (dependantPrimitive));
-    myDependeeRectangle = ((GraphicPrimitiveContainer.Rectangle) (dependeePrimitive));
-    myDependantVector = dependantVector;
-    myDependeeVector = dependeeVector;
-}

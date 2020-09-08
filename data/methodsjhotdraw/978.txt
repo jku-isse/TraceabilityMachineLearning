@@ -1,5 +1,0 @@
-public void setRemovable(boolean newValue) {
-    boolean oldValue = isRemovable;
-    isRemovable = newValue;
-    firePropertyChange("removable", oldValue, newValue);
-}

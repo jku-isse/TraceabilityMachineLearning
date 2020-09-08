@@ -1,3 +1,0 @@
-public SmartConnectionFigure() {
-    setAttributeEnabled(AttributeKeys.STROKE_TYPE, false);
-}

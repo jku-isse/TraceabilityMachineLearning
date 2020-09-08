@@ -1,8 +1,0 @@
-/**
- * Returns the patients emergency contact
- *
- * @return patients emergency contact
- */
-public String getPatientEmergencyContact() {
-    return ((pb.getEmergencyName()) + " ") + (pb.getEmergencyPhone());
-}

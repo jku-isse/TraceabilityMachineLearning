@@ -1,7 +1,0 @@
-static String getI18n(String id) {
-    String res = GanttLanguage.getInstance().getText((("optionValue." + id) + ".label"));
-    if (res.startsWith(GanttLanguage.MISSING_RESOURCE)) {
-        res = id;
-    }
-    return res;
-}

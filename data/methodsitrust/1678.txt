@@ -1,4 +1,0 @@
-public HospitalBean(String hospitalID, String hospitalName) {
-    this.hospitalID = hospitalID;
-    this.hospitalName = hospitalName;
-}

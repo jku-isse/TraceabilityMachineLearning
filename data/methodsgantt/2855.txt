@@ -1,3 +1,0 @@
-public void setResourceColor(Color myResColor) {
-    this.myResColor = myResColor;
-}

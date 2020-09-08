@@ -1,3 +1,0 @@
-SegType(int len) {
-    this.len = len;
-}

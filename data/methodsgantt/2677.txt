@@ -1,7 +1,0 @@
-/**
- * as the name indicated
- */
-public int getPercentComplete() {
-    percentComplete = ((Integer) (percentCompleteSlider.getValue())).hashCode();
-    return percentComplete;
-}

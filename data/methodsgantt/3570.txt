@@ -1,6 +1,0 @@
-public static GanttLanguage getInstance() {
-    if ((GanttLanguage.ganttLanguage) == null) {
-        GanttLanguage.ganttLanguage = new GanttLanguage();
-    }
-    return GanttLanguage.ganttLanguage;
-}

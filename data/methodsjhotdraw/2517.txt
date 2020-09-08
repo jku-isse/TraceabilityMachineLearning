@@ -1,4 +1,0 @@
-public void read(DOMInput in) {
-    relativeX = in.getAttribute("relativeX", 0.5);
-    relativeY = in.getAttribute("relativeY", 0.5);
-}

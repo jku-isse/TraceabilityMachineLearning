@@ -1,4 +1,0 @@
-/**
- * Toggle from one player to the other.
- */
-void toggle();

@@ -1,6 +1,0 @@
-public void addNotify(Drawing drawing) {
-    super.addNotify(drawing);
-    for (Figure child : getChildren()) {
-        child.addNotify(drawing);
-    }
-}

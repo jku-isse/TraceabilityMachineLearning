@@ -1,1 +1,0 @@
-Document getDocument(String path, String userName, String password);

@@ -1,6 +1,0 @@
-public final Rectangle getBounds() {
-    if ((bounds) == null) {
-        bounds = basicGetBounds();
-    }
-    return ((Rectangle) (bounds.clone()));
-}

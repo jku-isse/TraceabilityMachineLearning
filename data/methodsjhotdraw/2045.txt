@@ -1,3 +1,0 @@
-public Cursor getCursor() {
-    return Cursor.getPredefinedCursor(Cursor.S_RESIZE_CURSOR);
-}

@@ -1,3 +1,0 @@
-public Date getViewedDate() {
-    return (viewedDate) == null ? null : ((Date) (viewedDate.clone()));
-}

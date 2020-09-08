@@ -1,6 +1,0 @@
-/**
- * Check if the timer is actually running.
- *
- * @return true, if the timer is active, false otherwise.
- */
-boolean isRunning();

@@ -1,3 +1,0 @@
-public void remove(DrawingView view) {
-    target.remove(view);
-}

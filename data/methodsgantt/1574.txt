@@ -1,5 +1,0 @@
-public void beforeProcessingTimeFrames() {
-    super.beforeProcessingTimeFrames();
-    GraphicPrimitiveContainer.Rectangle r = getPrimitiveContainer().createRectangle(0, 0, getWidth(), getHeight());
-    r.setBackgroundColor(Color.WHITE);
-}

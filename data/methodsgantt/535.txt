@@ -1,6 +1,0 @@
-public int getViewIndex() {
-    if ((getTabs()) == null)
-        return -1;
-
-    return getTabs().getSelectedIndex();
-}

@@ -1,3 +1,0 @@
-public ResourceTreeUIFacade getResourceTree() {
-    return myRealFacade.getResourceTree();
-}

@@ -1,8 +1,0 @@
-protected List getActivitiesForward(Date startDate, TimeUnit timeUnit, long l) {
-    Date activityStart = timeUnit.adjustLeft(startDate);
-    Date activityEnd = activityStart;
-    for (; l > 0; l--) {
-        activityEnd = timeUnit.adjustRight(activityEnd);
-    }
-    return Collections.singletonList(new CalendarActivityImpl(activityStart, activityEnd, true));
-}

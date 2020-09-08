@@ -1,3 +1,0 @@
-public int getGanttDividerLocation() {
-    return myFallbackDelegate.getGanttDividerLocation();
-}

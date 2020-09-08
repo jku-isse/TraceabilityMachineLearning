@@ -1,8 +1,0 @@
-public HospitalBean(String hospitalID, String hospitalName, String hospitalAddress, String hospitalCity, String hospitalState, String hospitalZip) {
-    this.hospitalID = hospitalID;
-    this.hospitalName = hospitalName;
-    this.hospitalAddress = hospitalAddress;
-    this.hospitalCity = hospitalCity;
-    this.hospitalState = hospitalState;
-    this.hospitalZip = hospitalZip;
-}

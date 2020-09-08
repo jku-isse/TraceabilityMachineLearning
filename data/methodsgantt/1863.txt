@@ -1,6 +1,0 @@
-public GraphicPrimitiveContainer getLayer(int layer) {
-    if ((layer < 0) || (layer >= (myLayers.size()))) {
-        return this;
-    }
-    return ((GraphicPrimitiveContainer) (myLayers.get(layer)));
-}

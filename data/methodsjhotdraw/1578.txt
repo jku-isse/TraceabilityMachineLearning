@@ -1,9 +1,0 @@
-public List<Figure> findFigures(Rectangle2D.Double bounds) {
-    LinkedList<Figure> intersection = new LinkedList<Figure>();
-    for (Figure f : getChildren()) {
-        if ((f.isVisible()) && (f.getBounds().intersects(bounds))) {
-            intersection.add(f);
-        }
-    }
-    return intersection;
-}

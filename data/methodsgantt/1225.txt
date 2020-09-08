@@ -1,3 +1,0 @@
-public void addCellEditorListener(CellEditorListener arg0) {
-    myProxiedEditor.addCellEditorListener(arg0);
-}

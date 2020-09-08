@@ -1,4 +1,0 @@
-public void testJustMom() throws Exception {
-    factor = new FamilyHistoryFactor(factory, 3L, 250.0, 251.0);
-    assertTrue(factor.hasRiskFactor());
-}

@@ -1,4 +1,0 @@
-public void setControlPoint(int index, Point2D.Double p) {
-    x[index] = p.x;
-    y[index] = p.y;
-}

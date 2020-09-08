@@ -1,5 +1,0 @@
-public void testMakeStr() throws Exception {
-    Email email = new Email();
-    email.setToList(Arrays.asList("first", "second"));
-    assertEquals("first,second", email.getToListStr());
-}

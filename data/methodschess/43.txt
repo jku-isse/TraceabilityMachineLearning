@@ -1,8 +1,0 @@
-/**
- * Get the name of this action (which is currently the short description).
- *
- * @return The name of this action.
- */
-public final String getName() {
-    return getShortDescription();
-}

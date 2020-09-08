@@ -1,3 +1,0 @@
-private WizardPage getCurrentPage() {
-    return ((WizardPage) (myPages.get(myCurrentPage)));
-}

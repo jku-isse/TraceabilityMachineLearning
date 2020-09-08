@@ -1,3 +1,0 @@
-TaskActivityImpl(TaskImpl task, Date startDate, Date endDate) {
-    this(task, startDate, endDate, 1.0F);
-}

@@ -1,6 +1,0 @@
-public void removePatientFromRoom(WardRoomBean wardRoom, String reason) throws DBException {
-    long mid = wardRoom.getOccupiedBy();
-    wardDAO.checkOutPatientReason(mid, reason);
-    wardRoom.setOccupiedBy(null);
-    wardDAO.updateWardRoomOccupant(wardRoom);
-}

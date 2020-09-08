@@ -1,6 +1,0 @@
-public PGNLexer(LexerSharedInputState state) {
-    super(state);
-    literals = new Hashtable();
-    caseSensitiveLiterals = true;
-    setCaseSensitive(true);
-}

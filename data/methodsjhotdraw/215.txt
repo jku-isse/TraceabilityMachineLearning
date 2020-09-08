@@ -1,6 +1,0 @@
-/**
- * Executes the specified runnable on the worker thread of the view.
- * Execution is perfomred sequentially in the same sequence as the
- * runnables have been passed to this method.
- */
-public void execute(Runnable worker);

@@ -1,3 +1,0 @@
-public ChartComponentBase.MouseInteraction getActiveInteraction() {
-    return myActiveInteraction;
-}

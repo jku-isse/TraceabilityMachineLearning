@@ -1,9 +1,0 @@
-public void setSelectedFont(Font newValue) {
-    if (newValue == null) {
-        previewLabel.setText(((String) (PaletteLookAndFeel.getInstance().get("FontChooser.nothingSelected"))));
-        previewLabel.setFont(getFont());
-    } else {
-        previewLabel.setText(beautifyName(newValue.getFontName()));
-        previewLabel.setFont(newValue.deriveFont(24.0F));
-    }
-}

@@ -1,9 +1,0 @@
-/* Writes the transform attribute as specified in
-http://www.w3.org/TR/SVGMobile12/coords.html#TransformAttribute
- */
-protected void writeTransformAttribute(IXMLElement elem, Map<AttributeKey, Object> a) throws IOException {
-    AffineTransform t = AttributeKeys.TRANSFORM.get(a);
-    if (t != null) {
-        writeAttribute(elem, "transform", SVGOutputFormat.toTransform(t), "none");
-    }
-}

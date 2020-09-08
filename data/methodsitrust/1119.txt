@@ -1,3 +1,0 @@
-public List<LOINCbean> getProcedureName(String labCode) throws DBException {
-    return loincDAO.getProcedures(labCode);
-}

@@ -1,3 +1,0 @@
-private boolean equals(WardRoomBean other) {
-    return ((roomID) == (other.roomID)) && (roomName.equals(other.roomName));
-}

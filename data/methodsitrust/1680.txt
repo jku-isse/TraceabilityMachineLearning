@@ -1,3 +1,0 @@
-private boolean equals(HospitalBean other) {
-    return (hospitalID.equals(other.hospitalID)) && (hospitalName.equals(other.hospitalName));
-}

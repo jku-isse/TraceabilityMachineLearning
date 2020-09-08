@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the default color for tasks.
- */
-public Color getDefaultColor() {
-    return getUIConfiguration().getTaskColor();
-}

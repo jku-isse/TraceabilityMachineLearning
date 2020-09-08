@@ -1,8 +1,0 @@
-/**
- * Gets the path to the document, if it is a file on a local file system
- * (can be used to initialize a JFileChooser).
- *
- * @return the path, if the document is a local file; <code>null</code>,
-otherwise.
- */
-public String getFilePath();

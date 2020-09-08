@@ -1,3 +1,0 @@
-protected void setSolid(boolean b) {
-    isSolid = b;
-}

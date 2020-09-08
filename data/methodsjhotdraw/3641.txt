@@ -1,7 +1,0 @@
-/**
- * Returns true if the attribute editor updates the
- * default values of the drawing editor.
- */
-public boolean isUpdateDrawingEditorDefaults() {
-    return isUpdateDrawingEditorDefaults;
-}

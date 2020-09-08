@@ -1,3 +1,0 @@
-public <T> T getDefaultAttribute(AttributeKey<T> key) {
-    return target.getDefaultAttribute(key);
-}

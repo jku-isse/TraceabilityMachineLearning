@@ -1,7 +1,0 @@
-/**
- * Creates a new instance.
- */
-public FindAction(Application app) {
-    this.app = app;
-    labels.configureAction(this, FindAction.ID);
-}

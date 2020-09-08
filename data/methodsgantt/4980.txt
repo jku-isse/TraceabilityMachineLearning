@@ -1,3 +1,0 @@
-File createTemporaryFile() throws IOException {
-    return File.createTempFile("_GanttProject_qSave", ".gan");
-}

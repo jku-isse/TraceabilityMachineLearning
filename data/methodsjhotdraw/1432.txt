@@ -1,6 +1,0 @@
-/**
- * Returns true, if this ConnectionFigure can connect the specified
- * {@code Connector}s.
- * Implement this method to constrain the allowed connections between figures.
- */
-public boolean canConnect(Connector start, Connector end);

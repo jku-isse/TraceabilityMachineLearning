@@ -1,7 +1,0 @@
-/**
- * Convenience method for adding a control point with a single
- * coordinate C0.
- */
-public void add(Point2D.Double c0) {
-    add(new BezierPath.Node(0, c0, c0, c0));
-}

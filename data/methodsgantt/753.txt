@@ -1,3 +1,0 @@
-void setTaskPropertiesAction(Action action) {
-    myTaskPropertiesAction = action;
-}

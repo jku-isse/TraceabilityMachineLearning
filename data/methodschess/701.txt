@@ -1,7 +1,0 @@
-public StatusPanel() {
-    try {
-        jbInit();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}

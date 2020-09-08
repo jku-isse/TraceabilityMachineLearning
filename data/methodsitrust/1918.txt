@@ -1,3 +1,0 @@
-public void setStreetAddress1(String streetAddress1) {
-    this.streetAddress1 = streetAddress1;
-}

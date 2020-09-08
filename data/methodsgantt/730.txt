@@ -1,3 +1,0 @@
-private Action getTaskPropertiesAction() {
-    return myTaskPropertiesAction;
-}

@@ -1,3 +1,0 @@
-public void parsingFinished() {
-    // TODO Auto-generated method stub
-}

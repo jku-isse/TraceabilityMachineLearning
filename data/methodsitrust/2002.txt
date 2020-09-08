@@ -1,7 +1,0 @@
-/**
- * getters and setters for dosage,
- * reason, override reason
- */
-public int getDosage() {
-    return dosage;
-}

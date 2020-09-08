@@ -1,4 +1,0 @@
-/**
- * Deletes this assignment
- */
-void delete();

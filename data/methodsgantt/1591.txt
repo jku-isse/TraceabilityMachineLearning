@@ -1,3 +1,0 @@
-public int hashCode() {
-    return (myMainUnit.hashCode()) + (myOffsetUnit.hashCode());
-}

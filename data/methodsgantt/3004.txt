@@ -1,8 +1,0 @@
-private void setSelected(int selectedIndex) {
-    AbstractButton newSelected = myButtons[selectedIndex];
-    mySavedSelectedText = newSelected.getText();
-    newSelected.setText((("<html><body><b><u>" + (mySavedSelectedText)) + "</u></b></body></html>"));
-    mySelectedIndex = selectedIndex;
-    newSelected.setSelected(true);
-    setEnabledTree(myOptionComponents[mySelectedIndex], true);
-}

@@ -1,4 +1,0 @@
-public Object[] getExtensions(Class extensionPointInterface) {
-    String extensionPointID = extensionPointInterface.getName();
-    return getExtensions(extensionPointID, extensionPointInterface);
-}

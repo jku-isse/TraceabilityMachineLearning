@@ -1,6 +1,0 @@
-public void redo() throws CannotRedoException {
-    super.redo();
-    owner.willChange();
-    owner.setBounds(newAnchor, newLead);
-    owner.changed();
-}

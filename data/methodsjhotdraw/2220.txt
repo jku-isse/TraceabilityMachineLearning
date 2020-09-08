@@ -1,8 +1,0 @@
-/**
- * Writes the figures to the specified output stream.
- * This method ensures that all figures of the drawing are visible on
- * the image.
- */
-public void write(OutputStream out, Drawing drawing, List<Figure> figures) throws IOException {
-    write(out, drawing, figures, null, null);
-}

@@ -1,1 +1,0 @@
-GPView createView(IAdaptable adaptable, Icon icon);

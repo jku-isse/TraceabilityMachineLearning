@@ -1,6 +1,0 @@
-/**
- * Removes the Point2D.Double at the specified index.
- */
-protected void removeAllNodes() {
-    path.clear();
-}

@@ -1,3 +1,0 @@
-public Point getLocation() {
-    return view.drawingToView(connector.getAnchor());
-}

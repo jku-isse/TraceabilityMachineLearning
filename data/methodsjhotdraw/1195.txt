@@ -1,7 +1,0 @@
-/**
- * Convenience method for getting the start point.
- */
-@Override
-public Point2D.Double getStartPoint() {
-    return getPoint(0, 0);
-}

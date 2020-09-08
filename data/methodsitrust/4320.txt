@@ -1,5 +1,0 @@
-public void testGetFilterType() {
-    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.CITY, "city!", factory);
-    DemographicReportFilter.DemographicReportFilterType expected = DemographicReportFilter.DemographicReportFilterType.CITY;
-    assertEquals(expected, filter.getFilterType());
-}

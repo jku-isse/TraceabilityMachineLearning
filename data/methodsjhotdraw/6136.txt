@@ -1,3 +1,0 @@
-public void write(File f) throws IOException {
-    write(f, getAccessory().getCharacterSet(), getAccessory().getLineSeparator());
-}

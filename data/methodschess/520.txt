@@ -1,8 +1,0 @@
-/**
- * Get the current origin of this ply.
- *
- * @return The currently known origin of this ply.
- */
-public final Position getOrigin() {
-    return _origin;
-}

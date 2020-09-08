@@ -1,6 +1,0 @@
-protected MouseMotionListener getMouseMotionListener() {
-    if ((myMouseMotionListener) == null) {
-        myMouseMotionListener = new ChartComponentBase.MouseMotionListenerBase();
-    }
-    return myMouseMotionListener;
-}

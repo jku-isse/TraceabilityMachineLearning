@@ -1,5 +1,0 @@
-@Override
-public Connector findConnector(Point2D.Double p, ConnectionFigure prototype) {
-    return null;// SVG does not support connectors
-
-}

@@ -1,7 +1,0 @@
-// Methods
-/**
- * Get the currently analyzed board.
- *
- * @return The currently analyzed board.
- */
-BitBoard getBoard();

@@ -1,6 +1,0 @@
-private GanttGraphicArea.ChartImplementation getChartImplementation() {
-    if ((myChartComponentImpl) == null) {
-        myChartComponentImpl = new GanttGraphicArea.NewChartComponentImpl();
-    }
-    return myChartComponentImpl;
-}

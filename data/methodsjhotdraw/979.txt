@@ -1,5 +1,0 @@
-public void setSelectable(boolean newValue) {
-    boolean oldValue = isSelectable;
-    isSelectable = newValue;
-    firePropertyChange("selectable", oldValue, newValue);
-}

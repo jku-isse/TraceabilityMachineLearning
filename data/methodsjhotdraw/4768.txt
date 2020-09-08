@@ -1,4 +1,0 @@
-public void setEnabled(boolean newValue) {
-    view.setEnabled(newValue);
-    super.setEnabled(newValue);
-}

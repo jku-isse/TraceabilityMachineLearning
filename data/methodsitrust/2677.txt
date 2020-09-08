@@ -1,4 +1,0 @@
-public void testHCP0() throws Exception {
-    gen.hcp0();
-    assertEquals("HCP 0", "Kelly Doctor", authDAO.getUserName(9000000000L));
-}

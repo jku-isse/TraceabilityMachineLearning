@@ -1,3 +1,0 @@
-public void beginChangeTaskProgressInteraction(MouseEvent e, TaskProgressChartItem taskProgress) {
-    setActiveInteraction(new GanttGraphicArea.ChangeTaskProgressInteraction(e, taskProgress));
-}

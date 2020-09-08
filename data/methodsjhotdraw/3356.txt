@@ -1,6 +1,0 @@
-/**
- * Returns length of input vector.
- */
-private static double v2Length(Point2D.Double a) {
-    return Math.sqrt(Bezier.v2SquaredLength(a));
-}

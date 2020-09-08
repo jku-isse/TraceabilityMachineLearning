@@ -1,6 +1,0 @@
-public static SQLFileCache getInstance() {
-    if ((SQLFileCache.instance) == null)
-        SQLFileCache.instance = new SQLFileCache();
-
-    return SQLFileCache.instance;
-}

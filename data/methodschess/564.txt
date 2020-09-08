@@ -1,9 +1,0 @@
-/**
- * Set the flag, if the castling goes left.
- *
- * @param goesLeft
- * 		Flag to indicate if the castling goes left.
- */
-public final void setLeftCastling(boolean goesLeft) {
-    _goesLeft = goesLeft;
-}

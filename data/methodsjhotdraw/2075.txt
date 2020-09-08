@@ -1,3 +1,0 @@
-protected AttributeKey getAttributeKey(String name) {
-    return AttributeKeys.supportedAttributeMap.get(name);
-}

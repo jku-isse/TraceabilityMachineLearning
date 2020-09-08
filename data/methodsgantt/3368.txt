@@ -1,9 +1,0 @@
-public void setZoomState(String persistentName) {
-    for (int i = 0; i < (myZoomStates.length); i++) {
-        if (myZoomStates[i].getPersistentName().equals(persistentName)) {
-            myZooming = i;
-            fireZoomingChanged(0, myZooming);
-            break;
-        }
-    }
-}

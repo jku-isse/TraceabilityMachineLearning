@@ -1,4 +1,0 @@
-/**
- * Adds an output format to the drawing.
- */
-void addOutputFormat(OutputFormat format);

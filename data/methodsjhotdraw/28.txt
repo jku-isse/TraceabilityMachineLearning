@@ -1,5 +1,0 @@
-public void setModel(ApplicationModel newValue) {
-    ApplicationModel oldValue = model;
-    model = newValue;
-    firePropertyChange("model", oldValue, newValue);
-}

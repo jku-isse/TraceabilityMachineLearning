@@ -1,3 +1,0 @@
-public void removeStateListener(ChartViewState.Listener listener) {
-    myListeners.remove(listener);
-}

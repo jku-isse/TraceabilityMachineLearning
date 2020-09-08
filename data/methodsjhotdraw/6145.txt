@@ -1,3 +1,0 @@
-public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
-    return editor.getScrollableUnitIncrement(visibleRect, orientation, direction);
-}

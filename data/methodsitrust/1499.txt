@@ -1,6 +1,0 @@
-public Date getFirstFound() {
-    if ((firstFound) == null) {
-        return null;
-    }
-    return ((Date) (firstFound.clone()));
-}

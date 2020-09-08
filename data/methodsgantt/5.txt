@@ -1,3 +1,0 @@
-private AbstractChartImplementation(ChartModelBase chartModel) {
-    myChartModel = chartModel;
-}

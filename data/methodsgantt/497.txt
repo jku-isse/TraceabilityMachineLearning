@@ -1,6 +1,0 @@
-/**
- * Exit the Application
- */
-private void exitForm(WindowEvent evt) {
-    quitApplication();
-}

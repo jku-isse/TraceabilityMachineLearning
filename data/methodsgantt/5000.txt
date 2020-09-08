@@ -1,4 +1,0 @@
-public static String getExtension(File file) {
-    int lastDot = file.getName().lastIndexOf(FileUtil.FILE_EXTENSION_SEPARATOR);
-    return lastDot >= 0 ? file.getName().substring((lastDot + 1)) : file.getName();
-}

@@ -1,4 +1,0 @@
-public void setBezierPath(BezierPath newValue) {
-    path = ((BezierPath) (newValue.clone()));
-    this.setClosed(newValue.isClosed());
-}

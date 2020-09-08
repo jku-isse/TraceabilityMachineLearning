@@ -1,5 +1,0 @@
-private void emptyElement(String name, AttributesImpl attrs, TransformerHandler handler) throws SAXException {
-    startElement(name, attrs, handler);
-    endElement(name, handler);
-    attrs.clear();
-}

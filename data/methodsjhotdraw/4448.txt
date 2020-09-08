@@ -1,5 +1,0 @@
-private void mixerDisclosurePerformed(ActionEvent evt) {
-    // GEN-FIRST:event_mixerDisclosurePerformed
-    mixerPanel.setVisible(disclosureButton.isSelected());
-    mixerPanel.getParent().validate();
-}// GEN-LAST:event_mixerDisclosurePerformed

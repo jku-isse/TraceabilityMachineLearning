@@ -1,4 +1,0 @@
-public void testInHospital() {
-    testBean.setInHospital(1);
-    assertEquals(testBean.getInHospital(), 1L);
-}

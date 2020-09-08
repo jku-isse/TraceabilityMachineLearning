@@ -1,7 +1,0 @@
-/**
- * Sets the composite color value of the model.
- *
- * @param newValue
- * 		.
- */
-public void setCompositeColor(CompositeColor newValue);

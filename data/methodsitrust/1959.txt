@@ -1,4 +1,0 @@
-@Override
-public boolean equals(Object o) {
-    return (this.MID) == (((PersonnelBean) (o)).MID);
-}

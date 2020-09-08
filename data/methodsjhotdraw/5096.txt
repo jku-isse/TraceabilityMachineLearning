@@ -1,9 +1,0 @@
-@Override
-public TaskFigure clone() {
-    TaskFigure that = ((TaskFigure) (super.clone()));
-    that.dependencies = new HashSet<DependencyFigure>();
-    that.getNameFigure().addFigureListener(new TaskFigure.NameAdapter(that));
-    that.getDurationFigure().addFigureListener(new TaskFigure.DurationAdapter(that));
-    that.updateStartTime();
-    return that;
-}

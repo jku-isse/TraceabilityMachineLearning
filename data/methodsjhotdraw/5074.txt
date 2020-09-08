@@ -1,3 +1,0 @@
-public boolean isGridVisible() {
-    return view.isConstrainerVisible();
-}

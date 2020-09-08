@@ -1,6 +1,0 @@
-public String getTextSeparat() {
-    if ((cbTextSeparator.getSelectedIndex()) == 0)
-        return "";
-
-    return """;
-}

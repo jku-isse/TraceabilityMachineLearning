@@ -1,6 +1,0 @@
-/**
- * This method is invoked, when the property changed and when
- * the view changed.
- */
-protected void updateView() {
-}

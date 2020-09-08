@@ -1,4 +1,0 @@
-public TaskRegularAreaChartItem(Task task) {
-    super(task);
-    // TODO Auto-generated constructor stub
-}

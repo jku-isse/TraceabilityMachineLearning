@@ -1,3 +1,0 @@
-public List<LabProcedureBean> getSpecificLabs(long id, String loincID) throws DBException {
-    return labDAO.getAllLabProceduresLOINC(id, loincID);
-}

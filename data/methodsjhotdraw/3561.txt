@@ -1,6 +1,0 @@
-/**
- * {@inheritDoc }
- */
-public boolean intersects(Rectangle2D r) {
-    return intersects(r.getX(), r.getY(), r.getWidth(), r.getHeight());
-}

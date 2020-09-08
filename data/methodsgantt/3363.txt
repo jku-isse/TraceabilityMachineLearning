@@ -1,3 +1,0 @@
-public boolean canZoomIn() {
-    return (myZooming) > 0;
-}

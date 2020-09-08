@@ -1,9 +1,0 @@
-public void testParseInvalidLOINCFile2() throws Exception {
-    List<String> expected = new ArrayList<String>();
-    expected.add("ERROR, LINE 2: "10054-5"	oh no! bad quoting"	"Time"	"Pt"	"Heart"	"Qn"	"EKG"	"EKG.MEAS"	"CH"	"19980820"	"NAM"		"ACTIVE" This form has not been validated correctly. The following field are not properly filled in: [Bad LOINC data line. All fields must be surrounded by quotation marks.]");
-    expected.add("Successfully added 2 lines of new LOINC data. Updated 0 lines of existing LOINC data.");
-    String filename = "./testing-files/sample_loinc/invalidLine2.txt";
-    FileInputStream stream = new FileInputStream(filename);
-    List<String> actual = action.parseLOINCFile(stream, false);
-    assertEquals(expected, actual);
-}

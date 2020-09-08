@@ -1,9 +1,0 @@
-/**
- * Gets the save file chooser for the view.
- */
-public JFileChooser getSaveChooser() {
-    if ((saveChooser) == null) {
-        saveChooser = createSaveChooser();
-    }
-    return saveChooser;
-}

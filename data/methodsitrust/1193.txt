@@ -1,3 +1,0 @@
-public List<DiagnosisBean> getDiagnoses() throws DBException {
-    return diagnosesDAO.getList(ovID);
-}

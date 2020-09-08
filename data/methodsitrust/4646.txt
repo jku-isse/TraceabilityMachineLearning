@@ -1,3 +1,0 @@
-private String getAttribute(Document document, String attribute) throws XPathExpressionException {
-    return ((String) (XPathFactory.newInstance().newXPath().compile(("/Context/Resource/" + attribute)).evaluate(document.getDocumentElement(), XPathConstants.STRING)));
-}

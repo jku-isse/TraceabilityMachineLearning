@@ -1,4 +1,0 @@
-/**
- * Sets the doctype for the XML document.
- */
-public void setDoctype(String doctype);

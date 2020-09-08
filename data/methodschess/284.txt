@@ -1,6 +1,0 @@
-/**
- * Reset the opening book to the initial piece position.
- */
-public final void reset() {
-    _currentOpening = -1;
-}

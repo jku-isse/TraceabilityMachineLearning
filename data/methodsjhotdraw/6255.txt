@@ -1,6 +1,0 @@
-/**
- * Gets the redo action for use as a Redo menu item.
- */
-public Action getRedoAction() {
-    return redoAction;
-}

@@ -1,3 +1,0 @@
-public void testGetUserName() throws Exception {
-    assertEquals("Random Person", action.getUserName());
-}

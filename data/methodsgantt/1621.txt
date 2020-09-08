@@ -1,3 +1,0 @@
-GPOptionGroup getOptions() {
-    return myOptions;
-}

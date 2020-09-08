@@ -1,8 +1,0 @@
-/**
- * Return a clone of the calendar
- */
-public GanttCalendar Clone() {
-    GanttCalendar clone = new GanttCalendar(getYear(), getMonth(), getDay());
-    clone.setFixed(isFixed());
-    return clone;
-}

@@ -1,3 +1,0 @@
-public static JButton createFontStyleItalicButton(DrawingEditor editor) {
-    return ButtonFactory.createFontStyleItalicButton(editor, ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
-}

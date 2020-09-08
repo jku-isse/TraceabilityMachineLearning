@@ -1,4 +1,0 @@
-// ATTRIBUTES
-public void restoreTransformTo(Object geometry) {
-    rectangle.setRect(((Rectangle2D.Double) (geometry)));
-}

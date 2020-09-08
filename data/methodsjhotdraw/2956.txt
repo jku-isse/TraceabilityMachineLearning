@@ -1,9 +1,0 @@
-protected Rectangle basicGetBounds() {
-    Point p = view.drawingToView(getLocation());
-    Rectangle r = new Rectangle(p);
-    int h = getHandlesize();
-    r.x -= h / 2;
-    r.y -= h / 2;
-    r.width = r.height = h;
-    return r;
-}

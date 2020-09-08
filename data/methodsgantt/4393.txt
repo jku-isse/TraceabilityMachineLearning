@@ -1,6 +1,0 @@
-public void fireEvent() {
-    if (myEnabled) {
-        myManager.fireTaskProgressChanged(this);
-    }
-    myEnabled = false;
-}

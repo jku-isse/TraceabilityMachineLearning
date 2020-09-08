@@ -1,5 +1,0 @@
-public void testGettersSetters() {
-    PrescriptionAlerts p = PrescriptionAlerts.Prioglitazone;
-    assertEquals("Prioglitazone", p.getName());
-    assertEquals("647641512", p.getNDCode());
-}

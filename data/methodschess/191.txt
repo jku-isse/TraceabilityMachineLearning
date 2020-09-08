@@ -1,9 +1,0 @@
-/**
- * Set the maximum search time.
- *
- * @param depth
- * 		The new search time.
- */
-public final void setMaximumSearchTime(int time) {
-    _maxSearchTime = time;
-}

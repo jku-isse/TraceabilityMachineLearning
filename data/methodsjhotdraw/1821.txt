@@ -1,4 +1,0 @@
-/**
- * Draws all the figures from back to front.
- */
-void draw(Graphics2D g);

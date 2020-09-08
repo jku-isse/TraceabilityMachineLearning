@@ -1,8 +1,0 @@
-GPViewImpl(GanttProjectBase.ViewManagerImpl manager, GanttTabbedPane tabs, Container component, Chart chart, Icon icon) {
-    myManager = manager;
-    myTabs = tabs;
-    myComponent = component;
-    myIcon = icon;
-    myChart = chart;
-    assert (myChart) != null;
-}

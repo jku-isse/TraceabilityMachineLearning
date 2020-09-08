@@ -1,4 +1,0 @@
-public LabelFigure(String text) {
-    setText(text);
-    setEditable(false);
-}

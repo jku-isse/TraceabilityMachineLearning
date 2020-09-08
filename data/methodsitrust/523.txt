@@ -1,3 +1,0 @@
-public String getOfficeVisitDate(ReferralBean bean) throws iTrustException {
-    return ovDAO.getOfficeVisit(bean.getOvid()).getVisitDateStr();
-}

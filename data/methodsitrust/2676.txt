@@ -1,4 +1,0 @@
-public void testAdmin1() throws Exception {
-    gen.admin1();
-    assertEquals("Admin 1", "Shape Shifter", authDAO.getUserName(9000000001L));
-}

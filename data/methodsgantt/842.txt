@@ -1,3 +1,0 @@
-public JTable getTable() {
-    return treetable.getTable();
-}

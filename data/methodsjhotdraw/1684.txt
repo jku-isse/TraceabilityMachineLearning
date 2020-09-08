@@ -1,8 +1,0 @@
-public void figureAdded(CompositeFigureEvent evt) {
-    if (((drawing.getChildCount()) == 1) && ((getEmptyDrawingMessage()) != null)) {
-        repaint();
-    } else {
-        repaintDrawingArea(evt.getInvalidatedArea());
-    }
-    invalidateDimension();
-}

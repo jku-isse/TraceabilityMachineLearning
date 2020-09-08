@@ -1,6 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    Action realRedoAction = getRealRedoAction();
-    if (realRedoAction != null) {
-        realRedoAction.actionPerformed(e);
-    }
-}

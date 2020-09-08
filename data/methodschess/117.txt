@@ -1,4 +1,0 @@
-/**
- * Analyze the current board.
- */
-short analyze();

@@ -1,3 +1,0 @@
-private HumanResource getSelectedResource() {
-    return mySelectedResource;
-}

@@ -1,9 +1,0 @@
-/**
- * From super
- *
- * @param aLocale
- * 		
- */
-public GregorianCalendar(Locale aLocale) {
-    super(aLocale);
-}

@@ -1,8 +1,0 @@
-public void propertyChange(PropertyChangeEvent evt) {
-    String name = evt.getPropertyName();
-    if (name.equals("JComponent.sizeVariant")) {
-        // QuaquaUtilities.applySizeVariant((JLabel) evt.getSource());
-    } else {
-        super.propertyChange(evt);
-    }
-}

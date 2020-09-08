@@ -1,5 +1,0 @@
-public Document getDocument(String path) {
-    Document physicalDocument = createDocument(path);
-    Document proxyDocument = new ProxyDocument(this, physicalDocument, myProject, myUIFacade, getVisibleFields(), getParserFactory());
-    return proxyDocument;
-}

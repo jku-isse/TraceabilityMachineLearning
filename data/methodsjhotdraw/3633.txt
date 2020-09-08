@@ -1,3 +1,0 @@
-public AbstractAttributeEditorHandler(AttributeKey<T> key, AttributeEditor<T> attributeEditor, DrawingEditor drawingEditor, boolean updateDrawingEditorDefaults) {
-    this(key, null, attributeEditor, drawingEditor, updateDrawingEditorDefaults);
-}

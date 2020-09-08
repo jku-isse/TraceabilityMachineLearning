@@ -1,6 +1,0 @@
-/**
- * Creates the overlay for the given Component.
- */
-public void createOverlay(DrawingView view) {
-    createOverlay(view, null);
-}

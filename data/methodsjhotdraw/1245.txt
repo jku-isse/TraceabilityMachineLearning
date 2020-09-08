@@ -1,3 +1,0 @@
-protected BezierPath.Node getBezierNode() {
-    return (getOwner().getNodeCount()) > (index) ? getOwner().getNode(index) : null;
-}

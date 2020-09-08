@@ -1,6 +1,0 @@
-public void testGetApptType() throws Exception {
-    ApptTypeDAO apptTypeDAO = factory.getApptTypeDAO();
-    ApptTypeBean type = apptTypeDAO.getApptType("Ultrasound");
-    assertEquals(30, type.getDuration());
-    assertEquals("Ultrasound", type.getName());
-}

@@ -1,6 +1,0 @@
-private void fireUserInputConsumerChanged() {
-    for (int i = 0; i < (myListeners.size()); i++) {
-        TaskSelectionManager.Listener next = ((TaskSelectionManager.Listener) (myListeners.get(i)));
-        next.userInputConsumerChanged(myUserInputConsumer);
-    }
-}

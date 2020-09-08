@@ -1,4 +1,0 @@
-/**
- * Selects nothing.
- */
-public void clearSelection();

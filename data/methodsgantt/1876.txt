@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param modelObject
- * 		
- */
-void setModelObject(Object modelObject) {
-    myModelObject = modelObject;
-}

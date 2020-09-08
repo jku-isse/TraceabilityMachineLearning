@@ -1,8 +1,0 @@
-/**
- * Creates a new instance.
- */
-public ToolEvent(Tool src, DrawingView view, Rectangle invalidatedArea) {
-    super(src);
-    this.view = view;
-    this.invalidatedArea = invalidatedArea;
-}

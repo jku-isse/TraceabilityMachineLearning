@@ -1,6 +1,0 @@
-@Override
-public void setUp() throws Exception {
-    gen.clearAllTables();
-    gen.standardData();
-    gen.patientDeactivate();
-}

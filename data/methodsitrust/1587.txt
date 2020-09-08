@@ -1,3 +1,0 @@
-public void setTimeAdded(Timestamp timeAdded) {
-    this.timeAdded = timeAdded;
-}

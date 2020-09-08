@@ -1,3 +1,0 @@
-private boolean equals(OkayBean other) {
-    return true;
-}

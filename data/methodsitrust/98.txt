@@ -1,9 +1,0 @@
-public void testAddAppt() throws FormValidationException, SQLException {
-    ApptBean b = new ApptBean();
-    b.setApptType("General Checkup");
-    b.setHcp(hcpId);
-    b.setPatient(mid);
-    b.setDate(new Timestamp(((System.currentTimeMillis()) + ((10 * 60) * 1000))));
-    b.setComment(null);
-    assertTrue(action.addAppt(b, true).startsWith("Success"));
-}

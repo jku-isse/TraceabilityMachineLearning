@@ -1,2 +1,0 @@
-public void write(DOMOutput out) {
-}

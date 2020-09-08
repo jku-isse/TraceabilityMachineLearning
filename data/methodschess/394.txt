@@ -1,9 +1,0 @@
-/**
- * Mark a piece moved from its initial position.
- *
- * @param position
- * 		The position of the moved piece.
- */
-private final void setMoved(Position position) {
-    _movedPieces |= 1L << (position.getSquareIndex());
-}

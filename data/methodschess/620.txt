@@ -1,8 +1,0 @@
-/**
- * Get the minimum size of the board.
- *
- * @return The minimum size of the board.
- */
-public final Dimension getMinimumSize() {
-    return new Dimension(getBoardSize(), getBoardSize());
-}

@@ -1,4 +1,0 @@
-/**
- * {@inheritDoc }
- */
-public abstract boolean contains(double x, double y);

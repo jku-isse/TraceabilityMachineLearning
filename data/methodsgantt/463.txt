@@ -1,3 +1,0 @@
-public void setIsAPart(boolean isAPart) {
-    this.isAPart = isAPart;
-}

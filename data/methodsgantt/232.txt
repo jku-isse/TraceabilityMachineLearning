@@ -1,3 +1,0 @@
-public void projectSaved() {
-    // TODO Auto-generated method stub
-}

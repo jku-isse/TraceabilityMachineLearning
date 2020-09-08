@@ -1,8 +1,0 @@
-public void write(DOMOutput out) throws IOException {
-    Rectangle2D.Double r = getBounds();
-    out.addAttribute("x", r.x);
-    out.addAttribute("y", r.y);
-    out.addAttribute("w", r.width);
-    out.addAttribute("h", r.height);
-    writeAttributes(out);
-}

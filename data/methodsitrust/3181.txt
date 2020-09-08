@@ -1,7 +1,0 @@
-public void testMalaria() throws Exception {
-    DAOFactory factory = TestDAOFactory.getTestInstance();
-    TestDataGenerator gen = new TestDataGenerator();
-    gen.malaria_epidemic();
-    ViewDiagnosisStatisticsAction a = new ViewDiagnosisStatisticsAction(factory);
-    assertTrue(a.isMalariaEpidemic(("11/02/" + (thisYear)), "27607", "110"));
-}

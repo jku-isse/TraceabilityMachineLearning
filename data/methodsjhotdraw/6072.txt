@@ -1,4 +1,0 @@
-public String getCharacterSet() {
-    CharacterSetAccessory.prefs.put("characterSet", ((String) (charSetCombo.getSelectedItem())));
-    return ((String) (charSetCombo.getSelectedItem()));
-}

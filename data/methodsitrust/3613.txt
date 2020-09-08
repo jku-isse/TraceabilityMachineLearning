@@ -1,3 +1,0 @@
-public void referral_query_testdata() throws FileNotFoundException, IOException, SQLException {
-    new DBBuilder(factory).executeSQLFile(((DIR) + "/referral_query_testdata.sql"));
-}

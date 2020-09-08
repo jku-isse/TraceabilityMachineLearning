@@ -1,4 +1,0 @@
-@Override
-public boolean canSaveTo(File file) {
-    return file.getName().endsWith(".xml");
-}

@@ -1,8 +1,0 @@
-public void testGetDiagnoses() throws Exception {
-    gen.icd9cmCodes();
-    List<DiagnosisBean> list = action.getDiagnoses(2L);
-    assertEquals(6, list.size());
-    DiagnosisBean bean = list.get(0);
-    assertEquals("250.10", bean.getICDCode());
-    assertEquals("Diabetes with ketoacidosis", bean.getDescription());
-}

@@ -1,5 +1,0 @@
-public String visit(TaskManager taskManager) throws Exception {
-    StringBuffer out = new StringBuffer();
-    visit(taskManager.getTaskHierarchy().getRootTask(), 0, out);
-    return out.toString();
-}

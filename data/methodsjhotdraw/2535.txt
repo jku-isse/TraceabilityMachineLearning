@@ -1,3 +1,0 @@
-public static Handle northEast(Figure owner) {
-    return new ResizeHandleKit.NorthEastHandle(owner);
-}

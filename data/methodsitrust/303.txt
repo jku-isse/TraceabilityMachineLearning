@@ -1,6 +1,0 @@
-public void testDeleteImmunization() throws Exception {
-    action = new EditImmunizationsAction(factory, 9000000000L, "5", "1000");
-    assertEquals(1, action.getImmunizations().size());
-    action.deleteImmunization(action.getImmunizations().get(0));
-    assertEquals(0, action.getImmunizations().size());
-}

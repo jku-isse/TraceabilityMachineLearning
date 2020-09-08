@@ -1,7 +1,0 @@
-public void trackEnd(Point anchor, Point lead, int modifiersEx) {
-    pressed = basicGetBounds().contains(lead);
-    if (pressed)
-        getOwner().requestRemove();
-
-    fireAreaInvalidated(getDrawingArea());
-}

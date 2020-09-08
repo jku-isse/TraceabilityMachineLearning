@@ -1,3 +1,0 @@
-public void showDialog(Component content, Action[] buttonActions, String title) {
-    // TODO Auto-generated method stub
-}

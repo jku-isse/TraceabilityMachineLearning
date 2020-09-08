@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param numericalResult
- * 		the numericalResult to set
- */
-public void setNumericalResult(String numericalResult) {
-    this.numericalResult = numericalResult;
-}

@@ -1,7 +1,0 @@
-/**
- * Add a new ply with its notation.
- *
- * @param plyNotation
- * 		The notation of the new ply.
- */
-public void addPly(PlyNotation plyNotation);

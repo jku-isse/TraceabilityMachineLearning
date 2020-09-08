@@ -1,8 +1,0 @@
-public void testOVID() {
-    try {
-        action = new EditOfficeVisitAction(factory, 0L, "1", "NaN");
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("Office Visit ID is not a number: For input string: "NaN"", e.getMessage());
-    }
-}

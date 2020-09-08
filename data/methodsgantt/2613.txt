@@ -1,3 +1,0 @@
-private void createErrorNotification(Runnable notifier) {
-    myErrorNotificationPanel.enableNotifier(notifier);
-}

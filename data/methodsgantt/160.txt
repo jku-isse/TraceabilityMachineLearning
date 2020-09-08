@@ -1,6 +1,0 @@
-/**
- * Return the numbner of the week on the year
- */
-public int getWeek() {
-    return this.get(Calendar.WEEK_OF_YEAR);
-}

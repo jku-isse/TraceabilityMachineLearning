@@ -1,3 +1,0 @@
-public TaskInfo getTaskInfo() {
-    return task.getTaskInfo();
-}

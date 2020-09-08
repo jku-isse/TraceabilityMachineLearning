@@ -1,7 +1,0 @@
-public void testPending() {
-    assertTrue(req.isPending());
-    req.setPending(false);
-    assertFalse(req.isPending());
-    req.setPending(true);
-    assertTrue(req.isPending());
-}

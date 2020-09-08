@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the organization of the project.
- */
-public String getOrganization() {
-    return _sOrganization;
-}

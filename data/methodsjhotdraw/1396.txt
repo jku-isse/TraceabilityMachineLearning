@@ -1,4 +1,0 @@
-/**
- * Removes a listener from this composite figure.
- */
-public void removeCompositeFigureListener(CompositeFigureListener listener);

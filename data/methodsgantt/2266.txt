@@ -1,4 +1,0 @@
-public boolean canRead() {
-    WebdavResource res = getWebdavResource();
-    return null == res ? false : (res.exists()) && (!(res.isCollection()));
-}

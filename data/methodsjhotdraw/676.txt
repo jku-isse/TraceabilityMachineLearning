@@ -1,5 +1,0 @@
-public void setRadialComponentIndex(int newValue) {
-    radialIndex = newValue;
-    colorWheelImage = null;
-    repaint();
-}

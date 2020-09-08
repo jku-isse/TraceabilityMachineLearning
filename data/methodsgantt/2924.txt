@@ -1,3 +1,0 @@
-public Class getColumnClass(int c) {
-    return columnClasses[c];
-}

@@ -1,3 +1,0 @@
-public ChartSelection getSelection() {
-    throw new UnsupportedOperationException();
-}

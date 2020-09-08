@@ -1,4 +1,0 @@
-@Override
-protected <T> void setAttributeOnChildren(AttributeKey<T> key, T newValue) {
-    // empty!
-}

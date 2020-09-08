@@ -1,6 +1,0 @@
-/**
- * Returns the height of the image.
- */
-public int getHeight() {
-    return height;
-}

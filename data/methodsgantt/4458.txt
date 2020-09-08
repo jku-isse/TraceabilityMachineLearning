@@ -1,3 +1,0 @@
-public TaskManager emptyClone() {
-    return new TaskManagerImpl(null, myConfig, null);
-}

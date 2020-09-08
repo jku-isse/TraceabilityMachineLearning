@@ -1,4 +1,0 @@
-public RedoAction() {
-    UndoRedoManager.labels.configureAction(this, "edit.redo");
-    setEnabled(false);
-}

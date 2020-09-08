@@ -1,3 +1,0 @@
-public TableHeaderUIFacade getVisibleFields() {
-    return table.getVisibleFields();
-}

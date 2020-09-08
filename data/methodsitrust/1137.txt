@@ -1,4 +1,0 @@
-public void testGetAllOfficeVisits() throws iTrustException {
-    List<OfficeVisitBean> ovbList = action.getAllOfficeVisits();
-    assertEquals(10, ovbList.size());
-}

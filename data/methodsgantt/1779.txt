@@ -1,3 +1,0 @@
-void setHeight(int height) {
-    myHeight = height;
-}

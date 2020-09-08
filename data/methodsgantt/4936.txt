@@ -1,3 +1,0 @@
-TimeFrameImpl.LineHeader next() {
-    return myNextHeader;
-}

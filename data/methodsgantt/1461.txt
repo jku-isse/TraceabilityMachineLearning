@@ -1,1 +1,0 @@
-protected abstract void run(List selection) throws Exception;

@@ -1,7 +1,0 @@
-/**
- * Returns an unmodifiable set with the filename extensions.
- * All extensions are lower case.
- */
-public Set<String> getExtensions() {
-    return Collections.unmodifiableSet(extensions);
-}

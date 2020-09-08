@@ -1,6 +1,0 @@
-/**
- * Reset all human...
- */
-public void reset() {
-    model.reset();
-}

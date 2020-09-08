@@ -1,7 +1,0 @@
-@Override
-public void write(DOMOutput out) throws IOException {
-    super.write(out);
-    out.openElement("locator");
-    out.writeObject(locator);
-    out.closeElement();
-}

@@ -1,4 +1,0 @@
-public void put(Object key, Action action) {
-    loadIfNecessary();
-    super.put(key, action);
-}

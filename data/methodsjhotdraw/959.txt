@@ -1,8 +1,0 @@
-/* public Rectangle2D.Double getHitBounds() {
-return getBounds();
-}
- */
-public Dimension2DDouble getPreferredSize() {
-    Rectangle2D.Double r = getBounds();
-    return new Dimension2DDouble(r.width, r.height);
-}

@@ -1,4 +1,0 @@
-/**
- * Selects all.
- */
-public void selectAll();

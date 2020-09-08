@@ -1,3 +1,0 @@
-public void setOvid(long ovid) {
-    this.ovid = ovid;
-}

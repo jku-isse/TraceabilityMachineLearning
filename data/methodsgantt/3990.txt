@@ -1,4 +1,0 @@
-public RoleEvent(RoleManager source, RoleSet changedRoleSet) {
-    super(source);
-    myChangedRoleSet = changedRoleSet;
-}

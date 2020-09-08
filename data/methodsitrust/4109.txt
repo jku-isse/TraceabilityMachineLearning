@@ -1,9 +1,0 @@
-/* private String dateString(String d) {
-SimpleDateFormat("MM/dd/yyyy").format()
-}
- */
-private long getVisitID(WebResponse wr) throws Exception {
-    WebForm form = wr.getFormWithID("mainForm");
-    String ovIDStr = form.getParameterValue("ovID");
-    return Long.parseLong(ovIDStr);
-}

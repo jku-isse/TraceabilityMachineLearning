@@ -1,1 +1,0 @@
-TimeUnitText getUnitText(TimeUnit unitLine, int position);

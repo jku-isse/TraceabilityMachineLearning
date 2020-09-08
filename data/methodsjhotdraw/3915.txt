@@ -1,4 +1,0 @@
-public void endDraggingFrame(JComponent f) {
-    super.endDraggingFrame(f);
-    resizeDesktop();
-}

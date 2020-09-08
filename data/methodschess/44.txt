@@ -1,9 +1,0 @@
-// Methods
-/**
- * Get the short description (the name) of this action.
- *
- * @return The short description of this action.
- */
-public String getShortDescription() {
-    return ((String) (getValue(Action.SHORT_DESCRIPTION)));
-}

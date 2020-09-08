@@ -1,3 +1,0 @@
-boolean isRegistered(TaskImpl task) {
-    return (myTaskMap.getTask(task.getTaskID())) != null;
-}

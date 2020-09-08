@@ -1,8 +1,0 @@
-public void testDoesNotExist() throws Exception {
-    try {
-        personnelDAO.getName(0L);
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("User does not exist", e.getMessage());
-    }
-}

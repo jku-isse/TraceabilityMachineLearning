@@ -1,7 +1,0 @@
-/**
- * Notify all listenerList that have registered interest for
- * notification on this event type.
- */
-public void fireAreaInvalidated() {
-    fireAreaInvalidated(getDrawingArea());
-}

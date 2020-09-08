@@ -1,6 +1,0 @@
-/**
- *
- *
- * @return A java.util.List of the risk factors increasing this patients disease risk.
- */
-protected abstract List<PatientRiskFactor> getDiseaseRiskFactors();

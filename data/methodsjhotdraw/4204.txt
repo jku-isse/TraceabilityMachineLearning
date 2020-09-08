@@ -1,2 +1,0 @@
-public void addLayoutComponent(Component comp, Object constraints) {
-}

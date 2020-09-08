@@ -1,3 +1,0 @@
-public static Handle east(Figure owner) {
-    return new TransformHandleKit.EastHandle(owner);
-}

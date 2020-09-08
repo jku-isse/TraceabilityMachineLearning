@@ -1,8 +1,0 @@
-public void die() {
-    if ((swingEditImpl) != null)
-        swingEditImpl.die();
-
-    if ((mySwingUndoManager) != null)
-        mySwingUndoManager.discardAllEdits();
-
-}

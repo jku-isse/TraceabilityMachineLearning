@@ -1,9 +1,0 @@
-/**
- * Installs listeners on the application object.
- */
-protected void installApplicationListeners(Application app) {
-    if ((applicationListener) == null) {
-        applicationListener = createApplicationListener();
-    }
-    app.addPropertyChangeListener(applicationListener);
-}

@@ -1,8 +1,0 @@
-/**
- * Test if 2 positions are equal.
- *
- * @param Another
- * 		position.
- * @return true, if the positions are equal, false otherwise.
- */
-boolean equals(Position pos);

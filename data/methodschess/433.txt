@@ -1,6 +1,0 @@
-/**
- * Get the flag for a checkmate.
- *
- * @return true, if the opponent is checkmate.
- */
-boolean isCheckMate();

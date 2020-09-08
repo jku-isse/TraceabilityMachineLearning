@@ -1,7 +1,0 @@
-public void testRemoveHCPAssignmentsBadID() {
-    try {
-        action.removeAllAssignmentsFromHCP("l");
-        fail();
-    } catch (iTrustException e) {
-    }
-}

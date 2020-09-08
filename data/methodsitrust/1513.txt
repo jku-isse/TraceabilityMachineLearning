@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the apptType
- */
-public String getApptType() {
-    return apptType;
-}

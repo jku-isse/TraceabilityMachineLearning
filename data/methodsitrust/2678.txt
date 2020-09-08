@@ -1,4 +1,0 @@
-public void testPatient1() throws Exception {
-    gen.patient1();
-    assertEquals("Patient 1", "Random Person", authDAO.getUserName(1L));
-}

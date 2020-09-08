@@ -1,9 +1,0 @@
-/**
- * Set the info on the used opening.
- *
- * @param name
- * 		The name of the opening.
- */
-public final void setOpeningInfo(String name) {
-    _openingName = name;
-}

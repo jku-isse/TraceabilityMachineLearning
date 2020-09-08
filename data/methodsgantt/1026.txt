@@ -1,4 +1,0 @@
-public static void main(String[] args) {
-    GanttProject ganttFrame = new GanttProject(true);
-    ganttFrame.setVisible(true);
-}

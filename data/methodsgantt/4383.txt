@@ -1,7 +1,0 @@
-public void setPriority(final int priority) {
-    myCommands.add(new Runnable() {
-        public void run() {
-            TaskImpl.this.setPriority(priority);
-        }
-    });
-}

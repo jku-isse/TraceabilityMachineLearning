@@ -1,8 +1,0 @@
-public void doIt(View view) {
-    JFileChooser fileChooser = getFileChooser(view);
-    if ((fileChooser.showOpenDialog(view.getComponent())) == (JFileChooser.APPROVE_OPTION)) {
-        openFile(view, fileChooser);
-    } else {
-        view.setEnabled(true);
-    }
-}

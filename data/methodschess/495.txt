@@ -1,4 +1,0 @@
-protected PGNParser(TokenStream lexer, int k) {
-    super(lexer, k);
-    tokenNames = PGNParser._tokenNames;
-}

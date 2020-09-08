@@ -1,5 +1,0 @@
-// /////////////////////////////////////////////////////////////////
-// --End CL 15-May-2003
-private TaskManager getTaskManager() {
-    return myTaskManager;
-}

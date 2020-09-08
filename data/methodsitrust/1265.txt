@@ -1,6 +1,0 @@
-public void testZeroPatients() throws Exception {
-    action = new ViewPrescriptionRenewalNeedsAction(factory, 9990000000L);
-    List<PatientBean> patients = action.getRenewalNeedsPatients();
-    assertNotNull(patients);
-    assertEquals(0, patients.size());
-}

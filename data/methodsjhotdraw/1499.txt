@@ -1,3 +1,0 @@
-protected ConnectionFigure getConnection() {
-    return createdConnection;
-}

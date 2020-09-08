@@ -1,4 +1,0 @@
-public boolean add(Figure figure) {
-    add(getChildCount(), figure);
-    return true;
-}

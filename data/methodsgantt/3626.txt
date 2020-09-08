@@ -1,7 +1,0 @@
-protected int getDependencyAddresser(Attributes attrs) {
-    try {
-        return Integer.parseInt(attrs.getValue("id"));
-    } catch (NumberFormatException e) {
-        throw new RuntimeException(("Failed to parse depend tag. Attribute id seems to be invalid: " + (attrs.getValue("id"))), e);
-    }
-}

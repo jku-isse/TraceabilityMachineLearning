@@ -1,3 +1,0 @@
-public boolean isExplicitlyHidden(Task task) {
-    return (myHiddenTasks) == null ? false : myHiddenTasks.contains(task);
-}

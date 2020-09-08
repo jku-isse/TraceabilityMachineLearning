@@ -1,9 +1,0 @@
-public void testNotANumber() throws Exception {
-    action = new ViewPersonnelAction(factory, 4L);
-    try {
-        action.getPersonnel("a");
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("MID not a number", e.getMessage());
-    }
-}

@@ -1,3 +1,0 @@
-private void addAssignment(ResourceAssignment assignment) {
-    myAssignments.put(assignment.getResource(), assignment);
-}

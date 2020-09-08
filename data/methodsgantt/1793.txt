@@ -1,3 +1,0 @@
-public Color getDayOffColor() {
-    return myProjectConfig.getDayOffColor();
-}

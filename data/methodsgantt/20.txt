@@ -1,3 +1,0 @@
-protected UIConfiguration getUIConfiguration() {
-    return myProject.getUIConfiguration();
-}

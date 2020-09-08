@@ -1,3 +1,0 @@
-public FileFilter getFileFilter() {
-    return new ExtensionFileFilter("Scalable Vector Graphics (SVG, SVGZ)", new String[]{ "svg", "svgz" });
-}

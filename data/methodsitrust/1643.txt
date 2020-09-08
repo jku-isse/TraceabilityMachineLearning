@@ -1,5 +1,0 @@
-public void setOVDate(String date) {
-    if (null != date) {
-        OVDate = date;
-    }
-}

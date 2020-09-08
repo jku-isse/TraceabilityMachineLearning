@@ -1,6 +1,0 @@
-/**
- * Remove the returned object (just a dummy in this case).
- */
-public final void remove() {
-    // Do nothing...
-}

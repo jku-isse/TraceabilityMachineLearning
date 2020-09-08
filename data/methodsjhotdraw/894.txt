@@ -1,3 +1,0 @@
-protected final Figure getConnectorTarget(Figure f) {
-    return (isConnectToDecorator) && ((((DecoratedFigure) (f)).getDecorator()) != null) ? ((DecoratedFigure) (f)).getDecorator() : f;
-}

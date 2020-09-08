@@ -1,8 +1,0 @@
-/**
- * Get the instance of this chess app.
- *
- * @return The instance of this chess app.
- */
-public static final JavaChess getInstance() {
-    return JavaChess._instance;
-}

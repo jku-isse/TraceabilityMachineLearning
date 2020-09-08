@@ -1,8 +1,0 @@
-public void enableSeparatedButton(boolean enabled) {
-    bDoubleDot.setEnabled(enabled);
-    bDotComa.setEnabled(enabled);
-    bComa.setEnabled(enabled);
-    bSpace.setEnabled(enabled);
-    bOther.setEnabled(enabled);
-    tfOther.setEnabled((enabled && (bOther.isSelected())));
-}

@@ -1,9 +1,0 @@
-/**
- * Set the panel for the notation output.
- *
- * @param notationPanel
- * 		The panel for the output.
- */
-public final void setNotationPanel(NotationPanel notationPanel) {
-    _notationPanel = notationPanel;
-}

@@ -1,8 +1,0 @@
-public Date getDateOfBirth() {
-    try {
-        return new SimpleDateFormat("MM/dd/yyyy").parse(dateOfBirthStr);
-    } catch (ParseException e) {
-        e.printStackTrace();
-        return null;
-    }
-}

@@ -1,7 +1,0 @@
-// Constructors
-/**
- * Create a new instance of this test.
- */
-public AnalyzerTest1() {
-    super("A simple analyzer test with a attack on the black queen");
-}

@@ -1,7 +1,0 @@
-public void testAttributes() throws Exception {
-    Email email = getTestEmail();
-    assertEquals("this is the body", email.getBody());
-    assertEquals("from address", email.getFrom());
-    assertEquals("this is the subject", email.getSubject());
-    assertEquals(100000L, email.getTimeAdded().getTime());
-}

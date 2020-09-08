@@ -1,3 +1,0 @@
-public void setPrettyPrint(boolean newValue) {
-    isPrettyPrint = newValue;
-}

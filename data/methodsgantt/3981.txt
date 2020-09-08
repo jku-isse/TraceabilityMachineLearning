@@ -1,5 +1,0 @@
-/**
- * Return all roles exept the default roles
- */
-// public String [] getRolesShort();
-public Role[] getProjectLevelRoles();

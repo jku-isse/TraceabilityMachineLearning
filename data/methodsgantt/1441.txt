@@ -1,5 +1,0 @@
-public ResourcePropertiesAction(IGanttProject project, UIFacade uiFacade) {
-    myProject = project;
-    myUIFacade = uiFacade;
-    putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.ALT_DOWN_MASK));
-}

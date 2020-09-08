@@ -1,3 +1,0 @@
-public void run(Task rootTask, TaskLength shift) {
-    shiftTask(rootTask, shift);
-}

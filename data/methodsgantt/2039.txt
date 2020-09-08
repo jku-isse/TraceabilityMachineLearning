@@ -1,9 +1,0 @@
-public void paint(Graphics g) {
-    if (draw) {
-        g.setColor(myColor);
-        g.fillRect(((x) - 2), y, 70, 16);
-        g.setColor(Color.black);
-        g.drawRect(((x) - 2), y, 70, 16);
-        g.drawString(n, x, ((y) + 12));
-    }
-}

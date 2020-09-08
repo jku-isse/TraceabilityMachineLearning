@@ -1,5 +1,0 @@
-public CSSRule(String selector, String propertyName, String propertyValue) {
-    setSelector(selector);
-    properties = new HashMap<String, String>();
-    properties.put(propertyName, propertyValue);
-}

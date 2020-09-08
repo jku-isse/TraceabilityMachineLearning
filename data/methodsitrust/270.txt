@@ -1,4 +1,0 @@
-public void addDiagnosis(DiagnosisBean bean) throws iTrustException {
-    verifySaved();
-    diagnosesDAO.add(bean);
-}

@@ -1,7 +1,0 @@
-public DelayManager(TaskManager taskManager, GanttTree2 tree) {
-    myObservers = new ArrayList();
-    myTaskManager = taskManager;
-    myRoot = ((TaskNode) (tree.getRoot()));
-    myTree = tree;
-    Mediator.getUndoManager().addUndoableEditListener(this);
-}

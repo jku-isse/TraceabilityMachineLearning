@@ -1,8 +1,0 @@
-public void testGetVisitReminders_Diagnosed_OldAndRecentVisit() throws Exception {
-    gen.hcp0();
-    gen.diagnosedPatient_OldAndNewVisit();
-    action = new GetVisitRemindersAction(factory, 9000000000L);
-    // Patient had a visit over a year ago. Make sure that he isnt given a reminder for this year
-    // since he also had a visit 3 months ago.
-    assertEquals(0, action.getVisitReminders(GetVisitRemindersAction.ReminderType.DIAGNOSED_CARE_NEEDERS).size());
-}

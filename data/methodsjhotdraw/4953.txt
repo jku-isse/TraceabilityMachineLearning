@@ -1,3 +1,0 @@
-public Segment(EnhancedPath.Segment that) {
-    setTo(that);
-}

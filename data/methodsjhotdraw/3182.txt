@@ -1,8 +1,0 @@
-/**
- * Updates the drawing due to changes made on this panel.
- */
-private void updateDrawing() {
-    if ((drawing) != null) {
-        drawing.fireUndoableEditHappened(AttributeKeys.CANVAS_FILL_COLOR.setUndoable(drawing, colorButton.getBackground()));
-    }
-}

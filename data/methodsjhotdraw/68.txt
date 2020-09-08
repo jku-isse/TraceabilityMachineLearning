@@ -1,4 +1,0 @@
-/**
- * Configures the application using the provided arguments array.
- */
-public void configure(String[] args);

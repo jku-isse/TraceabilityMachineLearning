@@ -1,7 +1,0 @@
-public WardRoomBean(long roomID, long occupiedBy, long inWard, String roomName, String status) {
-    this.roomID = roomID;
-    this.occupiedBy = occupiedBy;
-    this.inWard = inWard;
-    this.roomName = roomName;
-    this.status = status;
-}

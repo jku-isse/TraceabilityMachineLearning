@@ -1,8 +1,0 @@
-public void testGetList() {
-    try {
-        evilDAO.getList(1L);
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

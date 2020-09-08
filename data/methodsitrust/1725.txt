@@ -1,7 +1,0 @@
-/**
- * permission granted by lhcp who ordered test:
- * "ALLOWED", "RESTRICTED"
- */
-public String getRights() {
-    return rights;
-}

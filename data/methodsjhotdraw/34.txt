@@ -1,3 +1,0 @@
-public boolean canSaveTo(File file) {
-    return true;
-}

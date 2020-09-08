@@ -1,7 +1,0 @@
-public void lineTo(double x1, double y1) {
-    if ((size()) == 0) {
-        throw new IllegalPathStateException("lineTo only allowed when not empty");
-    }
-    get(((size()) - 1)).keepColinear = false;
-    add(new BezierPath.Node(x1, y1));
-}

@@ -1,9 +1,0 @@
-/**
- * Setter for Zip code
- *
- * @param zipCode
- * 		The zip code to be stored
- */
-public void setZipCode(String zipCode) {
-    this.zipCode = zipCode;
-}

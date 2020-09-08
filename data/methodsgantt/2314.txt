@@ -1,3 +1,0 @@
-public Portfolio getPortfolio() {
-    return myPortfolio;
-}

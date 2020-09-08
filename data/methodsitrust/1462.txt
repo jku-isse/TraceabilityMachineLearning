@@ -1,5 +1,0 @@
-public void setUp() {
-    testBean = new WardBean(0, "", 0);
-    testBean2 = new WardBean(0, "", 0);
-    testBean3 = new WardBean(0, "", 0);
-}

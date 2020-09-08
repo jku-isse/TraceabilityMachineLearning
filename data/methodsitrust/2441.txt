@@ -1,3 +1,0 @@
-public List<SurveyBean> loadList(ResultSet rs) throws SQLException {
-    throw new IllegalStateException("unimplemented!");
-}

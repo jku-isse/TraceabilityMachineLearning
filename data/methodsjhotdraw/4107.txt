@@ -1,6 +1,0 @@
-// ********************************
-// Create PLAF
-// ********************************
-public static ComponentUI createUI(JComponent c) {
-    return PaletteButtonUI.buttonUI;
-}

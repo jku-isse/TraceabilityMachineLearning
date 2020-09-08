@@ -1,3 +1,0 @@
-private Figure findConnectableFigure(Point2D.Double p, Drawing drawing) {
-    return drawing.findFigureExcept(p, createdFigure);
-}

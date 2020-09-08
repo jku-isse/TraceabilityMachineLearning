@@ -1,3 +1,0 @@
-public GanttTreeTable getTreeTable() {
-    return treetable;
-}

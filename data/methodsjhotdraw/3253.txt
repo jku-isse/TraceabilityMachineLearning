@@ -1,7 +1,0 @@
-/**
- * Creates a new instance.
- */
-public MoveConstrainedAction(DrawingEditor editor, TranslationDirection dir) {
-    super(editor);
-    this.dir = dir;
-}

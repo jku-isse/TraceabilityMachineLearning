@@ -1,3 +1,0 @@
-public void testGetApptTypes() throws SQLException {
-    assertEquals(6, action.getApptTypes().size());
-}

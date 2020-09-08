@@ -1,6 +1,0 @@
-public void addKeyListener(KeyListener listener) {
-    // getTreeTable().addKeyListener(listener);
-    super.addKeyListener(listener);
-    getTable().addKeyListener(listener);
-    getTree().addKeyListener(listener);
-}

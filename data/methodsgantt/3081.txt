@@ -1,6 +1,0 @@
-/**
- * Return the ogranisation
- */
-public String getProjectOrganization() {
-    return tfOrganization.getText();
-}

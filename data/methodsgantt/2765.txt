@@ -1,6 +1,0 @@
-/**
- * Return the number of colums
- */
-public int getColumnCount() {
-    return columnNames.length;
-}

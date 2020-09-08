@@ -1,4 +1,0 @@
-// private DiagnosesDAO evilDAO = EvilDAOFactory.getEvilInstance().getDiagnosesDAO();
-@Override
-protected void setUp() throws Exception {
-}

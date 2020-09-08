@@ -1,8 +1,0 @@
-/**
- * Insert the day on the daylist
- */
-public void insert(GanttCalendar day) {
-    if (!(dayList.contains(day)))
-        dayList.add(day);
-
-}

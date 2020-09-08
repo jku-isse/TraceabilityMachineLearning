@@ -1,4 +1,0 @@
-public void dependencyAdded(TaskDependencyEvent e) {
-    // ourCriticProcess = true;
-    fireDelayObservation();
-}

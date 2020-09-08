@@ -1,8 +1,0 @@
-public boolean moveDown(HumanResource resource) {
-    myResourceManager.down(resource);
-    ResourceNode rn = getNodeForResource(resource);
-    int index = root.getIndex(root.getChildAfter(rn));
-    removeNodeFromParent(rn);
-    insertNodeInto(rn, root, index);
-    return true;
-}

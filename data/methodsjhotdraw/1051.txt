@@ -1,4 +1,0 @@
-@Override
-public boolean isCombinableWith(Handle h) {
-    return false;
-}

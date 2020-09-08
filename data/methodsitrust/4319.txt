@@ -1,5 +1,0 @@
-public void testFilterTypeFromString() {
-    DemographicReportFilter.DemographicReportFilterType expected = DemographicReportFilter.DemographicReportFilterType.EMER_CONTACT_NAME;
-    DemographicReportFilter.DemographicReportFilterType actual = DemographicReportFilter.filterTypeFromString("emer_contACT_naME");
-    assertEquals(expected, actual);
-}

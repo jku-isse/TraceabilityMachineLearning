@@ -1,4 +1,0 @@
-void hideColumn(ResourceColumn col) {
-    col.setVisible(false);
-    this.removeColumn(col.getColumn());
-}

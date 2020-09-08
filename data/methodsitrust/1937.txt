@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param modified
- * 		the modified to set
- */
-public void setModified(Date modified) {
-    this.modified = modified;
-}

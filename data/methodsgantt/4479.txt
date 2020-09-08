@@ -1,7 +1,0 @@
-/* (non-Javadoc)
-
-@see net.sourceforge.ganttproject.task.TaskManager#getTask(int)
- */
-public GanttTask getTask(int taskId) {
-    return ((GanttTask) (myTaskMap.getTask(taskId)));
-}

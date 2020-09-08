@@ -1,4 +1,0 @@
-void fireChanged(TaskDependency dependency) {
-    myEventDispatcher.fireDependencyRemoved(dependency);
-    myEventDispatcher.fireDependencyAdded(dependency);
-}

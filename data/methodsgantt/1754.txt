@@ -1,7 +1,0 @@
-/* (non-Javadoc)
-
-@see net.sourceforge.ganttproject.chart.ChartModel#setTaskContainment(net.sourceforge.ganttproject.task.TaskContainmentHierarchyFacade)
- */
-public void setTaskContainment(TaskContainmentHierarchyFacade taskContainment) {
-    myTaskContainment = taskContainment;
-}

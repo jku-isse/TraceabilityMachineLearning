@@ -1,5 +1,0 @@
-public SVGGroupFigure clone() {
-    SVGGroupFigure that = ((SVGGroupFigure) (super.clone()));
-    that.attributes = new HashMap<AttributeKey, Object>(this.attributes);
-    return that;
-}

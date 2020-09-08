@@ -1,3 +1,0 @@
-public EditApptTypeAction(DAOFactory factory, long loggedInMID) {
-    this.apptTypeDAO = factory.getApptTypeDAO();
-}

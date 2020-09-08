@@ -1,4 +1,0 @@
-// -- METHODS --
-public GeneralOptionPanel(String title, String comment) {
-    this(title, comment, null);
-}

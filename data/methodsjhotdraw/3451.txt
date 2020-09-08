@@ -1,8 +1,0 @@
-/**
- * Returns the height of this dimension in double precision.
- *
- * @return the height of this dimension in double precision
- */
-public double getHeight() {
-    return height;
-}

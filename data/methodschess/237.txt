@@ -1,9 +1,0 @@
-/**
- * Set the current game.
- *
- * @param The
- * 		current game.
- */
-public final void setGame(Game game) {
-    _game = game;
-}

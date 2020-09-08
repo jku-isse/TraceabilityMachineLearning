@@ -1,1 +1,0 @@
-void run(File outputFile, ExportFinalizationJob finalizationJob) throws Exception;

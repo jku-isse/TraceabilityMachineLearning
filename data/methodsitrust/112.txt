@@ -1,6 +1,0 @@
-public AddDrugListAction(AddDrugListAction.DrugStrategy uploadStrategy, DAOFactory factory, EventLoggingAction loggingAction, long loggedInMID) {
-    this.strategy = uploadStrategy;
-    this.factory = factory;
-    this.loggingAction = loggingAction;
-    this.loggedInMID = loggedInMID;
-}

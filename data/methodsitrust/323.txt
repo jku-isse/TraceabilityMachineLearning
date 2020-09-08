@@ -1,4 +1,0 @@
-public void testAutoAssignLabTech() throws Exception {
-    // TODO: setup: assign lab procs to techs
-    // the lab tech with the least amount of work should get the assignment
-}

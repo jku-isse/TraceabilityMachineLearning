@@ -1,4 +1,0 @@
-public DefaultFontChooserModel(Font[] fonts) {
-    root = new DefaultMutableTreeNode();
-    setFonts(fonts);
-}

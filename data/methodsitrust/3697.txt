@@ -1,9 +1,0 @@
-/**
- * Constructor initializing the error message string
- *
- * @param string
- * 		The error message string
- */
-public AddPatientFileException(String string) {
-    message = string;
-}

@@ -1,3 +1,0 @@
-public void setToolDoneAfterCreation(boolean b) {
-    isToolDoneAfterCreation = b;
-}

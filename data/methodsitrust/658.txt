@@ -1,6 +1,0 @@
-public void testGetLabProcedureForLHCPForNextMonth() throws Exception {
-    List<LabProcedureBean> procedures = action.getLabProcForNextMonth();
-    assertEquals(1, procedures.size());
-    assertEquals("10763-1", procedures.get(0).getLoinc());
-    assertEquals(4, procedures.get(0).getPid());
-}

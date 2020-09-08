@@ -1,3 +1,0 @@
-protected JFileChooser getFileChooser(View view) {
-    return view.getOpenChooser();
-}

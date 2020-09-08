@@ -1,3 +1,0 @@
-public int getCompletionPercentage() {
-    return ((myMutator) != null) && ((myMutator.myIsolationLevel) == (TaskMutator.READ_UNCOMMITED)) ? myMutator.getCompletionPercentage() : myCompletionPercentage;
-}

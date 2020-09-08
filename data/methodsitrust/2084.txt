@@ -1,3 +1,0 @@
-public Timestamp getTime() {
-    return time;
-}

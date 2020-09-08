@@ -1,3 +1,0 @@
-public List<LabProcedureBean> viewTestingProcedures(long id) throws DBException {
-    return lpDAO.getLabProceduresTestingForLabTech(id);
-}

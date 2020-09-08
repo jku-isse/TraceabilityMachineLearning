@@ -1,5 +1,0 @@
-private static PropertyDescriptor[] getPdescriptor() {
-    // GEN-HEADEREND:Properties
-    // Here you can add code for customizing the properties array.
-    return FillToolBarBeanInfo.properties;
-}// GEN-LAST:Properties

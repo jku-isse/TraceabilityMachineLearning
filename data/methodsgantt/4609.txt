@@ -1,8 +1,0 @@
-private void shiftTask(Task rootTask, TaskLength shift) {
-    rootTask.shift(shift);
-    Task[] nestedTasks = rootTask.getManager().getTaskHierarchy().getNestedTasks(rootTask);
-    for (int i = 0; i < (nestedTasks.length); i++) {
-        Task next = nestedTasks[i];
-        shiftTask(next, shift);
-    }
-}

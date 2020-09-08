@@ -1,5 +1,0 @@
-public void testDeclareHCP() throws Exception {
-    assertEquals(false, action2.checkDeclared(9010000006L));
-    action2.declareHCP("Mary Shelley");
-    assertEquals(true, action2.checkDeclared(9010000006L));
-}

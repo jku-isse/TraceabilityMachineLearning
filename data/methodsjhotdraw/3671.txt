@@ -1,7 +1,0 @@
-/**
- * Sets the attribute value. This is a bound property.
- *
- * @param newValue
- * 		
- */
-public void setAttributeValue(T newValue);

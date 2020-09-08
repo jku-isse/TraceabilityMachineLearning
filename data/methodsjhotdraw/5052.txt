@@ -1,4 +1,0 @@
-public ToolButtonListener(Tool t, DrawingEditor editor) {
-    this.tool = t;
-    this.editor = editor;
-}

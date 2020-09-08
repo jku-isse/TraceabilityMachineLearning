@@ -1,4 +1,0 @@
-/**
- * Sets the end point.
- */
-public void setEndPoint(Point2D.Double p);

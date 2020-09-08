@@ -1,9 +1,0 @@
-public void paintComponent(Graphics gc) {
-    Graphics2D g = ((Graphics2D) (gc));
-    int w = getSize().width;
-    int h = getSize().height;
-    Insets insets = getInsets();
-    Rectangle rect = new Rectangle(insets.left, insets.top, (w - ((insets.left) + (insets.right))), (h - ((insets.top) + (insets.bottom))));
-    g.setPaint(paint);
-    g.fill(rect);
-}

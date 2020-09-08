@@ -1,3 +1,0 @@
-public DrawingView findView(Container c) {
-    return target.findView(c);
-}

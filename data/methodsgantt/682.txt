@@ -1,4 +1,0 @@
-public DocumentManager getDocumentManager() {
-    // TODO Auto-generated method stub
-    return null;
-}

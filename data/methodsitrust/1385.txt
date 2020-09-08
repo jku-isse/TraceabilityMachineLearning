@@ -1,5 +1,0 @@
-public void testGetPresciberMID() {
-    HCPLinkBean hl = new HCPLinkBean();
-    hl.setPrescriberMID(900000000);
-    assertEquals(900000000, hl.getPrescriberMID());
-}

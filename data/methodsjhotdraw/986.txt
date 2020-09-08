@@ -1,6 +1,0 @@
-/**
- * Adds a listener for this handle.
- */
-public void addHandleListener(HandleListener l) {
-    listenerList.add(HandleListener.class, l);
-}

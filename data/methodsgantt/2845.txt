@@ -1,3 +1,0 @@
-public UIConfiguration.AlphaRenderingOption getWeekendAlphaRenderingOption() {
-    return myWeekendAlphaRenderingOption;
-}

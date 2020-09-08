@@ -1,9 +1,0 @@
-/**
- * Allows/Disallows null values.
- *
- * @param newValue
- * 		
- */
-public void setAllowsNullValue(boolean newValue) {
-    allowsNullValue = newValue;
-}

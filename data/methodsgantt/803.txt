@@ -1,8 +1,0 @@
-/**
- * Create a popup menu when mous click
- */
-private void createPopupMenu(int x, int y, boolean all) {
-    JPopupMenu menu = new JPopupMenu();
-    Action[] popupMenuActions = getPopupMenuActions();
-    myUIFacade.showPopupMenu(this, popupMenuActions, ((x - (hbar.getValue())) + (vbar.isVisible() ? vbar.getWidth() : 0)), ((y - (vbar.getValue())) + 20));
-}

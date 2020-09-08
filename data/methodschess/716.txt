@@ -1,9 +1,0 @@
-/**
- * Set the counting direction.
- *
- * @param countdown
- * 		Flag to indicate, if we want a countdown.
- */
-private final void setCountingDirection(boolean countdown) {
-    _countdown = countdown;
-}

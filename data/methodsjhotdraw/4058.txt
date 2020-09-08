@@ -1,3 +1,0 @@
-public boolean getAllowsChildren() {
-    return true;
-}

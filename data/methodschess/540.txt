@@ -1,7 +1,0 @@
-/**
- * Set the type of this piece.
- *
- * @param type
- * 		The new type of this piece.
- */
-public void setType(byte type);

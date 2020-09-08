@@ -1,4 +1,0 @@
-/**
- * Gets the application to which this view belongs.
- */
-public Application getApplication();

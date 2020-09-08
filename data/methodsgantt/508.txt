@@ -1,5 +1,0 @@
-// ///////////////////////////////////////////////////////////////
-// UIFacade
-public GanttChart getGanttChart() {
-    return ((GanttChart) (getArea()));
-}

@@ -1,3 +1,0 @@
-public int[] getLabTechQueueSizeByPriority(long mid) throws iTrustException {
-    return labProcedureDAO.getLabTechQueueSizeByPriority(mid);
-}

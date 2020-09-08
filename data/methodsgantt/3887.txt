@@ -1,7 +1,0 @@
-public void setId(int id) {
-    // setting the id is only allowed when id is not
-    // assigned
-    if ((this.id) == (-1))
-        this.id = id;
-
-}

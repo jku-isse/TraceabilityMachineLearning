@@ -1,4 +1,0 @@
-/**
- * Gets the end point.
- */
-public Point2D.Double getEndPoint();

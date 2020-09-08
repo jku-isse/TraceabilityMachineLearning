@@ -1,3 +1,0 @@
-public void shift(TaskLength shift) {
-    this.shift(shift);
-}

@@ -1,5 +1,0 @@
-public static void assertTransactionOnly(TransactionType transType, long loggedInMID, long secondaryMID, String addedInfo) throws DBException {
-    List<TransactionBean> transList = TestDAOFactory.getTestInstance().getTransactionDAO().getAllTransactions();
-    assertEquals("Only one transaction should have been logged", 1, transList.size());
-    JUnitiTrustUtils.assertTransaction(transType, loggedInMID, secondaryMID, addedInfo, transList.get(0));
-}

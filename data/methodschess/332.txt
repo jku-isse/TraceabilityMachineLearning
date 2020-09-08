@@ -1,9 +1,0 @@
-/**
- * Run the actual test.
- */
-private void minimaxTest1() {
-    // Compute the best ply for this game position.
-    Ply bestPly = _engine.computeBestPly();
-    // Check if e7 - e5 was delivered as the best ply.
-    assertTrue("Engine computed invalid ply e7-e5", (((bestPly.getSource().getSquareIndex()) != 52) || ((bestPly.getDestination().getSquareIndex()) != (52 - 15))));
-}

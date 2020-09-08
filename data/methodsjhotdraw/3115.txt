@@ -1,7 +1,0 @@
-/**
- * Blackens the specified color by casting a black shadow of the specified
- * amount on the color.
- */
-public static Color shadow(Color c, int amount) {
-    return new Color(Math.max(0, ((c.getRed()) - amount)), Math.max(0, ((c.getGreen()) - amount)), Math.max(0, ((c.getBlue()) - amount)), c.getAlpha());
-}

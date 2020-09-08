@@ -1,3 +1,0 @@
-public double getAngle() {
-    return angle;
-}

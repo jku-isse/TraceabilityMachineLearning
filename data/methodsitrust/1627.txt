@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param drug
- * 		sets the drug the event is being reported for
- */
-public void setDrug(String drug) {
-    this.drug = drug;
-}

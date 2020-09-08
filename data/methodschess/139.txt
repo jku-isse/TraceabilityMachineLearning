@@ -1,6 +1,0 @@
-/**
- * Compute the best ply for the current position.
- *
- * @return The best known ply for the current position.
- */
-Ply computeBestPly();

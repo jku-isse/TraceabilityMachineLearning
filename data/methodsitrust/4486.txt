@@ -1,4 +1,0 @@
-public SmokingFactor(DAOFactory factory, long patientID) {
-    this.factory = factory;
-    this.patientID = patientID;
-}

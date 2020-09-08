@@ -1,9 +1,0 @@
-private TimeFrameImpl.LineHeader getLineHeader(TimeUnit timeUnit) {
-    TimeFrameImpl.LineHeader result = getLineHeader();
-    for (; result != null; result = result.next()) {
-        if ((result.myUnit) == timeUnit) {
-            break;
-        }
-    }
-    return result;
-}

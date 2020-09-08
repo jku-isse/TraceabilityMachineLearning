@@ -1,6 +1,0 @@
-/**
- * Loads an image from an Input Stream.
- * By convention this method is never invoked on the AWT Event Dispatcher
- * Thread.
- */
-public void loadImage(InputStream in) throws IOException;

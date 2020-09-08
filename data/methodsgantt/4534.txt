@@ -1,9 +1,0 @@
-/**
- * Sets the priority of the task.
- *
- * @param priority
- * 		The priority to be set.
- */
-public void setPriority(int priority) {
-    task.setPriority(priority);
-}

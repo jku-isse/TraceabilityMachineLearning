@@ -1,4 +1,0 @@
-/**
- * Returns a summary about the changes made on the drawing.
- */
-public String getSummary();

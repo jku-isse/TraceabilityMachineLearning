@@ -1,3 +1,0 @@
-public Dimension getMinimumHorizontalSize() {
-    return ColorSliderUI.MINIMUM_HORIZONTAL_SIZE;
-}

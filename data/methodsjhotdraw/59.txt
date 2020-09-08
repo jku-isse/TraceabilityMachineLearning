@@ -1,5 +1,0 @@
-public void setTitle(String newValue) {
-    String oldValue = title;
-    title = newValue;
-    firePropertyChange(View.TITLE_PROPERTY, oldValue, newValue);
-}

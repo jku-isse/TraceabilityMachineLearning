@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return 
- */
-public String getFilterTypeString() {
-    return filterType.toString();
-}

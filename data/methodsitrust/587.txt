@@ -1,9 +1,0 @@
-private static boolean endBefore(Date startTime, Date endTime, int years, int months, int weeks) {
-    Calendar cal = Calendar.getInstance();
-    cal.setTime(startTime);
-    cal.add(Calendar.YEAR, years);
-    cal.add(Calendar.MONTH, months);
-    cal.add(Calendar.HOUR, ((weeks * 7) * 24));
-    return (cal.getTime().compareTo(endTime)) <= 0;// startTime.before(endTime);
-
-}

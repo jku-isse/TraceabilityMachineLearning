@@ -1,3 +1,0 @@
-public String getColumnName(int column) {
-    return ((ResourceColumn) (columns.get(new Integer(column)))).getTitle();
-}

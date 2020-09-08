@@ -1,4 +1,0 @@
-public void testGetReferralsSendFrom() throws Exception {
-    assertEquals(8, dao.getReferralsSentFrom(9000000000L).size());
-    assertEquals(9, dao.getReferralsSentFrom(9000000003L).size());
-}

@@ -1,8 +1,0 @@
-/**
- * Get the current game state for a given color.
- *
- * @param white
- * 		True, if the state of the white player is requested.
- * @return The current game state.
- */
-byte getCurrentGameState(boolean white);

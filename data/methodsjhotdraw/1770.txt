@@ -1,9 +1,0 @@
-public void mouseDragged(MouseEvent evt) {
-    if ((popupTimer) != null) {
-        popupTimer.stop();
-        popupTimer = null;
-    }
-    if (((popupMenu) == null) || (!(popupMenu.isVisible()))) {
-        super.mouseDragged(evt);
-    }
-}

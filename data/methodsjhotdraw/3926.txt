@@ -1,5 +1,0 @@
-public Arrangeable.Arrangement getArrangement() {
-    // FIXME Check for the arrangement of the JInternalFrames here
-    // and return the true value
-    return Arrangeable.Arrangement.CASCADE;
-}

@@ -1,3 +1,0 @@
-private ColouredRectanglePainter(Color color) {
-    myColor = color;
-}

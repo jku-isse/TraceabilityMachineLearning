@@ -1,6 +1,0 @@
-public Figure basicRemoveChild(int index) {
-    Figure figure = children.remove(index);
-    figure.removeFigureListener(eventHandler);
-    invalidate();
-    return figure;
-}

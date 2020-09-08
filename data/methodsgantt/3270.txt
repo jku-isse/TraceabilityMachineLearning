@@ -1,9 +1,0 @@
-public void backPage() {
-    if ((myCurrentPage) > 0) {
-        getCurrentPage().setActive(false);
-        (myCurrentPage)--;
-        getCurrentPage().setActive(true);
-        myCardLayout.previous(myPagesContainer);
-    }
-    adjustButtonState();
-}

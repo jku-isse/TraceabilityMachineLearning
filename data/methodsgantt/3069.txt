@@ -1,3 +1,0 @@
-protected String getValue(String key) {
-    return GanttLanguage.getInstance().getText(key);
-}

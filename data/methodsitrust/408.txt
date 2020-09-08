@@ -1,3 +1,0 @@
-public String getEmployeeName(long mid) throws DBException, iTrustException {
-    return personnelDAO.getName(mid);
-}

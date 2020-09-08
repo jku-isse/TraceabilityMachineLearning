@@ -1,7 +1,0 @@
-public void setEnabled(boolean newValue) {
-    if (newValue != (isEnabled)) {
-        boolean oldValue = isEnabled;
-        isEnabled = newValue;
-        firePropertyChange("enabled", oldValue, newValue);
-    }
-}

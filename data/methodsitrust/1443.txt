@@ -1,7 +1,0 @@
-public void testBadRequestedDate() throws Exception {
-    ReportRequestBean b = new ReportRequestBean();
-    b.setRequestedDate(null);
-    assertNull(b.getRequestedDate());
-    b.setRequestedDateString("bad format");
-    assertNull(b.getRequestedDate());
-}

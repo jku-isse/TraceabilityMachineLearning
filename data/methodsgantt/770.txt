@@ -1,6 +1,0 @@
-/**
- * Constructor, do nothing
- */
-public GanttTaskRelationship() {
-    this(null);
-}

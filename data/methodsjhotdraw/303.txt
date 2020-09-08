@@ -1,4 +1,0 @@
-protected void doExit() {
-    getApplication().stop();
-    System.exit(0);
-}

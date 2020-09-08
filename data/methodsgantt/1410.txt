@@ -1,3 +1,0 @@
-protected String getLocalizedName() {
-    return getI18n("openFromServer");
-}

@@ -1,4 +1,0 @@
-/**
- * Sent when a figure was added to a drawing.
- */
-public void figureAdded(FigureEvent e);

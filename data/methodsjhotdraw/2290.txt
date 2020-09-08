@@ -1,8 +1,0 @@
-@Override
-public void figureChanged(FigureEvent e) {
-    if (!(owner.isChanging())) {
-        owner.willChange();
-        owner.fireFigureChanged(e);
-        owner.changed();
-    }
-}

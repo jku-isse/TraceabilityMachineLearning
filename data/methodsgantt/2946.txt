@@ -1,5 +1,0 @@
-public LibraryInfo(String libName, String libCompany, String libComment) {
-    this.libName = libName;
-    this.libWeb = libCompany;
-    this.libComment = libComment;
-}

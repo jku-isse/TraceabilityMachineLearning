@@ -1,6 +1,0 @@
-protected void readBounds(DOMInput in) throws IOException {
-    bounds.x = in.getAttribute("x", 0.0);
-    bounds.y = in.getAttribute("y", 0.0);
-    bounds.width = in.getAttribute("w", 0.0);
-    bounds.height = in.getAttribute("h", 0.0);
-}

@@ -1,8 +1,0 @@
-public void test500Gone() throws Exception {
-    try {
-        authDAO.getUserRole(500);
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("User does not exist", e.getMessage());
-    }
-}

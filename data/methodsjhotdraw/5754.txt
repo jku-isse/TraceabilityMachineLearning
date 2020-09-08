@@ -1,8 +1,0 @@
-public void removeActionListener(ActionListener listener) {
-    if ((listeners) != null) {
-        listeners.remove(ActionListener.class, listener);
-        if ((listeners.getListenerCount()) == 0) {
-            listeners = null;
-        }
-    }
-}

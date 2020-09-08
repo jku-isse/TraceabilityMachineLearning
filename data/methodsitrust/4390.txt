@@ -1,6 +1,0 @@
-/**
- *
- *
- * @return The name of the disease being checked.
- */
-public abstract String getName();

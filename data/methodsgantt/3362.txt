@@ -1,4 +1,0 @@
-public void addZoomListener(ZoomListener listener) {
-    myListeners.add(listener);
-    listener.zoomChanged(new ZoomEvent(this, myZoomStates[myZooming]));
-}

@@ -1,3 +1,0 @@
-public boolean equals(LinearGradient that) {
-    return (((((((((x1) == (that.x1)) && ((y1) == (that.y1))) && ((x2) == (that.x2))) && ((y2) == (that.y2))) && ((isRelativeToFigureBounds) == (that.isRelativeToFigureBounds))) && (Arrays.equals(stopOffsets, that.stopOffsets))) && (Arrays.equals(stopOpacities, that.stopOpacities))) && (Arrays.equals(stopColors, that.stopColors))) && (transform.equals(that.transform));
-}

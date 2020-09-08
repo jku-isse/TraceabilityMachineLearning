@@ -1,5 +1,0 @@
-public void testGetApptRequests() throws Exception {
-    List<ApptRequestBean> list = action.getApptRequests();
-    assertEquals(1, list.size());
-    assertEquals(2L, list.get(0).getRequestedAppt().getPatient());
-}

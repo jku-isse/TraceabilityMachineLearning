@@ -1,7 +1,0 @@
-@Override
-public void mousePressed(MouseEvent evt) {
-    // handle.mousePressed(evt);
-    anchor = new Point(evt.getX(), evt.getY());
-    multicaster.trackStart(anchor, evt.getModifiersEx(), getView());
-    clearHoverHandles();
-}

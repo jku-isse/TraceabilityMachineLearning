@@ -1,9 +1,0 @@
-/**
- * Set the bitmask for the moved pieces.
- *
- * @param bitmask
- * 		The new bitmask for the moved pieces.
- */
-private final void setMovedPieces(long bitmask) {
-    _movedPieces = bitmask;
-}

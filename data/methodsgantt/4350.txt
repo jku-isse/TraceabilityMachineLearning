@@ -1,3 +1,0 @@
-public TaskLength translateDuration(TaskLength duration) {
-    return myManager.createLength(myLength.getTimeUnit(), translateDurationValue(duration));
-}

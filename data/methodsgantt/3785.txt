@@ -1,6 +1,0 @@
-HumanResource(HumanResourceManager manager) {
-    this.name = "";
-    customFields = new HashMap();
-    myManager = manager;
-    // added
-}

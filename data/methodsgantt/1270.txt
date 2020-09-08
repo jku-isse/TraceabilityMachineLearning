@@ -1,9 +1,0 @@
-public void showErrorDialog(String errorMessage) {
-    if (myMainFrame.isVisible()) {
-        GanttDialogInfo gdi = new GanttDialogInfo(myMainFrame, GanttDialogInfo.ERROR, GanttDialogInfo.YES_OPTION, errorMessage, UIFacadeImpl.getLanguage().getText("error"));
-        gdi.show();
-    } else {
-        System.err.println(("[GanttProjectBase] showErrorDialog:
- " + errorMessage));
-    }
-}

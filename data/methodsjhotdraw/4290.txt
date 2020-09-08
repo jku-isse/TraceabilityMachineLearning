@@ -1,6 +1,0 @@
-/**
- * Sets the color displayed when over a floating area
- */
-public void setFloatingColor(Color c) {
-    this.floatingColor = c;
-}

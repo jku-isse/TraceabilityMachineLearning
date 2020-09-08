@@ -1,5 +1,0 @@
-GraphicPrimitiveContainer.Line createLine(int startx, int starty, int finishx, int finishy) {
-    GraphicPrimitiveContainer.Line result = new GraphicPrimitiveContainer.Line(startx, starty, finishx, finishy);
-    myLines.add(result);
-    return result;
-}

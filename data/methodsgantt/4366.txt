@@ -1,3 +1,0 @@
-public int getCompletionPercentage() {
-    return (myCompletionPercentageChange) == null ? this.myCompletionPercentage : ((Integer) (myCompletionPercentageChange.myFieldValue)).intValue();
-}

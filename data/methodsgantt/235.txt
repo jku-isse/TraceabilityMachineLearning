@@ -1,4 +1,0 @@
-public void setPreviousStateTasks(ArrayList tasks) {
-    int rowHeight = myChartModel.setPreviousStateTasks(tasks);
-    ((GanttTree2) (appli.getTree())).getTable().setRowHeight(rowHeight);
-}

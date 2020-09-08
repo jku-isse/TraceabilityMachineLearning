@@ -1,6 +1,0 @@
-private HospitalBean genericAdd(String id, String name) throws DBException, iTrustException {
-    HospitalBean hosp = new HospitalBean(id, name);
-    assertTrue(hospitalDAO.addHospital(hosp));
-    assertEquals(name, hospitalDAO.getHospital(id).getHospitalName());
-    return hosp;
-}

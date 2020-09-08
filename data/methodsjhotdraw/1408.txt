@@ -1,9 +1,0 @@
-/**
- * Draws the arrow tip in the direction specified by the given two
- * Points.. (template method)
- */
-public void draw(Graphics2D g, Figure f, Point2D.Double p1, Point2D.Double p2) {
-    for (LineDecoration decoration : decorations) {
-        decoration.draw(g, f, p1, p2);
-    }
-}

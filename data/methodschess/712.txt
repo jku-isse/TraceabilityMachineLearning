@@ -1,8 +1,0 @@
-/**
- * Check, if this timer counts downwards.
- *
- * @return true, if the counter counts downwards.
- */
-private final boolean isCountdown() {
-    return _countdown;
-}

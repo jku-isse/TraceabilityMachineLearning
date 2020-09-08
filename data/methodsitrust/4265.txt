@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return 
- */
-public DemographicReportFilter.DemographicReportFilterType getFilterType() {
-    return filterType;
-}

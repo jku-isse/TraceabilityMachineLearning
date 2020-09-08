@@ -1,8 +1,0 @@
-public void testGetOfficeVisits() throws Exception {
-    List<OfficeVisitBean> ovs = factory.getOfficeVisitDAO().getAllOfficeVisits(1);
-    List<OfficeVisitBean> actualOvs = action.getAllOfficeVisits();
-    assertEquals(ovs.size(), actualOvs.size());
-    for (int i = 0; i < (ovs.size()); i++) {
-        assertEquals(ovs.get(i).getID(), actualOvs.get(i).getID());
-    }
-}

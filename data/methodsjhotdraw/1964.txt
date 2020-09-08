@@ -1,4 +1,0 @@
-/**
- * Returns a cursor for the specified location.
- */
-public Cursor getCursor(Point2D.Double p);

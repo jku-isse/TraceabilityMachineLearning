@@ -1,3 +1,0 @@
-public MouseListener getMouseListener() {
-    return myMouseListener;
-}

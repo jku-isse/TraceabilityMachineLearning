@@ -1,8 +1,0 @@
-/**
- *
- *
- * @unknown 
- */
-public void columnMoved(TableColumnModelEvent arg0) {
-    // TODO Auto-generated method stub
-}

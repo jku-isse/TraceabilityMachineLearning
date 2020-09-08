@@ -1,6 +1,0 @@
-/**
- * This method calculates the end date of this chart. It is a function of
- * (start date, bounds, bottom time unit, top time unit, bottom unit width)
- * so it expects that all these parameters are set correctly.
- */
-Date getEndDate();

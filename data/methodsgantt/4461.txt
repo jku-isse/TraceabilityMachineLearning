@@ -1,7 +1,0 @@
-private void fireDependencyRemoved(TaskDependency dep) {
-    TaskDependencyEvent e = new TaskDependencyEvent(getDependencyCollection(), dep);
-    for (int i = 0; i < (myListeners.size()); i++) {
-        TaskListener next = ((TaskListener) (myListeners.get(i)));
-        next.dependencyRemoved(e);
-    }
-}

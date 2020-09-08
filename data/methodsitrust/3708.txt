@@ -1,8 +1,0 @@
-/**
- * Returns the list of error messages
- *
- * @return 
- */
-public List<String> getMessageList() {
-    return errorList;
-}

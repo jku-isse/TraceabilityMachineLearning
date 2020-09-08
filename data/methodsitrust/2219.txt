@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param receiverName
- * 		the receiverName to set
- */
-public void setReceiverName(String receiverName) {
-    this.receiverName = receiverName;
-}

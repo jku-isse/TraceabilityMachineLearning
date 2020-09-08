@@ -1,8 +1,0 @@
-/**
- * Get the current game loader.
- *
- * @return The current game loader.
- */
-private final GameLoader getGameLoader() {
-    return _gameLoader;
-}

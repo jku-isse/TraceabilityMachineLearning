@@ -1,4 +1,0 @@
-/**
- * Adds a collection of figures to the current selection.
- */
-public void addToSelection(Collection<Figure> figures);

@@ -1,5 +1,0 @@
-public final void roundTag() throws RecognitionException, TokenStreamException {
-    match(PGNTokenTypes.TAG_ROUND);
-    whiteSpaces();
-    match(PGNTokenTypes.STRING_LITERAL);
-}

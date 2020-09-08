@@ -1,3 +1,0 @@
-public Point getOffset() {
-    return offset;
-}

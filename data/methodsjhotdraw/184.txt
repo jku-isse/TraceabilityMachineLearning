@@ -1,7 +1,0 @@
-@Override
-public void remove(View p) {
-    super.remove(p);
-    if ((views().size()) == 0) {
-        stop();
-    }
-}

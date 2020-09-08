@@ -1,9 +1,0 @@
-// COMPOSITE FIGURES
-// CLONING
-public SVGRectFigure clone() {
-    SVGRectFigure that = ((SVGRectFigure) (super.clone()));
-    that.roundrect = ((RoundRectangle2D.Double) (this.roundrect.clone()));
-    that.cachedTransformedShape = null;
-    that.cachedHitShape = null;
-    return that;
-}

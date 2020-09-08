@@ -1,5 +1,0 @@
-public void testGetReceivingHCPName() throws Exception {
-    action = new EditReferralsAction(factory, 9000000000L, "2", "955");
-    ReferralBean bean = action.getReferral(1L);
-    assertEquals("Gandalf Stormcrow", action.getReceivingHCPName(bean));
-}

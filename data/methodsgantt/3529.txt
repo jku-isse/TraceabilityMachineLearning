@@ -1,3 +1,0 @@
-private void saveVacations(TransformerHandler handler) throws SAXException {
-    new VacationSaver().save(getProject(), handler);
-}

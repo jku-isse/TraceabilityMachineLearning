@@ -1,7 +1,0 @@
-public int getAtomCount(TimeUnit atomUnit) {
-    if ((atomUnit == (this)) || (atomUnit == (this))) {
-        return 1;
-    }
-    int directAtomCount = getDirectAtomCount();
-    return directAtomCount * (getDirectAtomUnit().getAtomCount(atomUnit));
-}

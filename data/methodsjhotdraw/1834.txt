@@ -1,4 +1,0 @@
-/**
- * Returns the font render context used to do text leyout and text drawing.
- */
-FontRenderContext getFontRenderContext();

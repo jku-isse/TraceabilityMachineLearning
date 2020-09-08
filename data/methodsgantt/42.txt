@@ -1,3 +1,0 @@
-public GPOptionGroup[] getOptionGroups() {
-    return getChartModel().getChartOptionGroups();
-}

@@ -1,8 +1,0 @@
-public void testIsCompleted() throws Exception {
-    try {
-        surveyDAO.isSurveyCompleted(0L);
-        fail("DBException should have been thrown");
-    } catch (DBException ex) {
-        assertEquals(EvilDAOFactory.MESSAGE, ex.getSQLException().getMessage());
-    }
-}

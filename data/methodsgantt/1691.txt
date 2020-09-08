@@ -1,3 +1,0 @@
-protected void paintMainArea(Graphics mainArea, Painter p) {
-    myChartGrid.getPrimitiveContainer().paint(p, mainArea);
-}

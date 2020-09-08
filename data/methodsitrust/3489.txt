@@ -1,4 +1,0 @@
-public void testGetFluShotDelinquentsEmpty() throws DBException, FileNotFoundException, IOException, SQLException {
-    List<VisitReminderReturnForm> visRems = visRemDAO.getFluShotDelinquents(LHCP);
-    assertEquals(0, visRems.size());
-}

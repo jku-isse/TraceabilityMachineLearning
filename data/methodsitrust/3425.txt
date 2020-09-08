@@ -1,3 +1,0 @@
-private void clearNDCodes() throws SQLException {
-    new DBBuilder().executeSQL(Arrays.asList("DELETE FROM ndcodes;"));
-}

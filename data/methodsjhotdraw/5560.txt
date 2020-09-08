@@ -1,3 +1,0 @@
-public boolean isEmpty() {
-    return ((getText()) == null) || ((getText().length()) == 0);
-}

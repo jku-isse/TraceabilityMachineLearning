@@ -1,8 +1,0 @@
-/**
- * Creates a new instance.
- */
-public SVGCreateFromFileTool(ImageHolderFigure imagePrototype, CompositeFigure groupPrototype, Map<AttributeKey, Object> attributes) {
-    super(imagePrototype, attributes);
-    this.groupPrototype = groupPrototype;
-    this.imagePrototype = imagePrototype;
-}

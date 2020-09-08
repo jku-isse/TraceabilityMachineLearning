@@ -1,7 +1,0 @@
-/**
- * Sets the application of the view.
- * By convention, this is only invoked by Application.add() and
- * Application.remove().
- * This is a bound property.
- */
-public void setApplication(Application newValue);

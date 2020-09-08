@@ -1,4 +1,0 @@
-public SVGTextAreaFigure(String text) {
-    setText(text);
-    SVGAttributeKeys.setDefaults(this);
-}

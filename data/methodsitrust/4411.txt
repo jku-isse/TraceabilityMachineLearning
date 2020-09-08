@@ -1,4 +1,0 @@
-public AgeFactor(PatientBean patient, int age) {
-    this.age = age;
-    this.patient = patient;
-}

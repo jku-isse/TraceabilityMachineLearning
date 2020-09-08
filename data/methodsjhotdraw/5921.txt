@@ -1,9 +1,0 @@
-private void writeEllipseElement(IXMLElement parent, SVGEllipseFigure f) throws IOException {
-    IXMLElement elem = parent.createElement("area");
-    Rectangle2D.Double r = f.getBounds();
-    double grow = SVGAttributeKeys.getPerpendicularHitGrowth(f);
-    Ellipse2D.Double ellipse = new Ellipse2D.Double(((r.x) - grow), ((r.y) - grow), ((r.width) + grow), ((r.height) + grow));
-    if (writeCircleAttributes(elem, f, ellipse)) {
-        parent.addChild(elem);
-    }
-}

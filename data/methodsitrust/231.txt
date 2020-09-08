@@ -1,8 +1,0 @@
-public void testUnDeclareNotDeclared() throws Exception {
-    assertEquals("HCP not undeclared", action.undeclareHCP("9000000000"));
-    List<PersonnelBean> decs = action.getDeclaredHCPS();
-    assertEquals(1, decs.size());
-    // Assert the transaction
-    List<TransactionBean> transList = factory.getTransactionDAO().getAllTransactions();
-    assertEquals(0, transList.size());
-}

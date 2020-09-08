@@ -1,4 +1,0 @@
-public FontFaceNode(Font typeface) {
-    this.typeface = typeface;
-    this.name = beautifyName(typeface.getPSName());
-}

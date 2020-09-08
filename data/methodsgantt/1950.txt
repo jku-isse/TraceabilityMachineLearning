@@ -1,5 +1,0 @@
-/* <Offset> */
-private LinkedList getOffsets() {
-    return /* <Offset> */
-    new LinkedList(getChartModel().getBottomUnitOffsets());
-}

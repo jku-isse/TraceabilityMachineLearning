@@ -1,4 +1,0 @@
-/**
- * Gets an attribute of the current element of the DOM Document.
- */
-public int getAttribute(String name, int defaultValue);

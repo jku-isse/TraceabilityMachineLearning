@@ -1,3 +1,0 @@
-protected void clearHoverHandles() {
-    updateHoverHandles(null, null);
-}

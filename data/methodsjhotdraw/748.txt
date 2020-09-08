@@ -1,5 +1,0 @@
-protected <T> void setAttributeOnChildren(AttributeKey<T> key, T newValue) {
-    for (Figure child : getChildren()) {
-        key.basicSet(child, newValue);
-    }
-}

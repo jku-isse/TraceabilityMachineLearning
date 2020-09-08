@@ -1,3 +1,0 @@
-public String[] getFileExtensions() {
-    return ExporterToImage.FileTypeOption.FILE_EXTENSION;
-}

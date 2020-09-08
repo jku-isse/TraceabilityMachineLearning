@@ -1,3 +1,0 @@
-public PreparedStatement loadParameters(PreparedStatement ps, DrugInteractionBean bean) throws SQLException {
-    throw new IllegalStateException("unimplemented!");
-}

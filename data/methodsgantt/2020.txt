@@ -1,5 +1,0 @@
-public void paint(GraphicPrimitiveContainer.Rectangle next) {
-    Graphics g = myGraphics;
-    g.setColor(myColor);
-    g.fillRect(next.myLeftX, next.myTopY, next.myWidth, next.myHeight);
-}

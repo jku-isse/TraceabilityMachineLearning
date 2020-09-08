@@ -1,4 +1,0 @@
-@Override
-public void setEndPoint(Point2D.Double p) {
-    setPoint(((getNodeCount()) - 1), p);
-}

@@ -1,6 +1,0 @@
-/**
- * Creates a new instance with a grid of 1x1.
- */
-public GridConstrainer() {
-    this(1.0, 1.0, 0.0, false);
-}

@@ -1,7 +1,0 @@
-public List<ProcedureBean> getImmunizations() throws DBException {
-    if (isUnsaved()) {
-        return new ArrayList<ProcedureBean>();
-    } else {
-        return proceduresDAO.getImmunizationList(getOvID());
-    }
-}

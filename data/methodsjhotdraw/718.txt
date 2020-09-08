@@ -1,6 +1,0 @@
-public SimpleHarmonicRule(int componentIndex, float difference, int baseIndex, int... derivedIndices) {
-    this.componentIndex = componentIndex;
-    this.difference = difference;
-    this.baseIndex = baseIndex;
-    this.derivedIndices = derivedIndices;
-}

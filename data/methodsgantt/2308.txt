@@ -1,3 +1,0 @@
-private HumanResourceManager getHumanResourceManager() {
-    return ((HumanResourceManager) (myProject.getHumanResourceManager()));
-}

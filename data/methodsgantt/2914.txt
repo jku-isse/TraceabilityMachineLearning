@@ -1,8 +1,0 @@
-/**
- * Constructor.
- */
-public AboutDialog(GanttProject parent) {
-    super(parent, ((GanttProject.correctLabel(GanttLanguage.getInstance().getText("about"))) + " - Ganttproject"), true, new AboutPanel(parent));
-    // hide the cancel button
-    cancelButton.hide();
-}

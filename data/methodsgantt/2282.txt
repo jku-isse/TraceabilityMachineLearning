@@ -1,9 +1,0 @@
-public void setUserInfo(String user, String pass) {
-    try {
-        httpURL.setUserinfo(user, pass);
-        webdavResource = null;
-    } catch (URIException e) {
-        lastError = e.getMessage();
-        malformedURL = true;
-    }
-}

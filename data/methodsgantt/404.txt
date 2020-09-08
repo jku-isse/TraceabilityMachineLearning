@@ -1,3 +1,0 @@
-public void setDocumentsMRU(DocumentsMRU documentsMRU) {
-    this.documentsMRU = documentsMRU;
-}

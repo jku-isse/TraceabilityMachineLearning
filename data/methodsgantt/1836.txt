@@ -1,7 +1,0 @@
-public void setStartDate(Date startDate) {
-    myCurrentTimeFrame = scrollTimeFrame(startDate);
-    startDate = myCurrentTimeFrame.getStartDate();
-    ChartViewState.ViewStateEvent e = new ChartViewState.ViewStateEvent(this, myStartDate, startDate);
-    myStartDate = startDate;
-    fireStartDateChanged(e);
-}

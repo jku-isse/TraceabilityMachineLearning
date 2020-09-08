@@ -1,6 +1,0 @@
-/**
- * Return the color of the task
- */
-public Color getTaskColor() {
-    return myUIConfiguration.getTaskColor();
-}

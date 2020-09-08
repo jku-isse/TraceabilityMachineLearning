@@ -1,5 +1,0 @@
-public void testFuzzySearchForPatient3() {
-    SearchUsersAction act = new SearchUsersAction(factory, 9000000003L);
-    List<PatientBean> patient = act.fuzzySearchForPatients("2");
-    assertEquals("Andy Programmer", patient.get(0).getFullName());
-}

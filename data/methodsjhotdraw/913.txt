@@ -1,3 +1,0 @@
-public void addUndoableEditListener(UndoableEditListener l) {
-    listenerList.add(UndoableEditListener.class, l);
-}

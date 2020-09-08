@@ -1,1 +1,0 @@
-void beginDrawDependencyInteraction(MouseEvent initiatingEvent, TaskRegularAreaChartItem taskArea, GanttGraphicArea.MouseSupport mouseSupport);

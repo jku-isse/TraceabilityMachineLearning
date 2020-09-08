@@ -1,3 +1,0 @@
-public GPAction(String name) {
-    this(name, "16");
-}

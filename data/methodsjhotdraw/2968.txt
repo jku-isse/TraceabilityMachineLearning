@@ -1,3 +1,0 @@
-protected void fireUndoableEditHappened(UndoableEdit edit) {
-    getDrawing().fireUndoableEditHappened(edit);
-}

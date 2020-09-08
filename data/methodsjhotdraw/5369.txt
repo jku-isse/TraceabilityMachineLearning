@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public SVGImageFigure() {
-    this(0, 0, 0, 0);
-}

@@ -1,3 +1,0 @@
-public static Point2D.Double center(Rectangle2D.Double r) {
-    return new Point2D.Double(((r.x) + ((r.width) / 2)), ((r.y) + ((r.height) / 2)));
-}

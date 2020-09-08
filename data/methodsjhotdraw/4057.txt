@@ -1,3 +1,0 @@
-public List<FontFaceNode> faces() {
-    return Collections.unmodifiableList(children);
-}

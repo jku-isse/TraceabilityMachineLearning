@@ -1,5 +1,0 @@
-public void addAttribute(String name, String value, String defaultValue) {
-    if ((value != null) && (!(value.equals(defaultValue)))) {
-        addAttribute(name, value);
-    }
-}

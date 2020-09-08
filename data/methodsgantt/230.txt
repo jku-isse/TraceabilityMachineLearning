@@ -1,5 +1,0 @@
-public void projectClosed() {
-    repaint();
-    setProjectLevelTaskColor(null);
-    setPreviousStateTasks(null);
-}

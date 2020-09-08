@@ -1,7 +1,0 @@
-public ProxyPanel() {
-    setOpaque(false);
-    setBackground(Color.GREEN);
-    // The paint method is only called, if the proxy panel is at least
-    // one pixel wide and high.
-    setLayout(new FlowLayout(FlowLayout.LEFT, 1, 1));
-}

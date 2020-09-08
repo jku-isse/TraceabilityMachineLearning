@@ -1,3 +1,0 @@
-public void read(File file, Drawing drawing, boolean replace) throws IOException {
-    read(new FileInputStream(file), drawing, replace);
-}

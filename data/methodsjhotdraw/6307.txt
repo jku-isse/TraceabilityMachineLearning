@@ -1,3 +1,0 @@
-public void configureToolBarButton(AbstractButton button, String argument) {
-    configureToolBarButton(button, argument, getBaseClass());
-}

@@ -1,5 +1,0 @@
-private void setICDs(int start, PreparedStatement ps, double[] icdCodes) throws SQLException {
-    for (double icdCode : icdCodes) {
-        ps.setDouble((start++), icdCode);
-    }
-}

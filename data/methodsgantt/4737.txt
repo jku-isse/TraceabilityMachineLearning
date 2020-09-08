@@ -1,3 +1,0 @@
-public TaskActivity getDependantActivity() {
-    return myDependantActivity;
-}

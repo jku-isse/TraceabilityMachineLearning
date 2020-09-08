@@ -1,8 +1,0 @@
-// DRAWING
-/**
- * Draws the figure.
- *
- * @param g
- * 		The Graphics2D to draw to.
- */
-public void draw(Graphics2D g);

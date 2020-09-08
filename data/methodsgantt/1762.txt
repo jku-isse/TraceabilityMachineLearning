@@ -1,3 +1,0 @@
-public ProjectResource[] getVisibleResources() {
-    return ((ProjectResource[]) (myManager.getResources().toArray(new ProjectResource[0])));
-}

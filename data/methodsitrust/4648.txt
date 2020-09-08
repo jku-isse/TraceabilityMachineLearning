@@ -1,6 +1,0 @@
-public static DAOFactory getTestInstance() {
-    if ((TestDAOFactory.testInstance) == null)
-        TestDAOFactory.testInstance = new TestDAOFactory();
-
-    return TestDAOFactory.testInstance;
-}

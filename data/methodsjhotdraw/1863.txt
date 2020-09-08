@@ -1,5 +1,0 @@
-/**
- * Sets the enabled state of the drawing editor.
- * This is a bound property.
- */
-public void setEnabled(boolean newValue);

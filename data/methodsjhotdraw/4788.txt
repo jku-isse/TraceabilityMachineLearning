@@ -1,3 +1,0 @@
-public ODGView getActiveView() {
-    return ((ODGView) (super.getActiveView()));
-}

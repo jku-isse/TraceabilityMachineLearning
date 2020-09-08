@@ -1,3 +1,0 @@
-public DefaultAttributeAction(DrawingEditor editor, AttributeKey[] keys, String name, Icon icon) {
-    this(editor, keys, name, icon, new HashMap<AttributeKey, Object>());
-}

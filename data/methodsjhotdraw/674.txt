@@ -1,5 +1,0 @@
-public void setAngularComponentIndex(int newValue) {
-    angularIndex = newValue;
-    colorWheelImage = null;
-    repaint();
-}

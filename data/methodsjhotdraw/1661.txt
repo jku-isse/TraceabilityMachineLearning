@@ -1,4 +1,0 @@
-public void removeNotify(DrawingEditor editor) {
-    this.editor = null;
-    repaint();
-}

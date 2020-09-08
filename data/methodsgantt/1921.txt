@@ -1,5 +1,0 @@
-void constructOffsets(List topUnitOffsets, /* <Offset> */
-/* <Offset> */
-List bottomUnitOffsets) {
-    constructOffsets(topUnitOffsets, bottomUnitOffsets, 0);
-}

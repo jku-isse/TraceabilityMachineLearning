@@ -1,4 +1,0 @@
-/**
- * Adds a listener for this composite figure.
- */
-public void addCompositeFigureListener(CompositeFigureListener listener);

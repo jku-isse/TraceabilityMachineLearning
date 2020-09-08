@@ -1,7 +1,0 @@
-public void testMessage() throws Exception {
-    try {
-        throw new AddPatientFileException("Test");
-    } catch (AddPatientFileException e) {
-        assertTrue(e.getMessage().equals("Test"));
-    }
-}

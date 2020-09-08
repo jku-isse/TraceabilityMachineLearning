@@ -1,4 +1,0 @@
-public WardBean loadSingle(ResultSet rs) throws SQLException {
-    WardBean ward = new WardBean(rs.getLong("WardID"), rs.getString("RequiredSpecialty"), rs.getLong("InHospital"));
-    return ward;
-}

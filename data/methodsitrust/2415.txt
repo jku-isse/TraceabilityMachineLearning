@@ -1,4 +1,0 @@
-public PrescriptionReportBeanLoader() {
-    ovLoader = new OfficeVisitLoader();
-    presLoader = new PrescriptionBeanLoader();
-}

@@ -1,4 +1,0 @@
-/**
- * Adds a listener for FigureEvents.
- */
-public void addFigureListener(FigureListener l);

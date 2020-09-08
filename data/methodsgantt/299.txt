@@ -1,8 +1,0 @@
-private void createDependency(final Task dependee) {
-    try {
-        getTaskManager().getDependencyCollection().createDependency(myDependant, dependee, new FinishStartConstraintImpl());
-    } catch (TaskDependencyException e) {
-        getUIFacade().showErrorDialog(e);
-    }
-    getProject().setModified();
-}

@@ -1,8 +1,0 @@
-public void testGetTransactions() throws FormValidationException, SQLException {
-    try {
-        List<TransactionBean> beans = action.getTransactions(new Date(), 1);
-        assertTrue(((beans.size()) < 20));
-    } catch (DBException e) {
-        fail();
-    }
-}

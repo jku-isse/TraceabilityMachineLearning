@@ -1,3 +1,0 @@
-public LinkTasksAction(TaskManager taskManager, TaskSelectionManager selectionManager, UIFacade uiFacade) {
-    super(taskManager, selectionManager, uiFacade);
-}

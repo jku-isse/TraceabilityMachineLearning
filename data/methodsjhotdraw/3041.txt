@@ -1,3 +1,0 @@
-public DrawingView getView() {
-    return editor.getActiveView();
-}

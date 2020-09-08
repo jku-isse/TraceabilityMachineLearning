@@ -1,3 +1,0 @@
-public String getPersistentValue() {
-    return (getValue()) == null ? null : ColorConvertion.getColor(getValue());
-}

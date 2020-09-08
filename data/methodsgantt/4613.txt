@@ -1,1 +1,0 @@
-void fireDependencyAdded(TaskDependency dep);

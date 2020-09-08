@@ -1,1 +1,0 @@
-void beginChangeTaskStartInteraction(MouseEvent e, TaskBoundaryChartItem taskBoundary);

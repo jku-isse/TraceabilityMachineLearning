@@ -1,8 +1,0 @@
-protected TimeUnitText createTimeUnitText(Date adjustedLeft) {
-    TimeUnitText result;
-    String longText = MessageFormat.format("{0}", new Object[]{ myLongFormat.format(adjustedLeft) });
-    String mediumText = MessageFormat.format("{0}", new Object[]{ myMediumFormat.format(adjustedLeft) });
-    String shortText = MessageFormat.format("{0}", new Object[]{ myShortFormat.format(adjustedLeft) });
-    result = new TimeUnitText(longText, mediumText, shortText);
-    return result;
-}

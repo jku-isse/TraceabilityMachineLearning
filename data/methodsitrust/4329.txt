@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return 
- */
-public String getFilterValue() {
-    return filterValue;
-}

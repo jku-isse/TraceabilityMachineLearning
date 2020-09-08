@@ -1,6 +1,0 @@
-/**
- * Sent when the bounds or shape of a figure has changed.
- */
-public void figureChanged(FigureEvent evt) {
-    updateBounds();
-}

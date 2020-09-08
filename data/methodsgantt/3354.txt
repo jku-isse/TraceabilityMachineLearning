@@ -1,7 +1,0 @@
-private void setUpHardnessColumnEditor(TableColumn hardnessColumn) {
-    DefaultComboBoxModel model = new DefaultComboBoxModel(TaskDependenciesPanel.HARDNESS);
-    JComboBox comboBox = new JComboBox(model);
-    comboBox.setSelectedIndex(0);
-    comboBox.setEditable(false);
-    hardnessColumn.setCellEditor(new DefaultCellEditor(comboBox));
-}

@@ -1,5 +1,0 @@
-public void trackStart(Point anchor, int modifiersEx) {
-    oldValue = AttributeKeys.ORIENTATION.get(getOwner());
-    centerBox = view.drawingToView(getOwner().getBounds());
-    centerBox.grow(((centerBox.width) / (-3)), ((centerBox.height) / (-3)));
-}

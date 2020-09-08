@@ -1,3 +1,0 @@
-public GPOptionGroup[] getSecondaryOptions() {
-    return new GPOptionGroup[0];
-}

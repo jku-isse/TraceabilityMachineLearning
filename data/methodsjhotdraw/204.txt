@@ -1,4 +1,0 @@
-public void remove(Window window) {
-    windows.remove(window);
-    window.removeWindowFocusListener(focusHandler);
-}

@@ -1,3 +1,0 @@
-public boolean isLocal() {
-    return myPhysicalDocument.isLocal();
-}

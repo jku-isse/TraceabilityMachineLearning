@@ -1,3 +1,0 @@
-public void setFixed(boolean fixed) {
-    isFixed = fixed;
-}

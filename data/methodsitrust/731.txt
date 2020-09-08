@@ -1,8 +1,0 @@
-public void testRemoveAllEvil() {
-    action = new ManageHospitalAssignmentsAction(evil, ManageHospitalAssignmentsActionTest.performingAdmin);
-    try {
-        action.removeAllAssignmentsFromHCP(("" + (ManageHospitalAssignmentsActionTest.hcp0)));
-        fail();
-    } catch (iTrustException e) {
-    }
-}

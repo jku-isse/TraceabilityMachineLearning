@@ -1,3 +1,0 @@
-public GPCalendar.DayType getWeekDayType(int day) {
-    return myTypes[(day - 1)];
-}

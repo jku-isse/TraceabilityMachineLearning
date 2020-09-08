@@ -1,8 +1,0 @@
-/**
- * Constructs an arrow tip with the given angle and radius.
- */
-public AbstractLineDecoration(boolean isFilled, boolean isStroked, boolean isSolid) {
-    this.isFilled = isFilled;
-    this.isStroked = isStroked;
-    this.isSolid = isSolid;
-}

@@ -1,4 +1,0 @@
-public void setOrganization(String organization) {
-    prjInfos._sOrganization = organization;
-    setAskForSave(true);
-}

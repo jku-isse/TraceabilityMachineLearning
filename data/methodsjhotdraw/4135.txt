@@ -1,5 +1,0 @@
-private void updatePreview() {
-    (isUpdating)++;
-    previewPanel.setSelectedFont(fontChooser.getSelectedFont());
-    (isUpdating)--;
-}

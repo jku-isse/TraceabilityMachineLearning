@@ -1,3 +1,0 @@
-protected DefaultDrawingView.EventHandler createEventHandler() {
-    return new DefaultDrawingView.EventHandler();
-}

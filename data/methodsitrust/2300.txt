@@ -1,3 +1,0 @@
-public void setIsSmoker(String isSmoker) {
-    this.isSmoker = isSmoker;
-}

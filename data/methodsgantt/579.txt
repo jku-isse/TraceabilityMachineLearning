@@ -1,3 +1,0 @@
-public void setGanttDividerLocation(int location) {
-    myGanttChartTabContent.setDividerLocation(location);
-}

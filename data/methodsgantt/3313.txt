@@ -1,6 +1,0 @@
-public CustomColumnsPanel(CustomColumnsManager manager, CustomColumnsStorage customColHandler, UIFacade uifacade) {
-    myColumnManager = manager;
-    customColumnStorage = customColHandler;
-    myUIfacade = uifacade;
-    this.initComponents();
-}

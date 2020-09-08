@@ -1,9 +1,0 @@
-/**
- * Get the stored ply for a given board and piece color.
- *
- * @param board
- * 		The board before the move.
- * @param white
- * 		Flag to indicate, if we want a move with the white pieces.
- */
-Ply getPly(Board board, boolean white);

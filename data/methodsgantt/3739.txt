@@ -1,3 +1,0 @@
-private void loadViewState(Attributes attrs) {
-    myUIFacade.getZoomManager().setZoomState(attrs.getValue("zooming-state"));
-}

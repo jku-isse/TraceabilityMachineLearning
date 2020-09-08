@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public BezierControlPointHandle(BezierFigure owner, int index, int coord) {
-    this(owner, index, coord, owner);
-}

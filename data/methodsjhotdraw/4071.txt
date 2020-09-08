@@ -1,5 +1,0 @@
-public void removeFromParent() {
-    if ((parent) != null) {
-        parent.remove(this);
-    }
-}

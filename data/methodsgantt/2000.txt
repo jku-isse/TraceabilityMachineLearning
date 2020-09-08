@@ -1,8 +1,0 @@
-/**
- * Converts a vertical tile index into the Y coordinate of
- * its upper left pixel relative to a given tile grid layout
- * specified by its Y offset and tile height.
- */
-public static int tileYToY(int ty, int tileGridYOffset, int tileHeight) {
-    return (ty * tileHeight) + tileGridYOffset;
-}

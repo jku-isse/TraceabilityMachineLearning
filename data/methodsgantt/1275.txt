@@ -1,3 +1,0 @@
-boolean isCommited() {
-    return isCommited;
-}

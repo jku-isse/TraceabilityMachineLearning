@@ -1,9 +1,0 @@
-// public static RoleManager getRoleManager() {
-// return roleManager;
-// }
-// public static TaskManager getTaskManager() {
-// return taskManager;
-// }
-public static GPUndoManager getUndoManager() {
-    return Mediator.undoManager;
-}

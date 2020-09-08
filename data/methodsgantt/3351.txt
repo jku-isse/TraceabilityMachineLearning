@@ -1,6 +1,0 @@
-public JPanel getComponent() {
-    if ((predecessorsPanel) == null) {
-        constructPredecessorsPanel();
-    }
-    return predecessorsPanel;
-}

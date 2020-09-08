@@ -1,7 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    Mediator.getUndoManager().undoableEdit("New Task", new Runnable() {
-        public void run() {
-            myProject.newTask();
-        }
-    });
-}

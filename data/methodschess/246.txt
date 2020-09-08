@@ -1,7 +1,0 @@
-/**
- * Set the maximum number of entries in the hashtable.
- *
- * @param maximumEntries
- * 		The new maximum number of entries.
- */
-void setMaximumSize(int maximumEntries);

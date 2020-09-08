@@ -1,3 +1,0 @@
-ErrorNotifier(UIFacadeImpl uiFacade) {
-    myUIFacade = uiFacade;
-}

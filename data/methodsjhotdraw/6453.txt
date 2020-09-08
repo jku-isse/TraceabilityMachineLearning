@@ -1,6 +1,0 @@
-/**
- * Returns the number of child elements of the current element.
- */
-public int getElementCount() {
-    return current.getChildrenCount();
-}

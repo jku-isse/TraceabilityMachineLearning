@@ -1,6 +1,0 @@
-/**
- * Returns a cursor for the handle.
- */
-public Cursor getCursor() {
-    return Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR);
-}

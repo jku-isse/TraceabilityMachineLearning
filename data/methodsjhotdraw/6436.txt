@@ -1,7 +1,0 @@
-/**
- * Adds a text to current element of the DOM Document.
- * Note: Multiple consecutives texts will be merged.
- */
-public void addText(String text) {
-    current.appendChild(document.createTextNode(text));
-}

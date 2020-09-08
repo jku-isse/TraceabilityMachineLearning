@@ -1,2 +1,0 @@
-void paintComponent(Graphics g, /* <Task> */
-List visibleTasks);

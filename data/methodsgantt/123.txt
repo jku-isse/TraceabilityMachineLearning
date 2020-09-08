@@ -1,7 +1,0 @@
-public GPToolBar(String title, int toolBarPosition, GanttOptions options) {
-    super(title, toolBarPosition);
-    setBorderPainted(true);
-    setRollover(true);
-    setFloatable(true);
-    this.options = options;
-}

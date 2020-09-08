@@ -1,3 +1,0 @@
-private OSXAdapter(GanttProject myProj) {
-    this.myProj = myProj;
-}

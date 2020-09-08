@@ -1,6 +1,0 @@
-public static void setup() {
-    GPLogger.ourHandler = new ConsoleHandler();
-    GPLogger.ourLogger.addHandler(GPLogger.ourHandler);
-    GPLogger.ourLogger.setLevel(Level.ALL);
-    GPLogger.ourHandler.setFormatter(new SimpleFormatter());
-}

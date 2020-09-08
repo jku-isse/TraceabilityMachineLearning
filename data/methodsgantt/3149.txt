@@ -1,4 +1,0 @@
-public DefaultEnumerationOption(String id, List values) {
-    super(id);
-    myValues = ((String[]) (values.toArray(new String[0])));
-}

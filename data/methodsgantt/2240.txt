@@ -1,3 +1,0 @@
-public FileDocument(File file) {
-    this.file = file;
-}

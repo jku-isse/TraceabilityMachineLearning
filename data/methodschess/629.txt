@@ -1,8 +1,0 @@
-/**
- * Get the minimum size of the board.
- *
- * @return The minimum size of the board.
- */
-public final Dimension getMinimumSize() {
-    return new Dimension(((8 * (ChessBoardRenderer2D.getSquareSize())) + ((ChessBoardRenderer2D.getSquareSize()) / 2)), ((8 * (ChessBoardRenderer2D.getSquareSize())) + ((ChessBoardRenderer2D.getSquareSize()) / 2)));
-}

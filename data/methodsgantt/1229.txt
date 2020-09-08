@@ -1,3 +1,0 @@
-public boolean isCellEditable(EventObject arg0) {
-    return myProxiedEditor.isCellEditable(arg0);
-}

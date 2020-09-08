@@ -1,9 +1,0 @@
-/**
- * The method to start the thread.
- */
-public void start() {
-    if ((_animationThread) == null) {
-        _animationThread = new Thread(this);
-        _animationThread.start();
-    }
-}

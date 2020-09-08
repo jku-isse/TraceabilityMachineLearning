@@ -1,5 +1,0 @@
-public String toString() {
-    return (((((("Time frame start=" + (getStartDate())) + " end=") + (getFinishDate())) + "
- top unit=") + (getTopUnit())) + "
- bottom unit=") + (getBottomUnit());
-}

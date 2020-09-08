@@ -1,3 +1,0 @@
-public ChartModelBase createCopy() {
-    return new ChartModelImpl(getTaskManager(), getTimeUnitStack(), getProjectConfig());
-}

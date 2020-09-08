@@ -1,4 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    appli.getUIFacade().setStatusText(GanttLanguage.getInstance().getText("undo"));
-    myUndoManager.undo();
-}

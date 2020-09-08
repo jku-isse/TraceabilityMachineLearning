@@ -1,3 +1,0 @@
-public void setRelativeToFigureBounds(boolean b) {
-    isRelativeToFigureBounds = b;
-}

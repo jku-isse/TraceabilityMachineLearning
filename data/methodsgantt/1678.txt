@@ -1,3 +1,0 @@
-public ChartModelBase.OptionEventDispatcher getOptionEventDispatcher() {
-    return myOptionEventDispatcher;
-}

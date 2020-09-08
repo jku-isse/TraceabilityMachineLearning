@@ -1,4 +1,0 @@
-public void setRedline(boolean isOn) {
-    this.redline = isOn;
-    getUIConfiguration().setRedlineOn(isOn);
-}

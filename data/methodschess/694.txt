@@ -1,8 +1,0 @@
-/**
- * Get the current animation layer.
- *
- * @return The current animation layer.
- */
-final AnimationLayer getAnimationLayer() {
-    return _animationLayer;
-}

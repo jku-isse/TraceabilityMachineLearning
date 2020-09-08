@@ -1,4 +1,0 @@
-public DragHandler(Transferable t, Point imageOffset) {
-    transferable = t;
-    this.imageOffset = imageOffset;
-}

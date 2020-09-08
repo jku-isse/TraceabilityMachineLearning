@@ -1,3 +1,0 @@
-public TaskDependencySlice getDependenciesAsDependant() {
-    return myDependencySliceAsDependant;
-}

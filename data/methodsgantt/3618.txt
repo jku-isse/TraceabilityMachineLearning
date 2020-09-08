@@ -1,4 +1,0 @@
-public GanttDependStructure(int a, int b) {
-    taskID = a;
-    successorTaskID = b;
-}

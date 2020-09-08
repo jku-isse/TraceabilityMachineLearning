@@ -1,3 +1,0 @@
-public void componentChanged(int index) {
-    isDirty |= (this.componentIndex) != index;
-}

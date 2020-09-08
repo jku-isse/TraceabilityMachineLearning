@@ -1,6 +1,0 @@
-public Date getUnitStart(TimeUnit unitLine, int position) {
-    TimeFrameImpl.LineHeader lineHeader = getLineHeader(unitLine);
-    TimeFrameImpl.LineItem lineItem = (lineHeader == null) ? null : lineHeader.getLineItem(position);
-    Date result = (lineItem == null) ? null : lineItem.myStartDate;
-    return result;
-}

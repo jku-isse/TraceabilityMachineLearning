@@ -1,8 +1,0 @@
-/**
- * Get the new piece type after the pawn promotion.
- *
- * @return The new piece type after the pawn promotion.
- */
-public final byte getNewPieceType() {
-    return _newPieceType;
-}

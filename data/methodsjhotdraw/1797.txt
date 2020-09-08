@@ -1,5 +1,0 @@
-@Override
-public void mouseReleased(MouseEvent evt) {
-    updateCursor(editor.findView(((Container) (evt.getSource()))), evt.getPoint());
-    fireToolDone();
-}

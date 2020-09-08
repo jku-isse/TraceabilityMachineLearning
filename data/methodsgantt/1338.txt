@@ -1,3 +1,0 @@
-public void languageChanged() {
-    this.putValue(AbstractAction.NAME, GanttProject.correctLabel(getLanguage().getText("newHuman")));
-}

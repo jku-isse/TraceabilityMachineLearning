@@ -1,4 +1,0 @@
-/**
- * Creates an enum from the specified element name.
- */
-public Enum createEnum(String name, String value);

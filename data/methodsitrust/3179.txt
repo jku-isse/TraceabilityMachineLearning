@@ -1,7 +1,0 @@
-public void testGetStatisticsValid() throws Exception {
-    Date lower = new SimpleDateFormat("MM/dd/yyyy").parse("06/28/2011");
-    Date upper = new SimpleDateFormat("MM/dd/yyyy").parse("09/28/2011");
-    DiagnosisStatisticsBean dsBean = diagDAO.getDiagnosisCounts("487.00", "27607", lower, upper);
-    assertEquals(3, dsBean.getZipStats());
-    assertEquals(5, dsBean.getRegionStats());
-}

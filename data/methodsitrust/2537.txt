@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys FamilyDAO
- */
-public FamilyDAO getFamilyDAO() {
-    return new FamilyDAO(this);
-}

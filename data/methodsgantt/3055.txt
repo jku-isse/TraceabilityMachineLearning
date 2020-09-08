@@ -1,5 +1,0 @@
-private Component createOptionLabel(GPOption option) {
-    JLabel nextLabel = new JLabel(myi18n.getOptionLabel(option));
-    nextLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 3));
-    return nextLabel;
-}

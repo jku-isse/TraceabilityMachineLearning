@@ -1,4 +1,0 @@
-/**
- * Applies the default attributes to the specified figure.
- */
-public void applyDefaultAttributesTo(Figure f);

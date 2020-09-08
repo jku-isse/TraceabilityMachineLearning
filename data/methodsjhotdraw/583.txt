@@ -1,3 +1,0 @@
-public int componentToRGB(float h, float s, float b) {
-    return sliderModel.getColorSystem().toRGB(h, s, b);
-}

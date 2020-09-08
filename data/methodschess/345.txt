@@ -1,7 +1,0 @@
-// Constructors
-/**
- * Create a new instance of this test.
- */
-public PlyGeneratorTest2() {
-    super("A simple ply generator test with a attack on the knight g3");
-}

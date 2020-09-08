@@ -1,3 +1,0 @@
-public void setConnectToDecorator(boolean newValue) {
-    isConnectToDecorator = newValue;
-}

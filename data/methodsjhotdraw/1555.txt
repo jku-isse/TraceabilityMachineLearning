@@ -1,4 +1,0 @@
-/**
- * Gets the decorator for this figure.
- */
-public Figure getDecorator();

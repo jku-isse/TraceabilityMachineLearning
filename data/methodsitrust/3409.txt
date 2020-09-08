@@ -1,4 +1,0 @@
-public void testgetImmunizationCPTCodes() throws DBException {
-    List<ProcedureBean> pBeans = cptDAO.getImmunizationCPTCodes();
-    assertEquals(15, pBeans.size());
-}

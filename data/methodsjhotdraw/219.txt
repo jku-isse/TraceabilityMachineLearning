@@ -1,4 +1,0 @@
-/**
- * Returns the file which holds the document of the view.
- */
-public File getFile();

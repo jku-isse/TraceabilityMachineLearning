@@ -1,4 +1,0 @@
-public void deleteImmunization(ProcedureBean bean) throws iTrustException {
-    verifySaved();
-    proceduresDAO.remove(bean.getOvProcedureID());
-}

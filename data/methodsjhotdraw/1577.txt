@@ -1,5 +1,0 @@
-@Override
-public Figure findFigureInside(Point2D.Double p) {
-    Figure f = findFigure(p);
-    return f == null ? null : f.findFigureInside(p);
-}

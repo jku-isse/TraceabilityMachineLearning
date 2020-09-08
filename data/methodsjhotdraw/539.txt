@@ -1,3 +1,0 @@
-public int getRadius() {
-    return ((Math.min(w, h)) / 2) - 2;
-}

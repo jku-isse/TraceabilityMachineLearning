@@ -1,7 +1,0 @@
-public void setViewedDateString(String s) {
-    try {
-        setViewedDate(new SimpleDateFormat(ReportRequestBean.dateFormat).parse(s));
-    } catch (ParseException ex) {
-        System.out.println(ex.getMessage());
-    }
-}

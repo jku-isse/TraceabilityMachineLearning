@@ -1,4 +1,0 @@
-/**
- * Returns an unchangeable list view on the children.
- */
-public List<Figure> getChildren();

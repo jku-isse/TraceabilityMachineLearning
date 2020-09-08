@@ -1,4 +1,0 @@
-protected void drawArc(Graphics2D g) {
-    Point p = getLocation();
-    g.drawArc(p.x, p.y, 6, 6, 0, 180);
-}

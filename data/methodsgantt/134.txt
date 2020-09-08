@@ -1,1 +1,0 @@
-protected abstract Date parseDate(String dateString);

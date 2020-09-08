@@ -1,9 +1,0 @@
-/**
- * set new drag time with mouse value.
- */
-// public void setDragTime(boolean dragTime){
-// this.dragTime = dragTime;
-// }
-public void setLookAndFeel(GanttLookAndFeelInfo lookAndFeel) {
-    this.lookAndFeel = lookAndFeel;
-}

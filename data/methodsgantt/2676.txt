@@ -1,7 +1,0 @@
-/**
- * as the name indicated
- */
-public String getNotes() {
-    notes = noteAreaNotes.getText();
-    return notes;
-}

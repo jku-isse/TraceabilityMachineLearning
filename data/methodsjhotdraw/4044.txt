@@ -1,3 +1,0 @@
-public void remove(int index) {
-    throw new UnsupportedOperationException("Not allowed.");
-}

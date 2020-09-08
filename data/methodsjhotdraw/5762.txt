@@ -1,9 +1,0 @@
-/**
- * Returns the minimum value -- the lower end of the progress value.
- *
- * @return an int representing the minimum value
- * @see #setMinimum
- */
-public int getMinimum() {
-    return progressModel.getMinimum();
-}

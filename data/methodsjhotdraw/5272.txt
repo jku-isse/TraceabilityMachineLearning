@@ -1,3 +1,0 @@
-public void setEditor(DrawingEditor newValue) {
-    svgPanel.setEditor(newValue);
-}

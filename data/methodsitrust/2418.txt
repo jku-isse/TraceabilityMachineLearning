@@ -1,6 +1,0 @@
-public PrescriptionReportBean loadSingle(ResultSet rs) throws SQLException {
-    PrescriptionReportBean pres = new PrescriptionReportBean();
-    pres.setOfficeVisit(ovLoader.loadSingle(rs));
-    pres.setPrescription(presLoader.loadSingle(rs));
-    return pres;
-}

@@ -1,5 +1,0 @@
-public void testGood() throws Exception {
-    String value = "12345678901234567890";
-    String errorMessage = PasswordValidatorTest.PASSED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, PasswordValidatorTest.VALIDATION_FORMAT, false));
-}

@@ -1,6 +1,0 @@
-/**
- * Starts the view.
- * Invoked after a view has been made visible to the user.
- * Multiple view can be visible at the same time.
- */
-public void start();

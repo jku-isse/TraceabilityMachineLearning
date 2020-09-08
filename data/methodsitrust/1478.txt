@@ -1,4 +1,0 @@
-public void testRoomName() {
-    wrb1.setRoomName("name");
-    assertTrue(wrb1.getRoomName().equals("name"));
-}

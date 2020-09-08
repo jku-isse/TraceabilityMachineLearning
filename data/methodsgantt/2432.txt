@@ -1,5 +1,0 @@
-public void setContext(IGanttProject project, UIFacade uiFacade) {
-    myProject = project;
-    myUIFacade = uiFacade;
-    myGanttChart = uiFacade.getGanttChart().createCopy();
-}

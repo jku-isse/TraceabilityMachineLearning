@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the xsl directory.
- */
-public String getXslDir() {
-    return xslDir;
-}

@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public ViewPropertyAction(Application app, String propertyName, Object propertyValue) {
-    this(app, propertyName, propertyValue.getClass(), propertyValue);
-}

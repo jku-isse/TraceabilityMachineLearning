@@ -1,4 +1,0 @@
-private static double b1(double u) {
-    double tmp = 1.0 - u;
-    return (3 * u) * (tmp * tmp);
-}

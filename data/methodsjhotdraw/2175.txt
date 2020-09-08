@@ -1,5 +1,0 @@
-// SHAPE AND BOUNDS
-public Rectangle2D.Double getBounds() {
-    Rectangle2D.Double bounds = ((Rectangle2D.Double) (rectangle.clone()));
-    return bounds;
-}

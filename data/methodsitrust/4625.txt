@@ -1,9 +1,0 @@
-@Override
-public Connection getConnection() throws SQLException {
-    // check THEN decrement
-    if (((numCorrect)--) > 0)
-        return driver.getConnection();
-    else
-        throw new SQLException(EvilDAOFactory.MESSAGE);
-
-}

@@ -1,7 +1,0 @@
-public String getLabTechName(long mid) throws iTrustException {
-    try {
-        return personnelDAO.getName(mid);
-    } catch (iTrustException e) {
-        return "";
-    }
-}

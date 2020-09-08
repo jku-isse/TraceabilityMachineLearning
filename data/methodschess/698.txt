@@ -1,8 +1,0 @@
-/**
- * Create a new position rendering with a given image of a piece.
- *
- * image The image for the rendering.
- */
-PositionRenderer(Image image) {
-    super(new ImageIcon(image));
-}

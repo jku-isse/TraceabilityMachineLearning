@@ -1,3 +1,0 @@
-private boolean equals(VerboseReferralBean other) {
-    return ((((((((id) == (other.id)) && ((senderID) == (other.senderID))) && ((receiverID) == (other.receiverID))) && ((ovid) == (other.ovid))) && ((viewedByPatient) == (other.viewedByPatient))) && ((viewedByHCP) == (other.viewedByHCP))) && (timeStamp.equals(other.timeStamp))) && (referralDetails.equals(other.referralDetails));
-}

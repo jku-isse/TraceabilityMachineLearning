@@ -1,5 +1,0 @@
-@Override
-public Connector findCompatibleConnector(Connector c, boolean isStartConnector) {
-    return null;// SVG does not support connectors
-
-}

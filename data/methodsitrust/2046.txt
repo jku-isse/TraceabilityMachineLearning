@@ -1,3 +1,0 @@
-public void setHcpid(String hcpid) {
-    this.hcpid = hcpid;
-}

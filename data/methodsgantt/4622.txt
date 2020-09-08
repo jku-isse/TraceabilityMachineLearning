@@ -1,3 +1,0 @@
-public RangeSearchFromKey(Task task) {
-    super((-1), task.getTaskID(), 0);
-}

@@ -1,9 +1,0 @@
-/**
- * Enables number parsing of exponents.
- * Exponents appear after the last digit of number with capital letter E
- * or small letter e.
- */
-public void parseExponents() {
-    parseNumbers();
-    isParseExponents = true;
-}

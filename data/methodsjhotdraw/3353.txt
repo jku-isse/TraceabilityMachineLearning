@@ -1,9 +1,0 @@
-/**
- * Return vector sum = a+b.
- */
-private static Point2D.Double v2AddII(Point2D.Double a, Point2D.Double b) {
-    Point2D.Double c = new Point2D.Double();
-    c.x = (a.x) + (b.x);
-    c.y = (a.y) + (b.y);
-    return c;
-}

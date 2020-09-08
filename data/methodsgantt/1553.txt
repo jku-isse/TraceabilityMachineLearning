@@ -1,6 +1,0 @@
-public Filter(String extension) {
-    if (extension == null) {
-        throw new NullPointerException("La description (ou extension) ne peut ?tre null.");
-    }
-    this.extension = extension;
-}

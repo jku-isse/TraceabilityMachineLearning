@@ -1,3 +1,0 @@
-public TaskTreeUIFacade getTaskTree() {
-    return getTree();
-}

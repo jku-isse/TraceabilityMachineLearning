@@ -1,7 +1,0 @@
-public boolean equals(Object o) {
-    if (o instanceof RadialGradient) {
-        return equals(((RadialGradient) (o)));
-    } else {
-        return false;
-    }
-}

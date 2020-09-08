@@ -1,5 +1,0 @@
-protected void drawTool(Graphics2D g) {
-    if ((((editor) != null) && ((editor.getActiveView()) == (this))) && ((editor.getTool()) != null)) {
-        editor.getTool().draw(g);
-    }
-}

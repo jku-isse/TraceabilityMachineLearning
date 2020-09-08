@@ -1,3 +1,0 @@
-public Set<Figure> getNewSelection() {
-    return newValue;
-}

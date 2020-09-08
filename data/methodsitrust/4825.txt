@@ -1,5 +1,0 @@
-public void testBadLength() throws Exception {
-    String value = "aaaabbbbccccdddd";
-    String errorMessage = CityValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, CityValidatorTest.VALIDATION_FORMAT, false));
-}

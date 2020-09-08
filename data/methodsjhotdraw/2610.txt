@@ -1,6 +1,0 @@
-@Override
-public void write(DOMOutput out) throws IOException {
-    super.write(out);
-    out.addAttribute("arcWidth", roundrect.arcwidth);
-    out.addAttribute("arcHeight", roundrect.archeight);
-}

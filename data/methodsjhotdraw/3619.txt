@@ -1,4 +1,0 @@
-public QuadNode(Rectangle2D.Double bounds) {
-    this.bounds = bounds;
-    this.objects = new HashMap<T, Rectangle2D.Double>();
-}

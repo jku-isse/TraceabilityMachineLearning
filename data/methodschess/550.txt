@@ -1,7 +1,0 @@
-// Methods
-/**
- * Get the analyzed ply.
- *
- * @return The analyzed ply.
- */
-Ply getPly();

@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param mID
- * 		the patients MID
- */
-public void setPrescriberMID(long mID) {
-    prescriberMID = mID;
-}

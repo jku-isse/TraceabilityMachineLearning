@@ -1,5 +1,0 @@
-public void testInvalidFirstFound() {
-    AllergyBean allergy = new AllergyBean();
-    allergy.setFirstFound(null);
-    assertEquals("", allergy.getFirstFoundStr());
-}

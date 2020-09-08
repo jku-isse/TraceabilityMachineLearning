@@ -1,7 +1,0 @@
-public void setExpand(final boolean expand) {
-    myCommands.add(new Runnable() {
-        public void run() {
-            TaskImpl.this.setExpand(expand);
-        }
-    });
-}

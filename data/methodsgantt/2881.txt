@@ -1,2 +1,0 @@
-// ChartViewState getGanttChartViewState();
-ZoomManager getZoomManager();

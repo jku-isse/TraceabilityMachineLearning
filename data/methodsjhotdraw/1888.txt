@@ -1,4 +1,0 @@
-/**
- * Gets the active handle.
- */
-public Handle getActiveHandle();

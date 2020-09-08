@@ -1,9 +1,0 @@
-public void testGetImmunizationCodes() throws Exception {
-    action = new EditImmunizationsAction(factory, 9000000000L, "2", "955");
-    List<ProcedureBean> list = action.getImmunizationCodes();
-    assertEquals(15, list.size());
-    // It can also be retrieved for an undefined office visit
-    action = new EditImmunizationsAction(factory, 9000000000L, "1");
-    list = action.getImmunizationCodes();
-    assertEquals(15, list.size());
-}

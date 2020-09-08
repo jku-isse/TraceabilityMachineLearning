@@ -1,7 +1,0 @@
-public URI getURI() {
-    try {
-        return new URI(url);
-    } catch (URISyntaxException e) {
-        return null;
-    }
-}

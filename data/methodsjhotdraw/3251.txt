@@ -1,4 +1,0 @@
-public South(DrawingEditor editor) {
-    super(editor, 0, 1);
-    labels.configureAction(this, MoveAction.South.ID);
-}

@@ -1,5 +1,0 @@
-public void testGetReportsCheckListRequester() throws Exception {
-    List<ReportRequestBean> list = dao.getAllReportRequestsForRequester(9000000000L);
-    assertEquals(6, list.size());
-    assertEquals(ReportRequestBean.Requested, list.get(0).getStatus());
-}

@@ -1,9 +1,0 @@
-public int getItemCount() {
-    if ((myItemCount) == (-1)) {
-        myItemCount = 0;
-        for (TimeFrameImpl.LineItem item = myFirstItem; item != null; item = item.myNextItem) {
-            (myItemCount)++;
-        }
-    }
-    return myItemCount;
-}

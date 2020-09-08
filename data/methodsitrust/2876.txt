@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param factory
- * 		
- */
-public DiagnosesDAO(DAOFactory factory) {
-    this.factory = factory;
-}

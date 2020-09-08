@@ -1,7 +1,0 @@
-@Override
-protected void setUp() throws Exception {
-    HttpUnitOptions.clearScriptErrorMessages();
-    HttpUnitOptions.setScriptingEnabled(true);
-    HttpUnitOptions.setExceptionsThrownOnScriptError(false);
-    gen.clearAllTables();
-}

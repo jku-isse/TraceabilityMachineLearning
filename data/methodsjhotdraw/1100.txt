@@ -1,9 +1,0 @@
-/**
- * Constructs an arrow tip with the specified parameters.
- */
-public ArrowTip(double angle, double outerRadius, double innerRadius, boolean isFilled, boolean isStroked, boolean isSolid) {
-    super(isFilled, isStroked, isSolid);
-    this.angle = angle;
-    this.outerRadius = outerRadius;
-    this.innerRadius = innerRadius;
-}

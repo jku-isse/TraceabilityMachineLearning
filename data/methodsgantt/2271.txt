@@ -1,6 +1,0 @@
-public OutputStream getOutputStream() throws IOException {
-    if (null == (getWebdavResource()))
-        throw new IOException(lastError);
-
-    return new HttpDocumentOutputStream(getWebdavResource());
-}

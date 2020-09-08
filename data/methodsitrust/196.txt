@@ -1,5 +1,0 @@
-public ApptAction(DAOFactory factory, long loggedInMID) {
-    this.apptDAO = factory.getApptDAO();
-    this.patientDAO = factory.getPatientDAO();
-    this.personnelDAO = factory.getPersonnelDAO();
-}

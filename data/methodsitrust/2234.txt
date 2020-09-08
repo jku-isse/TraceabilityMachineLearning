@@ -1,3 +1,0 @@
-private boolean equals(WardBean other) {
-    return ((wardID) == (other.wardID)) && (requiredSpecialty.equals(other.requiredSpecialty));
-}

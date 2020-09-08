@@ -1,7 +1,0 @@
-@Override
-public void redo() throws CannotRedoException {
-    super.redo();
-    for (Figure f : editedFigures) {
-        attributeKey.set(f, editRedoValue);
-    }
-}

@@ -1,6 +1,0 @@
-/**
- * Gets the connectors owner.
- */
-public Figure getOwner() {
-    return owner;
-}

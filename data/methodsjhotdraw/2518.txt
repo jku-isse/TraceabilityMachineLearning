@@ -1,6 +1,0 @@
-/**
- * Non-transforming South.
- */
-public static Locator south() {
-    return RelativeLocator.south(false);
-}

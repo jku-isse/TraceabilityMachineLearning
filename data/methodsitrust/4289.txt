@@ -1,5 +1,0 @@
-public void testFilterByInsuranceZipNoResult() throws Exception {
-    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.INSURE_ZIP, "Dalpe", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertTrue(res.isEmpty());
-}

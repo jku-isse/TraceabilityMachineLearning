@@ -1,7 +1,0 @@
-public void restoreTransformTo(Object geometry) {
-    RoundRectangle2D.Double r = ((RoundRectangle2D.Double) (geometry));
-    roundrect.x = r.x;
-    roundrect.y = r.y;
-    roundrect.width = r.width;
-    roundrect.height = r.height;
-}

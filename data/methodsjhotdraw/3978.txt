@@ -1,7 +1,0 @@
-/**
- * Returns the pane on the sheet. This is either a JFileChooser or a
- * JOptionPane.
- */
-public JComponent getPane() {
-    return pane;
-}

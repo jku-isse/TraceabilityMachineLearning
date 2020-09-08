@@ -1,5 +1,0 @@
-public DocumentCreator(IGanttProject project, UIFacade uiFacade, ParserFactory parserFactory) {
-    myProject = project;
-    myUIFacade = uiFacade;
-    setParserFactory(parserFactory);
-}

@@ -1,2 +1,0 @@
-protected void drawStroke(Graphics2D g) {
-}

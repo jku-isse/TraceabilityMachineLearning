@@ -1,4 +1,0 @@
-@Override
-public void paintFocus(Graphics g) {
-    // empty
-}

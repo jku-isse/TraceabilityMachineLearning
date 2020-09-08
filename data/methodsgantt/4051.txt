@@ -1,3 +1,0 @@
-public ShapePaint getPattern() {
-    return preview.getPattern();
-}

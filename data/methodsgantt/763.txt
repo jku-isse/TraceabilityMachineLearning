@@ -1,8 +1,0 @@
-public void setVisible(boolean b) {
-    if (b) {
-        getContentPane().add(mySplashComponent, BorderLayout.CENTER);
-        pack();
-        DialogAligner.center(this);
-    }
-    super.setVisible(b);
-}

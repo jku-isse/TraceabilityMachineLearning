@@ -1,3 +1,0 @@
-public StartFinishConstraintImpl() {
-    super(GanttTaskRelationship.SF, GanttLanguage.getInstance().getText("startfinish"));
-}

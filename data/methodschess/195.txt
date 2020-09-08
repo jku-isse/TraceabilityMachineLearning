@@ -1,9 +1,0 @@
-/**
- * Set the the stop flag for the search.
- *
- * @param stopFlag
- * 		The flag to stop the search engine.
- */
-public final void setSearchStop(boolean stopFlag) {
-    _stopSearch = stopFlag;
-}

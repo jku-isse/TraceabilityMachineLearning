@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the options of ganttproject.
- */
-public GanttOptions getOptions() {
-    return options;
-}

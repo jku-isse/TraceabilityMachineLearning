@@ -1,7 +1,0 @@
-/**
- * Creates an instance of <code>Dimension2DDouble</code> with a width
- * of zero and a height of zero.
- */
-public Dimension2DDouble() {
-    this(0, 0);
-}

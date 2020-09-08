@@ -1,5 +1,0 @@
-public void openProject(final Document document, final IGanttProject project) throws IOException {
-    beforeClose();
-    project.close();
-    project.open(document);
-}

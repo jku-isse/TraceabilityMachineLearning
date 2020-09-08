@@ -1,7 +1,0 @@
-/**
- * Check if a piece on a given initial position
- * has been moved.
- */
-public final boolean hasBeenMoved(Position position) {
-    return ((_movedPieces) & (1L << (position.getSquareIndex()))) != 0L;
-}

@@ -1,7 +1,0 @@
-public void testAllCorrect() throws Exception {
-    ProcedureBean d = new ProcedureBean();
-    d.setDescription("A description");
-    d.setCPTCode("52563");
-    d.setOvProcedureID(0L);
-    validator.validate(d);
-}

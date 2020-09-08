@@ -1,3 +1,0 @@
-NorthWestHandle(Figure owner) {
-    super(owner, RelativeLocator.northWest(true));
-}

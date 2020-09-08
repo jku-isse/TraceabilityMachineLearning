@@ -1,6 +1,0 @@
-/**
- * Removes a listener for this handle.
- */
-public void removeHandleListener(HandleListener l) {
-    listenerList.remove(HandleListener.class, l);
-}

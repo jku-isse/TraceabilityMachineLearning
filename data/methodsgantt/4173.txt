@@ -1,9 +1,0 @@
-public ProjectResource getCoordinator() {
-    for (Iterator assignments = myAssignments.values().iterator(); assignments.hasNext();) {
-        ResourceAssignment next = ((ResourceAssignment) (assignments.next()));
-        if (next.isCoordinator()) {
-            return next.getResource();
-        }
-    }
-    return null;
-}

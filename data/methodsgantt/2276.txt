@@ -1,7 +1,0 @@
-public String getUsername() {
-    try {
-        return httpURL.getUser();
-    } catch (URIException e) {
-        return null;
-    }
-}

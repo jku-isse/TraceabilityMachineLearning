@@ -1,7 +1,0 @@
-public GanttLookAndFeelInfo getDefaultInfo() {
-    GanttLookAndFeelInfo info = getInfoByClass(UIManager.getSystemLookAndFeelClassName());
-    if (null == info)
-        info = getInfoByClass(UIManager.getCrossPlatformLookAndFeelClassName());
-
-    return info;
-}

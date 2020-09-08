@@ -1,8 +1,0 @@
-/**
- * Return the current DateFormat.
- *
- * @return The current DateFormat.
- */
-public DateFormat getDateFormat() {
-    return currentDateFormat;
-}

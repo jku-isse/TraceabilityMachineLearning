@@ -1,2 +1,0 @@
-public void toolStarted(ToolEvent event) {
-}

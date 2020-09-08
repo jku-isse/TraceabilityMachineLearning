@@ -1,5 +1,0 @@
-protected void addAttribute(String name, String value, AttributesImpl attrs) {
-    if (value != null) {
-        attrs.addAttribute("", name, name, "CDATA", value);
-    }
-}

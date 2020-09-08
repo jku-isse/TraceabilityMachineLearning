@@ -1,8 +1,0 @@
-/**
- * Creates a new instance.
- */
-public SplitAction(DrawingEditor editor) {
-    super(editor, new ODGPathFigure());
-    labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels", Locale.getDefault());
-    labels.configureAction(this, SplitAction.ID);
-}

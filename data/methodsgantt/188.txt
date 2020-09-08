@@ -1,4 +1,0 @@
-public GanttExportSettings() {
-    name = percent = depend = ok = true;
-    onlySelectedItems = false;
-}

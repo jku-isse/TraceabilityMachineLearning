@@ -1,7 +1,0 @@
-TimeFrameImpl.LineItem getLineItem(int position) {
-    TimeFrameImpl.LineItem result = myFirstItem;
-    for (; (result != null) && ((position--) > 0); result = result.myNextItem) {
-        // position--;
-    }
-    return result;
-}

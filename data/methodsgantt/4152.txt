@@ -1,1 +1,0 @@
-void setRoleForAssignment(Role role);

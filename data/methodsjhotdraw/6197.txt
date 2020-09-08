@@ -1,6 +1,0 @@
-/**
- * Gets the output format.
- */
-public ColorFormatter.Format getOutputFormat() {
-    return outputFormat;
-}

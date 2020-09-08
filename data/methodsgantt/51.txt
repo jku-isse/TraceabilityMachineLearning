@@ -1,3 +1,0 @@
-public void setTaskManager(TaskManager taskManager) {
-    throw new UnsupportedOperationException();
-}

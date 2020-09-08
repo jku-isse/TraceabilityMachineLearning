@@ -1,4 +1,0 @@
-/**
- * Tests if a point is contained in the handle.
- */
-public boolean contains(Point p);

@@ -1,8 +1,0 @@
-// Constructors
-/**
- * Create a new game notation instance.
- */
-public GameNotationImpl() {
-    _plies = new ArrayList();
-    _notation = new StringBuffer();
-}

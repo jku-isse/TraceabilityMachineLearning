@@ -1,7 +1,0 @@
-protected void drawStroke(Graphics2D g) {
-    if (((getArcHeight()) == 0.0) && ((getArcWidth()) == 0.0)) {
-        g.draw(roundrect.getBounds2D());
-    } else {
-        g.draw(roundrect);
-    }
-}

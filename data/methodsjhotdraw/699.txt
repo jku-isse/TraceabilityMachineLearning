@@ -1,6 +1,0 @@
-public void setSelectedIndex(int newValue) {
-    int oldValue = selectedIndex;
-    selectedIndex = newValue;
-    firePropertyChange(JHarmonicColorWheel.SELECTED_INDEX_PROPERTY, oldValue, newValue);
-    repaint();
-}

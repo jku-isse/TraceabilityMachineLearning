@@ -1,5 +1,0 @@
-public void changeWorkingDirectory(String newWorkDir) {
-    if (null != newWorkDir)
-        options.setWorkingDirectory(newWorkDir);
-
-}

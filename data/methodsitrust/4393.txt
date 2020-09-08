@@ -1,6 +1,0 @@
-/**
- *
- *
- * @return A boolean indicating whether the patient is at increased risk.
- */
-public abstract boolean qualifiesForDisease();

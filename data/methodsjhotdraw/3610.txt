@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public QuadTree() {
-    root = new QuadNode(new Rectangle2D.Double(0, 0, 800, 600));
-}

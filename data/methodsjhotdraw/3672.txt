@@ -1,8 +1,0 @@
-/**
- * This method is called, if the figures of the attribute field have
- * multiple values.
- *
- * @param newValue
- * 		
- */
-public void setMultipleValues(boolean newValue);

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys HospitalsDAO
- */
-public HospitalsDAO getHospitalsDAO() {
-    return new HospitalsDAO(this);
-}

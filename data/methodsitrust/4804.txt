@@ -1,6 +1,0 @@
-public void testCorrectFormat() throws Exception {
-    qa.setAnswer("12345678");
-    qa.setConfirmAnswer("12345678");
-    qa.setQuestion("12345678");
-    qav.validate(qa);
-}

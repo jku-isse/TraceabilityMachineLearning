@@ -1,3 +1,0 @@
-public ScrollingManager getScrollingManager() {
-    return myUIFacade.getScrollingManager();
-}

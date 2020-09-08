@@ -1,1 +1,0 @@
-public Figure createTextArea(double x, double y, double w, double h, StyledDocument doc, Map<AttributeKey, Object> attributes);

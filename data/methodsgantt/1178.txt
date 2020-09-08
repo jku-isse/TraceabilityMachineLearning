@@ -1,6 +1,0 @@
-/**
- * {@inheritDoc }
- */
-public int getColumnCount() {
-    return columns.size();
-}

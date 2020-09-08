@@ -1,6 +1,0 @@
-/**
- * Return the number of the day on the week
- */
-public int getDayWeek() {
-    return this.get(Calendar.DAY_OF_WEEK);
-}

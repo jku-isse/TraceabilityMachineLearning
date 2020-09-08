@@ -1,5 +1,0 @@
-public void setEnabled(boolean newValue) {
-    super.setEnabled(newValue);
-    editor.setEnabled(newValue);
-    scrollPane.setEnabled(newValue);
-}

@@ -1,3 +1,0 @@
-public void setPatientID(String patientID) {
-    this.patientID = patientID;
-}

@@ -1,7 +1,0 @@
-public final void pgnGame(GameNotation notationBuffer) throws RecognitionException, TokenStreamException {
-    setNotation(notationBuffer);
-    setGameLoader(new GameLoader());
-    whiteSpaces();
-    tagPairSection();
-    moveTextSection();
-}

@@ -1,4 +1,0 @@
-public Object[] allKeys() {
-    loadIfNecessary();
-    return super.allKeys();
-}

@@ -1,4 +1,0 @@
-/**
- * Sent when a figure was removed from a drawing.
- */
-public void figureRemoved(FigureEvent e);

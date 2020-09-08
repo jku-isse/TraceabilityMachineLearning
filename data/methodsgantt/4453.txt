@@ -1,3 +1,0 @@
-public TaskLength createLength(TimeUnit unit, float length) {
-    return new TaskLengthImpl(unit, length);
-}

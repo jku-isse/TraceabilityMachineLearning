@@ -1,4 +1,0 @@
-public ODGBezierFigure(boolean isClosed) {
-    super(isClosed);
-    AttributeKeys.FILL_OPEN_PATH.basicSet(this, true);
-}

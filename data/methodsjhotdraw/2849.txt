@@ -1,5 +1,0 @@
-/**
- * Deactivates the tool. This method is called whenever the user
- * switches to another tool.
- */
-public void deactivate(DrawingEditor editor);

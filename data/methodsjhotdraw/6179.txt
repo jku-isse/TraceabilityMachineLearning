@@ -1,8 +1,0 @@
-private boolean isWordChar(int index) {
-    try {
-        char ch = document.getText(index, 1).charAt(0);
-        return Character.isLetterOrDigit(ch);
-    } catch (BadLocationException e) {
-        return false;
-    }
-}

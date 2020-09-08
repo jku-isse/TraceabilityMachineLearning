@@ -1,3 +1,0 @@
-public DateFormat getLongDateFormat() {
-    return myLongFormat;
-}

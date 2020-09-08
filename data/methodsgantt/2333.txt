@@ -1,9 +1,0 @@
-void enter() throws IOException {
-    String message = GanttLanguage.getInstance().getText("msg13");
-    String title = GanttLanguage.getInstance().getText("warning");
-    if ((UIFacade.Choice.YES) == (getUIFacade().showConfirmationDialog(message, title))) {
-        myParsingState.enter();
-    } else {
-        myExitState.enter();
-    }
-}

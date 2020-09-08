@@ -1,5 +1,0 @@
-/**
- * Gets the baseline of the first line of text, relative to the
- * upper left corner of the figure bounds.
- */
-public double getBaseline();

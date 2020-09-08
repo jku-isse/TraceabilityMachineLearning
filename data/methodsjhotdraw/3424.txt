@@ -1,3 +1,0 @@
-public void moveTo(double x, double y) {
-    moveBy((x - (this.x[0])), (y - (this.y[0])));
-}

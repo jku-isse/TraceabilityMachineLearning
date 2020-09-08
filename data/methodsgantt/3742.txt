@@ -1,6 +1,0 @@
-public Chart[] getCharts() {
-    if ((myCharts) == null) {
-        myCharts = ((Chart[]) (getExtensions(PluginManager.EXTENSION_POINT_ID_CHART, Chart.class)));
-    }
-    return myCharts;
-}

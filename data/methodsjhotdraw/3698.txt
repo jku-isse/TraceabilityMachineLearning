@@ -1,5 +1,0 @@
-public void setMultipleValues(boolean newValue) {
-    boolean oldValue = isMultipleValues;
-    isMultipleValues = newValue;
-    firePropertyChange(AttributeEditor.MULTIPLE_VALUES_PROPERTY, oldValue, newValue);
-}

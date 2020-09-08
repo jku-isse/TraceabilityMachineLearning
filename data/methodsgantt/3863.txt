@@ -1,9 +1,0 @@
-private void processDaysOff(ProjectResource resource) {
-    HumanResource hr = ((HumanResource) (resource));
-    DefaultListModel daysOff = hr.getDaysOff();
-    if (daysOff != null) {
-        for (int l = 0; l < (daysOff.size()); l++) {
-            processDayOff(((GanttDaysOff) (daysOff.get(l))));
-        }
-    }
-}

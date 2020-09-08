@@ -1,7 +1,0 @@
-public List<HealthRecord> loadList(ResultSet rs) throws SQLException {
-    ArrayList<HealthRecord> list = new ArrayList<HealthRecord>();
-    while (rs.next()) {
-        list.add(loadSingle(rs));
-    } 
-    return list;
-}

@@ -1,9 +1,0 @@
-public final boolean contains(Point2D.Double p) {
-    if ((decorator) != null) {
-        updateDecoratorBounds();
-        if (decorator.contains(p)) {
-            return true;
-        }
-    }
-    return figureContains(p);
-}

@@ -1,6 +1,0 @@
-public void testSingleEthnicity() throws Exception {
-    factor = new EthnicityFactor(p, Ethnicity.Caucasian);
-    assertFalse(factor.hasRiskFactor());
-    factor = new EthnicityFactor(p, Ethnicity.Asian);
-    assertTrue(factor.hasRiskFactor());
-}

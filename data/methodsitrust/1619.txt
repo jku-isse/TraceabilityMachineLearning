@@ -1,4 +1,0 @@
-public void setVisitSat(int sat) {
-    visitSat += sat;
-    (surveyCount)++;
-}

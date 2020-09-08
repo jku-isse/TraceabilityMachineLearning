@@ -1,9 +1,0 @@
-public int setPreviousStateTasks(ArrayList tasks) {
-    if (tasks == null)
-        isPreviousState = false;
-    else
-        isPreviousState = true;
-
-    myTaskRendererImpl.setPreviousStateTasks(tasks);
-    return setRowHeight();
-}

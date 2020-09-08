@@ -1,7 +1,0 @@
-// Methods
-/**
- * Get the type of this piece.
- *
- * @return The type of the piece.
- */
-public byte getType();

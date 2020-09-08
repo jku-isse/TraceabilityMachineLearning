@@ -1,6 +1,0 @@
-public String getTrueTaskNamePrefix() {
-    if ((((sTaskNamePrefix) == null) || (sTaskNamePrefix.equals(""))) || (sTaskNamePrefix.equals(language.getText("newTask"))))
-        return null;
-
-    return sTaskNamePrefix;
-}

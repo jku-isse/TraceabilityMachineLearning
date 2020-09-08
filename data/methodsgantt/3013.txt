@@ -1,8 +1,0 @@
-public GeneralOptionPanel(String title, String comment, Frame parent) {
-    super();
-    appli = parent;
-    setLayout(new BorderLayout());
-    add(vb, BorderLayout.CENTER);
-    myTitle = title;
-    myComment = comment;
-}

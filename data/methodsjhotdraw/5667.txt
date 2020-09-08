@@ -1,4 +1,0 @@
-/**
- * Returns the drawing of the DrawingComponent.
- */
-public Drawing getDrawing();

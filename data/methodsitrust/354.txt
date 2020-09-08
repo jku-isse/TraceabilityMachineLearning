@@ -1,3 +1,0 @@
-public EditPatientInstructionsAction patientInstructions() throws iTrustException {
-    return patientInstructionsAction;
-}

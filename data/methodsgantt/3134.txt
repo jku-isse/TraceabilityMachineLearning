@@ -1,3 +1,0 @@
-public DefaultColorOption(String id) {
-    super(id);
-}

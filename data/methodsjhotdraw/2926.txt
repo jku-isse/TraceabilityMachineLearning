@@ -1,5 +1,0 @@
-public void trackStep(Point anchor, Point lead, int modifiersEx) {
-    Point2D.Double p = view.viewToDrawing(new Point(((lead.x) + (dx)), ((lead.y) + (dy))));
-    view.getConstrainer().constrainPoint(p);
-    trackStepNormalized(p);
-}

@@ -1,9 +1,0 @@
-/**
- * Returns a collection with all the stored custom columns.
- *
- * @return A collection with all the stored custom columns.
- */
-public Collection getCustomColums() {
-    // return customColumns.values();
-    return mapIdCustomColum.values();
-}

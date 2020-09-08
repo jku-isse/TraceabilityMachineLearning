@@ -1,7 +1,0 @@
-public Object clone() {
-    GanttTreeTable.DisplayedColumn dc = new GanttTreeTable.DisplayedColumn(this.id);
-    dc.setDisplayed(this.isDisplayed());
-    dc.setOrder(this.getOrder());
-    dc.setWidth(this.getWidth());
-    return dc;
-}

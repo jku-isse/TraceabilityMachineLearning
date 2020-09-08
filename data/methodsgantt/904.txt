@@ -1,8 +1,0 @@
-/**
- * Delete a node.
- */
-public void treeNodesRemoved(TreeModelEvent e) {
-    if ((area) != null) {
-        area.repaint();
-    }
-}

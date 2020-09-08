@@ -1,3 +1,0 @@
-public void testGetPersonnelName() throws iTrustException {
-    assertEquals("Kelly Doctor", this.smAction.getPersonnelName(this.hcpId));
-}

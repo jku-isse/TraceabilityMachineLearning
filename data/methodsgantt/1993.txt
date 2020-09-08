@@ -1,6 +1,0 @@
-/**
- * Returns the Y coordinate of the upper-left pixel of tile (0, 0).
- */
-public int getTileGridYOffset() {
-    return tileGridYOffset;
-}

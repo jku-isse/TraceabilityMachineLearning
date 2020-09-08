@@ -1,3 +1,0 @@
-public int getIndexOfChild(Object parent, Object child) {
-    return ((TreeNode) (parent)).getIndex(((TreeNode) (child)));
-}

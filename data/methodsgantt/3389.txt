@@ -1,3 +1,0 @@
-protected boolean canFinish() {
-    return ((myState.myImporter) != null) && ((myState.getFile()) != null);
-}

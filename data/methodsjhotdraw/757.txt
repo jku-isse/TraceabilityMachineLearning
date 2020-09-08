@@ -1,3 +1,0 @@
-protected void drawFigure(Graphics2D g) {
-    super.draw(g);
-}

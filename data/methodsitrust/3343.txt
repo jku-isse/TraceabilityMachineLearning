@@ -1,9 +1,0 @@
-public void testGetPatientQuery() {
-    try {
-        ReferralDAO.ReferralListQuery q = dao.getPatientQuery(1L);
-        q.query("receiverName", SortDirection.ASCENDING);
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

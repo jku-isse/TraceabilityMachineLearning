@@ -1,3 +1,0 @@
-public void setGenderStr(String gender) {
-    this.gender = Gender.parse(gender);
-}

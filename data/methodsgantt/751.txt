@@ -1,3 +1,0 @@
-public void setDividerLocation(int location) {
-    mySplitPane.setDividerLocation(location);
-}

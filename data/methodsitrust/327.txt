@@ -1,9 +1,0 @@
-public void testGetLabProcedureCodes() throws Exception {
-    action = new EditLabProceduresAction(factory, 9000000000L, "2", "955");
-    List<LOINCbean> list = action.getLabProcedureCodes();
-    assertEquals(4, list.size());
-    // It can also be retrieved for an undefined office visit
-    action = new EditLabProceduresAction(factory, 9000000000L, "1");
-    list = action.getLabProcedureCodes();
-    assertEquals(4, list.size());
-}

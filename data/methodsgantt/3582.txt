@@ -1,3 +1,0 @@
-public GanttLanguage getLanguage() {
-    return ((GanttLanguage) (getSource()));
-}

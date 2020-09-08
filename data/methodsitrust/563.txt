@@ -1,7 +1,0 @@
-public void testFilterHospitals() {
-    // Test with hospital with no lat/lng
-    HospitalBean blankHospital = new HospitalBean();
-    List<HospitalBean> hospitals = new ArrayList<HospitalBean>();
-    hospitals.add(blankHospital);
-    assertTrue(((fea.filterHospitals(hospitals, 1L).size()) == 0));
-}

@@ -1,3 +1,0 @@
-public void setProjectName(String projectName) {
-    myProjectName = projectName;
-}

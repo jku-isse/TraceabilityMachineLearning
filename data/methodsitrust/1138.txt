@@ -1,4 +1,0 @@
-public void testGetAllergies() throws iTrustException {
-    List<AllergyBean> abList = action.getAllergies();
-    assertEquals(2, abList.size());
-}

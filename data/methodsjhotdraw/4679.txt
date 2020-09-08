@@ -1,1 +1,0 @@
-public Paint getPaint(Figure f, double opacity);

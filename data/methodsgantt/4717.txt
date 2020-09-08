@@ -1,3 +1,0 @@
-public TaskDependencySliceAsDependant(Task task, TaskDependencyCollection dependencyCollection) {
-    super(task, dependencyCollection);
-}

@@ -1,6 +1,0 @@
-public static PaletteLookAndFeel getInstance() {
-    if ((PaletteLookAndFeel.instance) == null) {
-        PaletteLookAndFeel.instance = new PaletteLookAndFeel();
-    }
-    return PaletteLookAndFeel.instance;
-}

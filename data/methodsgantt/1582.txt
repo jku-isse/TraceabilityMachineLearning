@@ -1,3 +1,0 @@
-protected int getTextBaselinePosition() {
-    return (getLineBottomPosition()) - 5;
-}

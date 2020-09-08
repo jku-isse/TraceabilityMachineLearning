@@ -1,3 +1,0 @@
-protected void writeEllipseElement(IXMLElement parent, SVGEllipseFigure f) throws IOException {
-    parent.addChild(createEllipse(document, ((f.getX()) + ((f.getWidth()) / 2.0)), ((f.getY()) + ((f.getHeight()) / 2.0)), ((f.getWidth()) / 2.0), ((f.getHeight()) / 2.0), f.getAttributes()));
-}

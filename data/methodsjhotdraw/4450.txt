@@ -1,4 +1,0 @@
-private void ruleChangePerformed(ActionEvent evt) {
-    // GEN-FIRST:event_ruleChangePerformed
-    updateRules();
-}// GEN-LAST:event_ruleChangePerformed

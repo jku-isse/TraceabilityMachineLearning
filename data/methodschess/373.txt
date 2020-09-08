@@ -1,8 +1,0 @@
-/**
- * Check, if a piece on a given positon was moved from its
- * initial position.
- *
- * @param position
- * 		The position to check.
- */
-boolean hasBeenMoved(Position position);

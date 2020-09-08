@@ -1,3 +1,0 @@
-public String getStreetAddress1() {
-    return streetAddress1;
-}

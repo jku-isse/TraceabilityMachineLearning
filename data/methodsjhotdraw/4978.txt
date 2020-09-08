@@ -1,7 +1,0 @@
-private void readCommonDrawingShapeAttributes(IXMLElement elem, HashMap<AttributeKey, Object> a) throws IOException {
-    // The attribute draw:name assigns a name to the drawing shape.
-    ODGAttributeKeys.NAME.set(a, elem.getAttribute("name", ODGConstants.DRAWING_NAMESPACE, null));
-    // The draw:transform attribute specifies a list of transformations that
-    // can be applied to a drawing shape.
-    AttributeKeys.TRANSFORM.set(a, ODGInputFormat.toTransform(elem.getAttribute("transform", ODGConstants.DRAWING_NAMESPACE, null)));
-}

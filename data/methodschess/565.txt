@@ -1,8 +1,0 @@
-/**
- * Get a string representation of this castling.
- *
- * @return A string representation of this ply.
- */
-public final String toString() {
-    return isLeftCastling() ? "O-O-O" : "O-O";
-}

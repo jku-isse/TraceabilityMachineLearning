@@ -1,7 +1,0 @@
-/**
- * Gets the currently active secondary handles.
- */
-private List<Handle> getSecondaryHandles() {
-    validateHandles();
-    return Collections.unmodifiableList(secondaryHandles);
-}

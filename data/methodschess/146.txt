@@ -1,4 +1,0 @@
-/**
- * Reset the engine for a new game.
- */
-void reset();

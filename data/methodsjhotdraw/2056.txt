@@ -1,3 +1,0 @@
-protected GeneralPath getDecoratorPath(Figure f) {
-    return ((GeneralPath) (path.clone()));
-}

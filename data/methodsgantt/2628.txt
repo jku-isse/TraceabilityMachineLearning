@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the timer.
- */
-public int getTimer() {
-    return timer;
-}

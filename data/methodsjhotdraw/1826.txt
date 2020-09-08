@@ -1,5 +1,0 @@
-/**
- * Finds a top level Figure. Use this call for hit detection that
- * should not descend into the figures children.
- */
-Figure findFigureExcept(Point2D.Double p, Figure ignore);

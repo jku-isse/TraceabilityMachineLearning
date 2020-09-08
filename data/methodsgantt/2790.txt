@@ -1,1 +1,0 @@
-void setLinkTasksAction(Action action);

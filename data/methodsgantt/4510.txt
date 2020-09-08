@@ -1,8 +1,0 @@
-public Task[] getTasks() {
-    if (isModified) {
-        myArray = ((Task[]) (myId2task.values().toArray(new Task[myId2task.size()])));
-        Arrays.sort(myArray, myComparator);
-        isModified = false;
-    }
-    return myArray;
-}

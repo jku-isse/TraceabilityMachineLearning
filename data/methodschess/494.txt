@@ -1,3 +1,0 @@
-public PGNParser(TokenBuffer tokenBuf) {
-    this(tokenBuf, 2);
-}

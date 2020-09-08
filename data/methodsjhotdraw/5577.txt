@@ -1,9 +1,0 @@
-/**
- * This should be an abstract method, but the NetBeans GUI builder
- * doesnt support abstract beans.
- *
- * @return The ID used to retrieve labels and store user preferences.
- */
-protected String getID() {
-    return "";
-}

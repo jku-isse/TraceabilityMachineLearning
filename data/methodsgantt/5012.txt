@@ -1,7 +1,0 @@
-public boolean equals(Object o) {
-    TextLengthCalculatorImpl.State rvalue = ((TextLengthCalculatorImpl.State) (o));
-    if (rvalue == null) {
-        return false;
-    }
-    return (rvalue.context.equals(this.context)) && (rvalue.font.equals(this.font));
-}

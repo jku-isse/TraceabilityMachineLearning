@@ -1,7 +1,0 @@
-private void addEmpty(String code) throws Exception {
-    OverrideReasonBean orc = new OverrideReasonBean(code, "0");
-    String result = action.addORCode(orc);
-    assert result.contains("Success");
-    orc = factory.getORCodesDAO().getORCode(code);
-    assertEquals("0", orc.getDescription());
-}

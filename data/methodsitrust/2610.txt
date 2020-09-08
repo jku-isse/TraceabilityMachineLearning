@@ -1,7 +1,0 @@
-public void testUpdateBadTimeout() throws Exception {
-    deleteTimeout();
-    assertEquals(20, accessDAO.getSessionTimeoutMins());
-    deleteTimeout();
-    accessDAO.setSessionTimeoutMins(5);
-    assertEquals(5, accessDAO.getSessionTimeoutMins());
-}

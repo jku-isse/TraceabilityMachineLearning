@@ -1,3 +1,0 @@
-public double[] getStopOpacities() {
-    return stopOpacities.clone();
-}

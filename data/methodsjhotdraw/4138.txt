@@ -1,5 +1,0 @@
-public void treeNodesChanged(TreeModelEvent e) {
-    updateCollectionList();
-    updateFamilyList();
-    updateFaceList();
-}

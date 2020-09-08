@@ -1,7 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    try {
-        myMainFrame.openFile();
-    } catch (Exception ex) {
-        myMainFrame.getUIFacade().showErrorDialog(ex);
-    }
-}

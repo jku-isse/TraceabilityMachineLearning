@@ -1,3 +1,0 @@
-public PrescriptionOverrideDAO(DAOFactory factory) {
-    this.factory = factory;
-}

@@ -1,8 +1,0 @@
-public List<String> getQueries(String fileName) throws FileNotFoundException, IOException {
-    List<String> queries = cache.get(fileName);
-    if (queries != null)
-        return queries;
-    else
-        return parseAndCache(fileName);
-
-}

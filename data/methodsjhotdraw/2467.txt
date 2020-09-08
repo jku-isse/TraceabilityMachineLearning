@@ -1,3 +1,0 @@
-public List<Figure> getChildren(Rectangle2D.Double bounds) {
-    return new LinkedList<Figure>(quadTree.findInside(bounds));
-}

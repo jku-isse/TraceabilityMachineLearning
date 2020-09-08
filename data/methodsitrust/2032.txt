@@ -1,5 +1,0 @@
-public ProcedureBean(String code, String description, String attribute) {
-    CPTCode = code;
-    this.description = description;
-    this.attribute = attribute;
-}

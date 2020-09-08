@@ -1,3 +1,0 @@
-private GanttLanguage() {
-    setLocale(Locale.getDefault());
-}

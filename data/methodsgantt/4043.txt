@@ -1,5 +1,0 @@
-public PreviewPanel() {
-    setOpaque(true);
-    setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("Preview"), BorderFactory.createEmptyBorder(0, 4, 8, 4)));
-    setPreferredSize(new Dimension(70, 70));
-}

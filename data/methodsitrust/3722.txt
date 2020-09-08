@@ -1,6 +1,0 @@
-/**
- * The default constructor, which just passes a pre-specified message to an iTrustException.
- */
-public NoHealthRecordsException() {
-    super(NoHealthRecordsException.MESSAGE);
-}

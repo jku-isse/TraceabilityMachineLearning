@@ -1,4 +1,0 @@
-RoleSetListModel(RoleSet[] roleSets, I18N i18n) {
-    myRoleSets = roleSets;
-    myI18n = i18n;
-}

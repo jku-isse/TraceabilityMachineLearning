@@ -1,7 +1,0 @@
-public EditorColorChooserAction(DrawingEditor editor, final AttributeKey<Color> key, String name, Icon icon, Map<AttributeKey, Object> fixedAttributes) {
-    super(editor, fixedAttributes, name, icon);
-    this.key = key;
-    putValue(AbstractAction.NAME, name);
-    putValue(AbstractAction.SMALL_ICON, icon);
-    setEnabled(true);
-}

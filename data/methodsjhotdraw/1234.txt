@@ -1,9 +1,0 @@
-@Override
-public void redo() throws CannotRedoException {
-    super.redo();
-    owner.willChange();
-    owner.setNode(index, newValue);
-    owner.changed();
-    if ((oldValue.mask) != (newValue.mask)) {
-    }
-}

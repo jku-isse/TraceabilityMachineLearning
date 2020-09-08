@@ -1,3 +1,0 @@
-public void configureButton(AbstractButton button, String argument) {
-    configureButton(button, argument, getBaseClass());
-}

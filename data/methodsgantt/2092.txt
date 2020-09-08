@@ -1,3 +1,0 @@
-protected EastPointVector(Point point) {
-    super(point);
-}

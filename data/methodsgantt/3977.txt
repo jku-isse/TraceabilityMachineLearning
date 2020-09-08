@@ -1,4 +1,0 @@
-/**
- * Clear the role list
- */
-public void clear();

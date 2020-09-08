@@ -1,3 +1,0 @@
-public String getParameters() {
-    return Float.toString(((float) (((angle) / (Math.PI)) * 180)));
-}

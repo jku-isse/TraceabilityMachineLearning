@@ -1,3 +1,0 @@
-public Calendar newCalendar() {
-    return ((Calendar) (Calendar.getInstance(currentLocale).clone()));
-}

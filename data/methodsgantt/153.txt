@@ -1,7 +1,0 @@
-/**
- * Return the actually date
- */
-public static String getDateAndTime() {
-    GanttCalendar c = new GanttCalendar();
-    return ((c.toString()) + " - ") + (GanttLanguage.getInstance().formatTime(c));
-}

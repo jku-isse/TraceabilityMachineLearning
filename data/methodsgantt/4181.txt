@@ -1,5 +1,0 @@
-public ResourceAssignmentImpl(ProjectResource resource) {
-    myAssignmentToResource = resource.createAssignment(this);
-    // resource
-    // .setAssignmentCollection(ResourceAssignmentCollectionImpl.this);
-}

@@ -1,3 +1,0 @@
-public void setColor(Color newValue) {
-    setCompositeColor(new CompositeColor(system, newValue));
-}

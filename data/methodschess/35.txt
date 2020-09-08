@@ -1,6 +1,0 @@
-private void setDefaultFrameCoordinates() {
-    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    Dimension frameSize = packFrame();
-    setFrameSize(screenSize, frameSize);
-    placeFrame(screenSize, frameSize);
-}

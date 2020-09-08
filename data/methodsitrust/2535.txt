@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys DrugInteractionDAO
- */
-public DrugInteractionDAO getDrugInteractionDAO() {
-    return new DrugInteractionDAO(this);
-}

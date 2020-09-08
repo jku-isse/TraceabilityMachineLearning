@@ -1,3 +1,0 @@
-protected String getNotesText() {
-    return getTask().getStart().toString();
-}

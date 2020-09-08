@@ -1,5 +1,0 @@
-void enableMilestoneFriendlyControls(boolean enable) {
-    finishDateField1.setEnabled(enable);
-    myEndDatePicker.setEnabled(enable);
-    durationField1.setEnabled(enable);
-}

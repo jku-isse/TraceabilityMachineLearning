@@ -1,3 +1,0 @@
-public void patient_hcp_vists() throws FileNotFoundException, IOException, SQLException {
-    new DBBuilder(factory).executeSQLFile(((DIR) + "/patient_hcp_visits.sql"));
-}

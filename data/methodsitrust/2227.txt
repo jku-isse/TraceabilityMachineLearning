@@ -1,3 +1,0 @@
-public VisitFlag(String type) {
-    this.type = type;
-}

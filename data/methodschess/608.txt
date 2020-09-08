@@ -1,4 +1,0 @@
-/**
- * Repaint the current board.
- */
-void repaintBoard();

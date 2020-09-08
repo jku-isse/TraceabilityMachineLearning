@@ -1,4 +1,0 @@
-public int getDepth(Task task) {
-    DefaultMutableTreeNode treeNode = ((DefaultMutableTreeNode) (myTask2treeNode.get(task)));
-    return treeNode.getLevel();
-}

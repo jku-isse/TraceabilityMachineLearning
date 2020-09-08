@@ -1,1 +1,0 @@
-boolean load(InputStream inStream) throws IOException;

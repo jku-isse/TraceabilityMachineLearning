@@ -1,8 +1,0 @@
-/**
- * Return a new board, that results from a given ply.
- *
- * @param ply
- * 		The ply to perform.
- * @return A new board with the game position after the ply.
- */
-Board getBoardAfterPly(Ply ply);

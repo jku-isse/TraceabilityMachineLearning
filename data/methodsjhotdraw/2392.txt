@@ -1,6 +1,0 @@
-/**
- * Returns the file extension for the output format.
- * The file extension should be appended to a file name when storing a
- * Drawing with the specified file format.
- */
-public String getFileExtension();

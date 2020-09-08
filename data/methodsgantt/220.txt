@@ -1,6 +1,0 @@
-/**
- * The size of the panel.
- */
-public Dimension getPreferredSize() {
-    return new Dimension(465, 600);
-}

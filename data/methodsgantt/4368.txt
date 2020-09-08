@@ -1,3 +1,0 @@
-GanttCalendar getEnd() {
-    return (myEndChange) == null ? null : ((GanttCalendar) (myEndChange.myFieldValue));
-}

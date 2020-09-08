@@ -1,4 +1,0 @@
-private void setUpCoordinatorBooleanColumn(final JTable resourceTable) {
-    TableColumn resourcesColumn = resourceTable.getColumnModel().getColumn(3);
-    resourcesColumn.setCellRenderer(new TaskAllocationsPanel.BooleanRenderer());
-}

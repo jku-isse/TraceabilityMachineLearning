@@ -1,4 +1,0 @@
-public void setDefaultIcon(Icon iconOn) {
-    setIcon(iconOn);
-    _iconOn = iconOn;
-}

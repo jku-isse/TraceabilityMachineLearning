@@ -1,3 +1,0 @@
-public SelectionColorChooserAction(DrawingEditor editor, final AttributeKey<Color> key, String name, Icon icon) {
-    this(editor, key, name, icon, new HashMap<AttributeKey, Object>());
-}

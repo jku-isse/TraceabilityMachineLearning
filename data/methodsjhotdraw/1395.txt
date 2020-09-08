@@ -1,8 +1,0 @@
-/**
- * Removes the child at the specified index.
- * Returns the removed child figure.
- * <p>
- * Calls {@code figureRemoved} on all registered
- * {@code CompositeFigureListener}s.
- */
-public Figure removeChild(int index);

@@ -1,7 +1,0 @@
-public void testGetAvailableHospitalsBadMID() {
-    try {
-        action.getAvailableHospitals("f");
-        fail();
-    } catch (iTrustException e) {
-    }
-}

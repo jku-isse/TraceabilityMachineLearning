@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the startDate
- */
-public String getStartDate() {
-    return startDate;
-}

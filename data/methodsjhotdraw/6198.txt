@@ -1,6 +1,0 @@
-/**
- * Returns true, if the color formatter is adaptive.
- */
-public boolean isAdaptive() {
-    return isAdaptive;
-}

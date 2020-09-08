@@ -1,9 +1,0 @@
-/**
- * Adds the specified insets to the current insets.
- *
- * @param i
- * 		The insets to be added.
- */
-public void add(Insets2D i) {
-    set(((getTop()) + (i.getTop())), ((getLeft()) + (i.getLeft())), ((getBottom()) + (i.getBottom())), ((getRight()) + (i.getRight())));
-}

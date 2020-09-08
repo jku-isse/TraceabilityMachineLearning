@@ -1,7 +1,0 @@
-public List<DrugInteractionBean> loadList(ResultSet rs) throws SQLException {
-    ArrayList<DrugInteractionBean> list = new ArrayList<DrugInteractionBean>();
-    while (rs.next()) {
-        list.add(loadSingle(rs));
-    } 
-    return list;
-}

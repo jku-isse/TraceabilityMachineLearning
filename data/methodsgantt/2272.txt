@@ -1,7 +1,0 @@
-public String getPassword() {
-    try {
-        return httpURL.getPassword();
-    } catch (URIException e) {
-        return null;
-    }
-}

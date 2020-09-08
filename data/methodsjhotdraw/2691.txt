@@ -1,3 +1,0 @@
-public void updateAnchor(Point2D.Double p) {
-    this.angle = ((float) (Geom.pointToAngle(getOwner().getBounds(), p)));
-}

@@ -1,6 +1,0 @@
-/**
- * Gets the line separator of the println() methods.
- */
-public String getLineSeparator() {
-    return lineSeparator;
-}

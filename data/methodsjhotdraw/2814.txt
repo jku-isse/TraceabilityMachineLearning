@@ -1,4 +1,0 @@
-/**
- * Returns the fill color to be used by a text editor for editing this Figure.
- */
-public Color getFillColor();

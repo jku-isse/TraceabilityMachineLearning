@@ -1,8 +1,0 @@
-public void testAddHospital() throws Exception {
-    String id = "9999999999";
-    String name = "testAddHospital Hospital";
-    HospitalBean hosp = new HospitalBean(id, name);
-    assertEquals(getAddHospitalSuccessString(hosp), action.addHospital(hosp));
-    hosp = factory.getHospitalsDAO().getHospital(id);
-    assertEquals(name, hosp.getHospitalName());
-}

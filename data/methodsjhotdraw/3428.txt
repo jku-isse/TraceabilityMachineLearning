@@ -1,6 +1,0 @@
-public void setTo(BezierPath.Node that) {
-    this.mask = that.mask;
-    this.keepColinear = that.keepColinear;
-    System.arraycopy(that.x, 0, this.x, 0, 3);
-    System.arraycopy(that.y, 0, this.y, 0, 3);
-}

@@ -1,3 +1,0 @@
-private Ethnicity(String name) {
-    this.name = name;
-}

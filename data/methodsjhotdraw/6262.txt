@@ -1,3 +1,0 @@
-public void setLocale(Locale l) {
-    UndoRedoManager.labels = ResourceBundleUtil.getBundle("org.jhotdraw.undo.Labels", l);
-}

@@ -1,5 +1,0 @@
-public void testPhoneWithLetter() throws Exception {
-    String value = "O12-345-6789";
-    String errorMessage = PhoneValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.PHONE_NUMBER, false));
-}

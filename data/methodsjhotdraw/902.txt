@@ -1,8 +1,0 @@
-/**
- * This is called, when the end location of the connection has been
- * moved by the user. The user has this probably done, to adjust the layout.
- * The connector may use this as a hint to improve the results for the next
- * call to findStart.
- */
-public void updateEndLocation(Point2D.Double p) {
-}

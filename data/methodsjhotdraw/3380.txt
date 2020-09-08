@@ -1,4 +1,0 @@
-public boolean contains(Rectangle2D r) {
-    validatePath();
-    return generalPath.contains(r);
-}

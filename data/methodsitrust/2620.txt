@@ -1,8 +1,0 @@
-public void testGetReportsFor() throws Exception {
-    try {
-        evilDAO.getReportsFor(1);
-        fail("Should have thrown DBException");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

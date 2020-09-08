@@ -1,6 +1,0 @@
-// public FacadeImpl(Task root) {
-// myRoot = root;
-// }
-public Task[] getNestedTasks(Task container) {
-    return container.getNestedTasks();
-}

@@ -1,5 +1,0 @@
-public void testGetLoginFailures15MinutesAgo() throws Exception {
-    // for BVA here, make it 10s greater than the timeout time
-    addLoginFailure(5, new Timestamp((((System.currentTimeMillis()) - (AuthDAO.LOGIN_TIMEOUT)) + 10000)));
-    assertEquals(5, authDAO.getLoginFailures(ipAddr));
-}

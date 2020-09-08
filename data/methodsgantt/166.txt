@@ -1,6 +1,0 @@
-/**
- * Change date to previous month.
- */
-public void goPrevMonth() {
-    this.add(Calendar.MONTH, (-1));
-}

@@ -1,3 +1,0 @@
-public Date adjustLeft(Date baseDate) {
-    throw new UnsupportedOperationException((("Time unit=" + (this)) + " doesnt support this operation"));
-}

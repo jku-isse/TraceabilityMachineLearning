@@ -1,6 +1,0 @@
-public void testAdd500WithHCP() throws Exception {
-    String password = authDAO.addUser(500L, Role.HCP, "password");
-    assertEquals(Role.HCP, authDAO.getUserRole(500L));
-    // Ensure that the password returned is the one given to the method
-    assertTrue(password.equals("password"));
-}

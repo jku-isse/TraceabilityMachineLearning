@@ -1,3 +1,0 @@
-protected ChartModelBase getChartModel() {
-    return myChartModel;
-}

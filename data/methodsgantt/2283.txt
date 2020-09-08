@@ -1,3 +1,0 @@
-public void write() throws IOException {
-    // TODO Auto-generated method stub
-}

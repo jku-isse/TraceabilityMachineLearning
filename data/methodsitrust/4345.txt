@@ -1,7 +1,0 @@
-public void testFilterByProcedure() throws Exception {
-    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.PROCEDURE, "1270F", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertEquals(1, res.size());
-    assertTrue(((res.get(0).getMID()) == 2L));// Andy Programmer
-
-}

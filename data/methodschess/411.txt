@@ -1,6 +1,0 @@
-/**
- * Get the number of plies in this notation.
- *
- * @return The number of plies.
- */
-public int size();

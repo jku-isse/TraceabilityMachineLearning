@@ -1,3 +1,0 @@
-public long getMidFirstDigit() {
-    return midFirstDigit;
-}

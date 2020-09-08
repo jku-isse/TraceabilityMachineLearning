@@ -1,4 +1,0 @@
-public void testRepresentPatient() throws Exception {
-    action = new PrescriptionReportAction(factory, 2L, "2");
-    assertEquals(1L, action.representPatient("1"));
-}

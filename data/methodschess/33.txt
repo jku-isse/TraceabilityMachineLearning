@@ -1,3 +1,0 @@
-private void placeFrame(Dimension screenSize, Dimension frameSize) {
-    setLocation((((screenSize.width) - (frameSize.width)) / 2), (((screenSize.height) - (frameSize.height)) / 2));
-}

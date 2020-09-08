@@ -1,5 +1,0 @@
-public DependencyTableModel(Task task) {
-    myDependencies = new ArrayList(Arrays.asList(task.getDependenciesAsDependant().toArray()));
-    myMutator = task.getManager().getDependencyCollection().createMutator();
-    myTask = task;
-}

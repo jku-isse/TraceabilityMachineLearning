@@ -1,4 +1,0 @@
-ProgressMonitorImpl() {
-    // myProgressPanel = new ProgressBarPanel();
-    myProgressDialog = new GanttStatusBar.ProgressBarDialog(this);
-}

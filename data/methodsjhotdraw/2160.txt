@@ -1,1 +1,0 @@
-public void setHandles(Handle handle, Collection<Handle> compatibleHandles);

@@ -1,3 +1,0 @@
-public void componentShown(ComponentEvent e) {
-    prefs.putBoolean(((prefsPrefix) + ".visible"), true);
-}

@@ -1,3 +1,0 @@
-public HSLHarmonicColorWheelImageProducer(int w, int h) {
-    super(new HSLRYBColorSystem(), w, h);
-}

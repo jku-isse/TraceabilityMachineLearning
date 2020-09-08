@@ -1,1 +1,0 @@
-void taskRemoved(TaskHierarchyEvent e);

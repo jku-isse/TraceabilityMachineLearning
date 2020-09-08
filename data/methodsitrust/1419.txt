@@ -1,5 +1,0 @@
-public void testAgeZero() throws Exception {
-    PatientBean baby = new PatientBean();
-    baby.setDateOfBirthStr(new SimpleDateFormat("MM/dd/yyyy").format(today));
-    assertEquals(0, baby.getAge());
-}

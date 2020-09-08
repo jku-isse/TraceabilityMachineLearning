@@ -1,4 +1,0 @@
-public void testGetRepresenting() throws iTrustException {
-    List<PatientBean> pbList = action.getRepresenting();
-    assertEquals(0, pbList.size());
-}

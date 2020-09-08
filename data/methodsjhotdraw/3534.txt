@@ -1,6 +1,0 @@
-/**
- * Constructs and initializes an <code>Insets2D</code> with
- * all insets set to 0.
- */
-public Float() {
-}

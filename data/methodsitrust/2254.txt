@@ -1,3 +1,0 @@
-public void setRoomID(long roomID) {
-    this.roomID = roomID;
-}

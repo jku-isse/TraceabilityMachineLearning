@@ -1,5 +1,0 @@
-// Just to show that this is intentional
-@Override
-public String toString() {
-    return super.toString();
-}

@@ -1,4 +1,0 @@
-public Connector findCompatibleConnector(Connector c, boolean isStartConnector) {
-    return null;// ODG does not support connectors
-
-}

@@ -1,3 +1,0 @@
-public void setText0(String text) {
-    message0.setText(text);
-}

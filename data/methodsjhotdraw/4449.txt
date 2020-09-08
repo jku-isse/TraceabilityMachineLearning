@@ -1,9 +1,0 @@
-private void presetPerformed(ActionEvent evt) {
-    // GEN-FIRST:event_presetPerformed
-    Object obj = presetCombo.getSelectedItem();
-    if (obj instanceof JMixer.Preset) {
-        JMixer.Preset preset = ((JMixer.Preset) (obj));
-        HarmonicColorModel m = harmonicWheel.getHarmonicColorModel();
-        m.set(m.getBase(), preset.getCompositeColor());
-    }
-}// GEN-LAST:event_presetPerformed

@@ -1,3 +1,0 @@
-protected ScrollViewInteraction(MouseEvent e) {
-    super(e);
-}

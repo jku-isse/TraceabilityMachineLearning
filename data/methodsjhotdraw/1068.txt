@@ -1,8 +1,0 @@
-/**
- * Deletes the selection.
- * Depending on the tool, this could be selected figures, selected points
- * or selected text.
- */
-public void editDelete() {
-    getView().getDrawing().removeAll(getView().getSelectedFigures());
-}

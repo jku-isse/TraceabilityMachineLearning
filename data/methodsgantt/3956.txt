@@ -1,5 +1,0 @@
-public void setPhone(String phoneNumber) {
-    if ((resource) instanceof HumanResource)
-        ((HumanResource) (resource)).setPhone(phoneNumber);
-
-}

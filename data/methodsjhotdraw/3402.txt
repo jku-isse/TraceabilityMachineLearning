@@ -1,6 +1,0 @@
-public void quadTo(double x1, double y1, double x2, double y2) {
-    if ((size()) == 0) {
-        throw new IllegalPathStateException("quadTo only allowed when not empty");
-    }
-    add(new BezierPath.Node(BezierPath.C1_MASK, x2, y2, x1, y1, x2, y2));
-}

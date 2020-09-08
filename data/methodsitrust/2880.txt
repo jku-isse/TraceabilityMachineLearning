@@ -1,9 +1,0 @@
-public DiagnosisStatisticsBean getCountForWeekOf(String icdCode, String zipCode, Date lower) throws DBException {
-    Calendar cal = Calendar.getInstance();
-    cal.setTime(lower);
-    cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
-    Date lowerDate = cal.getTime();
-    cal.add(Calendar.HOUR, (24 * 6));
-    Date upperDate = cal.getTime();
-    return getDiagnosisCounts(icdCode, zipCode, lowerDate, upperDate);
-}

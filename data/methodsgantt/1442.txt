@@ -1,9 +1,0 @@
-public void actionPerformed(ActionEvent arg0) {
-    if ((getSelectedResource()) != null) {
-        GanttDialogPerson dp = new GanttDialogPerson(getUIFacade(), GanttLanguage.getInstance(), getSelectedResource());
-        dp.setVisible(true);
-        if (dp.result()) {
-            getProject().setModified(true);
-        }
-    }
-}

@@ -1,4 +1,0 @@
-public BidirectionalConnectionTool(ConnectionFigure prototype, Map<AttributeKey, Object> attributes) {
-    this.prototype = prototype;
-    this.attributes = attributes;
-}

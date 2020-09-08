@@ -1,4 +1,0 @@
-public East(DrawingEditor editor, ResourceBundleUtil labels) {
-    super(editor);
-    labels.configureAction(this, "edit.alignEast");
-}

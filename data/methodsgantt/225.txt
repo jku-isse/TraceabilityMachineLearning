@@ -1,5 +1,0 @@
-public Date getStartDate() {
-    GanttCalendar pstart = new GanttCalendar(getTaskManager().getProjectStart());
-    GanttCalendar st = pstart.Clone();
-    return st.getTime();
-}

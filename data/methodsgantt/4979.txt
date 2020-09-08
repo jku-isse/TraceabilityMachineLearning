@@ -1,3 +1,0 @@
-public boolean canUndo() {
-    return myDocumentBefore.canRead();
-}

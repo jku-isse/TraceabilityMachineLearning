@@ -1,6 +1,0 @@
-/**
- * Returns a clone of the bezier path of this figure.
- */
-public BezierPath getBezierPath() {
-    return ((BezierPath) (path.clone()));
-}

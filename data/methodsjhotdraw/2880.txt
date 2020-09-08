@@ -1,9 +1,0 @@
-/**
- * Adds handles for scaling, moving, rotating and shearing a Figure.
- */
-public static void addGroupTransformHandles(Figure f, Collection<Handle> handles) {
-    handles.add(new BoundsOutlineHandle(f, HandleAttributeKeys.GROUP_BOUNDS_STROKE_1, HandleAttributeKeys.GROUP_BOUNDS_COLOR_1, HandleAttributeKeys.GROUP_BOUNDS_STROKE_2, HandleAttributeKeys.GROUP_BOUNDS_COLOR_2, HandleAttributeKeys.GROUP_BOUNDS_STROKE_1_DISABLED, HandleAttributeKeys.GROUP_BOUNDS_COLOR_1_DISABLED, HandleAttributeKeys.GROUP_BOUNDS_STROKE_2_DISABLED, HandleAttributeKeys.GROUP_BOUNDS_COLOR_2_DISABLED));
-    TransformHandleKit.addCornerTransformHandles(f, handles);
-    TransformHandleKit.addEdgeTransformHandles(f, handles);
-    handles.add(new RotateHandle(f));
-}

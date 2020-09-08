@@ -1,9 +1,0 @@
-public void setDuration(int newValue) {
-    int oldValue = getDuration();
-    getDurationFigure().setText(Integer.toString(newValue));
-    if (oldValue != newValue) {
-        for (TaskFigure succ : getSuccessors()) {
-            succ.updateStartTime();
-        }
-    }
-}

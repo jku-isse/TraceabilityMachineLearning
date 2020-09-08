@@ -1,6 +1,0 @@
-public ChangeTaskEndInteraction(MouseEvent initiatingEvent, TaskBoundaryChartItem taskBoundary) {
-    super(initiatingEvent, taskBoundary);
-    setCursor(GanttGraphicArea.E_RESIZE_CURSOR);
-    myMutator = getTask().createMutator();
-    myInitialEnd = getTask().getEnd();
-}

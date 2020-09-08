@@ -1,7 +1,0 @@
-/**
- * Creates a new instance with format name "Drawing", file extension "xml"
- * and mime type "image/x-jhotdraw".
- */
-public SerializationInputOutputFormat() {
-    this("Drawing", "ser", new DefaultDrawing());
-}

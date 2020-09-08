@@ -1,9 +1,0 @@
-public void testGetSenderQuery() {
-    try {
-        ReferralDAO.ReferralListQuery q = dao.getSenderQuery(1L);
-        q.query("receiverName", SortDirection.ASCENDING);
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

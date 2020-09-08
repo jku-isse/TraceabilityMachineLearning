@@ -1,4 +1,0 @@
-/**
- * Writes an object.
- */
-public void writeObject(Object o) throws IOException;

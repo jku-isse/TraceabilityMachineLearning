@@ -1,3 +1,0 @@
-MyDialog(int dialogType, String message) {
-    this.contentComponent = createDialogContentComponent(dialogType, message);
-}

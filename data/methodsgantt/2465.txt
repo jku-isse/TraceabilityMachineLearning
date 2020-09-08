@@ -1,7 +1,0 @@
-/* (non-Javadoc)
-
-@see javax.swing.filechooser.FileFilter#getDescription()
- */
-public String getDescription() {
-    return GanttLanguage.getInstance().getText("filtercsv");
-}

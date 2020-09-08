@@ -1,9 +1,0 @@
-public void testYearsFromNow() throws Exception {
-    // This test is intended to test the logic of the conversion java.util.Date to the java.sql.Date
-    // Along with the intent of "years ago".
-    // This test no longer tests the arithmetic of adding/subtracting years, we assume Java got that right
-    Calendar cal = new GregorianCalendar();
-    cal.add(Calendar.YEAR, (-2));
-    Long twoYearsAgo = cal.getTimeInMillis();
-    assertEquals("Date should be within 5s: ", twoYearsAgo, DateUtil.getSQLdateXyearsAgoFromNow(2).getTime(), 5000);
-}

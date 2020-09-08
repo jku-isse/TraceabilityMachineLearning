@@ -1,3 +1,0 @@
-public String getToolTipText(Point p) {
-    return null;
-}

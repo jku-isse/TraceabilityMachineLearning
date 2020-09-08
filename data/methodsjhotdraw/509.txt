@@ -1,8 +1,0 @@
-/**
- * Converts the specified color components to RGB.
- *
- * @param components
- * 		The color components.
- * @return rgb value.
- */
-public int toRGB(float... components);

@@ -1,8 +1,0 @@
-/**
- * Converts a polar to a point
- */
-public static Point polarToPoint(double angle, double fx, double fy) {
-    double si = Math.sin(angle);
-    double co = Math.cos(angle);
-    return new Point(((int) ((fx * co) + 0.5)), ((int) ((fy * si) + 0.5)));
-}

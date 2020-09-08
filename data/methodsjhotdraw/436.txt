@@ -1,8 +1,0 @@
-public void fireStateChanged() {
-    if ((listeners) != null) {
-        ChangeEvent event = new ChangeEvent(this);
-        for (ChangeListener l : listeners) {
-            l.stateChanged(event);
-        }
-    }
-}

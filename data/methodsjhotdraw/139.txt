@@ -1,3 +1,0 @@
-protected void initViewActions(View p) {
-    p.putAction(FocusAction.ID, new FocusAction(p));
-}

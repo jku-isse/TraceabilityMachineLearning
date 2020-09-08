@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param instructions
- * 		the instructions to set
- */
-public void setInstructions(String instructions) {
-    this.instructions = instructions;
-}

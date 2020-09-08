@@ -1,3 +1,0 @@
-public void setDraw(boolean d) {
-    draw = d;
-}

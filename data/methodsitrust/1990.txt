@@ -1,3 +1,0 @@
-public void setRoleString(String role) {
-    this.roleString = role;
-}

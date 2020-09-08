@@ -1,5 +1,0 @@
-public void testDelete0() throws Exception {
-    assertEquals(0, dao.getList(3).size());
-    dao.remove(1);
-    assertEquals(0, dao.getList(3).size());
-}

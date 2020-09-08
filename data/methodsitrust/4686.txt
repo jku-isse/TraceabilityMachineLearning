@@ -1,8 +1,0 @@
-public void testProxyIsOnlyProxy() throws Exception {
-    try {
-        validatorProxy.validate(null);
-        fail("exception should have been thrown");
-    } catch (IllegalStateException e) {
-        assertEquals("Mock object acts as a proxy to protected BeanValidator classes. Do not call this method", e.getMessage());
-    }
-}

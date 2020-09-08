@@ -1,9 +1,0 @@
-public void testPrescriptionEquals() throws Exception {
-    med = new MedicationBean();
-    med.setDescription("blah");
-    med.setNDCode("blah blah");
-    MedicationBean med2 = new MedicationBean();
-    med2.setDescription("blah");
-    med2.setNDCode("blah blah");
-    assertEquals(med2, med);
-}

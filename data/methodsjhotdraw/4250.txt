@@ -1,4 +1,0 @@
-protected MouseInputListener createDockingListener() {
-    getHandler().tb = toolBar;
-    return getHandler();
-}

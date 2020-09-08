@@ -1,3 +1,0 @@
-public void configureAction(Action action, String argument) {
-    configureAction(action, argument, getBaseClass());
-}

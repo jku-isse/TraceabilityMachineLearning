@@ -1,8 +1,0 @@
-public void testUndeclareHCPException() throws Exception {
-    try {
-        evilDAO.undeclareHCP(0L, 0L);
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

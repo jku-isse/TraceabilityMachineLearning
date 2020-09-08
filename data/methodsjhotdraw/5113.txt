@@ -1,3 +1,0 @@
-public String toString() {
-    return (((((("TaskFigure#" + (hashCode())) + " ") + (getName())) + " ") + (getDuration())) + " ") + (getStartTime());
-}

@@ -1,4 +1,0 @@
-public int getResourceDividerLocation() {
-    // TODO Auto-generated method stub
-    return 0;
-}

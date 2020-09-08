@@ -1,9 +1,0 @@
-/**
- * Set the piece, that is moved with this ply.
- *
- * @param ply
- * 		The moved ply.
- */
-public final void setPiece(Piece piece) {
-    _piece = piece;
-}

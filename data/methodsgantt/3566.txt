@@ -1,3 +1,0 @@
-public String formatTime(GanttCalendar date) {
-    return currentTimeFormat.format(date.getTime());
-}

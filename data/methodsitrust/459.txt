@@ -1,9 +1,0 @@
-/**
- * Returns a string suitable for a user warning message that a
- * drug-interaction was detected.
- */
-private String formatInteractionWarning(PrescriptionBean newPrescription, PrescriptionBean oldPrescription, DrugInteractionBean bean) {
-    String startDate = new SimpleDateFormat("MM/dd/yyyy").format(oldPrescription.getStartDate());
-    String endDate = new SimpleDateFormat("MM/dd/yyyy").format(oldPrescription.getEndDate());
-    return String.format("Currently Prescribed: %s. Start Date: %s, End Date: %s. Interactions: %s - %s. Description: %s", oldPrescription.getMedication().getDescription(), startDate, endDate, oldPrescription.getMedication().getDescription(), newPrescription.getMedication().getDescription(), bean.getDescription());
-}

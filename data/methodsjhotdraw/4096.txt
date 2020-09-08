@@ -1,4 +1,0 @@
-public int getIconHeight() {
-    generateIconsFromTiledImage();
-    return icons[0].getIconHeight();
-}

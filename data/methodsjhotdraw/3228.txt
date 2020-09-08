@@ -1,3 +1,0 @@
-protected boolean canGroup() {
-    return ((getView()) != null) && ((getView().getSelectionCount()) > 1);
-}

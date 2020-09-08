@@ -1,8 +1,0 @@
-/**
- * Get the active state of this timer.
- *
- * @return The active state of this timer.
- */
-public boolean isRunning() {
-    return _running;
-}

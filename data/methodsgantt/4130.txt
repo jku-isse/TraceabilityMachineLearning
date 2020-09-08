@@ -1,1 +1,0 @@
-void setCompletionPercentage(int percentage);

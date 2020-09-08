@@ -1,6 +1,0 @@
-/**
- * Gets the changed figure
- */
-public Figure getFigure() {
-    return ((Figure) (getSource()));
-}

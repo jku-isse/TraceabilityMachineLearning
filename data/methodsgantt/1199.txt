@@ -1,8 +1,0 @@
-public Task getContainer(Task nestedTask) {
-    DefaultMutableTreeNode treeNode = ((DefaultMutableTreeNode) (myTask2treeNode.get(nestedTask)));
-    if (treeNode == null) {
-        return null;
-    }
-    DefaultMutableTreeNode containerNode = ((DefaultMutableTreeNode) (treeNode.getParent()));
-    return containerNode == null ? null : ((Task) (containerNode.getUserObject()));
-}

@@ -1,3 +1,0 @@
-public ConnectionTool(String prototypeClassName) {
-    this(prototypeClassName, null, null);
-}

@@ -1,3 +1,0 @@
-protected String getLocalizedName() {
-    return GanttLanguage.getInstance().getText("newProject");
-}

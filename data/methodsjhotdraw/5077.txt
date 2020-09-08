@@ -1,6 +1,0 @@
-public void setGridVisible(boolean newValue) {
-    boolean oldValue = isGridVisible();
-    view.setConstrainerVisible(newValue);
-    firePropertyChange(PertView.GRID_VISIBLE_PROPERTY, oldValue, newValue);
-    preferences.putBoolean("view.gridVisible", newValue);
-}

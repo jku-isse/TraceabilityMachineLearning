@@ -1,6 +1,0 @@
-public Role getRole() {
-    if ((myRole) == null) {
-        System.err.println(("[HumanResource] getRole(): I have no role :( name=" + (getName())));
-    }
-    return myRole;
-}

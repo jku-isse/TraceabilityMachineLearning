@@ -1,7 +1,0 @@
-protected void paintThumb(Graphics2D g) {
-    Point p = getThumbLocation();
-    g.setColor(Color.white);
-    g.fillRect(((p.x) - 1), ((p.y) - 1), 2, 2);
-    g.setColor(Color.black);
-    g.drawRect(((p.x) - 2), ((p.y) - 2), 3, 3);
-}

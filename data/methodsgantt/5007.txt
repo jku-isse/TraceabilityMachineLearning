@@ -1,6 +1,0 @@
-public Object getState() {
-    if ((myState) == null) {
-        myState = new TextLengthCalculatorImpl.State(myGraphics.getFontRenderContext(), myGraphics.getFont());
-    }
-    return myState;
-}

@@ -1,6 +1,0 @@
-/**
- * South.
- */
-public static Locator south() {
-    return new RelativeDecoratorLocator(0.5, 1.0);
-}

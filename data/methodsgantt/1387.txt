@@ -1,3 +1,0 @@
-public void zoomChanged(ZoomEvent e) {
-    setEnabled(myZoomManager.canZoomIn());
-}

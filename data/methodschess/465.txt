@@ -1,3 +1,0 @@
-public PGNLexer(Reader in) {
-    this(new CharBuffer(in));
-}

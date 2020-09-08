@@ -1,8 +1,0 @@
-/**
- * Returns the ErrorList of errors accumulated while parsing CSV
- *
- * @return ErrorList of errors accumulated while parsing CSV
- */
-public ErrorList getErrors() {
-    return errors;
-}

@@ -1,4 +1,0 @@
-public void mouseExited(MouseEvent evt) {
-    super.mouseExited(evt);
-    tracker.mouseExited(evt);
-}

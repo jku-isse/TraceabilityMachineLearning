@@ -1,9 +1,0 @@
-public void testGetImmunizationNeeders() throws FormValidationException, iTrustException, Exception {
-    // Test that StandardData starts with two immunization needers
-    // TODO: test the contents of the returned list.
-    gen.standardData();
-    // Login as kelly doctor
-    action = new GetVisitRemindersAction(factory, 9000000000L);
-    List<VisitReminderReturnForm> vrList = action.getVisitReminders(GetVisitRemindersAction.ReminderType.IMMUNIZATION_NEEDERS);
-    assertEquals(2, vrList.size());
-}

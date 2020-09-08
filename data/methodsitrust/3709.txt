@@ -1,8 +1,0 @@
-/**
- * Returns true if the list has any errors
- *
- * @return 
- */
-public boolean hasErrors() {
-    return (errorList.size()) != 0;
-}

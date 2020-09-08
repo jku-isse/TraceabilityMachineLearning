@@ -1,1 +1,0 @@
-void setDocument(Document document);

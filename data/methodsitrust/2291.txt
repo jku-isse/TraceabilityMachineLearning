@@ -1,3 +1,0 @@
-public String getHeight() {
-    return height;
-}

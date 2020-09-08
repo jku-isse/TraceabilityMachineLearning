@@ -1,6 +1,0 @@
-public ProjectResource create(String name, int i) {
-    HumanResource hr = new HumanResource(name, i, this);
-    hr.setRole(myDefaultRole);
-    add(hr);
-    return hr;
-}

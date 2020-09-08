@@ -1,4 +1,0 @@
-public int getGanttDividerLocation() {
-    // return mySplitPane.getDividerLocation();
-    return myGanttChartTabContent.getDividerLocation();
-}

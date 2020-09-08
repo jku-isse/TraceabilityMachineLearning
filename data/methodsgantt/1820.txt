@@ -1,3 +1,0 @@
-public void setYOffSet(int offset) {
-    myYOffset = offset;
-}

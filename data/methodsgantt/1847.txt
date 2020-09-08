@@ -1,4 +1,0 @@
-public String toString() {
-    return ((((("period length=" + (myDuration.getLength())) + " (") + (myDuration.getTimeUnit().getName())) + ")") + " is") + ((myDayType) == (GPCalendar.DayType.WEEKEND) ? " holiday" : " working
-");
-}

@@ -1,6 +1,0 @@
-/**
- * Finds a figure at the given point.
- *
- * @return A figure, null if no figure is found.
- */
-public Figure findFigure(Point p);

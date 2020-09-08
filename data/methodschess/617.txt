@@ -1,7 +1,0 @@
-// Constructors
-BoardLayer() {
-    _squareSize = ChessBoardRenderer2D.getSquareSize();
-    _boardSize = 8 * (_squareSize);
-    setPreferredSize(new Dimension(_boardSize, _boardSize));
-    setBounds(0, 0, _boardSize, _boardSize);
-}

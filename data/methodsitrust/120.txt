@@ -1,3 +1,0 @@
-public AddDrugListActionTest() {
-    gen = new TestDataGenerator();
-}

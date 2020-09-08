@@ -1,3 +1,0 @@
-public void mouseExited(MouseEvent e) {
-    getHandler().mouseExited(e);
-}

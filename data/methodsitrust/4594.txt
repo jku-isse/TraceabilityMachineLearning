@@ -1,3 +1,0 @@
-public void setPageContext(PageContext pageContext) {
-    this.pageContext = pageContext;
-}

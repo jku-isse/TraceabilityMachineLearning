@@ -1,7 +1,0 @@
-public boolean equals(Object that) {
-    if (false == (that instanceof ChartModelBase.Offset)) {
-        return false;
-    }
-    ChartModelBase.Offset thatOffset = ((ChartModelBase.Offset) (that));
-    return (((myOffsetPixels) == (thatOffset.myOffsetPixels)) && (myOffsetEnd.equals(thatOffset.myOffsetEnd))) && (myOffsetAnchor.equals(thatOffset.myOffsetAnchor));
-}

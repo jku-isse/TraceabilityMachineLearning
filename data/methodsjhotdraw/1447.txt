@@ -1,4 +1,0 @@
-/**
- * Sets the specified node.
- */
-public void setNode(int index, BezierPath.Node node);

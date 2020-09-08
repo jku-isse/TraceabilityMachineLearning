@@ -1,3 +1,0 @@
-public int getBase() {
-    return base;
-}

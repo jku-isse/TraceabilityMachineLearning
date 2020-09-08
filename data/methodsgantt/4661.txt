@@ -1,3 +1,0 @@
-public TaskDependency createDependency(Task dependant, Task dependee) throws TaskDependencyException {
-    return createDependency(dependant, dependee, new FinishStartConstraintImpl());
-}

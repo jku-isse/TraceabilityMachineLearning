@@ -1,6 +1,0 @@
-/**
- * Get the ply.
- *
- * @return The ply.
- */
-Ply getPly();

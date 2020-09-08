@@ -1,9 +1,0 @@
-/**
- * Sets <code>inProgress</code> to false.
- *
- * @see #canUndo
- * @see #canRedo
- */
-public void end() {
-    inProgress = false;
-}

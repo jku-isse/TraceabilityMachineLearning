@@ -1,5 +1,0 @@
-protected void setUp() throws FileNotFoundException, IOException, SQLException {
-    gen.clearAllTables();
-    gen.standardData();
-    gen.uc47SetUp();
-}

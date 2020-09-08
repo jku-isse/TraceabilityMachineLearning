@@ -1,3 +1,0 @@
-void reset() {
-    myUnitPair_StartDate.clear();
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @unknown 
- */
-public Object getUserObject() {
-    return task;
-}

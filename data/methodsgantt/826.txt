@@ -1,6 +1,0 @@
-/**
- * Return the last default tree node
- */
-public DefaultMutableTreeNode getLastNode() {
-    return rootNode.getLastLeaf();
-}

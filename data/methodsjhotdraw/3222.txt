@@ -1,3 +1,0 @@
-protected String proxyToString(Object proxy) {
-    return ((proxy.getClass().getName()) + @) + (Integer.toHexString(proxy.hashCode()));
-}

@@ -1,6 +1,0 @@
-/**
- * Creates a NumberFormatter with the specified Format instance.
- */
-public JavaNumberFormatter(double min, double max, double scaleFactor) {
-    this(min, max, scaleFactor, false, true);
-}

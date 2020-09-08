@@ -1,3 +1,0 @@
-public String getFileExtension() {
-    return GanttProject.ExportFileInfo.FILE_EXTENSIONS[myFormat];
-}

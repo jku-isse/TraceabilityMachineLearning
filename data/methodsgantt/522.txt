@@ -1,3 +1,0 @@
-public CustomPropertyManager getResourceCustomPropertyManager() {
-    return getResourcePanel().getResourceTreeTable();
-}

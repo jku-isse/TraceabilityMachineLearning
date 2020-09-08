@@ -1,5 +1,0 @@
-public void testDBException() throws Exception {
-    this.factory = EvilDAOFactory.getEvilInstance();
-    factor = new FamilyHistoryFactor(factory, 5L, 250.0, 251.0);
-    assertFalse(factor.hasFactor());
-}

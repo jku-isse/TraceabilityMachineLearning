@@ -1,8 +1,0 @@
-public void testUpdateCodeException() throws Exception {
-    try {
-        evilDAO.updateCode(new DiagnosisBean());
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

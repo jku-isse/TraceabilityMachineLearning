@@ -1,5 +1,0 @@
-public PatientBean loadSingle(ResultSet rs) throws SQLException {
-    PatientBean p = new PatientBean();
-    loadCommon(rs, p);
-    return p;
-}

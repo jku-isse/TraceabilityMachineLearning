@@ -1,3 +1,0 @@
-public CustomColumnsException(Throwable cause) {
-    super(cause);
-}

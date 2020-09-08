@@ -1,3 +1,0 @@
-protected void superBasicSetBounds(Point2D.Double anchor, Point2D.Double lead) {
-    super.setBounds(anchor, lead);
-}

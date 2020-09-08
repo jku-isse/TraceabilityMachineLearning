@@ -1,5 +1,0 @@
-public void setGradientCircle(double cx, double cy, double r) {
-    this.cx = cx;
-    this.cy = cy;
-    this.r = r;
-}

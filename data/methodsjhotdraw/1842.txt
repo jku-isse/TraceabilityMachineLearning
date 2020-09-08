@@ -1,7 +1,0 @@
-/**
- * Sends a figure to the back of the drawing.
- *
- * @param figure
- * 		that is part of the drawing
- */
-void sendToBack(Figure figure);

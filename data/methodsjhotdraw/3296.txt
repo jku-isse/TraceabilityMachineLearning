@@ -1,5 +1,0 @@
-@Override
-protected void updateViewState() {
-    DrawingView view = getView();
-    putValue(Actions.SELECTED_KEY, ((view != null) && (view.isConstrainerVisible())));
-}

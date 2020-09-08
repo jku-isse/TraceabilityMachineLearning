@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys LOINCDAO
- */
-public LOINCDAO getLOINCDAO() {
-    return new LOINCDAO(this);
-}

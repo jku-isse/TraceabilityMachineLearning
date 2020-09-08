@@ -1,7 +1,0 @@
-public JPopupMenu getPopupMenu() {
-    if ((popupMenu) == null) {
-        popupMenu = new JPopupMenu();
-        popupMenu.setLayout(new VerticalGridLayout(0, getColumnCount()));
-    }
-    return popupMenu;
-}

@@ -1,5 +1,0 @@
-// ////////////////////////////////////////////////////////////////
-// UIFacade
-public ProjectUIFacade getProjectUIFacade() {
-    return myProjectUIFacade;
-}

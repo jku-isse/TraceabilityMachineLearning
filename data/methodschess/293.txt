@@ -1,9 +1,0 @@
-// Methods
-/**
- * Get the current chess engine.
- *
- * @return The current chess engine.
- */
-private final ChessEngine getEngine() {
-    return _engine;
-}

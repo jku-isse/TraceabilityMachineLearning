@@ -1,7 +1,0 @@
-public void testCheckHCPIDStringMID() {
-    try {
-        action.checkHCPID("f");
-        fail();
-    } catch (iTrustException e) {
-    }
-}

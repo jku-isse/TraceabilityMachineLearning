@@ -1,8 +1,0 @@
-/**
- * Gets the ND Description for this procedure
- *
- * @return The ND Description for this procedure
- */
-public String getDescription() {
-    return description;
-}

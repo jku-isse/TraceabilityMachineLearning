@@ -1,3 +1,0 @@
-public void testGetNoName() throws Exception {
-    assertEquals("Patient no longer exists", action.getName(4));
-}

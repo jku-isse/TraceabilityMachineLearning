@@ -1,8 +1,0 @@
-/**
- * Create an item with a label and an icon
- */
-public JMenuItem createNewItem(String label, String icon) {
-    JMenuItem item = new JMenuItem(label, new ImageIcon(getClass().getResource(icon)));
-    item.addActionListener(this);
-    return item;
-}

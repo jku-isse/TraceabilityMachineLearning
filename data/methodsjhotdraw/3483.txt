@@ -1,6 +1,0 @@
-/**
- * Gets the distance between to points
- */
-public static double length(double x1, double y1, double x2, double y2) {
-    return Math.sqrt(Geom.length2(x1, y1, x2, y2));
-}

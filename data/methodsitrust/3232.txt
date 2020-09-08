@@ -1,6 +1,0 @@
-public void testUnDeclareNotDeclaredHCP() throws Exception {
-    assertEquals(1, patientDAO.getDeclaredHCPs(2L).size());
-    boolean confirm = patientDAO.undeclareHCP(2L, 9000000000L);
-    assertFalse(confirm);
-    assertEquals(1, patientDAO.getDeclaredHCPs(2L).size());
-}

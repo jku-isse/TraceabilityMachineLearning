@@ -1,9 +1,0 @@
-/**
- * Set a new permanent brain.
- *
- * @param permanentBrain
- * 		The new permanent brain.
- */
-private final void setPermanentBrain(PermanentBrain permanentBrain) {
-    _permanentBrain = permanentBrain;
-}

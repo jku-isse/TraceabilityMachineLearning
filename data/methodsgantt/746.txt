@@ -1,5 +1,0 @@
-public void resourceChanged(ResourceEvent e) {
-    model.resourceChanged(e.getResource());
-    ((HumanResource) (e.getResource())).resetLoads();
-    repaint();
-}

@@ -1,3 +1,0 @@
-public boolean isVisible(DefaultMutableTreeNode node) {
-    return this.getTreeTable().getTree().isVisible(new javax.swing.tree.TreePath(node.getPath()));
-}

@@ -1,4 +1,0 @@
-public void testGetName() throws iTrustException {
-    assertEquals("Kelly Doctor", editAction.getName(hcpId));
-    assertEquals("Bad Horse", editAction.getName(42));
-}

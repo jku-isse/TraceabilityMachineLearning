@@ -1,7 +1,0 @@
-/**
- * Creates new form FindDialog
- */
-public FindDialog(Application app) {
-    this(null, false);
-    this.app = app;
-}

@@ -1,4 +1,0 @@
-protected void enableRenderers1() {
-    super.enableRenderers1();
-    myTaskRendererImpl.setEnabled(true);
-}

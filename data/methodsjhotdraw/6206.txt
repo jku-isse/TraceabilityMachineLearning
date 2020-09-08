@@ -1,3 +1,0 @@
-public FontFormatter() {
-    this(true);
-}

@@ -1,3 +1,0 @@
-public void addTaskListener(TaskListener listener) {
-    myListeners.add(listener);
-}

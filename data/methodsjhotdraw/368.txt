@@ -1,7 +1,0 @@
-/**
- * Creates a new instance.
- */
-public PasteAction() {
-    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-    labels.configureAction(this, PasteAction.ID);
-}

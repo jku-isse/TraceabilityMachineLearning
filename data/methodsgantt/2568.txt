@@ -1,9 +1,0 @@
-private Role findRole(String roleName) {
-    Role[] enabledRoles = net.sourceforge.ganttproject.roles.RoleManager.Access.getInstance().getEnabledRoles();
-    for (int i = 0; i < (enabledRoles.length); i++) {
-        if (enabledRoles[i].getName().equals(roleName)) {
-            return enabledRoles[i];
-        }
-    }
-    return null;
-}

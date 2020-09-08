@@ -1,4 +1,0 @@
-// DRAWING
-@Override
-protected void drawText(Graphics2D g) {
-}

@@ -1,3 +1,0 @@
-public ProjectResource getResource() {
-    return myResource;
-}

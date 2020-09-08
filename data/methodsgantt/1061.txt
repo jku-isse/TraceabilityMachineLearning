@@ -1,3 +1,0 @@
-public static DelayManager getDelayManager() {
-    return Mediator.delayManager;
-}

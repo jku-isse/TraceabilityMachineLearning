@@ -1,9 +1,0 @@
-public void actionPerformed(ActionEvent evt) {
-    if ((evt.getSource()) == (loadButton)) {
-        this.load(evt);
-    } else
-        if ((evt.getSource()) == (saveButton)) {
-            this.save(evt);
-        }
-
-}

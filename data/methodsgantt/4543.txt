@@ -1,7 +1,0 @@
-/**
- * Clears the selected tasks list.
- */
-public void clear() {
-    selectedTasks.clear();
-    fireSelectionChanged();
-}

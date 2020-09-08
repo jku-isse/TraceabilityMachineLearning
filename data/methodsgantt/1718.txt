@@ -1,7 +1,0 @@
-public boolean equals(Object that) {
-    if (false == (that instanceof ChartModelBase.Range)) {
-        return false;
-    }
-    ChartModelBase.Range thatRange = ((ChartModelBase.Range) (that));
-    return ((this.start) == null ? (thatRange.start) == null : this.start.equals(thatRange.start)) && (thatRange.end.equals(this.end));
-}

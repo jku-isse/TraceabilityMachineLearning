@@ -1,3 +1,0 @@
-private String getAddCodeSuccessString(LOINCbean proc) {
-    return ("Success: " + (proc.getLabProcedureCode())) + " added";
-}

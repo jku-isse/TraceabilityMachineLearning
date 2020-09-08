@@ -1,3 +1,0 @@
-public void setExport3dBorders(boolean borders3d) {
-    bExport3DBorders = borders3d;
-}

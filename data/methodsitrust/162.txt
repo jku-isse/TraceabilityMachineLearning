@@ -1,8 +1,0 @@
-/**
- * Gets the patient list
- *
- * @return ArrayList<PatientBean> The patients from the parsed file
- */
-public ArrayList<PatientBean> getPatients() {
-    return patients;
-}

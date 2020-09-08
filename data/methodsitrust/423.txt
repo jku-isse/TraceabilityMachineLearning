@@ -1,8 +1,0 @@
-public void testNull() throws Exception {
-    try {
-        action = new EditPatientAction(factory, 0L, null);
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("Patient ID is not a number: null", e.getMessage());
-    }
-}

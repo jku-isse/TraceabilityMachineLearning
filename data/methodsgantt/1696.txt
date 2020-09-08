@@ -1,3 +1,0 @@
-public void setBounds(Dimension bounds) {
-    myBounds = bounds;
-}

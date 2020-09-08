@@ -1,3 +1,0 @@
-public Color getDefaultTaskColor() {
-    return myProjectConfig.getTaskColor();
-}

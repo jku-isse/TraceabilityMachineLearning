@@ -1,1 +1,0 @@
-void setHardness(TaskDependency.Hardness hardness);

@@ -1,4 +1,0 @@
-public void testOccupiedBy() {
-    wrb1.setOccupiedBy(1L);
-    assertTrue((1L == (wrb1.getOccupiedBy())));
-}

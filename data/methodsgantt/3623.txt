@@ -1,3 +1,0 @@
-private ParsingContext getContext() {
-    return myContext;
-}

@@ -1,4 +1,0 @@
-public String getHCPName(long ovid) throws iTrustException {
-    OfficeVisitBean b = ovDAO.getOfficeVisit(ovid);
-    return personDAO.getName(b.getHcpID());
-}

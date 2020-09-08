@@ -1,7 +1,0 @@
-/**
- * Gets an attribute from the figure.
- */
-@Override
-public <T> T getAttribute(AttributeKey<T> key) {
-    return hasAttribute(key) ? key.get(attributes) : key.getDefaultValue();
-}

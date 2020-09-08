@@ -1,3 +1,0 @@
-public boolean accept(File file, String arg1) {
-    return arg1.endsWith(extension);
-}

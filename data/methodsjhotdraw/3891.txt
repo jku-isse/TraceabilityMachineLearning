@@ -1,9 +1,0 @@
-/**
- * If this is set to true, the JSheet uses a transition effect when shown
- * and when hidden.
- */
-public void setAnimated(boolean newValue) {
-    boolean oldValue = isAnimated;
-    isAnimated = newValue;
-    firePropertyChange("animated", oldValue, newValue);
-}

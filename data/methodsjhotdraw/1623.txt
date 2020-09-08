@@ -1,3 +1,0 @@
-public Rectangle drawingToView(Rectangle2D.Double r) {
-    return new Rectangle(((int) (((r.x) - (translate.x)) * (scaleFactor))), ((int) (((r.y) - (translate.y)) * (scaleFactor))), ((int) ((r.width) * (scaleFactor))), ((int) ((r.height) * (scaleFactor))));
-}

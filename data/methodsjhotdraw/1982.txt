@@ -1,4 +1,0 @@
-/**
- * Removes a listener for FigureEvents.
- */
-public void removeFigureListener(FigureListener l);

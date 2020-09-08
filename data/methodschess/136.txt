@@ -1,8 +1,0 @@
-/**
- * Check, if white moves next.
- *
- * @return true, if white moves next, false otherwise.
- */
-private final boolean whiteHasMoveRight() {
-    return _whiteMoves;
-}

@@ -1,7 +1,0 @@
-public VisitReminderReturnForm(long hcpID, long patientID, String lastName, String firstName, String phone) {
-    this.hcpID = hcpID;
-    this.patientID = patientID;
-    this.lastName = lastName;
-    this.firstName = firstName;
-    setPhoneNumber(phone);
-}

@@ -1,3 +1,0 @@
-public void areaInvalidated(FigureEvent evt) {
-    fireAreaInvalidated(evt.getInvalidatedArea());
-}

@@ -1,7 +1,0 @@
-// Methods
-/**
- * Render this ply as a string.
- *
- * @return The notated ply as a string.
- */
-String toString();

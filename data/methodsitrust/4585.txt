@@ -1,3 +1,0 @@
-public void setUp() {
-    wardDAO = new WardDAO(TestDAOFactory.getTestInstance());
-}

@@ -1,7 +1,0 @@
-public OptionPageProviderPanel(OptionPageProvider provider, IGanttProject project, UIFacade uiFacade) {
-    super("", "", uiFacade.getMainFrame());
-    myProject = project;
-    myUIFacade = uiFacade;
-    myProvider = provider;
-    myGroups = myProvider.getOptionGroups(project, uiFacade);
-}

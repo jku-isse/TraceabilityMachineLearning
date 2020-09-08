@@ -1,9 +1,0 @@
-public QuadTreeDrawing clone() {
-    QuadTreeDrawing that = ((QuadTreeDrawing) (super.clone()));
-    that.canvasSize = ((this.canvasSize) == null) ? null : ((Dimension2DDouble) (this.canvasSize.clone()));
-    that.quadTree = new QuadTree<Figure>();
-    for (Figure f : getChildren()) {
-        quadTree.add(f, f.getDrawingArea());
-    }
-    return that;
-}

@@ -1,4 +1,0 @@
-public void testGetPersonnel() throws iTrustException {
-    PersonnelBean pBean = action.getPersonnel(hcpId);
-    assertEquals(hcpId, pBean.getMID());
-}

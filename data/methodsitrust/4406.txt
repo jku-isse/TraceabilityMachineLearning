@@ -1,4 +1,0 @@
-@Override
-public boolean qualifiesForDisease() {
-    return (patient.getAge()) >= 12;
-}

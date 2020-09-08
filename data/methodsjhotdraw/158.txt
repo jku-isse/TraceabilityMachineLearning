@@ -1,7 +1,0 @@
-protected void initLookAndFeel() {
-    try {
-        UIManager.setLookAndFeel(QuaquaManager.getLookAndFeelClassName());
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}

@@ -1,8 +1,0 @@
-/**
- * Getter for Zip code
- *
- * @return The stored Zip code
- */
-public String getZipCode() {
-    return zipCode;
-}

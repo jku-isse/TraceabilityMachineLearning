@@ -1,9 +1,0 @@
-/**
- * Set the search depth for the computed ply.
- *
- * @param searchDepth
- * 		The search depth.
- */
-public final void setSearchDepth(int searchDepth) {
-    _searchDepth = searchDepth;
-}

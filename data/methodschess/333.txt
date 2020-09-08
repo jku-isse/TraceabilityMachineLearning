@@ -1,7 +1,0 @@
-// Methods
-/**
- * Run the actual test(s).
- */
-public void runTest() {
-    minimaxTest1();
-}

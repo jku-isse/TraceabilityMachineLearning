@@ -1,3 +1,0 @@
-public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener) {
-    propertySupport.removePropertyChangeListener(propertyName, listener);
-}

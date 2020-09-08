@@ -1,4 +1,0 @@
-public ApptRequestDAO(DAOFactory factory) {
-    this.factory = factory;
-    loader = new ApptRequestBeanLoader();
-}

@@ -1,8 +1,0 @@
-/**
- * Constrains a point to the closest grid point in any direction.
- */
-public Point2D.Double constrainPoint(Point2D.Double p) {
-    p.x = (Math.round(((p.x) / (width)))) * (width);
-    p.y = (Math.round(((p.y) / (height)))) * (height);
-    return p;
-}

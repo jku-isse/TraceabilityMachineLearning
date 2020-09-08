@@ -1,5 +1,0 @@
-/**
- * Creates new instance.
- */
-public JAttributeTextArea() {
-}

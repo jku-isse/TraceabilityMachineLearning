@@ -1,7 +1,0 @@
-/**
- * Returns true, if the view has unsaved changes.
- * This is a bound property.
- */
-public boolean hasUnsavedChanges() {
-    return hasUnsavedChanges;
-}

@@ -1,6 +1,0 @@
-// 
-/**
- * Creates a new task and performs all necessary initialization procedures
- * such as changing properties of parent task, adjusting schedule, etc.
- */
-Task newTask();

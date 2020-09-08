@@ -1,3 +1,0 @@
-public boolean hasHistory() throws DBException {
-    return patientDAO.hasHistory(this.getPid());
-}

@@ -1,4 +1,0 @@
-/**
- * Returns a tooltip for the specified location on the figure.
- */
-public String getToolTipText(Point2D.Double p);

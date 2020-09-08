@@ -1,7 +1,0 @@
-@Override
-public void undo() throws CannotUndoException {
-    owner.willChange();
-    owner.setArc(oldArc.width, oldArc.height);
-    owner.changed();
-    super.undo();
-}

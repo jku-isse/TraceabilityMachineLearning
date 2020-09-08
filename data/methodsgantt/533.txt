@@ -1,6 +1,0 @@
-public GanttTree2 getTree() {
-    if ((this.tree) == null) {
-        this.tree = new GanttTree2(this, getTaskManager(), Mediator.getTaskSelectionManager(), getUIFacade());
-    }
-    return this.tree;
-}

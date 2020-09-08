@@ -1,6 +1,0 @@
-/**
- * North west.
- */
-public static Locator northWest() {
-    return new RelativeDecoratorLocator(0.0, 0.0);
-}

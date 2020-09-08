@@ -1,6 +1,0 @@
-/**
- * Return the list of the person
- */
-public List getPeople() {
-    return model.getAllResouces();
-}

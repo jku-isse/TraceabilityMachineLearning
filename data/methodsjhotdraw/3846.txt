@@ -1,4 +1,0 @@
-private void handleMousePressed(MouseEvent evt) {
-    // GEN-FIRST:event_handleMousePressed
-    showPopup(evt);
-}// GEN-LAST:event_handleMousePressed

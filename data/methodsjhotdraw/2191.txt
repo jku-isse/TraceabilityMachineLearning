@@ -1,4 +1,0 @@
-/**
- * Gets the buffered image from the figure.
- */
-public BufferedImage getBufferedImage();

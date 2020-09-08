@@ -1,5 +1,0 @@
-public void testNotSpecified() throws Exception {
-    p.setGender(Gender.NotSpecified);
-    factor = new GenderFactor(p, Gender.NotSpecified);
-    assertFalse(factor.hasRiskFactor());
-}

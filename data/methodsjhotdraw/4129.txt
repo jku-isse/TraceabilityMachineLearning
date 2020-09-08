@@ -1,3 +1,0 @@
-protected void uninstallComponents(JFontChooser fc) {
-    fontChooser.removeAll();
-}

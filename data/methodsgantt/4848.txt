@@ -1,3 +1,0 @@
-public TimeUnit getDirectAtomUnit() {
-    return myDirectAtomUnit;
-}

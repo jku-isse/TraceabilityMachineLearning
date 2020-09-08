@@ -1,3 +1,0 @@
-public void setAvgExamRoomMinutes(float examRoomMinutes) {
-    this.avgExamRmMinutues = examRoomMinutes;
-}

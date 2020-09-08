@@ -1,3 +1,0 @@
-public ColumnHandler(ResourceColumn c) {
-    column = c;
-}

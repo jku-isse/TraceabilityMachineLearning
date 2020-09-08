@@ -1,6 +1,0 @@
-public void setUp() {
-    ctrl = createControl();
-    factory2 = ctrl.createMock(DAOFactory.class);
-    wd1 = new WardDAO(factory);
-    wd2 = new WardDAO(factory2);
-}

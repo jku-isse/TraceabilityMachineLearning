@@ -1,4 +1,0 @@
-/**
- * Sent when the drawing area used by the figure needs to be repainted.
- */
-public void areaInvalidated(FigureEvent e);

@@ -1,3 +1,0 @@
-public IProgressMonitor createMonitor(Job job) {
-    return myStatusBar.createProgressMonitor();
-}

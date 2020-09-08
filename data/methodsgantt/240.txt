@@ -1,7 +1,0 @@
-protected ChangeTaskBoundaryInteraction(MouseEvent initiatingEvent, TaskBoundaryChartItem taskBoundary) {
-    super(initiatingEvent);
-    myTask = taskBoundary.getTask();
-    myInitialDuration = myTask.getDuration().getLength(getViewState().getBottomTimeUnit());
-    myInitialEnd = getTask().getEnd();
-    myInitialStart = getTask().getStart();
-}

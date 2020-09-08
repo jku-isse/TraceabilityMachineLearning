@@ -1,2 +1,0 @@
-private void cachePrecomputedShift(Task result, float unitCount) {
-}

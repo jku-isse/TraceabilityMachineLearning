@@ -1,4 +1,0 @@
-public void logErrorMessage(Throwable e) {
-    myErrorNotifier.add(e);
-    myStatusBar.setErrorNotifier(myErrorNotifier);
-}

@@ -1,9 +1,0 @@
-public void setEnd(GanttCalendar end) {
-    GanttCalendar oldFinish = ((myEnd) == null) ? null : myEnd.Clone();
-    myEnd = end;
-    recalculateActivities();
-    // System.err.println("we have "+myActivities.size()+" activities");
-    // if (areEventsEnabled()) {
-    // myManager.fireTaskScheduleChanged(this, myStart.Clone(), oldFinish);
-    // }
-}

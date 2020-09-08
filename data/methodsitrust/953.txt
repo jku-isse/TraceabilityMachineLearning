@@ -1,8 +1,0 @@
-public void testAddNDCode() throws Exception {
-    final String code = "999999999";
-    final String desc = "UpdateNDCodeListActionTest testAddNDCode";
-    MedicationBean proc = new MedicationBean(code, desc);
-    assertEquals(getAddCodeSuccessString(proc), action.addNDCode(proc));
-    proc = factory.getNDCodesDAO().getNDCode(code);
-    assertEquals(desc, proc.getDescription());
-}

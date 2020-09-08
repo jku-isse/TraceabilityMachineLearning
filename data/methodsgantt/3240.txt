@@ -1,4 +1,0 @@
-public ProjectNamePage(Frame owner, IGanttProject project, I18N i18n) {
-    myProjectSettingsPanel = new ProjectSettingsPanel(owner, project);
-    myI18N = i18n;
-}

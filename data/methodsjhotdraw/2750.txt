@@ -1,6 +1,0 @@
-protected void writeBounds(DOMOutput out) throws IOException {
-    out.addAttribute("x", bounds.x);
-    out.addAttribute("y", bounds.y);
-    out.addAttribute("w", bounds.width);
-    out.addAttribute("h", bounds.height);
-}

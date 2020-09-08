@@ -1,4 +1,0 @@
-@Override
-public SVGBezierFigure getChild(int index) {
-    return ((SVGBezierFigure) (super.getChild(index)));
-}

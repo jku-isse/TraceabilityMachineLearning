@@ -1,6 +1,0 @@
-/**
- * Gets the node count.
- */
-public int getNodeCount() {
-    return path.size();
-}

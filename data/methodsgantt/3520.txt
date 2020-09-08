@@ -1,3 +1,0 @@
-UIFacade getUIFacade() {
-    return myUIFacade;
-}

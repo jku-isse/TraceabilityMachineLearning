@@ -1,3 +1,0 @@
-public static ComponentUI createUI(JComponent b) {
-    return new PaletteSliderUI(((JSlider) (b)));
-}

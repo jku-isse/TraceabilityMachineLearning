@@ -1,7 +1,0 @@
-protected void paintChart(Graphics g) {
-    if (myVisibleTasks.isEmpty()) {
-        myChartImplementation.paintComponent(g);
-    } else {
-        myChartImplementation.paintComponent(g, myVisibleTasks);
-    }
-}

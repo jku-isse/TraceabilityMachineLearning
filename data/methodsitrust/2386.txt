@@ -1,7 +1,0 @@
-public List<OfficeVisitBean> loadList(ResultSet rs) throws SQLException {
-    List<OfficeVisitBean> list = new ArrayList<OfficeVisitBean>();
-    while (rs.next()) {
-        list.add(loadSingle(rs));
-    } 
-    return list;
-}

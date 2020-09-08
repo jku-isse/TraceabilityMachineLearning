@@ -1,6 +1,0 @@
-private void updateFont(MenuElement menu) {
-    menu.getComponent().setFont(itemFont);
-    for (MenuElement child : menu.getSubElements()) {
-        updateFont(child);
-    }
-}

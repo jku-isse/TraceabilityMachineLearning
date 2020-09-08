@@ -1,8 +1,0 @@
-/**
- * Return a FileFilter that can be used to identify files which can be restored
- * with this Storage Format. Typically, each input format has its own
- * recognizable file naming convention.
- *
- * @return FileFilter to be used with a javax.swing.JFileChooser
- */
-public FileFilter getFileFilter();

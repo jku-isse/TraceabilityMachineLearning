@@ -1,3 +1,0 @@
-public Gender getGender() {
-    return gender;
-}

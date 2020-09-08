@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return 
- */
-public PersonnelReportFilter.PersonnelReportFilterType getFilterType() {
-    return filterType;
-}

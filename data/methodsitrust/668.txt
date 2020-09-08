@@ -1,9 +1,0 @@
-public Boolean submitReceived(String id) throws DBException {
-    try {
-        lpDAO.submitReceivedLP(Long.parseLong(id));
-    } catch (NumberFormatException e) {
-        e.printStackTrace();
-        return false;
-    }
-    return true;
-}

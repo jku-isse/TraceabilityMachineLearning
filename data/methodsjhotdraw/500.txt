@@ -1,9 +1,0 @@
-public void paintThumb(Graphics g) {
-    Rectangle knobBounds = thumbRect;
-    int w = knobBounds.width;
-    int h = knobBounds.height;
-    getThumbIcon().paintIcon(slider, g, knobBounds.x, knobBounds.y);
-    /* g.setColor(Color.green);
-    ((Graphics2D) g).draw(knobBounds);
-     */
-}

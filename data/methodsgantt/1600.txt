@@ -1,1 +1,0 @@
-public RenderedImage getRenderedImage(GanttExportSettings settings);

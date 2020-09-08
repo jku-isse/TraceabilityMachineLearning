@@ -1,5 +1,0 @@
-public GraphicPrimitiveContainer newLayer() {
-    GraphicPrimitiveContainer result = new GraphicPrimitiveContainer();
-    myLayers.add(result);
-    return result;
-}

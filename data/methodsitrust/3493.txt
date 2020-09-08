@@ -1,6 +1,0 @@
-public void testSetVisitFlags() {
-    VisitReminderReturnForm vrrf = new VisitReminderReturnForm(90L, 2L, "JONES", "BOB", "111-222-3333");
-    VisitFlag[] array = new VisitFlag[]{ new VisitFlag("this is the type") };
-    vrrf.setVisitFlags(array);
-    assertEquals("this is the type", vrrf.getVisitFlags()[0].getType());
-}

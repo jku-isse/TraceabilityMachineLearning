@@ -1,5 +1,0 @@
-/**
- * Returns the multiple open id.
- * If a view is open only once this should be 1.
- */
-public int getMultipleOpenId();

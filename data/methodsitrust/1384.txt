@@ -1,7 +1,0 @@
-public void testGetDrug() throws Exception {
-    HCPLinkBean hl = new HCPLinkBean();
-    hl.setDrug("Penicillin");
-    hl.setCode("blah");
-    assertEquals("Penicillin", hl.getDrug());
-    assertEquals("blah", hl.getCode());
-}

@@ -1,3 +1,0 @@
-NextAction() {
-    super(GanttLanguage.getInstance().getText("next"));
-}

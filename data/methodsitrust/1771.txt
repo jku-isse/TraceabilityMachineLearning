@@ -1,8 +1,0 @@
-/**
- * Gets the time for this message
- *
- * @return 
- */
-public Timestamp getSentDate() {
-    return this.timestamp;
-}

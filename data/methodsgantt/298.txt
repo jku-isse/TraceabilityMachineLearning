@@ -1,6 +1,0 @@
-public void apply(MouseEvent event) {
-    myArrow.changePoint2(event.getX(), event.getY());
-    // myDependant = myMouseSupport.findTaskUnderMousePointer(
-    // event.getX(), event.getY());
-    myLastMouseEvent = event;
-}

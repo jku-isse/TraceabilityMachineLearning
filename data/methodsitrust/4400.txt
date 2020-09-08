@@ -1,8 +1,0 @@
-public void testNoPHR() throws Exception {
-    try {
-        checker = new Type1DiabetesRisks(factory, 200L);
-        fail("exception should have been thrown");
-    } catch (NoHealthRecordsException e) {
-        assertEquals(NoHealthRecordsException.MESSAGE, e.getMessage());
-    }
-}

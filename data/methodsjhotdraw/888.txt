@@ -1,8 +1,0 @@
-public void draw(Graphics2D g) {
-    Point2D.Double anchor = getAnchor();
-    Ellipse2D.Double e = new Ellipse2D.Double(((anchor.x) - 3), ((anchor.y) - 3), 6, 6);
-    g.setColor(Color.BLUE);
-    g.fill(e);
-    // g.setColor(Color.BLACK);
-    // g.draw(e);
-}

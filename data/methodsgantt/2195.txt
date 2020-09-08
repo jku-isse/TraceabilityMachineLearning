@@ -1,9 +1,0 @@
-/**
- * Sets the credentials used to authenticate to the storage container
- *
- * @param user
- * 		username
- * @param pass
- * 		password
- */
-public void setUserInfo(String user, String pass);

@@ -1,6 +1,0 @@
-public void dragExit(DropTargetEvent dte) {
-    if (!(DragSource.isDragImageSupported())) {
-        repaint(ghostImageRect.getBounds());
-    }
-    treetable.repaint();
-}

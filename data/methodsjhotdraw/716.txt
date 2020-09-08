@@ -1,9 +1,0 @@
-public float[] toComponents(int r, int g, int b, float[] components) {
-    if ((components == null) || ((components.length) != 3)) {
-        components = new float[3];
-    }
-    components[0] = r / 255.0F;
-    components[1] = g / 255.0F;
-    components[2] = b / 255.0F;
-    return components;
-}

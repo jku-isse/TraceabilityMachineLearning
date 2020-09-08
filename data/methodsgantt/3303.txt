@@ -1,7 +1,0 @@
-/* (non-Javadoc)
-
-@see net.sourceforge.ganttproject.gui.GeneralDialog#constructSections()
- */
-public void constructSections() {
-    addObject(GanttProject.correctLabel(language.getText("openFromServer")), null);
-}

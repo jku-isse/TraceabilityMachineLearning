@@ -1,3 +1,0 @@
-public Icon getIconOnMouseOver() {
-    return ((Icon) (getValue(Action.SMALL_ICON)));
-}

@@ -1,9 +1,0 @@
-/**
- * Returns false if this edit is insignificant - for example one
- * that maintains the users selection, but does not change
- * any model state.
- */
-public boolean isSignificant() {
-    return isSignificant ? super.isSignificant() : false;
-    // return isSignificant;
-}

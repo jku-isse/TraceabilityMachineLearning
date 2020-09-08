@@ -1,3 +1,0 @@
-public Icon getSmallDisplayIcon() {
-    return getLargeDisplayIcon();
-}

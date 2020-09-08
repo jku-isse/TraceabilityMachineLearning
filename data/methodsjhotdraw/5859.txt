@@ -1,5 +1,0 @@
-protected void newline() throws IOException {
-    connect();
-    write("
-");
-}

@@ -1,3 +1,0 @@
-public void setRelation(String relation) {
-    this.relation = relation;
-}

@@ -1,3 +1,0 @@
-public DefaultAttributeAction(DrawingEditor editor, AttributeKey key, String name, Icon icon) {
-    this(editor, new AttributeKey[]{ key }, name, icon);
-}

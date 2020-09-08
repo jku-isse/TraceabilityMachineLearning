@@ -1,5 +1,0 @@
-// CONNECTING
-public Connector findConnector(Point2D.Double p, ConnectionFigure prototype) {
-    // XXX - This doesnt work with a transformed rect
-    return new ChopRectangleConnector(this);
-}

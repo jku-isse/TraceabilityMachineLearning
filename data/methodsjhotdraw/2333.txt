@@ -1,8 +1,0 @@
-@Override
-public void figureChanged(FigureEvent e) {
-    if (((e.getSource()) == (owner.getStartFigure())) || ((e.getSource()) == (owner.getEndFigure()))) {
-        owner.willChange();
-        owner.updateConnection();
-        owner.changed();
-    }
-}

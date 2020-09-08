@@ -1,6 +1,0 @@
-InputMap getInputMap(int condition) {
-    if (condition == (JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)) {
-        return ((InputMap) (PaletteLookAndFeel.getInstance().get("ToolBar.ancestorInputMap")));
-    }
-    return null;
-}

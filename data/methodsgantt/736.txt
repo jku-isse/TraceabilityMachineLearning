@@ -1,6 +1,0 @@
-/**
- * Return the number of people on the list
- */
-public int nbPeople() {
-    return model.getAllResouces().size();
-}

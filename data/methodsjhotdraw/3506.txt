@@ -1,3 +1,0 @@
-public static Point2D.Double west(Rectangle2D.Double r) {
-    return new Point2D.Double(r.x, ((r.y) + ((r.height) / 2)));
-}

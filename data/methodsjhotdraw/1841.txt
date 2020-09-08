@@ -1,4 +1,0 @@
-/**
- * Removes a listener for undoable edit events.
- */
-void removeUndoableEditListener(UndoableEditListener l);

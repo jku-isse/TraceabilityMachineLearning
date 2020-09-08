@@ -1,4 +1,0 @@
-public ODGEllipseFigure(double x, double y, double width, double height) {
-    ellipse = new Ellipse2D.Double(x, y, width, height);
-    ODGAttributeKeys.setDefaults(this);
-}

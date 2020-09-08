@@ -1,4 +1,0 @@
-public void doClear() {
-    myDependencies.clear();
-    mySearchKey2dependency.clear();
-}

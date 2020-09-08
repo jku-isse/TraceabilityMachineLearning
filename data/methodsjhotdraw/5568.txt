@@ -1,4 +1,0 @@
-public void setRotates(double[] rotates) {
-    this.rotates = rotates;
-    invalidate();
-}

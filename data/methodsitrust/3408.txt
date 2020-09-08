@@ -1,6 +1,0 @@
-public void testUpdateNonExistent() throws DBException, SQLException {
-    final String code = "0000F";
-    ProcedureBean proc = new ProcedureBean(code, "");
-    assertEquals(0, cptDAO.updateCode(proc));
-    assertEquals(17, cptDAO.getAllCPTCodes().size());
-}

@@ -1,3 +1,0 @@
-public boolean isOk() {
-    return isOk;
-}

@@ -1,3 +1,0 @@
-private Action getLinkTasksAction() {
-    return myLinkTasksAction;
-}

@@ -1,7 +1,0 @@
-// Constructors
-/**
- * Create a new instance of this test.
- */
-public MinimaxTest1() {
-    super("A test of the minimax implementation, if boards are passed correctly over search depths");
-}

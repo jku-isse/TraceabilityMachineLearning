@@ -1,6 +1,0 @@
-/**
- * Initialize the component.
- */
-public void initialize() {
-    // automatic initialize with the role model
-}

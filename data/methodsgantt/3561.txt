@@ -1,7 +1,0 @@
-public String correctLabel(String label) {
-    int index = label.indexOf($);
-    if ((index != (-1)) && (((label.length()) - index) > 1)) {
-        label = label.substring(0, index).concat(label.substring((++index)));
-    }
-    return label;
-}

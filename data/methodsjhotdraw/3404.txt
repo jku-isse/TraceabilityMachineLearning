@@ -1,6 +1,0 @@
-public void setClosed(boolean newValue) {
-    if ((isClosed) != newValue) {
-        isClosed = newValue;
-        invalidatePath();
-    }
-}

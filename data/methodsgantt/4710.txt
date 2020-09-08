@@ -1,5 +1,0 @@
-public void setConstraint(TaskDependencyConstraint constraint) {
-    myConstraint = constraint;
-    constraint.setTaskDependency(this);
-    myCollection.fireChanged(this);
-}

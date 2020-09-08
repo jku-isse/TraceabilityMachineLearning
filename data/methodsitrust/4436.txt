@@ -1,4 +1,0 @@
-public void testBadHDL() throws Exception {
-    hr.setCholesterolHDL(34);
-    assertTrue(factor.hasRiskFactor());
-}

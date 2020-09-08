@@ -1,9 +1,0 @@
-/**
- * Returns the active view. This is used for OSXApplication and
- * MDIApplication which share actions among multiple View instances.
- * Active view may be become null, if the
- * application has no view.
- * <p>
- * This is a bound property.
- */
-public View getActiveView();

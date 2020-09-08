@@ -1,7 +1,0 @@
-// Methods
-/**
- * Get the square index of this position instance.
- *
- * @return The square index of this piece position (0-63).
- */
-int getSquareIndex();

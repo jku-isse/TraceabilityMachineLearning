@@ -1,5 +1,0 @@
-public void testGoodEmail() throws Exception {
-    String value = "bob.person1@nc.rr.A.com";
-    String errorMessage = EmailValidatorTest.PASSED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, EmailValidatorTest.VALIDATION_FORMAT, false));
-}

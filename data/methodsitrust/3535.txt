@@ -1,3 +1,0 @@
-public void hcp0() throws FileNotFoundException, IOException, SQLException {
-    new DBBuilder(factory).executeSQLFile(((DIR) + "/hcp0.sql"));
-}

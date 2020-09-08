@@ -1,3 +1,0 @@
-protected ChartItem(Task task) {
-    myTask = task;
-}

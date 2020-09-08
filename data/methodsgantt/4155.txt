@@ -1,1 +1,0 @@
-ResourceAssignment getAssignment(ProjectResource resource);

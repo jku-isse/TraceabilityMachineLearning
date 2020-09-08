@@ -1,4 +1,0 @@
-public void showHiddenButtonsPaneMenu() {
-    menu.applyComponentOrientation(language.getComponentOrientation());
-    menu.show(toolBar, bShowHiddens.getX(), bShowHiddens.getY());
-}

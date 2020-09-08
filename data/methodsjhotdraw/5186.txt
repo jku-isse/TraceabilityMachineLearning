@@ -1,4 +1,0 @@
-@Override
-public String[][] getParameterInfo() {
-    return new String[][]{ new String[]{ "data", "String", "the data to be displayed by this applet." }, new String[]{ "datafile", "URL", "an URL to a file containing the data to be displayed by this applet." } };
-}

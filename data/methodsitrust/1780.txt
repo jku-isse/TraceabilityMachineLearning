@@ -1,9 +1,0 @@
-/**
- * Sets the time for this message
- *
- * @param timestamp
- * 		
- */
-public void setSentDate(Timestamp timestamp) {
-    this.timestamp = timestamp;
-}

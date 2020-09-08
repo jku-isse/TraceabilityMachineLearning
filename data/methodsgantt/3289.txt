@@ -1,1 +1,0 @@
-void removeScrollingListener(ScrollingListener listener);

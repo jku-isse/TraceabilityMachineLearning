@@ -1,3 +1,0 @@
-private Action createOkAction(final Action realAction, final JDialog dialog, final UIFacadeImpl.Commiter commiter) {
-    return new UIFacadeImpl.ProxyOkAction(realAction, dialog, commiter);
-}

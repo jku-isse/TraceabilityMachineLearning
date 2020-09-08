@@ -1,6 +1,0 @@
-// private boolean validatePrescription = false;
-/**
- * The default constructor.
- */
-public EditOfficeVisitValidator() {
-}

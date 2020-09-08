@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param patientName
- * 		the patientName to set
- */
-public void setPatientName(String patientName) {
-    this.patientName = patientName;
-}

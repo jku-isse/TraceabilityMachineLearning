@@ -1,6 +1,0 @@
-public AffineTransform getDrawingToViewTransform() {
-    AffineTransform t = new AffineTransform();
-    t.scale(scaleFactor, scaleFactor);
-    t.translate((-(translate.x)), (-(translate.y)));
-    return t;
-}

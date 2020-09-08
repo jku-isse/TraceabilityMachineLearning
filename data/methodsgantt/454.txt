@@ -1,7 +1,0 @@
-public GanttPreviousStateTask(int id, GanttCalendar start, int duration, boolean isMilestone, boolean hasNested) {
-    myId = id;
-    myStart = start;
-    myDuration = duration;
-    this.isMilestone = isMilestone;
-    this.hasNested = hasNested;
-}

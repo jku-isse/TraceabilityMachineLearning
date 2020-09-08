@@ -1,3 +1,0 @@
-public void startDateChanged(ChartViewState.ViewStateEvent e) {
-    setStartDate(((Date) (e.getNewValue())));
-}

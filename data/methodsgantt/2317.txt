@@ -1,3 +1,0 @@
-private TaskManagerImpl getTaskManager() {
-    return ((TaskManagerImpl) (myProject.getTaskManager()));
-}

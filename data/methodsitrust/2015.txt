@@ -1,3 +1,0 @@
-public void setEndDate(Date endDate) {
-    this.endDateStr = new SimpleDateFormat("MM/dd/yyyy").format(endDate);
-}

@@ -1,3 +1,0 @@
-public int getTaskCount() {
-    return myTaskMap.size();
-}

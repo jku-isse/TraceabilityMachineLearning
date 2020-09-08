@@ -1,4 +1,0 @@
-public Range(ChartModelBase.Offset startOffset, ChartModelBase.Offset endOffset) {
-    start = startOffset;
-    end = endOffset;
-}

@@ -1,5 +1,0 @@
-// Methods
-/**
- * Start the entire timer.
- */
-void start();

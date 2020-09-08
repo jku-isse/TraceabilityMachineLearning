@@ -1,7 +1,0 @@
-public void testGetPrescribingDoctor() throws Exception {
-    action = new ViewExpiredPrescriptionsAction(factory, 2L);
-    PrescriptionBean prescription = new PrescriptionBean();
-    prescription.setVisitID(955L);
-    PersonnelBean personnel = action.getPrescribingDoctor(prescription);
-    assertEquals(9000000000L, personnel.getMID());
-}

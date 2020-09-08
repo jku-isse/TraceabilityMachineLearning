@@ -1,5 +1,0 @@
-/**
- * Gets data which can be used to restore the attributes of the figure
- * after a setAttribute has been applied to it.
- */
-public Object getAttributesRestoreData();

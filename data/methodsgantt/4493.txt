@@ -1,3 +1,0 @@
-private void setMaxID(int id) {
-    myMaxID = id;
-}

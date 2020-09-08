@@ -1,9 +1,0 @@
-/**
- * Creates a new instance.
- */
-public SaveAction(Application app, boolean saveAs) {
-    super(app);
-    this.saveAs = saveAs;
-    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-    labels.configureAction(this, SaveAction.ID);
-}

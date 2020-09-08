@@ -1,3 +1,0 @@
-public TimeUnit getBottomTimeUnit() {
-    return myBottomTimeUnit;
-}

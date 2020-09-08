@@ -1,4 +1,0 @@
-/**
- * Creates secondary handles.
- */
-public Collection<Handle> createSecondaryHandles();

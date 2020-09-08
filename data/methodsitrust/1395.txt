@@ -1,6 +1,0 @@
-public void testZeroHeight() throws Exception {
-    HealthRecord r = new HealthRecord();
-    r.setHeight(0);
-    r.setWeight(200);
-    assertTrue(Double.isInfinite(r.getBodyMassIndex()));
-}

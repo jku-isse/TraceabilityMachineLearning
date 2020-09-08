@@ -1,6 +1,0 @@
-public void removeNotify(Drawing drawing) {
-    super.removeNotify(drawing);
-    if ((getPresentationFigure()) != null) {
-        getPresentationFigure().removeNotify(drawing);
-    }
-}

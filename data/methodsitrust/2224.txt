@@ -1,3 +1,0 @@
-public void setViewedByHCP(boolean viewedByHCP) {
-    this.viewedByHCP = viewedByHCP;
-}

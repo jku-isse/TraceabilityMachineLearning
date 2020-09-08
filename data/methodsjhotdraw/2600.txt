@@ -1,3 +1,0 @@
-public double getArcHeight() {
-    return roundrect.archeight;
-}

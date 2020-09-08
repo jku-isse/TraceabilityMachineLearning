@@ -1,9 +1,0 @@
-public void testNormalReturn() throws Exception {
-    // Test that no exceptions are thrown on method call
-    // TODO: check valid data returns
-    gen.standardData();
-    // Login as kelly doctor
-    action = new GetVisitRemindersAction(factory, 9000000000L);
-    action.getVisitReminders(GetVisitRemindersAction.ReminderType.DIAGNOSED_CARE_NEEDERS);
-    action.getVisitReminders(GetVisitRemindersAction.ReminderType.FLU_SHOT_NEEDERS);
-}

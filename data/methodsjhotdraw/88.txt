@@ -1,4 +1,0 @@
-/**
- * Sets the application model.
- */
-public void setModel(ApplicationModel newValue);

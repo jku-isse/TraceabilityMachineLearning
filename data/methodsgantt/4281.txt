@@ -1,3 +1,0 @@
-public void addNotes(String notes) {
-    myNotes += notes;
-}

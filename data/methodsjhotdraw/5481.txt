@@ -1,6 +1,0 @@
-public void trackEnd(Point anchor, Point lead, int modifiersEx) {
-    final SVGRectFigure svgRect = ((SVGRectFigure) (getOwner()));
-    final Dimension2DDouble oldValue = originalArc2D;
-    final Dimension2DDouble newValue = svgRect.getArc();
-    fireUndoableEditHappened(new SVGRectRadiusUndoableEdit(svgRect, oldValue, newValue));
-}

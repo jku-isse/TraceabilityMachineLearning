@@ -1,7 +1,0 @@
-/**
- * Adds a child to the figure at the specified index.
- * <p>
- * This method calls {@code figureAdded} on all registered
- * {@code CompositeFigureListener}s.
- */
-public void add(int index, Figure child);

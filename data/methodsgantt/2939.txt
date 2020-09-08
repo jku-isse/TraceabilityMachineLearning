@@ -1,4 +1,0 @@
-public void addField(AboutLibraryPanel.LibraryInfo w) {
-    data.addElement(w);
-    fireTableRowsInserted(((data.size()) - 1), ((data.size()) - 1));
-}

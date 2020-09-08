@@ -1,6 +1,0 @@
-/**
- * Returns the SampleModel of the image.
- */
-public SampleModel getSampleModel() {
-    return sampleModel;
-}

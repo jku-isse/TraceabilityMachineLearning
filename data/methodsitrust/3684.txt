@@ -1,9 +1,0 @@
-public static State parse(String state) {
-    State[] values = State.values();
-    for (State myState : values) {
-        if ((myState.getName().equals(state)) || (myState.getAbbrev().equals(state)))
-            return myState;
-
-    }
-    return State.NC;
-}

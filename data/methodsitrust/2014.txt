@@ -1,3 +1,0 @@
-public void setDosage(int dosage) {
-    this.dosage = dosage;
-}

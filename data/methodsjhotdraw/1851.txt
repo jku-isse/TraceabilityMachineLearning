@@ -1,5 +1,0 @@
-/**
- * Gets the editors active drawing view.
- * This can be null, if the editor has no views.
- */
-DrawingView getActiveView();

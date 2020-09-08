@@ -1,4 +1,0 @@
-public West(DrawingEditor editor) {
-    super(editor, (-1), 0);
-    labels.configureAction(this, MoveAction.West.ID);
-}

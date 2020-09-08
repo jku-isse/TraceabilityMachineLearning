@@ -1,5 +1,0 @@
-void CloseButton_keyReleased(KeyEvent e) {
-    if ((e.getKeyCode()) == (KeyEvent.VK_ENTER))
-        this.hide();
-
-}

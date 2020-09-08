@@ -1,3 +1,0 @@
-public void setDefaultVal(Object defaultVal) {
-    this.defaultVal = defaultVal;
-}

@@ -1,6 +1,0 @@
-/**
- * Gets compatible handles.
- *
- * @return A collection containing the handle and all compatible handles.
- */
-public Collection<Handle> getCompatibleHandles(Handle handle);

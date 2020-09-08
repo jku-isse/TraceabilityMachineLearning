@@ -1,3 +1,0 @@
-public JLabel getSplashComponent() {
-    return mySplashComponent;
-}

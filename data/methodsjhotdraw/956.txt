@@ -1,7 +1,0 @@
-protected FontRenderContext getFontRenderContext() {
-    FontRenderContext frc = null;
-    if (frc == null) {
-        frc = new FontRenderContext(new AffineTransform(), Options.isTextAntialiased(), Options.isFractionalMetrics());
-    }
-    return frc;
-}

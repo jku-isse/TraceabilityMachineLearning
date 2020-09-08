@@ -1,3 +1,0 @@
-public String getNameFromId(String id) {
-    return ((CustomColumn) (mapIdCustomColum.get(id))).getName();
-}

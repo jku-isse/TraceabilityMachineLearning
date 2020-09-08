@@ -1,4 +1,0 @@
-public void setAngularComponentIndex(int newValue) {
-    angularIndex = newValue;
-    isPixelsValid = false;
-}

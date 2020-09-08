@@ -1,9 +1,0 @@
-/**
- * Set a new PlyGenerator instance.
- *
- * @param plyGenerator
- * 		The new PlyGenerator instance.
- */
-private final void setPlyGenerator(PlyGenerator plyGenerator) {
-    _plyGenerator = plyGenerator;
-}

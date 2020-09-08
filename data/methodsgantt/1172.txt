@@ -1,5 +1,0 @@
-public void deleteResources(ProjectResource[] peoples) {
-    for (int i = 0; i < (peoples.length); i++) {
-        deleteResource(peoples[i]);
-    }
-}

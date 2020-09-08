@@ -1,8 +1,0 @@
-protected void updateEnabledState() {
-    boolean isEnabled = false;
-    Action realRedoAction = getRealRedoAction();
-    if (realRedoAction != null) {
-        isEnabled = realRedoAction.isEnabled();
-    }
-    setEnabled(isEnabled);
-}

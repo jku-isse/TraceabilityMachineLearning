@@ -1,4 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    AbstractAction activeAction = myProvider.getActiveAction();
-    activeAction.actionPerformed(e);
-}

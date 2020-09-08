@@ -1,5 +1,0 @@
-public DependencyTagHandler(ParsingContext context, TaskManager taskManager, UIFacade uiFacade) {
-    myContext = context;
-    myTaskManager = taskManager;
-    myUIFacade = uiFacade;
-}

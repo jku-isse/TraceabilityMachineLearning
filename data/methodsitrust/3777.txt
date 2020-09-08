@@ -1,5 +1,0 @@
-@Override
-protected void tearDown() throws Exception {
-    gen.clearAllTables();
-    // gen.standardData();
-}

@@ -1,8 +1,0 @@
-/**
- * Returns a string representation of the CustomColumn.
- *
- * @return A string representation of the CustomColumn.
- */
-public String toString() {
-    return (((((this.name) + " [") + (this.type)) + "] <") + (this.defaultValue)) + ">";
-}

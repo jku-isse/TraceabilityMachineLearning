@@ -1,4 +1,0 @@
-public void testGetAllFromEmptyTable() throws DBException, SQLException {
-    clearNDCodes();
-    assertEquals(0, ndDAO.getAllNDCodes().size());
-}

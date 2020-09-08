@@ -1,8 +1,0 @@
-/**
- * Installs listeners on the application object.
- */
-@Override
-protected void uninstallApplicationListeners(Application app) {
-    super.uninstallApplicationListeners(app);
-    app.removePropertyChangeListener(applicationListener);
-}

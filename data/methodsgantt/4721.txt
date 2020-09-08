@@ -1,4 +1,0 @@
-public TaskDependencySliceImpl(Task task, TaskDependencyCollection dependencyCollection) {
-    myTask = task;
-    myDependencyCollection = dependencyCollection;
-}

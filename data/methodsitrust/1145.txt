@@ -1,6 +1,0 @@
-public void testGetPatient() throws iTrustException {
-    PatientBean pBean = action.getPatient();
-    assertEquals(2L, pBean.getMID());
-    pBean = action.getPatient(2L);
-    assertEquals(2L, pBean.getMID());
-}

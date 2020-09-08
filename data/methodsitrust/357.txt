@@ -1,3 +1,0 @@
-public EditReferralsAction referrals() throws iTrustException {
-    return referralsAction;
-}

@@ -1,4 +1,0 @@
-/**
- * Returns true if the field is currently adjusting the value.
- */
-public boolean getValueIsAdjusting();

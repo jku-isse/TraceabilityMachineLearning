@@ -1,3 +1,0 @@
-public View getActiveView() {
-    return view;
-}

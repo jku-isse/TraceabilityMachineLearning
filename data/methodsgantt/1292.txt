@@ -1,3 +1,0 @@
-private boolean isOn() {
-    return (myUIConfiguration) == null ? false : myUIConfiguration.isCriticalPathOn();
-}

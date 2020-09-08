@@ -1,6 +1,0 @@
-@Override
-public DefaultDrawing clone() {
-    DefaultDrawing that = ((DefaultDrawing) (super.clone()));
-    that.canvasSize = ((this.canvasSize) == null) ? null : ((Dimension2DDouble) (this.canvasSize.clone()));
-    return that;
-}

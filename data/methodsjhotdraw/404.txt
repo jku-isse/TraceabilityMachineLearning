@@ -1,5 +1,0 @@
-protected void installViewListeners(View p) {
-    super.installViewListeners(p);
-    p.addPropertyChangeListener(viewListener);
-    updateView();
-}

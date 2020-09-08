@@ -1,4 +1,0 @@
-/**
- * Removes a palette window from the application.
- */
-public void removePalette(Window palette);

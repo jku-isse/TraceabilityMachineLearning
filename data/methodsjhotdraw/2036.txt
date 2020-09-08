@@ -1,6 +1,0 @@
-/**
- * Gets the text contents of the overlay.
- */
-public String getText() {
-    return textField.getText();
-}

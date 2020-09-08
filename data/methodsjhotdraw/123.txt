@@ -1,5 +1,0 @@
-public void setCopyright(String newValue) {
-    String oldValue = copyright;
-    copyright = newValue;
-    firePropertyChange(DefaultApplicationModel.COPYRIGHT_PROPERTY, oldValue, newValue);
-}

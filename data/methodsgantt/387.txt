@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the top left x position of the window.
- */
-public int getX() {
-    return x;
-}

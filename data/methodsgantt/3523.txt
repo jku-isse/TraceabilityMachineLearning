@@ -1,3 +1,0 @@
-private void saveCalendar(TransformerHandler handler) throws SAXException {
-    new CalendarSaver().save(getProject(), handler);
-}

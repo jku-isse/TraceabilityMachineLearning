@@ -1,3 +1,0 @@
-private JFrame getProjectFrame() {
-    return myProjectFrame;
-}

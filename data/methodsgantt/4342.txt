@@ -1,8 +1,0 @@
-public void setThirdDate(GanttCalendar third) {
-    GanttCalendar oldThird = ((myThird) == null) ? null : myThird.Clone();
-    myThird = third;
-    // recalculateActivities();
-    // if (areEventsEnabled()) {
-    // myManager.fireTaskScheduleChanged(this, myThird.Clone(), oldThird);
-    // }
-}

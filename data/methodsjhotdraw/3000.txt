@@ -1,1 +1,0 @@
-protected abstract void alignFigures(Collection selectedFigures, Rectangle2D.Double selectionBounds);

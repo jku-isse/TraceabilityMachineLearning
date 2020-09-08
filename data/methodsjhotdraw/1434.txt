@@ -1,6 +1,0 @@
-/**
- * Gets the end figure of the connection.
- * This is a convenience method for doing getEndConnector().getOwner()
- * and handling null cases.
- */
-public Figure getEndFigure();

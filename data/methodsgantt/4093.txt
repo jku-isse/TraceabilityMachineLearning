@@ -1,4 +1,0 @@
-public void changeCustomColumnName(String oldName, String newName) {
-    // ganttTreeTable.renameCustomcolumn(oldName, newName);
-    myStorage.renameCustomColumn(oldName, newName);
-}

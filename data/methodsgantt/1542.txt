@@ -1,8 +1,0 @@
-private Date getStateChangeDate(Date startDate, boolean changeToWeekend) {
-    Date nextDayStart = myFramer.adjustRight(startDate);
-    if (!(changeToWeekend ^ (isNonWorkingDay(nextDayStart)))) {
-        return nextDayStart;
-    } else {
-        return getStateChangeDate(nextDayStart, changeToWeekend);
-    }
-}

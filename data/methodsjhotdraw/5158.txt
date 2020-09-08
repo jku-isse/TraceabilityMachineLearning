@@ -1,3 +1,0 @@
-public boolean equals(RadialGradient that) {
-    return ((((((((((cx) == (that.cx)) && ((cy) == (that.cy))) && ((fx) == (that.fx))) && ((fy) == (that.fy))) && ((r) == (that.r))) && ((isRelativeToFigureBounds) == (that.isRelativeToFigureBounds))) && (Arrays.equals(stopOffsets, that.stopOffsets))) && (Arrays.equals(stopOpacities, that.stopOpacities))) && (Arrays.equals(stopColors, that.stopColors))) && (transform.equals(that.transform));
-}

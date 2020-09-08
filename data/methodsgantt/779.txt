@@ -1,6 +1,0 @@
-/**
- * get the relationship type
- */
-public int getRelationshipType() {
-    return relationshipType;
-}

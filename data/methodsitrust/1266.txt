@@ -1,5 +1,0 @@
-public ViewReceivingReferralsAction(DAOFactory factory, long patientID) throws iTrustException {
-    this.referralDAO = factory.getReferralDAO();
-    this.ovDAO = factory.getOfficeVisitDAO();
-    this.hcpID = patientID;
-}

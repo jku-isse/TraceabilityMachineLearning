@@ -1,3 +1,0 @@
-public List<ProcedureBean> getProcedureCodes() throws DBException {
-    return cptDAO.getProcedureCPTCodes();
-}

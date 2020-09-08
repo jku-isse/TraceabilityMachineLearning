@@ -1,3 +1,0 @@
-protected BezierPath calculateFittedCurve(BezierPath path) {
-    return Bezier.fitBezierPath(path, (1.5 / (getView().getScaleFactor())));
-}

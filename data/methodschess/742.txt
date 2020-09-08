@@ -1,7 +1,0 @@
-// Constructors
-/**
- * Create a new stack instance.
- */
-public UnsynchronizedArrayStack() {
-    this(30);
-}

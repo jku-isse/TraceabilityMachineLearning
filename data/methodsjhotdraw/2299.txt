@@ -1,3 +1,0 @@
-public boolean canConnect(Connector start) {
-    return start.getOwner().canConnect();
-}

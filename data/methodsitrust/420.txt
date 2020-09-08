@@ -1,4 +1,0 @@
-public void testGetPatientLogged() throws Exception {
-    PatientBean patient = action.getPatient();
-    assertEquals(2L, patient.getMID());
-}

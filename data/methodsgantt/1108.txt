@@ -1,7 +1,0 @@
-/**
- * draw the panel
- */
-public void paintComponent(Graphics g) {
-    myChartModel.setBounds(getSize());
-    myChartImplementation.paintComponent(g);
-}

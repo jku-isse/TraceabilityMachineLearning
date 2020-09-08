@@ -1,3 +1,0 @@
-public void read(File f) throws IOException {
-    read(f, getAccessory().getCharacterSet());
-}

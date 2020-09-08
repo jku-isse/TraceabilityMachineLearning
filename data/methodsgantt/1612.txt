@@ -1,4 +1,0 @@
-public void endUnitLine(TimeUnit timeUnit) {
-    areUnitsAccepted = false;
-    myCurrentUnit = null;
-}

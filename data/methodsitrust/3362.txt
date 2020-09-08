@@ -1,8 +1,0 @@
-public void testReceiverQueryReceiver() throws Exception {
-    ReferralDAO.ReferralListQuery query = dao.getReceiverQuery(9000000003L);
-    List<VerboseReferralBean> list = query.query("referralDetails", SortDirection.ASCENDING);
-    assertEquals(3, list.size());
-    assertEquals(101, list.get(0).getOvid());
-    assertEquals(103, list.get(1).getOvid());
-    assertEquals(103, list.get(2).getOvid());
-}

@@ -1,8 +1,0 @@
-private Action createMenuAction(String label, String iconPath) {
-    AbstractAction result = new AbstractAction(label, new ImageIcon(getClass().getResource(iconPath))) {
-        public void actionPerformed(ActionEvent e) {
-            appli.actionPerformed(e);
-        }
-    };
-    return result;
-}

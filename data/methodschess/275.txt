@@ -1,8 +1,0 @@
-/**
- * Get the next ply from the opening book, if there is
- * one available, or null if not.
- *
- * @return The next ply from the opening book, or null
-if theres no ply available.
- */
-AnalyzedPly getOpeningBookPly();

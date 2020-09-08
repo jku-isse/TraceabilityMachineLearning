@@ -1,3 +1,0 @@
-public void setAvgTreatmentSatisfaction(float treatmentSatisfaction) {
-    this.avgTreatmentSatisfaction = treatmentSatisfaction;
-}

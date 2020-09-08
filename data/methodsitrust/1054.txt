@@ -1,3 +1,0 @@
-public List<ApptBean> getMyAppointments() throws SQLException {
-    return apptDAO.getApptsFor(loggedInMID);
-}

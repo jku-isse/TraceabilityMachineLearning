@@ -1,6 +1,0 @@
-public void scrollLeft() {
-    for (int i = 0; i < (myListeners.size()); i++) {
-        ScrollingListener nextListener = ((ScrollingListener) (myListeners.get(i)));
-        nextListener.scrollLeft();
-    }
-}

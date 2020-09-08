@@ -1,6 +1,0 @@
-private void closePerformed(ActionEvent evt) {
-    // GEN-FIRST:event_closePerformed
-    for (ActionListener l : listeners.getListeners(ActionListener.class)) {
-        l.actionPerformed(evt);
-    }
-}// GEN-LAST:event_closePerformed

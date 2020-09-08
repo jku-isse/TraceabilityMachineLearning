@@ -1,3 +1,0 @@
-public void setProjectTask(boolean projectTask) {
-    isProjectTask = projectTask;
-}

@@ -1,3 +1,0 @@
-public void setTopicalNotes(String topicalNotes) {
-    this.topicalNotes = topicalNotes;
-}

@@ -1,4 +1,0 @@
-@Override
-public void removeWindow(Window window) {
-    paletteHandler.remove(window);
-}

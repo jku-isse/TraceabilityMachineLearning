@@ -1,3 +1,0 @@
-public ReferralBean getReferralByID(int id) throws DBException {
-    return referralDAO.getReferral(id);
-}

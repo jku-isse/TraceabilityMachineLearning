@@ -1,3 +1,0 @@
-public EditPrescriptionsValidator(String defaultInstructions) {
-    this.defaultInstructions = defaultInstructions;
-}

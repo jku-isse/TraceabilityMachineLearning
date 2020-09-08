@@ -1,5 +1,0 @@
-/**
- * Returns Insets to be used by the text editor relative to the handle bounds
- * of the figure.
- */
-public Insets2D.Double getInsets();

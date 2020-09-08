@@ -1,5 +1,0 @@
-private void createDependencyLines() {
-    /* <DependencyDrawData> */
-    List dependencyDrawData = prepareDependencyDrawData();
-    drawDependencies(dependencyDrawData);
-}

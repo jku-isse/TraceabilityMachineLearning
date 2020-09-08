@@ -1,5 +1,0 @@
-DependencyActivityBindingImpl(TaskActivity dependantActivity, TaskActivity dependeeActivity, Date[] alignedBounds) {
-    myDependantActivity = dependantActivity;
-    myDependeeActivity = dependeeActivity;
-    myAlignedBounds = alignedBounds;
-}

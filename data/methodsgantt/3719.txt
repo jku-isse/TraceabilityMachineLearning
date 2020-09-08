@@ -1,3 +1,0 @@
-public void importData(TableHeaderUIFacade source) {
-    throw new UnsupportedOperationException();
-}

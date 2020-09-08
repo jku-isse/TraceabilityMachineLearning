@@ -1,3 +1,0 @@
-public int getSpanningHeaderHeight() {
-    return (myHeaderHeight) / 2;
-}

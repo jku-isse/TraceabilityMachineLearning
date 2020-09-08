@@ -1,3 +1,0 @@
-public void setModified() {
-    setAskForSave(true);
-}

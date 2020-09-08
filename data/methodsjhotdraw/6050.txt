@@ -1,7 +1,0 @@
-protected void writeGElement(IXMLElement parent, SVGGroupFigure f) throws IOException {
-    IXMLElement elem = createG(document, f.getAttributes());
-    for (Figure child : f.getChildren()) {
-        writeElement(elem, child);
-    }
-    parent.addChild(elem);
-}

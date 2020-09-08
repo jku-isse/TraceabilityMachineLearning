@@ -1,9 +1,0 @@
-/**
- * Constructor initializing the error message string
- *
- * @param string
- * 		The error message string
- */
-public CSVFormatException(String string) {
-    message = string;
-}

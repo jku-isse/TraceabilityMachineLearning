@@ -1,9 +1,0 @@
-public void testUpdateDescription() throws DBException, iTrustException {
-    final String code = "777777777";
-    final String desc = "testUpdateDescription NEW description";
-    MedicationBean proc = genericAdd(code, "");
-    proc.setDescription(desc);
-    assertEquals(1, ndDAO.updateCode(proc));
-    proc = ndDAO.getNDCode(code);
-    assertEquals(desc, proc.getDescription());
-}

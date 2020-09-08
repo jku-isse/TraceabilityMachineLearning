@@ -1,3 +1,0 @@
-public Color getEarlierPreviousTaskColor() {
-    return myProjectConfig.getEarlierPreviousTaskColor();
-}

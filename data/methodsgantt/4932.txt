@@ -1,3 +1,0 @@
-void append(TimeFrameImpl.LineHeader next) {
-    myNextHeader = next;
-}

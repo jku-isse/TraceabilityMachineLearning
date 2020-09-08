@@ -1,4 +1,0 @@
-protected void setHasUnsavedChanges(boolean newValue) {
-    super.setHasUnsavedChanges(newValue);
-    undo.setHasSignificantEdits(newValue);
-}

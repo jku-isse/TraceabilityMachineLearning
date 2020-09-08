@@ -1,9 +1,0 @@
-/**
- * Get the current number of elements on the stack.
- *
- * @param The
- * 		current size of the stack.
- */
-public final int size() {
-    return _nItems;
-}

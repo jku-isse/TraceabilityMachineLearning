@@ -1,3 +1,0 @@
-public void testNoInfectionsAtAll() throws Exception {
-    assertFalse(factor.hasRiskFactor());
-}

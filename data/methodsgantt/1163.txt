@@ -1,6 +1,0 @@
-public DefaultMutableTreeNode addResource(ProjectResource people) {
-    DefaultMutableTreeNode result = new ResourceNode(people);
-    insertNodeInto(result, root, root.getChildCount());
-    myResourceManager.toString();
-    return result;
-}

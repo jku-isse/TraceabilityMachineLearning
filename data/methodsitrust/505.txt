@@ -1,9 +1,0 @@
-public void testGetReferrals() throws Exception {
-    action = new EditReferralsAction(factory, 9000000000L, "2", "955");
-    assertEquals(4, action.getReferrals().size());
-    action = new EditReferralsAction(factory, 9000000000L, "1", "11");
-    assertEquals(0, action.getReferrals().size());
-    // An EditPrescriptionAction without an ovID returns an empty list.
-    action = new EditReferralsAction(factory, 9000000000L, "2");
-    assertEquals(0, action.getReferrals().size());
-}

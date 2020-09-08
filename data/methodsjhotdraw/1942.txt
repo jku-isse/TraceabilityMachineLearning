@@ -1,6 +1,0 @@
-public Rectangle2D.Double getDrawingArea() {
-    Rectangle2D.Double r = ((Rectangle2D.Double) (ellipse.getBounds2D()));
-    double grow = AttributeKeys.getPerpendicularHitGrowth(this);
-    Geom.grow(r, grow, grow);
-    return r;
-}

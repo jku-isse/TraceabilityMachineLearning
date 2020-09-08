@@ -1,9 +1,0 @@
-private static String getStringList(int[] tabInt) {
-    String res = "";
-    int i = 0;
-    for (i = 0; i < ((tabInt.length) - 1); i++) {
-        res += (tabInt[i]) + ",";
-    }
-    res += tabInt[i];
-    return res;
-}

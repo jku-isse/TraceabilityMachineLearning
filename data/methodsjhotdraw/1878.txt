@@ -1,7 +1,0 @@
-/**
- * Adds a property change listener to the drawing view.
- *
- * @param listener
- * 		
- */
-public void addPropertyChangeListener(PropertyChangeListener listener);

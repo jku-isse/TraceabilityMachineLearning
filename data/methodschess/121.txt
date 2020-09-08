@@ -1,9 +1,0 @@
-/**
- * Test if a king is in check on a given board.
- *
- * @param board
- * 		The board to test.
- * @param white
- * 		true, if the white king is checked, false otherwise.
- */
-boolean isInCheck(BitBoard board, boolean white);

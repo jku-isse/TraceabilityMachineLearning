@@ -1,6 +1,0 @@
-/**
- * Get the maximum number of entries in the hashtable.
- *
- * @return The maximum number of entries in the hashtable.
- */
-int getMaximumSize();

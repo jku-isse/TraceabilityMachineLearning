@@ -1,7 +1,0 @@
-/**
- * Draw the figure. This method is delegated to the encapsulated presentation figure.
- */
-public void draw(Graphics2D g) {
-    drawPresentationFigure(g);
-    super.draw(g);
-}

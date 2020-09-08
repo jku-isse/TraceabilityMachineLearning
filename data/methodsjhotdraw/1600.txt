@@ -1,8 +1,0 @@
-public void setActiveView(DrawingView newValue) {
-    DrawingView oldValue = activeView;
-    activeView = newValue;
-    if ((newValue != null) && (newValue != oldValue)) {
-        preferredViewSize = activeView.getComponent().getPreferredSize();
-    }
-    firePropertyChange(DrawingEditor.ACTIVE_VIEW_PROPERTY, oldValue, newValue);
-}

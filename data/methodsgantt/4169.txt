@@ -1,3 +1,0 @@
-public ResourceAssignmentMutator createMutator() {
-    return new ResourceAssignmentCollectionImpl.ResourceAssignmentMutatorImpl();
-}

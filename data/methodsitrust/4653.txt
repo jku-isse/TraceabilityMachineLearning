@@ -1,4 +1,0 @@
-@Override
-public void validate(TestBean bean) throws FormValidationException {
-    throw new IllegalStateException("Mock object acts as a proxy to protected BeanValidator classes. Do not call this method");
-}

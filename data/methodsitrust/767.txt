@@ -1,3 +1,0 @@
-public void assignPatientToRoom(WardRoomBean wardRoom, PatientBean patient) throws DBException {
-    assignPatientToRoom(wardRoom, patient.getMID());
-}

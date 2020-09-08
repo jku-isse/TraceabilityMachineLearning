@@ -1,4 +1,0 @@
-public void addRoleSetPage(RoleSet[] roleSets) {
-    WizardPage roleSetPage = new RoleSetPage(roleSets, myI18n);
-    addPage(roleSetPage);
-}

@@ -1,3 +1,0 @@
-OpenURLAction(GanttProject mainFrame) {
-    myMainFrame = mainFrame;
-}

@@ -1,6 +1,0 @@
-/**
- * The preferred size is used by Layouter to determine the preferred
- * size of a Figure. For most Figures this is the same as the
- * dimensions returned by getBounds.
- */
-public Dimension2DDouble getPreferredSize();

@@ -1,3 +1,0 @@
-public int getAtomCount(TimeUnit atomUnit) {
-    throw new UnsupportedOperationException("This time unit is function of date. Use method createTimeUnit() to create a parameterized instance.");
-}

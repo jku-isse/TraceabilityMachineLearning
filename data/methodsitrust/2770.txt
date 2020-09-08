@@ -1,6 +1,0 @@
-public void testGetLabProceduresForLHCPForNextMonth() throws Exception {
-    long id1 = lpDAO.addLabProcedure(l1);
-    List<LabProcedureBean> procedures = lpDAO.getLabProceduresForLHCPForNextMonth(918L);
-    assertEquals(1, procedures.size());
-    assertEquals(id1, procedures.get(0).getProcedureID());
-}

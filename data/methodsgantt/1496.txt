@@ -1,7 +1,0 @@
-/* (non-Javadoc)
-
-@see java.lang.Object#toString()
- */
-public String toString() {
-    return (((((isWorkingTime() ? "Working time: " : "Holiday: ") + "[") + (getStart())) + ", ") + (getEnd())) + "]";
-}

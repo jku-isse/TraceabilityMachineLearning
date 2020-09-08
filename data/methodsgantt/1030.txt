@@ -1,2 +1,0 @@
-/* <GanttPreviousState */
-List getBaselines();

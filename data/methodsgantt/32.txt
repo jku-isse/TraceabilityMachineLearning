@@ -1,3 +1,0 @@
-public Chart createCopy() {
-    return new ChartComponentBase.AbstractChartImplementation(getChartModel().createCopy());
-}

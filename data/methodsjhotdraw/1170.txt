@@ -1,6 +1,0 @@
-/**
- * Adds a control point.
- */
-public void addNode(BezierPath.Node p) {
-    addNode(getNodeCount(), p);
-}

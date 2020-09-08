@@ -1,5 +1,0 @@
-private String unescape(String name) {
-    // Unescape dollar characters from two full-stop characters
-    name = name.replaceAll("\.\.", Matcher.quoteReplacement("$"));
-    return name;
-}

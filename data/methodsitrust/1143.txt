@@ -1,3 +1,0 @@
-public void testGetFamilyMemberCOD() throws iTrustException {
-    assertEquals("Diabetes with ketoacidosis", action.getFamilyMemberCOD(fmBean));
-}

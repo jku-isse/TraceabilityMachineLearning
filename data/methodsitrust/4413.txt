@@ -1,4 +1,0 @@
-@Override
-public boolean hasFactor() {
-    return (patient.getAge()) > (age);
-}

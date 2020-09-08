@@ -1,6 +1,0 @@
-/**
- * Returns true if null values are allowed.
- */
-public boolean getAllowsNullValue() {
-    return allowsNullValue;
-}

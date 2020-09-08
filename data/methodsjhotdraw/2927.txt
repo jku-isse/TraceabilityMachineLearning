@@ -1,2 +1,0 @@
-protected void trackStepNormalized(Point2D.Double p) {
-}

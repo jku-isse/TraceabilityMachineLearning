@@ -1,3 +1,0 @@
-public IProgressMonitor createProgressGroup() {
-    return myStatusBar.createProgressMonitor();
-}

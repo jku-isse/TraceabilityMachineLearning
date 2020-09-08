@@ -1,6 +1,0 @@
-/**
- * Stop the computations of the permanent brain.
- */
-public final void stopPermanentBrain() {
-    getPermanentBrain().stopComputation();
-}

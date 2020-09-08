@@ -1,5 +1,0 @@
-public void setHCPName(String name) {
-    if (null != name) {
-        HCPName = name;
-    }
-}

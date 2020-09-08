@@ -1,3 +1,0 @@
-public String getIcAddress1() {
-    return icAddress1;
-}

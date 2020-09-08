@@ -1,6 +1,0 @@
-/**
- * Is the date equals to when
- */
-public boolean equals(GanttCalendar when) {
-    return (((getYear()) == (when.getYear())) && ((getMonth()) == (when.getMonth()))) && ((getDay()) == (when.getDay()));
-}

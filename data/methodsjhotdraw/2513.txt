@@ -1,6 +1,0 @@
-/**
- * Non-transforming North east.
- */
-public static Locator northEast() {
-    return RelativeLocator.northEast(false);
-}

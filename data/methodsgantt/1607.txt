@@ -1,6 +1,0 @@
-public ChartGridImpl(ChartModelBase chartModel, final UIConfiguration projectConfig) {
-    super(chartModel);
-    myRedlineOption = projectConfig.getRedlineOption();
-    myProjectDatesOption = projectConfig.getProjectBoundariesOption();
-    myOptions = new ChartOptionGroup("ganttChartGridDetails", new GPOption[]{ myRedlineOption, myProjectDatesOption }, chartModel.getOptionEventDispatcher());
-}

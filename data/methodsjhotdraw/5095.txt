@@ -1,7 +1,0 @@
-@SuppressWarnings("unchecked")
-private void applyAttributes(Figure f) {
-    Map<AttributeKey, Object> attr = ((AbstractAttributedFigure) (getPresentationFigure())).getAttributes();
-    for (Map.Entry<AttributeKey, Object> entry : attr.entrySet()) {
-        entry.getKey().basicSet(f, entry.getValue());
-    }
-}

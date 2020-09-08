@@ -1,3 +1,0 @@
-public SVGPathFigure getOwner() {
-    return ((SVGPathFigure) (super.getOwner()));
-}

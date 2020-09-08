@@ -1,3 +1,0 @@
-public void setRedlineOn(boolean redlineOn) {
-    isRedlineOn = redlineOn;
-}

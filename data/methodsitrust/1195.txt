@@ -1,3 +1,0 @@
-public List<ProcedureBean> getImmunizations() throws DBException {
-    return proceduresDAO.getImmunizationList(ovID);
-}

@@ -1,3 +1,0 @@
-public ServletContext getServletContext() {
-    throw new IllegalStateException("should not be hit!");
-}

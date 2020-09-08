@@ -1,6 +1,0 @@
-public void testToString() {
-    String expected = "";
-    filter = new PersonnelReportFilter(PersonnelReportFilter.PersonnelReportFilterType.DLHCP, "val", factory);
-    expected = "Filter by DECLARED HCP with value val";
-    assertEquals(expected, filter.toString());
-}

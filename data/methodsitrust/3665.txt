@@ -1,8 +1,0 @@
-public static Gender parse(String input) {
-    for (Gender gender : Gender.values()) {
-        if (gender.name.equals(input))
-            return gender;
-
-    }
-    return Gender.NotSpecified;
-}

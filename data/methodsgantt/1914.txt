@@ -1,1 +1,0 @@
-void paint(GraphicPrimitiveContainer.Rectangle rectangle);

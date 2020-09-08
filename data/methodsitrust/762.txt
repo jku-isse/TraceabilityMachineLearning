@@ -1,6 +1,0 @@
-public void testGetDiagnoses() throws Exception {
-    action = new MyDiagnosisAction(factory, 2L);
-    List<DiagnosisBean> diagnoses = action.getDiagnoses();
-    assertEquals(11, diagnoses.size());
-    // further testing should be done in the patientDAO
-}

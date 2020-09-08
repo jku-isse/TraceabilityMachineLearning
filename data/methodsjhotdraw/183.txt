@@ -1,5 +1,0 @@
-@Override
-public void launch(String[] args) {
-    System.setProperty("apple.awt.graphics.UseQuartz", "false");
-    super.launch(args);
-}

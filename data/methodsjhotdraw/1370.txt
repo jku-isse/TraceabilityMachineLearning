@@ -1,4 +1,0 @@
-protected Point2D.Double chop(Figure target, Point2D.Double from) {
-    TriangleFigure bf = ((TriangleFigure) (getConnectorTarget(target)));
-    return bf.chop(from);
-}

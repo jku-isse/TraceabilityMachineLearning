@@ -1,7 +1,0 @@
-/* gets the value of a custom field referenced by its title */
-public Object getCustomField(String title) {
-    if ((resource) instanceof HumanResource)
-        return ((HumanResource) (resource)).getCustomFieldVal(title);
-
-    return null;
-}

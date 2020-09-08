@@ -1,3 +1,0 @@
-public Figure findFigureInside(Point2D.Double p) {
-    return contains(p) ? this : null;
-}

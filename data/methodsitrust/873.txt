@@ -1,9 +1,0 @@
-public void testBadConnection() throws Exception {
-    gen.patient2();
-    try {
-        action = new SetSecurityQuestionAction(evil, 2L);
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getExtendedMessage());
-    }
-}

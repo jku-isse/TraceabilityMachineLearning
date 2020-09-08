@@ -1,8 +1,0 @@
-@Test
-public void testLoadList() {
-    try {
-        list = wbl.loadList(rs);
-    } catch (SQLException e) {
-    }
-    assertEquals(0, list.size());
-}

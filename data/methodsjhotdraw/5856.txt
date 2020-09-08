@@ -1,4 +1,0 @@
-private void boundary() throws IOException {
-    write("--");
-    write(boundary);
-}

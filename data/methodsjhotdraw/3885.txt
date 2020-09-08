@@ -1,7 +1,0 @@
-/**
- * If this returns true, the JSheet uses a transition effect when shown
- * and when hidden.
- */
-public boolean isAnimated() {
-    return isAnimated;
-}

@@ -1,3 +1,0 @@
-public double getX2() {
-    return x2;
-}

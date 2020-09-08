@@ -1,7 +1,0 @@
-/**
- * Changes the ColorSystem used by this ColorSliderModel.
- *
- * @param newValue
- * 		ColorSystem.
- */
-public void setColorSystem(ColorSystem newValue);

@@ -1,3 +1,0 @@
-protected PropertyChangeListener createPropertyChangeListener(JSlider slider) {
-    return new ColorSliderUI.CSUIPropertyChangeHandler();
-}

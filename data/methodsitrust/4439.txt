@@ -1,4 +1,0 @@
-public EthnicityFactor(PatientBean patient, Ethnicity... atRisks) {
-    this.atRisk = atRisks.clone();
-    this.patient = patient;
-}

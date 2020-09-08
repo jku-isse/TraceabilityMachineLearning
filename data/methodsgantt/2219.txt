@@ -1,5 +1,0 @@
-public void loadValue(String legacyValue) {
-    lock();
-    loadPersistentValue(legacyValue);
-    commit();
-}

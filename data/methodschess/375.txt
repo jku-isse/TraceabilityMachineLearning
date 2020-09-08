@@ -1,4 +1,0 @@
-/**
- * Take the last ply back.
- */
-void undoLastPly();

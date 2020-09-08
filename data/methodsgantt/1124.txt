@@ -1,3 +1,0 @@
-public void addMouseListener(MouseListener listener) {
-    getTreeTable().addMouseListener(listener);
-}

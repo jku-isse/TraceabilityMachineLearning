@@ -1,6 +1,0 @@
-/**
- * Removes a sheet listener.
- */
-public void removeSheetListener(SheetListener l) {
-    listenerList.remove(SheetListener.class, l);
-}

@@ -1,3 +1,0 @@
-public DnDTracker(Figure figure) {
-    anchorFigure = figure;
-}

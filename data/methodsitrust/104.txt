@@ -1,5 +1,0 @@
-public AddApptRequestAction(DAOFactory factory) {
-    aDAO = factory.getApptDAO();
-    arDAO = factory.getApptRequestDAO();
-    atDAO = factory.getApptTypeDAO();
-}

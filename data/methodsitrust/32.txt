@@ -1,6 +1,0 @@
-public static void rebuildAll() throws FileNotFoundException, IOException, SQLException {
-    DBBuilder dbBuilder = new DBBuilder(TestDAOFactory.getTestInstance());
-    dbBuilder.dropTables();
-    dbBuilder.createTables();
-    System.out.println("Operation Completed");
-}

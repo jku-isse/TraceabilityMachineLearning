@@ -1,9 +1,0 @@
-/**
- * Sets the valid characters.
- *
- * @param valid_chars
- * 		The valid characters to set.
- */
-protected void setValidCharacters(String valid_chars) {
-    this.valid_characters = valid_chars;
-}

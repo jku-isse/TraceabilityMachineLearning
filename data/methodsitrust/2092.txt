@@ -1,3 +1,0 @@
-public void setReporterRole(String reporterRole) {
-    this.reporterRole = reporterRole;
-}

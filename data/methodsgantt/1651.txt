@@ -1,4 +1,0 @@
-public float calculateLengthNoWeekends(int fromX, int toX) {
-    int totalPixels = toX - fromX;
-    return totalPixels / ((float) (getBottomUnitWidth()));
-}

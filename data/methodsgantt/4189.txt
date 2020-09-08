@@ -1,4 +1,0 @@
-// todo: transaction
-public void setLoad(float load) {
-    myAssignmentToResource.setLoad(load);
-}

@@ -1,3 +1,0 @@
-public double getArcWidth() {
-    return (roundrect.arcwidth) / 2.0;
-}

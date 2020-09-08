@@ -1,9 +1,0 @@
-/**
- * Button Ok pressed
- *
- * @param e
- * 		The event
- */
-private void jbOk_actionPerformed(ActionEvent e) {
-    this.hide();
-}

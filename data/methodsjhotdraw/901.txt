@@ -1,2 +1,0 @@
-public void updateAnchor(Point2D.Double p) {
-}

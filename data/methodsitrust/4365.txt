@@ -1,5 +1,0 @@
-public void testFilterTypeFromString() {
-    PersonnelReportFilter.PersonnelReportFilterType expected = PersonnelReportFilter.PersonnelReportFilterType.DLHCP;
-    PersonnelReportFilter.PersonnelReportFilterType actual = PersonnelReportFilter.filterTypeFromString("dLhCP");
-    assertEquals(expected, actual);
-}

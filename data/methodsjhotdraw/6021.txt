@@ -1,8 +1,0 @@
-protected IXMLElement createPolyline(IXMLElement doc, Point2D.Double[] points, Map<AttributeKey, Object> attributes) throws IOException {
-    IXMLElement elem = doc.createElement("polyline");
-    writeAttribute(elem, "points", SVGOutputFormat.toPoints(points), null);
-    writeShapeAttributes(elem, attributes);
-    writeOpacityAttribute(elem, attributes);
-    writeTransformAttribute(elem, attributes);
-    return elem;
-}

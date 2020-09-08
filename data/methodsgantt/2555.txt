@@ -1,3 +1,0 @@
-protected void setDefaultValuePanelEnabled(boolean enabled) {
-    UIUtil.setEnabledTree(panelDefaultValue, enabled);
-}

@@ -1,3 +1,0 @@
-public void testGetPHRForNonExistent() throws Exception {
-    assertEquals(0, hrDAO.getAllHealthRecords((-1)).size());
-}

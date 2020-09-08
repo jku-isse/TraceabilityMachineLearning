@@ -1,7 +1,0 @@
-/**
- * Sets output formats for the Drawing in order of preferred formats.
- * <p>
- * The output formats are used for saving the Drawing into a file and for
- * cutting and copying Figures from the Drawing into the clipboard.
- */
-void setOutputFormats(List<OutputFormat> formats);

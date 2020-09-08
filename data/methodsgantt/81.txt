@@ -1,3 +1,0 @@
-private boolean isRotationUp(MouseWheelEvent e) {
-    return (e.getWheelRotation()) < 0;
-}

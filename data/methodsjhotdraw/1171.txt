@@ -1,8 +1,0 @@
-/**
- * Checks if this figure can be connected. By default
- * filled BezierFigures can be connected.
- */
-@Override
-public boolean canConnect() {
-    return isClosed();
-}

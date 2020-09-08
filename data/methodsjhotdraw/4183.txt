@@ -1,3 +1,0 @@
-public Border getBorder(String key) {
-    return ((Border) (get(key)));
-}

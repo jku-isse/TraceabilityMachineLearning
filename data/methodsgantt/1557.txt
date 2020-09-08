@@ -1,3 +1,0 @@
-private TagHandler getDefaultTagHandler() {
-    return new XMLCalendarOpen.DefaultTagHandler();
-}

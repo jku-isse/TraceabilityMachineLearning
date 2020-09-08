@@ -1,3 +1,0 @@
-public UIResource(Border backgroundBorder) {
-    this(null, backgroundBorder);
-}

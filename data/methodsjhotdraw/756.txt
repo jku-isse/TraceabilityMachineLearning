@@ -1,4 +1,0 @@
-protected void drawDecorator(Graphics2D g) {
-    updateDecoratorBounds();
-    decorator.draw(g);
-}

@@ -1,6 +1,0 @@
-/**
- * Change grpahic part
- */
-public void setGraphicArea(GanttGraphicArea area) {
-    this.area = area;
-}

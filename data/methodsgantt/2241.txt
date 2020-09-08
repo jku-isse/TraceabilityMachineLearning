@@ -1,3 +1,0 @@
-public boolean canRead() {
-    return file.canRead();
-}

@@ -1,4 +1,0 @@
-public void mouseDragged(MouseEvent evt) {
-    multicaster.trackStep(anchor, new Point(evt.getX(), evt.getY()), evt.getModifiersEx(), getView());
-    clearHoverHandles();
-}

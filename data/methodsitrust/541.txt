@@ -1,8 +1,0 @@
-/**
- * Returns the patients age
- *
- * @return patients age
- */
-public String getPatientAge() {
-    return Integer.toString(pb.getAge());
-}

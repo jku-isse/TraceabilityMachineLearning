@@ -1,4 +1,0 @@
-/**
- * Removes a change listener.
- */
-public void removeChangeListener(ChangeListener listener);

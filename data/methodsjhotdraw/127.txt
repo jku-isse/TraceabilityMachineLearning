@@ -1,8 +1,0 @@
-/**
- * Use this method for best application startup performance.
- */
-public void setViewClassName(String newValue) {
-    String oldValue = viewClassName;
-    viewClassName = newValue;
-    firePropertyChange(DefaultApplicationModel.VIEW_CLASS_NAME_PROPERTY, oldValue, newValue);
-}

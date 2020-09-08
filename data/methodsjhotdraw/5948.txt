@@ -1,3 +1,0 @@
-public SVGInputFormat(SVGFigureFactory factory) {
-    this.factory = factory;
-}

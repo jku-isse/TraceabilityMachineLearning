@@ -1,5 +1,0 @@
-public void setVisibleConstrainer(Constrainer newValue) {
-    Constrainer oldValue = visibleConstrainer;
-    visibleConstrainer = newValue;
-    firePropertyChange(DrawingView.VISIBLE_CONSTRAINER_PROPERTY, oldValue, newValue);
-}

@@ -1,8 +1,0 @@
-void updateButtonsLook() {
-    for (int i = 0; i < (myButtons.size()); i++) {
-        TestGanttRolloverButton nextButton = ((TestGanttRolloverButton) (myButtons.get(i)));
-        nextButton.setIconHidden(((options.getButtonShow()) == (GanttOptions.TEXT)));
-        nextButton.setTextHidden(((options.getButtonShow()) == (GanttOptions.ICONS)));
-    }
-    invalidate();
-}

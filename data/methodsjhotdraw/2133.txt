@@ -1,4 +1,0 @@
-/**
- * Returns a tooltip for the specified location.
- */
-public String getToolTipText(Point p);

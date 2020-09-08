@@ -1,5 +1,0 @@
-public void testNameCheckTooLong() throws Exception {
-    String value = "This-Name-Is-Too-Long ";
-    String errorMessage = InsuranceIDValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.INSURANCE_ID, false));
-}

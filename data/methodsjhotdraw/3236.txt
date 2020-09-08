@@ -1,9 +1,0 @@
-/**
- * Returns the insets of the border.
- *
- * @param c
- * 		the component for which this border insets value applies
- */
-public Insets getBorderInsets(Component c) {
-    return ((Insets) (borderInsets.clone()));
-}

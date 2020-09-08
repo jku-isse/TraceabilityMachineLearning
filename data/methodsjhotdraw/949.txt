@@ -1,9 +1,0 @@
-/**
- * Returns a collection of actions which are presented to the user
- * in a popup menu.
- * <p>The collection may contain null entries. These entries are used
- * interpreted as separators in the popup menu.
- */
-public Collection<Action> getActions(Point2D.Double p) {
-    return Collections.emptyList();
-}

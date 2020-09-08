@@ -1,3 +1,0 @@
-public void setCustomFieldVal(String title, Object val) {
-    this.customFields.put(title, val);
-}

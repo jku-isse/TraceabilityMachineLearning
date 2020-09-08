@@ -1,3 +1,0 @@
-protected GPOptionGroup[] getOptionGroups() {
-    return (myState.myImporter) == null ? new GPOptionGroup[0] : myState.myImporter.getSecondaryOptions();
-}

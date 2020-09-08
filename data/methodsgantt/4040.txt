@@ -1,3 +1,0 @@
-public PaintCellRenderer() {
-    setPreferredSize(new Dimension(70, 16));
-}

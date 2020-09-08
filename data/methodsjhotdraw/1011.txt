@@ -1,3 +1,0 @@
-public Figure getOwner() {
-    return owner;
-}

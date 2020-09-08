@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public TextFigure() {
-    this(ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").getString("TextFigure.defaultText"));
-}

@@ -1,3 +1,0 @@
-public void setInstructions(String instruction) {
-    this.instructions = instruction;
-}

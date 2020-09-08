@@ -1,8 +1,0 @@
-/**
- * Returns the patients gender
- *
- * @return patients gender
- */
-public String getPatientGender() {
-    return pb.getGender().toString();
-}

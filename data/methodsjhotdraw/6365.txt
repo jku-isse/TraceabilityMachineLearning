@@ -1,5 +1,0 @@
-/**
- * Returns the number of child elements with the specified tag name
- * of the current element.
- */
-public int getElementCount(String tagName);

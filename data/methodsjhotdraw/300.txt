@@ -1,8 +1,0 @@
-/**
- * Creates a new instance.
- */
-public ExitAction(Application app) {
-    super(app);
-    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
-    labels.configureAction(this, ExitAction.ID);
-}

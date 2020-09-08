@@ -1,4 +1,0 @@
-/**
- * Draws the tool.
- */
-void draw(Graphics2D g);

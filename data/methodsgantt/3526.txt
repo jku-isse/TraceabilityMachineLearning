@@ -1,3 +1,0 @@
-private void saveResources(TransformerHandler handler) throws SAXException {
-    new ResourceSaver().save(getProject(), handler);
-}

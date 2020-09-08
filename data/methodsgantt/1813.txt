@@ -1,3 +1,0 @@
-public float getWeekendAlphaValue() {
-    return myProjectConfig.getWeekendAlphaRenderingOption().getValueAsFloat();
-}

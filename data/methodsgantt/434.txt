@@ -1,6 +1,0 @@
-/**
- * Set a new xsl directory for html export.
- */
-public void setXslDir(String xslDir) {
-    this.xslDir = xslDir;
-}

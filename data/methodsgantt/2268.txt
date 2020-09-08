@@ -1,4 +1,0 @@
-public String getDescription() {
-    String description = httpURL.toString();
-    return description != null ? description : url;
-}

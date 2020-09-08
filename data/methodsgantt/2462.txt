@@ -1,4 +1,0 @@
-private boolean matches(String fileExtension) {
-    boolean result = (fileExtension != null) && (myPattern.matcher(fileExtension).matches());
-    return result;
-}

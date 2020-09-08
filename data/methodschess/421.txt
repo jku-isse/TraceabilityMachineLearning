@@ -1,9 +1,0 @@
-/**
- * Get a ply with a given index.
- *
- * @param index
- * 		The index of the ply.
- */
-public PlyNotation getPlyNotation(int index) {
-    return ((PlyNotation) (_plies.get(index)));
-}

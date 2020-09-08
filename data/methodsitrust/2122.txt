@@ -1,3 +1,0 @@
-public Date getSurveyDate() {
-    return (surveyDate) == null ? null : ((Date) (surveyDate.clone()));
-}

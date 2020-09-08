@@ -1,8 +1,0 @@
-/**
- * Sets the point coordinate of a control point.
- */
-public void setPoint(int index, int coord, Point2D.Double p) {
-    BezierPath.Node cp = new BezierPath.Node(path.get(index));
-    cp.setControlPoint(coord, p);
-    setNode(index, cp);
-}

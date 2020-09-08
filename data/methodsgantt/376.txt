@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the color for resources.
- */
-public Color getResourceColor() {
-    return getUIConfiguration().getResourceColor();
-}

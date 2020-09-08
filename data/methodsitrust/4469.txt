@@ -1,3 +1,0 @@
-public void testAllGood() throws Exception {
-    assertFalse(factor.hasRiskFactor());
-}

@@ -1,4 +1,0 @@
-/**
- * Restores the transform of the figure to a previously stored state.
- */
-public void restoreTransformTo(Object restoreData);

@@ -1,5 +1,0 @@
-public void testFilterByAllergyNoResult() {
-    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.ALLERGY, "Dalpe", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertTrue(res.isEmpty());
-}

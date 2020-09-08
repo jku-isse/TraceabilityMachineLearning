@@ -1,4 +1,0 @@
-public GPCalendar.DayType getDayTypeDate(Date curDayStart) {
-    // TODO Auto-generated method stub
-    return GPCalendar.DayType.WORKING;
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys NDCodesDAO
- */
-public NDCodesDAO getNDCodesDAO() {
-    return new NDCodesDAO(this);
-}

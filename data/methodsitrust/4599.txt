@@ -1,3 +1,0 @@
-public Tag getParent() {
-    return parent;
-}

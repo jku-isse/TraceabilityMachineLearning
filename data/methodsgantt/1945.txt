@@ -1,3 +1,0 @@
-private int calculateGap(ProjectResource resource) {
-    return (resource.getAssignments().length) * (getConfig().getRowHeight());
-}

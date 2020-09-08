@@ -1,3 +1,0 @@
-public SlantedLiner(double slantSize) {
-    this.slantSize = slantSize;
-}

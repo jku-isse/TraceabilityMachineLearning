@@ -1,4 +1,0 @@
-public void read(DOMInput in) throws IOException {
-    readBounds(in);
-    readAttributes(in);
-}

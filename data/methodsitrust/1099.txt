@@ -1,7 +1,0 @@
-public void testUpdateRead() throws FormValidationException, iTrustException, SQLException {
-    List<MessageBean> mbList = action.getAllMyMessages();
-    assertEquals(0, mbList.get(0).getRead());
-    action.setRead(mbList.get(0));
-    mbList = action.getAllMyMessages();
-    assertEquals(1, mbList.get(0).getRead());
-}

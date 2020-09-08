@@ -1,6 +1,0 @@
-public void setTheta(double newValue) {
-    double oldValue = theta;
-    theta = newValue;
-    firePropertyChange("theta", oldValue, newValue);
-    fireStateChanged();
-}

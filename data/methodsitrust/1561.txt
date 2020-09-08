@@ -1,9 +1,0 @@
-/**
- * Setter for the End Date
- *
- * @param endDate
- * 		
- */
-public void setEndDate(Date endDate) {
-    this.endDate = endDate;
-}

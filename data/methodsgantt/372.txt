@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the language.
- */
-public GanttLanguage getLanguage() {
-    return language;
-}

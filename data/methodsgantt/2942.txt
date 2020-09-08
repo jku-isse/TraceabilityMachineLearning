@@ -1,3 +1,0 @@
-public String getColumnName(int col) {
-    return columnNames[col];
-}

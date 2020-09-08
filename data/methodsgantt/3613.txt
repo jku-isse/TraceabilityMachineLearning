@@ -1,2 +1,0 @@
-public void endElement(String namespaceURI, String sName, String qName) {
-}

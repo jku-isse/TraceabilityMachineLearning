@@ -1,8 +1,0 @@
-/**
- * Gets read for this message
- *
- * @return 
- */
-public int getRead() {
-    return this.read;
-}

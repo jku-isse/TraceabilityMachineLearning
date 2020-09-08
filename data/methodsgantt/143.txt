@@ -1,6 +1,0 @@
-/**
- * Constructor with a year, a month and a day
- */
-public GanttCalendar(int year, int month, int date) {
-    super(year, month, date);
-}

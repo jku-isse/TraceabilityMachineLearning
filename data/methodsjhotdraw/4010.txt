@@ -1,3 +1,0 @@
-public int compareTo(FontCollectionNode that) {
-    return Collator.getInstance().compare(this.name, that.name);
-}

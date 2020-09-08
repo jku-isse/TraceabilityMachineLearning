@@ -1,9 +1,0 @@
-/**
- *
- *
- * @return the web link of the task.
- */
-public String getWebLink() {
-    String text = tfWebLink.getText();
-    return text == null ? "" : text.trim();
-}

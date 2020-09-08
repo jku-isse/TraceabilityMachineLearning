@@ -1,7 +1,0 @@
-protected DrawingView getActiveView() {
-    if ((getView()) != null) {
-        return getView();
-    } else {
-        return drawingEditor.getActiveView();
-    }
-}

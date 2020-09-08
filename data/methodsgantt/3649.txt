@@ -1,4 +1,0 @@
-public HolidayTagHandler(IGanttProject project) {
-    this.project = project;
-    project.getActiveCalendar().getPublicHolidays().clear();
-}

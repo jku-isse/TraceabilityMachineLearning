@@ -1,3 +1,0 @@
-private void setOn(boolean on) {
-    myUIConfiguration.setCriticalPathOn(on);
-}

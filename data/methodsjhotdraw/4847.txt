@@ -1,4 +1,0 @@
-public ODGPathFigure clone() {
-    ODGPathFigure that = ((ODGPathFigure) (super.clone()));
-    return that;
-}

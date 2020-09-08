@@ -1,3 +1,0 @@
-public void testGetEmpty() throws Exception {
-    assertNull(patientDAO.getPatient(0L));
-}

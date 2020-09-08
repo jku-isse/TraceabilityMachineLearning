@@ -1,8 +1,0 @@
-/**
- * Returns the type name as a string
- *
- * @return 
- */
-public String getTypeName() {
-    return typeName;
-}

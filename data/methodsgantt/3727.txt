@@ -1,8 +1,0 @@
-/**
- * Method when finish to parse an attibute
- */
-public void endElement(String namespaceURI, String sName, String qName) {
-    if (qName.equals("task")) {
-        myStack.pop();
-    }
-}

@@ -1,4 +1,0 @@
-public void setVerticalComponentIndex(int newValue) {
-    verticalIndex = newValue;
-    isPixelsValid = false;
-}

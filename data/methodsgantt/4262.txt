@@ -1,7 +1,0 @@
-/* (non-Javadoc)
-
-@see net.sourceforge.ganttproject.task.TaskActivity#isFirst()
- */
-public boolean isFirst() {
-    return (this) == (getTask().getActivities()[0]);
-}

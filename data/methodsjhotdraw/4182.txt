@@ -1,3 +1,0 @@
-public boolean getBoolean(String key) {
-    return ((Boolean) (get(key))).booleanValue();
-}

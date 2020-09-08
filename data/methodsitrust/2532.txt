@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys CPTCodesDAO
- */
-public CPTCodesDAO getCPTCodesDAO() {
-    return new CPTCodesDAO(this);
-}

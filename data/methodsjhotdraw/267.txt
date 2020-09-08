@@ -1,9 +1,0 @@
-/**
- * Sets the property name.
- */
-protected void setPropertyName(String name) {
-    this.propertyName = name;
-    if (name != null) {
-        updateView();
-    }
-}

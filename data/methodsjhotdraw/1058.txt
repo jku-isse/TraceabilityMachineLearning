@@ -1,3 +1,0 @@
-public void addToolListener(ToolListener l) {
-    listenerList.add(ToolListener.class, l);
-}

@@ -1,9 +1,0 @@
-/**
- * Sets the name of the task.
- *
- * @param newName
- * 		The name to be set.
- */
-public void setName(String newName) {
-    task.setName(newName);
-}

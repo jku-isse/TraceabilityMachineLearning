@@ -1,3 +1,0 @@
-public void isMerging(boolean b) {
-    bMerge = b;
-}

@@ -1,5 +1,0 @@
-@Override
-protected void trackStepNormalized(Point2D.Double p) {
-    Rectangle2D.Double r = getTransformedBounds();
-    transform(new Point2D.Double(r.x, Math.min((((r.y) + (r.height)) - 1), p.y)), new Point2D.Double(((r.x) + (r.width)), ((r.y) + (r.height))));
-}

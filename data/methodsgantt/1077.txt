@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the description of the project.
- */
-public String getDescription() {
-    return _sDescription;
-}

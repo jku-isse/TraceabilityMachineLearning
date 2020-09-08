@@ -1,4 +1,0 @@
-public void write(DOMOutput out) throws IOException {
-    super.write(out);
-    out.addAttribute("angle", angle);
-}

@@ -1,6 +1,0 @@
-/**
- * get the predecessor task ID or -1 if there is no such ID
- */
-public int getPredecessorTaskID() {
-    return predecessorTaskID;
-}

@@ -1,5 +1,0 @@
-public HumanResource newHumanResource() {
-    HumanResource result = new HumanResource(this);
-    result.setRole(myDefaultRole);
-    return result;
-}

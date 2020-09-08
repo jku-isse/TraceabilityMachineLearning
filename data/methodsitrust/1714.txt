@@ -1,6 +1,0 @@
-/**
- * Digits of the format nnnnn-n
- */
-public String getLoinc() {
-    return loinc;
-}

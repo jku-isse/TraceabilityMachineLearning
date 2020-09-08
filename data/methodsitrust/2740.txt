@@ -1,6 +1,0 @@
-public void testPersonnelHospitals() throws Exception {
-    List<HospitalBean> hospitals = personnelDAO.getHospitals(9000000000L);
-    assertEquals(2, hospitals.size());
-    assertEquals("8181818181", hospitals.get(0).getHospitalID());
-    assertEquals("9191919191", hospitals.get(1).getHospitalID());
-}

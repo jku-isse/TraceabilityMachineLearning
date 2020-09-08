@@ -1,3 +1,0 @@
-public String getEnumValue(Enum e) {
-    return DefaultDOMFactory.enumToValueMap.containsKey(e) ? DefaultDOMFactory.enumToValueMap.get(e) : e.toString();
-}

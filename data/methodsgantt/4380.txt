@@ -1,7 +1,0 @@
-public void setMilestone(final boolean milestone) {
-    myCommands.add(new Runnable() {
-        public void run() {
-            TaskImpl.this.setMilestone(milestone);
-        }
-    });
-}

@@ -1,7 +1,0 @@
-@Override
-public String getToolTipText(MouseEvent evt) {
-    if (((getEditor()) != null) && ((getEditor().getTool()) != null)) {
-        return getEditor().getTool().getToolTipText(this, evt);
-    }
-    return null;
-}

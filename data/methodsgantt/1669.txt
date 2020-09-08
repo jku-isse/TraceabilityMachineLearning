@@ -1,3 +1,0 @@
-protected ChartGridImpl getChartGrid() {
-    return myChartGrid;
-}

@@ -1,4 +1,0 @@
-/**
- * Returns the name of the application.
- */
-public String getName();

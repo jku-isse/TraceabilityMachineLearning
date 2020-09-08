@@ -1,3 +1,0 @@
-public void testRemovaAllUnassigned() throws iTrustException {
-    assertEquals(0, action.removeAllAssignmentsFromHCP(("" + (ManageHospitalAssignmentsActionTest.hcp0))));
-}

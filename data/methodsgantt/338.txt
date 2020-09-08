@@ -1,6 +1,0 @@
-/**
- * Repaint the component
- */
-public void paintComponent(Graphics g) {
-    image.paintIcon(this, g, 0, 0);
-}

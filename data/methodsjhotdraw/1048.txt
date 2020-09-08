@@ -1,3 +1,0 @@
-protected double getStartTheta() {
-    return startTheta;
-}

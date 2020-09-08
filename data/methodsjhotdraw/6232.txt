@@ -1,9 +1,0 @@
-/**
- * Creates new CompositeEdit.
- * Which uses CompoundEdit.getPresentatioName.
- *
- * @see javax.swing.undo.CompoundEdit#getPresentationName()
- */
-public CompositeEdit() {
-    isSignificant = true;
-}

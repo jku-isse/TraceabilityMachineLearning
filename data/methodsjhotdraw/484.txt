@@ -1,3 +1,0 @@
-protected BasicSliderUI.TrackListener createTrackListener(JSlider slider) {
-    return new ColorSliderUI.QuaquaTrackListener();
-}

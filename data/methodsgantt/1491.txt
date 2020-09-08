@@ -1,5 +1,0 @@
-public void setWeekDayType(int day, GPCalendar.DayType type) {
-    if (type == (GPCalendar.DayType.WEEKEND)) {
-        throw new IllegalArgumentException("I am always working time calendar, I dont accept holidays!");
-    }
-}

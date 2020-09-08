@@ -1,6 +1,0 @@
-public I18N() {
-    myDayNames = new String[7];
-    for (int i = 0; i < 7; i++) {
-        myDayNames[i] = GanttLanguage.getInstance().getDay(i);
-    }
-}

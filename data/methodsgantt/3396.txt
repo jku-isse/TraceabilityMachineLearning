@@ -1,4 +1,0 @@
-void setFile(File myFile) {
-    this.myFile = myFile;
-    this.adjustButtonState();
-}

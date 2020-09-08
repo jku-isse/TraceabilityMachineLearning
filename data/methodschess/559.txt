@@ -1,9 +1,0 @@
-/**
- * Set a new scrore for this ply.
- *
- * @param score
- * 		The new score for this ply.
- */
-public final void setScore(short score) {
-    _score = score;
-}

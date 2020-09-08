@@ -1,4 +1,0 @@
-public void testEditApptType2() throws FormValidationException, SQLException {
-    ApptTypeBean a = new ApptTypeBean("General Checkup", 45);
-    assertEquals("Appointment Type: General Checkup already has a duration of 45 minutes.", action.editApptType(a));
-}

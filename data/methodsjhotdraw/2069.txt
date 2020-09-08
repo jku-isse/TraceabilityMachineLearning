@@ -1,8 +1,0 @@
-public GraphicalCompositeFigure clone() {
-    GraphicalCompositeFigure that = ((GraphicalCompositeFigure) (super.clone()));
-    that.presentationFigure = ((this.presentationFigure) == null) ? null : ((Figure) (this.presentationFigure.clone()));
-    if ((that.presentationFigure) != null) {
-        that.presentationFigure.addFigureListener(that.presentationFigureHandler);
-    }
-    return that;
-}

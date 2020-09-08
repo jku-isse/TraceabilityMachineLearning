@@ -1,3 +1,0 @@
-public boolean isDisplayed() {
-    return this.displayed;
-}

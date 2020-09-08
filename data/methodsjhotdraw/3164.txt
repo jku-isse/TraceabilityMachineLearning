@@ -1,3 +1,0 @@
-public void setEnabled(boolean newValue) {
-    target.setEnabled(newValue);
-}

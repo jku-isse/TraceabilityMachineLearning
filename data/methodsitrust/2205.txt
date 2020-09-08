@@ -1,3 +1,0 @@
-public String getReferralDetails() {
-    return referralDetails;
-}

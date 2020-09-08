@@ -1,8 +1,0 @@
-/**
- * Return the current Locale.
- *
- * @return The current Locale.
- */
-public Locale getLocale() {
-    return currentLocale;
-}

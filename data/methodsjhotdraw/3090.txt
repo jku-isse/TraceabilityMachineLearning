@@ -1,3 +1,0 @@
-public static JPopupButton createStrokeJoinButton(DrawingEditor editor) {
-    return ButtonFactory.createStrokeJoinButton(editor, ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
-}

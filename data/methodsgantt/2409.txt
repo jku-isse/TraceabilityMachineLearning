@@ -1,7 +1,0 @@
-/**
- *
- */
-ExporterChooserPage(Exporter[] exporters, ExportFileWizardImpl.State state) {
-    myExporters = exporters;
-    myState = state;
-}

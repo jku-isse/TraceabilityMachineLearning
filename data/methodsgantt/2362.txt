@@ -1,4 +1,0 @@
-public ZoomManager getZoomManager() {
-    // TODO Auto-generated method stub
-    return null;
-}

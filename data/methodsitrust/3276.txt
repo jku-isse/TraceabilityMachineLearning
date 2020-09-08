@@ -1,3 +1,0 @@
-public void testGetPatient2() throws Exception {
-    assertTrue(patientDAO.checkPatientExists(2));
-}

@@ -1,3 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    listener.actionPerformed(new ActionEvent(document, e.getID(), e.getActionCommand()));
-}

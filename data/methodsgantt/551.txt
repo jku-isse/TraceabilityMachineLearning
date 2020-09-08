@@ -1,7 +1,0 @@
-public void open(Document document) throws IOException {
-    openDocument(document);
-    if ((document.getPortfolio()) != null) {
-        Document defaultDocument = document.getPortfolio().getDefaultDocument();
-        openDocument(defaultDocument);
-    }
-}

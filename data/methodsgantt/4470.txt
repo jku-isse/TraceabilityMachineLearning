@@ -1,3 +1,0 @@
-public CustomColumnsStorage getCustomColumnStorage() {
-    return myCustomColumnStorage;
-}

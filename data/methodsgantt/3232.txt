@@ -1,3 +1,0 @@
-public String getRolesetTooltipFooter() {
-    return "</ul></body></html>";
-}

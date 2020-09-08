@@ -1,6 +1,0 @@
-@SuppressWarnings("unchecked")
-public void setAttributes(Map<AttributeKey, Object> map) {
-    for (Map.Entry<AttributeKey, Object> entry : map.entrySet()) {
-        setAttribute(entry.getKey(), entry.getValue());
-    }
-}

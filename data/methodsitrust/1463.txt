@@ -1,3 +1,0 @@
-public void testEquals() {
-    assertTrue(testBean2.equals(testBean3));
-}

@@ -1,1 +1,0 @@
-protected abstract boolean isEnabled(List selection);

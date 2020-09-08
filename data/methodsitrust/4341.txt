@@ -1,7 +1,0 @@
-public void testFilterByOfficeVisit() throws Exception {
-    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.UPPER_OFFICE_VISIT_DATE, "12/10/1985", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertEquals(2, res.size());
-    assertTrue(((res.get(0).getMID()) == 2L));
-    assertTrue(((res.get(1).getMID()) == 99L));
-}

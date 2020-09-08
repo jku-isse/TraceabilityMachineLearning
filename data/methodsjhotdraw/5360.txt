@@ -1,4 +1,0 @@
-@Override
-public <T> T getAttribute(AttributeKey<T> key) {
-    return key.get(attributes);
-}

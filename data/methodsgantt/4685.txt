@@ -1,3 +1,0 @@
-// boolean isFulfilled();
-// void fulfil();
-TaskDependencyConstraint.Collision getCollision();

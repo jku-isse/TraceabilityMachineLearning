@@ -1,4 +1,0 @@
-public void setParent(ActionMap map) {
-    loadIfNecessary();
-    super.setParent(map);
-}

@@ -1,3 +1,0 @@
-private Component getRootPaneContainer() {
-    return SwingUtilities.getRootPane(view.getComponent()).getParent();
-}

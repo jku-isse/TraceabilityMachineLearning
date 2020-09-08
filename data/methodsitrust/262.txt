@@ -1,7 +1,0 @@
-public void testAddApptType() throws FormValidationException, SQLException {
-    ApptTypeBean a = new ApptTypeBean();
-    a.setName("Test");
-    a.setDuration(30);
-    assertTrue(action.addApptType(a).startsWith("Success"));
-    assertEquals(7, action.getApptTypes().size());
-}

@@ -1,3 +1,0 @@
-public double[] getStopOffsets() {
-    return stopOffsets.clone();
-}

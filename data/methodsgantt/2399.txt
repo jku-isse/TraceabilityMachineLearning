@@ -1,4 +1,0 @@
-public void setFile(File file) {
-    myFile = file;
-    this.adjustButtonState();
-}

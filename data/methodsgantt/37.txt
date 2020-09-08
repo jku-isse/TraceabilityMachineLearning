@@ -1,4 +1,0 @@
-public BufferedImage getChart(GanttExportSettings settings) {
-    // TODO Auto-generated method stub
-    return null;
-}

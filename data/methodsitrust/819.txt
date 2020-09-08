@@ -1,4 +1,0 @@
-public void testCheckMIDEvil() throws Exception {
-    action = new ResetPasswordAction(evil);
-    assertEquals(0L, action.checkMID(""));
-}

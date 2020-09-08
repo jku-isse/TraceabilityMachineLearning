@@ -1,4 +1,0 @@
-public void testGetDiagnosedVisitNeedersEmpty() throws DBException, FileNotFoundException, IOException, SQLException {
-    List<VisitReminderReturnForm> visRems = visRemDAO.getDiagnosedVisitNeeders(LHCP);
-    assertEquals(0, visRems.size());
-}

@@ -1,7 +1,0 @@
-/**
- * Add a role on the list
- */
-public void add(int ID, String roleName) {
-    // myProjectLevelRoles.add(newRole(ID, role));
-    myProjectRoleSet.createRole(roleName, ID);
-}

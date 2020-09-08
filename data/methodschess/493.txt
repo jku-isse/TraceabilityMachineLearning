@@ -1,4 +1,0 @@
-protected PGNParser(TokenBuffer tokenBuf, int k) {
-    super(tokenBuf, k);
-    tokenNames = PGNParser._tokenNames;
-}

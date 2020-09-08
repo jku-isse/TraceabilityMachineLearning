@@ -1,8 +1,0 @@
-/**
- * Get the board size.
- *
- * @return The board size.
- */
-final int getBoardSize() {
-    return _boardSize;
-}

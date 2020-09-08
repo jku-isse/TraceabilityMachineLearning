@@ -1,6 +1,0 @@
-/**
- * Return the root node
- */
-public DefaultMutableTreeNode getRoot() {
-    return rootNode;
-}

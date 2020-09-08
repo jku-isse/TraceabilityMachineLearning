@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public SheetEvent(JSheet source) {
-    super(source);
-}

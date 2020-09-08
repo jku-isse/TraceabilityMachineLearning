@@ -1,7 +1,0 @@
-public String toString() {
-    StringBuilder buf = new StringBuilder();
-    buf.append(getClass().getName().substring(((getClass().getName().lastIndexOf(.)) + 1)));
-    buf.append(@);
-    buf.append(hashCode());
-    return buf.toString();
-}

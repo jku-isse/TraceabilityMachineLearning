@@ -1,8 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    super.actionPerformed(e);
-    if ((e.getSource()) == (restoreButton)) {
-        appli.restoreOptions();
-        // refresh the current panel
-        settingPanel.rollback();
-    }
-}

@@ -1,3 +1,0 @@
-public List<PersonnelBean> getLabTechs() throws iTrustException {
-    return personnelDAO.getLabTechs();
-}

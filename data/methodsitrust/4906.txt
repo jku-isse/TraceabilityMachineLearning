@@ -1,5 +1,0 @@
-public void testGoodAnswer() throws Exception {
-    String value = "27607";
-    String errorMessage = ZipcodeValidatorTest.PASSED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ZipcodeValidatorTest.VALIDATION_FORMAT, false));
-}

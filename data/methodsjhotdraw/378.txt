@@ -1,7 +1,0 @@
-/**
- * Creates a new instance.
- */
-public RedoAction(Application app) {
-    super(app);
-    labels.configureAction(this, RedoAction.ID);
-}

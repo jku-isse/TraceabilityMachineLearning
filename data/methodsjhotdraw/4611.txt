@@ -1,5 +1,0 @@
-public void transform(AffineTransform ty) {
-    Point2D.Double p1 = ((Point2D.Double) (line.getP1()));
-    Point2D.Double p2 = ((Point2D.Double) (line.getP2()));
-    line.setLine(ty.transform(p1, p1), ty.transform(p2, p2));
-}

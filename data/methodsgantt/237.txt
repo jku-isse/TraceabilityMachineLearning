@@ -1,6 +1,0 @@
-/**
- * Change the velue connected to the JTrees Scrollbar
- */
-public void setScrollBar(int v) {
-    margY = v;
-}

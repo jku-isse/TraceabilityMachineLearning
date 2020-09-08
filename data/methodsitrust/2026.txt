@@ -1,3 +1,0 @@
-public PrescriptionBean getPrescription() {
-    return prescription;
-}

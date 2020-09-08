@@ -1,8 +1,0 @@
-// EVENT HANDLING
-// PERSISTENCE
-@Override
-public void read(DOMInput in) throws IOException {
-    super.read(in);
-    roundrect.arcwidth = in.getAttribute("arcWidth", RoundRectangleFigure.DEFAULT_ARC);
-    roundrect.archeight = in.getAttribute("arcHeight", RoundRectangleFigure.DEFAULT_ARC);
-}

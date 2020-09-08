@@ -1,4 +1,0 @@
-public void showErrorDialog(Throwable e) {
-    showErrorDialog(UIFacadeImpl.getExceptionReport(e));
-    GPLogger.log(e);
-}

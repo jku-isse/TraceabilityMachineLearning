@@ -1,6 +1,0 @@
-/**
- * Returns the action with the specified id.
- */
-public Action getAction(String id) {
-    return (actions) == null ? null : ((Action) (actions.get(id)));
-}

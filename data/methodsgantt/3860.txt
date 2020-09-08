@@ -1,6 +1,0 @@
-private void processActivity(TaskActivity activity, float load) {
-    if ((activity.getIntensity()) == 0) {
-        return;
-    }
-    addLoad(activity.getStart(), activity.getEnd(), load, myLoads, activity.getTask());
-}

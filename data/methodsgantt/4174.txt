@@ -1,3 +1,0 @@
-private Task getTask() {
-    return myTask;
-}

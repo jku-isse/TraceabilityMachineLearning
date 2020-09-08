@@ -1,3 +1,0 @@
-public void addSelectionListener(TaskSelectionManager.Listener listener) {
-    myListeners.add(listener);
-}

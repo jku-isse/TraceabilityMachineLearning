@@ -1,3 +1,0 @@
-YearTextFormatter() {
-    myCalendar = CalendarFactory.newCalendar();
-}

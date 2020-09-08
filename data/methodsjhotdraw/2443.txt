@@ -1,4 +1,0 @@
-@Override
-public void figureRequestRemove(FigureEvent e) {
-    remove(e.getFigure());
-}

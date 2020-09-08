@@ -1,3 +1,0 @@
-public void setTotalCount(HashMap<TransactionType, Integer> totalCount) {
-    this.totalCount = totalCount;
-}

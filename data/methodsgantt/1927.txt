@@ -1,3 +1,0 @@
-protected float getOffsetStep(TimeFrame timeFrame) {
-    return 1;
-}

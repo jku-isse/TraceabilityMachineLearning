@@ -1,3 +1,0 @@
-public List getActivities(Date startDate, TimeUnit timeUnit, long unitCount) {
-    return unitCount > 0 ? getActivitiesForward(startDate, timeUnit, unitCount) : getActivitiesBackward(startDate, timeUnit, (-unitCount));
-}

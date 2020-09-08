@@ -1,6 +1,0 @@
-public void resetFailures() throws DBException, SQLException {
-    if (hasAttempts) {
-        authDAO.resetLoginFailuresToZero(ipAddr);
-        hasAttempts = false;
-    }
-}

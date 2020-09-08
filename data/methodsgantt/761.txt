@@ -1,7 +1,0 @@
-protected void frameInit() {
-    super.frameInit();
-    ImageIcon icon = new ImageIcon(getClass().getResource("/icons/ganttproject.png"));
-    setIconImage(icon.getImage());// set the ganttproject icon
-
-    setUndecorated(true);
-}

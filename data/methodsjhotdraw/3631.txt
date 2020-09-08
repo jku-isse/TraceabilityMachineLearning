@@ -1,6 +1,0 @@
-public UndoableAttributeEdit(Set<Figure> editedFigures, AttributeKey<T> attributeKey, T editRedoValue, LinkedList<Object> editUndoData) {
-    this.editedFigures = editedFigures;
-    this.attributeKey = attributeKey;
-    this.editRedoValue = editRedoValue;
-    this.editUndoData = editUndoData;
-}

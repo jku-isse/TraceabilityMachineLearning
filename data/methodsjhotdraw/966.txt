@@ -1,6 +1,0 @@
-/**
- * Invalidates cached data of the Figure.
- * This method must execute fast, because it can be called very often.
- */
-protected void invalidate() {
-}

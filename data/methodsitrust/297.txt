@@ -1,4 +1,0 @@
-public void editImmunization(ProcedureBean bean) throws iTrustException {
-    verifySaved();
-    proceduresDAO.edit(bean);
-}

@@ -1,7 +1,0 @@
-/**
- * Creates new XMLTransferable
- */
-public XMLTransferable(byte[] data, String mimeType, String humanPresentableName) {
-    this.data = data;
-    this.flavor = new DataFlavor(mimeType, humanPresentableName);
-}

@@ -1,3 +1,0 @@
-GanttCalendar getStart() {
-    return (myStartChange) == null ? this.myStart : ((GanttCalendar) (myStartChange.myFieldValue));
-}

@@ -1,4 +1,0 @@
-/**
- * Removes a listener for this tool.
- */
-void removeToolListener(ToolListener l);

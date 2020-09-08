@@ -1,7 +1,0 @@
-public List<PatientBean> loadList(ResultSet rs) throws SQLException {
-    List<PatientBean> list = new ArrayList<PatientBean>();
-    while (rs.next()) {
-        list.add(loadSingle(rs));
-    } 
-    return list;
-}

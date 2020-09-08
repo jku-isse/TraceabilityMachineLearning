@@ -1,3 +1,0 @@
-public DefaultMutableTreeNode getParent() {
-    return parent;
-}

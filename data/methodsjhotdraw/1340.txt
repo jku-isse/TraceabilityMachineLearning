@@ -1,9 +1,0 @@
-/**
- * Creates a bounds outline handle for resizing a component.
- *
- * @param owner
- * 		
- */
-public BoundsOutlineHandle(Figure owner) {
-    this(owner, false, false);
-}

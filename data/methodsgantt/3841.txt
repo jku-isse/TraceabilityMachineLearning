@@ -1,9 +1,0 @@
-public void remove(ProjectResource resource, GPUndoManager myUndoManager) {
-    final ProjectResource res = resource;
-    myUndoManager.undoableEdit("Delete Human OK", new Runnable() {
-        public void run() {
-            fireResourcesRemoved(new ProjectResource[]{ res });
-            resources.remove(res);
-        }
-    });
-}

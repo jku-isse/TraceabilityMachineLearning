@@ -1,3 +1,0 @@
-public void testGetMyAppointments() throws SQLException {
-    assertEquals(15, action.getAllMyAppointments().size());
-}

@@ -1,8 +1,0 @@
-/**
- * Creates a new instance.
- */
-public ToggleLineWrapAction(Application app) {
-    super(app);
-    labels.configureAction(this, ToggleLineWrapAction.ID);
-    setPropertyName("lineWrap");
-}

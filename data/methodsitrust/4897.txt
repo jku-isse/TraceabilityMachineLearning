@@ -1,5 +1,0 @@
-public void testGoodQuestion() throws Exception {
-    String value = "what is your name?-.";
-    String errorMessage = QuestionValidatorTest.PASSED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, QuestionValidatorTest.VALIDATION_FORMAT, false));
-}

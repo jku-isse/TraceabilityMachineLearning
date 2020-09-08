@@ -1,6 +1,0 @@
-public void setArc(final double w, final double h) {
-    final double oldWidth = roundrect.getArcWidth();
-    final double oldHeight = roundrect.getArcHeight();
-    roundrect.arcwidth = w;
-    roundrect.archeight = h;
-}

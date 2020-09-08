@@ -1,4 +1,0 @@
-public void removePalette(Window palette) {
-    palettes.remove(palette);
-    palette.removeWindowFocusListener(focusHandler);
-}

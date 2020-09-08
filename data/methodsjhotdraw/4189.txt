@@ -1,3 +1,0 @@
-public Insets getInsets(String key) {
-    return ((Insets) (get(key)));
-}

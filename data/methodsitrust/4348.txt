@@ -1,5 +1,0 @@
-public void testGetFilterType() {
-    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.PROCEDURE, "city!", factory);
-    MedicalReportFilter.MedicalReportFilterType expected = MedicalReportFilter.MedicalReportFilterType.PROCEDURE;
-    assertEquals(expected, filter.getFilterType());
-}

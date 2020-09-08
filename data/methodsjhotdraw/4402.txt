@@ -1,5 +1,0 @@
-/**
- * Ignored: All values depend on the input stream.
- */
-public void setRangeProperties(int value, int extent, int min, int max, boolean adjusting) {
-}

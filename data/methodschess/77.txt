@@ -1,4 +1,0 @@
-/**
- * Set the pieces to their initial positions.
- */
-void initialPosition();

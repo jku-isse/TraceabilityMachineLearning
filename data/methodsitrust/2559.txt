@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys SurveyResultDAO
- */
-public SurveyResultDAO getSurveyResultDAO() {
-    return new SurveyResultDAO(this);
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys AuthDAO
- */
-public AuthDAO getAuthDAO() {
-    return new AuthDAO(this);
-}

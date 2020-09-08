@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys MessageDAO
- */
-public MessageDAO getMessageDAO() {
-    return new MessageDAO(this);
-}

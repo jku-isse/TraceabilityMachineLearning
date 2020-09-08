@@ -1,5 +1,0 @@
-public Collection<Connector> getConnectors(ConnectionFigure prototype) {
-    LinkedList<Connector> connectors = new LinkedList<Connector>();
-    connectors.add(new ChopRectangleConnector(this));
-    return connectors;
-}

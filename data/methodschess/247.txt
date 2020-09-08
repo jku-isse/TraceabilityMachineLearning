@@ -1,6 +1,0 @@
-/**
- * Get the game position before the ply is applied.
- *
- * @return The board before the ply is applied.
- */
-Board getBoard();

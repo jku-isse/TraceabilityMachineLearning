@@ -1,3 +1,0 @@
-public ExportFileWizardImpl(UIFacade uiFacade, IGanttProject project, GanttOptions options) {
-    this(uiFacade, project, uiFacade.getGanttChart(), uiFacade.getResourceChart(), uiFacade.getActiveChart(), options);
-}

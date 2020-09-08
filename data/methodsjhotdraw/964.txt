@@ -1,6 +1,0 @@
-/**
- * Handles a mouse click.
- */
-public boolean handleMouseClick(Point2D.Double p, MouseEvent evt, DrawingView view) {
-    return false;
-}

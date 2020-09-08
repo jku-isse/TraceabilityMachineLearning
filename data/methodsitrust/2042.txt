@@ -1,9 +1,0 @@
-/**
- * Sets the CPT attribute, used to determine if this is an immunization
- *
- * @param String
- * 		
- */
-public void setAttribute(String attrib) {
-    attribute = attrib;
-}

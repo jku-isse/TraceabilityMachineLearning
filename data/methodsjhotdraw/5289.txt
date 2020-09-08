@@ -1,4 +1,0 @@
-public SplitAction(DrawingEditor editor, SVGPathFigure prototype) {
-    super(editor, prototype, false);
-    labels.configureAction(this, SplitAction.ID);
-}

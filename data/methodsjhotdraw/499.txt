@@ -1,3 +1,0 @@
-protected void paintMinorTickForVertSlider(Graphics g, Rectangle tickBounds, int y) {
-    g.drawLine(((tickBounds.width) / 2), y, (((tickBounds.width) / 2) - 1), y);
-}

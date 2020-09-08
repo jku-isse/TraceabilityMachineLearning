@@ -1,3 +1,0 @@
-public void setPublicHoliDayType(Date curDayStart) {
-    // TODO Auto-generated method stub
-}

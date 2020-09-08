@@ -1,6 +1,0 @@
-public static DAOFactory getEvilInstance() {
-    if ((EvilDAOFactory.evilTestInstance) == null)
-        EvilDAOFactory.evilTestInstance = new EvilDAOFactory();
-
-    return EvilDAOFactory.evilTestInstance;
-}

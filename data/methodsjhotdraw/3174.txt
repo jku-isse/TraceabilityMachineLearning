@@ -1,6 +1,0 @@
-@Override
-protected void updateViewState() {
-    if (((getView()) != null) && ((settingsPanel) != null)) {
-        settingsPanel.setDrawing(getView().getDrawing());
-    }
-}

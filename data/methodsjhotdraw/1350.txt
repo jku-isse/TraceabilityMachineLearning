@@ -1,3 +1,0 @@
-public ChopBezierConnector(BezierFigure owner) {
-    super(owner);
-}

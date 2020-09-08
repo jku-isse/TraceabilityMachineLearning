@@ -1,7 +1,0 @@
-/**
- * Add a new custom column to the treetable.
- */
-public void addNewCustomColumn(CustomColumn customColumn) {
-    assert customColumn != null;
-    myStorage.addCustomColumn(customColumn);
-}

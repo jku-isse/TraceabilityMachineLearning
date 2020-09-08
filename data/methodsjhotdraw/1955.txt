@@ -1,8 +1,0 @@
-/**
- * Gets a compatible connector.
- * If the provided connector is part of this figure, return the connector.
- * If the provided connector is part of another figure, return a connector
- * with the same semantics for this figure.
- * Return null, if no compatible connector is available.
- */
-public Connector findCompatibleConnector(Connector c, boolean isStartConnector);

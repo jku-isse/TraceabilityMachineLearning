@@ -1,9 +1,0 @@
-public void testOtherFields() {
-    VisitReminderReturnForm vrrf = new VisitReminderReturnForm(90L, 2L, "JONES", "BOB", "111-222-3333");
-    vrrf.setFirstName("actually, its bob");
-    assertEquals("actually, its bob", vrrf.getFirstName());
-    vrrf.setHcpID(2L);
-    assertEquals(2L, vrrf.getHcpID());
-    vrrf.setPatientID(1L);
-    assertEquals(1L, vrrf.getPatientID());
-}

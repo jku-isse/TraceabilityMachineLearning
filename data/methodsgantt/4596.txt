@@ -1,4 +1,0 @@
-private void buildDistanceGraph(Task changedTask) {
-    TaskDependency[] depsAsDependee = changedTask.getDependenciesAsDependee().toArray();
-    buildDistanceGraph(depsAsDependee, 1);
-}

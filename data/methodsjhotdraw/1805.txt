@@ -1,3 +1,0 @@
-public void trackStart(Point anchor, int modifiersEx) {
-    oldPoint = view.getConstrainer().constrainPoint(view.viewToDrawing(anchor));
-}

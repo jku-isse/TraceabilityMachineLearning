@@ -1,7 +1,0 @@
-/**
- * Reset the game.
- */
-public final void reset() {
-    // Simply remove all the status instances from the game.
-    _gameStatus.clear();
-}

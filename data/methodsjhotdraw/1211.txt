@@ -1,3 +1,0 @@
-public void setClosed(boolean newValue) {
-    AttributeKeys.CLOSED.set(this, newValue);
-}

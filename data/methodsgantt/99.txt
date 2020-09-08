@@ -1,2 +1,0 @@
-/* <CustomPropertyDefinitions> */
-List getDefinitions();

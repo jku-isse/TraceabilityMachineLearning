@@ -1,4 +1,0 @@
-/**
- * Start the computations of the permanent brain.
- */
-void startPermanentBrain();

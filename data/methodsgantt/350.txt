@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the cvsOptions.
- */
-public CSVOptions getCSVOptions() {
-    return csvOptions;
-}

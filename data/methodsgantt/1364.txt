@@ -1,1 +1,0 @@
-void isIconVisible(boolean isNull);

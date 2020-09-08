@@ -1,3 +1,0 @@
-protected ParserFactory getParserFactory() {
-    return myParserFactory;
-}

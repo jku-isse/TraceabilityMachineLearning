@@ -1,5 +1,0 @@
-public void draw(Graphics2D g, Collection<Figure> c) {
-    for (Figure f : c) {
-        f.draw(g);
-    }
-}

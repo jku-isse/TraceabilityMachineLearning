@@ -1,7 +1,0 @@
-@Override
-protected void setUp() throws Exception {
-    ctrl = createControl();
-    mockContext = ctrl.createMock(InitialContext.class);
-    mockConnection = ctrl.createMock(Connection.class);
-    mockDataSource = ctrl.createMock(DataSource.class);
-}

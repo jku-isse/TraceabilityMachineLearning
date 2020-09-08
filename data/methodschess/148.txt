@@ -1,7 +1,0 @@
-/**
- * Set the current game.
- *
- * @param The
- * 		current game.
- */
-void setGame(Game game);

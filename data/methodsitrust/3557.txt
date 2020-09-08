@@ -1,5 +1,0 @@
-public static void main(String[] args) throws IOException, SQLException {
-    TestDataGenerator gen = new TestDataGenerator();
-    gen.clearAllTables();
-    gen.standardData();
-}

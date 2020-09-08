@@ -1,6 +1,0 @@
-public List<OutputFormat> getOutputFormats() {
-    if (AbstractDrawing.DEBUG) {
-        System.out.println((((this) + ".getOutputFormats size:") + (outputFormats.size())));
-    }
-    return outputFormats;
-}

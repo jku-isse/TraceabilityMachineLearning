@@ -1,8 +1,0 @@
-public void testPatientViewDeclaredProviderFromNotificationCenter() throws Exception {
-    WebConversation wc = login("2", "pw");
-    WebResponse wr = wc.getCurrentPage();
-    assertEquals("iTrust - Patient Home", wr.getTitle());
-    assertTrue(wr.getText().contains("Gandalf Stormcrow"));
-    assertTrue(wr.getText().contains("999-888-7777"));
-    assertTrue(wr.getText().contains("gstormcrow@iTrust.org"));
-}

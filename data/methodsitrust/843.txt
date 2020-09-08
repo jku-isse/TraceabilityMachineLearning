@@ -1,5 +1,0 @@
-public void testSearchForPatientsWithName() {
-    SearchUsersAction act = new SearchUsersAction(factory, 9000000000L);
-    List<PatientBean> patients = act.searchForPatientsWithName("Random", "Person");
-    assertEquals("Random Person", patients.get(0).getFullName());
-}

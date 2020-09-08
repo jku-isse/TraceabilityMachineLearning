@@ -1,4 +1,0 @@
-SaveProjectAsAction(GanttProject mainFrame) {
-    super("saveas");
-    myMainFrame = mainFrame;
-}

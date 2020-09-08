@@ -1,9 +1,0 @@
-/**
- * Set the type of the moved piece.
- *
- * @param type
- * 		The type of the moved piece.
- */
-private final void setPieceType(byte type) {
-    _pieceType = type;
-}

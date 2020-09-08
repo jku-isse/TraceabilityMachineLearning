@@ -1,7 +1,0 @@
-public void testRemoveAppt() throws Exception {
-    List<ApptBean> appts = viewAction.getMyAppointments();
-    int size = appts.size();
-    assertEquals("Success: Appointment removed", editAction.removeAppt(appts.get(0)));
-    assertEquals((size - 1), viewAction.getMyAppointments().size());
-    editAction.removeAppt(appts.get(0));
-}

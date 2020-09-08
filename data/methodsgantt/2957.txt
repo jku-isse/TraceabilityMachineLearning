@@ -1,4 +1,0 @@
-BooleanOptionAction(BooleanOption option) {
-    super("");
-    myOption = option;
-}

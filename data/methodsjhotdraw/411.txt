@@ -1,7 +1,0 @@
-/**
- * Creates a new instance.
- */
-public UndoAction(Application app) {
-    super(app);
-    labels.configureAction(this, UndoAction.ID);
-}

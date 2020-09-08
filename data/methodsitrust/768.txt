@@ -1,4 +1,0 @@
-public void assignPatientToRoom(WardRoomBean wardRoom, long patientMID) throws DBException {
-    wardRoom.setOccupiedBy(patientMID);
-    wardDAO.updateWardRoomOccupant(wardRoom);
-}

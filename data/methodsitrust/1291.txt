@@ -1,5 +1,0 @@
-public void testGetPersonnel() throws iTrustException {
-    PersonnelBean bean = action.getPersonnel(9000000000L);
-    assertEquals("Kelly Doctor", bean.getFullName());
-    assertEquals("surgeon", bean.getSpecialty());
-}

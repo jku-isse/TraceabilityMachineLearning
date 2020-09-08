@@ -1,3 +1,0 @@
-public void setOverrideReasonOther(String overrideReasonOther) {
-    this.overrideReasonOther = overrideReasonOther;
-}

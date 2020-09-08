@@ -1,8 +1,0 @@
-/**
- * Clone this ply.
- *
- * @return A clone of this ply.
- */
-public Object clone() {
-    return new AnalyzedPlyImpl(getPly(), getScore());
-}

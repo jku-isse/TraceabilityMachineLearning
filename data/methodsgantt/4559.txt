@@ -1,3 +1,0 @@
-public void run(Task task) {
-    run(new Task[]{ task });
-}

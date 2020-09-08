@@ -1,4 +1,0 @@
-public void addNotify(Drawing d) {
-    this.drawing = d;
-    fireFigureAdded();
-}

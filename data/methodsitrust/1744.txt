@@ -1,6 +1,0 @@
-/**
- * One of (NOT YET RECEIVED, PENDING, COMPLETED)
- */
-public void setStatus(String status) {
-    this.status = status;
-}

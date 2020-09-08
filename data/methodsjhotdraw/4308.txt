@@ -1,5 +1,0 @@
-public void mousePressed(MouseEvent e) {
-    getHandler().tb = toolBar;
-    getHandler().mousePressed(e);
-    isDragging = getHandler().isDragging;
-}

@@ -1,7 +1,0 @@
-/* Handle the Mac OSX "about" menu option. */
-public void handleAbout(ApplicationEvent event) {
-    AboutDialog abd = new AboutDialog(myProj);
-    abd.setVisible(true);
-    /* Indicate weve handled this event ourselves */
-    event.setHandled(true);
-}

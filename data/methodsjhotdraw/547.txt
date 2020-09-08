@@ -1,4 +1,0 @@
-public CompositeColor(ColorSystem system, Color color) {
-    this.system = system;
-    this.components = system.toComponents(color.getRGB(), null);
-}

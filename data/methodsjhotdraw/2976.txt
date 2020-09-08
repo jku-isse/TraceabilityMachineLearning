@@ -1,6 +1,0 @@
-/**
- * Creates a view action which acts on the current view of the editor.
- */
-public AbstractDrawingViewAction(DrawingEditor editor) {
-    setEditor(editor);
-}

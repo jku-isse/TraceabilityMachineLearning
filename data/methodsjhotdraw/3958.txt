@@ -1,5 +1,0 @@
-/**
- * Creates a new instance of CompositeTransferable
- */
-public CompositeTransferable() {
-}

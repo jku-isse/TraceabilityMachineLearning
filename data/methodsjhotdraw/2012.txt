@@ -1,9 +1,0 @@
-/**
- * Sent when handles of a Figure have been added, removed or replaced.
- * <p>
- * DrawingViews listen to this event to repopulate the Handles.
- * <p>
- * A Figure should not fire this event, if just the state or the location
- * of Handle has changed.
- */
-public void figureHandlesChanged(FigureEvent e);

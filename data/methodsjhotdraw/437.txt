@@ -1,3 +1,0 @@
-public void removeChangeListener(ChangeListener l) {
-    listeners.remove(l);
-}

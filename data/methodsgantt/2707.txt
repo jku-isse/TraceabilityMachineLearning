@@ -1,9 +1,0 @@
-/**
- * Open the file chooser
- */
-public OpenFileDialog(String startDirectory) {
-    myStartDirectory = new File(startDirectory);
-    if (!(myStartDirectory.isDirectory())) {
-        myStartDirectory = myStartDirectory.getParentFile();
-    }
-}

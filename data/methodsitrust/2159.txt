@@ -1,3 +1,0 @@
-public void setHCPaddress2(String address2) {
-    this.hcpAddress2 = address2;
-}

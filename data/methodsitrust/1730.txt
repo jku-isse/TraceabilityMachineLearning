@@ -1,8 +1,0 @@
-/**
- * Returns whether or not the patient has viewed the lab procedure
- *
- * @return 
- */
-public boolean isViewedByPatient() {
-    return viewedByPatient;
-}

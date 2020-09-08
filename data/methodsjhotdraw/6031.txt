@@ -1,4 +1,0 @@
-private void initStorageContext(IXMLElement root) {
-    identifiedElements = new HashMap<IXMLElement, String>();
-    gradientToIDMap = new HashMap<Gradient, String>();
-}

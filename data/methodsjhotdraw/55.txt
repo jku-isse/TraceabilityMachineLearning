@@ -1,8 +1,0 @@
-public void setFile(File newValue) {
-    File oldValue = file;
-    file = newValue;
-    if (((preferences) != null) && (newValue != null)) {
-        preferences.put("projectFile", newValue.getPath());
-    }
-    firePropertyChange(View.FILE_PROPERTY, oldValue, newValue);
-}

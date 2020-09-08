@@ -1,6 +1,0 @@
-/**
- * Return the JTree.
- */
-public JTree getJTree() {
-    return treetable.getTree();
-}

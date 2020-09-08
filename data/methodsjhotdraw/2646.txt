@@ -1,7 +1,0 @@
-/**
- * Method to set a {@code HandleTracker}. If you specify null, the
- * {@code SelectionTool} uses the {@code DefaultHandleTracker}.
- */
-public void setHandleTracker(HandleTracker newValue) {
-    handleTracker = newValue;
-}

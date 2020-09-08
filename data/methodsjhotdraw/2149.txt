@@ -1,4 +1,0 @@
-/**
- * Sent when requesting to add secondary handles.
- */
-public void handleRequestSecondaryHandles(HandleEvent e);

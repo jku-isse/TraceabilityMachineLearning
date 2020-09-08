@@ -1,7 +1,0 @@
-public RoleSet createRoleSet(String name) {
-    RoleSet result = new RoleSetImpl(name, this);
-    myRoleSets.add(result);
-    // System.err.println("[RoleManagerImpl] createRoleSet():
-    // created:"+name);
-    return result;
-}

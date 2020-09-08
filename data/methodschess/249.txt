@@ -1,6 +1,0 @@
-/**
- * Get the search depth for the computed ply.
- *
- * @return The search depth for the computed ply.
- */
-int getSearchDepth();

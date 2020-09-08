@@ -1,7 +1,0 @@
-public TaskScheduleEvent(Task source, GanttCalendar oldStartDate, GanttCalendar oldFinishDate, GanttCalendar newStartDate, GanttCalendar newFinishDate) {
-    super(source);
-    myOldStartDate = oldStartDate;
-    myOldFinishDate = oldFinishDate;
-    myNewStartDate = newStartDate;
-    myNewFinishDate = newFinishDate;
-}

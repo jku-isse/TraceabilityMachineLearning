@@ -1,3 +1,0 @@
-protected Boolean proxyEquals(Object proxy, Object other) {
-    return proxy == other ? Boolean.TRUE : Boolean.FALSE;
-}

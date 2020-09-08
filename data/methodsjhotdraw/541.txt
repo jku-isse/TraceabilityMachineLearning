@@ -1,5 +1,0 @@
-public void regenerateColorWheel() {
-    if (!(isPixelsValid)) {
-        generateColorWheel();
-    }
-}

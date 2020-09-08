@@ -1,1 +1,0 @@
-protected abstract String serializeTask(Task t, int depth) throws Exception;

@@ -1,4 +1,0 @@
-/**
- * Opens the last element with the specified name and makes it the current node.
- */
-public void openElement(String tagName) throws IOException;

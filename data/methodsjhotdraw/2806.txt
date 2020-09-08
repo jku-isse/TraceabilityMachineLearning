@@ -1,3 +1,0 @@
-public void setBounds(Point2D.Double anchor, Point2D.Double lead) {
-    origin = new Point2D.Double(anchor.x, anchor.y);
-}

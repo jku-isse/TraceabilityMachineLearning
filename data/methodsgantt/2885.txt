@@ -1,1 +1,0 @@
-void setResourceDividerLocation(int location);

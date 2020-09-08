@@ -1,3 +1,0 @@
-public void setBloodTypeStr(String bloodType) {
-    this.bloodType = BloodType.parse(bloodType);
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the size of the icons on the toolbar.
- */
-public String getIconSize() {
-    return iconSize;
-}

@@ -1,4 +1,0 @@
-// ATTRIBUTES
-public double getArcWidth() {
-    return roundrect.arcwidth;
-}

@@ -1,3 +1,0 @@
-public String getTypeAsString() {
-    return net.sourceforge.ganttproject.CustomPropertyManager.PropertyTypeEncoder.encodeFieldType(type);
-}

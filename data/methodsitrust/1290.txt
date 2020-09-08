@@ -1,4 +1,0 @@
-public void testGetPatientl() throws iTrustException {
-    PatientBean bean = action.getPatient(2L);
-    assertEquals("Andy Programmer", bean.getFullName());
-}

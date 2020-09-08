@@ -1,3 +1,0 @@
-public DefaultColorSliderModel(ColorSystem sys) {
-    setColorSystem(sys);
-}

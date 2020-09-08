@@ -1,6 +1,0 @@
-/**
- * Resets the startIndex of the matcher to 0.
- */
-public void reset() {
-    startIndex = 0;
-}

@@ -1,5 +1,0 @@
-private void run(Runnable runnable) {
-    setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-    runnable.run();
-    setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-}

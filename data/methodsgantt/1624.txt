@@ -1,3 +1,0 @@
-public GraphicPrimitiveContainer paint() {
-    return myPrimitiveContainer;
-}

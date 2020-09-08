@@ -1,9 +1,0 @@
-AlphaRenderingOption(UIConfiguration config) {
-    super("chart.weekend_alpha_rendering", UIConfiguration.AlphaRenderingOption.VALUES);
-    // for (int i=0; i<VALUES.length; i++) {
-    // if (FLOATS[i]==config.getWeekendAlphaValue()) {
-    // myIndex = i;
-    // break;
-    // }
-    // }
-}

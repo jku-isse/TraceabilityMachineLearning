@@ -1,6 +1,0 @@
-/**
- * Returns the right insets in double precision.
- *
- * @return the right insets of this <code>Insets2D</code>.
- */
-public abstract double getRight();

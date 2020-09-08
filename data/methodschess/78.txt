@@ -1,9 +1,0 @@
-/**
- * Set a piece on a given position.
- *
- * @param piece
- * 		The piece to set.
- * @param position
- * 		The position to set the piece on.
- */
-void setPiece(Piece piece, Position position);

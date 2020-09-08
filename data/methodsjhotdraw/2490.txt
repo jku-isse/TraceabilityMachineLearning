@@ -1,4 +1,0 @@
-public RelativeDecoratorLocator(double relativeX, double relativeY, boolean isQuadratic) {
-    super(relativeX, relativeY);
-    this.isQuadratic = isQuadratic;
-}

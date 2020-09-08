@@ -1,3 +1,0 @@
-ResourceLoad(float load) {
-    this.load = load;
-}

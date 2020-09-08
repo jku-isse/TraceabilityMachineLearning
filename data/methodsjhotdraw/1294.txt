@@ -1,3 +1,0 @@
-public String getPresentationName() {
-    return presentationName;
-}

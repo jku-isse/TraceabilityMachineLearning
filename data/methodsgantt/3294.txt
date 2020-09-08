@@ -1,3 +1,0 @@
-public void addScrollingListener(ScrollingListener listener) {
-    myListeners.add(listener);
-}

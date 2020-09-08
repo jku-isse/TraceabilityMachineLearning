@@ -1,6 +1,0 @@
-/**
- * Return the day
- */
-public int getDay() {
-    return this.get(Calendar.DAY_OF_MONTH);
-}

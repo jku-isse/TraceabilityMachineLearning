@@ -1,8 +1,0 @@
-public void testGetVisitReminders_DeadPatients() throws Exception {
-    gen.hcp0();
-    gen.deadRecurringPatients();
-    action = new GetVisitRemindersAction(factory, 9000000000L);
-    assertEquals(0, action.getVisitReminders(GetVisitRemindersAction.ReminderType.FLU_SHOT_NEEDERS).size());
-    assertEquals(0, action.getVisitReminders(GetVisitRemindersAction.ReminderType.DIAGNOSED_CARE_NEEDERS).size());
-    assertEquals(0, action.getVisitReminders(GetVisitRemindersAction.ReminderType.IMMUNIZATION_NEEDERS).size());
-}

@@ -1,5 +1,0 @@
-public void testGetFilterValue() {
-    filter = new PersonnelReportFilter(PersonnelReportFilter.PersonnelReportFilterType.DLHCP, "city!", factory);
-    String expected = "city!";
-    assertEquals(expected, filter.getFilterValue());
-}

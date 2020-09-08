@@ -1,8 +1,0 @@
-private void colorButtonPerformed(ActionEvent evt) {
-    // GEN-FIRST:event_colorButtonPerformed
-    if ((drawing) != null) {
-        Color color = getColorChooser().showDialog(this, labels.getString("attribute.backgroundColor"), AttributeKeys.CANVAS_FILL_COLOR.get(drawing));
-        colorButton.setBackground(color);
-        updateDrawing();
-    }
-}// GEN-LAST:event_colorButtonPerformed

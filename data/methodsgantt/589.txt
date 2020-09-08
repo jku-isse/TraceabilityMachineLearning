@@ -1,4 +1,0 @@
-public void setWebLink(String webLink) {
-    prjInfos._sWebLink = webLink;
-    setAskForSave(true);
-}

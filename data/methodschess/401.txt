@@ -1,9 +1,0 @@
-/**
- * Sets the NotationPanel to be able to perform some actions there
- *
- * @param panel
- * 		The NotationPanel object
- */
-public final void setNotationPanel(NotationPanel panel) {
-    this.notationPanel = panel;
-}

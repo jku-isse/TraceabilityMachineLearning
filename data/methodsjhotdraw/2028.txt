@@ -1,9 +1,0 @@
-protected void updateWidget() {
-    Font f = editedFigure.getFont();
-    // FIXME - Should scale with fractional value!
-    f = f.deriveFont(f.getStyle(), ((float) ((editedFigure.getFontSize()) * (view.getScaleFactor()))));
-    textArea.setFont(f);
-    textArea.setForeground(editedFigure.getTextColor());
-    textArea.setBackground(editedFigure.getFillColor());
-    // textArea.setBounds(getFieldBounds(editedFigure));
-}

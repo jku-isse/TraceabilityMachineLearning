@@ -1,3 +1,0 @@
-public void testResetSecurityQuestionAnswer() throws DBException {
-    authDAO.setSecurityQuestionAnswer("how you doin?", "good", 2L);
-}

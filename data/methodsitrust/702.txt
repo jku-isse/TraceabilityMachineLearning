@@ -1,9 +1,0 @@
-public void testNormalLoginFailureSequence() throws Exception {
-    assertTrue(action.isValidForLogin());
-    assertEquals("Login failed, attempt 1", action.recordLoginFailure());
-    assertTrue(action.isValidForLogin());
-    assertEquals("Login failed, attempt 2", action.recordLoginFailure());
-    assertTrue(action.isValidForLogin());
-    assertEquals("Login failed, attempt 3", action.recordLoginFailure());
-    assertFalse(action.isValidForLogin());
-}

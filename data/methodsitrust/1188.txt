@@ -1,4 +1,0 @@
-public void testGetNumRequest() throws SQLException {
-    List<ApptRequestBean> reqs = action.getApptRequests();
-    assertEquals(1, action.getNumRequests(reqs));
-}

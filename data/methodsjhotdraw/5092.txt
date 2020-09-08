@@ -1,3 +1,0 @@
-public NameAdapter(TaskFigure target) {
-    this.target = target;
-}

@@ -1,4 +1,0 @@
-// //////////////////////////////////////////
-// ProjectEventListener
-public void projectModified() {
-}

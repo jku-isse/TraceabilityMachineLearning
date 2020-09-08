@@ -1,6 +1,0 @@
-/**
- * From super
- */
-public GregorianCalendar() {
-    super();
-}

@@ -1,4 +1,0 @@
-public void testHospitalNameTooShort() {
-    String hName = "";
-    assertEquals(HospitalNameValidatorTest.FAILED, validatorProxy.checkFormat("Hospital Name", hName, HospitalNameValidatorTest.VALIDATION_FORMAT, false));
-}

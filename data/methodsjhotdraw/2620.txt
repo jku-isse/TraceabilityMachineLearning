@@ -1,5 +1,0 @@
-public RoundRectangleRadiusUndoableEdit(RoundRectangleFigure owner, Point2D.Double oldArc, Point2D.Double newArc) {
-    this.owner = owner;
-    this.oldArc = oldArc;
-    this.newArc = newArc;
-}

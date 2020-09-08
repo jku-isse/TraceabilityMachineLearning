@@ -1,3 +1,0 @@
-public Dimension2DDouble getCanvasSize() {
-    return canvasSize;
-}

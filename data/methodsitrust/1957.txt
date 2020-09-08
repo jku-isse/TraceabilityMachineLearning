@@ -1,3 +1,0 @@
-public void setPatientName(String patientName) {
-    PatientName = patientName;
-}

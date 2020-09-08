@@ -1,3 +1,0 @@
-public Drawing getDrawing() {
-    return drawing;
-}

@@ -1,7 +1,0 @@
-@Override
-public BezierFigure clone() {
-    BezierFigure that = ((BezierFigure) (super.clone()));
-    that.path = ((BezierPath) (this.path.clone()));
-    that.invalidate();
-    return that;
-}

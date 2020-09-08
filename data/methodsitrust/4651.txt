@@ -1,4 +1,0 @@
-@Override
-public String checkFormat(String name, Long value, ValidationFormat format, boolean isNullable) {
-    return super.checkFormat(name, value, format, isNullable);
-}

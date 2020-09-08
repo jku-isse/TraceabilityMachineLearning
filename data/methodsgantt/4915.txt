@@ -1,3 +1,0 @@
-private TimeFrameImpl.LineItem createLineItem(Date startDate, Date endDate) {
-    return new TimeFrameImpl.LineItem(startDate, endDate);
-}

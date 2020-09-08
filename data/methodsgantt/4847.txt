@@ -1,7 +1,0 @@
-public int getAtomCount(TimeUnit atomUnit) {
-    TimeUnitGraph.Composition composition = myGraph.getComposition(this, atomUnit);
-    if (composition == null) {
-        throw new RuntimeException(((("Failed to find a composition of time unit=" + (this)) + " from time unit=") + atomUnit));
-    }
-    return composition.getAtomCount();
-}

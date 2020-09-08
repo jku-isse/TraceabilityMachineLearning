@@ -1,9 +1,0 @@
-public void testAddExistingRepresentative() throws Exception {
-    patientDAO.addRepresentative(1L, 2L);
-    try {
-        patientDAO.addRepresentative(1L, 2L);
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("Patient 1 already represents patient 2", e.getMessage());
-    }
-}

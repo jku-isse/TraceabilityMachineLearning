@@ -1,9 +1,0 @@
-private void addColorButtonsTo(JToolBar bar, DrawingEditor editor) {
-    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-    HashMap<AttributeKey, Object> defaultAttributes = new HashMap<AttributeKey, Object>();
-    ODGAttributeKeys.STROKE_GRADIENT.set(defaultAttributes, ((Gradient) (null)));
-    bar.add(ButtonFactory.createEditorColorButton(editor, AttributeKeys.STROKE_COLOR, ButtonFactory.WEBSAVE_COLORS, ButtonFactory.WEBSAVE_COLORS_COLUMN_COUNT, "attribute.strokeColor", labels, defaultAttributes));
-    defaultAttributes = new HashMap<AttributeKey, Object>();
-    ODGAttributeKeys.FILL_GRADIENT.set(defaultAttributes, ((Gradient) (null)));
-    bar.add(ButtonFactory.createEditorColorButton(editor, AttributeKeys.FILL_COLOR, ButtonFactory.WEBSAVE_COLORS, ButtonFactory.WEBSAVE_COLORS_COLUMN_COUNT, "attribute.fillColor", labels, defaultAttributes));
-}

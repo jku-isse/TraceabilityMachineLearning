@@ -1,4 +1,0 @@
-protected void setUp() throws Exception {
-    req = new ApptRequestBean();
-    apt = new ApptBean();
-}

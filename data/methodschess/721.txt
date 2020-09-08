@@ -1,7 +1,0 @@
-/**
- * Add a action listener to the timer.
- *
- * @param listener
- * 		The action listener to add.
- */
-void addActionListener(ActionListener listener);

@@ -1,3 +1,0 @@
-protected void paintMajorTickForHorizSlider(Graphics g, Rectangle tickBounds, int x) {
-    g.drawLine(x, 0, x, ((tickBounds.height) - 1));
-}

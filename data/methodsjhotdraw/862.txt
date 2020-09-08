@@ -1,4 +1,0 @@
-/**
- * Connect the connection with the given figure.
- */
-protected abstract void connect(Connector c);

@@ -1,7 +1,0 @@
-public ToggleChartAction(Chart chart, GPViewManager viewManager) {
-    myChart = chart;
-    putValue(Action.NAME, getLocalizedName());
-    // putValue(Action.SMALL_ICON,chart.getIcon());
-    myView = viewManager.createView(chart, chart.getIcon());
-    myViewManager = viewManager;
-}

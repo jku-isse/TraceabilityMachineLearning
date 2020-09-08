@@ -1,3 +1,0 @@
-private String getAddHospitalSuccessString(HospitalBean proc) {
-    return ((("Success: " + (proc.getHospitalID())) + " - ") + (proc.getHospitalName())) + " added";
-}

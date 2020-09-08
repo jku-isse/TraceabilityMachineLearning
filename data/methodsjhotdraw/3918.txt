@@ -1,8 +1,0 @@
-private Insets getScrollPaneInsets() {
-    JScrollPane scrollPane = getScrollPane();
-    if ((scrollPane == null) || ((getScrollPane().getBorder()) == null)) {
-        return new Insets(0, 0, 0, 0);
-    } else {
-        return getScrollPane().getBorder().getBorderInsets(scrollPane);
-    }
-}

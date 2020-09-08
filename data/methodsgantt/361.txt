@@ -1,3 +1,0 @@
-public GanttExportSettings getExportSettings() {
-    return new GanttExportSettings(bExportName, bExportComplete, bExportRelations, bExport3DBorders);
-}

@@ -1,3 +1,0 @@
-protected GPAbstractOption(String id) {
-    myID = id;
-}

@@ -1,4 +1,0 @@
-public Date getStartDate() {
-    // return this.beg.getTime();
-    return getTaskManager().getProjectStart();
-}

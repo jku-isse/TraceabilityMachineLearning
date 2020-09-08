@@ -1,6 +1,0 @@
-public void beforeProcessingTimeFrames() {
-    myPrimitiveContainer = new GraphicPrimitiveContainer();
-    myPrimitiveContainer.clear();
-    createGreyRectangleWithNiceBorders();
-    myToday = myDayFramer.adjustLeft(CalendarFactory.newCalendar().getTime());
-}

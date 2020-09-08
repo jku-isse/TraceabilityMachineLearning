@@ -1,5 +1,0 @@
-@Override
-public void mouseReleased(MouseEvent evt) {
-    selectGroup(evt.isShiftDown());
-    clearRubberBand();
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @unknown 
- */
-public String toString() {
-    return task.getName();
-}

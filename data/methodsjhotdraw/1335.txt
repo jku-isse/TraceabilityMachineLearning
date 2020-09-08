@@ -1,3 +1,0 @@
-private void setTargetConnector(Connector newTargetConnector) {
-    targetConnector = newTargetConnector;
-}

@@ -1,5 +1,0 @@
-public JPaintCombo(Paint[] list) {
-    super(list);
-    myList = list;
-    setRenderer(new PaintCellRenderer());
-}

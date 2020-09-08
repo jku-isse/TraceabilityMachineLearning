@@ -1,6 +1,0 @@
-/**
- * clear the panel.
- */
-public void clear() {
-    message.setText("");
-}

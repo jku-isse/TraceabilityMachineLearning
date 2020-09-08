@@ -1,4 +1,0 @@
-LabelPositionOptionImpl(String id) {
-    super(id);
-    myValue = LabelPositionOptionImpl.VALUES[0];
-}

@@ -1,4 +1,0 @@
-@Override
-public final void read(DOMInput in) throws IOException {
-    throw new UnsupportedOperationException("Use ODGStorableInput to read this Figure.");
-}

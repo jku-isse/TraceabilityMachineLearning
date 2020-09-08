@@ -1,9 +1,0 @@
-protected void setUp() throws Exception {
-    super.setUp();
-    gen.clearAllTables();
-    gen.hcp0();
-    gen.ndCodes();
-    gen.patient1();
-    gen.patient2();
-    gen.patient4();
-}

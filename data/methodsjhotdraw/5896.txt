@@ -1,3 +1,0 @@
-public Figure createCircle(double cx, double cy, double r, Map<AttributeKey, Object> a) {
-    return createEllipse(cx, cy, r, r, a);
-}

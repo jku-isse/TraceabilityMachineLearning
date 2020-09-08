@@ -1,8 +1,0 @@
-public Date getChangeDate() {
-    try {
-        return new SimpleDateFormat("MM/dd/yyyy").parse(changeDateStr);
-    } catch (ParseException e) {
-        e.printStackTrace();
-        return null;
-    }
-}

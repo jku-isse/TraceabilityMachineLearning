@@ -1,8 +1,0 @@
-/**
- * Create an item with a label
- */
-public JMenuItem createNewItemText(String label) {
-    JMenuItem item = new JMenuItem(label);
-    item.addActionListener(this);
-    return item;
-}

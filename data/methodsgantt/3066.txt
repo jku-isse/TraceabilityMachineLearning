@@ -1,3 +1,0 @@
-public String getOptionLabel(GPOption option) {
-    return GanttLanguage.getInstance().getText((((myOptionKeyPrefix) + (option.getID())) + ".label"));
-}

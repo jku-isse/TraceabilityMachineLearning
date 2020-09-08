@@ -1,4 +1,0 @@
-public GanttTreeTable.DisplayedColumnsList getDisplayColumns() {
-    updateDisplayedColumnsOrder();
-    return this.listDisplayedColumns;
-}

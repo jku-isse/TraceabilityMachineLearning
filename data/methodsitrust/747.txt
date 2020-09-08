@@ -1,4 +1,0 @@
-public void testGetPrescriptions() throws Exception {
-    List<AdverseEventBean> beanList = action.getReports(true, "11/08/2008", "11/10/2010");
-    assertEquals("Prioglitazone", beanList.get(0).getDrug());
-}

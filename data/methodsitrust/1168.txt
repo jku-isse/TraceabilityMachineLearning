@@ -1,3 +1,0 @@
-public void testGetPatientName() throws Exception {
-    assertEquals("Random Person", action.getPatientName(1L));
-}

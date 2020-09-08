@@ -1,3 +1,0 @@
-private String getFontSpec(Font font) {
-    return ((((font.getFamily()) + "-") + (getFontStyle(font))) + "-") + (font.getSize());
-}

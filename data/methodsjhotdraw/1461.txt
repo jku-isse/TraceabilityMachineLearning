@@ -1,3 +1,0 @@
-public ConnectionTool(ConnectionFigure prototype, Map<AttributeKey, Object> attributes) {
-    this(prototype, attributes, null);
-}

@@ -1,9 +1,0 @@
-public void testWardCRUDServletDeleteFail() throws Exception {
-    WardCRUDServletTest.LittleDelegatorServlet servlet = new WardCRUDServletTest.LittleDelegatorServlet();
-    servlet.setUp();
-    expect(req.getParameter("wardID")).andReturn("").once();
-    resp.sendRedirect("");
-    expectLastCall();
-    ctrl.replay();
-    servlet.doDelete(req, resp);
-}

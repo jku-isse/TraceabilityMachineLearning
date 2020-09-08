@@ -1,3 +1,0 @@
-private TextFigure getDurationFigure() {
-    return ((TextFigure) (((ListFigure) (getChild(2))).getChild(0)));
-}

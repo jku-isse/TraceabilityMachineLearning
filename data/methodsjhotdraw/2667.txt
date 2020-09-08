@@ -1,5 +1,0 @@
-public void write(OutputStream out, Drawing drawing) throws IOException {
-    ObjectOutputStream oout = new ObjectOutputStream(out);
-    oout.writeObject(drawing);
-    oout.flush();
-}

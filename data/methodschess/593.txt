@@ -1,6 +1,0 @@
-/**
- * Get the line index of this position.
- *
- * @return The line index of this position (0-7).
- */
-int getLineIndex();

@@ -1,5 +1,0 @@
-public void setMultipleOpenId(int newValue) {
-    int oldValue = multipleOpenId;
-    multipleOpenId = newValue;
-    firePropertyChange(View.MULTIPLE_OPEN_ID_PROPERTY, oldValue, newValue);
-}

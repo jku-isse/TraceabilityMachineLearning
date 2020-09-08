@@ -1,4 +1,0 @@
-/**
- * Sent when an attribute of the figure has changed.
- */
-public void attributeChanged(FigureEvent e);

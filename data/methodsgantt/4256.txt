@@ -1,7 +1,0 @@
-TaskActivityImpl(TaskImpl task, Date startDate, Date endDate, float intensity) {
-    myStartDate = startDate;
-    myEndDate = endDate;
-    myDuration = task.getManager().createLength(task.getDuration().getTimeUnit(), startDate, endDate);
-    myIntensity = intensity;
-    myTask = task;
-}

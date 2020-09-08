@@ -1,8 +1,0 @@
-/**
- * Get the current hashtable for this ply generator.
- *
- * @return The current hashtable for this ply generator.
- */
-public final PlyHashtable getHashtable() {
-    return _hashtable;
-}

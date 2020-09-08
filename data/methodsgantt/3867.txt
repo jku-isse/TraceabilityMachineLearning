@@ -1,3 +1,0 @@
-protected ProjectResource() {
-    this((-1));
-}

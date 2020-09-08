@@ -1,3 +1,0 @@
-public DisplayedColumn(String id) {
-    this.id = id;
-}

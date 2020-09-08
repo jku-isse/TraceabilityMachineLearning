@@ -1,4 +1,0 @@
-/**
- * Gets the number of columns to be overlaid when the figure is edited.
- */
-public int getTextColumns();

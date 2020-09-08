@@ -1,3 +1,0 @@
-private boolean equals(MedicationBean other) {
-    return (description.equals(other.description)) && (NDCode.equals(other.NDCode));
-}

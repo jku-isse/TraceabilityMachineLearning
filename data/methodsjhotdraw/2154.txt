@@ -1,5 +1,0 @@
-public void keyReleased(KeyEvent e) {
-    for (Handle h : handles) {
-        h.keyReleased(e);
-    }
-}

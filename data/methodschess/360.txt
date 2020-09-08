@@ -1,7 +1,0 @@
-// Constructors
-/**
- * Create a new instance of this test.
- */
-public PlyGeneratorTest5() {
-    super("A simple ply generator test for a queen capture on h7 by a bishop");
-}

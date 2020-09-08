@@ -1,6 +1,0 @@
-/**
- * Gets an InputStream, that allows to read from the document.
- *
- * @return InputStream to read from
- */
-public InputStream getInputStream() throws IOException;

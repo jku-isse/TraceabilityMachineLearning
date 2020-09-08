@@ -1,1 +1,0 @@
-public void read(DOMInput in) throws IOException;

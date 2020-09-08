@@ -1,4 +1,0 @@
-@Override
-public boolean contains(Point p) {
-    return false;
-}

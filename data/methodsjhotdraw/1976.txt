@@ -1,6 +1,0 @@
-// COMPOSITE FIGURES
-/**
- * Checks whether the given figure is contained in this figure.
- * A figure includes itself.
- */
-public boolean includes(Figure figure);

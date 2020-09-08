@@ -1,4 +1,0 @@
-public West(DrawingEditor editor, ResourceBundleUtil labels) {
-    super(editor);
-    labels.configureAction(this, "edit.alignWest");
-}

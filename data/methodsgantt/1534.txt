@@ -1,7 +1,0 @@
-public WeekendCalendarImpl() {
-    for (int i = 0; i < (myTypes.length); i++) {
-        myTypes[i] = GPCalendar.DayType.WORKING;
-    }
-    setWeekDayType(GregorianCalendar.SATURDAY, GPCalendar.DayType.WEEKEND);
-    setWeekDayType(GregorianCalendar.SUNDAY, GPCalendar.DayType.WEEKEND);
-}

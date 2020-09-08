@@ -1,7 +1,0 @@
-public void setActions() {
-    treetable.setAction(appli.getCopyAction());
-    treetable.setAction(appli.getPasteAction());
-    treetable.setAction(appli.getCutAction());
-    treetable.addAction(myIndentAction, KeyStroke.getKeyStroke(KeyEvent.VK_TAB, 0));
-    treetable.addAction(myDedentAction, KeyStroke.getKeyStroke(KeyEvent.VK_TAB, KeyEvent.SHIFT_DOWN_MASK));
-}

@@ -1,6 +1,0 @@
-/**
- * Standardconstructor
- */
-public EditMenu() {
-    this.notationPanel = null;
-}

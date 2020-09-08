@@ -1,3 +1,0 @@
-public String getLastOVDateY() {
-    return LastOVDateY;
-}

@@ -1,8 +1,0 @@
-/**
- * Returns the minimum permissible value.
- *
- * @return Minimum legal value that can be input
- */
-public Comparable getMinimum() {
-    return min;
-}

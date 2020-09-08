@@ -1,8 +1,0 @@
-/**
- * This must be called after the BezierPath has been changed.
- */
-public void invalidatePath() {
-    generalPath = null;
-    bounds = null;
-    outer = -1;
-}

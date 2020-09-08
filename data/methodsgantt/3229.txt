@@ -1,3 +1,0 @@
-public String getProjectDomainPageTitle() {
-    return GanttLanguage.getInstance().getText("selectProjectDomain");
-}

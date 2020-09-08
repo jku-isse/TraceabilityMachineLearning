@@ -1,7 +1,0 @@
-/**
- * Returns the number of children.
- * <p>
- * This is a convenience method for calling
- * {@code getChildren().size();}.
- */
-public int getChildCount();

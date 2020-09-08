@@ -1,7 +1,0 @@
-public void testUpdateNonExistent() throws DBException, SQLException {
-    clearNDCodes();
-    final String code = "0000F";
-    MedicationBean proc = new MedicationBean(code, "");
-    assertEquals(0, ndDAO.updateCode(proc));
-    assertEquals(0, ndDAO.getAllNDCodes().size());
-}

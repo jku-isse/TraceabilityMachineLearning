@@ -1,3 +1,0 @@
-public JList getCollectionList() {
-    return collectionList;
-}

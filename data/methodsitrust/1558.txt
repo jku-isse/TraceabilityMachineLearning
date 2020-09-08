@@ -1,8 +1,0 @@
-/**
- * Getter for Start Date
- *
- * @return The start date for the data
- */
-public Date getStartDate() {
-    return startDate;
-}

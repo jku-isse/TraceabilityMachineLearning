@@ -1,3 +1,0 @@
-public void addCustomColumnsListener(CustomColumsListener listener) {
-    myStorage.addCustomColumnsListener(listener);
-}

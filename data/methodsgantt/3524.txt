@@ -1,3 +1,0 @@
-private void saveGanttChartView(TransformerHandler handler) throws SAXException {
-    new GanttChartViewSaver().save(tree.getTreeTable(), handler);
-}

@@ -1,3 +1,0 @@
-public DateFormat getMediumDateFormat() {
-    return currentDateFormat;
-}

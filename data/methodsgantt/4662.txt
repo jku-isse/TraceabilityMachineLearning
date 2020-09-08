@@ -1,5 +1,0 @@
-public TaskDependency createDependency(Task dependant, Task dependee, TaskDependencyConstraint constraint) throws TaskDependencyException {
-    TaskDependency result = auxCreateDependency(dependant, dependee, constraint);
-    addDependency(result);
-    return result;
-}

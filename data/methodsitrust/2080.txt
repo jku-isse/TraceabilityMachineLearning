@@ -1,3 +1,0 @@
-public int getPedometerReading() {
-    return pedometerReading;
-}

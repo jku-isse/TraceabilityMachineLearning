@@ -1,6 +1,0 @@
-public void remap(HashMap<Figure, Figure> oldToNew, boolean disconnectIfNotInMap) {
-    super.remap(oldToNew, disconnectIfNotInMap);
-    if ((presentationFigure) != null) {
-        presentationFigure.remap(oldToNew, disconnectIfNotInMap);
-    }
-}

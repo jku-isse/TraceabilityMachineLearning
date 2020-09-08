@@ -1,3 +1,0 @@
-public GanttLookAndFeelInfo getInfoByName(String name) {
-    return ((GanttLookAndFeelInfo) (infoByName.get(name)));
-}

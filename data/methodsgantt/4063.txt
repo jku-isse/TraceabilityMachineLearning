@@ -1,6 +1,0 @@
-/**
- * Return the array of the shape
- */
-public int[] getarray() {
-    return array;
-}

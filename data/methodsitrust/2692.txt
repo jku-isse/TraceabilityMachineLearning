@@ -1,4 +1,0 @@
-public void testResetPasswordNonExistent() throws Exception {
-    // Still runs with no exception - thats the expected behavior
-    authDAO.resetPassword(500L, "password");
-}

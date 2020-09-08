@@ -1,1 +1,0 @@
-void beginMoveTaskInteraction(MouseEvent e, Task task);

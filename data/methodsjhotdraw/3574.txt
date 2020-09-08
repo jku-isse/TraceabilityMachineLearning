@@ -1,3 +1,0 @@
-public PathIterator getPathIterator(AffineTransform at) {
-    return new Polygon2D.PolygonPathIteratorDouble(this, at);
-}

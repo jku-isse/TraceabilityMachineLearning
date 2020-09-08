@@ -1,3 +1,0 @@
-public float getComponent(int i) {
-    return components[i];
-}

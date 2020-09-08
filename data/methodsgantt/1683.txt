@@ -1,6 +1,0 @@
-TimeFrame[] getTimeFrames(Date exactDate) {
-    if ((myTimeFrames) == null) {
-        myTimeFrames = calculateTimeFrames(exactDate);
-    }
-    return myTimeFrames;
-}

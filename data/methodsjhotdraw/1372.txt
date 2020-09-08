@@ -1,9 +1,0 @@
-/**
- * Draws this handle.
- */
-public void draw(Graphics2D g) {
-    drawRectangle(g, (pressed ? Color.orange : Color.white), Color.black);
-    Rectangle r = getBounds();
-    g.drawLine(r.x, r.y, ((r.x) + (r.width)), ((r.y) + (r.height)));
-    g.drawLine(((r.x) + (r.width)), r.y, r.x, ((r.y) + (r.height)));
-}

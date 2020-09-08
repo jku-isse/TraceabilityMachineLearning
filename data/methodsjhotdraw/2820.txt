@@ -1,6 +1,0 @@
-// FIMXE - Maybe method getText and setText should work with StyledDocument
-// instead of with Strings.
-/**
- * Returns the text held by the Text Holder.
- */
-public String getText();

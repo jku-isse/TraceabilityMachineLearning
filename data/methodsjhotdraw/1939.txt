@@ -1,4 +1,0 @@
-@Override
-public Connector findCompatibleConnector(Connector c, boolean isStartConnector) {
-    return new ChopEllipseConnector(this);
-}

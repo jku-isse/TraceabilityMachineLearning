@@ -1,6 +1,0 @@
-/**
- * returns an Iterator over the entries of the list of Documents MRU
- */
-public Iterator iterator() {
-    return documents.iterator();
-}

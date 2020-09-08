@@ -1,6 +1,0 @@
-/**
- * Returns a link target for a special data item.
- */
-public String generateLink(Object data, int series, Object category) {
-    return months[series];
-}

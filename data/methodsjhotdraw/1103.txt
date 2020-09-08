@@ -1,8 +1,0 @@
-public void read(DOMInput in) {
-    angle = in.getAttribute("angle", 0.35F);
-    innerRadius = in.getAttribute("innerRadius", 12.0F);
-    outerRadius = in.getAttribute("outerRadius", 12.0F);
-    setFilled(in.getAttribute("isFilled", false));
-    setStroked(in.getAttribute("isStroked", false));
-    setSolid(in.getAttribute("isSolid", false));
-}

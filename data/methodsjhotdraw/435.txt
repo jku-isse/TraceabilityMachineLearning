@@ -1,6 +1,0 @@
-public void addChangeListener(ChangeListener l) {
-    if ((listeners) == null) {
-        listeners = new LinkedList<ChangeListener>();
-    }
-    listeners.add(l);
-}

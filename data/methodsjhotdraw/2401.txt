@@ -1,3 +1,0 @@
-public void read(DOMInput in) {
-    height = in.getAttribute("height", 10);
-}

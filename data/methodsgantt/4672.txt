@@ -1,3 +1,0 @@
-protected TaskContainmentHierarchyFacade getTaskHierarchy() {
-    return myTaskHierarchyFactory.createFacede();
-}

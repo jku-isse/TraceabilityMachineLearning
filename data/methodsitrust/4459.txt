@@ -1,4 +1,0 @@
-@Override
-public boolean hasFactor() {
-    return (gender.equals(patient.getGender())) && (!(gender.equals(Gender.NotSpecified)));
-}

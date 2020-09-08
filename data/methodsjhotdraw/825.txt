@@ -1,3 +1,0 @@
-public List<Figure> getChildren() {
-    return Collections.unmodifiableList(children);
-}

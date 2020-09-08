@@ -1,7 +1,0 @@
-/**
- * Creates a new instance with the given image and insets.
- * The image has the same insets as the border.
- */
-public ImageBevelBorder(Image img, Insets borderInsets) {
-    this(img, borderInsets, borderInsets, true);
-}

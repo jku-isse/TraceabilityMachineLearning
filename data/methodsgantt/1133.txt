@@ -1,3 +1,0 @@
-public JTree getTree() {
-    return this.getTreeTable().getTree();
-}

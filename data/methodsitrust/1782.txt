@@ -1,9 +1,0 @@
-/**
- * Sets the MIDs of the recipients for this Message
- *
- * @param to
- * 		
- */
-public void setTo(long to) {
-    this.to = to;
-}

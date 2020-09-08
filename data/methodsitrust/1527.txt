@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return 
- */
-public boolean isAccepted() {
-    return ((status) != null) && (status.booleanValue());
-}

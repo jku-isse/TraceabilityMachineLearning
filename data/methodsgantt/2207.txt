@@ -1,3 +1,0 @@
-public DocumentManager.FTPOptions getFTPOptions() {
-    return myFtpOptions;
-}

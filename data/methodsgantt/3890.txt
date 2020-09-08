@@ -1,3 +1,0 @@
-public void setUnitMeasure(String unitMeasure) {
-    this.unitMeasure = unitMeasure;
-}

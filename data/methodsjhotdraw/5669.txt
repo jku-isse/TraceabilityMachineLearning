@@ -1,4 +1,0 @@
-/**
- * Removes an ActionListener.
- */
-public void removeActionListener(ActionListener listener);

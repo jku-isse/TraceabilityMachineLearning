@@ -1,3 +1,0 @@
-public void testGetPendingCount() throws DBException {
-    assertEquals(1, action.getUnviewedCount());
-}

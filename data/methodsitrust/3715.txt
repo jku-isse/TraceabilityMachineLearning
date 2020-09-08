@@ -1,7 +1,0 @@
-/**
- * The error message will be displayed at the top of the iTrust page as in other iTrust Exceptions.
- */
-@Override
-public String getMessage() {
-    return "This form has not been validated correctly. The following field are not properly filled in: " + (errorList.toString());
-}

@@ -1,6 +1,0 @@
-private void writeLineElement(IXMLElement parent, SVGPathFigure f) throws IOException {
-    IXMLElement elem = parent.createElement("area");
-    if (writePolyAttributes(elem, f, new GrowStroke(((float) ((AttributeKeys.getStrokeTotalWidth(f)) / 2.0)), ((float) (AttributeKeys.getStrokeTotalWidth(f)))).createStrokedShape(new Line2D.Double(f.getStartPoint(), f.getEndPoint())))) {
-        parent.addChild(elem);
-    }
-}

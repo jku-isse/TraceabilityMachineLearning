@@ -1,4 +1,0 @@
-public void setPublicHoliDayType(int month, int date) {
-    setPublicHoliDayType(new GanttCalendar(1, (month - 1), date).getTime());
-    myStableHolidays.add(new GanttCalendar(1, (month - 1), date).getTime());
-}

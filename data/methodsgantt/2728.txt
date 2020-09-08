@@ -1,6 +1,0 @@
-public void openRemoteProject(final IGanttProject project) throws IOException {
-    final Document document = showURLDialog(project);
-    if (document != null) {
-        openProject(document, project);
-    }
-}

@@ -1,8 +1,0 @@
-public void testRecordLoginFailureException() throws Exception {
-    try {
-        evilDAO.recordLoginFailure("");
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

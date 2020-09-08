@@ -1,5 +1,0 @@
-/**
- * Updates the start and end point of the figure and fires figureChanged
- * events.
- */
-public void updateConnection();

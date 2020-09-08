@@ -1,9 +1,0 @@
-/**
- * Sets the MID of the sender for this message
- *
- * @param from
- * 		
- */
-public void setFrom(long from) {
-    this.from = from;
-}

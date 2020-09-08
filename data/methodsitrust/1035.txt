@@ -1,5 +1,0 @@
-public void testUpdateUserPrefs() throws FormValidationException, iTrustException, SQLException {
-    assertTrue(ViewHelperAction.calculateColor("000000", "FFFFFF", 0).equals("000000"));
-    assertTrue(ViewHelperAction.calculateColor("000000", "FFFFFF", 1.0).equals("FFFFFF"));
-    assertTrue(ViewHelperAction.calculateColor("000000", "FFFFFF", 0.5).equals("7F7F7F"));
-}

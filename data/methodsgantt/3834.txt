@@ -1,3 +1,0 @@
-public ProjectResource[] getResourcesArray() {
-    return ((ProjectResource[]) (resources.toArray(new ProjectResource[resources.size()])));
-}

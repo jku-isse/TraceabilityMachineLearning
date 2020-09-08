@@ -1,6 +1,0 @@
-public void increaseHandleDetaiLevel() {
-    DrawingView view = getView();
-    if (view != null) {
-        view.setHandleDetailLevel(((view.getHandleDetailLevel()) + 1));
-    }
-}

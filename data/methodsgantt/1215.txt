@@ -1,4 +1,0 @@
-TaskTreeImageGenerator(GanttTree2 treeView, UIConfiguration uiConfiguration) {
-    myTreeView = treeView;
-    myUIConfiguration = uiConfiguration;
-}

@@ -1,7 +1,0 @@
-public boolean add(Figure figure) {
-    basicAdd(figure);
-    if ((getDrawing()) != null) {
-        figure.addNotify(getDrawing());
-    }
-    return true;
-}

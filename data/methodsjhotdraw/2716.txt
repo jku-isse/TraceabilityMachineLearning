@@ -1,3 +1,0 @@
-public TextAreaFigure(String text) {
-    setText(text);
-}

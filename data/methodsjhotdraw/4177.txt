@@ -1,4 +1,0 @@
-public void remove(Object key) {
-    loadIfNecessary();
-    super.remove(key);
-}

@@ -1,5 +1,0 @@
-public TimeUnitText(String longText, String mediumText, String shortText) {
-    myLongText = longText;
-    myMediumText = mediumText;
-    myShortText = shortText;
-}

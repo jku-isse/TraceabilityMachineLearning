@@ -1,3 +1,0 @@
-public void removeProjectEventListener(ProjectEventListener listener) {
-    myListeners.remove(listener);
-}

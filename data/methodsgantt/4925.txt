@@ -1,6 +1,0 @@
-public Date getUnitFinish(TimeUnit unitLine, int position) {
-    TimeFrameImpl.LineHeader lineHeader = getLineHeader(unitLine);
-    TimeFrameImpl.LineItem lineItem = (lineHeader == null) ? null : lineHeader.getLineItem(position);
-    Date result = (lineItem == null) ? null : lineItem.myEndDate;
-    return result;
-}

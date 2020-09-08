@@ -1,7 +1,0 @@
-public boolean equals(Object o) {
-    if (o instanceof EnhancedPath.Segment) {
-        EnhancedPath.Segment that = ((EnhancedPath.Segment) (o));
-        return (((that.type) == (this.type)) && (Arrays.equals(that.coords, this.coords))) && (Arrays.equals(that.modifiers, this.modifiers));
-    }
-    return false;
-}

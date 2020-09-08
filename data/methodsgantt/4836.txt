@@ -1,5 +1,0 @@
-TimeUnit createTimeUnit(String name, TimeUnit atomUnit, int count) {
-    TimeUnit result = new TimeUnitImpl(name, this, atomUnit);
-    registerTimeUnit(result, count);
-    return result;
-}

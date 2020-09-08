@@ -1,9 +1,0 @@
-public void apply(MouseEvent e) {
-    if ((myLastNotes) == null) {
-        myLastNotes = new TaskInteractionHintRenderer("", e.getX(), e.getY());
-    }
-    float diff = getLengthDiff(e);
-    apply(diff);
-    myLastNotes.setString(getNotesText());
-    myLastNotes.setX(e.getX());
-}

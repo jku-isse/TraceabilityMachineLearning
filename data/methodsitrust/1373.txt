@@ -1,4 +1,0 @@
-public void testGetHashCode() throws Exception {
-    Email email = getTestEmail();
-    assertEquals(42, email.hashCode());
-}

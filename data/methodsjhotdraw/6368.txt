@@ -1,4 +1,0 @@
-/**
- * Gets the text of the current element of the DOM Document.
- */
-public String getText();

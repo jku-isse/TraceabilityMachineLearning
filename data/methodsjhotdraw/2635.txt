@@ -1,5 +1,0 @@
-public void keyPressed(KeyEvent e) {
-    if (((getView()) != null) && (getView().isEnabled())) {
-        tracker.keyPressed(e);
-    }
-}

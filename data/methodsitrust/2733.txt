@@ -1,4 +1,0 @@
-public void testGetHospitalFromEmptyTable() throws DBException, SQLException {
-    clearHospitals();
-    assertEquals(null, hospitalDAO.getHospital("9191919191"));
-}

@@ -1,3 +1,0 @@
-public GanttLookAndFeelInfo(UIManager.LookAndFeelInfo info) {
-    this(info.getName(), info.getClassName());
-}

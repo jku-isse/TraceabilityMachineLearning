@@ -1,3 +1,0 @@
-protected void setStroked(boolean b) {
-    isStroked = b;
-}

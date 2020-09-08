@@ -1,5 +1,0 @@
-protected IXMLElement createG(IXMLElement doc, Map<AttributeKey, Object> attributes) throws IOException {
-    IXMLElement elem = doc.createElement("g");
-    writeOpacityAttribute(elem, attributes);
-    return elem;
-}

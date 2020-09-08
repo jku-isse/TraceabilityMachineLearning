@@ -1,3 +1,0 @@
-public ColorSystem getSystem() {
-    return system;
-}

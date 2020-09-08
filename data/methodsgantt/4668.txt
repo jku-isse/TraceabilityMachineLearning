@@ -1,3 +1,0 @@
-public TaskDependency[] getDependencies() {
-    return ((TaskDependency[]) (myDependencies.toArray(new TaskDependency[0])));
-}

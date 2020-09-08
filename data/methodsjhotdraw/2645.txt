@@ -1,7 +1,0 @@
-/**
- * Method to set a {@code DragTracker}. If you specify null, the
- * {@code SelectionTool} uses the {@code DefaultDragTracker}.
- */
-public void setDragTracker(DragTracker newValue) {
-    dragTracker = newValue;
-}

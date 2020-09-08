@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param language
- * 		
- */
-private void setText(GanttLanguage language) {
-    this.putValue(AbstractAction.NAME, GanttProject.correctLabel(language.getText("newTask")));
-}

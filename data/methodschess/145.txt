@@ -1,7 +1,0 @@
-/**
- * Get the color of this engine.
- *
- * @param white
- * 		true, if the engine operates with the white pieces.
- */
-boolean isWhite();

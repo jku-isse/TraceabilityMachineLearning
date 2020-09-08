@@ -1,6 +1,0 @@
-/**
- *
- *
- * @return A textual description of what the patients status is thats causing the risk.
- */
-public abstract String getDescription();

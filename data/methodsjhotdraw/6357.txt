@@ -1,4 +1,0 @@
-/**
- * Returns the enum tag name for the specified Enum instance.
- */
-public String getEnumValue(Enum o);

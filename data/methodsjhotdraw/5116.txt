@@ -1,3 +1,0 @@
-public DurationAdapter(TaskFigure target) {
-    this.target = target;
-}

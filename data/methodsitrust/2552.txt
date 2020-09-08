@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys ProceduresDAO
- */
-public ProceduresDAO getProceduresDAO() {
-    return new ProceduresDAO(this);
-}

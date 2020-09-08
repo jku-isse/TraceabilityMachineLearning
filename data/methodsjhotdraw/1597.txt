@@ -1,3 +1,0 @@
-public Tool getTool() {
-    return tool;
-}

@@ -1,4 +1,0 @@
-public void testGetNameForCode() throws Exception {
-    String name = action.getNameForCode("548684985");
-    assertEquals(name, "Citalopram Hydrobromide");
-}

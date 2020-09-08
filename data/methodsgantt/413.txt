@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param pvString
- * 		
- */
-public void setFTPUser(String pvString) {
-    FTPUser = pvString;
-}

@@ -1,3 +1,0 @@
-public String[][] getParameterInfo() {
-    return new String[][]{ new String[]{ "data", "String", "the data to be displayed by this applet." }, new String[]{ "datafile", "URL", "an URL to a file containing the data to be displayed by this applet." }, new String[]{ "dataread", "function()", "the name of a JavaScript function which can be used to read the data." }, new String[]{ "datawrite", "function()", "the name of a JavaScript function which can be used to write the data." } };
-}

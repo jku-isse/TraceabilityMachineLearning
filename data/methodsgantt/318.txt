@@ -1,3 +1,0 @@
-public MouseMotionListener getMouseMotionListener() {
-    return myMouseMotionListener;
-}

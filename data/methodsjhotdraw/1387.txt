@@ -1,7 +1,0 @@
-/**
- * Returns the child figure at the specified index.
- * <p>
- * This is a convenience method for calling
- * {@code getChildren().get(index);}.
- */
-public Figure getChild(int index);

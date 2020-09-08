@@ -1,3 +1,0 @@
-public void setRequiredSpecialty(String requiredSpecialty) {
-    this.requiredSpecialty = requiredSpecialty;
-}

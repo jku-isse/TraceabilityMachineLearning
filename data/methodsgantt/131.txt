@@ -1,3 +1,0 @@
-public DateCellEditor() {
-    super(new JTextField());
-}

@@ -1,3 +1,0 @@
-IGanttProject getProject() {
-    return appli;
-}

@@ -1,4 +1,0 @@
-public void testGetNDCodeFromEmptyTable() throws DBException, SQLException {
-    clearNDCodes();
-    assertEquals(null, ndDAO.getNDCode("009042407"));
-}

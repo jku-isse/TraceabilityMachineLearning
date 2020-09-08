@@ -1,7 +1,0 @@
-// constructor for a loaded previous state
-public GanttPreviousState(String name) throws IOException {
-    myName = name;
-    myFile = createTemporaryFile();
-    myFile.deleteOnExit();
-    os = new OutputStreamWriter(new FileOutputStream(myFile), "UTF-8");
-}

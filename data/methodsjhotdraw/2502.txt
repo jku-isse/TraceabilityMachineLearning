@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public RelativeLocator(double relativeX, double relativeY) {
-    this(relativeX, relativeY, false);
-}

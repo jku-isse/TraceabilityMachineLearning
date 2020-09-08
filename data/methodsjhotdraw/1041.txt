@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public AbstractRotateHandle(Figure owner) {
-    super(owner);
-}

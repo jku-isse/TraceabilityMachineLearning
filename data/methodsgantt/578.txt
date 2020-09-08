@@ -1,3 +1,0 @@
-public void setDocument(Document document) {
-    projectDocument = document;
-}

@@ -1,6 +1,0 @@
-public void adjustmentValueChanged(AdjustmentEvent e) {
-    if ((area) != null) {
-        area.setScrollBar(e.getValue());
-        area.repaint();
-    }
-}

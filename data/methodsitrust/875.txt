@@ -1,7 +1,0 @@
-public void testRetriveInformation() throws Exception {
-    gen.patient2();
-    action = new SetSecurityQuestionAction(factory, 2L);
-    SecurityQA qa = action.retrieveInformation();
-    assertEquals("how you doin?", qa.getQuestion());
-    assertEquals("good", qa.getAnswer());
-}

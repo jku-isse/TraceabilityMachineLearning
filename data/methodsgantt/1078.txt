@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the name of the project.
- */
-public String getName() {
-    return _sProjectName;
-}

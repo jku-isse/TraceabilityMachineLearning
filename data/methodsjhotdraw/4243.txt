@@ -1,3 +1,0 @@
-public ToolBarDialog(Frame owner, String title, boolean modal) {
-    super(owner, title, modal);
-}

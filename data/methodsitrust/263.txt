@@ -1,6 +1,0 @@
-public void testAddApptType2() throws FormValidationException, SQLException {
-    ApptTypeBean a = new ApptTypeBean();
-    a.setName("General Checkup");
-    a.setDuration(30);
-    assertTrue(action.addApptType(a).equals("Appointment Type: General Checkup already exists."));
-}

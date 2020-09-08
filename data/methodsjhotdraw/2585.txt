@@ -1,4 +1,0 @@
-@Override
-public boolean replaceEdit(UndoableEdit anEdit) {
-    return false;
-}

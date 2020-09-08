@@ -1,6 +1,0 @@
-/**
- * Decrease the search depth by 1.
- */
-public final void decreaseSearchDepth() {
-    (_searchDepth)--;
-}

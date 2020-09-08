@@ -1,4 +1,0 @@
-public FacadeInvalidator(TreeModel treeModel) {
-    isValid = false;
-    treeModel.addTreeModelListener(this);
-}

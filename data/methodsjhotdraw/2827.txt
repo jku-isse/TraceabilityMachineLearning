@@ -1,7 +1,0 @@
-/**
- * Creates a new image output format for text, for a figure that can not.
- * hold multiple lines of text.
- */
-public TextInputFormat(TextHolderFigure prototype) {
-    this(prototype, "Text", "Text", "txt", false);
-}

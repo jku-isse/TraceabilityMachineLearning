@@ -1,6 +1,0 @@
-private void addEmpty(String code) throws Exception {
-    MedicationBean med = new MedicationBean(code, " ");
-    assertEquals(getAddCodeSuccessString(med), action.addNDCode(med));
-    med = factory.getNDCodesDAO().getNDCode(code);
-    assertEquals(" ", med.getDescription());
-}

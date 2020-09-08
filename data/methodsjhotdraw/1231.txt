@@ -1,9 +1,0 @@
-/**
- * Creates a new instance.
- */
-public BezierNodeEdit(BezierFigure owner, int index, BezierPath.Node oldValue, BezierPath.Node newValue) {
-    this.owner = owner;
-    this.index = index;
-    this.oldValue = oldValue;
-    this.newValue = newValue;
-}

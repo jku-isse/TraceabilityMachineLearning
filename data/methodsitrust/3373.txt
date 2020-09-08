@@ -1,8 +1,0 @@
-public void testRemovePatientFromListBad() throws Exception {
-    try {
-        EvilrmDAO.removePatientFromList(1, 2);
-        fail();
-    } catch (DBException e) {
-        assertSame(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

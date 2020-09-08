@@ -1,7 +1,0 @@
-/**
- * Method to set a {@code SelectAreaTracker}. If you specify null, the
- * {@code SelectionTool} uses the {@code DefaultSelectAreaTracker}.
- */
-public void setSelectAreaTracker(SelectAreaTracker newValue) {
-    selectAreaTracker = newValue;
-}

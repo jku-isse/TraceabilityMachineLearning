@@ -1,6 +1,0 @@
-public OptionsDialogAction(GPOptionGroup[] groups, UIFacade uifacade) {
-    super(GanttLanguage.getInstance().getText("chartOptions"));
-    myGroups = groups;
-    myUIFacade = uifacade;
-    this.putValue(Action.SMALL_ICON, new ImageIcon(getClass().getResource("/icons/chartOptions_16.gif")));
-}

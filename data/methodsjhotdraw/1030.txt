@@ -1,4 +1,0 @@
-/**
- * Hook method to calculates the radius of the decorator path.
- */
-protected abstract double getDecoratorPathRadius(Figure f);

@@ -1,7 +1,0 @@
-public Insets getBorderInsets(Component c) {
-    if ((foregroundBorder) != null) {
-        return foregroundBorder.getBorderInsets(c);
-    } else {
-        return backgroundBorder.getBorderInsets(c);
-    }
-}

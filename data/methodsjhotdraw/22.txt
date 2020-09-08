@@ -1,3 +1,0 @@
-public List<File> recentFiles() {
-    return Collections.unmodifiableList(recentFiles);
-}

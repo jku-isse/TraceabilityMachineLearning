@@ -1,4 +1,0 @@
-public int findChildIndex(Point2D.Double p) {
-    Figure child = findChild(p);
-    return child == null ? -1 : children.indexOf(child);
-}

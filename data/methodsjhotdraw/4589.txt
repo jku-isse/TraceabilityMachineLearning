@@ -1,5 +1,0 @@
-/**
- * DOM Storable objects must have a non-argument constructor.
- */
-public MyObject() {
-}

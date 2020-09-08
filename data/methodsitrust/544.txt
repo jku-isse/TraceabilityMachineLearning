@@ -1,8 +1,0 @@
-/**
- * Returns the patients name
- *
- * @return patients full name
- */
-public String getPatientName() {
-    return ((pb.getFirstName()) + " ") + (pb.getLastName());
-}

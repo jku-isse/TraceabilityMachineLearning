@@ -1,4 +1,0 @@
-public ScrollingManager getScrollingManager() {
-    // TODO Auto-generated method stub
-    return null;
-}

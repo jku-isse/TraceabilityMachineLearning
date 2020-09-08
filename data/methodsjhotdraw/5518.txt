@@ -1,7 +1,0 @@
-@Override
-public void invalidate() {
-    super.invalidate();
-    cachedDrawingArea = null;
-    cachedTextShape = null;
-    isTextOverflow = null;
-}

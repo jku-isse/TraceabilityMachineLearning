@@ -1,7 +1,0 @@
-/**
- * Unread
- */
-private void unread(int c) {
-    unread.addElement(new Integer(c));
-    (readpos)--;
-}

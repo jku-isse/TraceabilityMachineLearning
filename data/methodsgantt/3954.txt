@@ -1,5 +1,0 @@
-public void setEMail(String email) {
-    if ((resource) instanceof HumanResource)
-        ((HumanResource) (resource)).setMail(email);
-
-}

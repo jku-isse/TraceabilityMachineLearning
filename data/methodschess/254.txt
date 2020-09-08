@@ -1,8 +1,0 @@
-/**
- * Get the ply.
- *
- * @return The ply.
- */
-public final Ply getPly() {
-    return _ply;
-}

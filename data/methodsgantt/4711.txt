@@ -1,3 +1,0 @@
-public void setDifference(int difference) {
-    myDifference = difference;
-}

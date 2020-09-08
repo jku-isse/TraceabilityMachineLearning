@@ -1,4 +1,0 @@
-boolean isLooping(TaskDependency dep) {
-    LoopDetector detector = new LoopDetector(dep.getDependant().getManager());
-    return detector.isLooping(dep);
-}

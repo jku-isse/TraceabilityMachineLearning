@@ -1,6 +1,0 @@
-/**
- *
- *
- * @deprecated Use getRenderedImage
- */
-public BufferedImage getChart(GanttExportSettings settings);

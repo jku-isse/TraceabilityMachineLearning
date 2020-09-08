@@ -1,3 +1,0 @@
-ConsoleUIFacade(UIFacade realFacade) {
-    myRealFacade = realFacade;
-}

@@ -1,4 +1,0 @@
-public GenderFactor(PatientBean patient, Gender gender) {
-    this.patient = patient;
-    this.gender = gender;
-}

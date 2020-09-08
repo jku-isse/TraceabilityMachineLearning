@@ -1,6 +1,0 @@
-public MutationInfo(ProjectResource resource, int operation) {
-    this.myAssignment = null;
-    this.myOrder = (ResourceAssignmentCollectionImpl.MutationInfo.ourOrder)++;
-    this.myOperation = operation;
-    this.myResource = resource;
-}

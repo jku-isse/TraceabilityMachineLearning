@@ -1,7 +1,0 @@
-public void testGetRepresentees() throws Exception {
-    action = new ViewExpiredPrescriptionsAction(factory, 2L);
-    List<PatientBean> representees = action.getRepresentees();
-    assertEquals(6, representees.size());
-    assertEquals(1, representees.get(0).getMID());
-    assertEquals(3, representees.get(1).getMID());
-}

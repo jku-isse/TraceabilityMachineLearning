@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param overrideComment
- * 		the overrideComment to set
- */
-public void setOverrideOther(String overrideComment) {
-    this.overrideOther = overrideComment;
-}

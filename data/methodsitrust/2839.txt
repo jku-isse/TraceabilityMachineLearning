@@ -1,9 +1,0 @@
-public void scheduleAppt(ApptBean appt) throws SQLException {
-    Connection conn = null;
-    PreparedStatement ps = null;
-    conn = factory.getConnection();
-    ps = conn.prepareStatement(("INSERT INTO appointment (appt_type, patient_id, doctor_id, sched_date, comment) " + "VALUES (?, ?, ?, ?, ?)"));
-    ps = this.abloader.loadParameters(ps, appt);
-    ps.executeUpdate();
-    DBUtil.closeConnection(conn, ps);
-}

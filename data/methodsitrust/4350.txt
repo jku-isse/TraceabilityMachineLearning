@@ -1,6 +1,0 @@
-public void testToString() {
-    String expected = "";
-    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.ALLERGY, "val", factory);
-    expected = "Filter by ALLERGY with value val";
-    assertEquals(expected, filter.toString());
-}

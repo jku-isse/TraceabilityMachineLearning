@@ -1,3 +1,0 @@
-public <T> void setDefaultAttribute(AttributeKey<T> key, T value) {
-    target.setDefaultAttribute(key, value);
-}

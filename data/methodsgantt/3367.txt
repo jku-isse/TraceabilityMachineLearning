@@ -1,3 +1,0 @@
-public void removeZoomListener(ZoomListener listener) {
-    myListeners.remove(listener);
-}

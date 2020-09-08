@@ -1,7 +1,0 @@
-/**
- * Creates new form.
- */
-public JDisclosureToolBar() {
-    setUI(PaletteToolBarUI.createUI(this));
-    initComponents();
-}

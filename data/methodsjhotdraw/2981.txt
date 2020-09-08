@@ -1,3 +1,0 @@
-protected DrawingView getView() {
-    return (view) != null ? view : (editor) != null ? editor.getActiveView() : null;
-}

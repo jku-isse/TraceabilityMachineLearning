@@ -1,4 +1,0 @@
-public Chart createCopy() {
-    // TODO Auto-generated method stub
-    return null;
-}

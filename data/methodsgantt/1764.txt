@@ -1,5 +1,0 @@
-ResourceLoadOption(String id, String tagName, String attributeName) {
-    super(id);
-    myTagName = tagName;
-    myAttributeName = attributeName;
-}

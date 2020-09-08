@@ -1,4 +1,0 @@
-/**
- * Adds a palette window to the application.
- */
-public void addPalette(Window palette);

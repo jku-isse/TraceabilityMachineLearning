@@ -1,4 +1,0 @@
-public Color getFillColor() {
-    return ((AttributeKeys.FILL_COLOR.get(this)) == null) || (AttributeKeys.FILL_COLOR.get(this).equals(Color.white)) ? Color.black : Color.WHITE;
-    // return FILL_COLOR.get(this);
-}

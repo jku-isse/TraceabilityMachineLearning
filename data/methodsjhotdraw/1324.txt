@@ -1,3 +1,0 @@
-protected Connector getStartConnector() {
-    return startConnector;
-}

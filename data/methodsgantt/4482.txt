@@ -1,4 +1,0 @@
-public Task[] getTasks() {
-    return myTaskMap.getTasks();
-    // return (Task[]) myId2task.values().toArray(new Task[myId2task.size()]);
-}

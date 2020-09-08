@@ -1,9 +1,0 @@
-private int getDirectAtomCount() {
-    if ((myAtomCount) == (-1)) {
-        myAtomCount = 0;
-        for (Date leftDate = this.myDirectFrameable.jumpLeft(myRightDate); (leftDate.compareTo(myLeftDate)) >= 0; (myAtomCount)++) {
-            leftDate = this.myDirectFrameable.jumpLeft(leftDate);
-        }
-    }
-    return myAtomCount;
-}

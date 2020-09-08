@@ -1,7 +1,0 @@
-protected void writePathElement(IXMLElement parent, SVGPathFigure f) throws IOException {
-    BezierPath[] beziers = new BezierPath[f.getChildCount()];
-    for (int i = 0; i < (beziers.length); i++) {
-        beziers[i] = ((BezierFigure) (f.getChild(i))).getBezierPath();
-    }
-    parent.addChild(createPath(document, beziers, f.getAttributes()));
-}

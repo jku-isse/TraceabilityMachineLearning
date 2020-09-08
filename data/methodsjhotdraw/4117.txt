@@ -1,3 +1,0 @@
-public JList getFamilyList() {
-    return familyList;
-}

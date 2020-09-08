@@ -1,4 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    getUIFacade().setStatusText(GanttLanguage.getInstance().getText("centerOnSelectedTasks"));
-    scroll();
-}

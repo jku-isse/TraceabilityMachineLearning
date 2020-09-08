@@ -1,4 +1,0 @@
-public TaskDependenciesPanel(Task task) {
-    super(task);
-    myTaskManager = task.getManager();
-}

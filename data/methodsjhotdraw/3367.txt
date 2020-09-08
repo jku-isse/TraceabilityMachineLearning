@@ -1,9 +1,0 @@
-public Node(int mask, Point2D.Double c0, Point2D.Double c1, Point2D.Double c2) {
-    this.mask = mask;
-    x[0] = c0.x;
-    y[0] = c0.y;
-    x[1] = c1.x;
-    y[1] = c1.y;
-    x[2] = c2.x;
-    y[2] = c2.y;
-}

@@ -1,8 +1,0 @@
-private Border getRolloverBorder(AbstractButton b) {
-    Object borderProvider = UIManager.get("ToolBar.rolloverBorderProvider");
-    if (borderProvider == null) {
-        return PaletteToolBarUI.rolloverBorder;
-    }
-    // return ((BorderProvider) borderProvider).getRolloverBorder(b);
-    return null;
-}

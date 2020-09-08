@@ -1,6 +1,0 @@
-/**
- * Gets the start figure of the connection.
- * This is a convenience method for doing getStartConnector().getOwner()
- * and handling null cases.
- */
-public Figure getStartFigure();

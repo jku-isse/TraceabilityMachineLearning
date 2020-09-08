@@ -1,3 +1,0 @@
-public void setKindOfProperty(String aKindOfProperty) {
-    kindOfProperty = aKindOfProperty;
-}

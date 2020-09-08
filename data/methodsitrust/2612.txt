@@ -1,9 +1,0 @@
-private List<DiagnosisBean> getDiagnoses() throws DBException {
-    List<DiagnosisBean> diagnoses = diagDAO.getList(960);
-    Collections.sort(diagnoses, new Comparator<DiagnosisBean>() {
-        public int compare(DiagnosisBean o1, DiagnosisBean o2) {
-            return Long.valueOf(o1.getOvDiagnosisID()).compareTo(Long.valueOf(o2.getOvDiagnosisID()));
-        }
-    });
-    return diagnoses;
-}

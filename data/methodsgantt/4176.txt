@@ -1,9 +1,0 @@
-/**
- * Removes the assignments related to the given resource.
- *
- * @param resource
- * 		Assigned resource
- */
-public void removeAssignment(ProjectResource resource) {
-    new ResourceAssignmentCollectionImpl.ResourceAssignmentImpl(resource).delete();
-}

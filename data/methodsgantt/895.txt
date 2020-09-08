@@ -1,7 +1,0 @@
-public void dropActionChanged(DropTargetDragEvent dtde) {
-    if (!(isDragAcceptable(dtde)))
-        dtde.rejectDrag();
-    else
-        dtde.acceptDrag(dtde.getDropAction());
-
-}

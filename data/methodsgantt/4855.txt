@@ -1,5 +1,0 @@
-protected TimeUnitPair(TimeUnit topUnit, TimeUnit bottomUnit, TimeUnitStack timeUnitStack) {
-    myTopTimeUnit = topUnit;
-    myBottomTimeUnit = bottomUnit;
-    myTimeUnitStack = timeUnitStack;
-}

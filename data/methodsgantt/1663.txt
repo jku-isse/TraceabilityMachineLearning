@@ -1,9 +1,0 @@
-void fireUnitLineStarted(TimeUnit timeUnit) {
-    for (int i = 0; i < (myTimeUnitVisitors.size()); i++) {
-        TimeUnitVisitor nextVisitor = ((TimeUnitVisitor) (myTimeUnitVisitors.get(i)));
-        if (!(nextVisitor.isEnabled())) {
-            continue;
-        }
-        nextVisitor.startUnitLine(timeUnit);
-    }
-}

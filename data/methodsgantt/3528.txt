@@ -1,3 +1,0 @@
-private void saveTasks(TransformerHandler handler) throws IOException, SAXException {
-    new TaskSaver().save(getProject(), handler, area.getTaskColor());
-}

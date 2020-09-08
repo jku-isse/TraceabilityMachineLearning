@@ -1,3 +1,0 @@
-public void setHeaderHeight(int i) {
-    getChartUIConfiguration().setHeaderHeight(i);
-}

@@ -1,7 +1,0 @@
-public Object getTransformRestoreData() {
-    Point2D.Double[] restoredCoordinates = ((Point2D.Double[]) (this.coordinates.clone()));
-    for (int i = 0; i < (this.coordinates.length); i++) {
-        restoredCoordinates[i] = ((Point2D.Double) (this.coordinates[i].clone()));
-    }
-    return new Object[]{ AttributeKeys.TRANSFORM.getClone(this), restoredCoordinates, SVGAttributeKeys.FILL_GRADIENT.getClone(this), SVGAttributeKeys.STROKE_GRADIENT.getClone(this) };
-}

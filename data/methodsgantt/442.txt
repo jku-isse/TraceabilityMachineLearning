@@ -1,4 +1,0 @@
-private File createTemporaryFile() throws IOException {
-    String fileName = "_GanttProject_ps_" + ((int) (10000.0 * (Math.random())));
-    return File.createTempFile(fileName, ".gan");
-}

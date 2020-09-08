@@ -1,4 +1,0 @@
-/**
- * Returns the JComponent of the drawing view.
- */
-public JComponent getComponent();

@@ -1,9 +1,0 @@
-/**
- * Read object from ObjectInputStream and re-establish ResourceBundle.
- */
-private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    // our "pseudo-constructor"
-    in.defaultReadObject();
-    // re-establish the "resource" variable
-    this.resource = ResourceBundle.getBundle(baseName, locale);
-}

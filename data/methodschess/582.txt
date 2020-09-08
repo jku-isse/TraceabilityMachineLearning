@@ -1,9 +1,0 @@
-/**
- * Set a flag, if this ply captures another piece.
- *
- * @param capture
- * 		Flag to indicate if this ply captures another piece.
- */
-public final void setCapture(boolean capture) {
-    _capture = capture;
-}

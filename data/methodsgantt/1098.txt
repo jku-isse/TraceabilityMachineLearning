@@ -1,3 +1,0 @@
-protected ChartComponentBase.AbstractChartImplementation getImplementation() {
-    return myChartImplementation;
-}

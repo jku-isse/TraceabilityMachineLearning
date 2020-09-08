@@ -1,3 +1,0 @@
-public String[] getAvailableValues() {
-    return LabelPositionOptionImpl.VALUES;
-}

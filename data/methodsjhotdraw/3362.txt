@@ -1,6 +1,0 @@
-/**
- * Returns squared length of input vector.
- */
-private static double v2SquaredLength(Point2D.Double a) {
-    return ((a.x) * (a.x)) + ((a.y) * (a.y));
-}

@@ -1,8 +1,0 @@
-void enter() throws IOException {
-    boolean locked = acquireLock();
-    if (!locked) {
-        myConfirmationState.enter();
-    } else {
-        myParsingState.enter();
-    }
-}

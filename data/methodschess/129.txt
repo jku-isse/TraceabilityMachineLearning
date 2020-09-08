@@ -1,8 +1,0 @@
-/**
- * Get the ply generator.
- *
- * @return The PlyGenerator.
- */
-private final PlyGenerator getPlyGenerator() {
-    return _plyGenerator;
-}

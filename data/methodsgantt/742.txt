@@ -1,7 +1,0 @@
-/**
- * Function called when the language is changed
- */
-public void refresh(GanttLanguage language) {
-    lang = language;
-    model.changeLanguage(lang);
-}

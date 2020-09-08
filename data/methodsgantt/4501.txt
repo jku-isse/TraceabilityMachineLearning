@@ -1,8 +1,0 @@
-public int getDepth(Task task) {
-    int depth = 0;
-    while (task != (myRoot)) {
-        task = task.getSupertask();
-        depth++;
-    } 
-    return depth;
-}

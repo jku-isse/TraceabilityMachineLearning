@@ -1,4 +1,0 @@
-/**
- * Returns the connector of the change.
- */
-protected abstract Connector getTarget();

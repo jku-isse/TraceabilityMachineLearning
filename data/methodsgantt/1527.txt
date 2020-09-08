@@ -1,3 +1,0 @@
-public int getDuration() {
-    return (myStart.diff(myFinish)) + 1;
-}

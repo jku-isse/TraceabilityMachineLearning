@@ -1,3 +1,0 @@
-protected void paintMajorTickForVertSlider(Graphics g, Rectangle tickBounds, int y) {
-    g.drawLine(0, y, ((tickBounds.width) - 1), y);
-}

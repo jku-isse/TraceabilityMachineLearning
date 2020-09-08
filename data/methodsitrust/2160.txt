@@ -1,3 +1,0 @@
-public void setHCPcity(String city) {
-    this.hcpCity = city;
-}

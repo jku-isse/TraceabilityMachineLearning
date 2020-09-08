@@ -1,9 +1,0 @@
-/**
- * Fills the given Vector with handles at each
- * the north, south, east, and west of the figure.
- */
-public static void addResizeHandles(Figure f, Collection<Handle> handles) {
-    handles.add(new BoundsOutlineHandle(f));
-    ResizeHandleKit.addCornerResizeHandles(f, handles);
-    ResizeHandleKit.addEdgeResizeHandles(f, handles);
-}

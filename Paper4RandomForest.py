@@ -9,7 +9,7 @@ from sklearn.metrics import precision_recall_fscore_support as score
 # Creates a list containing 5 lists, each of 8 items, all set to 0
  
 
-SeparateProjectLearningMixed=False
+SeparateProjectLearningMixed=True
 SeparateProjectLearningComplete=False
 
 
@@ -18,7 +18,7 @@ TrainCompTestIncomp=False
 TrainIncompTestComp=False
 TrainIncompTestRandom=False
 TrainCompTestComp=False
-TrainIncompTestIncomp=True
+TrainIncompTestIncomp=False
 
 Percentages=True
 Amounts=True

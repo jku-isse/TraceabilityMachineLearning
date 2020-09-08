@@ -1,3 +1,0 @@
-public double getScaleFactor() {
-    return view.getScaleFactor();
-}

@@ -1,8 +1,0 @@
-/**
- * Returns the white players name
- *
- * @return The String for the white player
- */
-public String getWhitePlayerName() {
-    return this.jbWhite.getText();
-}

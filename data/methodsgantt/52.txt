@@ -1,4 +1,0 @@
-public void zoomChanged(ZoomEvent e) {
-    invalidate();
-    repaint();
-}

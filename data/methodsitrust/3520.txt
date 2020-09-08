@@ -1,3 +1,0 @@
-public void clearMessages() throws FileNotFoundException, IOException, SQLException {
-    new DBBuilder(factory).executeSQLFile(((DIR) + "/clearMessages.sql"));
-}

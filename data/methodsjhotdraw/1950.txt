@@ -1,8 +1,0 @@
-/**
- * Informs that a Figure changed its shape.
- * This fires a <code>FigureListener.figureChanged</code>
- * event for the current display bounds of the figure.
- *
- * @see #willChange()
- */
-public void changed();

@@ -1,4 +1,0 @@
-public void remove(ProjectResource resource) {
-    fireResourcesRemoved(new ProjectResource[]{ resource });
-    resources.remove(resource);
-}

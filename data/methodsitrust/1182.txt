@@ -1,6 +1,0 @@
-public void testGetReportRequests3() throws Exception {
-    action = new ViewMyReportRequestsAction(factory, 9000000000L);
-    List<ReportRequestBean> list = action.getAllReportRequestsForRequester();
-    assertEquals(6, list.size());
-    assertEquals(ReportRequestBean.Requested, list.get(0).getStatus());
-}

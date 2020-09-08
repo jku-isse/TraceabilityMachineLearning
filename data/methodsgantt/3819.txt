@@ -1,3 +1,0 @@
-public boolean checkCustomField(String title) {
-    return customFields.containsKey(title);
-}

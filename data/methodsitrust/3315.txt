@@ -1,5 +1,0 @@
-public void testGetPersonnel2() throws Exception {
-    PersonnelBean p = personnelDAO.getPersonnel(8000000009L);
-    assertNotNull(p);
-    assertIsPersonnel2(p);
-}

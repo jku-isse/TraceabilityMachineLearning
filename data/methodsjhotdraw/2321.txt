@@ -1,3 +1,0 @@
-public void setLiner(Liner newValue) {
-    this.liner = newValue;
-}

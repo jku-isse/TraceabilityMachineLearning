@@ -1,3 +1,0 @@
-private PaletteLazyActionMap(Class loader) {
-    _loader = loader;
-}

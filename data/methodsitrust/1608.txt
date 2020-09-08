@@ -1,3 +1,0 @@
-public List<LabProcedureBean> getLabList() {
-    return labList;
-}

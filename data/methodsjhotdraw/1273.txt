@@ -1,3 +1,0 @@
-private BezierFigure getBezierFigure() {
-    return ((BezierFigure) (getOwner()));
-}

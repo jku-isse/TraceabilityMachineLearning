@@ -1,9 +1,0 @@
-public void testAssignHCPToHospitalEvil() {
-    action = new ManageHospitalAssignmentsAction(evil, ManageHospitalAssignmentsActionTest.performingAdmin);
-    try {
-        action.getAssignedHospitals(("" + (ManageHospitalAssignmentsActionTest.hcp0)));
-        fail();
-    } catch (iTrustException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getExtendedMessage());
-    }
-}

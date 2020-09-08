@@ -1,8 +1,0 @@
-@Override
-protected void updateView(View oldValue, View newValue) {
-    super.updateView(oldValue, newValue);
-    if ((newValue != null) && ((newValue.getAction(UndoAction.ID)) != null)) {
-        putValue(AbstractAction.NAME, newValue.getAction(UndoAction.ID).getValue(AbstractAction.NAME));
-        updateEnabledState();
-    }
-}

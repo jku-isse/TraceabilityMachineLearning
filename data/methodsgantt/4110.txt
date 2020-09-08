@@ -1,8 +1,0 @@
-public void importData(CustomColumnsStorage source) {
-    for (Iterator columns = source.getCustomColums().iterator(); columns.hasNext();) {
-        CustomColumn nextColumn = ((CustomColumn) (columns.next()));
-        if (!(exists(nextColumn.getName()))) {
-            addCustomColumn(nextColumn);
-        }
-    }
-}

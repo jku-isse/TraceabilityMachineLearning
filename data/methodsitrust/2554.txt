@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys ReferralDAO
- */
-public ReferralDAO getReferralDAO() {
-    return new ReferralDAO(this);
-}

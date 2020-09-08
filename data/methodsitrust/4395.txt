@@ -1,8 +1,0 @@
-@Override
-protected List<PatientRiskFactor> getDiseaseRiskFactors() {
-    List<PatientRiskFactor> factors = new ArrayList<PatientRiskFactor>();
-    factors.add(new EthnicityFactor(patient, Ethnicity.Caucasian));
-    factors.add(new FamilyHistoryFactor(factory, patient.getMID(), 250.0, 251.0));
-    factors.add(new ChildhoodInfectionFactor(factory, patient.getMID(), 79.3));
-    return factors;
-}

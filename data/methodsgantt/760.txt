@@ -1,4 +1,0 @@
-private void drawTextWithShadow(Graphics2D graphics, String text, int xpos, int ypos) {
-    graphics.setColor(Color.white);
-    graphics.drawString(text, xpos, ypos);
-}

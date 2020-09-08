@@ -1,3 +1,0 @@
-public File proposeOutputFile(IGanttProject project) {
-    return FileChooserPage.proposeOutputFile(project, myState.getExporter());
-}

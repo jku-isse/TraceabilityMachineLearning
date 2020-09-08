@@ -1,7 +1,0 @@
-/**
- * Adds an Enum class to the DOMFactory.
- */
-public void addEnumClass(String name, Class c) {
-    DefaultDOMFactory.enumClassToNameMap.put(c, name);
-    DefaultDOMFactory.nameToEnumClassMap.put(name, c);
-}

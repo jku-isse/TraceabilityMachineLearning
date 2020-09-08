@@ -1,9 +1,0 @@
-public Object getPrototype() {
-    if ((prototypes) == null) {
-        prototypes = new HashMap<String, Object>();
-    }
-    if (!(prototypes.containsKey(current.getNodeName()))) {
-        prototypes.put(current.getNodeName(), factory.create(current.getNodeName()));
-    }
-    return prototypes.get(current.getNodeName());
-}

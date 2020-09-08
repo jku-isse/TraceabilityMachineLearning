@@ -1,3 +1,0 @@
-private RoleManager getRoleManager() {
-    return myProject.getRoleManager();
-}

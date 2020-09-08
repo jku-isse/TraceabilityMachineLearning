@@ -1,7 +1,0 @@
-public void applyRules() {
-    for (HarmonicRule r : rules) {
-        if ((r.getBaseIndex()) == (base)) {
-            r.apply(this);
-        }
-    }
-}

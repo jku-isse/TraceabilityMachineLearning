@@ -1,6 +1,0 @@
-/**
- * Returns the number of color components used by the color system.
- *
- * @return component count.
- */
-public int getComponentCount();

@@ -1,3 +1,0 @@
-private String i18n(String key) {
-    return GanttLanguage.getInstance().getText(key);
-}

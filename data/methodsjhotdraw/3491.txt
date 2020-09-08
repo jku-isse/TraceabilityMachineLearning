@@ -1,3 +1,0 @@
-public static Point north(Rectangle r) {
-    return new Point(((r.x) + ((r.width) / 2)), r.y);
-}

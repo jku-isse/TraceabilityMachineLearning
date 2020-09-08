@@ -1,3 +1,0 @@
-public void setView(DrawingView view) {
-    this.view = view;
-}

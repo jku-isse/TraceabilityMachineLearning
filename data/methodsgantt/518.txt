@@ -1,3 +1,0 @@
-public ArrayList getPreviouStates() {
-    return myPreviousStates;
-}

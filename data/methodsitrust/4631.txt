@@ -1,3 +1,0 @@
-public static void assertTransactionsNone() throws DBException {
-    assertEquals("No transactions should have been logged", 0, TestDAOFactory.getTestInstance().getTransactionDAO().getAllTransactions().size());
-}

@@ -1,3 +1,0 @@
-public void testGetAllergiesFor1() throws Exception {
-    assertEquals(0, allergyDAO.getAllergies(1L).size());
-}

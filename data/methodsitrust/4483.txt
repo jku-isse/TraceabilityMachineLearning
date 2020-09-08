@@ -1,6 +1,0 @@
-public PriorDiagnosisFactor(DAOFactory factory, long patientID, double lowerICDCode, double upperICDCode) {
-    this.factory = factory;
-    this.patientID = patientID;
-    this.lowerICDCode = lowerICDCode;
-    this.upperICDCode = upperICDCode;
-}

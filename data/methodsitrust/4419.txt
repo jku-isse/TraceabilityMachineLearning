@@ -1,4 +1,0 @@
-@Override
-public String getDescription() {
-    return "This patient had a viral infection during their childhood that would increase the risk for this diesease";
-}

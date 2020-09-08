@@ -1,8 +1,0 @@
-public void testGetReportsNullReportID() throws Exception {
-    try {
-        dao.getReportRequest(0);
-        fail("Should have thrown an exception");
-    } catch (DBException ex) {
-        assertEquals("ID cannot be null", ex.getSQLException().getMessage());
-    }
-}

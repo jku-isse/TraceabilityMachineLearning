@@ -1,9 +1,0 @@
-/* <Task> */
-public Set getHiddenTasks() {
-    HashSet result = new HashSet();
-    for (int i = 0; i < (hiddenTask.size()); i++) {
-        GanttTree2.HiddenTask next = ((GanttTree2.HiddenTask) (hiddenTask.get(i)));
-        result.add(next.getNode().getUserObject());
-    }
-    return result;
-}

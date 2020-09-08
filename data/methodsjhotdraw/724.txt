@@ -1,3 +1,0 @@
-public void setConstraint(float constraint) {
-    this.difference = constraint;
-}

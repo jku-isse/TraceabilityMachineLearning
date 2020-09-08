@@ -1,4 +1,0 @@
-public InputStreamTransferable(DataFlavor[] flavors, byte[] data) {
-    super(flavors);
-    this.data = data;
-}

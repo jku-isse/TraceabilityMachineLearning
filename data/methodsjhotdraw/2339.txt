@@ -1,8 +1,0 @@
-// CONNECTING
-// COMPOSITE FIGURES
-// CLONING
-// EVENT HANDLING
-@Override
-public boolean canConnect() {
-    return false;
-}

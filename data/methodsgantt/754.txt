@@ -1,6 +1,0 @@
-/**
- * Move up the selected resource
- */
-private void upResource() {
-    table.upResource();
-}

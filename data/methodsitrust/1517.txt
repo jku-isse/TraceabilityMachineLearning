@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the patient
- */
-public long getPatient() {
-    return patient;
-}

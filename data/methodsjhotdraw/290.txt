@@ -1,6 +1,0 @@
-@Override
-protected void doIt(View view) {
-    if ((view != null) && ((view.getApplication()) != null)) {
-        view.getApplication().dispose(view);
-    }
-}

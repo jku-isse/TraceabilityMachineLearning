@@ -1,3 +1,0 @@
-public void showErrorDialog(Throwable e) {
-    myUIFacade.showErrorDialog(e);
-}

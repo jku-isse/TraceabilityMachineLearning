@@ -1,4 +1,0 @@
-private void fireAssignmentChanged(ProjectResource.ResourceAssignmentImpl resourceAssignmentImpl) {
-    resetLoads();
-    fireAssignmentsChanged();
-}

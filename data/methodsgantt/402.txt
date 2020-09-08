@@ -1,6 +1,0 @@
-/**
- * set a new default tasks color.
- */
-public void setDefaultTaskColor(Color color) {
-    getUIConfiguration().setTaskColor(color);
-}

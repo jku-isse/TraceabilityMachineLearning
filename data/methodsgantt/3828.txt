@@ -1,7 +1,0 @@
-private void fireResourcesRemoved(ProjectResource[] resources) {
-    ResourceEvent e = new ResourceEvent(this, resources);
-    for (int i = 0; i < (myViews.size()); i++) {
-        ResourceView nextView = ((ResourceView) (myViews.get(i)));
-        nextView.resourcesRemoved(e);
-    }
-}

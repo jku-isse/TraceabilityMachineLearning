@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public TextAreaEditingTool(TextHolderFigure typingTarget) {
-    this.typingTarget = typingTarget;
-}

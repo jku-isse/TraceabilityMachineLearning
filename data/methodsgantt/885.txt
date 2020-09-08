@@ -1,4 +1,0 @@
-// Transferable interface methods...
-public DataFlavor[] getTransferDataFlavors() {
-    return _flavors;
-}

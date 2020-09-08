@@ -1,4 +1,0 @@
-public String getPresentationName() {
-    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels", Locale.getDefault());
-    return labels.getString("edit.transform.text");
-}

@@ -1,6 +1,0 @@
-private List<FamilyMemberBean> getFamilyMembers(long patientID) throws DBException {
-    FamilyDAO famDAO = factory.getFamilyDAO();
-    List<FamilyMemberBean> familyMembers = famDAO.getParents(patientID);
-    familyMembers.addAll(famDAO.getSiblings(patientID));
-    return familyMembers;
-}

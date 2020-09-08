@@ -1,9 +1,0 @@
-/**
- * Button Clear board pressed; self-explaining
- *
- * @param e
- * 		The event
- */
-void jbClearBoard_actionPerformed(ActionEvent e) {
-    this.boardRenderer.clearBoard();
-}

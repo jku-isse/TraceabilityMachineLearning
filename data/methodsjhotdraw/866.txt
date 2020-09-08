@@ -1,8 +1,0 @@
-private Figure findConnectableFigure(Point2D.Double p, Drawing drawing) {
-    for (Figure f : drawing.getFiguresFrontToBack()) {
-        if (((!(f.includes(getOwner()))) && (f.canConnect())) && (f.contains(p))) {
-            return f;
-        }
-    }
-    return null;
-}

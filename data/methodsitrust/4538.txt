@@ -1,3 +1,0 @@
-public int getMaxInactiveInterval() {
-    throw new IllegalStateException("should not be hit!");
-}

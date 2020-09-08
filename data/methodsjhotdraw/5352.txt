@@ -1,8 +1,0 @@
-public void restoreTransformTo(Object geometry) {
-    Object[] restoreData = ((Object[]) (geometry));
-    ellipse = ((Ellipse2D.Double) (((Ellipse2D.Double) (restoreData[0])).clone()));
-    AttributeKeys.TRANSFORM.basicSetClone(this, ((AffineTransform) (restoreData[1])));
-    SVGAttributeKeys.FILL_GRADIENT.basicSetClone(this, ((Gradient) (restoreData[2])));
-    SVGAttributeKeys.STROKE_GRADIENT.basicSetClone(this, ((Gradient) (restoreData[3])));
-    invalidate();
-}

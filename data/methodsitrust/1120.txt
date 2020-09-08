@@ -1,3 +1,0 @@
-public List<ProcedureBean> getProcedures(long visitID) throws DBException {
-    return procDAO.getList(visitID);
-}

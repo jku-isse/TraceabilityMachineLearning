@@ -1,7 +1,0 @@
-private void loadCustomPropertyDefinition(Attributes attrs) {
-    String id = attrs.getValue("id");
-    String name = attrs.getValue("name");
-    String type = attrs.getValue("type");
-    String defaultValue = attrs.getValue("default-value");
-    myCustomPropertyManager.createDefinition(id, type, name, defaultValue);
-}

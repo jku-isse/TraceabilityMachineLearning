@@ -1,3 +1,0 @@
-public ElbowLiner(double slantSize) {
-    this.shoulderSize = slantSize;
-}

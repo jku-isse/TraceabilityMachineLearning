@@ -1,5 +1,0 @@
-private void reset() {
-    commonStyles = new HashMap<String, ODGStylesReader.Style>();
-    automaticStyles = new HashMap<String, ODGStylesReader.Style>();
-    masterStyles = new HashMap<String, ODGStylesReader.Style>();
-}

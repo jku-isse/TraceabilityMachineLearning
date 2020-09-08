@@ -1,4 +1,0 @@
-public void sortTasksByStartDate(/* <Task> */
-List tasks) {
-    Collections.sort(tasks, mySortTasksByStartDateComparator);
-}

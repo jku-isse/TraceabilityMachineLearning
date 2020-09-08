@@ -1,6 +1,0 @@
-// ///////////////////////////////////////////////////////////
-// interface Chart
-public RenderedImage getRenderedImage(GanttExportSettings settings) {
-    // TODO Auto-generated method stub
-    return null;
-}

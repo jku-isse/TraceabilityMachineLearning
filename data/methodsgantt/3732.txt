@@ -1,3 +1,0 @@
-public void endElement(String namespaceURI, String sName, String qName) {
-    // TODO Auto-generated method stub
-}

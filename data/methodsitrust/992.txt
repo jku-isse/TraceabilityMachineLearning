@@ -1,4 +1,0 @@
-public List<ApptRequestBean> getApptRequests() throws SQLException {
-    List<ApptRequestBean> reqs = arDAO.getApptRequestsFor(hcpid);
-    return reqs;
-}

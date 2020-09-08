@@ -1,7 +1,0 @@
-@Override
-protected void fireStateChanged() {
-    super.fireStateChanged();
-    Double oldValue = attributeValue;
-    attributeValue = (getValue()) / (scaleFactor);
-    firePropertyChange(AttributeEditor.ATTRIBUTE_VALUE_PROPERTY, oldValue, attributeValue);
-}

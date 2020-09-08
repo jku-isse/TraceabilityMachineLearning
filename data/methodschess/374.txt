@@ -1,5 +1,0 @@
-// Methods
-/**
- * Reset the game.
- */
-void reset();

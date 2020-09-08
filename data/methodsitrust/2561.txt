@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys VisitRemindersDAO
- */
-public VisitRemindersDAO getVisitRemindersDAO() {
-    return new VisitRemindersDAO(this);
-}

@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public JavaxDOMOutput(DOMFactory factory) throws IOException {
-    this.factory = factory;
-}

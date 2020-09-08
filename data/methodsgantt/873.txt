@@ -1,3 +1,0 @@
-public void setLinkTasksAction(Action action) {
-    myLinkTasksAction = action;
-}

@@ -1,7 +1,0 @@
-public List<PrescriptionBean> loadList(ResultSet rs) throws SQLException {
-    ArrayList<PrescriptionBean> list = new ArrayList<PrescriptionBean>();
-    while (rs.next()) {
-        list.add(loadSingle(rs));
-    } 
-    return list;
-}

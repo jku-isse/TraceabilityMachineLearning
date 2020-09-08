@@ -1,6 +1,0 @@
-public void setStatusBarVisible(boolean newValue) {
-    boolean oldValue = statusBar.isVisible();
-    statusBar.setVisible(newValue);
-    TeddyView.prefs.putBoolean("statusBarVisible", newValue);
-    firePropertyChange("statusBarVisible", oldValue, newValue);
-}

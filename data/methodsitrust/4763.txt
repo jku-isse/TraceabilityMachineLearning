@@ -1,9 +1,0 @@
-public void testLOINCIncorrect() throws Exception {
-    LOINCbean bean = new LOINCbean();
-    try {
-        new LOINCBeanValidator().validate(bean);
-        fail("exception should have been thrown");
-    } catch (FormValidationException e) {
-        assertEquals("You must have a Lab Procedure Code, Component and Kind Of Property", e.getErrorList().get(0));
-    }
-}

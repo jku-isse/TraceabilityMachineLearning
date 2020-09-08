@@ -1,9 +1,0 @@
-/**
- * Set a new game loader.
- *
- * @param loader
- * 		The new game loader.
- */
-private final void setGameLoader(GameLoader loader) {
-    _gameLoader = loader;
-}

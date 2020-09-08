@@ -1,6 +1,0 @@
-/**
- * set a new default resources color.
- */
-public void setResourceColor(Color color) {
-    getUIConfiguration().setResourceColor(color);
-}

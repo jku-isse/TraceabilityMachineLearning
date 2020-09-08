@@ -1,3 +1,0 @@
-public void testGetAllPatients() throws Exception {
-    assertEquals(2, patientDAO.getAllPatients().size());
-}

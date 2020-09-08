@@ -1,8 +1,0 @@
-/**
- * Gets the text contents of the overlay.
- *
- * @return The text value
- */
-public String getText() {
-    return textArea.getText();
-}

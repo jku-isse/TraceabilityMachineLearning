@@ -1,9 +1,0 @@
-public Object getAdapter(Class adapter) {
-    if (Container.class.equals(adapter)) {
-        return getComponent();
-    }
-    if (Chart.class.equals(adapter)) {
-        return myGanttChart;
-    }
-    return null;
-}

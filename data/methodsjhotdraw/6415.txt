@@ -1,6 +1,0 @@
-/**
- * Returns the tag name of the current element.
- */
-public String getTagName() {
-    return ((Element) (current)).getTagName();
-}

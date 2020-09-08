@@ -1,3 +1,0 @@
-public String getPersistentID() {
-    return ((myRoleSet.getName()) == null ? "" : (myRoleSet.getName()) + ":") + (getID());
-}

@@ -1,3 +1,0 @@
-public Figure getStartFigure() {
-    return (startConnector) == null ? null : startConnector.getOwner();
-}

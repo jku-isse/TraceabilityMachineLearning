@@ -1,9 +1,0 @@
-/**
- * Creates a bounds outline handle for resizing a component.
- *
- * @param owner
- * 		
- */
-public ConvexHullOutlineHandle(SVGPathFigure owner) {
-    this(owner, false, false);
-}

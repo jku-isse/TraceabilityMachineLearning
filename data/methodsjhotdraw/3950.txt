@@ -1,7 +1,0 @@
-/**
- * Get the value produced by the worker thread, or null if it
- * hasnt been constructed yet.
- */
-protected synchronized Object getValue() {
-    return value;
-}

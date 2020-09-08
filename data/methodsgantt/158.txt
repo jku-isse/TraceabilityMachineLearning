@@ -1,6 +1,0 @@
-/**
- * Return the month
- */
-public int getMonth() {
-    return this.get(Calendar.MONTH);
-}

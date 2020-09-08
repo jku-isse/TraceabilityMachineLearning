@@ -1,9 +1,0 @@
-/**
- * Creates a new instance.
- * All icons must have the same dimensions.
- * If an icon is null, an icon is derived for the state from the
- * other icons.
- */
-public SliderThumbIcon(Icon e, Icon ep, Icon d, Icon i, Icon di) {
-    super(new Icon[]{ e, ep, d, i, di });
-}

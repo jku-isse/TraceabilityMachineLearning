@@ -1,4 +1,0 @@
-public void write(DOMOutput out) {
-    out.addAttribute("index", index, 0);
-    out.addAttribute("coord", coord, 0);
-}

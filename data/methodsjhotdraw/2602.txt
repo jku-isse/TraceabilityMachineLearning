@@ -1,4 +1,0 @@
-// SHAPE AND BOUNDS
-public Rectangle2D.Double getBounds() {
-    return ((Rectangle2D.Double) (roundrect.getBounds2D()));
-}

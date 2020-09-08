@@ -1,6 +1,0 @@
-/**
- * Sets the editors constrainer for this view, for use, when the
- * visible constrainer is turned off.
- * This is a bound property.
- */
-public void setInvisibleConstrainer(Constrainer constrainer);

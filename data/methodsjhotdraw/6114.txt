@@ -1,9 +1,0 @@
-/**
- * Determines the number of lines contained in the area.
- *
- * @return the number of lines > 0
- */
-public int getLineCount() {
-    Element map = getDocument().getDefaultRootElement();
-    return map.getElementCount();
-}

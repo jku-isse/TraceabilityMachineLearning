@@ -1,5 +1,0 @@
-public void paintComponent(Graphics gr) {
-    Graphics2D g = ((Graphics2D) (gr));
-    paintWheel(g);
-    paintThumb(g);
-}

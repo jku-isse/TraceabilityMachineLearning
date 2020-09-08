@@ -1,5 +1,0 @@
-public void endElement(String namespaceURI, String sName, String qName) {
-    if (ProxyDocument.PortfolioTagHandler.PORTFOLIO_TAG.equals(qName)) {
-        isReadingPortfolio = false;
-    }
-}

@@ -1,8 +1,0 @@
-public void testNoRecords() throws Exception {
-    try {
-        new ChronicDiseaseMediator(factory, 2L);
-        fail("exception should have been thrown");
-    } catch (NoHealthRecordsException e) {
-        assertEquals("message matches too", NoHealthRecordsException.MESSAGE, e.getMessage());
-    }
-}

@@ -1,6 +1,0 @@
-/**
- * Uninstalls listeners on the view object.
- */
-protected void uninstallViewListeners(View p) {
-    p.removePropertyChangeListener(viewListener);
-}

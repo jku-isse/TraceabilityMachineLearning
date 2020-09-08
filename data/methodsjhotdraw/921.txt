@@ -1,3 +1,0 @@
-public void removeUndoableEditListener(UndoableEditListener l) {
-    listenerList.remove(UndoableEditListener.class, l);
-}

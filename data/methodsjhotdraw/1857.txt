@@ -1,4 +1,0 @@
-/**
- * Gets the enabled state of the drawing editor.
- */
-public boolean isEnabled();

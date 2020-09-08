@@ -1,3 +1,0 @@
-public void setMID(long mid) {
-    MID = mid;
-}

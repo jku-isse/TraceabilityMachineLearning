@@ -1,4 +1,0 @@
-public void setEnabled(boolean newValue) {
-    svgPanel.setEnabled(newValue);
-    super.setEnabled(newValue);
-}

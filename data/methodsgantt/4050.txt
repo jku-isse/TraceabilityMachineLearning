@@ -1,9 +1,0 @@
-public void fireActionEvent() {
-    ActionEvent event = new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "Pattern");
-    ArrayList list = ((ArrayList) (listeners.clone()));
-    ActionListener listener;
-    for (int i = 0; i < (list.size()); i++) {
-        listener = ((ActionListener) (list.get(i)));
-        listener.actionPerformed(event);
-    }
-}

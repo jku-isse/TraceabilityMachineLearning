@@ -1,3 +1,0 @@
-public SenderReferralListQuery(DAOFactory factory, long userid) {
-    super(factory, userid);
-}

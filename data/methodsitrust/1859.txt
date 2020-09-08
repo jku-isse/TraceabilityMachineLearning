@@ -1,3 +1,0 @@
-public String getIcPhone() {
-    return icPhone;
-}

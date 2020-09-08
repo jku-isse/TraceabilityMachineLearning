@@ -1,5 +1,0 @@
-private static EventSetDescriptor[] getEdescriptor() {
-    // GEN-HEADEREND:Events
-    // Here you can add code for customizing the event sets array.
-    return SVGDrawingPanelBeanInfo.eventSets;
-}// GEN-LAST:Events

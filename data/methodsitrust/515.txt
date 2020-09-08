@@ -1,6 +1,0 @@
-public void testGetRepresentatives() throws Exception {
-    action = new EditRepresentativesAction(factory, 9000000000L, "2");
-    List<PatientBean> reps = action.getRepresented(2L);
-    assertEquals(1, reps.size());
-    assertEquals(1L, reps.get(0).getMID());
-}

@@ -1,8 +1,0 @@
-/**
- * Check, if a search should be stopped.
- *
- * @return true, if the search should be stopped.
- */
-public final boolean isSearchStop() {
-    return _stopSearch;
-}

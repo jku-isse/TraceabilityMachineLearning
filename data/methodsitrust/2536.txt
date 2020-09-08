@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys FakeEmailDAO
- */
-public FakeEmailDAO getFakeEmailDAO() {
-    return new FakeEmailDAO(this);
-}

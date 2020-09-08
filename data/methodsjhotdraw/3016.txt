@@ -1,4 +1,0 @@
-public Vertical(DrawingEditor editor, ResourceBundleUtil labels) {
-    super(editor);
-    labels.configureAction(this, "edit.alignVertical");
-}

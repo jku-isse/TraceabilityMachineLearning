@@ -1,3 +1,0 @@
-public void setWeightAllowed(boolean weightAllowed) {
-    this.weightAllowed = weightAllowed;
-}

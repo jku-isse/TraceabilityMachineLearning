@@ -1,3 +1,0 @@
-public NanoXMLDOMInput(DOMFactory factory, InputStream in) throws IOException {
-    this(factory, new InputStreamReader(in, "UTF8"));
-}

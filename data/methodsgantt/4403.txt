@@ -1,3 +1,0 @@
-public long getLength() {
-    return ((long) (myCount));
-}

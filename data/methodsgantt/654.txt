@@ -1,3 +1,0 @@
-public void showPopupMenu(Component invoker, Action[] actions, int x, int y) {
-    myUIFacade.showPopupMenu(invoker, actions, x, y);
-}

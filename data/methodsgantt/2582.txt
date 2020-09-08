@@ -1,6 +1,0 @@
-/**
- * returns the name of the LookAndFeel
- */
-public String toString() {
-    return toString;
-}

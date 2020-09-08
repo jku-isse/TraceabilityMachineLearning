@@ -1,5 +1,0 @@
-/**
- * Informs the listener that a tool has starteds interacting with a
- * specific drawing view.
- */
-void toolStarted(ToolEvent event);

@@ -1,3 +1,0 @@
-public float getAvgWaitingRoomMinutes() {
-    return avgWaitingRmMinutes;
-}

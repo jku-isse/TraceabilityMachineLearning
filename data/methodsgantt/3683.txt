@@ -1,3 +1,0 @@
-private HumanResourceManager getResourceManager() {
-    return myResourceManager;
-}

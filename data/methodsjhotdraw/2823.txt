@@ -1,6 +1,0 @@
-// FIXME - Maybe we can remove method isEditable(), because we already have
-// an isInteractive() method in the Figure interface.
-/**
- * Returns true if the text of the TextHolderFigure can be edited.
- */
-public boolean isEditable();

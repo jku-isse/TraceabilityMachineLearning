@@ -1,3 +1,0 @@
-protected PropertyChangeListener createPropertyListener() {
-    return getHandler();
-}

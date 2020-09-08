@@ -1,6 +1,0 @@
-/**
- * Creates an instance of CustomColumnsValues.
- */
-public CustomColumnsValues(CustomColumnsStorage columnStorage) {
-    myColumnStorage = columnStorage;
-}

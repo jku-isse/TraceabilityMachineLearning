@@ -1,6 +1,0 @@
-/**
- * Returns the bounded range model of the specified color componentIndex.
- */
-public DefaultBoundedRangeModel getBoundedRangeModel(int componentIndex) {
-    return componentModels[componentIndex];
-}

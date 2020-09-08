@@ -1,8 +1,0 @@
-/**
- * Sets the ActionMap for the Tool.
- *
- * @see #keyPressed
- */
-public void setActionMap(ActionMap newValue) {
-    actionMap = newValue;
-}

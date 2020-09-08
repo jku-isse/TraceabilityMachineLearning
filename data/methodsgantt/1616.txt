@@ -1,3 +1,0 @@
-public void startTimeFrame(TimeFrame timeFrame) {
-    myCurrentFrame = timeFrame;
-}

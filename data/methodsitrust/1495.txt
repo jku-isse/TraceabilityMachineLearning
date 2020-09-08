@@ -1,3 +1,0 @@
-public void setPrescriber(String prescriber) {
-    Prescriber = prescriber;
-}

@@ -1,3 +1,0 @@
-public static JPopupButton createFontButton(DrawingEditor editor, ResourceBundleUtil labels) {
-    return ButtonFactory.createFontButton(editor, AttributeKeys.FONT_FACE, labels);
-}

@@ -1,4 +1,0 @@
-protected void uninstallKeyboardActions() {
-    SwingUtilities.replaceUIActionMap(toolBar, null);
-    SwingUtilities.replaceUIInputMap(toolBar, JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT, null);
-}

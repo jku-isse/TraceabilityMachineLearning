@@ -1,4 +1,0 @@
-public FontCollectionNode(String name, ArrayList<FontFamilyNode> families) {
-    this.name = name;
-    this.children = families;
-}

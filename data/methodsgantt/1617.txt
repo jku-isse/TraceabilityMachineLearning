@@ -1,6 +1,0 @@
-public void startUnitLine(TimeUnit timeUnit) {
-    if (timeUnit == (myCurrentFrame.getBottomUnit())) {
-        areUnitsAccepted = true;
-        myCurrentUnit = timeUnit;
-    }
-}

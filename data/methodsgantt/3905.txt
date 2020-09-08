@@ -1,6 +1,0 @@
-public ResourceColumn(TableColumnExt col, int index, Class type) {
-    column = col;
-    this.type = type;
-    defaultIndex = index;
-    visible = true;
-}

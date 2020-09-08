@@ -1,4 +1,0 @@
-public void setWheelInsets(Insets newValue) {
-    wheelInsets = newValue;
-    repaint();
-}

@@ -1,5 +1,0 @@
-private void fireResourceChanged() {
-    if (areEventsEnabled) {
-        myManager.fireResourceChanged(this);
-    }
-}

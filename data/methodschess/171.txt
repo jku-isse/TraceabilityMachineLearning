@@ -1,8 +1,0 @@
-/**
- * Get the permanent brain.
- *
- * @return The permanent brain.
- */
-public final PermanentBrain getPermanentBrain() {
-    return _permanentBrain;
-}

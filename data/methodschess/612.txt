@@ -1,7 +1,0 @@
-// Methods
-/**
- * Animate the move of a piece.
- */
-void animatePly(Ply ply) {
-    _ply = ply;
-}

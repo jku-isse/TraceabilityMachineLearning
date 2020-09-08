@@ -1,8 +1,0 @@
-public void setCompositeColor(CompositeColor newValue) {
-    float[] c = newValue.getComponents();
-    int i = 0;
-    for (DefaultBoundedRangeModel m : componentModels) {
-        m.setValue(((int) ((c[i]) * (((m.getMaximum()) - (m.getMinimum())) + (m.getMinimum())))));
-        i++;
-    }
-}

@@ -1,3 +1,0 @@
-public Date findClosestWorkingTime(Date time) {
-    return getCalendar().findClosestWorkingTime(time);
-}

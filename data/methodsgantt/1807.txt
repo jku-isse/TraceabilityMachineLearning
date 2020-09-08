@@ -1,3 +1,0 @@
-public Color getResourceUnderLoadColor() {
-    return myProjectConfig.getResourceUnderloadColor();
-}

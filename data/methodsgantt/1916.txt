@@ -1,6 +1,0 @@
-public PublicHolidayDialogAction(IGanttProject project, UIFacade uiFacade) {
-    super(GanttProject.correctLabel(PublicHolidayDialogAction.language.getText("editPublicHolidays")));
-    myProject = project;
-    myUIFacade = uiFacade;
-    this.putValue(Action.SMALL_ICON, new ImageIcon(getClass().getResource("/icons/holidays_16.gif")));
-}

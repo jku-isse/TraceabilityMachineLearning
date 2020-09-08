@@ -1,9 +1,0 @@
-/**
- * Sets the column name.
- *
- * @param name
- * 		The column name to be set.
- */
-public void setName(String name) {
-    this.name = name;
-}

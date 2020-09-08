@@ -1,3 +1,0 @@
-public void testEquals() {
-    assertTrue(wrb2.equals(wrb3));
-}

@@ -1,6 +1,0 @@
-public void setEditor(DrawingEditor editor) {
-    this.editor = editor;
-    linkFieldHandler.setDrawingEditor(editor);
-    opacitySliderHandler.setDrawingEditor(editor);
-    opacityFieldHandler.setDrawingEditor(editor);
-}

@@ -1,6 +1,0 @@
-/**
- * Returns true, if the visible Constrainer is in use, returns false,
- * if the invisible Constrainer is in use.
- * This is a bound property.
- */
-public boolean isConstrainerVisible();

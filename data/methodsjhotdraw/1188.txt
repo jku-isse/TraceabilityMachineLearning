@@ -1,7 +1,0 @@
-/**
- * Convenience method for getting the end point.
- */
-@Override
-public Point2D.Double getEndPoint() {
-    return getPoint(((getNodeCount()) - 1), 0);
-}

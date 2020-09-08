@@ -1,7 +1,0 @@
-/**
- * Initializes the LocatorHandle with the given Locator.
- */
-public LocatorHandle(Figure owner, Locator l) {
-    super(owner);
-    locator = l;
-}

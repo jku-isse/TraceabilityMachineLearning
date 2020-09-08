@@ -1,3 +1,0 @@
-public void setReligion(String religion) {
-    this.religion = religion;
-}

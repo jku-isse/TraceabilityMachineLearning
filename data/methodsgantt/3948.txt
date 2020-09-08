@@ -1,6 +1,0 @@
-public String getEMail() {
-    if ((resource) instanceof HumanResource)
-        return ((HumanResource) (resource)).getMail();
-
-    return null;
-}

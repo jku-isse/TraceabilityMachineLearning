@@ -1,3 +1,0 @@
-public String getPatientName() {
-    return PatientName;
-}

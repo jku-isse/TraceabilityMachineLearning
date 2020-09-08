@@ -1,8 +1,0 @@
-/**
- * Returns the column type.
- *
- * @return The column type.
- */
-public Class getType() {
-    return type;
-}

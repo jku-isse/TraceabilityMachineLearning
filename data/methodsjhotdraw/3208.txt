@@ -1,8 +1,0 @@
-public void propertyChange(PropertyChangeEvent evt) {
-    if (((isUpdating)++) == 0) {
-        if ((evt.getPropertyName()) == (JFontChooser.SELECTED_FONT_PROPERTY)) {
-            applySelectedFontToFigures();
-        }
-    }
-    (isUpdating)--;
-}

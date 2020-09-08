@@ -1,7 +1,0 @@
-public List<LOINCbean> loadList(ResultSet rs) throws SQLException {
-    ArrayList<LOINCbean> list = new ArrayList<LOINCbean>();
-    while (rs.next()) {
-        list.add(loadSingle(rs));
-    } 
-    return list;
-}

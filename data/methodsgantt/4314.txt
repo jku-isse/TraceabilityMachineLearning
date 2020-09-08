@@ -1,4 +1,0 @@
-// main properties
-public int getTaskID() {
-    return myID;
-}

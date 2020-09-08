@@ -1,6 +1,0 @@
-/**
- * Return the string of the month.
- */
-public String getdayMonth() {
-    return language.getMonth(getMonth());
-}

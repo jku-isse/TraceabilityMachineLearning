@@ -1,9 +1,0 @@
-public void testAppointment() throws Exception {
-    long doctorMID = 9000000000L;
-    List<ApptBean> conflicts = apptDAO.getAllConflictsForDoctor(doctorMID);
-    assertEquals(0, conflicts.size());
-    apptDAO.scheduleAppt(a1);
-    apptDAO.scheduleAppt(a3);
-    conflicts = apptDAO.getAllConflictsForDoctor(doctorMID);
-    assertEquals(0, conflicts.size());
-}

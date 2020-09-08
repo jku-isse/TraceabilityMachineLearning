@@ -1,3 +1,0 @@
-protected Integer proxyHashCode(Object proxy) {
-    return new Integer(System.identityHashCode(proxy));
-}

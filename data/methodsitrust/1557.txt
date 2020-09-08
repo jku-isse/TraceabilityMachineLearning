@@ -1,8 +1,0 @@
-/**
- * Getter for Region count
- *
- * @return The count of diagnoses for the region
- */
-public long getRegionStats() {
-    return regionStats;
-}

@@ -1,7 +1,0 @@
-public void show(View v) {
-    this.view = v;
-    applet.getContentPane().removeAll();
-    applet.getContentPane().add(v.getComponent());
-    v.start();
-    v.activate();
-}

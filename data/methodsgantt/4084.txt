@@ -1,9 +1,0 @@
-/**
- * Sets the column type.
- *
- * @param type
- * 		The column type to be set.
- */
-public void setType(Class type) {
-    this.type = type;
-}

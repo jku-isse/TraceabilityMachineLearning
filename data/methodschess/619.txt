@@ -1,8 +1,0 @@
-/**
- * Get the maximum size of the board.
- *
- * @return The maximum size of the board.
- */
-public final Dimension getMaximumSize() {
-    return getMinimumSize();
-}

@@ -1,3 +1,0 @@
-public ErrorList() {
-    errorList = new ArrayList<String>();
-}

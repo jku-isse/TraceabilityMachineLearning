@@ -1,5 +1,0 @@
-@Override
-public void deactivate(DrawingEditor editor) {
-    endEdit();
-    super.deactivate(editor);
-}

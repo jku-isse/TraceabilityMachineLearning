@@ -1,4 +1,0 @@
-public void setEnabled(boolean isEnabled) {
-    this.isEnabled = isEnabled;
-    myRoleManager.fireRolesChanged(this);
-}

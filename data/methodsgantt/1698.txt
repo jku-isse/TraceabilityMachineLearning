@@ -1,3 +1,0 @@
-public void setRowHeight(int rowHeight) {
-    getChartUIConfiguration().setRowHeight(rowHeight);
-}

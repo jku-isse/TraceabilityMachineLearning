@@ -1,3 +1,0 @@
-public DefaultStringOption(String id) {
-    super(id);
-}

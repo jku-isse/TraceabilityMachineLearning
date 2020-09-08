@@ -1,8 +1,0 @@
-/**
- * Returns the unique GanttProject instance.
- *
- * @return The unique GanttProject instance.
- */
-public static GanttProject getGanttProjectSingleton() {
-    return Mediator.ganttprojectSingleton;
-}

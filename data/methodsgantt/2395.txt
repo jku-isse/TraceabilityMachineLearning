@@ -1,3 +1,0 @@
-Exporter getExporter() {
-    return myExporter;
-}

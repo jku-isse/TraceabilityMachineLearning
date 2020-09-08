@@ -1,3 +1,0 @@
-public boolean equals(GanttTaskRelationship compareRel) {
-    return (((relationshipType) == (compareRel.relationshipType)) && ((predecessorTaskID) == (compareRel.predecessorTaskID))) && ((successorTaskID) == (compareRel.successorTaskID));
-}

@@ -1,3 +1,0 @@
-protected DrawingEditor getEditor() {
-    return editor;
-}

@@ -1,3 +1,0 @@
-public TestDataGenerator() {
-    this.factory = TestDAOFactory.getTestInstance();
-}

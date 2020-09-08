@@ -1,3 +1,0 @@
-public Dimension getPreferredSize() {
-    return new Dimension(100, 100);
-}

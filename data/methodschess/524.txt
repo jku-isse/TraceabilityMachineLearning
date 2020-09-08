@@ -1,8 +1,0 @@
-/**
- * Check, if this ply fragment is a castling.
- *
- * @return true, if this ply fragment represents a castling. False otherwise.
- */
-public final boolean isCastling() {
-    return _castling;
-}

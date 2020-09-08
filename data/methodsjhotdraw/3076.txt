@@ -1,3 +1,0 @@
-public static JButton createFontStyleUnderlineButton(DrawingEditor editor) {
-    return ButtonFactory.createFontStyleUnderlineButton(editor, ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
-}

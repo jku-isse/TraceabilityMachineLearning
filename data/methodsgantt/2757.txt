@@ -1,6 +1,0 @@
-/**
- * Return the number of rows
- */
-public int getRowCount() {
-    return (myAssignments.size()) + 1;
-}

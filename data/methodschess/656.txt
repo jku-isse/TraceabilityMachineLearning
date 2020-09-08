@@ -1,9 +1,0 @@
-/**
- * Set the current text of the engine panel.
- *
- * @param newText
- * 		The new text to set.
- */
-public final void setText(String newText) {
-    this.jtEngine.setText(newText);
-}

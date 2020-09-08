@@ -1,6 +1,0 @@
-/**
- * Gets the drawing view of the tool.
- */
-public DrawingView getView() {
-    return view;
-}

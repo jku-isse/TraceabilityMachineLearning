@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys AdverseEventDAO
- */
-public AdverseEventDAO getAdverseEventDAO() {
-    return new AdverseEventDAO(this);
-}

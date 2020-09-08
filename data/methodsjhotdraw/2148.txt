@@ -1,4 +1,0 @@
-/**
- * Sent when requesting to remove a handle.
- */
-public void handleRequestRemove(HandleEvent e);

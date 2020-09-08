@@ -1,4 +1,0 @@
-public void addTab(String title, Icon icon, Component component, Object userObject) {
-    super.addTab(title, icon, component);
-    myUserObjectsMap.put(component, userObject);
-}

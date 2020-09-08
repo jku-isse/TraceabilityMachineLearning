@@ -1,3 +1,0 @@
-public int hashCode() {
-    return (7 * (myDependant.hashCode())) + (9 * (myDependee.hashCode()));
-}

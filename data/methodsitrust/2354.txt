@@ -1,7 +1,0 @@
-public List<Email> loadList(ResultSet rs) throws SQLException {
-    List<Email> list = new ArrayList<Email>();
-    while (rs.next())
-        list.add(loadSingle(rs));
-
-    return list;
-}

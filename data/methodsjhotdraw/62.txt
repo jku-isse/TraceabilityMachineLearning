@@ -1,6 +1,0 @@
-/**
- * Adds a view to this application.
- * Fires a "documentCount" property change event.
- * Invokes method setApplication(this) on the view object.
- */
-public void add(View p);

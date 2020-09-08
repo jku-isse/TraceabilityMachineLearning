@@ -1,3 +1,0 @@
-public CreationTool(String prototypeClassName, Map<AttributeKey, Object> attributes) {
-    this(prototypeClassName, attributes, null);
-}

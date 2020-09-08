@@ -1,3 +1,0 @@
-protected Point2D.Double constrainPoint(Point p) {
-    return constrainPoint(getView().viewToDrawing(p));
-}

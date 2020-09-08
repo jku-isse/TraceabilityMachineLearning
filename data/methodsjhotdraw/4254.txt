@@ -1,3 +1,0 @@
-protected WindowListener createFrameListener() {
-    return new PaletteToolBarUI.FrameListener();
-}

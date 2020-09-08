@@ -1,3 +1,0 @@
-private IGanttProject getProject() {
-    return myProject;
-}

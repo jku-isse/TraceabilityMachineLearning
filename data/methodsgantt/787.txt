@@ -1,6 +1,0 @@
-public String toString() {
-    String res = "Relation ";
-    res += ((relationshipType) == (GanttTaskRelationship.SS)) ? "(SS) " : (relationshipType) == (GanttTaskRelationship.SF) ? "(SF) " : (relationshipType) == (GanttTaskRelationship.FS) ? "(FS) " : "(FF) ";
-    res += (((((((getSuccessorTask()) + " (") + (getSuccessorTaskID())) + ") ") + (getPredecessorTask())) + " (") + (getPredecessorTaskID())) + ")";
-    return res;
-}

@@ -1,3 +1,0 @@
-private List getDependencies() {
-    return myDependencies;
-}

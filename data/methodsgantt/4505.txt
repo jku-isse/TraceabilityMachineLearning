@@ -1,3 +1,0 @@
-public void move(Task whatMove, Task whereMove) {
-    whatMove.move(whereMove);
-}

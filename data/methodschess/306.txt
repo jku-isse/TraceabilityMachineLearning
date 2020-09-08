@@ -1,9 +1,0 @@
-/**
- * Set the computed ply.
- *
- * @param ply
- * 		The computed ply.
- */
-private final void setPly(AnalyzedPly ply) {
-    _ply = ply;
-}

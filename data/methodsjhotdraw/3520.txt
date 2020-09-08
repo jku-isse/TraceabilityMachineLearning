@@ -1,6 +1,0 @@
-/**
- * Returns the top insets in double precision.
- *
- * @return the top insets of this <code>Insets2D</code>.
- */
-public abstract double getTop();

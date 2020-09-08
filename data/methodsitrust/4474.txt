@@ -1,6 +1,0 @@
-/**
- *
- *
- * @return A boolean indicating whether the patient has the increased risk.
- */
-protected abstract boolean hasFactor();

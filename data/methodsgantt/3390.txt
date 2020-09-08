@@ -1,9 +1,0 @@
-private Importer[] getImporters() {
-    List result = new ArrayList();
-    Importer[] importers = ((Importer[]) (Mediator.getPluginManager().getExtensions(Importer.EXTENSION_POINT_ID, Importer.class)));
-    // String extensionPointID =
-    // IConfigurationElement[] configElements = Platform
-    // .getExtensionRegistry().getConfigurationElementsFor(
-    // extensionPointID);
-    return importers;
-}

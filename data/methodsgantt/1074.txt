@@ -1,9 +1,0 @@
-public static void registerMacOSXApplication(GanttProject myProj) {
-    if ((OSXAdapter.theApp) == null) {
-        OSXAdapter.theApp = new Application();
-    }
-    if ((OSXAdapter.osxAdapter) == null) {
-        OSXAdapter.osxAdapter = new OSXAdapter(myProj);
-    }
-    OSXAdapter.theApp.addApplicationListener(OSXAdapter.osxAdapter);
-}

@@ -1,7 +1,0 @@
-public void clearRecentFiles() {
-    @SuppressWarnings("unchecked")
-    List<File> oldValue = ((List<File>) (recentFiles.clone()));
-    recentFiles.clear();
-    prefs.putInt("recentFileCount", recentFiles.size());
-    firePropertyChange("recentFiles", Collections.unmodifiableList(oldValue), Collections.unmodifiableList(recentFiles));
-}

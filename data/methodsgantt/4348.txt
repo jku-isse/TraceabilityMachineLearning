@@ -1,3 +1,0 @@
-private Date shiftDate(Date input, TaskLength duration) {
-    return myManager.getConfig().getCalendar().shiftDate(input, duration);
-}

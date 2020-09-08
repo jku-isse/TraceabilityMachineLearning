@@ -1,3 +1,0 @@
-GraphicPrimitiveContainer.GraphicPrimitive getPrimitive(Object modelObject) {
-    return ((GraphicPrimitiveContainer.GraphicPrimitive) (myModelObject2primitive.get(modelObject)));
-}

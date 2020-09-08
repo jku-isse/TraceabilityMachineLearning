@@ -1,3 +1,0 @@
-public boolean isMultipleValues() {
-    throw new UnsupportedOperationException("Not supported yet.");
-}

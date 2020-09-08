@@ -1,3 +1,0 @@
-public Color getPublicHolidayTimeBackgroundColor() {
-    return myPublicHolidayTimeBackgroundColor;
-}

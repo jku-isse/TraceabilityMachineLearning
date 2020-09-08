@@ -1,8 +1,0 @@
-public void read(DOMInput in) throws IOException {
-    double x = in.getAttribute("x", 0.0);
-    double y = in.getAttribute("y", 0.0);
-    double w = in.getAttribute("w", 0.0);
-    double h = in.getAttribute("h", 0.0);
-    setBounds(new Point2D.Double(x, y), new Point2D.Double((x + w), (y + h)));
-    readAttributes(in);
-}

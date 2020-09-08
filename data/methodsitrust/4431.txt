@@ -1,4 +1,0 @@
-@Override
-public String getDescription() {
-    return "Patient has bad cholesterol";
-}

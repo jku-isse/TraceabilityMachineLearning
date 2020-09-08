@@ -1,5 +1,0 @@
-public void testMIDGood() throws Exception {
-    String value = "9000000000";
-    String errorMessage = MIDValidatorTest.PASSED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.MID, false));
-}

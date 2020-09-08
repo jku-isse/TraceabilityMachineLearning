@@ -1,3 +1,0 @@
-public ZoomManager getZoomManager() {
-    return myZoomManager;
-}

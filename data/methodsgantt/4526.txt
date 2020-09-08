@@ -1,8 +1,0 @@
-/**
- * Returns the priority of the task.
- *
- * @return The priority of the task.
- */
-public int getPriority() {
-    return task.getPriority();
-}

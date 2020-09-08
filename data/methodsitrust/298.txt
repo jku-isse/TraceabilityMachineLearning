@@ -1,3 +1,0 @@
-public List<ProcedureBean> getImmunizationCodes() throws DBException {
-    return cptDAO.getImmunizationCPTCodes();
-}

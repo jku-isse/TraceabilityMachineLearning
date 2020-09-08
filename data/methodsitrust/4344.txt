@@ -1,5 +1,0 @@
-public void testFilterByPastCurrentPrescriptionsNoResult() {
-    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.PASTCURRENT_PRESCRIPTIONS, "Dalpe", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertTrue(res.isEmpty());
-}

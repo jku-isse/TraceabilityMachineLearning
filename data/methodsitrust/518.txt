@@ -1,6 +1,0 @@
-public void testRemoveRepresentative() throws Exception {
-    action = new EditRepresentativesAction(factory, 9000000000L, "2");
-    action.removeRepresentative("1");
-    List<PatientBean> reps = action.getRepresented(2);
-    assertEquals(0, reps.size());
-}

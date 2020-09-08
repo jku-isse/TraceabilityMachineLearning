@@ -1,3 +1,0 @@
-public void setEarlierPreviousTaskColor(Color earlierTaskColor) {
-    this.myEarlierPreviousTaskColor = earlierTaskColor;
-}

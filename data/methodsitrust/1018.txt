@@ -1,5 +1,0 @@
-public void testIsFluEpidemic() throws Exception {
-    gen.influenza_epidemic();
-    assertTrue(action.isFluEpidemic(("11/02/" + (thisYear)), "27606"));
-    assertFalse(action.isFluEpidemic(("11/16/" + (thisYear)), "27606"));
-}

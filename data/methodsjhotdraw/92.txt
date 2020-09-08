@@ -1,4 +1,0 @@
-/**
- * Returns a read only collection view of the views of this application.
- */
-public Collection<View> views();

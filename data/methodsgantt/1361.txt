@@ -1,6 +1,0 @@
-public AbstractAction[] getActions() {
-    if ((myActions) == null) {
-        myActions = new AbstractAction[]{ new NewHumanAction(myManager, myRoleManager, myProjectFrame, myProjectFrame), myDeleteHumanAction };
-    }
-    return myActions;
-}

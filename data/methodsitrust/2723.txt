@@ -1,3 +1,0 @@
-public void testGetNoParents() throws Exception {
-    assertEquals(0, familyDAO.getParents(5).size());
-}

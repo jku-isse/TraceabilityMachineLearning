@@ -1,6 +1,0 @@
-public static void addColorButtonsTo(JToolBar bar, DrawingEditor editor, List<ColorIcon> colors, int columnCount) {
-    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-    bar.add(ButtonFactory.createEditorColorButton(editor, AttributeKeys.STROKE_COLOR, colors, columnCount, "attribute.strokeColor", labels, new HashMap<org.jhotdraw.draw.AttributeKey, Object>()));
-    bar.add(ButtonFactory.createEditorColorButton(editor, AttributeKeys.FILL_COLOR, colors, columnCount, "attribute.fillColor", labels, new HashMap<org.jhotdraw.draw.AttributeKey, Object>()));
-    bar.add(ButtonFactory.createEditorColorButton(editor, AttributeKeys.TEXT_COLOR, colors, columnCount, "attribute.textColor", labels, new HashMap<org.jhotdraw.draw.AttributeKey, Object>()));
-}

@@ -1,7 +1,0 @@
-public static Stroke getStroke(Figure f) {
-    double strokeWidth = AttributeKeys.STROKE_WIDTH.get(f);
-    if (strokeWidth == 0) {
-        strokeWidth = 1;
-    }
-    return new BasicStroke(((float) (strokeWidth)));
-}

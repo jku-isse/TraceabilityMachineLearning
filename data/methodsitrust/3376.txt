@@ -1,8 +1,0 @@
-public void testValidatePRError() throws Exception {
-    try {
-        rmDAO.validatePR(1, 2);
-        fail();
-    } catch (iTrustException e) {
-        assertEquals("Representer is not valid for patient 2", e.getMessage());
-    }
-}

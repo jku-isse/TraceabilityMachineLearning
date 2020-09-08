@@ -1,9 +1,0 @@
-public void testGetDiagnosisStatisticsReversedDates() throws Exception {
-    try {
-        action.getDiagnosisStatistics("09/28/2011", "06/28/2011", "487.00", "27606");
-        fail("Should have failed but didnt");
-    } catch (FormValidationException e) {
-        assertEquals(1, e.getErrorList().size());
-        assertEquals("Start date must be before end date!", e.getErrorList().get(0));
-    }
-}

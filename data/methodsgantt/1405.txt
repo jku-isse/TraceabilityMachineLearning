@@ -1,3 +1,0 @@
-protected String getIconFilePrefix() {
-    return "open_";
-}

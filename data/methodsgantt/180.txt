@@ -1,9 +1,0 @@
-/**
- * Remove the selected day
- */
-public void remove(GanttCalendar day) {
-    int index = dayList.indexOf(day);
-    if (index >= 0)
-        dayList.remove(index);
-
-}

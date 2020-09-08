@@ -1,3 +1,0 @@
-protected void setFilled(boolean b) {
-    isFilled = b;
-}

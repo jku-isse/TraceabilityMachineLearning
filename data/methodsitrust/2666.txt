@@ -1,7 +1,0 @@
-public void testActivatedUser() throws Exception {
-    try {
-        assertFalse(authDAO.getDeactivated(1));
-    } catch (iTrustException e) {
-        fail("Exception should not be thrown.");
-    }
-}

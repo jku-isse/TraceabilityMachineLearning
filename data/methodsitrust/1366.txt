@@ -1,5 +1,0 @@
-public void testRegionCount() throws Exception {
-    DiagnosisStatisticsBean dsBean = new DiagnosisStatisticsBean();
-    dsBean.setRegionStats(4);
-    assertEquals(4, dsBean.getRegionStats());
-}

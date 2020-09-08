@@ -1,3 +1,0 @@
-public DBBuilder(DAOFactory factory) {
-    this.factory = factory;
-}

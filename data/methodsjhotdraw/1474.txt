@@ -1,3 +1,0 @@
-public ConnectionFigure getPrototype() {
-    return prototype;
-}

@@ -1,5 +1,0 @@
-/**
- * Gets the end Connector.
- * Returns null, if there is no end connection.
- */
-public Connector getEndConnector();

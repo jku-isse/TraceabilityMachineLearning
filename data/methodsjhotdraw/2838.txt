@@ -1,6 +1,0 @@
-/**
- * Creates a new instance.
- */
-public TextOverflowHandle(TextHolderFigure owner) {
-    super(owner);
-}

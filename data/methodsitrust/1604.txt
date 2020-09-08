@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return 
- */
-public List<PatientBean> getPatients() {
-    return patients;
-}

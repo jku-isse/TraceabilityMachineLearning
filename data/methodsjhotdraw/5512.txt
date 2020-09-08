@@ -1,4 +1,0 @@
-// ATTRIBUTES
-public String getText() {
-    return ((String) (getAttribute(AttributeKeys.TEXT)));
-}

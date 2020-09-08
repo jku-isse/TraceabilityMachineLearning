@@ -1,6 +1,0 @@
-public void addActionListener(ActionListener listener) {
-    if ((listeners) == null) {
-        listeners = new EventListenerList();
-        listeners.add(ActionListener.class, listener);
-    }
-}

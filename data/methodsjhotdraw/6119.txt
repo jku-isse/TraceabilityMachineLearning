@@ -1,7 +1,0 @@
-/**
- * Accessor for text area.
- * This is used by Actions that need ot act on the project text area.
- */
-public int getSelectionEnd() {
-    return editor.getSelectionEnd();
-}

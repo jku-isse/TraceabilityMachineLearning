@@ -1,9 +1,0 @@
-/**
- * Get the piece of a given position.
- *
- * @param position
- * 		The position of the piece.
- * @return The piece on that position, or null if the
-square is empty.
- */
-Piece getPiece(Position position);

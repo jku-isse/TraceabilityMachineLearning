@@ -1,1 +1,0 @@
-void beginChangeTaskProgressInteraction(MouseEvent e, TaskProgressChartItem item);

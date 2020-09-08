@@ -1,5 +1,0 @@
-private void clearFields(Calendar c) {
-    for (int i = (myCalendarField) + 1; i <= (Calendar.MILLISECOND); i++) {
-        c.clear(i);
-    }
-}

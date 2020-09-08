@@ -1,9 +1,0 @@
-@Override
-protected void setUp() throws Exception {
-    gen = new TestDataGenerator();
-    dao = factory.getLOINCDAO();
-    action = new UpdateLOINCListAction(factory);
-    gen.clearAllTables();
-    gen.admin1();
-    gen.loincs();
-}

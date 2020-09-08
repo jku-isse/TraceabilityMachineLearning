@@ -1,5 +1,0 @@
-public void testGetPatientInstructions() throws Exception {
-    // Without an Office visit ID, this should return an empty list.
-    action = new EditPatientInstructionsAction(factory, 9000000000L, "2");
-    assertEquals(0, action.getPatientInstructions().size());
-}

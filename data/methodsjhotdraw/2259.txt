@@ -1,5 +1,0 @@
-public void basicRemoveAllChildren() {
-    while ((children.size()) > 0) {
-        basicRemoveChild(((children.size()) - 1));
-    } 
-}

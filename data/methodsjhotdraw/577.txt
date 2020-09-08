@@ -1,7 +1,0 @@
-public boolean add(CompositeColor c) {
-    boolean b = colors.add(c);
-    if (b) {
-        fireIntervalAdded(this, ((size()) - 1), ((size()) - 1));
-    }
-    return b;
-}

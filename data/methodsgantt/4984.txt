@@ -1,9 +1,0 @@
-private Document saveFile() throws IOException {
-    File tempFile = createTemporaryFile();
-    tempFile.deleteOnExit();
-    Document doc = myManager.getDocumentManager().getDocument(tempFile.getAbsolutePath());
-    doc.write();
-    // GPSaver saver = myManager.getParserFactory().newSaver();
-    // saver.save(doc.getOutputStream());
-    return doc;
-}

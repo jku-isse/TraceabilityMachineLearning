@@ -1,7 +1,0 @@
-public void setPhone(String phone) {
-    if (phone == null) {
-        return;
-    }
-    this.phone = phone;
-    fireResourceChanged();
-}

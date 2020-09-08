@@ -1,4 +1,0 @@
-/**
- * Sets the view of the handle.
- */
-public void setView(DrawingView view);

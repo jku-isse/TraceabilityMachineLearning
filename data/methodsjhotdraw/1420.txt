@@ -1,6 +1,0 @@
-public void redo() throws CannotRedoException {
-    super.redo();
-    owner.willChange();
-    owner.transform(tx);
-    owner.changed();
-}

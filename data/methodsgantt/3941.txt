@@ -1,7 +1,0 @@
-/**
- * Removes the resource.
- *
- * @param resource
- * 		The resource to remove.
- */
-public void remove(ProjectResource resource);

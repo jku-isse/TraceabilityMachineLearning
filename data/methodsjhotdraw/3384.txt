@@ -1,3 +1,0 @@
-public Rectangle getBounds() {
-    return getBounds2D().getBounds();
-}

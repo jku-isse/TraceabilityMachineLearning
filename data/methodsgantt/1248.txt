@@ -1,3 +1,0 @@
-private static GanttLanguage getLanguage() {
-    return GanttLanguage.getInstance();
-}

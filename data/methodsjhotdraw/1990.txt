@@ -1,8 +1,0 @@
-/**
- * Informs that a Figure is about to change its shape.
- * <p>
- * <code>willChange</code> and <code>changed</code> are typically used
- * as pairs before and after invoking one or multiple basic-methods on
- * the Figure.
- */
-public void willChange();

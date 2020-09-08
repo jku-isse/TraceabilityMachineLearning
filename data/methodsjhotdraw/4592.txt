@@ -1,3 +1,0 @@
-public void read(DOMInput in) throws IOException {
-    name = in.getAttribute("name", null);
-}

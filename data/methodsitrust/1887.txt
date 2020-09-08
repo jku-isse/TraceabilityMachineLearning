@@ -1,3 +1,0 @@
-public void setDateOfDeactivationStr(String dateOfDeactivationStr) {
-    this.dateOfDeactivationStr = dateOfDeactivationStr;
-}

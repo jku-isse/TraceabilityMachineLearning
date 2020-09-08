@@ -1,3 +1,0 @@
-public TaskDependency getDependency() {
-    return myDependency;
-}

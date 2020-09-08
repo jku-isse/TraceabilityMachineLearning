@@ -1,5 +1,0 @@
-public void rollback() {
-    for (int i = 0; i < (myOptions.length); i++) {
-        myOptions[i].rollback();
-    }
-}

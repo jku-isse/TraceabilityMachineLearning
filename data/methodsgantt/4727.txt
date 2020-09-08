@@ -1,4 +1,0 @@
-public ConstraintImpl(int myID, String myName) {
-    this.myID = myID;
-    this.myName = myName;
-}

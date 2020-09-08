@@ -1,1 +1,0 @@
-void setMilestone(boolean isMilestone);

@@ -1,8 +1,0 @@
-protected void addViewWindowMenuItems(JMenu m, View p) {
-    JMenuItem mi;
-    ApplicationModel model = getModel();
-    mi = m.add(model.getAction(MinimizeAction.ID));
-    mi.setIcon(null);
-    mi = m.add(model.getAction(MaximizeAction.ID));
-    mi.setIcon(null);
-}

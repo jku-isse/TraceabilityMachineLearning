@@ -1,9 +1,0 @@
-public void setBounds(Point2D.Double anchor, Point2D.Double lead) {
-    if (((getChildCount()) == 1) && ((((SVGBezierFigure) (getChild(0))).getNodeCount()) <= 2)) {
-        SVGBezierFigure b = ((SVGBezierFigure) (getChild(0)));
-        b.setBounds(anchor, lead);
-        invalidate();
-    } else {
-        super.setBounds(anchor, lead);
-    }
-}

@@ -1,6 +1,0 @@
-// public void changeWorkingDirectory(File directory) {
-// myUIFacade.changeWorkingDirectory(directory);
-// }
-public void setWorkbenchTitle(String title) {
-    myUIFacade.setWorkbenchTitle(title);
-}

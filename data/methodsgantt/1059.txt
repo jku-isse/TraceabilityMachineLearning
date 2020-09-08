@@ -1,3 +1,0 @@
-public static void addChangeValueDispatcher(ChangeValueDispatcher dispatcher) {
-    Mediator.changeValueDispatchers.add(dispatcher);
-}

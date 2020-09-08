@@ -1,4 +1,0 @@
-public void run(Task task) {
-    TaskContainmentHierarchyFacade facade = createContainmentFacade();
-    recalculateSupertaskCompletionPercentageBottomUp(task, facade);
-}

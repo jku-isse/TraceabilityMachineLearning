@@ -1,5 +1,0 @@
-public void testGetReportsCheckListPatient() throws Exception {
-    List<ReportRequestBean> list = dao.getAllReportRequestsForPatient(2L);
-    assertEquals(4, list.size());
-    assertEquals(ReportRequestBean.Requested, list.get(0).getStatus());
-}

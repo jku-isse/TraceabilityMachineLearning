@@ -1,7 +1,0 @@
-public void paintIcon(Component c, Graphics g, int x, int y) {
-    generateIconsFromTiledImage();
-    Icon icon = getIcon(c);
-    if (icon != null) {
-        icon.paintIcon(c, g, x, y);
-    }
-}

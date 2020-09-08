@@ -1,3 +1,0 @@
-public void remoteMonitoringUAP() throws FileNotFoundException, IOException, SQLException {
-    new DBBuilder(factory).executeSQLFile(((DIR) + "/remoteMonitoringUAP.sql"));
-}

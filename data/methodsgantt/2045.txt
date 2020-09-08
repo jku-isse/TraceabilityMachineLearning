@@ -1,3 +1,0 @@
-protected PointVector(Point point) {
-    myPoint = point;
-}

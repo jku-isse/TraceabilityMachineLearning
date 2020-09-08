@@ -1,7 +1,0 @@
-// Constructors
-/**
- * Create a new game instance.
- */
-public GameImpl() {
-    _gameStatus = new UnsynchronizedArrayStack();
-}

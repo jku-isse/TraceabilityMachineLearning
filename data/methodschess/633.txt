@@ -1,6 +1,0 @@
-/**
- * Reset the renderer for a new game.
- */
-public void reset() {
-    repaintBoard();
-}

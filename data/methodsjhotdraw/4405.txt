@@ -1,9 +1,0 @@
-/**
- * Overrides <code>FilterInputStream.skip</code>
- * to update the value after the skip.
- */
-public long skip(long n) throws IOException {
-    long nr = in.skip(n);
-    incrementValue(((int) (nr)));
-    return nr;
-}

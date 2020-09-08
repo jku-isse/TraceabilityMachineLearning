@@ -1,7 +1,0 @@
-public void testAddToRemoveFromList() throws Exception {
-    TelemedicineBean tBean = new TelemedicineBean();
-    assertTrue(action.addToList(1L, tBean));
-    assertFalse(action.addToList(1L, tBean));
-    assertTrue(action.removeFromList(1L));
-    assertFalse(action.removeFromList(1L));
-}

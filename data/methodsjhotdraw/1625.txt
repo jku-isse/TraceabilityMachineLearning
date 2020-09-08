@@ -1,8 +1,0 @@
-/**
- * Finds a figure at a given coordinates.
- *
- * @return A figure, null if no figure is found.
- */
-public Figure findFigure(Point p) {
-    return getDrawing().findFigure(viewToDrawing(p));
-}

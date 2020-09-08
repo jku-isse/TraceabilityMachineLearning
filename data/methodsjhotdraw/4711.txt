@@ -1,9 +1,0 @@
-@Override
-public void write(DOMOutput out) throws IOException {
-    out.addAttribute("xmlns", "http://www.w3.org/2000/svg");
-    out.addAttribute("version", "1.2");
-    out.addAttribute("baseProfile", "tiny");
-    for (Figure f : getChildren()) {
-        out.writeObject(f);
-    }
-}

@@ -1,4 +1,0 @@
-public void addDaysOff(GanttDaysOff gdo) {
-    myDaysOffList.addElement(gdo);
-    fireResourceChanged();
-}

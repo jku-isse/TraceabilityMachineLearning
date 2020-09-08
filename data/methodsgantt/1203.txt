@@ -1,3 +1,0 @@
-private TaskManager getTaskManager() {
-    return myRootTask.getManager();
-}

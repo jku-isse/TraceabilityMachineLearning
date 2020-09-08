@@ -1,7 +1,0 @@
-public List<LabProcedureBean> getLabProcedures() throws DBException {
-    if (isUnsaved()) {
-        return new ArrayList<LabProcedureBean>();
-    } else {
-        return labProcedureDAO.getAllLabProceduresForDocOV(getOvID());
-    }
-}

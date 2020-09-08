@@ -1,6 +1,0 @@
-/**
- * Constructs the connection handle for the given start figure.
- */
-public ConnectionStartHandle(ConnectionFigure owner) {
-    super(owner);
-}

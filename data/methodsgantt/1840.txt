@@ -1,5 +1,0 @@
-public ViewStateEvent(ChartViewState viewState, Object oldValue, Object newValue) {
-    super(viewState);
-    myOldValue = oldValue;
-    myNewValue = newValue;
-}

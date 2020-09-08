@@ -1,7 +1,0 @@
-public void updateEnabledState() {
-    if ((getView()) != null) {
-        setEnabled(((getView().isEnabled()) && ((getView().getSelectionCount()) > 1)));
-    } else {
-        setEnabled(false);
-    }
-}

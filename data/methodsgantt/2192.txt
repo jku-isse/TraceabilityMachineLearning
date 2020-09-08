@@ -1,7 +1,0 @@
-/**
- * Checks, wether the document should appear in the MRU (list of <b>m</b>ost
- * <b>r</b>ecently <b>u</b>sed files).
- *
- * @return validity for MRU
- */
-public boolean isValidForMRU();

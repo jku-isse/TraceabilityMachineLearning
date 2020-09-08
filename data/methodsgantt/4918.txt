@@ -1,8 +1,0 @@
-public Date getFinishDate() {
-    if ((myEndDate) == null) {
-        myEndDate = calculateEndDate();
-        // System.err.println("getFinishDate(): startDate="+myStartDate+"
-        // finish="+myEndDate);
-    }
-    return myEndDate;
-}

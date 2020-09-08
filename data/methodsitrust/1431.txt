@@ -1,4 +1,0 @@
-public void testPatient() {
-    p1.setPatient(pat);
-    assertEquals(pat, p1.getPatient());
-}

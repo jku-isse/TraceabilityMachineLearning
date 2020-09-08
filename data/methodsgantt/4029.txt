@@ -1,3 +1,0 @@
-public Role[] getRoles() {
-    return ((Role[]) (myRoles.toArray(new Role[0])));
-}

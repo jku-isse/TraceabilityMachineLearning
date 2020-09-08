@@ -1,9 +1,0 @@
-@Override
-protected void generateLookupTables() {
-    isDiscrete = false;
-    if (isDiscrete) {
-        generateDiscreteLookupTables();
-    } else {
-        generateContiguousLookupTables();
-    }
-}

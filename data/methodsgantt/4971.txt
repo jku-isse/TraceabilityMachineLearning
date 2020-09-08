@@ -1,3 +1,0 @@
-public String getRedoPresentationName() {
-    return mySwingUndoManager.getRedoPresentationName();
-}

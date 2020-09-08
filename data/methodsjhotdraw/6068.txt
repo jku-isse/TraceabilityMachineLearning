@@ -1,3 +1,0 @@
-public FileFilter getFileFilter() {
-    return new ExtensionFileFilter("Compressed Scalable Vector Graphics (SVGZ)", "svgz");
-}

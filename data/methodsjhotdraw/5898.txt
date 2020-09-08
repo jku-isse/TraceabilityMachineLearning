@@ -1,5 +1,0 @@
-public CompositeFigure createG(Map<AttributeKey, Object> a) {
-    SVGGroupFigure figure = new SVGGroupFigure();
-    figure.setAttributes(a);
-    return figure;
-}

@@ -1,3 +1,0 @@
-public Object getAdapter(Class adapter) {
-    return null;
-}

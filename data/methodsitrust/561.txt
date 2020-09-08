@@ -1,3 +1,0 @@
-protected void setUp() {
-    fea = new FindExpertAction(factory);
-}

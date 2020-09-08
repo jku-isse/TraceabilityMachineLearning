@@ -1,4 +1,0 @@
-public CommonPanel(Task task) {
-    language = GanttLanguage.getInstance();
-    myTask = task;
-}

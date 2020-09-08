@@ -1,9 +1,0 @@
-// Note: patient 2 does NOT qualify for the disease, see the next test
-public void testPatient2() throws Exception {
-    checker = new Type1DiabetesRisks(factory, 2L);
-    List<PatientRiskFactor> factors = checker.getPatientRiskFactors();
-    assertEquals(3, factors.size());
-    assertEquals("Patients ethnicity is Caucasian", factors.get(0).getDescription());
-    assertEquals("Patient has a family history of this disease", factors.get(1).getDescription());
-    assertEquals(("This patient had a viral infection during their childhood that would " + "increase the risk for this diesease"), factors.get(2).getDescription());
-}

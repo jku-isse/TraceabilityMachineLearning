@@ -1,3 +1,0 @@
-public void durationChanged(int newDuration) {
-    durationField3.setText(("" + newDuration));
-}

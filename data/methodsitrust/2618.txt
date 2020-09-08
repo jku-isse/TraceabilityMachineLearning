@@ -1,8 +1,0 @@
-public void testGetHCPMID() throws Exception {
-    try {
-        evilDAO.getHCPMID(1);
-        fail("Should have thrown DBException");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

@@ -1,3 +1,0 @@
-public String getChangeDateStr() {
-    return changeDateStr;
-}

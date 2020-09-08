@@ -1,3 +1,0 @@
-public DefaultAttributeAction(DrawingEditor editor, AttributeKey key, Map<AttributeKey, Object> fixedAttributes) {
-    this(editor, new AttributeKey[]{ key }, null, null, fixedAttributes);
-}

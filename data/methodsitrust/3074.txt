@@ -1,3 +1,0 @@
-public PatientReferralListQuery(DAOFactory factory, long userid) {
-    super(factory, userid);
-}

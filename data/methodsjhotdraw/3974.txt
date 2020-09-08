@@ -1,6 +1,0 @@
-/**
- * Returns the JFileChooser pane on the sheet.
- */
-public JFileChooser getFileChooser() {
-    return ((JFileChooser) (pane));
-}

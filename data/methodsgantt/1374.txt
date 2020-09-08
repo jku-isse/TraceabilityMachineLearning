@@ -1,4 +1,0 @@
-public SwitchViewAction(GanttProject project) {
-    tabbedPane = project.getTabs();
-    putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_F7, GPAction.MENU_MASK));
-}

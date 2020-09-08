@@ -1,6 +1,0 @@
-/**
- * Get the last ply.
- *
- * @return The last ply.
- */
-Ply getLastPly();

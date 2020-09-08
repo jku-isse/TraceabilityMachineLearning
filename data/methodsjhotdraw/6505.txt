@@ -1,6 +1,0 @@
-private void parseStylesheet(StreamTokenizer tt, StyleManager rm) throws IOException {
-    while ((tt.nextToken()) != (StreamTokenizer.TT_EOF)) {
-        tt.pushBack();
-        parseRuleset(tt, rm);
-    } 
-}

@@ -1,8 +1,0 @@
-/**
- * Check, if this castling goes to the left.
- *
- * @return true, if this castling goes to the left.
- */
-public final boolean isLeftCastling() {
-    return _leftCastling;
-}

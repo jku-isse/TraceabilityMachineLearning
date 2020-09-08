@@ -1,4 +1,0 @@
-// Rounds the height off here because MySQL wont return the *exact* value you put in it
-public double getHeight() {
-    return (Math.round(((height) * 10000))) / 10000.0;
-}

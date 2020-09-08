@@ -1,7 +1,0 @@
-/**
- * Adds a new view of this manager
- *
- * @param view
- * 		
- */
-public void addView(ResourceView view);

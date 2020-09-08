@@ -1,7 +1,0 @@
-// ATTRIBUTES
-/**
- * Gets the text shown by the text figure.
- */
-public String getText() {
-    return AttributeKeys.TEXT.get(this);
-}

@@ -1,4 +1,0 @@
-public Object getSelectedUserObject() {
-    Object selectedComp = this.getSelectedComponent();
-    return myUserObjectsMap.get(selectedComp);
-}

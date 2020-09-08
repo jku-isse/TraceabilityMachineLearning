@@ -1,4 +1,0 @@
-public NameCellEditor() {
-    super(new JTextField());
-    field = ((JTextField) (this.editorComponent));
-}

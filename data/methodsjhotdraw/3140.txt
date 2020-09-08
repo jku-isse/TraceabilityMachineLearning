@@ -1,3 +1,0 @@
-public DrawingColorChooserAction(DrawingEditor editor, final AttributeKey<Color> key, String name, Icon icon, Map<AttributeKey, Object> fixedAttributes) {
-    super(editor, key, name, icon, fixedAttributes);
-}

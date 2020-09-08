@@ -1,4 +1,0 @@
-public void add(Window window, View view) {
-    window.addWindowFocusListener(focusHandler);
-    windows.put(window, view);
-}

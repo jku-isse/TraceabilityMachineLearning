@@ -1,9 +1,0 @@
-/**
- * Returns the number of tiles along the tile grid in the
- * horizontal direction.  getNumXTiles() is implemented in terms
- * of getMinTileX() and getMaxTileX() and so does not need to be
- * implemented by subclasses.
- */
-public int getNumXTiles() {
-    return ((getMaxTileX()) - (getMinTileX())) + 1;
-}

@@ -1,3 +1,0 @@
-public TeddyView getActiveView() {
-    return ((TeddyView) (super.getActiveView()));
-}

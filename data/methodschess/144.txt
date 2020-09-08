@@ -1,6 +1,0 @@
-/**
- * Get all the potential plies for the human player.
- *
- * @return All the potential plies for the human player.
- */
-Ply[] getUserPlies();

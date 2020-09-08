@@ -1,3 +1,0 @@
-private GanttTree2 getTree() {
-    return this.tree;
-}

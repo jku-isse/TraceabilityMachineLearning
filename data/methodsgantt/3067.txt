@@ -1,3 +1,0 @@
-public String getPageDescription(String pageID) {
-    return GanttLanguage.getInstance().getText((((myOptionPageKeyPrefix) + pageID) + ".description"));
-}

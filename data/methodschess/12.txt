@@ -1,8 +1,0 @@
-/**
- * Get the renderer.
- *
- * @return The current renderer.
- */
-final ChessBoardRenderer getRenderer() {
-    return _renderer;
-}

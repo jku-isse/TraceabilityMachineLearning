@@ -1,5 +1,0 @@
-public RoleTagHandler(RoleManager roleManager) {
-    myRoleManager = roleManager;
-    myRoleManager.clear();// CleanUP the old stuff
-
-}

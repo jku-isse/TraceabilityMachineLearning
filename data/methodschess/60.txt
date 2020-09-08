@@ -1,8 +1,0 @@
-// Constructors
-/**
- * Create a new instance of a chess board with pieces on their
- * initial positions.
- */
-public BitBoardImpl() {
-    initialPosition();
-}

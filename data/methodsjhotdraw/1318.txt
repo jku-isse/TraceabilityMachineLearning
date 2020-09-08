@@ -1,3 +1,0 @@
-private Connector findConnector(Point2D.Double p, Figure target, ConnectionFigure f) {
-    return target.findConnector(p, f);
-}

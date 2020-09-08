@@ -1,3 +1,0 @@
-public void setWorkbenchTitle(String title) {
-    myMainFrame.setTitle(title);
-}

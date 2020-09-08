@@ -1,6 +1,0 @@
-/**
- * Returns true, if this handle is combinable with the specified handle.
- * This method is used to determine, if multiple handles need to be tracked,
- * when more than one figure is selected.
- */
-public boolean isCombinableWith(Handle handle);

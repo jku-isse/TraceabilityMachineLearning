@@ -1,3 +1,0 @@
-public TaskManager getManager() {
-    return myManager;
-}

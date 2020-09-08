@@ -1,3 +1,0 @@
-public IProgressMonitor createProgressMonitor() {
-    return new GanttStatusBar.ProgressMonitorImpl();
-}

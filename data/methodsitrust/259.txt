@@ -1,3 +1,0 @@
-public List<ApptTypeBean> getApptTypes() throws SQLException {
-    return apptTypeDAO.getApptTypes();
-}

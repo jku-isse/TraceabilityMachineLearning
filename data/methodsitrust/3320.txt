@@ -1,8 +1,0 @@
-public void testEditPersonnelException() throws Exception {
-    try {
-        evilDAO.editPersonnel(new PersonnelBean());
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

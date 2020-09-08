@@ -1,5 +1,0 @@
-public void testFuzzySearchForPatientDeactivatedOverride() {
-    SearchUsersAction act = new SearchUsersAction(factory, 9000000003L);
-    List<PatientBean> patient = act.fuzzySearchForPatients("314159", true);
-    assertEquals("Fake Baby", patient.get(0).getFullName());
-}

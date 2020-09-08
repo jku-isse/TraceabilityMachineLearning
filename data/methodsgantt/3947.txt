@@ -1,6 +1,0 @@
-public Role getDefaultRole() {
-    if ((resource) instanceof HumanResource)
-        return ((HumanResource) (resource)).getRole();
-
-    return null;
-}

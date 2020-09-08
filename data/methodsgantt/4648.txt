@@ -1,3 +1,0 @@
-// void addDependency(TaskDependency dep) throws TaskDependencyException;
-// void removeDependency(TaskDependency dep);
-TaskDependency[] getDependencies();

@@ -1,9 +1,0 @@
-public int doStartTag() throws JspException {
-    try {
-        JspWriter out = pageContext.getOut();
-        out.write((((("<a href="http://icd9cm.chrisendres.com/2007/index.php?srchtype=diseases&srchtext=" + (code)) + "&Submit=Search&action=search">") + (code)) + "</a>"));
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return SKIP_BODY;
-}

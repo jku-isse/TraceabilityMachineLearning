@@ -1,3 +1,0 @@
-protected void setConnection(ConnectionFigure newConnection) {
-    createdConnection = newConnection;
-}

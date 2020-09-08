@@ -1,4 +1,0 @@
-/**
- * Repaints the handles of the view.
- */
-public void repaintHandles();

@@ -1,3 +1,0 @@
-public void setEditable(boolean newValue) {
-    isEditable = newValue;
-}

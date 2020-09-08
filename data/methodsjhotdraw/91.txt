@@ -1,5 +1,0 @@
-/**
- * Stops the application without saving any unsaved views.
- * <code>init()</code> must have been invoked before the application is stopped.
- */
-public void stop();

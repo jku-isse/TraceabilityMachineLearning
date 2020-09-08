@@ -1,3 +1,0 @@
-private GanttProject getProjectFrame() {
-    return myProjectFrame;
-}

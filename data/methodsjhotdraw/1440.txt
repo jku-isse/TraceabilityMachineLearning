@@ -1,5 +1,0 @@
-/**
- * Gets the start {@code Connector}.
- * Returns null, if there is no start connection.
- */
-public Connector getStartConnector();

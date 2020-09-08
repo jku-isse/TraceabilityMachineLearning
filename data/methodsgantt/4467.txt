@@ -1,3 +1,0 @@
-public AlgorithmCollection getAlgorithmCollection() {
-    return myAlgorithmCollection;
-}

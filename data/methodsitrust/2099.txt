@@ -1,3 +1,0 @@
-public Date getRequestedDate() {
-    return (requestedDate) == null ? null : ((Date) (requestedDate.clone()));
-}

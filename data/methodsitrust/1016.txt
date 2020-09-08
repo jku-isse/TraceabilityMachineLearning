@@ -1,6 +1,0 @@
-public void testGetEpidemicStatistics() throws Exception {
-    gen.malaria_epidemic();
-    ArrayList<DiagnosisStatisticsBean> dsList = action.getEpidemicStatistics(("11/02/" + (thisYear)), "84.50", "27606-1234", "1");
-    assertEquals(5, dsList.get(0).getRegionStats());
-    assertEquals(4, dsList.get(0).getZipStats());
-}

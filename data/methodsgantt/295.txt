@@ -1,5 +1,0 @@
-void paintMe(Graphics g) {
-    calculateCoordinates(g);
-    g.setFont(GanttGraphicArea.ChartOptionsPreviewPanel.Text.FONT);
-    g.drawString(text, x, y);
-}

@@ -1,3 +1,0 @@
-RedlineOption() {
-    super("showTodayLine");
-}

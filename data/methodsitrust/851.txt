@@ -1,3 +1,0 @@
-public PersonnelBean getDLHCPByMID(long mid) throws iTrustException {
-    return personnelDAO.getPersonnel(mid);
-}

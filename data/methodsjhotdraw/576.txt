@@ -1,3 +1,0 @@
-public float[] RGBtoComponent(int rgb, float[] hsb) {
-    return sliderModel.getColorSystem().toComponents(rgb, hsb);
-}

@@ -1,6 +1,0 @@
-/**
- * Gets the property name.
- */
-protected String getPropertyName() {
-    return propertyName;
-}

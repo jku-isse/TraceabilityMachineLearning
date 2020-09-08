@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param name
- * 		
- */
-private DemographicReportFilterType(String name) {
-    this.name = name;
-}

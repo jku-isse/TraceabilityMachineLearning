@@ -1,4 +1,0 @@
-void setAction(Action action) {
-    addAction(action, ((KeyStroke) (action.getValue(Action.ACCELERATOR_KEY))));
-    // Add the action to the component
-}

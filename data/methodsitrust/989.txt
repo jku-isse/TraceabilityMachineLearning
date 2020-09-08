@@ -1,7 +1,0 @@
-public ViewApptRequestsAction(long hcpid, DAOFactory factory) {
-    arDAO = factory.getApptRequestDAO();
-    aDAO = factory.getApptDAO();
-    pnDAO = factory.getPersonnelDAO();
-    this.hcpid = hcpid;
-    msgAction = new SendMessageAction(factory, hcpid);
-}

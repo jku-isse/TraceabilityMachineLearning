@@ -1,5 +1,0 @@
-private StringOptionImpl(String optionName, String legacyTagName, String legacyAttrName) {
-    super(optionName);
-    myLegacyTagName = legacyTagName;
-    myLegacyAttrName = legacyAttrName;
-}

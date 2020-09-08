@@ -1,6 +1,0 @@
-public void testRemoveNonExistingRepresentative() throws Exception {
-    assertEquals(1, patientDAO.getRepresented(2L).size());
-    boolean confirm = patientDAO.removeRepresentative(2L, 3L);
-    assertEquals(1, patientDAO.getRepresented(2L).size());
-    assertFalse(confirm);
-}

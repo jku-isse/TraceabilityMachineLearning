@@ -1,5 +1,0 @@
-protected void repaintDrawingArea(Rectangle2D.Double r) {
-    Rectangle vr = drawingToView(r);
-    vr.grow(1, 1);
-    repaint(vr);
-}

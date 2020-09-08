@@ -1,4 +1,0 @@
-public void deactivate(DrawingEditor editor) {
-    this.editor = editor;
-    isActive = false;
-}

@@ -1,8 +1,0 @@
-DragWindow(Window w) {
-    super(w);
-    getContentPane().add(new JPanel() {
-        public void paintComponent(Graphics g) {
-            paintDragWindow(g);
-        }
-    });
-}

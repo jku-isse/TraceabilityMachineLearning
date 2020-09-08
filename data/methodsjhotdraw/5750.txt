@@ -1,6 +1,0 @@
-public MessagePanel(Icon icon, String message) {
-    labels = ResourceBundleUtil.getBundle("org.anywikidraw.any.Labels");
-    initComponents();
-    setIcon(icon);
-    setMessage(message);
-}

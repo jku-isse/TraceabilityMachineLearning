@@ -1,6 +1,0 @@
-protected void fireProjectClosed() {
-    for (int i = 0; i < (myModifiedStateChangeListeners.size()); i++) {
-        ProjectEventListener next = ((ProjectEventListener) (myModifiedStateChangeListeners.get(i)));
-        next.projectClosed();
-    }
-}

@@ -1,4 +1,0 @@
-public void addImmunization(ProcedureBean bean) throws iTrustException {
-    verifySaved();
-    proceduresDAO.add(bean);
-}

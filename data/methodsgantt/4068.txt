@@ -1,6 +1,0 @@
-public CustomColumEvent(int type, CustomColumn column) {
-    myType = type;
-    myColumn = column;
-    myColName = column.getName();
-    myOldName = myColName;
-}

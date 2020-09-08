@@ -1,3 +1,0 @@
-public String getHCPaddress2() {
-    return hcpAddress2;
-}

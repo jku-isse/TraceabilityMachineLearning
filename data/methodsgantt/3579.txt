@@ -1,3 +1,0 @@
-public void removeListener(GanttLanguage.Listener listener) {
-    myListeners.remove(listener);
-}

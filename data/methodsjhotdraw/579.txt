@@ -1,3 +1,0 @@
-public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener) {
-    propertySupport.addPropertyChangeListener(propertyName, listener);
-}

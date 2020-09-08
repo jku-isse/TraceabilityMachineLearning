@@ -1,6 +1,0 @@
-/**
- * Return the string of the day.
- */
-public String getdayWeek() {
-    return language.getDay(((this.get(Calendar.DAY_OF_WEEK)) - 1));
-}

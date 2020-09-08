@@ -1,5 +1,0 @@
-public void draw(Graphics2D g) {
-    if ((createdFigure) != null) {
-        createdFigure.draw(g);
-    }
-}

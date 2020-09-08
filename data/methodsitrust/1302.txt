@@ -1,6 +1,0 @@
-public void testGetReceivingHCPName() throws Exception {
-    long hcpid = 9000000000L;
-    action = new ViewSentReferralsAction(factory, hcpid);
-    ReferralBean bean = action.getReferral(3L);
-    assertEquals("Gandalf Stormcrow", action.getReceivingHCPName(bean));
-}

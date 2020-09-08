@@ -1,4 +1,0 @@
-public TuningOptions(boolean renderProgress, boolean renderDependencies) {
-    this.renderProgress = renderProgress;
-    this.renderDependencies = renderDependencies;
-}

@@ -1,5 +1,0 @@
-/**
- * Informs the view that it has been removed from the specified editor.
- * The view must not draw the tool from the editor anymore.
- */
-public void removeNotify(DrawingEditor editor);

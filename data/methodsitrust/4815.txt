@@ -1,5 +1,0 @@
-public void testAB() throws Exception {
-    String value = "AB-";
-    String errorMessage = BloodTypeValidatorTest.PASSED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, BloodTypeValidatorTest.VALIDATION_FORMAT, false));
-}

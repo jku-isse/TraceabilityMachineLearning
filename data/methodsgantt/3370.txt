@@ -1,4 +1,0 @@
-public void zoomOut() {
-    int oldValue = (myZooming)++;
-    fireZoomingChanged(oldValue, myZooming);
-}

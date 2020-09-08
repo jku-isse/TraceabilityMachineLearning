@@ -1,4 +1,0 @@
-public Float() {
-    xpoints = new float[Polygon2D.MIN_LENGTH];
-    ypoints = new float[Polygon2D.MIN_LENGTH];
-}

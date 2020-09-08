@@ -1,3 +1,0 @@
-protected Object getRestoreData() {
-    return restoreData;
-}

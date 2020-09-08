@@ -1,7 +1,0 @@
-public boolean isPublicHoliDay(Date curDayStart) {
-    boolean result = publicHolidaysArray.contains(curDayStart);
-    if (!result) {
-        result = myStableHolidays.contains(new GanttCalendar(1, curDayStart.getMonth(), curDayStart.getDate()).getTime());
-    }
-    return result;
-}

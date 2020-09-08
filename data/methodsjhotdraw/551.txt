@@ -1,3 +1,0 @@
-public float[] getComponents() {
-    return components.clone();
-}

@@ -1,4 +1,0 @@
-public void trackStart(Point anchor, int modifiersEx) {
-    SVGRectFigure svgRect = ((SVGRectFigure) (getOwner()));
-    originalArc2D = svgRect.getArc();
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the secondDrug
- */
-public String getSecondDrug() {
-    return secondDrug;
-}

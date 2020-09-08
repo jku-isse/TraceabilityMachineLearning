@@ -1,4 +1,0 @@
-public GanttLookAndFeelInfo[] getInstalledLookAndFeels() {
-    GanttLookAndFeelInfo[] lookAndFeels = new GanttLookAndFeelInfo[0];
-    return ((GanttLookAndFeelInfo[]) (infoByClass.values().toArray(lookAndFeels)));
-}

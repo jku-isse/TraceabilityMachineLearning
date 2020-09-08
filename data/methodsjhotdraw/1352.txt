@@ -1,3 +1,0 @@
-public ChopDiamondConnector() {
-    // only used for Storable implementation
-}

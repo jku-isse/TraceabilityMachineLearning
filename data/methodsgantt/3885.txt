@@ -1,3 +1,0 @@
-public void setCostsPerUnit(double costsPerUnit) {
-    this.costsPerUnit = costsPerUnit;
-}

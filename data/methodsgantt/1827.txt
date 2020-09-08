@@ -1,3 +1,0 @@
-public int getBottomUnitWidth() {
-    return getCurrentZoomState().getBottomUnitWidth();
-}

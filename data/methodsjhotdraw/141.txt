@@ -1,3 +1,0 @@
-public void launch(String[] args) {
-    super.launch(args);
-}

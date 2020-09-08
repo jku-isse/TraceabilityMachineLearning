@@ -1,4 +1,0 @@
-public void setTuningOptions(ChartModelImpl.TuningOptions tuningOptions) {
-    myTaskRendererImpl.setProgressRenderingEnabled(tuningOptions.renderProgress);
-    myTaskRendererImpl.setDependenciesRenderingEnabled(tuningOptions.renderDependencies);
-}

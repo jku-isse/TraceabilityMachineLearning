@@ -1,6 +1,0 @@
-public CustomPropertiesTagHandler(ParsingContext context, TaskManager taskManager, CustomColumnsStorage columnStorage) {
-    this.taskManager = taskManager;
-    this.parsingContext = context;
-    this.listStructure = new ArrayList();
-    myColumnStorage = columnStorage;
-}

@@ -1,8 +1,0 @@
-/**
- * Stop the entire timer.
- */
-public void stop() {
-    _white.stop();
-    _black.stop();
-    setRunning(false);
-}

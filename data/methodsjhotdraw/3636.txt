@@ -1,7 +1,0 @@
-/**
- * Returns the AttributeEditor to which this FigureAttributeEditorHandler is
- * attached.
- */
-public AttributeEditor<T> getAttributeEditor() {
-    return attributeEditor;
-}

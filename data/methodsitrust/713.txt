@@ -1,3 +1,0 @@
-private String doAssignment() throws iTrustException {
-    return action.assignHCPToHospital(("" + (ManageHospitalAssignmentsActionTest.hcp0)), ManageHospitalAssignmentsActionTest.hosp0);
-}

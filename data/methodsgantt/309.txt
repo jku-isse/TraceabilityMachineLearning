@@ -1,8 +1,0 @@
-public void finish() {
-    myMutator.setIsolationLevel(TaskMutator.READ_COMMITED);
-    getUndoManager().undoableEdit("Task moved", new Runnable() {
-        public void run() {
-            doFinish();
-        }
-    });
-}

@@ -1,4 +1,0 @@
-public int toRGB(float... component) {
-    float[] rgb = colorSpace.toRGB(component);
-    return ((-16777216 | (((int) ((rgb[0]) * 255.0F)) << 16)) | (((int) ((rgb[1]) * 255.0F)) << 8)) | ((int) ((rgb[2]) * 255.0F));
-}

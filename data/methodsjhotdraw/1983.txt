@@ -1,5 +1,0 @@
-/**
- * Informs a figure, that it has been removed from a drawing.
- * The figure must inform all FigureListeners that it has been removed.
- */
-public void removeNotify(Drawing d);

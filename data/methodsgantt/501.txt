@@ -1,3 +1,0 @@
-public DefaultListModel getButtonList() {
-    return iconList;
-}

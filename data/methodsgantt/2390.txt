@@ -1,3 +1,0 @@
-private void setStatusText(String text) {
-    getUIFacade().setStatusText(text);
-}

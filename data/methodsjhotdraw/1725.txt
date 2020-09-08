@@ -1,5 +1,0 @@
-/**
- * as the hotspot moves over a platform dependent drop site
- */
-public void dragOver(DragSourceDragEvent dsde) {
-}

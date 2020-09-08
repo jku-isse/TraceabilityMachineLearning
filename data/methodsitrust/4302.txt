@@ -1,7 +1,0 @@
-public void testFilterByPhone() throws Exception {
-    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.PHONE, "555-555-5554", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertEquals(1, res.size());
-    assertTrue(((res.get(0).getMID()) == 25L));// Trend Setter
-
-}

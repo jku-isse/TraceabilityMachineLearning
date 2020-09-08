@@ -1,6 +1,0 @@
-public UIDefaults getCachedDefaults() {
-    if ((cachedDefaults) == null) {
-        cachedDefaults = getDefaults();
-    }
-    return cachedDefaults;
-}

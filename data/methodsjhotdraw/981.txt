@@ -1,7 +1,0 @@
-public void setVisible(boolean newValue) {
-    if (newValue != (isVisible)) {
-        willChange();
-        isVisible = newValue;
-        changed();
-    }
-}

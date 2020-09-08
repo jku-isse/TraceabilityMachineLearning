@@ -1,6 +1,0 @@
-public LoadDistribution getLoadDistribution() {
-    if ((myLoadDistribution) == null) {
-        myLoadDistribution = new LoadDistribution(this);
-    }
-    return myLoadDistribution;
-}

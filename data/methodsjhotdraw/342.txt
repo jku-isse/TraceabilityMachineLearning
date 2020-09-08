@@ -1,8 +1,0 @@
-public void actionPerformed(ActionEvent evt) {
-    JFrame frame = getFrame();
-    if (frame != null) {
-        frame.setExtendedState(((frame.getExtendedState()) ^ (Frame.ICONIFIED)));
-    } else {
-        Toolkit.getDefaultToolkit().beep();
-    }
-}

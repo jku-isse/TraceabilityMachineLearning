@@ -1,4 +1,0 @@
-@Override
-public boolean intersects(double x, double y, double w, double h) {
-    return intersects(((float) (x)), ((float) (y)), ((float) (w)), ((float) (h)));
-}

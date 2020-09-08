@@ -1,3 +1,0 @@
-TransformHandle(Figure owner, Locator loc) {
-    super(owner, loc);
-}

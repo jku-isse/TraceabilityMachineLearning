@@ -1,3 +1,0 @@
-public DateFormat getShortDateFormat() {
-    return shortCurrentDateFormat;
-}

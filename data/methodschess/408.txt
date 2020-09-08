@@ -1,5 +1,0 @@
-// Methods
-/**
- * Reset the game notation for a new game.
- */
-public void reset();

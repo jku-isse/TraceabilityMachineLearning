@@ -1,5 +1,0 @@
-public void testAllergyExistingPrescription() throws Exception {
-    action = new EditPHRAction(factory, 9000000000L, "100");
-    String result = action.updateAllergies(100L, "483012382");
-    assertTrue(result.contains("is currently prescribed to"));
-}

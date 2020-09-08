@@ -1,8 +1,0 @@
-public void testOVDoesntExist() {
-    try {
-        action = new EditOfficeVisitAction(TestDAOFactory.getTestInstance(), 0L, "1", "158");
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("Office Visit 158 with Patient MID 1 does not exist", e.getMessage());
-    }
-}

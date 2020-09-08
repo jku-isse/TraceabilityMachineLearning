@@ -1,6 +1,0 @@
-@Override
-protected void validate() {
-    super.validate();
-    path.invalidatePath();
-    cappedPath = null;
-}

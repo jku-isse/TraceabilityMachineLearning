@@ -1,3 +1,0 @@
-public void setOptionKeyPrefix(String optionKeyPrefix) {
-    myi18n.myOptionKeyPrefix = optionKeyPrefix;
-}

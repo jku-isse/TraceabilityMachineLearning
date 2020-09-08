@@ -1,9 +1,0 @@
-public void testAssignDuplicate() throws iTrustException {
-    assertEquals("HCP successfully assigned.", doAssignment());
-    try {
-        doAssignment();
-        fail("testAssignDuplicate failed: assignHCPToHospital should have thrown exception");
-    } catch (iTrustException e) {
-        assertEquals("HCP 9000000000 already assigned to hospital 1", e.getMessage());
-    }
-}

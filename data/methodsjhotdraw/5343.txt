@@ -1,3 +1,0 @@
-public double getHeight() {
-    return ellipse.getHeight();
-}

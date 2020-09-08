@@ -1,5 +1,0 @@
-/**
- * Reads the view from the specified file.
- * By convention this method is never invoked on the AWT Event Dispatcher Thread.
- */
-public void read(File f) throws IOException;

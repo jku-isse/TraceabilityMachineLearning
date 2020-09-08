@@ -1,1 +1,0 @@
-protected abstract List getActivitiesBackward(Date startDate, TimeUnit timeUnit, long l);

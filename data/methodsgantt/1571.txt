@@ -1,6 +1,0 @@
-public void endElement(String namespaceURI, String sName, String qName) throws SAXException {
-    for (Iterator handlers = myTagHandlers.iterator(); handlers.hasNext();) {
-        TagHandler next = ((TagHandler) (handlers.next()));
-        next.endElement(namespaceURI, sName, qName);
-    }
-}

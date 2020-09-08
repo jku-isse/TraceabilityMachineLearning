@@ -1,4 +1,0 @@
-public void editProcedure(ProcedureBean bean) throws iTrustException {
-    verifySaved();
-    proceduresDAO.edit(bean);
-}

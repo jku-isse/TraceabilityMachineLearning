@@ -1,4 +1,0 @@
-/**
- * Returns the enabled state of the application.
- */
-public boolean isEnabled();

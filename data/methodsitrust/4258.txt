@@ -1,9 +1,0 @@
-public static void assertNotLogged(TransactionType code, long loggedInMID, long secondaryMID, String addedInfo) throws DBException {
-    List<TransactionBean> transList = TestDAOFactory.getTestInstance().getTransactionDAO().getAllTransactions();
-    for (TransactionBean t : transList) {
-        if (((((t.getTransactionType()) == code) && ((t.getLoggedInMID()) == loggedInMID)) && ((t.getSecondaryMID()) == secondaryMID)) && (t.getAddedInfo().trim().contains(addedInfo))) {
-            fail("Event was logged, but should NOT have been logged");
-            return;
-        }
-    }
-}

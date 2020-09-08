@@ -1,5 +1,0 @@
-public void testGetFilterValue() {
-    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.CITY, "city!", factory);
-    String expected = "city!";
-    assertEquals(expected, filter.getFilterValue());
-}

@@ -1,4 +1,0 @@
-public void languageChanged(GanttLanguage.Event event) {
-    super.languageChanged(event);
-    myCalendar = CalendarFactory.newCalendar();
-}

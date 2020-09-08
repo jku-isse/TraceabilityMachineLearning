@@ -1,3 +1,0 @@
-public BackdropBorder(Border backgroundBorder) {
-    this(null, backgroundBorder);
-}

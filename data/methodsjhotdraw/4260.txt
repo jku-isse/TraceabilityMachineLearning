@@ -1,3 +1,0 @@
-protected FocusListener createToolBarFocusListener() {
-    return getHandler();
-}

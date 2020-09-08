@@ -1,7 +1,0 @@
-/**
- * Gets the text of the current element of the DOM Document.
- */
-public String getText(String defaultValue) {
-    String value = current.getContent();
-    return value == null ? defaultValue : value;
-}

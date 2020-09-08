@@ -1,3 +1,0 @@
-public void setDateOfDeathStr(String dateOfDeathStr) {
-    this.dateOfDeathStr = dateOfDeathStr;
-}

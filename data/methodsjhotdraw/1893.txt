@@ -1,5 +1,0 @@
-/**
- * Gets an transform which can be used to convert
- * drawing coordinates to view coordinates.
- */
-public AffineTransform getDrawingToViewTransform();

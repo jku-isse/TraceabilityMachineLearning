@@ -1,4 +1,0 @@
-/**
- * Fires a <code>FigureListener.figureRequestRemove</code> event.
- */
-public void requestRemove();

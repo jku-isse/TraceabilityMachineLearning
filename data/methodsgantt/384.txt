@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the undo number
- */
-public int getUndoNumber() {
-    return undoNumber;
-}

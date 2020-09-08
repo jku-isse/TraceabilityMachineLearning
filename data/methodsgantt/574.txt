@@ -1,9 +1,0 @@
-/**
- * Save the project on a file
- */
-public void saveProject() throws IOException {
-    tree.displayHiddenTasks();
-    // TODO: for 2.0, implement saving project without the need to show hidden tasks
-    getProjectUIFacade().saveProject(getProject());
-    // saveProject(projectDocument);
-}

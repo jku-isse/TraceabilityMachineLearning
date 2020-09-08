@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys AllergyDAO
- */
-public AllergyDAO getAllergyDAO() {
-    return new AllergyDAO(this);
-}

@@ -1,4 +1,0 @@
-public void testGetAdverseEvent() throws Exception {
-    AdverseEventBean bean = action.getAdverseEvent(1);
-    assertNotNull(bean);
-}

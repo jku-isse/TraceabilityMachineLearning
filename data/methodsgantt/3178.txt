@@ -1,6 +1,0 @@
-public void rollback() {
-    if (!(isLocked())) {
-        throw new IllegalStateException("Cant rollback not locked option");
-    }
-    setLocked(false);
-}

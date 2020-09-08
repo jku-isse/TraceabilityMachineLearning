@@ -1,7 +1,0 @@
-/**
- * We propagate all edit events from our children to
- * undoable edit listeners, which have registered with us.
- */
-public void undoableEditHappened(UndoableEditEvent e) {
-    fireUndoableEditHappened(e.getEdit());
-}

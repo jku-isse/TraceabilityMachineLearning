@@ -1,6 +1,0 @@
-/**
- * Return the class of the style
- */
-public GanttLookAndFeelInfo getLookAndFeel() {
-    return ((GanttLookAndFeelInfo) (cbLnf.getSelectedItem()));
-}

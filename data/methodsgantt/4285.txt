@@ -1,6 +1,0 @@
-GanttCalendar calculateEnd() {
-    GanttCalendar result = getStart().Clone();
-    Date newEnd = shiftDate(result.getTime(), getDuration());
-    result.setTime(newEnd);
-    return result;
-}

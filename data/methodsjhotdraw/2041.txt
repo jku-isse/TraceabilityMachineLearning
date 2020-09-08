@@ -1,3 +1,0 @@
-public FontSizeHandle(TextHolderFigure owner, Locator locator) {
-    super(owner, locator);
-}

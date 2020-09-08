@@ -1,7 +1,0 @@
-private void openStartupDocument(Document document) {
-    try {
-        getProjectUIFacade().openProject(document, getProject());
-    } catch (IOException e) {
-        getUIFacade().showErrorDialog(e);
-    }
-}

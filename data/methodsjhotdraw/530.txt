@@ -1,5 +1,0 @@
-public void updateChooser() {
-    (updatingChooser)++;
-    ccModel.setColor(getColorFromModel());
-    (updatingChooser)--;
-}

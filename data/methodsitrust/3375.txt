@@ -1,8 +1,0 @@
-public void testValidatePR() throws Exception {
-    try {
-        rmDAO.validatePR(2, 1);
-        assert true;
-    } catch (iTrustException e) {
-        fail();
-    }
-}

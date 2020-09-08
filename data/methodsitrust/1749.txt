@@ -1,6 +1,0 @@
-/**
- * sets the status to "In transit"
- */
-public void statusInTransit() {
-    this.status = LabProcedureBean.In_Transit;
-}

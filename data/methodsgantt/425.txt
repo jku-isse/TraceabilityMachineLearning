@@ -1,6 +1,0 @@
-/**
- * set show the status bar.
- */
-public void setShowStatusBar(boolean showStatusBar) {
-    bShowStatusBar = showStatusBar;
-}

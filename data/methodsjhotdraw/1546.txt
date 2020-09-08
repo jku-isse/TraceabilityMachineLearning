@@ -1,3 +1,0 @@
-public JComponent getOutputFormatAccessory() {
-    return null;
-}

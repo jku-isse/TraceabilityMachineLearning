@@ -1,5 +1,0 @@
-public void setCanvasSize(Dimension2DDouble newValue) {
-    Dimension2DDouble oldValue = canvasSize;
-    canvasSize = newValue;
-    firePropertyChange("canvasSize", oldValue, newValue);
-}

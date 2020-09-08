@@ -1,7 +1,0 @@
-/**
- * Tests if a point is contained in the connector.
- */
-@Override
-public boolean contains(Point2D.Double p) {
-    return getBounds().contains(p);
-}

@@ -1,7 +1,0 @@
-public void testGetProcedures() throws Exception {
-    List<ProcedureBean> list = patientDAO.getProcedures(2L);
-    assertEquals(1, list.size());
-    ProcedureBean bean = list.get(0);
-    assertEquals("1270F", bean.getCPTCode());
-    assertEquals("Injection procedure", bean.getDescription());
-}

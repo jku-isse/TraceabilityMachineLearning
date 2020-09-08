@@ -1,5 +1,0 @@
-/**
- * Creates an instance of CustomColumnsStorage.
- */
-public CustomColumnsStorage() {
-}

@@ -1,1 +1,0 @@
-public Gradient createRadialGradient(double cx, double cy, double fx, double fy, double r, double[] stopOffsets, Color[] stopColors, double[] stopOpacities, boolean isRelativeToFigureBounds, AffineTransform tx);

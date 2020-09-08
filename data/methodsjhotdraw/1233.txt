@@ -1,9 +1,0 @@
-@Override
-public String getPresentationName() {
-    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-    if ((oldValue.mask) != (newValue.mask)) {
-        return labels.getString("edit.bezierNode.changeType.text");
-    } else {
-        return labels.getString("edit.bezierNode.movePoint.text");
-    }
-}

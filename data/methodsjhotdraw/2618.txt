@@ -1,4 +1,0 @@
-public void trackStart(Point anchor, int modifiersEx) {
-    RoundRectangleFigure owner = ((RoundRectangleFigure) (getOwner()));
-    originalArc = view.drawingToView(new Point2D.Double(owner.getArcWidth(), owner.getArcHeight()));
-}

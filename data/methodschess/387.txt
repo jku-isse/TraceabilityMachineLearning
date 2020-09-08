@@ -1,7 +1,0 @@
-/**
- * Undo the last ply.
- */
-public final void undoLastPly() {
-    // Remove the last ply
-    _gameStatus.pop();
-}

@@ -1,9 +1,0 @@
-/**
- * Returns the hash code for this <code>Dimension2DDouble</code>.
- *
- * @return a hash code for this <code>Dimension2DDouble</code>
- */
-public int hashCode() {
-    float sum = ((float) ((width) + (height)));
-    return Float.floatToIntBits((((sum * (sum + 1)) / 2) + ((float) (width))));
-}

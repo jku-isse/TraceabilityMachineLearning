@@ -1,6 +1,0 @@
-/**
- * This should be an abstract method, but the NetBeans GUI builder
- * doesnt support abstract beans.
- */
-protected void init() {
-}

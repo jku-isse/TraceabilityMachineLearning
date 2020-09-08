@@ -1,5 +1,0 @@
-protected void connect() throws IOException {
-    if ((_os) == null)
-        _os = _connection.getOutputStream();
-
-}

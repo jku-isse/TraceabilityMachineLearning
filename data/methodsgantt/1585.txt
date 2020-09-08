@@ -1,3 +1,0 @@
-CachingOffsetCalculatorImpl(TimeUnitStack timeUnitStack) {
-    myCalculator = new OffsetCalculatorImpl(timeUnitStack);
-}

@@ -1,4 +1,0 @@
-public int getDepth(Task task) {
-    // TODO Auto-generated method stub
-    return 0;
-}

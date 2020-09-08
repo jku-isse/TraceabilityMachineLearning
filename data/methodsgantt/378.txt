@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return true if show the status bar.
- */
-public boolean getShowStatusBar() {
-    return bShowStatusBar;
-}

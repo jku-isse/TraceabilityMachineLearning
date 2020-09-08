@@ -1,5 +1,0 @@
-public void testGetLabProcedureForLHCPForNextMonth1() throws Exception {
-    action2 = new LabProcHCPAction(factory, 9000000003L);
-    List<LabProcedureBean> procedures = action2.getLabProcForNextMonth();
-    assertNotNull(procedures);
-}

@@ -1,7 +1,0 @@
-// Constructors
-/**
- * Create a new instance of this test.
- */
-public AnalyzerTest2() {
-    super("A simple analyzer test for a opening strategy");
-}

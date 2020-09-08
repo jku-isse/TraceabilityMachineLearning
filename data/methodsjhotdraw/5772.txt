@@ -1,5 +1,0 @@
-public void setProgressModel(BoundedRangeModel m) {
-    // BoundedRangeModel oldValue = progressModel;
-    progressModel = m;
-    progressBar.setModel(m);
-}

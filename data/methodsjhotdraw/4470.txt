@@ -1,3 +1,0 @@
-protected String getVersion() {
-    return DrawApplet.class.getPackage().getImplementationVersion();
-}

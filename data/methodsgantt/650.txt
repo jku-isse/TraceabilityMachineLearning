@@ -1,3 +1,0 @@
-public void showDialog(Component content, Action[] actions) {
-    myUIFacade.showDialog(content, actions);
-}

@@ -1,4 +1,0 @@
-public NumberedParagraphView(Element e, NumberedViewFactory viewFactory) {
-    super(e);
-    this.viewFactory = viewFactory;
-}

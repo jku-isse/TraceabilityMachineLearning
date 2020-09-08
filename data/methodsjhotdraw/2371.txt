@@ -1,3 +1,0 @@
-public static Handle north(Figure owner) {
-    return new MoveHandle(owner, RelativeLocator.north());
-}

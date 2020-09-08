@@ -1,3 +1,0 @@
-public MockHttpSessionEvent() {
-    super(new MockHttpSession());
-}

@@ -1,6 +1,0 @@
-private void recalculateSupertaskScheduleBottomUp(Set supertasks, TaskContainmentHierarchyFacade containmentFacade) {
-    for (Iterator it = supertasks.iterator(); it.hasNext();) {
-        Task nextSupertask = ((Task) (it.next()));
-        recalculateSupertaskSchedule(nextSupertask, containmentFacade);
-    }
-}

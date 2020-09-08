@@ -1,6 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    DrawingView view = getView();
-    if (view != null) {
-        view.setConstrainerVisible((!(view.isConstrainerVisible())));
-    }
-}

@@ -1,3 +1,0 @@
-public void colorChanged(HarmonicColorModel model, int index, CompositeColor oldValue, CompositeColor newValue) {
-    // 
-}

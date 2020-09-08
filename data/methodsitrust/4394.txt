@@ -1,3 +1,0 @@
-public Type1DiabetesRisks(DAOFactory factory, long patientID) throws DBException, NoHealthRecordsException {
-    super(factory, patientID);
-}

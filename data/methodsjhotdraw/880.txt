@@ -1,3 +1,0 @@
-protected void setPotentialTarget(Connector newTarget) {
-    this.connectableConnector = newTarget;
-}

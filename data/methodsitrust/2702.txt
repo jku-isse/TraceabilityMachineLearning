@@ -1,9 +1,0 @@
-public void testReportInteractionThatExistsReverseOrder() throws Exception {
-    gen.drugInteractions();
-    try {
-        interactionDAO.reportInteraction("548680955", "009042407", "This is not allowed.");
-        fail("Drug interaction already exists for these drugs.");
-    } catch (Exception e) {
-        // Good job, it works
-    }
-}

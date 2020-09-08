@@ -1,3 +1,0 @@
-public ComponentOrientation getComponentOrientation() {
-    return ComponentOrientation.getOrientation(currentLocale);
-}

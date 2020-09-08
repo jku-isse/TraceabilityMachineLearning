@@ -1,4 +1,0 @@
-public final AbstractFigure basicClone(HashMap<Figure, Figure> oldToNew) {
-    // XXX - Delete me
-    return null;
-}

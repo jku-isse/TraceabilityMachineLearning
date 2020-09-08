@@ -1,5 +1,0 @@
-/**
- * Informs the listener that a tool has done its interaction.
- * This method can be used to switch back to the default tool.
- */
-void toolDone(ToolEvent event);

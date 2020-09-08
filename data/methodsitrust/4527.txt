@@ -1,8 +1,0 @@
-@Override
-protected void setUp() throws Exception {
-    ctrl = createControl();
-    req = ctrl.createMock(HttpServletRequest.class);
-    resp = ctrl.createMock(HttpServletResponse.class);
-    grga = ctrl.createMock(GroupReportGeneratorAction.class);
-    xmlgen = ctrl.createMock(XmlGenerator.class);
-}

@@ -1,3 +1,0 @@
-public BloodType getBloodType() {
-    return bloodType;
-}

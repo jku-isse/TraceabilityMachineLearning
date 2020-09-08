@@ -1,6 +1,0 @@
-public final void draw(Graphics2D g) {
-    if ((decorator) != null) {
-        drawDecorator(g);
-    }
-    drawFigure(g);
-}

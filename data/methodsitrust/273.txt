@@ -1,7 +1,0 @@
-public List<DiagnosisBean> getDiagnoses() throws DBException {
-    if (isUnsaved()) {
-        return new ArrayList<DiagnosisBean>();
-    } else {
-        return diagnosesDAO.getList(getOvID());
-    }
-}

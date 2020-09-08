@@ -1,3 +1,0 @@
-public float getFontSize() {
-    return AttributeKeys.FONT_SIZE.get(this).floatValue();
-}

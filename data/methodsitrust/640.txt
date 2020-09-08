@@ -1,8 +1,0 @@
-/**
- * Gets a list of lists of report records (patients)
- *
- * @return List of lists of report records
- */
-public ArrayList<ArrayList<String>> getReportData() {
-    return reportData;
-}

@@ -1,7 +1,0 @@
-public void testReportInteraction() throws Exception {
-    interactionDAO.reportInteraction("619580501", "081096", "May increase the risk and severity of nephrotoxicity due to additive effects on the kidney.");
-    List<DrugInteractionBean> testList = interactionDAO.getInteractions("619580501");
-    DrugInteractionBean interaction = testList.get(0);
-    assertEquals("619580501", interaction.getFirstDrug());
-    assertEquals("081096", interaction.getSecondDrug());
-}

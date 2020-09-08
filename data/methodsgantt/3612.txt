@@ -1,6 +1,0 @@
-public DefaultWeekTagHandler(GPCalendar calendar) {
-    myGPCalendar = calendar;
-    for (int i = 1; i <= 7; i++) {
-        myGPCalendar.setWeekDayType(i, GPCalendar.DayType.WORKING);
-    }
-}

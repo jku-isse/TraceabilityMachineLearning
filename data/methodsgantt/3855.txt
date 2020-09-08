@@ -1,4 +1,0 @@
-/* <Load> */
-public List getDaysOff() {
-    return myDaysOff;
-}

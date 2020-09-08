@@ -1,7 +1,0 @@
-/**
- * Convenience method for getting the point coordinate of
- * the first control point of the specified node.
- */
-public Point2D.Double getPoint(int index) {
-    return path.get(index).getControlPoint(0);
-}

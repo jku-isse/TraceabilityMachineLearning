@@ -1,5 +1,0 @@
-public void read(DOMInput in) {
-    relativePosition = in.getAttribute("relativePosition", 0.0);
-    angle = in.getAttribute("angle", 0.0);
-    distance = in.getAttribute("distance", 0);
-}

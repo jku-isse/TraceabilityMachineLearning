@@ -1,4 +1,0 @@
-/**
- * Sets the start point.
- */
-public void setStartPoint(Point2D.Double p);

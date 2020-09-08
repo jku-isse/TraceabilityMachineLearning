@@ -1,9 +1,0 @@
-/**
- * Convenience method for adding multiple control points with a single
- * coordinate C0.
- */
-public void addAll(Collection<Point2D.Double> points) {
-    for (Point2D.Double c0 : points) {
-        add(new BezierPath.Node(0, c0, c0, c0));
-    }
-}

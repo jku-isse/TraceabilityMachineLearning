@@ -1,3 +1,0 @@
-public List<ProcedureBean> getAllProcedures() throws DBException {
-    return proceduresDAO.getList(ovID);
-}

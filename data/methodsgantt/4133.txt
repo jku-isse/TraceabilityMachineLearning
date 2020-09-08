@@ -1,1 +1,0 @@
-void setEnd(GanttCalendar end);

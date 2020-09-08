@@ -1,4 +1,0 @@
-@Override
-public Cursor getCursor() {
-    return Cursor.getPredefinedCursor(Cursor.W_RESIZE_CURSOR);
-}

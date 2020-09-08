@@ -1,3 +1,0 @@
-public void taskPropertiesChanged(TaskPropertyEvent e) {
-    myGanttProject.setModified();
-}

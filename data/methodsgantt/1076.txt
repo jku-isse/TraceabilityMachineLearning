@@ -1,9 +1,0 @@
-/**
- * Constructor.
- */
-public PrjInfos(String sProjectName, String sDescription, String sOrganization, String sWebLink) {
-    this._sProjectName = sProjectName;
-    this._sDescription = sDescription;
-    this._sOrganization = sOrganization;
-    this._sWebLink = sWebLink;
-}

@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the preferred size of this component.
- */
-public Dimension getPreferredSize() {
-    return new Dimension(getWidth(), 24);
-}

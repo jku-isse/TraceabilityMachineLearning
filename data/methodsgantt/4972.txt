@@ -1,3 +1,0 @@
-public String getUndoPresentationName() {
-    return mySwingUndoManager.getUndoPresentationName();
-}

@@ -1,8 +1,0 @@
-/**
- * Convenience method for changing a single coordinate of a control point.
- */
-public void set(int index, int coord, Point2D.Double p) {
-    BezierPath.Node c = get(index);
-    c.x[coord] = p.x;
-    c.y[coord] = p.y;
-}

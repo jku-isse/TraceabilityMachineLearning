@@ -1,3 +1,0 @@
-public CombineAction(DrawingEditor editor, SVGPathFigure prototype) {
-    this(editor, prototype, true);
-}

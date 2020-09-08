@@ -1,5 +1,0 @@
-public void testFilterByZipNoResult() {
-    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.ZIP, "Dalpe", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertTrue(res.isEmpty());
-}

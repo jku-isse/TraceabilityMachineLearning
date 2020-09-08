@@ -1,3 +1,0 @@
-public void setHCPFirstName(String firstName) {
-    this.hcpFirstName = firstName;
-}

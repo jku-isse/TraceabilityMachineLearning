@@ -1,9 +1,0 @@
-/**
- * Create a new Human
- */
-public void newHuman(HumanResource people) {
-    if (people != null) {
-        DefaultMutableTreeNode result = model.addResource(people);
-        table.getTree().scrollPathToVisible(new TreePath(result.getPath()));
-    }
-}

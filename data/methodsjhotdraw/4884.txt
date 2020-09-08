@@ -1,9 +1,0 @@
-// COMPOSITE FIGURES
-// CLONING
-public ODGRectFigure clone() {
-    ODGRectFigure that = ((ODGRectFigure) (super.clone()));
-    that.roundrect = ((RoundRectangle2D.Double) (this.roundrect.clone()));
-    that.cachedTransformedShape = null;
-    that.cachedHitShape = null;
-    return that;
-}

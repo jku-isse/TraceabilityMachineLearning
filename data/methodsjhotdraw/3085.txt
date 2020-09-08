@@ -1,3 +1,0 @@
-public static JPopupButton createStrokeDashesButton(DrawingEditor editor) {
-    return ButtonFactory.createStrokeDashesButton(editor, ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
-}

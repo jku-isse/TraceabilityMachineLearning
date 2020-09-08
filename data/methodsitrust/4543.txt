@@ -1,3 +1,0 @@
-public void invalidate() {
-    throw new IllegalStateException("should not be hit!");
-}

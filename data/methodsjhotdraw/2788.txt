@@ -1,3 +1,0 @@
-public Color getFillColor() {
-    return AttributeKeys.FILL_COLOR.get(this);
-}

@@ -1,5 +1,0 @@
-public void testGetAllMyMessagesFromTimeAscending() throws SQLException {
-    List<MessageBean> mbList = action2.getAllMySentMessagesTimeAscending();
-    assertEquals(2, mbList.size());
-    assertTrue(mbList.get(0).getSentDate().before(mbList.get(1).getSentDate()));
-}

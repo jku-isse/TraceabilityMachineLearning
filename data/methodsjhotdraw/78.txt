@@ -1,7 +1,0 @@
-/**
- * Initializes the application.
- * <code>configure()</code> should have been invoked before the application
- * is inited. Alternatively an application can be configured using setter
- * methods.
- */
-public void init();

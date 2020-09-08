@@ -1,5 +1,0 @@
-public void keyTyped(KeyEvent e) {
-    for (Handle h : handles) {
-        h.keyTyped(e);
-    }
-}

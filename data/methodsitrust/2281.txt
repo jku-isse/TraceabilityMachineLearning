@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param medID
- * 		the medID to set
- */
-public void setMedID(String medID) {
-    this.medID = medID;
-}

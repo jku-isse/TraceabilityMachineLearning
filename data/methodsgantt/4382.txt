@@ -1,7 +1,0 @@
-public void setNotes(final String notes) {
-    myCommands.add(new Runnable() {
-        public void run() {
-            TaskImpl.this.setNotes(notes);
-        }
-    });
-}

@@ -1,5 +1,0 @@
-/**
- * Ignored: The extent is always zero.
- */
-public void setExtent(int newExtent) {
-}

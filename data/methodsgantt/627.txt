@@ -1,3 +1,0 @@
-protected GanttStatusBar getStatusBar() {
-    return statusBar;
-}

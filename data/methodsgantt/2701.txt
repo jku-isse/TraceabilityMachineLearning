@@ -1,4 +1,0 @@
-/**
- * Coonstruct the menu settings.
- */
-public abstract void constructSections();

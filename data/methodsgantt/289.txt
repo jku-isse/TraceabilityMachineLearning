@@ -1,8 +1,0 @@
-public void paint(Graphics g) {
-    super.paint(g);
-    taskBar.paintMe(g);
-    upText.paintMe(g);
-    downText.paintMe(g);
-    leftText.paintMe(g);
-    rightText.paintMe(g);
-}

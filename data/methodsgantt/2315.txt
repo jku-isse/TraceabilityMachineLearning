@@ -1,6 +1,0 @@
-private ProxyDocument.PortfolioImpl getPortfolioImpl() {
-    if ((myPortfolio) == null) {
-        myPortfolio = new ProxyDocument.PortfolioImpl();
-    }
-    return myPortfolio;
-}

@@ -1,9 +1,0 @@
-public Object clone() {
-    CustomColumnsValues res = new CustomColumnsValues(myColumnStorage);
-    Iterator it = mapCustomColumnValue.keySet().iterator();
-    while (it.hasNext()) {
-        Object k = it.next();
-        res.mapCustomColumnValue.put(k, mapCustomColumnValue.get(k));
-    } 
-    return res;
-}

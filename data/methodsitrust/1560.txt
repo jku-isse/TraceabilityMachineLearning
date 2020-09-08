@@ -1,8 +1,0 @@
-/**
- * Getter for Zip code count
- *
- * @return The count of diagnoses for the zip code
- */
-public long getZipStats() {
-    return zipStats;
-}

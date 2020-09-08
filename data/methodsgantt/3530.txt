@@ -1,3 +1,0 @@
-private void saveViews(TransformerHandler handler) throws SAXException {
-    new ViewSaver().save(getUIFacade(), handler);
-}

@@ -1,7 +1,0 @@
-@Override
-protected void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
-    super.firePropertyChange(propertyName, oldValue, newValue);
-    if (propertyName == "value") {
-        super.firePropertyChange(AttributeEditor.ATTRIBUTE_VALUE_PROPERTY, oldValue, newValue);
-    }
-}

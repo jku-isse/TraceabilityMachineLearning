@@ -1,3 +1,0 @@
-public void setLayouter(Layouter newLayouter) {
-    this.layouter = newLayouter;
-}

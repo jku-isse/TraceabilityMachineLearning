@@ -1,3 +1,0 @@
-public Object getTransformRestoreData() {
-    return new Object[]{ ellipse.clone(), AttributeKeys.TRANSFORM.getClone(this), ODGAttributeKeys.FILL_GRADIENT.getClone(this), ODGAttributeKeys.STROKE_GRADIENT.getClone(this) };
-}

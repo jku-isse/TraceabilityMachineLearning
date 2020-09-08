@@ -1,6 +1,0 @@
-public ApptTypeBean loadSingle(ResultSet rs) throws SQLException {
-    ApptTypeBean apptType = new ApptTypeBean();
-    apptType.setName(rs.getString("appt_type"));
-    apptType.setDuration(rs.getInt("duration"));
-    return apptType;
-}

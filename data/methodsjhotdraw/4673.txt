@@ -1,7 +1,0 @@
-@Override
-public Rectangle2D.Double getFigureDrawingArea() {
-    Rectangle2D.Double b = super.getFigureDrawingArea();
-    // Grow for connectors
-    Geom.grow(b, 10.0, 10.0);
-    return b;
-}

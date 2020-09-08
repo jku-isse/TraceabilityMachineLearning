@@ -1,8 +1,0 @@
-public void testGetLabTechQueueSize() throws Exception {
-    action = new EditLabProceduresAction(factory, 9000000000L, "1", "11");
-    assertEquals(19, action.getLabTechQueueSize(5000000001L));
-    assertEquals(26, action.getLabTechQueueSize(5000000002L));
-    assertEquals(0, action.getLabTechQueueSize(5000000003L));
-    assertEquals(0, action.getLabTechQueueSize(5432100001L));// bad id
-
-}

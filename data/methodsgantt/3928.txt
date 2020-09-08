@@ -1,6 +1,0 @@
-public ResourceEvent(ResourceManager mgr, ProjectResource[] resources) {
-    super(mgr);
-    myManager = mgr;
-    myResources = resources;
-    myResource = ((resources.length) > 0) ? resources[0] : null;
-}

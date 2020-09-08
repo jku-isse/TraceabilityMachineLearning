@@ -1,7 +1,0 @@
-public TaskActivity[] getActivities() {
-    List activities = ((myMutator) == null) ? null : myMutator.getActivities();
-    if (activities == null) {
-        activities = myActivities;
-    }
-    return ((TaskActivity[]) (activities.toArray(new TaskActivity[activities.size()])));
-}

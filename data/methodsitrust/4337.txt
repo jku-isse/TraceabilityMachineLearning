@@ -1,8 +1,0 @@
-public void testFilterByCurrentPrescriptions() throws Exception {
-    filter = new MedicalReportFilter(MedicalReportFilter.MedicalReportFilterType.CURRENT_PRESCRIPTIONS, "647641512", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertEquals(3, res.size());
-    assertTrue(((res.get(0).getMID()) == 2L));
-    assertTrue(((res.get(1).getMID()) == 99L));
-    assertTrue(((res.get(2).getMID()) == 10L));
-}

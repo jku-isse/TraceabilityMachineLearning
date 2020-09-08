@@ -1,3 +1,0 @@
-public boolean handleDrop(Point2D.Double p, Collection<Figure> droppedFigures, DrawingView view) {
-    return false;
-}

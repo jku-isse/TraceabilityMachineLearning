@@ -1,5 +1,0 @@
-public void createTables() throws FileNotFoundException, IOException, SQLException {
-    List<String> queries = SQLFileCache.getInstance().getQueries("sql/createTables.sql");
-    executeSQL(queries);
-    System.out.println("Tables created.");
-}

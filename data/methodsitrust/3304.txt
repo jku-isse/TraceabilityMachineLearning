@@ -1,5 +1,0 @@
-public void testAddEmptyER() throws Exception {
-    long mid = personnelDAO.addEmptyPersonnel(Role.ER);
-    assertEquals(" ", personnelDAO.getName(mid));
-    assertEquals("er", personnelDAO.getPersonnel(mid).getRole().getUserRolesString());
-}

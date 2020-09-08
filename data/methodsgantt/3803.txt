@@ -1,3 +1,0 @@
-public void removeCustomField(String title) {
-    this.customFields.remove(title);
-}

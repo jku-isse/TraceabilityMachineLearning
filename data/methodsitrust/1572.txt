@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param secondDrug
- * 		the secondDrug to set
- */
-public void setSecondDrug(String secondDrug) {
-    this.secondDrug = secondDrug;
-}

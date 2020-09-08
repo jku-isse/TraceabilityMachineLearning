@@ -1,4 +1,0 @@
-public East(DrawingEditor editor) {
-    super(editor, TranslationDirection.EAST);
-    labels.configureAction(this, MoveConstrainedAction.East.ID);
-}

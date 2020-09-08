@@ -1,3 +1,0 @@
-public GanttGraphicArea getArea() {
-    return this.area;
-}

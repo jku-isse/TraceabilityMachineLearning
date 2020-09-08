@@ -1,5 +1,0 @@
-public void testFilterByProcedureNoResult() {
-    filter = new PersonnelReportFilter(PersonnelReportFilter.PersonnelReportFilterType.DLHCP, "Dalpe", factory);
-    List<PatientBean> res = filter.filter(allPatients);
-    assertTrue(res.isEmpty());
-}

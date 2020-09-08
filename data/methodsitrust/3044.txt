@@ -1,3 +1,0 @@
-public PrescriptionsDAO(DAOFactory factory) {
-    this.factory = factory;
-}

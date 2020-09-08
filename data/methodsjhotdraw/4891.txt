@@ -1,3 +1,0 @@
-public Dimension2DDouble getArc() {
-    return new Dimension2DDouble(((roundrect.arcwidth) / 2.0), ((roundrect.archeight) / 2.0));
-}

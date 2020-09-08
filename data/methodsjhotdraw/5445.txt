@@ -1,3 +1,0 @@
-public SVGRectFigure(double x, double y, double width, double height) {
-    this(x, y, width, height, 0, 0);
-}

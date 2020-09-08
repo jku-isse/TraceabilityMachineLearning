@@ -1,4 +1,0 @@
-public East(DrawingEditor editor) {
-    super(editor);
-    labels.configureAction(this, "edit.alignEast");
-}

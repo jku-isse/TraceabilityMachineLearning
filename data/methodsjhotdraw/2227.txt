@@ -1,6 +1,0 @@
-private FileDialog getFileDialog() {
-    if ((fileDialog) == null) {
-        fileDialog = new FileDialog(new Frame());
-    }
-    return fileDialog;
-}

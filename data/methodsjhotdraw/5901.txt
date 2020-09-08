@@ -1,3 +1,0 @@
-public Gradient createLinearGradient(double x1, double y1, double x2, double y2, double[] stopOffsets, Color[] stopColors, double[] stopOpacities, boolean isRelativeToFigureBounds, AffineTransform tx) {
-    return new LinearGradient(x1, y1, x2, y2, stopOffsets, stopColors, stopOpacities, isRelativeToFigureBounds, tx);
-}

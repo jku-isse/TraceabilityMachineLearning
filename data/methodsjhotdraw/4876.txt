@@ -1,3 +1,0 @@
-public ODGPathFigure getOwner() {
-    return ((ODGPathFigure) (super.getOwner()));
-}

@@ -1,3 +1,0 @@
-public void deleteDependency(TaskDependency dependency) {
-    delete(dependency);
-}

@@ -1,8 +1,0 @@
-// Instance variables
-// Constructors
-/**
- * Create a new action instance.
- */
-public HelpAction() {
-    super("Help");
-}

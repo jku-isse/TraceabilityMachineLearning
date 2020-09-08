@@ -1,3 +1,0 @@
-public GanttChart getGanttChart() {
-    return myRealFacade.getGanttChart();
-}

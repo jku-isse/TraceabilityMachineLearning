@@ -1,8 +1,0 @@
-/**
- * Optional - for use with editing an office visit
- *
- * @return 
- */
-public long getOvDiagnosisID() {
-    return ovDiagnosisID;
-}

@@ -1,4 +1,0 @@
-public void testWeight() throws Exception {
-    tBean.setWeightAllowed(false);
-    assertTrue((!(tBean.isWeightAllowed())));
-}

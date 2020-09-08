@@ -1,6 +1,0 @@
-public void quadrantXTo(Object x, Object y) {
-    if (((size()) == 0) || ((get(((size()) - 1)).type) == (EnhancedPath.SegType.CLOSE))) {
-        throw new IllegalPathStateException("quadrantXTo is only allowed when a path segment is open");
-    }
-    add(new EnhancedPath.Segment(EnhancedPath.SegType.QUADRANT_XTO, x, y));
-}

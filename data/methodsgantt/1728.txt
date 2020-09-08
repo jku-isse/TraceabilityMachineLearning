@@ -1,3 +1,0 @@
-private NewTaskColorOption() {
-    super("newTaskDefaultColor");
-}

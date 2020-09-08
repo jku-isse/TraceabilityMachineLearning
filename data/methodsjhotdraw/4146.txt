@@ -1,5 +1,0 @@
-public void mouseClicked(MouseEvent evt) {
-    if (((evt.getClickCount()) == 2) && ((evt.getButton()) == (MouseEvent.BUTTON1))) {
-        fontChooser.approveSelection();
-    }
-}

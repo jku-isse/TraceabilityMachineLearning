@@ -1,4 +1,0 @@
-@Deprecated
-public HttpSessionContext getSessionContext() {
-    throw new IllegalStateException("should not be hit!");
-}

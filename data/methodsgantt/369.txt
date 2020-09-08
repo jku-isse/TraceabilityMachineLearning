@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return the height of the window.
- */
-public int getHeight() {
-    return height;
-}

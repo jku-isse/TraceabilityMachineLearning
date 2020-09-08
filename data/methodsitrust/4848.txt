@@ -1,5 +1,0 @@
-public void testHospitalIDLetter() throws Exception {
-    String value = "a";
-    String errorMessage = HospitalIDValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Hospital ID", value, ValidationFormat.HOSPITAL_ID, false));
-}

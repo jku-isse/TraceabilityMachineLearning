@@ -1,8 +1,0 @@
-/**
- * Tracks the start of the interaction. The default implementation
- * does nothing.
- *
- * @param anchor
- * 		the position where the interaction started
- */
-public void trackStart(Point anchor, int modifiersEx);

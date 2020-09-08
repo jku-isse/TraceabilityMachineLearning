@@ -1,6 +1,0 @@
-/**
- * Gets the editors constrainer for this view, for use, when the
- * visible constrainer is turned on.
- * This is a bound property.
- */
-public Constrainer getVisibleConstrainer();

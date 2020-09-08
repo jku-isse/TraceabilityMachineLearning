@@ -1,7 +1,0 @@
-// Methods
-/**
- * Get the position of the attacked pawn.
- *
- * @return Get the position of the attacked pawn.
- */
-Position getAttackedPosition();

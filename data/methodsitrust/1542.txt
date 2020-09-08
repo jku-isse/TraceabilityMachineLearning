@@ -1,8 +1,0 @@
-/**
- * Gets the ICD Description for this procedure
- *
- * @return The ICD Description for this procedure
- */
-public String getDescription() {
-    return description;
-}

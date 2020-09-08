@@ -1,3 +1,0 @@
-public static void addColorButtonsTo(JToolBar bar, DrawingEditor editor) {
-    ButtonFactory.addColorButtonsTo(bar, editor, ButtonFactory.DEFAULT_COLORS, ButtonFactory.DEFAULT_COLORS_COLUMN_COUNT);
-}

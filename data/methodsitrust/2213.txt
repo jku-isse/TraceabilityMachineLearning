@@ -1,9 +1,0 @@
-/**
- *
- *
- * @param ovDate
- * 		the ovDate to set
- */
-public void setOvDate(String ovDate) {
-    this.ovDate = ovDate;
-}

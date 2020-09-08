@@ -1,7 +1,0 @@
-/**
- * Indicates if the prescription bean has a valid allergy/interaction
- * override.
- */
-private boolean validOverride(PrescriptionBean pres) {
-    return ((pres.getReasons()) != null) && ((pres.getReasons().size()) > 0);
-}

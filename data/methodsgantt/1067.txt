@@ -1,9 +1,0 @@
-/**
- * Regsiters the unique GanttProject instance.
- *
- * @param gp
- * 		The unique GanttProject instance.
- */
-public static void registerGanttProject(GanttProject gp) {
-    Mediator.ganttprojectSingleton = gp;
-}

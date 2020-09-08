@@ -1,8 +1,0 @@
-/**
- * Convenience method for creating a formatter factory with a
- * {@code ColorFormatter}.
- * Uses the RGB_INTEGER format, allows null values and is adaptive.
- */
-public static JFormattedTextField.AbstractFormatterFactory createFormatterFactory() {
-    return ColorFormatter.createFormatterFactory(ColorFormatter.Format.RGB_INTEGER, true, true);
-}

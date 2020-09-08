@@ -1,6 +1,0 @@
-public void testAssignHCPToHospital() throws iTrustException {
-    assertEquals("HCP successfully assigned.", doAssignment());
-    List<HospitalBean> h = action.getAssignedHospitals(("" + (ManageHospitalAssignmentsActionTest.hcp0)));
-    assertEquals(1, h.size());
-    assertEquals("1", h.get(0).getHospitalID());
-}

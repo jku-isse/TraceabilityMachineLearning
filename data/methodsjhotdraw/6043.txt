@@ -1,5 +1,0 @@
-protected void writeAttribute(IXMLElement elem, String name, String namespace, double value, double defaultValue) {
-    if (value != defaultValue) {
-        elem.setAttribute(name, SVGOutputFormat.toNumber(value));
-    }
-}

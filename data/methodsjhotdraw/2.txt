@@ -1,8 +1,0 @@
-public void add(View p) {
-    if ((p.getApplication()) != (this)) {
-        int oldCount = views.size();
-        views.add(p);
-        p.setApplication(this);
-        firePropertyChange(AbstractApplication.VIEW_COUNT_PROPERTY, oldCount, views.size());
-    }
-}

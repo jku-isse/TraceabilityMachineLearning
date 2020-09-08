@@ -1,5 +1,0 @@
-public void testNameNoLetters() throws Exception {
-    String value = "----";
-    String errorMessage = NameValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.NAME, false));
-}

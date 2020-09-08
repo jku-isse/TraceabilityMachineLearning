@@ -1,6 +1,0 @@
-public void activate() throws DBException {
-    PatientBean p = patientDAO.getPatient(this.getPid());
-    p.setMID(pid);
-    p.setDateOfDeactivationStr(null);
-    patientDAO.editPatient(p, loggedInMID);
-}

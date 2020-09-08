@@ -1,3 +1,0 @@
-public void setWebLink(String webLink) {
-    myWebLink = webLink;
-}

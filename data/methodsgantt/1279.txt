@@ -1,7 +1,0 @@
-private ProxyOkAction(final Action realAction, final JDialog dialog, final UIFacadeImpl.Commiter commiter) {
-    realAction.addPropertyChangeListener(this);
-    myRealAction = realAction;
-    myDialog = dialog;
-    myCommiter = commiter;
-    setEnabled(realAction.isEnabled());
-}

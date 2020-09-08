@@ -1,6 +1,0 @@
-public RoundRectangleFigure(double x, double y, double width, double height) {
-    roundrect = new RoundRectangle2D.Double(x, y, width, height, RoundRectangleFigure.DEFAULT_ARC, RoundRectangleFigure.DEFAULT_ARC);
-    /* FILL_COLOR.set(this, Color.white);
-    STROKE_COLOR.set(this, Color.black);
-     */
-}

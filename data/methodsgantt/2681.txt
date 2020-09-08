@@ -1,7 +1,0 @@
-/**
- * Return the name of the task
- */
-public String getTaskName() {
-    String text = nameField1.getText();
-    return text == null ? "" : text.trim();
-}

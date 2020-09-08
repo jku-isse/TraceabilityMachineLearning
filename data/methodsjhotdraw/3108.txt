@@ -1,9 +1,0 @@
-public ColorIcon(Color color, String name, int width, int height) {
-    this.fillColor = color;
-    this.name = name;
-    this.width = width;
-    this.height = height;
-    if ((ColorIcon.noColorImage) == null) {
-        ColorIcon.noColorImage = Images.toBufferedImage(Images.createImage(ColorIcon.class.getResource("/org/jhotdraw/draw/action/images/attribute.color.noColor.png")));
-    }
-}

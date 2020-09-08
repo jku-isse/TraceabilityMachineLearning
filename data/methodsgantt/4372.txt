@@ -1,3 +1,0 @@
-public GanttCalendar getThird() {
-    return (myThirdChange) == null ? this.myThird : ((GanttCalendar) (myThirdChange.myFieldValue));
-}

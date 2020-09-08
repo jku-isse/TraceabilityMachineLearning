@@ -1,5 +1,0 @@
-// CONNECTING
-/**
- * Checks if this Figure can be connected.
- */
-public boolean canConnect();

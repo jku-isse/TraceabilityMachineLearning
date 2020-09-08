@@ -1,3 +1,0 @@
-public void beginScrollViewInteraction(MouseEvent e) {
-    setActiveInteraction(new ChartComponentBase.ScrollViewInteraction(e));
-}

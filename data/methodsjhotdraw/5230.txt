@@ -1,4 +1,0 @@
-public ItemChangeHandler(JToolBar toolbar, String prefkey) {
-    this.toolbar = toolbar;
-    this.prefkey = prefkey;
-}

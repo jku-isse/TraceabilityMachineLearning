@@ -1,4 +1,0 @@
-public void write(DOMOutput out) throws IOException {
-    writeBounds(out);
-    writeAttributes(out);
-}

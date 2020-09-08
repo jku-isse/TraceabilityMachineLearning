@@ -1,7 +1,0 @@
-public void sendToBack(Figure figure) {
-    if (children.remove(figure)) {
-        children.add(0, figure);
-        needsSorting = true;
-        fireAreaInvalidated(figure.getDrawingArea());
-    }
-}

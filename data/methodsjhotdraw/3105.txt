@@ -1,3 +1,0 @@
-public ColorIcon(Color color) {
-    this(color, (color == null ? ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").getToolTipTextProperty("attribute.color.noColor") : ((((color.getRed()) + ",") + (color.getGreen())) + ",") + (color.getBlue())), 14, 14);
-}

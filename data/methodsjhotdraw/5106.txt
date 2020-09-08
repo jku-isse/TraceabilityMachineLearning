@@ -1,3 +1,0 @@
-private TextFigure getStartTimeFigure() {
-    return ((TextFigure) (((ListFigure) (getChild(2))).getChild(1)));
-}

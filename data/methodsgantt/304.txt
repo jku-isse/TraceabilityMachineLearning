@@ -1,4 +1,0 @@
-protected ChartItem getChartItemUnderMousePoint(int xpos, int ypos) {
-    ChartItem result = myChartModel.getChartItemWithCoordinates(xpos, ypos);
-    return result;
-}

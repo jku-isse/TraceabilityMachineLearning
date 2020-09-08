@@ -1,6 +1,0 @@
-public boolean isChanged() {
-    if (isLocked()) {
-        return (myValue) != (myLockedValue);
-    }
-    return false;
-}

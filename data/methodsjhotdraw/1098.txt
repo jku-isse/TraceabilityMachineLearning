@@ -1,3 +1,0 @@
-public ArrowTip() {
-    this(0.35, 12, 11.3);
-}

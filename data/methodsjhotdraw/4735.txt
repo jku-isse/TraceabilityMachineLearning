@@ -1,5 +1,0 @@
-public void setView(DrawingView view) {
-    opacityFieldHandler.setView(view);
-    opacitySliderHandler.setView(view);
-    linkFieldHandler.setView(view);
-}

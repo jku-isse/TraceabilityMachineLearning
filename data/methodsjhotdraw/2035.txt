@@ -1,7 +1,0 @@
-/**
- * Gets the preferred size of the overlay.
- */
-public Dimension getPreferredSize(int cols) {
-    textField.setColumns(cols);
-    return textField.getPreferredSize();
-}

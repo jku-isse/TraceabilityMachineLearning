@@ -1,5 +1,0 @@
-public void setActions() {
-    table.setAction(appli.getCopyAction());
-    table.setAction(appli.getPasteAction());
-    table.setAction(appli.getCutAction());
-}

@@ -1,3 +1,0 @@
-public void appendBlankRow() {
-    tree.addBlankLine(null, (-1));
-}

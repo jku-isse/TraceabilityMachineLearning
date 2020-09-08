@@ -1,3 +1,0 @@
-// DRAWING
-protected void drawText(Graphics2D g) {
-}

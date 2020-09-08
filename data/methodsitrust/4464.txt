@@ -1,3 +1,0 @@
-public HypertensionFactor(HealthRecord currentHealthRecord) {
-    this.record = currentHealthRecord;
-}

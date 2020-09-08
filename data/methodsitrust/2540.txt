@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys ICDCodesDAO
- */
-public ICDCodesDAO getICDCodesDAO() {
-    return new ICDCodesDAO(this);
-}

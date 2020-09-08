@@ -1,7 +1,0 @@
-protected void finishCreation(BezierFigure createdFigure, DrawingView creationView) {
-    fireUndoEvent(createdFigure, creationView);
-    creationView.addToSelection(createdFigure);
-    if (isToolDoneAfterCreation) {
-        fireToolDone();
-    }
-}

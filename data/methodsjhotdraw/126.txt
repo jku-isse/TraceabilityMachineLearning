@@ -1,8 +1,0 @@
-/**
- * Use this method only, if setViewClassName() does not suit you.
- */
-public void setViewClass(Class newValue) {
-    Class oldValue = viewClass;
-    viewClass = newValue;
-    firePropertyChange(DefaultApplicationModel.VIEW_CLASS_PROPERTY, oldValue, newValue);
-}

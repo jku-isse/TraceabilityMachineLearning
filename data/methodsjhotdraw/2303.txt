@@ -1,7 +1,0 @@
-/**
- * FIXME - Liner must work with API of LineConnection!
- */
-@Override
-public BezierPath getBezierPath() {
-    return path;
-}

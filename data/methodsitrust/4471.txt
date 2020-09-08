@@ -1,4 +1,0 @@
-public void testBadSystolic() throws Exception {
-    hr.setBloodPressureSystolic(241);
-    assertTrue(factor.hasRiskFactor());
-}

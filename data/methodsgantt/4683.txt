@@ -1,5 +1,0 @@
-public DefaultCollision(GanttCalendar myAcceptableStart, int myVariation, boolean isActive) {
-    this.myAcceptableStart = myAcceptableStart;
-    this.myVariation = myVariation;
-    this.isActive = isActive;
-}

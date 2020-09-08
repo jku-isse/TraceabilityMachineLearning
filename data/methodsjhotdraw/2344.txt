@@ -1,8 +1,0 @@
-/**
- * Layouts the Path. This may alter the number and type of points
- * in the Path.
- *
- * @param figure
- * 		The ConnectionFigure to be lined out.
- */
-public void lineout(ConnectionFigure figure);

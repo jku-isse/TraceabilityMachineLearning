@@ -1,4 +1,0 @@
-public void testCheckDouble() {
-    assertEquals("", validatorProxy.checkDouble("double", "1.5", 1, 2));
-    assertEquals("double must be a decimal in [1.0,2.0)", validatorProxy.checkDouble("double", "bad", 1, 2));
-}

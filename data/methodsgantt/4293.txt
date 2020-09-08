@@ -1,3 +1,0 @@
-public ResourceAssignment[] getAssignments() {
-    return myAssignments.getAssignments();
-}

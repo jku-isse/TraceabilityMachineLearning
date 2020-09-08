@@ -1,5 +1,0 @@
-public boolean isWeekend(Date curDayStart) {
-    myCalendar.setTime(curDayStart);
-    int dayOfWeek = myCalendar.get(Calendar.DAY_OF_WEEK);
-    return (myTypes[(dayOfWeek - 1)]) == (GPCalendar.DayType.WEEKEND);
-}

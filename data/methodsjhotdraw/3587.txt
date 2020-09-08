@@ -1,7 +1,0 @@
-public boolean contains(float x, float y, float w, float h) {
-    if (((npoints) <= 0) || (!(getBounds2D().intersects(x, y, w, h)))) {
-        return false;
-    }
-    Crossings cross = getCrossings(x, y, (x + w), (y + h));
-    return (cross != null) && (cross.covers(y, (y + h)));
-}

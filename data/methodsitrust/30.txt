@@ -1,3 +1,0 @@
-public void executeSQLFile(String filepath) throws FileNotFoundException, IOException, SQLException {
-    executeSQL(SQLFileCache.getInstance().getQueries(filepath));
-}

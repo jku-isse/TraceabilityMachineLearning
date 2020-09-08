@@ -1,3 +1,0 @@
-public void removeToolListener(ToolListener l) {
-    listenerList.remove(ToolListener.class, l);
-}

@@ -1,8 +1,0 @@
-/**
- * Return a FileFilter that can be used to identify files which can be stored
- * with this output format. Typically, each output format has its own
- * recognizable file extension.
- *
- * @return FileFilter to be used with a javax.swing.JFileChooser
- */
-public FileFilter getFileFilter();

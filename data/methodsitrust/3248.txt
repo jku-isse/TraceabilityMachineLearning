@@ -1,7 +1,0 @@
-public void testExpiredPrescription() throws Exception {
-    List<PrescriptionBean> list;
-    list = patientDAO.getExpiredPrescriptions(2);
-    assertEquals(2, list.size());
-    list = patientDAO.getExpiredPrescriptions(1);
-    assertEquals(0, list.size());
-}

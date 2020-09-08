@@ -1,7 +1,0 @@
-public void testGetApptRequest() throws Exception {
-    List<ApptRequestBean> beans = arDAO.getApptRequestsFor(9000000000L);
-    ApptRequestBean b = beans.get(0);
-    int id = b.getRequestedAppt().getApptID();
-    ApptRequestBean b2 = arDAO.getApptRequest(id);
-    assertEquals(b.getRequestedAppt().getApptID(), b2.getRequestedAppt().getApptID());
-}

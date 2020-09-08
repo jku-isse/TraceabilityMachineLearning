@@ -1,8 +1,0 @@
-public Task[] run(Task dependant) {
-    myContainmentFacade = createContainmentFacade();
-    ArrayList result = new ArrayList();
-    Task root = myContainmentFacade.getRootTask();
-    Task[] nestedTasks = myContainmentFacade.getNestedTasks(root);
-    processTask(nestedTasks, dependant, result);
-    return ((Task[]) (result.toArray(new Task[0])));
-}

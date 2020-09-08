@@ -1,9 +1,0 @@
-/**
- * Returns the number of tiles along the tile grid in the vertical
- * direction.  getNumYTiles() is implemented in terms
- * of getMinTileY() and getMaxTileY() and so does not need to be
- * implemented by subclasses.
- */
-public int getNumYTiles() {
-    return ((getMaxTileY()) - (getMinTileY())) + 1;
-}

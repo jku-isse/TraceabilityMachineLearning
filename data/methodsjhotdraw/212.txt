@@ -1,6 +1,0 @@
-/**
- * Clears the view, for example by emptying the contents of
- * the view, or by reading a template contents from a file.
- * By convention this method is never invoked on the AWT Event Dispatcher Thread.
- */
-public void clear();

@@ -1,4 +1,0 @@
-public void copySelection() {
-    this.saveSelectionToClipboard(false);
-    this.isCut = false;
-}

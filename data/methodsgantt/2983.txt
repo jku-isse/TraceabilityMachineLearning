@@ -1,8 +1,0 @@
-public void unselectOther(JRadioButton selectedButton) {
-    bDoubleDot.setSelected((selectedButton == (bDoubleDot)));
-    bDotComa.setSelected((selectedButton == (bDotComa)));
-    bComa.setSelected((selectedButton == (bComa)));
-    bSpace.setSelected((selectedButton == (bSpace)));
-    bOther.setSelected((selectedButton == (bOther)));
-    tfOther.setEnabled((selectedButton == (bOther)));
-}

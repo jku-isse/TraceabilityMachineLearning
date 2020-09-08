@@ -1,7 +1,0 @@
-/**
- * Accessor for text area.
- * This is used by Actions that need ot act on the text area of the View.
- */
-public int getSelectionStart() {
-    return editor.getSelectionStart();
-}

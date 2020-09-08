@@ -1,7 +1,0 @@
-/**
- * Adds a mouse motion  listener to the drawing view.
- *
- * @param l
- * 		the listener.
- */
-public void addMouseMotionListener(MouseMotionListener l);

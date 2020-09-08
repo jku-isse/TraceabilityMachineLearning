@@ -1,6 +1,0 @@
-/**
- * set new open tips value.
- */
-public void setOpenTips(boolean openTips) {
-    this.openTips = openTips;
-}

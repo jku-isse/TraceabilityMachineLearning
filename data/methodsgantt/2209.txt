@@ -1,3 +1,0 @@
-public GPOptionGroup[] getNetworkOptionGroups() {
-    return new GPOptionGroup[]{ myFtpOptions };
-}

@@ -1,3 +1,0 @@
-List getBottomUnitOffsets() {
-    return myBottomUnitOffsets;
-}

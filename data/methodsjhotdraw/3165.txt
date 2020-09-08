@@ -1,3 +1,0 @@
-public <T> void setHandleAttribute(AttributeKey<T> key, T value) {
-    target.setHandleAttribute(key, value);
-}

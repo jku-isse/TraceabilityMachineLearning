@@ -1,3 +1,0 @@
-BackAction() {
-    super(GanttLanguage.getInstance().getText("back"));
-}

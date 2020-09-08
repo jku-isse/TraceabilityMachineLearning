@@ -1,3 +1,0 @@
-public void setLabProcedureCode(String aLabProcedureCode) {
-    labProcedureCode = aLabProcedureCode;
-}

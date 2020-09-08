@@ -1,3 +1,0 @@
-public int getApptID() {
-    return apptID;
-}

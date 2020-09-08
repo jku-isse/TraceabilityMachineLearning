@@ -1,8 +1,0 @@
-/**
- * Returns the column name.
- *
- * @return The column name.
- */
-public String getName() {
-    return name;
-}

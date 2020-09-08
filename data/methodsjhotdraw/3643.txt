@@ -1,3 +1,0 @@
-public void setAttributeKey(AttributeKey<T> newValue) {
-    attributeKey = newValue;
-}

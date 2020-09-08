@@ -1,9 +1,0 @@
-protected static void initMocks() {
-    if ((ActionTestWithMocks.control) == null)
-        ActionTestWithMocks.control = EasyMock.createNiceControl();
-    else
-        ActionTestWithMocks.control.reset();
-
-    ActionTestWithMocks.createMocks();
-    ActionTestWithMocks.createFactoryExpectations();
-}

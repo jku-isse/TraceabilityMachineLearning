@@ -1,9 +1,0 @@
-public Task findTaskWithCoordinates(int x, int y) {
-    y = y + (getVerticalOffset());
-    GraphicPrimitiveContainer.GraphicPrimitive primitive = myTaskRendererImpl.getPrimitiveContainer().getPrimitive(x, (y - (getChartUIConfiguration().getHeaderHeight())));
-    if (primitive instanceof GraphicPrimitiveContainer.Rectangle) {
-        TaskActivity activity = ((TaskActivity) (primitive.getModelObject()));
-        return activity == null ? null : activity.getTask();
-    }
-    return null;
-}

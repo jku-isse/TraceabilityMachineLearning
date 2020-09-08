@@ -1,3 +1,0 @@
-public void patient6() throws FileNotFoundException, IOException, SQLException {
-    new DBBuilder(factory).executeSQLFile(((DIR) + "/patient6.sql"));
-}

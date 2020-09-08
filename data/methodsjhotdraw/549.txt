@@ -1,6 +1,0 @@
-public Color getColor() {
-    if ((color) == null) {
-        color = new Color(system.toRGB(components));
-    }
-    return color;
-}

@@ -1,1 +1,0 @@
-public void resourcesRemoved(ResourceEvent event);

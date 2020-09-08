@@ -1,5 +1,0 @@
-private TaskManagerConfigImpl(ResourceManager resourceManager, GanttLanguage i18n) {
-    myResourceManager = resourceManager;
-    myTimeUnitStack = new GPTimeUnitStack(i18n);
-    myCalendar = new WeekendCalendarImpl();
-}

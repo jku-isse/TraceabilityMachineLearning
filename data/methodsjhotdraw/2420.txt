@@ -1,3 +1,0 @@
-protected QuadTreeCompositeFigure.FigureHandler createFigureHandler() {
-    return new QuadTreeCompositeFigure.FigureHandler();
-}

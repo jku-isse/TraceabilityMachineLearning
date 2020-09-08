@@ -1,5 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    if ((toolBar) != null) {
-        putValue(Actions.SELECTED_KEY, (!(toolBar.isVisible())));
-    }
-}

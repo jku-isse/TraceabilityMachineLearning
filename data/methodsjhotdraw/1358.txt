@@ -1,3 +1,0 @@
-private Color getStrokeColor(Figure f) {
-    return AttributeKeys.STROKE_COLOR.get(f);
-}

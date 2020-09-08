@@ -1,6 +1,0 @@
-// --- DragSourceListener methods -----------------------------------
-/**
- * as the hotspot enters a platform dependent drop site
- */
-public void dragEnter(DragSourceDragEvent dsde) {
-}

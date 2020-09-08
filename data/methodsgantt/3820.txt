@@ -1,4 +1,0 @@
-public void clear() {
-    fireCleanup();
-    resources.clear();
-}

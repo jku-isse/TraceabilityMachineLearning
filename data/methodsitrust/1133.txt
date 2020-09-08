@@ -1,3 +1,0 @@
-public void testDoesFamilyMemberHaveHeartDisease() throws iTrustException {
-    assertFalse(action.doesFamilyMemberHaveHeartDisease(fmBean));
-}

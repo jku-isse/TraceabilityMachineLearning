@@ -1,5 +1,0 @@
-public ExportFileInfo(File file, int format, GanttExportSettings options) {
-    myFile = file;
-    myFormat = format;
-    myStorageOptions = options;
-}

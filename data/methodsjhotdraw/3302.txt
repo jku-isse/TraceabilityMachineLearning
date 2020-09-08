@@ -1,3 +1,0 @@
-public VerticalGridLayout(int rows, int cols, int hgap, int vgap) {
-    this(rows, cols, hgap, vgap, true);
-}

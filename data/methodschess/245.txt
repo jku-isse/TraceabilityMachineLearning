@@ -1,5 +1,0 @@
-// Methods
-/**
- * Reset the hashtables for a new game.
- */
-void reset();

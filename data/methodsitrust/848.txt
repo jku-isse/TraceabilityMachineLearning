@@ -1,5 +1,0 @@
-public void testSearchForPersonnelWithName3() {
-    SearchUsersAction act = new SearchUsersAction(evil, 2L);
-    List<PersonnelBean> personnel = act.searchForPersonnelWithName("null", "null");
-    assertEquals(null, personnel);
-}

@@ -1,4 +1,0 @@
-public void actionPerformed(ActionEvent e) {
-    System.err.println(("[ToggleChartAction] actionPerformed: toggling chart=" + (myChart.getName())));
-    myView.setVisible((!(myView.isVisible())));
-}

@@ -1,4 +1,0 @@
-/**
- * Sets the drawing of the DrawingComponent.
- */
-public void setDrawing(Drawing newValue);

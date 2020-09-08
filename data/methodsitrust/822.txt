@@ -1,8 +1,0 @@
-public void testCheckWrongRole() {
-    try {
-        action.checkRole(9000000000L, "patient");
-        fail("exception should have been thrown");
-    } catch (iTrustException e) {
-        assertEquals("User does not exist with the designated role", e.getMessage());
-    }
-}

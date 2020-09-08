@@ -1,8 +1,0 @@
-/**
- * B0, B1, B2, B3 :
- * 	Bezier multipliers
- */
-private static double b0(double u) {
-    double tmp = 1.0 - u;
-    return (tmp * tmp) * tmp;
-}

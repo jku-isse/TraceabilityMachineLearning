@@ -1,4 +1,0 @@
-public void setTopTimeUnit(TimeUnit topTimeUnit) {
-    setTopUnit(topTimeUnit);
-    myTimeFrames = null;
-}

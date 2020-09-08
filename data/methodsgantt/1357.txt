@@ -1,3 +1,0 @@
-public ResourceAction(ResourceManager hrManager) {
-    myManager = hrManager;
-}

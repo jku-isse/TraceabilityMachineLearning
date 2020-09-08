@@ -1,4 +1,0 @@
-// SHAPE AND BOUNDS
-public double getX() {
-    return ellipse.x;
-}

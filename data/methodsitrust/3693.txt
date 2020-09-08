@@ -1,8 +1,0 @@
-public static TransactionType parse(int code) {
-    for (TransactionType type : TransactionType.values()) {
-        if ((type.code) == code)
-            return type;
-
-    }
-    throw new IllegalArgumentException(("No transaction type exists for code " + code));
-}

@@ -1,8 +1,0 @@
-protected Rectangle basicGetBounds() {
-    Rectangle r = new Rectangle(locate());
-    int h = getHandlesize();
-    r.x -= h / 2;
-    r.y -= h / 2;
-    r.width = r.height = h;
-    return r;
-}

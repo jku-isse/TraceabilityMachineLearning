@@ -1,8 +1,0 @@
-/**
- * Get the current destination of this ply.
- *
- * @return The currently known destination of this ply.
- */
-public final Position getDestination() {
-    return _destination;
-}

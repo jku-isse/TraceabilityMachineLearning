@@ -1,7 +1,0 @@
-public void testAssignHCPToHospitalBadID() {
-    try {
-        action.assignHCPToHospital("f", "1");
-        fail();
-    } catch (iTrustException e) {
-    }
-}

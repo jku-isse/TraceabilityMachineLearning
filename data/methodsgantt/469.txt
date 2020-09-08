@@ -1,3 +1,0 @@
-public GanttProject(boolean isOnlyViewer) {
-    this(isOnlyViewer, false);
-}

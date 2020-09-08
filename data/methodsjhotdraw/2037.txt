@@ -1,6 +1,0 @@
-/**
- * Remove an action listener
- */
-public void removeActionListener(ActionListener listener) {
-    textField.removeActionListener(listener);
-}

@@ -1,6 +1,0 @@
-// COMPOSITE FIGURES
-// CLONING
-// EVENT HANDLING
-public Rectangle2D.Double getBounds() {
-    return ((Rectangle2D.Double) (ellipse.getBounds2D()));
-}

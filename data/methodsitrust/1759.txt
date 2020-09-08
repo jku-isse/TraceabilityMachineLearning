@@ -1,8 +1,0 @@
-/**
- * Gets the ND Code for this procedure
- *
- * @return The ND Code for this procedure
- */
-public String getNDCode() {
-    return NDCode;
-}

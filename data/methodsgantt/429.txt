@@ -1,6 +1,0 @@
-/**
- * set a new value for undo number.
- */
-public void setUndoNumber(int number) {
-    undoNumber = number;
-}

@@ -1,4 +1,0 @@
-public GPOptionGroup(String id, GPOption[] options) {
-    myID = id;
-    myOptions = options;
-}

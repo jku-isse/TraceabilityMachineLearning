@@ -1,3 +1,0 @@
-protected void readAttributes(DOMInput in) throws IOException {
-    // SVGUtil.readAttributes(this, in);
-}

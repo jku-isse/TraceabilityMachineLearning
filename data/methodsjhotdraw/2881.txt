@@ -1,7 +1,0 @@
-/**
- * Adds handles for scaling and moving a Figure.
- */
-public static void addScaleMoveTransformHandles(Figure f, Collection<Handle> handles) {
-    TransformHandleKit.addCornerTransformHandles(f, handles);
-    TransformHandleKit.addEdgeTransformHandles(f, handles);
-}

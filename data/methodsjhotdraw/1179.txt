@@ -1,3 +1,0 @@
-public Connector findCompatibleConnector(Connector c, boolean isStart) {
-    return new ChopBezierConnector(this);
-}

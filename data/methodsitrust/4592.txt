@@ -1,3 +1,0 @@
-public void setCode(double code) {
-    this.code = String.valueOf(code);
-}

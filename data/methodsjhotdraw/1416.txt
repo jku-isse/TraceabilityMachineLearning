@@ -1,9 +1,0 @@
-/**
- * Returns false if <code>isInProgress</code> or if super
- * returns false.
- *
- * @see #isInProgress
- */
-public boolean canUndo() {
-    return (!(isInProgress())) && (super.canUndo());
-}

@@ -1,3 +1,0 @@
-public Font getFont() {
-    return SVGAttributeKeys.getFont(this);
-}

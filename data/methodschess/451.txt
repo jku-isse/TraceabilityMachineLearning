@@ -1,9 +1,0 @@
-// Methods
-/**
- * Render this notation as a string.
- *
- * @return A string representation of this ply.
- */
-public String toString() {
-    return _stringRepresentation;
-}

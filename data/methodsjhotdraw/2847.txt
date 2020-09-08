@@ -1,5 +1,0 @@
-/**
- * Activates the tool for the given editor. This method is called
- * whenever the user switches to this tool.
- */
-public void activate(DrawingEditor editor);

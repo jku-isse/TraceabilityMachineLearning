@@ -1,8 +1,0 @@
-/**
- * Sets the color value of the model.
- * This is a convenience method for calling setCompositeColor(new CompositeColor(getColorSystem(), color.getRGB());
- *
- * @param newValue
- * 		.
- */
-public void setColor(Color newValue);

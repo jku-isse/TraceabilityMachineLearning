@@ -1,6 +1,0 @@
-/**
- * Return the project description
- */
-public String getProjectDescription() {
-    return taDescr.getText();
-}

@@ -1,5 +1,0 @@
-@Override
-protected void validate() {
-    super.validate();
-    layout();
-}

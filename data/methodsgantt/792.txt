@@ -1,6 +1,0 @@
-public HiddenTask(DefaultMutableTreeNode node, DefaultMutableTreeNode parent, int index) {
-    this.node = node;
-    this.parent = parent;
-    this.index = index;
-    // this.node.setParent(this.parent);
-}

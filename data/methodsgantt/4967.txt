@@ -1,3 +1,0 @@
-private void fireUndoableEditHappened(UndoableEditImpl swingEditImpl) {
-    myUndoEventDispatcher.postEdit(swingEditImpl);
-}

@@ -1,7 +1,0 @@
-/**
- * Test if a king is in check.
- *
- * @param white
- * 		true, if the white king is checked, false otherwise.
- */
-boolean isInCheck(boolean white);

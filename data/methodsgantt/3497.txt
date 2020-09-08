@@ -1,4 +1,0 @@
-public GanttXMLOpen(TaskManager taskManager) {
-    myContext = new ParsingContext();
-    myTaskManager = taskManager;
-}

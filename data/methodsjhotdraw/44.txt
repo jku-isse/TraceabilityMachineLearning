@@ -1,3 +1,0 @@
-public int getMultipleOpenId() {
-    return multipleOpenId;
-}

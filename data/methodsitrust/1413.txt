@@ -1,5 +1,0 @@
-public void testDateFailure() {
-    OfficeVisitBean ov = new OfficeVisitBean();
-    ov.setVisitDateStr("bad date");
-    assertNull(ov.getVisitDate());
-}

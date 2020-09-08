@@ -1,3 +1,0 @@
-private boolean isProjectBoundariesOptionOn() {
-    return myProjectDatesOption.isChecked();
-}

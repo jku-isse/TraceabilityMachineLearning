@@ -1,7 +1,0 @@
-/**
- * Create a new line-numbering writer.
- */
-public LFWriter(Writer out) {
-    super(out);
-    lineSeparator = ((String) (System.getProperty("line.separator")));
-}

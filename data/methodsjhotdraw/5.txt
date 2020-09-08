@@ -1,2 +1,0 @@
-public void addWindow(Window window, View p) {
-}

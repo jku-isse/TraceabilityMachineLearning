@@ -1,4 +1,0 @@
-/**
- * Returns the JComponent of the attribute field.
- */
-public JComponent getComponent();

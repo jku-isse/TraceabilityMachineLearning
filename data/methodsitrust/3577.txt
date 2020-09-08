@@ -1,3 +1,0 @@
-public void officeVisits() throws FileNotFoundException, IOException, SQLException {
-    new DBBuilder(factory).executeSQLFile(((DIR) + "/officeVisits.sql"));
-}

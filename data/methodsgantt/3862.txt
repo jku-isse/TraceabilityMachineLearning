@@ -1,4 +1,0 @@
-private void processDayOff(GanttDaysOff dayOff) {
-    Date dayOffEnd = dayOff.getFinish().getTime();
-    addLoad(dayOff.getStart().getTime(), dayOffEnd, (-1), myDaysOff, null);
-}

@@ -1,8 +1,0 @@
-public void moveTo(double x1, double y1) {
-    if ((size()) != 0) {
-        throw new IllegalPathStateException("moveTo only allowed when empty");
-    }
-    BezierPath.Node node = new BezierPath.Node(x1, y1);
-    node.keepColinear = false;
-    add(node);
-}

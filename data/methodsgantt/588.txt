@@ -1,5 +1,0 @@
-public void setViewIndex(int viewIndex) {
-    if ((getTabs().getTabCount()) > viewIndex) {
-        getTabs().setSelectedIndex(viewIndex);
-    }
-}

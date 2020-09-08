@@ -1,3 +1,0 @@
-public int compareTo(FontFaceNode that) {
-    return this.name.compareTo(that.name);
-}

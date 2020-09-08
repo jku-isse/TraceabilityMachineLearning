@@ -1,7 +1,0 @@
-public boolean equals(Object o) {
-    boolean result = o instanceof ResourceAssignmentCollectionImpl.MutationInfo;
-    if (result) {
-        result = myAssignment.getResource().equals(((ResourceAssignmentCollectionImpl.MutationInfo) (o)).myAssignment.getResource());
-    }
-    return result;
-}

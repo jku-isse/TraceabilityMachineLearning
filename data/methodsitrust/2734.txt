@@ -1,9 +1,0 @@
-public void testUpdateName() throws DBException, iTrustException {
-    final String id = "7777777777";
-    final String name = "testUpdateName NEW Hospital";
-    HospitalBean hosp = genericAdd(id, "");
-    hosp.setHospitalName(name);
-    assertEquals(1, hospitalDAO.updateHospital(hosp));
-    hosp = hospitalDAO.getHospital(id);
-    assertEquals(name, hosp.getHospitalName());
-}

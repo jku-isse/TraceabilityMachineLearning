@@ -1,9 +1,0 @@
-/**
- * Returns the minimum acceptable value.
- *
- * @return the value of the minimum property
- * @see #setMinimum
- */
-public int getMinimum() {
-    return 0;
-}

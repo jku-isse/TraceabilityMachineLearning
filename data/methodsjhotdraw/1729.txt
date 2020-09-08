@@ -1,5 +1,0 @@
-/**
- * register this DragGestureRecognizers Listeners with the Component
- */
-protected void registerListeners() {
-}

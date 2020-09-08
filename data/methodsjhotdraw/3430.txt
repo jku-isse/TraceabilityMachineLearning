@@ -1,8 +1,0 @@
-/**
- * Constructs an iterator given a BezierPath.
- *
- * @see BezierPath#getPathIterator
- */
-public BezierPathIterator(BezierPath path) {
-    this(path, null);
-}

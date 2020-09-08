@@ -1,6 +1,0 @@
-@Override
-public void attributeChanged(FigureEvent e) {
-    // We could fire a property change event here, in case
-    // some other object would like to observe us.
-    // target.firePropertyChange("name", e.getOldValue(), e.getNewValue());
-}

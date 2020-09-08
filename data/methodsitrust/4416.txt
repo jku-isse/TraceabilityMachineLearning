@@ -1,5 +1,0 @@
-public void testDefaultAge() throws Exception {
-    assertFalse(factor.hasRiskFactor());
-    factor = new AgeFactor(p, (-1));
-    assertTrue(factor.hasRiskFactor());
-}

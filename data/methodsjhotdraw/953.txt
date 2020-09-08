@@ -1,5 +1,0 @@
-public Collection<Figure> getDecomposition() {
-    LinkedList<Figure> list = new LinkedList<Figure>();
-    list.add(this);
-    return list;
-}

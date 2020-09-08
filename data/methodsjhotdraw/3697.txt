@@ -1,4 +1,0 @@
-public void setAttributeValue(Double newValue) {
-    attributeValue = newValue;
-    setValue(((int) (newValue * (scaleFactor))));
-}

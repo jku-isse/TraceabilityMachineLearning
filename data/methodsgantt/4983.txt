@@ -1,6 +1,0 @@
-private void restoreDocument(Document document) throws IOException {
-    Document projectDocument = myManager.getProject().getDocument();
-    myManager.getProject().close();
-    document.read();
-    myManager.getProject().setDocument(projectDocument);
-}

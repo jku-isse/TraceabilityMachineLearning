@@ -1,3 +1,0 @@
-public String[] getAvailableValues() {
-    return ExporterToImage.FileTypeOption.FILE_FORMAT_ID;
-}

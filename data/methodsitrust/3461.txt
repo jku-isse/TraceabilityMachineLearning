@@ -1,4 +1,0 @@
-public void testSurveyResultsNoZip() throws Exception {
-    List<SurveyResultBean> list = surveyResultDAO.getSurveyResultsForZip("99999", SurveyResultBean.ANY_SPECIALTY);
-    assertEquals(0, list.size());
-}

@@ -1,4 +1,0 @@
-public void testGetSecurityQuestionEvil() throws Exception {
-    action = new ResetPasswordAction(EvilDAOFactory.getEvilInstance());
-    assertEquals("", action.getSecurityQuestion(1L));
-}

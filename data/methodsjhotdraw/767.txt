@@ -1,7 +1,0 @@
-protected void writeDecorator(DOMOutput out) throws IOException {
-    if ((decorator) != null) {
-        out.openElement("decorator");
-        out.writeObject(decorator);
-        out.closeElement();
-    }
-}

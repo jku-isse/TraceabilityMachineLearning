@@ -1,3 +1,0 @@
-private void setTopUnit(TimeUnit myTopUnit) {
-    this.myTopUnit = myTopUnit;
-}

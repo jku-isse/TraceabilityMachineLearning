@@ -1,5 +1,0 @@
-public void testGood() throws Exception {
-    String value = "12345";
-    String errorMessage = CPTCodeValidatorTest.PASSED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, CPTCodeValidatorTest.VALIDATION_FORMAT, false));
-}

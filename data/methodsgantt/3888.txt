@@ -1,3 +1,0 @@
-public void setMaximumUnitsPerDay(int maximumUnitsPerDay) {
-    this.maximumUnitsPerDay = maximumUnitsPerDay;
-}

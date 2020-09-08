@@ -1,7 +1,0 @@
-private void fireTaskRemoved(Task task, Task oldSupertask) {
-    TaskHierarchyEvent e = new TaskHierarchyEvent(this, task, oldSupertask, null);
-    for (int i = 0; i < (myListeners.size()); i++) {
-        TaskListener next = ((TaskListener) (myListeners.get(i)));
-        next.taskRemoved(e);
-    }
-}

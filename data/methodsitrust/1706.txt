@@ -1,3 +1,0 @@
-public void setMethodType(String aMethodType) {
-    methodType = aMethodType;
-}

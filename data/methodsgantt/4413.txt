@@ -1,1 +1,0 @@
-public TaskLength createLength(long length);

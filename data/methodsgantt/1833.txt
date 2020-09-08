@@ -1,3 +1,0 @@
-public void scrollLeft(Date date) {
-    setStartDate(date);
-}

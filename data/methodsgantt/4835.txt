@@ -1,5 +1,0 @@
-public TimeUnit createDateFrameableTimeUnit(String name, TimeUnit atomUnit, int atomCount, DateFrameable framer) {
-    TimeUnit result = new TimeUnitDateFrameableImpl(name, this, atomUnit, framer);
-    registerTimeUnit(result, atomCount);
-    return result;
-}

@@ -1,3 +1,0 @@
-SortDirection(String dirString) {
-    this.dirString = dirString;
-}

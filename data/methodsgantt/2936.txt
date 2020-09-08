@@ -1,7 +1,0 @@
-/* (non-Javadoc)
-
-@see net.sourceforge.ganttproject.gui.options.GeneralOptionPanel#applyChanges(boolean)
- */
-public boolean applyChanges(boolean askForApply) {
-    return false;
-}

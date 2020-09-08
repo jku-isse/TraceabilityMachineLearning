@@ -1,6 +1,0 @@
-/**
- * Get the position of all empty squares.
- *
- * @return The position of all empty squares.
- */
-long getEmptySquares();

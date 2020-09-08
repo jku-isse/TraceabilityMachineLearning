@@ -1,9 +1,0 @@
-public void activate(DrawingEditor editor) {
-    this.editor = editor;
-    editorProxy.setTarget(editor);
-    isActive = true;
-    // Repaint all handles
-    for (DrawingView v : editor.getDrawingViews()) {
-        v.repaintHandles();
-    }
-}

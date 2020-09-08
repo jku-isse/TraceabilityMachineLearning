@@ -1,5 +1,0 @@
-public TextFieldAndFileChooserComponent(final Component parentComponent, String dialogCaption) {
-    myDialogCaption = dialogCaption;
-    myParentComponent = parentComponent;
-    initComponents();
-}

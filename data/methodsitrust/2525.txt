@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys AccessDAO
- */
-public AccessDAO getAccessDAO() {
-    return new AccessDAO(this);
-}

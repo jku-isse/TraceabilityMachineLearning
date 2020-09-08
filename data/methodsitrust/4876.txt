@@ -1,5 +1,0 @@
-public void testNotInt() throws Exception {
-    String value = "1234a";
-    String errorMessage = NDCodeValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, NDCodeValidatorTest.VALIDATION_FORMAT, false));
-}

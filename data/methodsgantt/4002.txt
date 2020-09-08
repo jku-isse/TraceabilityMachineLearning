@@ -1,3 +1,0 @@
-public Role[] getProjectLevelRoles() {
-    return myProjectRoleSet.getRoles();
-}

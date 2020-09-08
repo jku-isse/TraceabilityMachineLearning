@@ -1,3 +1,0 @@
-public TriangleFigure(AttributeKeys.Orientation direction) {
-    this(0, 0, 0, 0, direction);
-}

@@ -1,3 +1,0 @@
-protected boolean isEnabled(List selection) {
-    return (selection.size()) >= 2;
-}

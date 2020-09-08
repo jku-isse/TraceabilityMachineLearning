@@ -1,4 +1,0 @@
-public ChartOptionGroup(String id, GPOption[] options, ChartModelBase.OptionEventDispatcher eventDispatcher) {
-    super(id, options);
-    myEventDispatcher = eventDispatcher;
-}

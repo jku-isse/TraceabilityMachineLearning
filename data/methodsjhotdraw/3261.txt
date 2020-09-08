@@ -1,8 +1,0 @@
-protected Dimension getPreferredMenuItemSize(JComponent c, Icon checkIcon, Icon arrowIcon, int defaultTextIconGap) {
-    JMenuItem b = ((JMenuItem) (c));
-    Icon icon = ((Icon) (b.getIcon()));
-    if (icon == null) {
-        return new Dimension(22, 22);
-    }
-    return new Dimension(((icon.getIconWidth()) + 2), ((icon.getIconHeight()) + 2));
-}

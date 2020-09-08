@@ -1,6 +1,0 @@
-public void testSecondaryMIDPatient() throws Exception {
-    tranDAO.logTransaction(TransactionType.PATIENT_CREATE, 1L, 98L, "added information");
-    List<TransactionBean> list = tranDAO.getAllTransactions();
-    assertEquals(1L, list.get(0).getLoggedInMID());
-    assertEquals(98L, list.get(0).getSecondaryMID());
-}

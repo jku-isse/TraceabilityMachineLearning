@@ -1,7 +1,0 @@
-public List<TelemedicineBean> loadList(ResultSet rs) throws SQLException {
-    List<TelemedicineBean> list = new ArrayList<TelemedicineBean>();
-    while (rs.next()) {
-        list.add(loadSingle(rs));
-    } 
-    return list;
-}

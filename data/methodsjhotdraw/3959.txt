@@ -1,9 +1,0 @@
-public void add(Transferable t) {
-    DataFlavor[] f = t.getTransferDataFlavors();
-    for (int i = 0; i < (f.length); i++) {
-        if (!(transferables.containsKey(f[i])))
-            flavors.add(f[i]);
-
-        transferables.put(f[i], t);
-    }
-}

@@ -1,3 +1,0 @@
-public DefaultColorSliderModel() {
-    setColorSystem(new HSLRGBColorSystem());
-}

@@ -1,3 +1,0 @@
-protected Connector findConnector(Point2D.Double p, Figure f, ConnectionFigure prototype) {
-    return f.findConnector(p, prototype);
-}

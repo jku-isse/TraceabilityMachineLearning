@@ -1,4 +1,0 @@
-public PathIterator getPathIterator(AffineTransform at, double flatness) {
-    validatePath();
-    return generalPath.getPathIterator(at, flatness);
-}

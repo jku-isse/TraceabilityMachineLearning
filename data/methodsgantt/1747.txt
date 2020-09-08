@@ -1,3 +1,0 @@
-public boolean isPrevious() {
-    return isPreviousState;
-}

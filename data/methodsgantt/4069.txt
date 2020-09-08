@@ -1,6 +1,0 @@
-CustomColumEvent(String oldName, CustomColumn column) {
-    myOldName = oldName;
-    myType = CustomColumEvent.EVENT_RENAME;
-    myColName = column.getName();
-    myColumn = column;
-}

@@ -1,7 +1,0 @@
-public void testFilterHCPList3() {
-    // Filter on last name and specialty.
-    List<HCPVisitBean> beanslist = action.filterHCPList("Frank", "surgeon", "");
-    ArrayList<HCPVisitBean> beans = new ArrayList<HCPVisitBean>(beanslist);
-    assertEquals(1, beans.size());
-    assertEquals("Jason Frankenstein", beans.get(0).getHCPName());
-}

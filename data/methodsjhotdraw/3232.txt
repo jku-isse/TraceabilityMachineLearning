@@ -1,8 +1,0 @@
-@Override
-protected void updateEnabledState() {
-    if ((getView()) != null) {
-        setEnabled((isGroupingAction ? canGroup() : canUngroup()));
-    } else {
-        setEnabled(false);
-    }
-}

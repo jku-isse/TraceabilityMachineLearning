@@ -1,9 +1,0 @@
-public void testBadNumber() throws Exception {
-    try {
-        action.changeSessionTimeout("0");
-        fail("exception should have been thrown");
-    } catch (FormValidationException e) {
-        assertEquals(1, e.getErrorList().size());
-        assertEquals("Must be a number greater than 0", e.getErrorList().get(0));
-    }
-}

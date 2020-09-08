@@ -1,6 +1,0 @@
-/**
- * set a new resources underload tasks color.
- */
-public void setResourceUnderloadColor(Color color) {
-    getUIConfiguration().setResourceUnderloadColor(color);
-}

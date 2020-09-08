@@ -1,8 +1,0 @@
-// Output methods
-/**
- * as the name indicated
- */
-public boolean isBilan() {
-    bilan = mileStoneCheckBox1.isSelected();
-    return bilan;
-}

@@ -1,4 +1,0 @@
-public void clear() {
-    myId2task.clear();
-    isModified = true;
-}

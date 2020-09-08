@@ -1,3 +1,0 @@
-void setDirty() {
-    isModified = true;
-}

@@ -1,8 +1,0 @@
-public void putValue(String key, Object newValue) {
-    super.putValue(key, newValue);
-    if (key == (Actions.SELECTED_KEY)) {
-        if ((toolBar) != null) {
-            toolBar.setVisible(((Boolean) (newValue)));
-        }
-    }
-}

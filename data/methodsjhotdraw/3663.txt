@@ -1,1 +1,0 @@
-public void setArrangement(Arrangeable.Arrangement newValue);

@@ -1,3 +1,0 @@
-public final void setBounds(Rectangle2D.Double bounds) {
-    setBounds(new Point2D.Double(bounds.x, bounds.y), new Point2D.Double(((bounds.x) + (bounds.width)), ((bounds.y) + (bounds.height))));
-}

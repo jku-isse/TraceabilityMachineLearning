@@ -1,1 +1,0 @@
-void durationChanged(int newDuration);

@@ -1,4 +1,0 @@
-/**
- * Gets input formats for the Drawing in order of preferred formats.
- */
-List<InputFormat> getInputFormats();

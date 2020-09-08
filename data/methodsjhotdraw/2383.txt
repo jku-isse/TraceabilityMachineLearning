@@ -1,7 +1,0 @@
-/**
- * Draws this handle.
- * Null Handles are drawn as unfilled rectangles.
- */
-public void draw(Graphics2D g) {
-    drawRectangle(g, ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.NULL_HANDLE_FILL_COLOR))), ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.NULL_HANDLE_STROKE_COLOR))));
-}

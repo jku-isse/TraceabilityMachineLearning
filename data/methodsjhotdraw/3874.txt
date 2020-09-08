@@ -1,6 +1,0 @@
-/**
- * Adds a sheet listener.
- */
-public void addSheetListener(SheetListener l) {
-    listenerList.add(SheetListener.class, l);
-}

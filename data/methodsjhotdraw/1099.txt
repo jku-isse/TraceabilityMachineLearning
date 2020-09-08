@@ -1,7 +1,0 @@
-/**
- * Constructs an arrow tip with the specified angle and outer and inner
- * radius.
- */
-public ArrowTip(double angle, double outerRadius, double innerRadius) {
-    this(angle, outerRadius, innerRadius, true, false, true);
-}

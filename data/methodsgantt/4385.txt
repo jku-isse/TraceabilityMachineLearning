@@ -1,7 +1,0 @@
-public void setShape(final ShapePaint shape) {
-    myCommands.add(new Runnable() {
-        public void run() {
-            TaskImpl.this.setShape(shape);
-        }
-    });
-}

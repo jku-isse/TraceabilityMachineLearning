@@ -1,6 +1,0 @@
-/**
- * Creates the drawing component.
- */
-protected SVGDrawingPanel createDrawingComponent() {
-    return new SVGDrawingPanel();
-}

@@ -1,7 +1,0 @@
-/**
- * Creates a new instance with the specified attribute key, type token class,
- * and default value, and allowing null values.
- */
-public AttributeKey(String key, Class<T> clazz, T defaultValue) {
-    this(key, clazz, defaultValue, true);
-}

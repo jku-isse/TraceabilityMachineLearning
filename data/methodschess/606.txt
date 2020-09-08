@@ -1,7 +1,0 @@
-/**
- * Render a piece move.
- *
- * @param ply
- * 		The ply to render.
- */
-void doPly(Ply ply);

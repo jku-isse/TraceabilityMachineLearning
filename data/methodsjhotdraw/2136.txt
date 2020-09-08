@@ -1,4 +1,0 @@
-/**
- * Removes a listener for this handle.
- */
-void removeHandleListener(HandleListener l);

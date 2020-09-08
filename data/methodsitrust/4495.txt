@@ -1,4 +1,0 @@
-public WeightFactor(HealthRecord currentHealthRecord, int bmiThreshold) {
-    this.currentHealthRecord = currentHealthRecord;
-    this.bmiThreshold = bmiThreshold;
-}

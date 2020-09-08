@@ -1,8 +1,0 @@
-public void applyStylesTo(IXMLElement elem) {
-    for (CSSRule rule : new ReversedList<CSSRule>(rules)) {
-        if (rule.matches(elem)) {
-            // System.out.println("StyleManager applying "+rule+" to "+elem);
-            rule.apply(elem);
-        }
-    }
-}

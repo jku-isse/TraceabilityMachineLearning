@@ -1,4 +1,0 @@
-public String toXMLString() {
-    // return getDate() + "/" + (getMonth() + 1) + "/" + getYear();
-    return DateParser.getIsoDateNoHours(getTime());
-}

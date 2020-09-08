@@ -1,9 +1,0 @@
-public void testGetAllSiblings() throws Exception {
-    List<FamilyMemberBean> siblings = familyDAO.getSiblings(3);
-    assertEquals(3, siblings.size());
-    Collections.sort(siblings, this);
-    assertEquals("Sib1", siblings.get(0).getFirstName());
-    assertEquals("Sib2", siblings.get(1).getFirstName());
-    assertEquals("Sib3", siblings.get(2).getFirstName());
-    assertEquals("Sibling", siblings.get(0).getRelation());
-}

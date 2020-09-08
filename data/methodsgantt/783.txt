@@ -1,7 +1,0 @@
-/**
- * set the predecessor task by GanttTask object
- */
-public void setPredecessorTask(Task predecessorTask) {
-    this.predecessorTaskID = predecessorTask.getTaskID();
-    // this.predecessorTask=predecessorTask;
-}

@@ -1,3 +1,0 @@
-void addTaskWithLegacyFixedStart(Task task) {
-    myFixedStartTasks.add(task);
-}

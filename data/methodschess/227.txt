@@ -1,9 +1,0 @@
-/**
- * Get the last ply.
- *
- * @return The last ply.
- */
-final Ply getLastPly() {
-    return getGame().getLastPly();
-    // return _lastPly;
-}

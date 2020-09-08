@@ -1,9 +1,0 @@
-public void makeRelativeToFigureBounds(Figure f) {
-    if (!(isRelativeToFigureBounds)) {
-        isRelativeToFigureBounds = true;
-        Rectangle2D.Double bounds = f.getBounds();
-        cx = ((cx) - (bounds.x)) / (bounds.width);
-        cy = ((cy) - (bounds.y)) / (bounds.height);
-        r = (r) / (Math.sqrt(((((bounds.width) * (bounds.width)) / 2.0) + (((bounds.height) * (bounds.height)) / 2.0))));
-    }
-}

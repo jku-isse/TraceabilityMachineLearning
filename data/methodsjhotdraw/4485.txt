@@ -1,8 +1,0 @@
-public String getAppletInfo() {
-    return (((((DrawLiveConnectApplet.NAME) + "
-Version ") + (DrawLiveConnectApplet.VERSION)) + "
-
-Copyright 1996-2008 (c) by the authors of JHotDraw") + "
-This software is licensed under LGPL or") + "
-Creative Commons 3.0 BY";
-}

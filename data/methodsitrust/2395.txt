@@ -1,3 +1,0 @@
-public PreparedStatement loadParameters(PreparedStatement ps, OverrideReasonBean bean) throws SQLException {
-    throw new IllegalStateException("unimplemented!");
-}

@@ -1,3 +1,0 @@
-public void setFontSize(float size) {
-    AttributeKeys.FONT_SIZE.set(this, new Double(size));
-}

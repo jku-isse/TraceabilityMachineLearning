@@ -1,3 +1,0 @@
-public void loadPersistentValue(String value) {
-    // TODO Auto-generated method stub
-}

@@ -1,4 +1,0 @@
-RoleSetImpl(String name, RoleManagerImpl roleManager) {
-    myName = name;
-    myRoleManager = roleManager;
-}

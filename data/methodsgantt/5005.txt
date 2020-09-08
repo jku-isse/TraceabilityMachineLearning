@@ -1,5 +1,0 @@
-public TextLengthCalculatorImpl(Graphics g) {
-    if (g != null) {
-        setGraphics(g);
-    }
-}

@@ -1,7 +1,0 @@
-public void run(Task[] tasks) {
-    if (!(isEnabled())) {
-        return;
-    }
-    AdjustTaskBoundsAlgorithm.AlgorithmImpl algorithmImpl = new AdjustTaskBoundsAlgorithm.AlgorithmImpl();
-    algorithmImpl.run(tasks);
-}

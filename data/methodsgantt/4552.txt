@@ -1,6 +1,0 @@
-public void setUserInputConsumer(Object consumer) {
-    if (consumer != (myUserInputConsumer)) {
-        fireUserInputConsumerChanged();
-    }
-    myUserInputConsumer = consumer;
-}

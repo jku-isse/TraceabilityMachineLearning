@@ -1,8 +1,0 @@
-/**
- * Updates the panel due to changes made on the drawing.
- */
-private void updatePanel() {
-    if ((drawing) != null) {
-        colorButton.setBackground(AttributeKeys.CANVAS_FILL_COLOR.get(drawing));
-    }
-}

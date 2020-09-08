@@ -1,3 +1,0 @@
-private static boolean runCmdLine(String[] cmdLine) {
-    return BrowserControl.runCmdLine(cmdLine, null);
-}

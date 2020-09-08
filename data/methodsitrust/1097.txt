@@ -1,4 +1,0 @@
-public void testGetUnreadCount() throws SQLException {
-    assertEquals(1, action.getUnreadCount());
-    assertEquals(12, action2.getUnreadCount());
-}

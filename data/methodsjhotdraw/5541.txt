@@ -1,7 +1,0 @@
-public Rectangle2D.Double getBounds() {
-    if ((cachedBounds) == null) {
-        cachedBounds = new Rectangle2D.Double();
-        cachedBounds.setRect(getTextShape().getBounds2D());
-    }
-    return ((Rectangle2D.Double) (cachedBounds.clone()));
-}

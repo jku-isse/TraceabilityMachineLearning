@@ -1,8 +1,0 @@
-/**
- * Check, if the permanent brain should be used.
- *
- * @return A flag, that indicates, if the permanent brain should be used.
- */
-private final boolean usePermanentBrain() {
-    return _usePermanentBrain;
-}

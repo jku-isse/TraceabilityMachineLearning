@@ -1,3 +1,0 @@
-public void setOutputFormats(List<OutputFormat> formats) {
-    this.outputFormats = new LinkedList<OutputFormat>(formats);
-}

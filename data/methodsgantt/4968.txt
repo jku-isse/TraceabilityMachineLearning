@@ -1,3 +1,0 @@
-DocumentManager getDocumentManager() {
-    return myDocumentManager;
-}

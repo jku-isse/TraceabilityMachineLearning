@@ -1,3 +1,0 @@
-public void setPatientCount(HashMap<TransactionType, Integer> patientCount) {
-    this.patientCount = patientCount;
-}

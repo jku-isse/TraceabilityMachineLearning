@@ -1,8 +1,0 @@
-public Figure basicRemoveChild(int index) {
-    Figure figure = children.get(index);
-    children.remove(index);
-    quadTree.remove(figure);
-    figure.removeFigureListener(figureHandler);
-    needsSorting = true;
-    return figure;
-}

@@ -1,1 +1,0 @@
-public int componentToRGB(float h, float s, float b);

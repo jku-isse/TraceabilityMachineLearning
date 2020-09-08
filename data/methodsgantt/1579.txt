@@ -1,3 +1,0 @@
-protected int getLineTopPosition() {
-    return getChartModel().getChartUIConfiguration().getSpanningHeaderHeight();
-}

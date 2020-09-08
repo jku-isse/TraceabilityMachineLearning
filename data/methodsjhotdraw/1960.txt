@@ -1,5 +1,0 @@
-/**
- * Returns a view to all attributes of this figure.
- * By convention, an unmodifiable map is returned.
- */
-public Map<AttributeKey, Object> getAttributes();

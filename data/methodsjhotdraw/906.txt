@@ -1,6 +1,0 @@
-/**
- * Adds a <code>ChangeListener</code>.
- */
-public void addChangeListener(ChangeListener l) {
-    listenerList.add(ChangeListener.class, l);
-}

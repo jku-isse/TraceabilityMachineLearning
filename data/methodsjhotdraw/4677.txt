@@ -1,4 +1,0 @@
-@Override
-protected void writeDecorator(DOMOutput out) throws IOException {
-    // do nothing
-}

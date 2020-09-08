@@ -1,8 +1,0 @@
-/**
- *
- *
- * @return this DAOFactorys PatientInstructionsDAO
- */
-public PatientInstructionsDAO getPatientInstructionsDAO() {
-    return new PatientInstructionsDAO(this);
-}

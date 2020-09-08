@@ -1,7 +1,0 @@
-public void removeNotify(Drawing drawing) {
-    super.removeNotify(drawing);
-    // Copy children collection to avoid concurrent modification exception
-    for (Figure child : new LinkedList<Figure>(getChildren())) {
-        child.removeNotify(drawing);
-    }
-}

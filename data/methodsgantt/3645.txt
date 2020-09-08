@@ -1,1 +1,0 @@
-void addTagHandler(TagHandler handler);

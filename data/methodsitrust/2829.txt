@@ -1,5 +1,0 @@
-public ApptDAO(DAOFactory factory) {
-    this.factory = factory;
-    this.apptTypeDAO = factory.getApptTypeDAO();
-    this.abloader = new ApptBeanLoader();
-}

@@ -1,8 +1,0 @@
-public void testLoadParameters() {
-    try {
-        wbl.loadParameters(null, null);
-        fail();
-    } catch (Exception e) {
-    }
-    assertTrue(true);
-}

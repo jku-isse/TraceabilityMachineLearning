@@ -1,3 +1,0 @@
-public PreparedStatement loadParameters(PreparedStatement ps, RemoteMonitoringDataBean bean) throws SQLException {
-    throw new IllegalStateException("unimplemented!");
-}

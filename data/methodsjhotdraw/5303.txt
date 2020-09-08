@@ -1,4 +1,0 @@
-protected void updateBounds() {
-    outline = null;
-    super.updateBounds();
-}

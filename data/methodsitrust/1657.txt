@@ -1,3 +1,0 @@
-public long getPersonnelID() {
-    return personnelID;
-}

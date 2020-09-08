@@ -1,5 +1,0 @@
-@Override
-public boolean hasFactor() {
-    double bmi = currentHealthRecord.getBodyMassIndex();
-    return (bmi > (bmiThreshold)) && (!(Double.isInfinite(bmi)));
-}

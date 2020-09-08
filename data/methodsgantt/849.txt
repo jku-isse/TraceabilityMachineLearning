@@ -1,3 +1,0 @@
-private Action getUnlinkTasksAction() {
-    return myUnlinkTasksAction;
-}

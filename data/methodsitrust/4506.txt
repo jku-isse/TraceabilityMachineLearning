@@ -1,6 +1,0 @@
-/**
- * The default constructor.
- */
-public SessionTimeoutListener() {
-    this.factory = DAOFactory.getProductionInstance();
-}

@@ -1,3 +1,0 @@
-public Figure getChild(int index) {
-    return children.get(index);
-}

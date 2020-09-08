@@ -1,8 +1,0 @@
-/**
- * Signified that cancel button has been clicked, cancel the selectio and
- * restur the old date
- */
-public void cancel() {
-    ddd.date = save;
-    changeDate(save);
-}

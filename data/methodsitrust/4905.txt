@@ -1,5 +1,0 @@
-public void testBadLetters() throws Exception {
-    String value = "xxxxx-xxxx";
-    String errorMessage = ZipcodeValidatorTest.FAILED;
-    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ZipcodeValidatorTest.VALIDATION_FORMAT, false));
-}

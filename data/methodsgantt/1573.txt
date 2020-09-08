@@ -1,3 +1,0 @@
-public BackgroundRendererImpl(ChartModelBase model) {
-    super(model);
-}

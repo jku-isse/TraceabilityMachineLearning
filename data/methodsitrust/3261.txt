@@ -1,8 +1,0 @@
-public void testEditPatientException() throws Exception {
-    try {
-        evilDAO.editPatient(new PatientBean(), 9000000003L);
-        fail("DBException should have been thrown");
-    } catch (DBException e) {
-        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
-    }
-}

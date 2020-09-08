@@ -1,9 +1,0 @@
-public void testParseBadLOINCFile() throws Exception {
-    List<String> expected = new ArrayList<String>();
-    expected.add("IGNORED LINE 1: This file contains no LOINC data and should fail the LOINC file verification process.");
-    expected.add("File invalid. No LOINC data added.");
-    String filename = "./testing-files/sample_loinc/badLoincFile.txt";
-    FileInputStream stream = new FileInputStream(filename);
-    List<String> actual = action.parseLOINCFile(stream, false);
-    assertEquals(expected, actual);
-}

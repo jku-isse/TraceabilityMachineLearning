@@ -1,3 +1,0 @@
-public void setHcpID(String hcpID) {
-    this.hcpID = hcpID;
-}

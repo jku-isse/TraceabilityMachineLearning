@@ -1,6 +1,0 @@
-/**
- * Disconnects the start figure.
- */
-protected void disconnect() {
-    getOwner().setStartConnector(null);
-}

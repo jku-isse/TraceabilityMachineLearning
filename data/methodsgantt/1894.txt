@@ -1,4 +1,0 @@
-public void setAlignment(GraphicPrimitiveContainer.HAlignment halignment, GraphicPrimitiveContainer.VAlignment valignment) {
-    myHAlignment = halignment;
-    myVAlignment = valignment;
-}

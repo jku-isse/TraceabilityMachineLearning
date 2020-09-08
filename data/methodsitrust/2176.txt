@@ -1,3 +1,0 @@
-public void setPedometerReadingAllowed(boolean pedometerReadingAllowed) {
-    this.pedometerReadingAllowed = pedometerReadingAllowed;
-}

@@ -1,3 +1,0 @@
-protected Object getLock() {
-    return (getDrawing()) == null ? this : getDrawing().getLock();
-}

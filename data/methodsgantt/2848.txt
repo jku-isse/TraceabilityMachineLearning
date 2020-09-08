@@ -1,3 +1,0 @@
-public void setCriticalPathOn(boolean isOn) {
-    this.isCriticalPathOn = isOn;
-}

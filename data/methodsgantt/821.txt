@@ -1,9 +1,0 @@
-/**
- * Returne the mother task.
- */
-public DefaultMutableTreeNode getFatherNode(DefaultMutableTreeNode node) {
-    if (node == null) {
-        return null;
-    }
-    return ((DefaultMutableTreeNode) (node.getParent()));
-}

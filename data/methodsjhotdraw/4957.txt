@@ -1,5 +1,0 @@
-public void setTo(EnhancedPath.Segment that) {
-    this.type = that.type;
-    System.arraycopy(that.coords, 0, this.coords, 0, that.type.getLen());
-    System.arraycopy(that.modifiers, 0, this.modifiers, 0, that.type.getLen());
-}

@@ -1,3 +1,0 @@
-private void setDrawing(Drawing d) {
-    drawingPanel.setDrawing(d);
-}

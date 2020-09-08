@@ -1,6 +1,0 @@
-/**
- * Get the current board.
- *
- * @return The current board.
- */
-Board getBoard();

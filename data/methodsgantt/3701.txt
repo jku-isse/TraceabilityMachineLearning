@@ -1,5 +1,0 @@
-TaskFieldImpl(String id, int order, int width) {
-    myID = id;
-    myOrder = order;
-    myWidth = width;
-}

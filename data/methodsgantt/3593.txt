@@ -1,3 +1,0 @@
-public BlankLineTagHandler(GanttChart chart) {
-    myGanttChart = chart;
-}

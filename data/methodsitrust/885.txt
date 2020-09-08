@@ -1,6 +1,0 @@
-private void addEmpty(String code) throws Exception {
-    ProcedureBean proc = new ProcedureBean(code, " ");
-    assertEquals(getAddCodeSuccessString(proc), action.addCPTCode(proc));
-    proc = factory.getCPTCodesDAO().getCPTCode(code);
-    assertEquals(" ", proc.getDescription());
-}

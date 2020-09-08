@@ -1,3 +1,0 @@
-public String getTreatmentSatisfaction() {
-    return ((treatmentSat) != 0) && ((surveyCount) != 0) ? Double.toString((((double) (treatmentSat)) / ((double) (surveyCount)))) : "no results available";
-}

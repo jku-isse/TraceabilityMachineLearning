@@ -1,3 +1,0 @@
-public Date jumpLeft(Date baseDate) {
-    return this.jumpLeft(baseDate);
-}

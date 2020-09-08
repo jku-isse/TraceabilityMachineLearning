@@ -1,8 +1,0 @@
-/**
- * Creates new instance.
- */
-public FigureToolBar() {
-    labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
-    setName(labels.getString(((getID()) + ".toolbar")));
-    setDisclosureStateCount(3);
-}

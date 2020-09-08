@@ -1,3 +1,0 @@
-public void setReferralDetails(String referralDetails) {
-    this.referralDetails = referralDetails;
-}

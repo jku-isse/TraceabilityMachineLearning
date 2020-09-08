@@ -1,4 +1,0 @@
-/**
- * Deletes the component at (or after) the caret position.
- */
-public void delete();

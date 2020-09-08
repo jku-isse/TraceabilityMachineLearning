@@ -1,8 +1,0 @@
-public synchronized Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException {
-    // DataFlavor.javaJVMLocalObjectMimeType))
-    if (flavor.isMimeTypeEqual(GanttTree2.GanttTransferableTreePath.TREEPATH_FLAVOR.getMimeType()))
-        return _path;
-    else
-        throw new UnsupportedFlavorException(flavor);
-
-}

@@ -1,7 +1,0 @@
-// Constructors
-/**
- * Create a new instance of this test.
- */
-public PlyGeneratorTest3() {
-    super("A simple ply generator test for a illegal queen move h4-a5");
-}

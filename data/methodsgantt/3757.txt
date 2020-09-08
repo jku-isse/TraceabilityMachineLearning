@@ -1,5 +1,0 @@
-private void onChangingDates() {
-    myExportSettings.setStartDate(myStart.getValue());
-    myExportSettings.setEndDate(myFinish.getValue());
-    updateSourceImage();
-}

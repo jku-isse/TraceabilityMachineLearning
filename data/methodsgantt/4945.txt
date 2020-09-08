@@ -1,3 +1,0 @@
-WeekTextFormatter(String formatString) {
-    myCalendar = CalendarFactory.newCalendar();
-}

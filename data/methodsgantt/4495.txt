@@ -1,8 +1,0 @@
-// private final Task myRoot;
-// 
-// FacadeFactoryImpl(Task root) {
-// myRoot = root;
-// }
-public TaskContainmentHierarchyFacade createFacede() {
-    return new TaskManagerImpl.FacadeImpl();
-}

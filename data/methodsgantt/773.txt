@@ -1,7 +1,0 @@
-public Object clone() {
-    GanttTaskRelationship copyRel = new GanttTaskRelationship(myTaskManager);
-    copyRel.relationshipType = relationshipType;
-    copyRel.predecessorTaskID = predecessorTaskID;
-    copyRel.successorTaskID = successorTaskID;
-    return copyRel;
-}

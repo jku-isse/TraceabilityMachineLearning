@@ -1,4 +1,0 @@
-public Connector findConnector(Point2D.Double p, ConnectionFigure prototype) {
-    return null;// ODG does not support connectors
-
-}

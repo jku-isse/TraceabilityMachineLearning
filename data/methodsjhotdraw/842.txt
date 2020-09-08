@@ -1,7 +1,0 @@
-public void restoreAttributesTo(Object newData) {
-    @SuppressWarnings("unchecked")
-    Iterator<Object> data = ((LinkedList<Object>) (newData)).iterator();
-    for (Figure child : getChildren()) {
-        child.restoreAttributesTo(data.next());
-    }
-}

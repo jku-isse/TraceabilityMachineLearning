@@ -1,6 +1,0 @@
-/**
- * Gets the action map of the Tool
- */
-public ActionMap getActionMap() {
-    return actionMap;
-}

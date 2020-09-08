@@ -1,6 +1,0 @@
-public void testGetDeclaredHCPs() throws Exception {
-    List<PersonnelBean> hcps = patientDAO.getDeclaredHCPs(2L);
-    assertEquals(1, hcps.size());
-    assertEquals(9000000003L, hcps.get(0).getMID());
-    assertEquals("Gandalf Stormcrow", hcps.get(0).getFullName());
-}

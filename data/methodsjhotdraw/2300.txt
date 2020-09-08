@@ -1,3 +1,0 @@
-public boolean canConnect(Connector start, Connector end) {
-    return (start.getOwner().canConnect()) && (end.getOwner().canConnect());
-}

@@ -1,8 +1,0 @@
-public final void whiteTag() throws RecognitionException, TokenStreamException {
-    Token name = null;
-    match(PGNTokenTypes.TAG_WHITE);
-    whiteSpaces();
-    name = LT(1);
-    match(PGNTokenTypes.STRING_LITERAL);
-    getNotation().setPlayerInfo(name.getText(), true);
-}

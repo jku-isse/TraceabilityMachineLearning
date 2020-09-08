@@ -1,6 +1,0 @@
-/**
- * Locates a position on the provided figure.
- *
- * @return a point on the figure.
- */
-public Point2D.Double locate(Figure owner);
