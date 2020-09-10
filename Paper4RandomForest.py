@@ -9,11 +9,11 @@ from sklearn.metrics import precision_recall_fscore_support as score
 # Creates a list containing 5 lists, each of 8 items, all set to 0
  
 
-SeparateProjectLearningMixed=False
+SeparateProjectLearningMixed=True
 SeparateProjectLearningComplete=False
 
 
-RandomTrainingRandomTestSet=True
+RandomTrainingRandomTestSet=False
 TrainCompTestIncomp=False
 TrainIncompTestComp=False
 TrainIncompTestRandom=False
@@ -272,56 +272,7 @@ def XtrainYtrainXtestYtest(X_train, X_test, y_test, y_train, Xcol,index,row):
     print('accuracy score', accuracy_score(y_test, y_pred_original))
    
     
-    '''y_test_list = list(y_test)
-    probs_list = list(probs)
-    
-    i=0
-    
-    while i<len(probs_list):
-        #if (y_pred_original[i]!=y_test_list[i]) & (y_pred_original[i]==0):
-           # print('0 probability ---- ',probs_list[i][0])
-        if (y_pred_original[i]!=y_test_list[i]) & (y_pred_original[i]==1):
-            print('1 probability ---- ',probs_list[i][1],'  ',probs_list[i][0])
-        i=i+1
-    '''
-    '''
-    y_pred=[None]*len(y_test)
-    y_pred_list = list(y_pred)
-    y_test_list = list(y_test)
-    probs_list = list(probs)
-    
-    i=0
-    n=0
-    threshold=0.95
-    while i<len(probs_list):
-            #print('i ',i)
-            if (probs_list[i][0]>=threshold) & (probs_list[i][1]<threshold):
-                   y_pred_list[i]=0
-                   i=i+1
-            
-            elif (probs_list[i][0]<threshold) & (probs_list[i][1]>=threshold):
-                   y_pred_list[i]=1
-                   i=i+1
-            else:   
-                   #print(y_pred[i])
-                   #print('i==> ',i, ' probs length ', len(probs_list), ' ', len(y_pred_list), ' ', len(y_test_list))
-                   y_pred_list.pop(i)
-                   y_test_list.pop(i)
-                   probs_list.pop(i)
-                   n=n+1
-                   
-                   
-                  
-    #print(y_pred_list)
-    print('confusion matrix\n',confusion_matrix(y_test_list,y_pred_list))
-    print('classification report\n', classification_report(y_test_list,y_pred_list))
-    print('accuracy score', accuracy_score(y_test_list, y_pred_list))
-    from sklearn import metrics
-    
-    print('Mean Absolute Error:', metrics.mean_absolute_error(y_test_list, y_pred_list))
-    print('Mean Squared Error:', metrics.mean_squared_error(y_test_list, y_pred_list))
-    print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test_list, y_pred_list)))
-    '''
+   
 if __name__=="__main__": 
     arr = [9, 54, 30, 88, 91, 76, 43, 27, 21, 18]
     row=0
