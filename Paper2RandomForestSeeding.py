@@ -67,7 +67,7 @@ def main():
     y_test={}
     
    
-    
+    '''
     path = 'TtoN'
     print_precision_recall(path)
     
@@ -79,16 +79,17 @@ def main():
     drawboxplots('Rec_T', TtoN5RecT, TtoN10RecT, TtoN15RecT, TtoN20RecT, TtoN25RecT, 'Trace Recall %', 
                  'T->N % of error seeded', './boxplots/TraceRecallVsTtoNError')
     drawboxplots('Rec_N', TtoN5RecN, TtoN10RecN, TtoN15RecN, TtoN20RecN, TtoN25RecN, 'NoTrace Recall %', 
-                 'T->N % of error seeded', './boxplots/NoTraceRecallVsTtoNError')
+                 'T->N % of error seeded', './boxplots/NoTraceRecallVsTtoNError')'''
+    path = 'NtoT'
+    print_precision_recall(path)
 
-
-    drawboxplots('Prec_T', TtoN5PrecT, TtoN10PrecT, TtoN15PrecT, TtoN20PrecT, TtoN25PrecT, 'Trace Precision %', 
+    drawboxplots('Prec_T', NtoT0_5PrecT, NtoT1PrecT, NtoT1_5PrecT, NtoT2PrecT, NtoT2_5PrecT, 'Trace Precision %', 
                  'N->T % of error seeded', './boxplots/TracePrecisionVsNtoTError')
-    drawboxplots('Prec_N', TtoN5PrecN, TtoN10PrecN, TtoN15PrecN, TtoN20PrecN, TtoN25PrecN, 'NoTrace Precision %', 
+    drawboxplots('Prec_N', NtoT0_5PrecN, NtoT1PrecN, NtoT1_5PrecN, NtoT2PrecN, NtoT2_5PrecN, 'NoTrace Precision %', 
                  'N->T % of error seeded', './boxplots/NoTracePrecisionVsNtoTError')
-    drawboxplots('Rec_T', TtoN5RecT, TtoN10RecT, TtoN15RecT, TtoN20RecT, TtoN25RecT, 'Trace Recall %', 
+    drawboxplots('Rec_T', NtoT0_5RecT, NtoT1RecT, NtoT1_5RecT, NtoT2RecT, NtoT2_5RecT, 'Trace Recall %', 
                  'N->T % of error seeded', './boxplots/TraceRecallVsNtoTError')
-    drawboxplots('Rec_N', TtoN5RecN, TtoN10RecN, TtoN15RecN, TtoN20RecN, TtoN25RecN, 'NoTrace Recall %', 
+    drawboxplots('Rec_N', NtoT0_5RecN, NtoT1RecN, NtoT1_5RecN, NtoT2RecN, NtoT2_5RecN, 'NoTrace Recall %', 
                  'N->T % of error seeded', './boxplots/NoTraceRecallVsNtoTError')
 
 def drawboxplots(prec_T, array1, array2, array3, array4, array5, ylabel, xlabel, figname):
