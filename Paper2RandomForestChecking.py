@@ -7,16 +7,14 @@ import sys
 
 
 def main():
-    X_train={}
-    X_test={}
-    y_train={}
-    y_test={}
+  
     dataset = pd.read_csv( 'InputDataAtLeastOneInstance.txt', sep= ',', index_col=False) 
 
     #convert Inner, Root, Leaf into 0, 1, 2
    
     dataset['MethodType'] = dataset['MethodType'].astype('category').cat.codes
-    
+    dataset['Program'] = dataset['Program'].astype('category').cat.codes
+
     #convert T into 1 and N into 0
     
    
@@ -25,30 +23,43 @@ def main():
     pd.set_option('display.max_columns', None)
 
     row_count, column_count = dataset.shape
- 
     
+
     X = dataset.iloc[:, 1:column_count].values
     y = dataset.iloc[:, 0].values
     
+    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)      
+    #ComputePrecisionRecall(X_train, X_test, y_train, y_test)
 
     
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=1)    
 
-    print(X_test)
+    X_test, y_test, X_train, y_train =GetResults(dataset,0,1)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+
+    X_test, y_test, X_train, y_train =GetResults(dataset,0,2)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+
+    X_test, y_test, X_train, y_train =GetResults(dataset,0,3)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
     
+    X_test, y_test, X_train, y_train =GetResults(dataset,0,4)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+
+ 
 ################################################################################
    
     
     
+    
+        
+        
+def ComputePrecisionRecall(X_train, X_test, y_train, y_test):
     classifier = RandomForestClassifier(n_estimators=400, random_state=0)
+    
     classifier.fit(X_train, y_train)
     y_pred = classifier.predict(X_test)
-    print('X_test===============',X_test)
-    print('y_test===============',y_test)
-    print('X_train1===============',X_train)
-    print('y_train1===============',y_train)
     
+
     probs= classifier.predict_proba(X_test)
     counter=0
     y_pred=[None]*len(y_test)
@@ -123,13 +134,26 @@ def main():
        
     ################################################################################
     
-        
-        
+def GetResults(dataset,trainingindex,testindex):   
+    X_train={}
+    X_test={}
+    y_train={}
+    y_test={}
+    TrainingSet=dataset.loc[dataset['Program'].isin([trainingindex])]
+    TestSet=dataset.loc[dataset['Program'] == testindex]
+    DropColumnProgram(TestSet,TrainingSet)     
+    print('trial ',X_test)
+    row_count, column_count = dataset.shape
+    X_test=TestSet.iloc[:, 1:column_count].values
+    y_test=TestSet.iloc[:, 0].values
+    X_train=TrainingSet.iloc[:, 1:column_count].values
+    y_train=TrainingSet.iloc[:, 0].values
     
-    
-    
+    return X_test, y_test, X_train, y_train 
+def DropColumnProgram(TestSet,TrainingSet):
+    TestSet=TestSet.drop(columns=['Program'], axis=1)
+    TrainingSet=TrainingSet.drop(columns=['Program'], axis=1)
 
-   
 
 if __name__=="__main__": 
     
