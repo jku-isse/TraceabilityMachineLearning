@@ -34,7 +34,7 @@ def main(index, row):
     X_test={}
     y_train={}
     y_test={}
-    dataset = pd.read_csv( 'InputData.txt', sep= ',', index_col=False) 
+    dataset = pd.read_csv( 'InputDataHighMediumLow.txt', sep= ',', index_col=False) 
 
     #convert T into 1 and N into 0
     if SeparateProjectLearningMixed==False and SeparateProjectLearningComplete==False:
