@@ -32,16 +32,19 @@ def main():
     #ComputePrecisionRecall(X_train, X_test, y_train, y_test)
 
     
-
+    print('Training set: Chess + Test Set: Gantt')
     X_test, y_test, X_train, y_train =GetResults(dataset,0,1)
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
-
+    
+    print('Training set: Chess + Test Set: iTrust')
     X_test, y_test, X_train, y_train =GetResults(dataset,0,2)
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
 
+    print('Training set: Chess + Test Set: JHotDraw')
     X_test, y_test, X_train, y_train =GetResults(dataset,0,3)
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
-    
+  
+    print('Training set: Chess + Test Set: VOD')
     X_test, y_test, X_train, y_train =GetResults(dataset,0,4)
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
 
