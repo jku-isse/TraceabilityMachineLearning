@@ -52,7 +52,7 @@ def main():
     print('####################################################')
     #######################################################################
     
-    print('Training set: Chess + Test Set: Gantt, iTrust, JHotDraw, VOD')
+    print('Test Set: Chess + Training set: Gantt, iTrust, JHotDraw, VOD')
     X_test, y_test, X_train, y_train =GetResults2(dataset,0,1,2,3,4)
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
     
@@ -88,7 +88,7 @@ def GetResults2(dataset,test,train1, train2, train3, train4):
     trainSet3=dataset.loc[dataset['Program'] == train3]
     trainSet4=dataset.loc[dataset['Program'] == train4]
 
-    TrainingSet=pd.concat([trainSet1, trainSet2, trainSet3, trainSet4], ignore_index=True, sort=True)
+    TrainingSet=pd.concat([trainSet1, trainSet2, trainSet3, trainSet4])
     TestSet=dataset.loc[dataset['Program'] == test]
     DropColumnProgram(TestSet,TrainingSet)     
     print('trial ',X_test)
