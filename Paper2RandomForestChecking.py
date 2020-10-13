@@ -48,12 +48,57 @@ def main():
     print('Training set: Chess + Test Set: VOD')
     X_test, y_test, X_train, y_train =GetResults(dataset,0,4)
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+   
+    print('####################################################')
+    #######################################################################
+    
+    print('Training set: Chess + Test Set: Gantt, iTrust, JHotDraw, VOD')
+    X_test, y_test, X_train, y_train =GetResults2(dataset,0,1,2,3,4)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+    
+    print('Test Set: Gantt + Training set: Chess, iTrust, JHotDraw, VOD ')
+    X_test, y_test, X_train, y_train =GetResults2(dataset,1,0,2,3,4)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+    
+    print('Test set: iTrust + training Set: Chess, Gantt, JHotDraw, VOD')
+    X_test, y_test, X_train, y_train =GetResults2(dataset,2,0,1,3,4)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+    
+    print('Test set: JHotDraw + training Set: Chess, Gantt, iTrust, VOD')
+    X_test, y_test, X_train, y_train =GetResults2(dataset,3,0,1,2,4)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+    
+    print('Test set: VOD + training Set: Chess, Gantt, iTrust, JHotDraw')
+    X_test, y_test, X_train, y_train =GetResults2(dataset,4,0,1,2,3)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+
+
 
  
 ################################################################################
    
     
+def GetResults2(dataset,test,train1, train2, train3, train4):   
+    X_train={}
+    X_test={}
+    y_train={}
+    y_test={}
+    trainSet1=dataset.loc[dataset['Program'] == train1]
+    trainSet2=dataset.loc[dataset['Program'] == train2]
+    trainSet3=dataset.loc[dataset['Program'] == train3]
+    trainSet4=dataset.loc[dataset['Program'] == train4]
+
+    TrainingSet=pd.concat([trainSet1, trainSet2, trainSet3, trainSet4], ignore_index=True, sort=True)
+    TestSet=dataset.loc[dataset['Program'] == test]
+    DropColumnProgram(TestSet,TrainingSet)     
+    print('trial ',X_test)
+    row_count, column_count = dataset.shape
+    X_test=TestSet.iloc[:, 1:column_count].values
+    y_test=TestSet.iloc[:, 0].values
+    X_train=TrainingSet.iloc[:, 1:column_count].values
+    y_train=TrainingSet.iloc[:, 0].values
     
+    return X_test, y_test, X_train, y_train 
     
         
         
