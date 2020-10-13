@@ -24,9 +24,10 @@ def main():
 
     row_count, column_count = dataset.shape
     
-
+    #dataset.drop(columns=['Program'], axis=1)
     X = dataset.iloc[:, 1:column_count].values
     y = dataset.iloc[:, 0].values
+    
     
     #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)      
     #ComputePrecisionRecall(X_train, X_test, y_train, y_test)

@@ -67,9 +67,20 @@ def main():
     y_test={}
     
    
-    
+    CorrectData = pd.read_csv( 'InputDataAtLeastOneInstance.txt', sep= ',', index_col=False) 
+    CorrectData=CorrectData.drop(columns=['Program'], axis=1)
+    row_count, column_count = CorrectData.shape
+    CorrectData['MethodType'] = CorrectData['MethodType'].astype('category').cat.codes
+    CorrectData['gold'] = CorrectData['gold'].astype('category').cat.codes
+
+
+    X = CorrectData.iloc[:, 1:column_count].values
+    y = CorrectData.iloc[:, 0].values
+    X_train, X_test2, y_train, y_test2 = train_test_split(X, y, test_size=0.5, random_state=1)    
+
+    #print(CorrectData)
     path = 'TtoN'
-    print_precision_recall(path)
+    print_precision_recall(path, X_train, y_train)
     
     
     drawboxplots('Prec_T', TtoN0_5PrecT, TtoN1PrecT, TtoN1_5PrecT, TtoN2PrecT, TtoN2_5PrecT, 'Trace Precision %', 
@@ -81,7 +92,7 @@ def main():
     drawboxplots('Rec_N', TtoN0_5RecN, TtoN1RecN, TtoN1_5RecN, TtoN2RecN, TtoN2_5RecN, 'NoTrace Recall %', 
                  'T->N % of error seeded', './boxplots/NoTraceRecallVsTtoNError')
     path = 'NtoT'
-    print_precision_recall(path)
+    print_precision_recall(path, X_train, y_train)
 
     drawboxplots('Prec_T', NtoT5PrecT, NtoT10PrecT, NtoT15PrecT, NtoT20PrecT, NtoT25PrecT, 'Trace Precision %', 
                  'N->T % of error seeded', './boxplots/TracePrecisionVsNtoTError')
@@ -107,10 +118,10 @@ def drawboxplots(prec_T, array1, array2, array3, array4, array5, ylabel, xlabel,
     plt.savefig(figname)
     plt.show()
     
-def print_precision_recall(path):
+def print_precision_recall(path, X_train, y_train):
     
     files = os.listdir(path)
-    
+
     for f in files:
         print(f)
         filename=path+'\\'+f
@@ -137,7 +148,7 @@ def print_precision_recall(path):
     
         
         
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=1)    
+        X_train2, X_test, y_train2, y_test = train_test_split(X, y, test_size=0.5, random_state=1)    
     
          
     ################################################################################
