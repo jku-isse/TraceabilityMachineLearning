@@ -14,6 +14,8 @@ def main():
    
     dataset['MethodType'] = dataset['MethodType'].astype('category').cat.codes
     dataset['Program'] = dataset['Program'].astype('category').cat.codes
+    
+    
 
     #convert T into 1 and N into 0
     
@@ -29,10 +31,11 @@ def main():
     y = dataset.iloc[:, 0].values
     
     
-    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)      
-    #ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)      
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
 
-    
+    print('####################################################')
+
     print('Training set: Chess + Test Set: Gantt')
     X_test, y_test, X_train, y_train =GetResults(dataset,0,1)
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
