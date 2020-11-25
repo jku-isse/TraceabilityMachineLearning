@@ -1,0 +1,9 @@
+public void testGetNoSecurityAnswer() throws Exception {
+    long mid = factory.getPatientDAO().addEmptyPatient();
+    try {
+        authDAO.getSecurityAnswer(mid);
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals(("No security answer set for MID " + mid), e.getMessage());
+    }
+}

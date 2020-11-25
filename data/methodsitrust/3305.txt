@@ -1,0 +1,6 @@
+public void testAddEmptyPersonnel() throws Exception {
+    long mid = personnelDAO.addEmptyPersonnel(Role.HCP);
+    assertEquals(" ", personnelDAO.getName(mid));
+    assertEquals(Role.HCP, personnelDAO.getPersonnel(mid).getRole());
+    assertTrue(("hcp MID is greater or equal to 9 billion, actual:" + mid), (mid >= 9000000000L));
+}

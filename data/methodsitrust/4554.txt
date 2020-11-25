@@ -1,0 +1,9 @@
+public void testProductionConnnectionDriver() throws Exception {
+    ProductionConnectionDriver pcd = new ProductionConnectionDriver(mockContext);
+    expect(mockContext.lookup("java:comp/env")).andReturn(mockContext).once();
+    expect(mockContext.lookup("jdbc/itrust")).andReturn(mockDataSource).once();
+    expect(mockDataSource.getConnection()).andReturn(mockConnection).once();
+    ctrl.replay();
+    assertSame(mockConnection, pcd.getConnection());
+    ctrl.verify();
+}

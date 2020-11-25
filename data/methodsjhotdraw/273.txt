@@ -1,0 +1,15 @@
+/**
+ * Configures a JCheckBoxMenuItem for an Action.
+ */
+public static void configureJCheckBoxMenuItem(final JCheckBoxMenuItem mi, final Action a) {
+    mi.setSelected(((Boolean) (a.getValue(Actions.SELECTED_KEY))));
+    PropertyChangeListener propertyHandler = new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            if (evt.getPropertyName().equals(Actions.SELECTED_KEY)) {
+                mi.setSelected(((Boolean) (a.getValue(Actions.SELECTED_KEY))));
+            }
+        }
+    };
+    a.addPropertyChangeListener(propertyHandler);
+    mi.putClientProperty("actionPropertyHandler", propertyHandler);
+}

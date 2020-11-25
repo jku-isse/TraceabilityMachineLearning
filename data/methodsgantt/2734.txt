@@ -1,0 +1,14 @@
+private Document showURLDialog(IGanttProject project) {
+    Document document = project.getDocument();
+    GanttURLChooser uc = new GanttURLChooser(myWorkbenchFacade.getMainFrame(), false, (null != document ? document.getURLPath() : myDocumentManager.getLastWebDAVDocumentOption().getValue()), (null != document ? document.getUsername() : null), (null != document ? document.getPassword() : null));
+    uc.show();
+    if (uc.change) {
+        document = myDocumentManager.getDocument(uc.fileurl, uc.userName, uc.password);
+        myDocumentManager.getLastWebDAVDocumentOption().lock();
+        myDocumentManager.getLastWebDAVDocumentOption().setValue(uc.fileurl);
+        myDocumentManager.getLastWebDAVDocumentOption().commit();
+    } else {
+        document = null;
+    }
+    return document;
+}

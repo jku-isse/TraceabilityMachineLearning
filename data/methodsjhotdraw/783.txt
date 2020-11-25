@@ -1,0 +1,3 @@
+public boolean isAttributeEnabled(AttributeKey key) {
+    return ((forbiddenAttributes) == null) || (!(forbiddenAttributes.contains(key)));
+}

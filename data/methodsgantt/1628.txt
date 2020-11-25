@@ -1,0 +1,1 @@
+float calculateLength(int fromX, int toX, int y);

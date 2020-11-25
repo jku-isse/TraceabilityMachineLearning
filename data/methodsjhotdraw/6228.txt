@@ -1,0 +1,16 @@
+/**
+ * Sets the minimum permissible value. If the <code>valueClass</code> has
+ * not been specified, and <code>minimum</code> is non null, the
+ * <code>valueClass</code> will be set to that of the class of
+ * <code>minimum</code>.
+ *
+ * @param minimum
+ * 		Minimum legal value that can be input
+ * @see #setValueClass
+ */
+public void setMinimum(Comparable minimum) {
+    if (((getValueClass()) == null) && (minimum != null)) {
+        setValueClass(minimum.getClass());
+    }
+    min = minimum;
+}

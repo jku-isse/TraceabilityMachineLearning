@@ -1,0 +1,6 @@
+/**
+ * Non-transforming Center.
+ */
+public static Locator center() {
+    return RelativeLocator.center(false);
+}

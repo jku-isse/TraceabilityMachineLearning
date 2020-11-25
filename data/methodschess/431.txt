@@ -1,0 +1,6 @@
+/**
+ * Check if the piece captures another piece with this ply.
+ *
+ * @return true, if another piece is captureed with this ply.
+ */
+boolean isCapture();

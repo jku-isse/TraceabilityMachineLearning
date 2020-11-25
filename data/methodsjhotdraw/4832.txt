@@ -1,0 +1,8 @@
+@Override
+public LinkedList<Handle> createHandles(int detailLevel) {
+    LinkedList<Handle> handles = new LinkedList<Handle>();
+    if (detailLevel == 0) {
+        TransformHandleKit.addTransformHandles(this, handles);
+    }
+    return handles;
+}

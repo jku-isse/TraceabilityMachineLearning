@@ -1,0 +1,55 @@
+/**
+ * Prompts the user for input in a sheet where the
+ * initial selection, possible selections, and all other options can
+ * be specified. The user will able to choose from
+ * <code>selectionValues</code>, where <code>null</code> implies the
+ * user can input
+ * whatever they wish, usually by means of a <code>JTextField</code>.
+ * <code>initialSelectionValue</code> is the initial value to prompt
+ * the user with. It is up to the UI to decide how best to represent
+ * the <code>selectionValues</code>, but usually a
+ * <code>JComboBox</code>, <code>JList</code>, or
+ * <code>JTextField</code> will be used.
+ *
+ * @param parentComponent
+ * 		the parent <code>Component</code> for the
+ * 		dialog
+ * @param message
+ * 		the <code>Object</code> to display
+ * @param messageType
+ * 		the type of message to be displayed:
+ * 		<code>JOptionPane.ERROR_MESSAGE</code>,
+ * 		<code>JOptionPane.INFORMATION_MESSAGE</code>,
+ * 		<code>JOptionPane.WARNING_MESSAGE</code>,
+ * 		<code>JOptionPane.QUESTION_MESSAGE</code>,
+ * 		or <code>JOptionPane.PLAIN_MESSAGE</code>
+ * @param icon
+ * 		the <code>Icon</code> image to display
+ * @param selectionValues
+ * 		an array of <code>Object</code>s that
+ * 		gives the possible selections
+ * @param initialSelectionValue
+ * 		the value used to initialize the input
+ * 		field
+ * @param listener
+ * 		The listener for SheetEvents.
+ */
+public static void showInputSheet(Component parentComponent, Object message, int messageType, Icon icon, Object[] selectionValues, Object initialSelectionValue, SheetListener listener) {
+    JOptionPane pane = new JOptionPane(message, messageType, JOptionPane.OK_CANCEL_OPTION, icon, null, null);
+    pane.setWantsInput(true);
+    pane.setSelectionValues(selectionValues);
+    pane.setInitialSelectionValue(initialSelectionValue);
+    pane.setComponentOrientation((parentComponent == null ? JOptionPane.getRootFrame() : parentComponent).getComponentOrientation());
+    int style = JSheet.styleFromMessageType(messageType);
+    JSheet sheet = JSheet.createSheet(pane, parentComponent, style);
+    pane.selectInitialValue();
+    /* sheet.addWindowListener(new WindowAdapter() {
+    public void windowClosed(WindowEvent evt) {
+    sheet.dispose();
+    }
+    });
+     */
+    sheet.addSheetListener(listener);
+    sheet.show();
+    sheet.toFront();
+}

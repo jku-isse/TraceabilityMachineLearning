@@ -1,0 +1,32 @@
+protected TaskImpl(TaskImpl copy, boolean isUnplugged) {
+    myManager = copy.myManager;
+    if (!isUnplugged) {
+        myTaskHierarchyItem = myManager.getHierarchyManager().createItem(this);
+    } else {
+        myTaskHierarchyItem = null;
+    }
+    myAssignments = new ResourceAssignmentCollectionImpl(this, myManager.getConfig().getResourceManager());
+    myAssignments.importData(copy.getAssignmentCollection());
+    myID = copy.myID;
+    myName = copy.myName;
+    myWebLink = copy.myWebLink;
+    isMilestone = copy.isMilestone;
+    isProjectTask = copy.isProjectTask;
+    myPriority = copy.myPriority;
+    myStart = copy.myStart;
+    myEnd = copy.myEnd;
+    myThird = copy.myThird;
+    myThirdDateConstraint = copy.myThirdDateConstraint;
+    myCompletionPercentage = copy.myCompletionPercentage;
+    myLength = copy.myLength;
+    myShape = copy.myShape;
+    myColor = copy.myColor;
+    myNotes = copy.myNotes;
+    bExpand = copy.bExpand;
+    // 
+    myDependencySlice = new TaskDependencySliceImpl(this, myManager.getDependencyCollection());
+    myDependencySliceAsDependant = new TaskDependencySliceAsDependant(this, myManager.getDependencyCollection());
+    myDependencySliceAsDependee = new TaskDependencySliceAsDependee(this, myManager.getDependencyCollection());
+    customValues = ((CustomColumnsValues) (copy.getCustomValues().clone()));
+    recalculateActivities();
+}

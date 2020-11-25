@@ -1,0 +1,3 @@
+public void loadPersistentValue(String value) {
+    myLockedValue = Boolean.valueOf(value).booleanValue();
+}

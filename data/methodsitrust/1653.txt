@@ -1,0 +1,3 @@
+public int getCholesterolTri() {
+    return cholesterolTri;
+}

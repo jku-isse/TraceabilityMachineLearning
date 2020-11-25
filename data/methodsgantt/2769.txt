@@ -1,0 +1,6 @@
+/**
+ * Return the object a specify cell
+ */
+public Object getValueAt(int row, int col) {
+    return data[row][col];
+}

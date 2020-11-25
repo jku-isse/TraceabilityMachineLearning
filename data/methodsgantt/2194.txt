@@ -1,0 +1,6 @@
+/**
+ * Releases a previously acquired lock.
+ *
+ * @see #acquireLock()
+ */
+public void releaseLock();

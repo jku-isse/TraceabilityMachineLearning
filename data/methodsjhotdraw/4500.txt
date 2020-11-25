@@ -1,0 +1,21 @@
+/**
+ * Creates a new Drawing for this view.
+ */
+protected Drawing createDrawing() {
+    Drawing drawing = new QuadTreeDrawing();
+    DOMStorableInputOutputFormat ioFormat = new DOMStorableInputOutputFormat(new DrawFigureFactory());
+    drawing.addInputFormat(ioFormat);
+    ImageFigure prototype = new ImageFigure();
+    drawing.addInputFormat(new ImageInputFormat(prototype));
+    drawing.addInputFormat(new ImageInputFormat(prototype, "JPG", "Joint Photographics Experts Group (JPEG)", "jpg", BufferedImage.TYPE_INT_RGB));
+    drawing.addInputFormat(new ImageInputFormat(prototype, "GIF", "Graphics Interchange Format (GIF)", "gif", BufferedImage.TYPE_INT_ARGB));
+    drawing.addInputFormat(new ImageInputFormat(prototype));
+    drawing.addInputFormat(new PictImageInputFormat(prototype));
+    drawing.addInputFormat(new TextInputFormat(new TextFigure()));
+    TextAreaFigure taf = new TextAreaFigure();
+    taf.setBounds(new Point2D.Double(10, 10), new Point2D.Double(60, 40));
+    drawing.addInputFormat(new TextInputFormat(taf));
+    drawing.addOutputFormat(ioFormat);
+    drawing.addOutputFormat(new ImageOutputFormat());
+    return drawing;
+}

@@ -1,0 +1,4 @@
+@Override
+public void figureRequestRemove(FigureEvent e) {
+    owner.remove(e.getFigure());
+}

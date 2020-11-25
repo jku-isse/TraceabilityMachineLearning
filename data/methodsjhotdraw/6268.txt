@@ -1,0 +1,4 @@
+public UndoAction() {
+    UndoRedoManager.labels.configureAction(this, "edit.undo");
+    setEnabled(false);
+}

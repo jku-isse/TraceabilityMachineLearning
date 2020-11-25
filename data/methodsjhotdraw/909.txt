@@ -1,0 +1,6 @@
+/**
+ * Removes a <code>ChangeListener</code>.
+ */
+public void removeChangeListener(ChangeListener l) {
+    listenerList.remove(ChangeListener.class, l);
+}

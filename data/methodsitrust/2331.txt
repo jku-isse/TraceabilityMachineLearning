@@ -1,0 +1,9 @@
+/**
+ *
+ */
+public PreparedStatement loadParameters(PreparedStatement ps, ApptRequestBean bean) throws SQLException {
+    PreparedStatement ps2 = loader.loadParameters(ps, bean.getRequestedAppt());
+    ps2.setBoolean(6, bean.isPending());
+    ps2.setBoolean(7, bean.isAccepted());
+    return ps2;
+}

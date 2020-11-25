@@ -1,0 +1,7 @@
+public boolean isTextOverflow() {
+    if ((isTextOverflow) == null) {
+        Insets2D.Double insets = getInsets();
+        isTextOverflow = (getPreferredTextSize((((getBounds().width) - (insets.left)) - (insets.right))).height) > (((getBounds().height) - (insets.top)) - (insets.bottom));
+    }
+    return isTextOverflow;
+}

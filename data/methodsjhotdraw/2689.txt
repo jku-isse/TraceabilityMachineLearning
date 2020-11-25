@@ -1,0 +1,4 @@
+public void read(DOMInput in) throws IOException {
+    super.read(in);
+    angle = ((float) (in.getAttribute("angle", 0.0)));
+}

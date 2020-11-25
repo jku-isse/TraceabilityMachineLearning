@@ -1,0 +1,21 @@
+public void paintColorTrack(Graphics g, int x, int y, int width, int height, int buffer) {
+    // g.setColor(Color.black);
+    // g.fillRect(x, y, width, height);
+    if ((((colorTrackImageProducer) == null) || ((colorTrackImageProducer.getWidth()) != width)) || ((colorTrackImageProducer.getHeight()) != height)) {
+        if ((colorTrackImage) != null) {
+            colorTrackImage.flush();
+        }
+        colorTrackImageProducer = new ColorTrackImageProducer(width, height, (buffer + 2), ((slider.getOrientation()) == (JSlider.HORIZONTAL)));
+        if ((slider.getClientProperty("colorSliderModel")) != null) {
+            colorTrackImageProducer.setColorSliderModel(((ColorSliderModel) (slider.getClientProperty("colorSliderModel"))));
+        }
+        if ((slider.getClientProperty("colorComponentIndex")) != null) {
+            colorTrackImageProducer.setColorComponentIndex(((Integer) (slider.getClientProperty("colorComponentIndex"))).intValue());
+        }
+        colorTrackImageProducer.generateColorTrack();
+        colorTrackImage = slider.createImage(colorTrackImageProducer);
+    } else {
+        colorTrackImageProducer.regenerateColorTrack();
+    }
+    g.drawImage(colorTrackImage, x, y, slider);
+}

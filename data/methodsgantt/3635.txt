@@ -1,0 +1,3 @@
+public void setDependTaskID(int successorTaskID) {
+    this.successorTaskID = successorTaskID;
+}

@@ -1,0 +1,5 @@
+public void testGetFormatted() {
+    med = new MedicationBean();
+    med.setNDCode("9283777777");
+    assertEquals("92837-77777", med.getNDCodeFormatted());
+}

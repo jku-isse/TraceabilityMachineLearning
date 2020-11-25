@@ -1,0 +1,8 @@
+protected void calculateThumbLocation() {
+    super.calculateThumbLocation();
+    if ((slider.getOrientation()) == (JSlider.HORIZONTAL)) {
+        thumbRect.y -= 3;
+    } else {
+        thumbRect.x -= 3;
+    }
+}

@@ -1,0 +1,20 @@
+private void importData(HumanResource next, Map original2imported) {
+    HumanResource imported = ((HumanResource) (create(next.getName(), nextFreeId)));
+    if ((next.getDaysOff()) != null)
+        for (int i = 0; i < (next.getDaysOff().size()); i++)
+            imported.addDaysOff(((GanttDaysOff) (((GanttDaysOff) (next.getDaysOff().get(i))).clone())));
+
+
+    imported.setName(next.getName());
+    imported.setDescription(next.getDescription());
+    imported.setMail(next.getMail());
+    imported.setPhone(next.getPhone());
+    imported.setRole(next.getRole());
+    /* <CustomProperty> */
+    List customProperties = next.getCustomProperties();
+    for (int i = 0; i < (customProperties.size()); i++) {
+        CustomProperty nextProperty = ((CustomProperty) (customProperties.get(i)));
+        imported.addCustomProperty(nextProperty.getDefinition(), nextProperty.getValueAsString());
+    }
+    original2imported.put(next, imported);
+}

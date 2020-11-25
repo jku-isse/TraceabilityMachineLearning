@@ -1,0 +1,11 @@
+/**
+ * Checks to see if the logged in HCP is the one who made the procedure.  Used to generate links for page to edit OfficeVisit
+ *
+ * @param x
+ * 		the ID of the HCP to check
+ */
+public boolean checkAccess(long x) throws DBException, FormValidationException {
+    LabProcedureBean pb = lpDAO.getLabProcedure(x);
+    OfficeVisitBean ovbean = ovDAO.getOfficeVisit(pb.getOvID());
+    return (loggedInMID) == (ovbean.getHcpID());
+}

@@ -1,0 +1,17 @@
+/**
+ * Adjust the created connection or split segment.
+ */
+public void mouseDragged(MouseEvent e) {
+    Point2D.Double p = viewToDrawing(new Point(e.getX(), e.getY()));
+    if ((getConnection()) != null) {
+        trackConnectors(e);
+        if ((getTargetConnector()) != null) {
+            p = getTargetConnector().getAnchor();
+        }
+        getConnection().setEndPoint(p);
+    } else
+        if ((editedConnection) != null) {
+            editedConnection.setPoint(splitPoint, p);
+        }
+
+}

@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((SummaryToolBarBeanInfo.beanDescriptor) == null)
+        SummaryToolBarBeanInfo.beanDescriptor = new BeanDescriptor(SummaryToolBarBeanInfo.class);
+
+    SummaryToolBarBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    SummaryToolBarBeanInfo.beanDescriptor.setDisplayName("SummaryToolBar");
+    return SummaryToolBarBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

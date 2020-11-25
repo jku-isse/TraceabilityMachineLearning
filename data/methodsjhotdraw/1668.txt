@@ -1,0 +1,26 @@
+public void setDrawing(Drawing newValue) {
+    Drawing oldValue = drawing;
+    if ((this.drawing) != null) {
+        this.drawing.removeCompositeFigureListener(eventHandler);
+        this.drawing.removeFigureListener(eventHandler);
+        clearSelection();
+    }
+    this.drawing = newValue;
+    if ((this.drawing) != null) {
+        this.drawing.addCompositeFigureListener(eventHandler);
+        this.drawing.addFigureListener(eventHandler);
+    }
+    invalidateDimension();
+    if ((getParent()) != null) {
+        getParent().validate();
+        if ((getParent()) instanceof JViewport) {
+            JViewport vp = ((JViewport) (getParent()));
+            Rectangle2D.Double r = getDrawingArea();
+            vp.setViewPosition(drawingToView(new Point2D.Double(Math.min(0, (-(r.x))), Math.min(0, (-(r.y))))));
+        }
+    }
+    firePropertyChange(DrawingView.DRAWING_PROPERTY, oldValue, newValue);
+    validateViewTranslation();
+    revalidate();
+    repaint();
+}

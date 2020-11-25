@@ -1,0 +1,10 @@
+// Constructors
+/**
+ * Create a new AnimationLayer instance.
+ *
+ * @param piecesLayer
+ * 		The layer with the pieces.
+ */
+AnimationLayer(PiecesLayer piecesLayer) {
+    setPiecesLayer(piecesLayer);
+}

@@ -1,0 +1,4 @@
+public void removeDependency(DependencyFigure f) {
+    dependencies.remove(f);
+    updateStartTime();
+}

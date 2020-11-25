@@ -1,0 +1,3 @@
+public TaskDependency.Hardness getHardness() {
+    return myHardness;
+}

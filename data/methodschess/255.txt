@@ -1,0 +1,8 @@
+/**
+ * Get the search depth for the computed ply.
+ *
+ * @return The search depth for the computed ply.
+ */
+public final int getSearchDepth() {
+    return _searchDepth;
+}

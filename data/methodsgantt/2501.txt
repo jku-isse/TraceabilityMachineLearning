@@ -1,0 +1,1 @@
+void add(DateIntervalListEditor.DateInterval interval);

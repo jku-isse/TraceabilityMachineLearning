@@ -1,0 +1,13 @@
+public void transform(AffineTransform tx) {
+    if (((AttributeKeys.TRANSFORM.get(this)) != null) || (((tx.getType()) & (AffineTransform.TYPE_TRANSLATION)) != (tx.getType()))) {
+        if ((AttributeKeys.TRANSFORM.get(this)) == null) {
+            AttributeKeys.TRANSFORM.basicSetClone(this, tx);
+        } else {
+            AffineTransform t = AttributeKeys.TRANSFORM.getClone(this);
+            t.preConcatenate(tx);
+            AttributeKeys.TRANSFORM.basicSet(this, t);
+        }
+    } else {
+        super.transform(tx);
+    }
+}

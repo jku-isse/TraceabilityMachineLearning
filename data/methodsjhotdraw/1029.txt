@@ -1,0 +1,4 @@
+/**
+ * Hook method to calculates the path of the decorator.
+ */
+protected abstract GeneralPath getDecoratorPath(Figure f);

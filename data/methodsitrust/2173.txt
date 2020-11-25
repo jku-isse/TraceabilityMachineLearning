@@ -1,0 +1,3 @@
+public void setDiastolicBloodPressureAllowed(boolean diastolicBloodPressureAllowed) {
+    this.diastolicBloodPressureAllowed = diastolicBloodPressureAllowed;
+}

@@ -1,0 +1,8 @@
+public void testEvilDatabase() {
+    try {
+        new PatientBaseAction(EvilDAOFactory.getEvilInstance(), "2222");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("A database exception has occurred. Please see the log in the console for stacktrace", e.getMessage());
+    }
+}

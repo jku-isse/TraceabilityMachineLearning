@@ -1,0 +1,21 @@
+// Instance variables
+// Constructors
+// Methods
+/**
+ * Check if the given file is a PGN file.
+ *
+ * @param file
+ * 		The file to check.
+ * @return true, if the file is a PGN file, false otherwise.
+ */
+public boolean accept(File file) {
+    if (file == null) {
+        return false;
+    }
+    String filename = file.getName();
+    int i = filename.lastIndexOf(.);
+    if ((i > 0) && (i < ((filename.length()) - 1))) {
+        return "pgn".equalsIgnoreCase(filename.substring((i + 1)).toLowerCase());
+    }
+    return false;
+}

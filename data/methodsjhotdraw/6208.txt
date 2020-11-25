@@ -1,0 +1,8 @@
+/**
+ * Convenience method for creating a formatter factory with a
+ * {@code FontFormatter}.
+ * Uses the RGB_INTEGER format and disallows null values.
+ */
+public static JFormattedTextField.AbstractFormatterFactory createFormatterFactory() {
+    return FontFormatter.createFormatterFactory(false);
+}

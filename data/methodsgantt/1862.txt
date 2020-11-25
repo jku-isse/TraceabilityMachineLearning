@@ -1,0 +1,5 @@
+GraphicPrimitiveContainer.Text createText(int leftx, int bottomy, String text) {
+    GraphicPrimitiveContainer.Text result = new GraphicPrimitiveContainer.Text(leftx, bottomy, text);
+    myTexts.add(result);
+    return result;
+}

@@ -1,0 +1,3 @@
+public int getYOffSet() {
+    return myYOffset;
+}

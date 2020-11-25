@@ -1,0 +1,43 @@
+public void actionPerformed(ActionEvent e) {
+    final SVGView p = ((SVGView) (getActiveView()));
+    SVGOutputFormat format = new SVGOutputFormat();
+    format.setPrettyPrint(true);
+    ByteArrayOutputStream buf = new ByteArrayOutputStream();
+    try {
+        format.write(buf, p.getDrawing());
+        String source = buf.toString("UTF-8");
+        final JDialog dialog;
+        if ((p.getClientProperty(ViewSourceAction.DIALOG_CLIENT_PROPERTY)) == null) {
+            dialog = new JDialog(((Frame) (SwingUtilities.getWindowAncestor(p.getComponent()))));
+            p.putClientProperty(ViewSourceAction.DIALOG_CLIENT_PROPERTY, dialog);
+            dialog.setTitle(p.getTitle());
+            dialog.setResizable(true);
+            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+            JTextArea ta = new JTextArea(source);
+            ta.setWrapStyleWord(true);
+            ta.setLineWrap(true);
+            JScrollPane sp = new JScrollPane(ta);
+            // sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+            dialog.getContentPane().add(sp);
+            dialog.setSize(400, 400);
+            dialog.setLocationByPlatform(true);
+        } else {
+            dialog = ((JDialog) (p.getClientProperty(ViewSourceAction.DIALOG_CLIENT_PROPERTY)));
+            JTextArea ta = ((JTextArea) (((JScrollPane) (dialog.getContentPane().getComponent(0))).getViewport().getView()));
+            ta.setText(source);
+        }
+        Preferences prefs = Preferences.userNodeForPackage(getClass());
+        PreferencesUtil.installFramePrefsHandler(prefs, "viewSource", dialog);
+        dialog.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent evt) {
+                getApplication().removeWindow(dialog);
+                p.putClientProperty(ViewSourceAction.DIALOG_CLIENT_PROPERTY, null);
+            }
+        });
+        getApplication().addWindow(dialog, getActiveView());
+        dialog.setVisible(true);
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+}

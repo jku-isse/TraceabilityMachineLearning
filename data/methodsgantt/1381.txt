@@ -1,0 +1,3 @@
+public void undoOrRedoHappened() {
+    setEnabled(myUndoManager.canUndo());
+}

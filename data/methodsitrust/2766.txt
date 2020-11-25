@@ -1,0 +1,5 @@
+public void testGetAllLabProceduresLOINC() throws Exception {
+    List<LabProcedureBean> procedures = lpDAO.getAllLabProceduresLOINC(1, "10640-1");
+    assertEquals(1, procedures.size());
+    assertEquals("10640-1", procedures.get(0).getLoinc());
+}

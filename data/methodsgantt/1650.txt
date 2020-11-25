@@ -1,0 +1,27 @@
+public float calculateLength(int fromX, int toX, int y) {
+    // return toX - fromX;
+    int curX = fromX;
+    int totalPixels = toX - fromX;
+    int holidayPixels = 0;
+    while (curX < toX) {
+        GraphicPrimitiveContainer.GraphicPrimitive nextPrimitive = getChartGrid().getPrimitiveContainer().getPrimitive(curX, (y - (getChartUIConfiguration().getHeaderHeight())));
+        if ((nextPrimitive instanceof GraphicPrimitiveContainer.Rectangle) && ((GPCalendar.DayType.WEEKEND) == (nextPrimitive.getModelObject()))) {
+            GraphicPrimitiveContainer.Rectangle nextRect = ((GraphicPrimitiveContainer.Rectangle) (nextPrimitive));
+            holidayPixels += (nextRect.getRightX()) - curX;
+            if ((nextRect.myLeftX) < curX) {
+                holidayPixels -= curX - (nextRect.myLeftX);
+            }
+            if ((nextRect.myLeftX) < fromX) {
+                holidayPixels -= fromX - (nextRect.myLeftX);
+            }
+            if ((nextRect.getRightX()) > toX) {
+                holidayPixels -= (nextRect.getRightX()) - toX;
+            }
+            curX = (nextRect.getRightX()) + 1;
+        } else {
+            curX += getBottomUnitWidth();
+        }
+    } 
+    float workPixels = ((float) (totalPixels)) - ((float) (holidayPixels));
+    return workPixels / ((float) (getBottomUnitWidth()));
+}

@@ -1,0 +1,22 @@
+/**
+ * Adds an empty patient to the table, returns the new MID
+ *
+ * @return The MID of the patient as a long.
+ * @throws DBException
+ * 		
+ */
+public long addEmptyPatient() throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO patients(MID) VALUES(NULL)");
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

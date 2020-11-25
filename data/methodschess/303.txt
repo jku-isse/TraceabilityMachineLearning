@@ -1,0 +1,13 @@
+// Constructors
+/**
+ * Create a new instance of a computed ply.
+ *
+ * @param ply
+ * 		The computed ply.
+ * @param searchDepth
+ * 		The used search depth.
+ */
+public PreComputedPlyImpl(AnalyzedPly ply, int searchDepth) {
+    setPly(ply);
+    setSearchDepth(searchDepth);
+}

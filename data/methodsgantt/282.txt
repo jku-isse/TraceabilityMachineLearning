@@ -1,0 +1,3 @@
+public void beginMoveTaskInteraction(MouseEvent e, Task task) {
+    setActiveInteraction(new GanttGraphicArea.MoveTaskInteraction(e, task));
+}

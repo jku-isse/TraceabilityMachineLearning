@@ -1,0 +1,3 @@
+public List<TelemedicineBean> getTelemedicineBean(long patientMID) throws DBException {
+    return rmDAO.getTelemedicineBean(patientMID);
+}

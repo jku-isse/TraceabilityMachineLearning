@@ -1,0 +1,8 @@
+public void testGetOfficeVisitsWithInstructions() throws Exception {
+    action = new ViewPatientInstructionsAction(factory, "5");
+    assertEquals(0, action.getOfficeVisitsWithInstructions().size());
+    gen.uc44_acceptance_scenario_2();
+    gen.hcp4();
+    action = new ViewPatientInstructionsAction(factory, "1");
+    assertEquals(1, action.getOfficeVisitsWithInstructions().size());
+}

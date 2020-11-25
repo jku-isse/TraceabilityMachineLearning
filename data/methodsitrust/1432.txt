@@ -1,0 +1,4 @@
+public void testPatientName() {
+    p1.setPatientName("name");
+    assertEquals("name", p1.getPatientName());
+}

@@ -1,0 +1,3 @@
+public CustomColumnsStorage getCustomColumnsStorage() {
+    return myTaskManager.getCustomColumnStorage();
+}

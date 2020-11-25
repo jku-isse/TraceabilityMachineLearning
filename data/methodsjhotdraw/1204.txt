@@ -1,0 +1,14 @@
+protected void readPoints(DOMInput in) throws IOException {
+    path.clear();
+    in.openElement("points");
+    setClosed(in.getAttribute("closed", false));
+    for (int i = 0, n = in.getElementCount("p"); i < n; i++) {
+        in.openElement("p", i);
+        BezierPath.Node node = new BezierPath.Node(in.getAttribute("mask", 0), in.getAttribute("x", 0.0), in.getAttribute("y", 0.0), in.getAttribute("c1x", in.getAttribute("x", 0.0)), in.getAttribute("c1y", in.getAttribute("y", 0.0)), in.getAttribute("c2x", in.getAttribute("x", 0.0)), in.getAttribute("c2y", in.getAttribute("y", 0.0)));
+        node.keepColinear = in.getAttribute("colinear", true);
+        path.add(node);
+        path.invalidatePath();
+        in.closeElement();
+    }
+    in.closeElement();
+}

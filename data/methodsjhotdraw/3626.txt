@@ -1,0 +1,8 @@
+public void remove(T o) {
+    if (((objects.remove(o)) == null) && (!(isLeaf()))) {
+        northEast.remove(o);
+        northWest.remove(o);
+        southEast.remove(o);
+        southWest.remove(o);
+    }
+}

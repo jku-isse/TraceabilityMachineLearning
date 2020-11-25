@@ -1,0 +1,5 @@
+public void undoOrRedoHappened() {
+    // System.out.println("undoOrRedoHappened");
+    ourCriticProcess = true;
+    fireDelayObservation();
+}

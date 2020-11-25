@@ -1,0 +1,110 @@
+/**
+ * Creates a view (FieldView) based on an element.
+ *
+ * @param elem
+ * 		the element
+ * @return the view
+ */
+@Override
+public View create(Element elem) {
+    /* We create our own view here. This view always uses the
+    text alignment that was specified by the text component. Even
+    then, when the text is longer than in the text component.
+
+    Draws a wavy line if the value of the field is not valid.
+     */
+    return new FieldView(elem) {
+        /**
+         * Adjusts the allocation given to the view
+         * to be a suitable allocation for a text field.
+         * If the view has been allocated more than the
+         * preferred span vertically, the allocation is
+         * changed to be centered vertically.  Horizontally
+         * the view is adjusted according to the horizontal
+         * alignment property set on the associated JTextField
+         * (if that is the type of the hosting component).
+         *
+         * @param a
+         * 		the allocation given to the view, which may need
+         * 		to be adjusted.
+         * @return the allocation that the superclass should use.
+         */
+        protected Shape adjustAllocationXX(Shape a) {
+            if (a != null) {
+                Rectangle bounds = a.getBounds();
+                int vspan = ((int) (getPreferredSpan(View.Y_AXIS)));
+                int hspan = ((int) (getPreferredSpan(View.X_AXIS)));
+                if ((bounds.height) != vspan) {
+                    int slop = (bounds.height) - vspan;
+                    bounds.y += slop / 2;
+                    bounds.height -= slop;
+                }
+                // horizontal adjustments
+                Component c = getContainer();
+                if (c instanceof JTextField) {
+                    JTextField field = ((JTextField) (c));
+                    BoundedRangeModel vis = field.getHorizontalVisibility();
+                    int max = Math.max(hspan, bounds.width);
+                    int value = vis.getValue();
+                    int extent = Math.min(max, ((bounds.width) - 1));
+                    if ((value + extent) > max) {
+                        value = max - extent;
+                    }
+                    vis.setRangeProperties(value, extent, vis.getMinimum(), max, false);
+                    if (hspan < (bounds.width)) {
+                        // horizontally align the interior
+                        int slop = ((bounds.width) - 1) - hspan;
+                        int align = ((JTextField) (c)).getHorizontalAlignment();
+                        /* ((JComponent) c).isLeftToRight() */
+                        if (true) {
+                            if (align == (SwingConstants.LEADING)) {
+                                align = SwingConstants.LEFT;
+                            } else
+                                if (align == (SwingConstants.TRAILING)) {
+                                    align = SwingConstants.RIGHT;
+                                }
+
+                        } else {
+                            if (align == (SwingConstants.LEADING)) {
+                                align = SwingConstants.RIGHT;
+                            } else
+                                if (align == (SwingConstants.TRAILING)) {
+                                    align = SwingConstants.LEFT;
+                                }
+
+                        }
+                        switch (align) {
+                            case SwingConstants.CENTER :
+                                bounds.x += slop / 2;
+                                bounds.width -= slop;
+                                break;
+                            case SwingConstants.RIGHT :
+                                bounds.x += slop;
+                                bounds.width -= slop;
+                                break;
+                        }
+                    } else {
+                        // adjust the allocation to match the bounded range.
+                        bounds.width = hspan;
+                        bounds.x -= vis.getValue();
+                    }
+                }
+                return bounds;
+            }
+            return null;
+        }
+
+        @Override
+        public void paint(Graphics gr, Shape a) {
+            Graphics2D g = ((Graphics2D) (gr));
+            JFormattedTextField editor = ((JFormattedTextField) (getComponent()));
+            if (!(editor.isEditValid())) {
+                Rectangle r = ((Rectangle) (a));
+                g.setColor(errorIndicatorForeground);
+                g.setStroke(new BasicStroke(2.5F, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{ 3.0F, 3.0F }, 0.5F));
+                g.draw(new Line2D.Float(r.x, (((r.y) + (r.height)) - 0.5F), (((r.x) + (r.width)) - 1), (((r.y) + (r.height)) - 0.5F)));
+            }
+            super.paint(g, a);
+        }
+    };
+}

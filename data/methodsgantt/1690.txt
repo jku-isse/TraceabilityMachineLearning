@@ -1,0 +1,25 @@
+public void paint(Graphics g) {
+    int height = ((int) (getBounds().getHeight())) - (getChartUIConfiguration().getHeaderHeight());
+    myTopUnitOffsets.clear();
+    myBottomUnitOffsets.clear();
+    myDefaultUnitOffsets.clear();
+    if (getTopUnit().isConstructedFrom(getBottomUnit())) {
+        // It is the case when top unit can always be constructed from integer number of bottom units,
+        // and bounds of top unit and start/end bottom units are aligned
+        // e.g. week can be constructed from days
+        RegularFrameOffsetBuilder offsetBuilder = new RegularFrameOffsetBuilder(myTimeUnitStack, myTaskManager.getCalendar(), myTopUnit, getBottomUnit(), myStartDate, getBottomUnitWidth(), ((int) (getBounds().getWidth())), RegularFrameOffsetBuilder.WEEKEND_UNIT_WIDTH_DECREASE_FACTOR);
+        offsetBuilder.constructOffsets(myTopUnitOffsets, myBottomUnitOffsets);
+    } else {
+        // In this case top unit cant be constructed from integer number of bottom units
+        // and unit boundaries arent aligned. Thus, month and weeks are skewed units
+        SkewedFrameOffsetBuilder offsetBuilder = new SkewedFrameOffsetBuilder(myTimeUnitStack, myTaskManager.getCalendar(), myTopUnit, getBottomUnit(), myStartDate, getBottomUnitWidth(), ((int) (getBounds().getWidth())));
+        offsetBuilder.constructOffsets(myTopUnitOffsets, myBottomUnitOffsets);
+    }
+    myChartHeader.setHeight(height);
+    myChartHeader.render();
+    myChartGrid.setHeight(height);
+    myBackgroundRenderer.setHeight(height);
+    myPainter.setGraphics(g);
+    myBackgroundRenderer.getPrimitiveContainer().paint(getPainter(), g);
+    myChartHeader.getPrimitiveContainer().paint(getPainter(), g);
+}

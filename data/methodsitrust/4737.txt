@@ -1,0 +1,19 @@
+/* protected void tearDown()
+{
+try
+{
+(new TestDataGenerator()).clearAllTables();
+}
+catch (Exception e)
+{
+System.err.println("ERROR: Couldnt clear tables. Everything else will fail");
+}
+}
+ */
+public void testPatientAllCorrect() throws Exception {
+    PatientBean p = new PatientBean();
+    p.setFirstName("Persona");
+    p.setLastName("LastName");
+    p.setEmail("andy.programmer@gmail.com");
+    new AddPatientValidator().validate(p);
+}

@@ -1,0 +1,3 @@
+public IStatus canPaste(ChartSelection selection) {
+    return getImplementation().canPaste(selection);
+}

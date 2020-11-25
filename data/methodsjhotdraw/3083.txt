@@ -1,0 +1,3 @@
+public static JPopupButton createStrokeCapButton(DrawingEditor editor) {
+    return ButtonFactory.createStrokeCapButton(editor, ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+}

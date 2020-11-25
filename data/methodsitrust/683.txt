@@ -1,0 +1,19 @@
+/**
+ * Sends an e-mail informing the patient that their procedure has been updated
+ *
+ * @param b
+ * 		the procedure that was updated
+ * @return an e-mail to the patient with the notice
+ * @throws DBException
+ * 		
+ */
+private Email makeEmail(LabProcedureBean b) throws DBException {
+    PatientBean p = new PatientDAO(factory).getPatient(b.getPid());
+    Email email = new Email();
+    email.setFrom("no-reply@itrust.com");
+    email.setToList(Arrays.asList(p.getEmail()));
+    email.setSubject("A Lab Procedure Was Updated");
+    email.setBody(String.format("Dear %s, 
+ Your Lab Procedure (%s) has a new updated status of %s. Log on to iTrust to view.", p.getFullName(), b.getLoinc(), b.getStatus()));
+    return email;
+}

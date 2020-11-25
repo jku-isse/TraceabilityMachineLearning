@@ -1,0 +1,5 @@
+ExitAction(GanttProject mainFrame) {
+    super("quit");
+    myMainFrame = mainFrame;
+    putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_Q, GPAction.MENU_MASK));
+}

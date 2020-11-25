@@ -1,0 +1,4 @@
+public Rectangle2D.Double getDrawingArea() {
+    Point2D.Double anchor = getAnchor();
+    return new Rectangle2D.Double(((anchor.x) - 4), ((anchor.y) - 4), 8, 8);
+}

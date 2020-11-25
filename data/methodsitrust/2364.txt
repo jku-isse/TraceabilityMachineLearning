@@ -1,0 +1,15 @@
+public HealthRecord loadSingle(ResultSet rs) throws SQLException {
+    HealthRecord hr = new HealthRecord();
+    hr.setBloodPressureN(rs.getInt("BloodPressureN"));
+    hr.setBloodPressureD(rs.getInt("BloodPressureD"));
+    hr.setCholesterolHDL(rs.getInt("CholesterolHDL"));
+    hr.setCholesterolLDL(rs.getInt("CholesterolLDL"));
+    hr.setCholesterolTri(rs.getInt("CholesterolTri"));
+    hr.setDateRecorded(rs.getTimestamp("AsOfDate"));
+    hr.setSmoker(rs.getInt("SmokingStatus"));
+    hr.setHeight(rs.getDouble("Height"));
+    hr.setWeight(rs.getDouble("Weight"));
+    hr.setPersonnelID(rs.getLong("HCPID"));
+    hr.setPatientID(rs.getLong("PatientID"));
+    return hr;
+}

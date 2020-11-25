@@ -1,0 +1,4 @@
+void setValue(Object newValue) {
+    myFieldValue = newValue;
+    myEventSender.enable();
+}

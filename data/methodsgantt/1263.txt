@@ -1,0 +1,3 @@
+public void setResourceDividerLocation(int location) {
+    myFallbackDelegate.setResourceDividerLocation(location);
+}

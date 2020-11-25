@@ -1,0 +1,9 @@
+public void testAddRemoteMonitoringDataGlucoseOnly() throws Exception {
+    try {
+        RemoteMonitoringDataBean b = new RemoteMonitoringDataBean();
+        b.setGlucoseLevel(80);
+        action.addRemoteMonitoringData(b);
+    } catch (FormValidationException e) {
+        fail();
+    }
+}

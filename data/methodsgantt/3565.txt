@@ -1,0 +1,3 @@
+public String formatShortDate(GanttCalendar date) {
+    return shortCurrentDateFormat.format(date.getTime());
+}

@@ -1,0 +1,15 @@
+/**
+ * Creates a new instance.
+ *
+ * @param description
+ * 		A human readable description.
+ * @param extension
+ * 		The filename extension. This will be converted to
+ * 		lower-case by this method.
+ */
+public ExtensionFileFilter(String description, String extension) {
+    this.description = description;
+    this.extensions = new HashSet<String>();
+    extensions.add(extension.toLowerCase());
+    defaultExtension = extension;
+}

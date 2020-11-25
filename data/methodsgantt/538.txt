@@ -1,0 +1,11 @@
+/**
+ *
+ *
+ * @return the status Bar of the main frame.
+ */
+// public GanttStatusBar getStatusBar() {
+// return statusBar;
+// }
+public String getXslFo() {
+    return options.getXslFo();
+}

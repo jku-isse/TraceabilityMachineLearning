@@ -1,0 +1,3 @@
+public void setTextFormatter(TextFormatter formatter) {
+    this.setTextFormatter(formatter);
+}

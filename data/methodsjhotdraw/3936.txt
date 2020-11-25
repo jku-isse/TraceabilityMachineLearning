@@ -1,0 +1,13 @@
+/**
+ * Creates a layout manager that will lay out components along the
+ * given axis.
+ *
+ * @param axis
+ * 		the axis to lay out components along. Can be one of:
+ * 		<code>BoxLayout.X_AXIS</code>,
+ * 		<code>BoxLayout.Y_AXIS</code>,
+ * @exception AWTError  if the value of <code>axis</code> is invalid
+ */
+public ToolBarLayout(int axis) {
+    this.axis = axis;
+}

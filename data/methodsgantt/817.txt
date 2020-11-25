@@ -1,0 +1,18 @@
+/**
+ * Return all sub task for the tree node base
+ */
+public ArrayList getAllChildTask(Task task) {
+    ArrayList res = new ArrayList();
+    if (task == null)
+        return null;
+
+    DefaultMutableTreeNode base = ((DefaultMutableTreeNode) (getNode(task.getTaskID())));
+    if (base == null)
+        return res;
+
+    Enumeration e = base.children();
+    while (e.hasMoreElements()) {
+        res.add(e.nextElement());
+    } 
+    return res;
+}

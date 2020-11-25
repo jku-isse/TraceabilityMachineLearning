@@ -1,0 +1,7 @@
+public void setPropertiesPanelVisible(boolean newValue) {
+    boolean oldValue = propertiesPanel.isVisible();
+    propertiesPanel.setVisible(newValue);
+    firePropertyChange("propertiesPanelVisible", oldValue, newValue);
+    preferences.putBoolean("propertiesPanelVisible", newValue);
+    validate();
+}

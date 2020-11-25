@@ -1,0 +1,3 @@
+// Empty class isnt used at all - this is just used as a test hook into testing BeanValidator.
+public TestBean() {
+}

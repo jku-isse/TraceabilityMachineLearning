@@ -1,0 +1,10 @@
+/**
+ * Set the color of this piece.
+ *
+ * @param The
+ * 		new color of this piece.
+ */
+public final void setColor(byte color) {
+    _typeColor &= ((byte) (14));
+    _typeColor |= color;
+}

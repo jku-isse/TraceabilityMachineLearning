@@ -1,0 +1,13 @@
+public void testRemoveWardRoom() {
+    try {
+        wd1.removeWardRoom(1L);
+    } catch (DBException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.removeWardRoom(1L);
+        fail();
+    } catch (Exception e) {
+    }
+}

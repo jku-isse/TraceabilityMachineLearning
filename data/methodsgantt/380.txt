@@ -1,0 +1,11 @@
+/**
+ *
+ *
+ * @return the task name prefix.
+ */
+public String getTaskNamePrefix() {
+    if (((sTaskNamePrefix) == null) || (sTaskNamePrefix.equals("")))
+        return language.getText("newTask");
+
+    return sTaskNamePrefix;
+}

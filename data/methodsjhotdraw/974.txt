@@ -1,0 +1,4 @@
+public void removeNotify(Drawing d) {
+    fireFigureRemoved();
+    this.drawing = null;
+}

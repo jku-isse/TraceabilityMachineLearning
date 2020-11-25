@@ -1,0 +1,9 @@
+/**
+ * Creates a new instance.
+ */
+/**
+ * Creates a new instance.
+ */
+public AttributeAction(DrawingEditor editor, AttributeKey key, Object value) {
+    this(editor, key, value, null, null);
+}

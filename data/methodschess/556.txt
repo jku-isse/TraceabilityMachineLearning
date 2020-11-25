@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the analyzed ply.
+ *
+ * @return The analyzed ply.
+ */
+public final Ply getPly() {
+    return _ply;
+}

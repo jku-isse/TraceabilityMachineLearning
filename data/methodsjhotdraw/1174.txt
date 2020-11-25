@@ -1,0 +1,41 @@
+public boolean contains(Point2D.Double p) {
+    double tolerance = Math.max(2.0F, ((AttributeKeys.getStrokeTotalWidth(this)) / 2.0));
+    if ((isClosed()) || (((AttributeKeys.FILL_COLOR.get(this)) != null) && (AttributeKeys.FILL_OPEN_PATH.get(this)))) {
+        if (path.contains(p)) {
+            return true;
+        }
+        double grow = (AttributeKeys.getPerpendicularHitGrowth(this)) * 2.0;
+        GrowStroke gs = new GrowStroke(((float) (grow)), ((float) ((AttributeKeys.getStrokeTotalWidth(this)) * (AttributeKeys.STROKE_MITER_LIMIT.get(this)))));
+        if (gs.createStrokedShape(path).contains(p)) {
+            return true;
+        } else {
+            if (isClosed()) {
+                return false;
+            }
+        }
+    }
+    if (!(isClosed())) {
+        if (getCappedPath().outlineContains(p, tolerance)) {
+            return true;
+        }
+        if ((AttributeKeys.START_DECORATION.get(this)) != null) {
+            BezierPath cp = getCappedPath();
+            Point2D.Double p1 = path.get(0, 0);
+            Point2D.Double p2 = cp.get(0, 0);
+            // FIXME - Check here, if caps path contains the point
+            if (Geom.lineContainsPoint(p1.x, p1.y, p2.x, p2.y, p.x, p.y, tolerance)) {
+                return true;
+            }
+        }
+        if ((AttributeKeys.END_DECORATION.get(this)) != null) {
+            BezierPath cp = getCappedPath();
+            Point2D.Double p1 = path.get(((path.size()) - 1), 0);
+            Point2D.Double p2 = cp.get(((path.size()) - 1), 0);
+            // FIXME - Check here, if caps path contains the point
+            if (Geom.lineContainsPoint(p1.x, p1.y, p2.x, p2.y, p.x, p.y, tolerance)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}

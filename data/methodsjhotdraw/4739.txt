@@ -1,0 +1,11 @@
+/**
+ * A bean may have a "default" event that is the event that will
+ * mostly commonly be used by humans when using the bean.
+ *
+ * @return Index of default event in the EventSetDescriptor array
+returned by getEventSetDescriptors.
+<P>	Returns -1 if there is no default event.
+ */
+public int getDefaultEventIndex() {
+    return ODGPropertiesPanelBeanInfo.defaultEventIndex;
+}

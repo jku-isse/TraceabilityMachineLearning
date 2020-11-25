@@ -1,0 +1,3 @@
+public Font getFont(String key) {
+    return ((Font) (get(key)));
+}

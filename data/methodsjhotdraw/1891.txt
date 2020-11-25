@@ -1,0 +1,7 @@
+/**
+ * Gets the current constrainer of this view.
+ * If isConstrainerVisible is true, this method returns getVisibleConstrainer,
+ * otherwise it returns getInvisibleConstrainer.
+ * This is a bound property.
+ */
+public Constrainer getConstrainer();

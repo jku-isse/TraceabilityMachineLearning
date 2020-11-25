@@ -1,0 +1,3 @@
+public Connector getStartConnector() {
+    return startConnector;
+}

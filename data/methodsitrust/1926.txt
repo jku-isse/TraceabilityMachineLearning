@@ -1,0 +1,3 @@
+public void setChangeDateStr(String changeDate) {
+    this.changeDateStr = changeDate;
+}

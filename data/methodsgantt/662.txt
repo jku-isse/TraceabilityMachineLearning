@@ -1,0 +1,6 @@
+public void optionsChanged() {
+    myTreeView.getTable().setRowHeight(myGanttViewModel.setRowHeight());
+    AbstractTableModel model = ((AbstractTableModel) (myTreeView.getTable().getModel()));
+    model.fireTableStructureChanged();
+    myTreeView.updateUI();
+}

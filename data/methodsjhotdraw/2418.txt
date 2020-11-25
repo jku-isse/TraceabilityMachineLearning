@@ -1,0 +1,7 @@
+public void bringToFront(Figure figure) {
+    if (children.remove(figure)) {
+        children.add(figure);
+        needsSorting = true;
+        fireAreaInvalidated(figure.getDrawingArea());
+    }
+}

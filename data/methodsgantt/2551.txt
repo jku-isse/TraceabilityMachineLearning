@@ -1,0 +1,8 @@
+private int getSelectedType(String typeName) {
+    for (int i = 0; i < (CustomColumnsStorage.availableTypes.size()); i++) {
+        if (CustomColumnsStorage.availableTypes.get(i).equals(typeName)) {
+            return i;
+        }
+    }
+    return -1;
+}

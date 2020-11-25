@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param apptType
+ * 		the apptType to set
+ */
+public void setApptType(String apptType) {
+    this.apptType = apptType;
+}

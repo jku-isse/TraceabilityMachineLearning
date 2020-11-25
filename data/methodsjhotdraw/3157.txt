@@ -1,0 +1,6 @@
+/**
+ * Gets the target of the proxy.
+ */
+public DrawingEditor getTarget() {
+    return target;
+}

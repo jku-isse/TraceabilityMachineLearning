@@ -1,0 +1,3 @@
+private void writeTextCell(OutputStreamWriter out, String cellValue) throws IOException {
+    out.write((((bFixedSize ? "" : csvOptions.sSeparatedTextChar) + (correctField(cellValue))) + (bFixedSize ? "" : (csvOptions.sSeparatedTextChar) + (csvOptions.sSeparatedChar))));
+}

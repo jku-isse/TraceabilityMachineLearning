@@ -1,0 +1,6 @@
+/* deletes the column from the screen and the data model */
+public void deleteCustomColumn(String name) {
+    ResourceColumn col = null;
+    col = ttModel.deleteCustomColumn(name);
+    this.removeColumn(col.getColumn());
+}

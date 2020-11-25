@@ -1,0 +1,8 @@
+public PreparedStatement loadParameters(PreparedStatement ps, ApptBean bean) throws SQLException {
+    ps.setString(1, bean.getApptType());
+    ps.setLong(2, bean.getPatient());
+    ps.setLong(3, bean.getHcp());
+    ps.setTimestamp(4, bean.getDate());
+    ps.setString(5, bean.getComment());
+    return ps;
+}

@@ -1,0 +1,10 @@
+/**
+ * Subtracts the current insets to the specified Rectangle2D making the
+ * rectangle smaller.
+ *
+ * @param r
+ * 		The Rectangle2D.
+ */
+public void subtractTo(Rectangle2D r) {
+    r.setRect(((r.getX()) + (getLeft())), ((r.getY()) + (getTop())), (((r.getWidth()) - (getLeft())) - (getRight())), (((r.getHeight()) - (getTop())) - (getBottom())));
+}

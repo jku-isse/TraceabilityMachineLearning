@@ -1,0 +1,7 @@
+public void testFilterByProcedure() throws Exception {
+    filter = new PersonnelReportFilter(PersonnelReportFilter.PersonnelReportFilterType.DLHCP, "Beaker Beaker", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertEquals(2, res.size());
+    assertTrue(((res.get(0).getMID()) == 22L));
+    assertTrue(((res.get(1).getMID()) == 23L));
+}

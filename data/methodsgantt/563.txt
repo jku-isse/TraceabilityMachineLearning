@@ -1,0 +1,15 @@
+public void refresh() {
+    getTaskManager().processCriticalPath(((TaskNode) (tree.getRoot())));
+    ArrayList projectTasks = tree.getProjectTasks();
+    if ((projectTasks.size()) != 0) {
+        for (int i = 0; i < (projectTasks.size()); i++)
+            getTaskManager().processCriticalPath(((TaskNode) (projectTasks.get(i))));
+
+    }
+    getResourcePanel().getResourceTreeTableModel().updateResources();
+    getResourcePanel().getResourceTreeTable().setRowHeight(20);
+    if ((myDelayManager) != null)
+        myDelayManager.fireDelayObservation();
+
+    super.repaint();
+}

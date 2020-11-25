@@ -1,0 +1,3 @@
+public String getName(DOMStorable o) {
+    return escape(o.getClass().getName());
+}

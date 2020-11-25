@@ -1,0 +1,20 @@
+/**
+ * Retores the expand state of the node and its children.
+ *
+ * @param node
+ * 		
+ */
+private void restoreExpand(TaskNode node) {
+    Task task = ((Task) (node.getUserObject()));
+    boolean expand = task.getExpand();
+    Enumeration enumeration = node.children();
+    while (enumeration.hasMoreElements())
+        restoreExpand(((TaskNode) (enumeration.nextElement())));
+
+    if (expand)
+        getTreeTable().getTree().expandPath(new TreePath(node.getPath()));
+    else
+        getTreeTable().getTree().collapsePath(new TreePath(node.getPath()));
+
+    task.setExpand(expand);
+}

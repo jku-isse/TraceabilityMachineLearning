@@ -1,0 +1,11 @@
+/**
+ * Constrains the placement of a point towards the closest constraint
+ * in any direction.
+ * <p>
+ * This method changes the point which is passed as a parameter.
+ *
+ * @param p
+ * 		A point on the drawing.
+ * @return Returns the constrained point.
+ */
+public Point2D.Double constrainPoint(Point2D.Double p);

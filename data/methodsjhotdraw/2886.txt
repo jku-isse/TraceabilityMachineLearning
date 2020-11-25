@@ -1,0 +1,3 @@
+public static Handle northWest(Figure owner) {
+    return new TransformHandleKit.NorthWestHandle(owner);
+}

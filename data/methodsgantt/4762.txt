@@ -1,0 +1,1 @@
+void taskPropertiesChanged(TaskPropertyEvent e);

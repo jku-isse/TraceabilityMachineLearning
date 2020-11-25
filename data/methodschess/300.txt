@@ -1,0 +1,18 @@
+/**
+ * Stop the computation of a response to the next user ply.
+ */
+public final void stopComputation() {
+    if ((_searchThread) != null) {
+        Thread savedThread = _searchThread;// Save the thread.
+
+        ((ChessEngineImpl) (getEngine())).setSearchStop(true);
+        _searchThread = null;
+        // Signal to finish.
+        try {
+            savedThread.join();// Use the copy to wait
+
+        } catch (InterruptedException ignored) {
+        }// for the thread to finish.
+
+    }
+}

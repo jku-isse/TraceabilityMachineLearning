@@ -1,0 +1,14 @@
+public void testGetUpperBoundAsDouble() throws Exception {
+    LabProcedureBean lp = new LabProcedureBean();
+    assertEquals("", lp.getUpperBound());
+    assertEquals(Double.NaN, lp.getUpperBoundAsDouble(), 1.0E-7);
+    lp.setUpperBound("0.0");
+    assertEquals("0.0", lp.getUpperBound());
+    assertEquals(0.0, lp.getUpperBoundAsDouble(), 1.0E-7);
+    lp.setUpperBound("0.1");
+    assertEquals("0.1", lp.getUpperBound());
+    assertEquals(0.1, lp.getUpperBoundAsDouble(), 1.0E-7);
+    lp.setUpperBound("-5.1");
+    assertEquals("-5.1", lp.getUpperBound());
+    assertEquals((-5.1), lp.getUpperBoundAsDouble(), 1.0E-7);
+}

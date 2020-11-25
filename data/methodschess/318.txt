@@ -1,0 +1,13 @@
+/**
+ * Prepare the test(s).
+ */
+protected void setUp() {
+    // Create a new game.
+    _game = new GameImpl();
+    // Create a new board.
+    _board = new BitBoardImpl();
+    // Create the ply generator.
+    _plyGenerator = new PlyGenerator(_game, new PlyHashtableImpl(1000));
+    // And the analyzer.
+    _analyzer = new BitBoardAnalyzerImpl(_game, _plyGenerator);
+}

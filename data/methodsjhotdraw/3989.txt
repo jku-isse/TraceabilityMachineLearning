@@ -1,0 +1,14 @@
+/**
+ * Returns an array of all the tree model listeners
+ * registered on this model.
+ *
+ * @return all of this models <code>TreeModelListener</code>s
+or an empty
+array if no tree model listeners are currently registered
+ * @see #addTreeModelListener
+ * @see #removeTreeModelListener
+ * @since 1.4
+ */
+public TreeModelListener[] getTreeModelListeners() {
+    return ((TreeModelListener[]) (listenerList.getListeners(TreeModelListener.class)));
+}

@@ -1,0 +1,15 @@
+/**
+ *
+ *
+ * @return A java.util.List of patient risk factors associated with this disease.
+ */
+public List<PatientRiskFactor> getPatientRiskFactors() {
+    List<PatientRiskFactor> patientRiskFactors = new ArrayList<PatientRiskFactor>();
+    List<PatientRiskFactor> diseaseRiskFactors = getDiseaseRiskFactors();
+    for (PatientRiskFactor factor : diseaseRiskFactors) {
+        if (factor.hasRiskFactor()) {
+            patientRiskFactors.add(factor);
+        }
+    }
+    return patientRiskFactors;
+}

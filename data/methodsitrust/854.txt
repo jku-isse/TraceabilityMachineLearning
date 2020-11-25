@@ -1,0 +1,16 @@
+/**
+ * Returns a list of the patients that the logged in HCP represents
+ *
+ * @return list of the patients that the logged in HCP represents
+ * @throws iTrustException
+ * 		
+ */
+public List<PatientBean> getMyRepresentees() throws iTrustException {
+    List<PatientBean> representees = new ArrayList<PatientBean>();
+    try {
+        representees = patientDAO.getRepresented(loggedInMID);
+    } catch (DBException e) {
+        e.printStackTrace();
+    }
+    return representees;
+}

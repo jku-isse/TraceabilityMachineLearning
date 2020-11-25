@@ -1,0 +1,6 @@
+/**
+ * Returns the ResourceColumn associated to the given index
+ */
+public ResourceColumn getColumn(int index) {
+    return ((ResourceColumn) (columns.get(new Integer(index))));
+}

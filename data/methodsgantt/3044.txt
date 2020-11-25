@@ -1,0 +1,3 @@
+public OptionsPageBuilder(Component parentComponent) {
+    myParentComponent = parentComponent;
+}

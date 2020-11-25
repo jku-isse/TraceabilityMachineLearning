@@ -1,0 +1,37 @@
+protected void drawDiamond(Graphics2D g, Color fill, Color stroke) {
+    if (stroke != null) {
+        Rectangle r = getBounds();
+        r.grow(1, 1);
+        GeneralPath p = new GeneralPath();
+        p.moveTo(((r.x) + ((r.width) / 2.0F)), r.y);
+        p.lineTo(((r.x) + (r.width)), ((r.y) + ((r.height) / 2.0F)));
+        p.lineTo(((r.x) + ((r.width) / 2.0F)), ((r.y) + (r.height)));
+        p.lineTo(r.x, ((r.y) + ((r.height) / 2.0F)));
+        p.closePath();
+        g.setColor(stroke);
+        g.fill(p);
+    }
+    if (fill != null) {
+        Rectangle r = getBounds();
+        GeneralPath p = new GeneralPath();
+        p.moveTo(((r.x) + ((r.width) / 2.0F)), r.y);
+        p.lineTo(((r.x) + (r.width)), ((r.y) + ((r.height) / 2.0F)));
+        p.lineTo(((r.x) + ((r.width) / 2.0F)), ((r.y) + (r.height)));
+        p.lineTo(r.x, ((r.y) + ((r.height) / 2.0F)));
+        p.closePath();
+        g.setColor(fill);
+        g.fill(p);
+    }
+    if ((stroke != null) && ((getView().getActiveHandle()) == (this))) {
+        Rectangle r = getBounds();
+        r.grow((-1), (-1));
+        GeneralPath p = new GeneralPath();
+        p.moveTo(((r.x) + ((r.width) / 2.0F)), r.y);
+        p.lineTo(((r.x) + (r.width)), ((r.y) + ((r.height) / 2.0F)));
+        p.lineTo(((r.x) + ((r.width) / 2.0F)), ((r.y) + (r.height)));
+        p.lineTo(r.x, ((r.y) + ((r.height) / 2.0F)));
+        p.closePath();
+        g.setColor(stroke);
+        g.fill(p);
+    }
+}

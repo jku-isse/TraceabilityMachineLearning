@@ -1,0 +1,9 @@
+public DefaultHarmonicColorModel() {
+    ColorSystem sys = new HSLRYBColorSystem();
+    sliderModel = new DefaultColorSliderModel(sys);
+    colors = new ArrayList<CompositeColor>();
+    rules = new ArrayList<HarmonicRule>();
+    base = 0;
+    add(new CompositeColor(sys, Color.RED));
+    DefaultListModel x;
+}

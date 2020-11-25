@@ -1,0 +1,6 @@
+public int compareTo(Object o) {
+    if (!(o instanceof ResourceAssignmentCollectionImpl.MutationInfo)) {
+        throw new IllegalArgumentException();
+    }
+    return (myOrder) - (((ResourceAssignmentCollectionImpl.MutationInfo) (o)).myOrder);
+}

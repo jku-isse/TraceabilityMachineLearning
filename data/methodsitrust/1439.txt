@@ -1,0 +1,7 @@
+public void testProcedureBean() throws Exception {
+    ProcedureBean pb = new ProcedureBean();
+    pb.setHcpid("9000000000");
+    assertEquals("9000000000", pb.getHcpid());
+    pb.setOvProcedureID(385730L);
+    assertEquals(385730L, pb.getOvProcedureID());
+}

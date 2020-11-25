@@ -1,0 +1,8 @@
+/**
+ * Processes the critical path findind on <code>root</code> tasks.
+ *
+ * @param root
+ * 		The root of the tasks to consider in the critical path
+ * 		finding.
+ */
+public void processCriticalPath(TaskNode root);

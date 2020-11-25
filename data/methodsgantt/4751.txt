@@ -1,0 +1,4 @@
+public TaskDependencyEvent(TaskDependencyCollection source, TaskDependency dependency) {
+    super(source);
+    myDependency = dependency;
+}

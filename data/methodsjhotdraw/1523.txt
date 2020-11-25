@@ -1,0 +1,12 @@
+/**
+ * Creates a new instance with the specified prototype but without an
+ * attribute set. The CreationTool clones this prototype each time a new
+ *  Figure needs to be created. When a new Figure is created, the
+ * CreationTool applies the default attributes from the DrawingEditor to it.
+ *
+ * @param prototype
+ * 		The prototype used to create a new Figure.
+ */
+public CreationTool(Figure prototype) {
+    this(prototype, null, null);
+}

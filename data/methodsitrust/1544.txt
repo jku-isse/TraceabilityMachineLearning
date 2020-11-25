@@ -1,0 +1,8 @@
+/**
+ * Gets the ICD Code for this procedure
+ *
+ * @return The ICD Code for this procedure
+ */
+public String getICDCode() {
+    return icdCode;
+}

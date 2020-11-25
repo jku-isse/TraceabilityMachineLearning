@@ -1,0 +1,9 @@
+private void fireDependencyAdded(TaskDependency newDependency) {
+    if (areEventsEnabled) {
+        TaskDependencyEvent e = new TaskDependencyEvent(getDependencyCollection(), newDependency);
+        for (int i = 0; i < (myListeners.size()); i++) {
+            TaskListener next = ((TaskListener) (myListeners.get(i)));
+            next.dependencyAdded(e);
+        }
+    }
+}

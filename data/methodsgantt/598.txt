@@ -1,0 +1,3 @@
+public GPParser newParser() {
+    return new GanttXMLOpen(prjInfos, getUIConfiguration(), getTaskManager(), getUIFacade());
+}

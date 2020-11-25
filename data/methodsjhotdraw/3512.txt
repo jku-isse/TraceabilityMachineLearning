@@ -1,0 +1,15 @@
+/**
+ * Adds the specified insets to the current insets.
+ *
+ * @param top
+ * 		The top insets.
+ * @param left
+ * 		The left insets.
+ * @param bottom
+ * 		The bottom insets.
+ * @param right
+ * 		The right insets.
+ */
+public void add(double top, double left, double bottom, double right) {
+    set(((getTop()) + top), ((getLeft()) + left), ((getBottom()) + bottom), ((getRight()) + right));
+}

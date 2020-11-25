@@ -1,0 +1,7 @@
+/**
+ * Constructs a composite line decoration with the two supplied decorations.
+ */
+public CompositeLineDecoration(LineDecoration decoration1, LineDecoration decoration2) {
+    addDecoration(decoration1);
+    addDecoration(decoration2);
+}

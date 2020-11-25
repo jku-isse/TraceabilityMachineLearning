@@ -1,0 +1,14 @@
+/**
+ * Constains a value to the given range.
+ *
+ * @return the constrained value
+ */
+public static int range(int min, int max, int value) {
+    if (value < min) {
+        value = min;
+    }
+    if (value > max) {
+        value = max;
+    }
+    return value;
+}

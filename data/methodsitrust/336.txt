@@ -1,0 +1,18 @@
+/**
+ * Returns whether a patient is in an HCPs list already
+ *
+ * @param patientMID
+ * 		the patient
+ * @return true if in DB, false otherwise
+ * @throws DBException
+ * 		
+ */
+public boolean isPatientInList(long patientMID) throws DBException {
+    List<RemoteMonitoringDataBean> dataset = rmDAO.getPatientsData(loggedInMID);
+    for (RemoteMonitoringDataBean d : dataset) {
+        if ((d.getPatientMID()) == patientMID)
+            return true;
+
+    }
+    return false;
+}

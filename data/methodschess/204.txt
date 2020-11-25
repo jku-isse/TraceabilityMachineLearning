@@ -1,0 +1,15 @@
+// Constructors
+/**
+ * Create a new instance of a ply generator.
+ *
+ * @param game
+ * 		The current game.
+ * @param hashtable
+ * 		A hashtable to store the best plies so far.
+ */
+public PlyGenerator(Game game, PlyHashtable hashtable) {
+    setGame(game);
+    setHashtable(hashtable);
+    precomputeKnightPlies();
+    precomputeKingPlies();
+}

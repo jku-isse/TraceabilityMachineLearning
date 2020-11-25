@@ -1,0 +1,9 @@
+public void setCompletionPercentage(int percentage) {
+    int oldPercentage = myCompletionPercentage;
+    myCompletionPercentage = percentage;
+    if (oldPercentage != (myCompletionPercentage)) {
+        TaskImpl.EventSender progressEventSender = new TaskImpl.ProgressEventSender();
+        progressEventSender.enable();
+        progressEventSender.fireEvent();
+    }
+}

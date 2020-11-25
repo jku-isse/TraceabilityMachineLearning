@@ -1,0 +1,26 @@
+/**
+ * action performed for listeners.
+ */
+public void actionPerformed(ActionEvent event) {
+    // click the okButton
+    if ((event.getSource()) == (okButton)) {
+        settingPanel.applyChanges(false);// ask if the panel has
+
+        // modifications
+        this.setVisible(false);
+        dispose();
+    } else// click the cancel button
+
+        if ((event.getSource()) == (cancelButton)) {
+            settingPanel.rollback();
+            this.setVisible(false);
+            dispose();
+        }
+
+    // click the okButton
+    if ((event.getSource()) == (applyButton)) {
+        settingPanel.applyChanges(false);// ask if the panel has
+
+        // modifications
+    }
+}

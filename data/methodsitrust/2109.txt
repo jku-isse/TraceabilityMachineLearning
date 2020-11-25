@@ -1,0 +1,3 @@
+public void setRequesterMID(long requesterMID) {
+    this.requesterMID = requesterMID;
+}

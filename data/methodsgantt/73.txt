@@ -1,0 +1,20 @@
+public void mousePressed(MouseEvent e) {
+    super.mousePressed(e);
+    if ((e.isPopupTrigger()) || ((e.getButton()) == (MouseEvent.BUTTON3))) {
+        Action[] actions = getPopupMenuActions();
+        if ((actions.length) > 0) {
+            getUIFacade().showPopupMenu(this, actions, e.getX(), e.getY());
+        }
+        return;
+    }
+    switch (e.getButton()) {
+        case MouseEvent.BUTTON1 :
+            {
+                processLeftButton(e);
+                break;
+            }
+        default :
+            {
+            }
+    }
+}

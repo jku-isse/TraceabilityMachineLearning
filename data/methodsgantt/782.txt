@@ -1,0 +1,9 @@
+/**
+ * set the predecessor task ID by integer
+ *
+ * @param predecessorTaskID
+ * 		ID of predecessor task
+ */
+public void setPredecessorTask(int predecessorTaskID) {
+    this.predecessorTaskID = predecessorTaskID;
+}

@@ -1,0 +1,11 @@
+public void initializeAvgDiagnosisStatistics(DiagnosisStatisticsBean avgBean, DiagnosisStatisticsBean dsBean, String name) {
+    this.dsBean = dsBean;
+    this.avgBean = avgBean;
+    this.diagnosisName = name;
+    this.epidemic = true;
+    values = new int[4];
+    values[0] = ((int) (dsBean.getZipStats()));
+    values[1] = ((int) (avgBean.getZipStats()));
+    values[2] = ((int) (dsBean.getRegionStats()));
+    values[3] = ((int) (avgBean.getRegionStats()));
+}

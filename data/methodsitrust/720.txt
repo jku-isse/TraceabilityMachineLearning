@@ -1,0 +1,3 @@
+public void testCheckHCPID() throws iTrustException {
+    assertEquals(9000000000L, action.checkHCPID("9000000000"));
+}

@@ -1,0 +1,6 @@
+public void testGetPatientName() throws Exception {
+    long hcpid = 9000000000L;
+    action = new ViewSentReferralsAction(factory, hcpid);
+    ReferralBean bean = action.getReferral(2L);
+    assertEquals("Andy Programmer", action.getPatientName(bean));
+}

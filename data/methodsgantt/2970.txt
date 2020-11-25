@@ -1,0 +1,15 @@
+public String getSeparat() {
+    if (bDoubleDot.isSelected())
+        return ":";
+
+    if (bComa.isSelected())
+        return ",";
+
+    if (bDotComa.isSelected())
+        return ";";
+
+    if (bSpace.isSelected())
+        return " ";
+
+    return tfOther.getText();
+}

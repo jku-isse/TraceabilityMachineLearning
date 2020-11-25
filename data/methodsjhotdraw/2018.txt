@@ -1,0 +1,3 @@
+public DrawingView getView() {
+    return ((DrawingView) (source));
+}

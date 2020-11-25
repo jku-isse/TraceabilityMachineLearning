@@ -1,0 +1,8 @@
+/**
+ * Get the current game timer.
+ *
+ * @return The current game timer.
+ */
+final GameTimer getGameTimer() {
+    return _gameTimer;
+}

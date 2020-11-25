@@ -1,0 +1,3 @@
+public void addPoint(double x, double y) {
+    addPoint(((float) (x)), ((float) (y)));
+}

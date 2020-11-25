@@ -1,0 +1,5 @@
+/**
+ * Returns a copy of the provided collection which is sorted
+ * in z order from back to front.
+ */
+List<Figure> sort(Collection<? extends Figure> figures);

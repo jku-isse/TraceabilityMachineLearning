@@ -1,0 +1,19 @@
+/**
+ * posts the requests to the server, with all the cookies and parameters that were added before (if any), and with cookies and parameters that are passed in the arguments
+ *
+ * @param raw_cookies
+ * 		request cookies
+ * @param parameters
+ * 		request parameters
+ * @return input stream with the server response
+ * @throws IOException
+ * 		
+ * @see #setParameters
+ * @see #setCookies
+ */
+public InputStream post(String raw_cookies, Map parameters) throws IOException {
+    setCookies(raw_cookies);
+    postCookies();
+    setParameters(parameters);
+    return doPost();
+}

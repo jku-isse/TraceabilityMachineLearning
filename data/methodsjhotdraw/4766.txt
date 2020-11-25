@@ -1,0 +1,31 @@
+/**
+ * Reads the view from the specified file.
+ */
+public void read(File f) throws IOException {
+    try {
+        JFileChooser fc = getOpenChooser();
+        final Drawing drawing = createDrawing();
+        InputFormat sf = fileFilterInputFormatMap.get(fc.getFileFilter());
+        if (sf == null) {
+            sf = drawing.getInputFormats().get(0);
+        }
+        sf.read(f, drawing, true);
+        System.out.println(((("ODCView read(" + f) + ") drawing.childCount=") + (drawing.getChildCount())));
+        SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+                view.getDrawing().removeUndoableEditListener(undo);
+                view.setDrawing(drawing);
+                view.getDrawing().addUndoableEditListener(undo);
+                undo.discardAllEdits();
+            }
+        });
+    } catch (InterruptedException e) {
+        InternalError error = new InternalError();
+        e.initCause(e);
+        throw error;
+    } catch (InvocationTargetException e) {
+        InternalError error = new InternalError();
+        error.initCause(e);
+        throw error;
+    }
+}

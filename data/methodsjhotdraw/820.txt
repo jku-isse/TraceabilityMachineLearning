@@ -1,0 +1,3 @@
+public Map<AttributeKey, Object> getAttributes() {
+    return new HashMap<AttributeKey, Object>();
+}

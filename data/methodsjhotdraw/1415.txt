@@ -1,0 +1,9 @@
+/**
+ * Returns false if <code>isInProgress</code> or if super
+ * returns false.
+ *
+ * @see #isInProgress
+ */
+public boolean canRedo() {
+    return (!(isInProgress())) && (super.canRedo());
+}

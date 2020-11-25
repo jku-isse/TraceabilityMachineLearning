@@ -1,0 +1,8 @@
+// COMPOSITE FIGURES
+// CLONING
+public SVGEllipseFigure clone() {
+    SVGEllipseFigure that = ((SVGEllipseFigure) (super.clone()));
+    that.ellipse = ((Ellipse2D.Double) (this.ellipse.clone()));
+    that.cachedTransformedShape = null;
+    return that;
+}

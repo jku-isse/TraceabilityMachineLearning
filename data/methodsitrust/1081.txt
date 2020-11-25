@@ -1,0 +1,3 @@
+public long linkedToReferral(long id) throws DBException {
+    return referralDAO.isReferralMessage(id);
+}

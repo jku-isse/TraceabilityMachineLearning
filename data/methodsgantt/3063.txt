@@ -1,0 +1,3 @@
+String getColorButtonText(ColorOption colorOption) {
+    return GanttLanguage.getInstance().getText("colorButton");
+}

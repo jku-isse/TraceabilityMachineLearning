@@ -1,0 +1,8 @@
+public AlgorithmCollection(FindPossibleDependeesAlgorithm myFindPossibleDependeesAlgorithm, RecalculateTaskScheduleAlgorithm recalculateTaskScheduleAlgorithm, AdjustTaskBoundsAlgorithm adjustTaskBoundsAlgorithm, RecalculateTaskCompletionPercentageAlgorithm completionPercentageAlgorithm, ProjectBoundsAlgorithm projectBoundsAlgorithm) {
+    this.myFindPossibleDependeesAlgorithm = myFindPossibleDependeesAlgorithm;
+    myRecalculateTaskScheduleAlgorithm = recalculateTaskScheduleAlgorithm;
+    myAdjustTaskBoundsAlgorithm = adjustTaskBoundsAlgorithm;
+    myCompletionPercentageAlgorithm = completionPercentageAlgorithm;
+    myProjectBoundsAlgorithm = projectBoundsAlgorithm;
+    myShiftTaskTreeAlgorithm = new ShiftTaskTreeAlgorithm();
+}

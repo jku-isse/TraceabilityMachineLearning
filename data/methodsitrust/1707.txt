@@ -1,0 +1,3 @@
+public void setScaleType(String aScaleType) {
+    scaleType = aScaleType;
+}

@@ -1,0 +1,3 @@
+public void setGlucoseLevelAllowed(boolean glucoseLevelAllowed) {
+    this.glucoseLevelAllowed = glucoseLevelAllowed;
+}

@@ -1,0 +1,8 @@
+/**
+ * Get the next elements from the collection.
+ *
+ * @return The next element from the collection.
+ */
+public final Object next() {
+    return _items[((_curElement)++)];
+}

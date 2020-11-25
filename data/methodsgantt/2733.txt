@@ -1,0 +1,4 @@
+private void showNewProjectWizard(IGanttProject project) {
+    NewProjectWizard wizard = new NewProjectWizard();
+    wizard.createNewProject(project, myWorkbenchFacade);
+}

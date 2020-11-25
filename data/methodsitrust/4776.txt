@@ -1,0 +1,8 @@
+@Override
+protected void setUp() {
+    // Initialize a bean to valid values.
+    bean = new PatientInstructionsBean();
+    bean.setName("name");
+    bean.setComment("comment");
+    bean.setUrl("http://www.example.com/");
+}

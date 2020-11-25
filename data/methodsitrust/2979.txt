@@ -1,0 +1,28 @@
+/**
+ * Returns a list of all office visits for a given patient
+ *
+ * @param mid
+ * 		The MID of the LHCP you are looking up.
+ * @return A java.util.List of Office Visits.
+ * @throws DBException
+ * 		
+ */
+public List<OfficeVisitBean> getAllOfficeVisitsForLHCP(long mid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (mid == 0L)
+            throw new SQLException("HCPID cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM officevisits WHERE HCPID=? ORDER BY VisitDate DESC");
+        ps.setLong(1, mid);
+        ResultSet rs = ps.executeQuery();
+        return officeVisitLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

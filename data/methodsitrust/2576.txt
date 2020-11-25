@@ -1,0 +1,14 @@
+public void testAssignHCPToWard() {
+    try {
+        assertTrue(wd1.assignHCPToWard(1L, 1L));
+    } catch (DBException e) {
+    } catch (iTrustException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.assignHCPToWard(1L, 1L);
+        fail();
+    } catch (Exception e) {
+    }
+}

@@ -1,0 +1,3 @@
+public void clearAllTables() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/deleteFromAllTables.sql"));
+}

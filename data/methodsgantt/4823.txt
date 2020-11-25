@@ -1,0 +1,4 @@
+public TimeUnitText format(Date baseDate) {
+    TextFormatter formatter = this.getTextFormatter();
+    return formatter == null ? new TimeUnitText("") : formatter.format(this, baseDate);
+}

@@ -1,0 +1,49 @@
+iRobot Create
+
+iRobot Create is a hobbyist robot manufactured by iRobot that was introduced in 2007 and based on their Roomba vacuum cleaning platform. The iRobot Create is explicitly designed for robotics development and improves the experience beyond simply hacking the Roomba.[1][2] The Create replaces its Roomba predecessor's vacuum cleaner hardware with a cargo bay that also houses a DB-25 port providing serial communication, digital input & output, analog input & output, and an electric power supply.[1][2][3] The Create also has a 7-pin Mini-DIN serial port through which sensor data can be read and motor commands can be issued using the iRobot Roomba Open Interface (ROI) protocol.[4]
+
+The platform accepts virtually all accessories designed for iRobot's second generation Roomba 400 Series domestic robots and can also be programmed with the addition of iRobot's own Command Module (a microcontroller with a USB connector and four DE-9 expansion ports).[4] As of 2013, the Command Module is no longer being sold.[5] In 2014, iRobot replaced the original model with the Create 2,[6] which is constructed from the chassis of remanufactured 600-series Roombas; instead of replacing the old command module, iRobot encourages the use of commodity single-board computers like Arduino and Raspberry Pi to provide additional processing power.
+
+Controller
+
+Due to the limitations in storage space and processing power of the iRobot Command Module, many choose to utilize an external computer in controlling the Create robot.[citation needed] Since the built-in serial port supports the transmission of sensor data and can receive actuation commands, any embedded computer that supports serial communication can be used as the control computer.[4]
+
+A number of robot interface server / simulators support the iRobot Create. Most notably, the Player Project has long included a device interface for the Roomba,[7] and developed a Create interface in Player 2.1.[8] The Universal Real-time Behavior Interface (URBI) environment also contains a Create interface.[9]
+
+The Microsoft Robotics Studio and the Webots simulation environment contain iRobot Create models.[10][11]
+
+Community
+
+The iRobot Create is popular in the robotic research and hobbyist community. Some examples of iRobot create projects:
+
+The iRobot Create has been included in parts kits for the International Botball Competition since 2007.[12]
+The iRobot Create is used as the main platform for the Autonomous Robotics course at Brown University.[13]
+The iRobot Create and a simulator developed in MATLAB are used in the Autonomous Mobile Robots course at Cornell University.[14]
+For US$500, hacker Johnny Chung Lee created a Telepresence robot using the iRobot Create and a netbook.[15]
+Combining the iRobot Create with an Xbox Kinect, student Philipp Robbel created a 3D mapping robot.[16]
+
+Competition
+
+In 2007 iRobot hosted the "Create Challenge", offering US$5,000 with the goal of creating an "innovative robot that's functional, helpful, entertaining, whimsical or simply amazing".[17] The winner was Danh Trinh, with their "Personal Home Robot" which "reminds owners to take their medication, turns lights on and off, and controls appliances."[18][19]
+
+References
+
+1. Miller, Paul (2006-11-29). "iRobot Create: Roomba hacking for the everyman". Engadget. Retrieved 2013-01-29.
+2. Kanellos, Michael (2007-01-07). "Build your own bot, courtesy of iRobot". CNET. Retrieved 2013-01-29.
+3. iRobot Create Open Interface (OI) Specification (PDF). iRobot. 2006. p. 4. Retrieved 2014-05-08.
+4. Banks, Zach (2009-05-01). "Fun with the iRobot Create". Linux Journal. Retrieved 2013-01-29.
+5. Fenlong, Wesley. "10 Years of Roomba Hacks: From Magic Marker Art to Combat". Tested.com. Retrieved 8 May 2014.
+6. http://www.irobot.com/About-iRobot/STEM/Create-2.aspx
+7. Gerkey, Brian (2005-09-12). "Player 2.0.0 Manual; roomba [Drivers]". Retrieved 8 May 2014.
+8. Gerkey, Brian (2005-09-12). "Player 2.1 Manual; create [Drivers]". Retrieved 8 May 2014.
+9. "Programming Tools". CircuitsMadeEasy.com. Retrieved 2013-01-29.
+10. Henning, William (2007-04-04). "iRobot "Create" Platform". Neoseeker. Retrieved 2013-01-29.
+11. Hoxsey, Alec (2009). "Create-ing a Robot Simulator" (PDF). Kalamazoo College (Oberlin College). Retrieved 2013-01-29.
+12. "Engineering Tools". Botball Educational Robotics Program. Retrieved 2013-01-29.
+13. "Robotics". Brown University. Retrieved 2013-01-29.
+14. Kress-Gazit, Hadas (2013-01-22). "MAE 4180/5180: Autonomous Mobile Robots". Cornell University. Retrieved 2013-01-29.
+15. Eaton, Kit (2011-02-10). "$500 iRobot Hack Lets You Be Two Places at Once". Fast Company. Retrieved 2013-01-29.
+16. Carmody, Tim (2010-11-18). "Control a 3-D–Mapping Robot With Gestures? Just Add Kinect". Wired. Retrieved 2013-01-29.
+17. "iRobot Create Contest Rules". Tom's Hardware. 2007-05-14. Retrieved 2013-01-29.
+18. Jones, K.C. (2007-10-30). "Personal Home Robot Wins iRobot's Create Challenge". InformationWeek. Retrieved 2013-01-29.
+19. Melanson, Donald (2007-10-30). "iRobot announces winner of Create Challenge contest". Engadget. Retrieved 2013-01-29.

@@ -1,0 +1,6 @@
+public void setConstrainerVisible(boolean newValue) {
+    boolean oldValue = isConstrainerVisible;
+    isConstrainerVisible = newValue;
+    firePropertyChange(DrawingView.CONSTRAINER_VISIBLE_PROPERTY, oldValue, newValue);
+    repaint();
+}

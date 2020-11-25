@@ -1,0 +1,3 @@
+public Connector findCompatibleConnector(Connector c, boolean isStart) {
+    return new ChopRectangleConnector(this);
+}

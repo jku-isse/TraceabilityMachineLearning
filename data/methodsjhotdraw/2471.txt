@@ -1,0 +1,4 @@
+@Override
+protected void setAttributeOnChildren(AttributeKey key, Object newValue) {
+    // empty
+}

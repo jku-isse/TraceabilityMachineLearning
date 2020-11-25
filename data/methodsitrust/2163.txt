@@ -1,0 +1,3 @@
+public void setHCPstate(String state) {
+    this.hcpState = state;
+}

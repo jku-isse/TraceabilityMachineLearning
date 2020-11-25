@@ -1,0 +1,3 @@
+public void setWorkbenchTitle(String title) {
+    // TODO Auto-generated method stub
+}

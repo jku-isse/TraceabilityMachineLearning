@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @return the default integer array to configure the iconList
+ */
+public int[] getDefaultIconListIntArray() {
+    if (!(isOnlyViewer))
+        return new int[]{ GanttOptions.SAVE, GanttOptions.SEPARATOR, GanttOptions.CUT, GanttOptions.COPY, GanttOptions.PASTE, GanttOptions.SEPARATOR, GanttOptions.UNDO, GanttOptions.REDO, GanttOptions.SEPARATOR, GanttOptions.NEWTASK, GanttOptions.DELETE, GanttOptions.PROPERTIES, GanttOptions.UNLINK, GanttOptions.LINK, GanttOptions.IND, GanttOptions.UNIND, GanttOptions.UP, GanttOptions.DOWN, GanttOptions.SEPARATOR, GanttOptions.PREV, GanttOptions.CENTER, GanttOptions.NEXT, GanttOptions.ZOOMOUT, GanttOptions.ZOOMIN, GanttOptions.SEPARATOR, GanttOptions.SAVECURRENT, GanttOptions.COMPAREPREV, GanttOptions.SEPARATOR, GanttOptions.CRITICAL };
+
+    /* else */
+    return new int[]{ GanttOptions.EXIT, GanttOptions.OPEN, GanttOptions.SAVE, GanttOptions.SAVEAS, GanttOptions.IMPORT, GanttOptions.EXPORT, GanttOptions.PRINT, GanttOptions.PREVIEWPRINT, GanttOptions.SEPARATOR, GanttOptions.PREV, GanttOptions.CENTER, GanttOptions.NEXT, GanttOptions.ZOOMOUT, GanttOptions.ZOOMIN, GanttOptions.SEPARATOR, GanttOptions.CRITICAL, GanttOptions.SEPARATOR, GanttOptions.ABOUT };
+}

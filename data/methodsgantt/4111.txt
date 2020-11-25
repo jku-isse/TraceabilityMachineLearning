@@ -1,0 +1,15 @@
+// public CustomColumnsStorage(Map customCols)
+// {
+// customColumns = customCols;
+// }
+/**
+ * Initialize the available types (text, integer, ...)
+ */
+private static void initTypes() {
+    CustomColumnsStorage.availableTypes = new Vector(6);
+    CustomColumnsStorage.availableTypes.add(CustomColumnsStorage.language.getText("text"));
+    CustomColumnsStorage.availableTypes.add(CustomColumnsStorage.language.getText("integer"));
+    CustomColumnsStorage.availableTypes.add(CustomColumnsStorage.language.getText("double"));
+    CustomColumnsStorage.availableTypes.add(CustomColumnsStorage.language.getText("date"));
+    CustomColumnsStorage.availableTypes.add(CustomColumnsStorage.language.getText("boolean"));
+}

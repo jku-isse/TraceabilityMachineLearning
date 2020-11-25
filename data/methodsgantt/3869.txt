@@ -1,0 +1,3 @@
+private ResourceAssignmentImpl(ResourceAssignment assignmentToTask) {
+    myAssignmentToTask = assignmentToTask;
+}

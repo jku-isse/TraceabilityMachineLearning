@@ -1,0 +1,7 @@
+public GanttCalendar getThird() {
+    if (((myMutator) != null) && ((myMutator.myIsolationLevel) == (TaskMutator.READ_UNCOMMITED))) {
+        return myMutator.getThird();
+    } else {
+        return myThird;
+    }
+}

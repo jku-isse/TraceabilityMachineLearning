@@ -1,0 +1,25 @@
+/**
+ * Returns a list of all office visits for a given patient
+ *
+ * @param pid
+ * 		The MID of the patient.
+ * @return A java.util.List of Office Visits.
+ * @throws DBException
+ * 		
+ */
+public List<OfficeVisitBean> getOfficeVisitsWithNoSurvey(long pid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM officevisits where id not in (select visitid from ovsurvey) and PatientID = ? ORDER BY VisitDate DESC");
+        ps.setLong(1, pid);
+        ResultSet rs = ps.executeQuery();
+        return officeVisitLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

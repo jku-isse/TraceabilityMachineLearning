@@ -1,0 +1,4 @@
+public void testGetMyDLHCPs() throws iTrustException {
+    List<PersonnelBean> pbList = this.smAction.getDLHCPsFor(this.pateientId);
+    assertEquals(1, pbList.size());
+}

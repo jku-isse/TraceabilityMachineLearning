@@ -1,0 +1,6 @@
+/**
+ * Invalidates the handle. This method informs its listeners
+ * that its current display box is invalid and should be
+ * refreshed.
+ */
+public void invalidate();

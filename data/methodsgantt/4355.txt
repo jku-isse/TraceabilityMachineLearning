@@ -1,0 +1,10 @@
+Date getCachedDate(int length) {
+    if ((myDates) == null) {
+        return null;
+    }
+    int index = length - (myMinLength);
+    if ((index < 0) || (index >= (myDates.size()))) {
+        return null;
+    }
+    return ((Date) (myDates.get(index)));
+}

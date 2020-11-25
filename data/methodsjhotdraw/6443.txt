@@ -1,0 +1,3 @@
+public void setDoctype(String doctype) {
+    this.doctype = doctype;
+}

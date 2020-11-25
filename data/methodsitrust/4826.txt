@@ -1,0 +1,5 @@
+public void testBadLetters() throws Exception {
+    String value = "bob%";
+    String errorMessage = CityValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, CityValidatorTest.VALIDATION_FORMAT, false));
+}

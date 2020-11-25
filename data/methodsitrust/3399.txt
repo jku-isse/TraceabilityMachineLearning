@@ -1,0 +1,6 @@
+private ProcedureBean genericAdd(String code, String desc) throws DBException, iTrustException {
+    ProcedureBean proc = new ProcedureBean(code, desc);
+    assertTrue(cptDAO.addCPTCode(proc));
+    assertEquals(desc, cptDAO.getCPTCode(code).getDescription());
+    return proc;
+}

@@ -1,0 +1,10 @@
+/**
+ * Gets all the messages for the logged in user
+ *
+ * @return a list of all the users messages
+ * @throws SQLException
+ * 		
+ */
+public List<MessageBean> getAllMyMessages() throws SQLException {
+    return messageDAO.getMessagesFor(loggedInMID);
+}

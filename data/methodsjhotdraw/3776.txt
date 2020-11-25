@@ -1,0 +1,11 @@
+/**
+ * Adds an <code>ActionListener</code> to the font chooser.
+ *
+ * @param l
+ * 		the listener to be added
+ * @see #approveSelection
+ * @see #cancelSelection
+ */
+public void addActionListener(ActionListener l) {
+    listenerList.add(ActionListener.class, l);
+}

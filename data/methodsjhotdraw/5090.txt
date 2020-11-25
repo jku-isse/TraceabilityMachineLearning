@@ -1,0 +1,4 @@
+public Dimension2DDouble getPreferredSize() {
+    double width = Math.ceil(AttributeKeys.STROKE_WIDTH.get(this));
+    return new Dimension2DDouble(width, width);
+}

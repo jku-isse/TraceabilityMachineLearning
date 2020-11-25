@@ -1,0 +1,10 @@
+/**
+ * Returns the presentation name.
+ * If the presentation name is null, then CompoundEdit.getPresentatioName
+ * is returned.
+ *
+ * @see javax.swing.undo.CompoundEdit#getPresentationName()
+ */
+public String getPresentationName() {
+    return (presentationName) != null ? presentationName : super.getPresentationName();
+}

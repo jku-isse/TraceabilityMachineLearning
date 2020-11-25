@@ -1,0 +1,3 @@
+public void setUIConfiguration(UIConfiguration uiConfiguration) {
+    this.myUIConfig = uiConfiguration;
+}

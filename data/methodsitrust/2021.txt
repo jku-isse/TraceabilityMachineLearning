@@ -1,0 +1,3 @@
+public void setReasons(List<OverrideReasonBean> reasons) {
+    this.reasons = reasons;
+}

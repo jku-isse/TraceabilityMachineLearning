@@ -1,0 +1,12 @@
+/**
+ * Creates an instance of CustomColmn. The type is String and the default
+ * value is en empty String.
+ *
+ * @param colName
+ * 		The column name.
+ */
+public CustomColumn(String colName) {
+    name = colName;
+    type = String.class;
+    defaultValue = "";
+}

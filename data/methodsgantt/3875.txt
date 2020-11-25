@@ -1,0 +1,3 @@
+public ResourceAssignment[] getAssignments() {
+    return ((ResourceAssignment[]) (myAssignments.toArray(new ResourceAssignment[0])));
+}

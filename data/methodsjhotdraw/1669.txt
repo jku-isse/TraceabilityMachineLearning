@@ -1,0 +1,11 @@
+public void setEmptyDrawingMessage(String newValue) {
+    String oldValue = ((emptyDrawingLabel) == null) ? null : emptyDrawingLabel.getText();
+    if (newValue == null) {
+        emptyDrawingLabel = null;
+    } else {
+        emptyDrawingLabel = new JLabel(newValue);
+        emptyDrawingLabel.setHorizontalAlignment(JLabel.CENTER);
+    }
+    firePropertyChange("emptyDrawingMessage", oldValue, newValue);
+    repaint();
+}

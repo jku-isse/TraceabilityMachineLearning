@@ -1,0 +1,5 @@
+/**
+ * Gets the drawing editor associated to the DrawingView.
+ * This is a bound property.
+ */
+public DrawingEditor getEditor();

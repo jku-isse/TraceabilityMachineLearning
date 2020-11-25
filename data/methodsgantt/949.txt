@@ -1,0 +1,18 @@
+public void setDisplayedColumns(GanttTreeTable.DisplayedColumnsList displayedColumns) {
+    GanttTreeTable.DisplayedColumnsList l = ((GanttTreeTable.DisplayedColumnsList) (displayedColumns.clone()));
+    displayAllColumns();
+    hideAllColumns();
+    this.listDisplayedColumns = l;
+    Collections.sort(this.listDisplayedColumns);
+    Iterator it = this.listDisplayedColumns.iterator();
+    while (it.hasNext()) {
+        GanttTreeTable.DisplayedColumn dc = ((GanttTreeTable.DisplayedColumn) (it.next()));
+        String id = dc.getID();
+        String name = getNameForId(id);
+        if (dc.displayed)
+            displayColumn(name);
+        else
+            hideColumn(name);
+
+    } 
+}

@@ -1,0 +1,5 @@
+@Override
+public String getPresentationName() {
+    // FIXME - Localize me
+    return "Eigenschaft u00e4ndern";
+}

@@ -1,0 +1,12 @@
+/**
+ * Creates an instance of <code>Dimension2DDouble</code> whose width
+ * and height are the same as for the specified dimension.
+ *
+ * @param d
+ * 		the specified dimension for the
+ * 		<code>width</code> and
+ * 		<code>height</code> values
+ */
+public Dimension2DDouble(Dimension2DDouble d) {
+    this(d.width, d.height);
+}

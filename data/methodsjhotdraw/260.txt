@@ -1,0 +1,11 @@
+/**
+ * Creates a new instance.
+ */
+public AbstractViewAction(Application app) {
+    this.app = app;
+    this.enabled = true;
+    if (app != null) {
+        app.addPropertyChangeListener(applicationListener);
+        updateView(null, app.getActiveView());
+    }
+}

@@ -1,0 +1,13 @@
+/**
+ * Construct the resources panel
+ */
+private void constructResourcesPanel() {
+    myAllocationsPanel = new TaskAllocationsPanel[selectedTasks.length];
+    for (int i = 0; i < (myAllocationsPanel.length); i++) {
+        myAllocationsPanel[i] = new TaskAllocationsPanel(selectedTasks[i], myHumanResourceManager, myRoleManager, onlyOneTask);
+        if (i != 0)
+            myAllocationsPanel[i].getComponent();
+
+    }
+    resourcesPanel = myAllocationsPanel[0].getComponent();
+}

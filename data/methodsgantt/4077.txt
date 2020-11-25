@@ -1,0 +1,8 @@
+/**
+ * Returns the default value.
+ *
+ * @return The defautl value.
+ */
+public Object getDefaultValue() {
+    return defaultValue;
+}

@@ -1,0 +1,8 @@
+/**
+ * Compute a score for a game position.
+ *
+ * @return A score for the current game position.
+ */
+public final short analyzeBoard(Board board) {
+    return _analyzer.analyze(((BitBoard) (board)), isWhite());
+}

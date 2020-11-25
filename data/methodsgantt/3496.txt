@@ -1,0 +1,23 @@
+/**
+ * Constructor
+ *
+ * @param uiFacade
+ * 		TODO
+ */
+public GanttXMLOpen(PrjInfos info, UIConfiguration uiConfig, TaskManager taskManager, UIFacade uiFacade) {
+    this(taskManager);
+    // this.treePanel = tree;
+    myProjectInfo = info;
+    myUIConfig = uiConfig;
+    // this.peop = resources;
+    // this.area = gra;
+    // this.bImport = bImport;
+    this.viewIndex = 0;
+    this.ganttDividerLocation = 300;// todo does this arbitrary value is
+
+    // right ?
+    this.resourceDividerLocation = 300;
+    // if(bImport)
+    // maxID = ((TaskManagerImpl)taskManager).getMaxID();
+    myUIFacade = uiFacade;
+}

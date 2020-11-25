@@ -1,0 +1,8 @@
+String proposeFileExtension() {
+    for (int i = 0; i < (ExporterToImage.FileTypeOption.FILE_FORMAT_ID.length); i++) {
+        if (myValue.equals(ExporterToImage.FileTypeOption.FILE_FORMAT_ID[i])) {
+            return ExporterToImage.FileTypeOption.FILE_EXTENSION[i];
+        }
+    }
+    throw new IllegalStateException(((("Selected format=" + (myValue)) + " has not been found in known formats:") + (Arrays.asList(ExporterToImage.FileTypeOption.FILE_FORMAT_ID))));
+}

@@ -1,0 +1,59 @@
+/**
+ * Constructor
+ */
+public GanttPanelDate(GanttCalendar date) {
+    // super(parent, GanttLanguage.getInstance().getText("chooseDate"),
+    // true);
+    // setResizable(false);
+    this.save = date.Clone();
+    // month = date.getDayMonthLanguage();
+    Box vb1 = Box.createVerticalBox();
+    Box hb1 = Box.createHorizontalBox();
+    jbPrevYear = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/prevyear.gif")));
+    jbPrevYear.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            rollDate(Calendar.YEAR, (-1));
+        }
+    });
+    jbPrevMonth = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/prevmonth.gif")));
+    jbPrevMonth.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            rollDate(Calendar.MONTH, (-1));
+        }
+    });
+    jbNextMonth = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/nextmonth.gif")));
+    jbNextMonth.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            rollDate(Calendar.MONTH, (+1));
+        }
+    });
+    jbNextYear = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/nextyear.gif")));
+    jbNextYear.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            rollDate(Calendar.YEAR, (+1));
+        }
+    });
+    jbPrevYear.setToolTipText(GanttProject.getToolTip(language.getText("prevYear")));
+    jbPrevMonth.setToolTipText(GanttProject.getToolTip(language.getText("prevMonth")));
+    jbNextMonth.setToolTipText(GanttProject.getToolTip(language.getText("nextMonth")));
+    jbNextYear.setToolTipText(GanttProject.getToolTip(language.getText("nextYear")));
+    ddd = new GanttPanelDate.GanttDialogDateDay(date, language);
+    jtDate = new JFormattedTextField(new SimpleDateFormat("MMM yyyy"));
+    jtDate.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            GregorianCalendar tmp = new GregorianCalendar();
+            tmp.setTime(((Date) (jtDate.getValue())));
+            changeDate(tmp);
+        }
+    });
+    jtDate.setValue(ddd.date.getTime());
+    jtDate.setEditable(false);
+    hb1.add(jbPrevYear);
+    hb1.add(jbPrevMonth);
+    hb1.add(jtDate);
+    hb1.add(jbNextMonth);
+    hb1.add(jbNextYear);
+    vb1.add(hb1);
+    vb1.add(ddd);
+    add(vb1, "Center");
+}

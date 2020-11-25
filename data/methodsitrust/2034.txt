@@ -1,0 +1,8 @@
+/**
+ * Gets the CPT attribute, used to determine if this is an immunization
+ *
+ * @return String
+ */
+public String getAttribute() {
+    return attribute;
+}

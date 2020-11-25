@@ -1,0 +1,59 @@
+/* (non-Javadoc)
+@see java.lang.Object#equals(java.lang.Object)
+ */
+@Override
+public boolean equals(Object obj) {
+    if ((this) == obj)
+        return true;
+
+    if (obj == null)
+        return false;
+
+    if ((getClass()) != (obj.getClass()))
+        return false;
+
+    HCPVisitBean other = ((HCPVisitBean) (obj));
+    if ((HCPAddr) == null) {
+        if ((other.HCPAddr) != null)
+            return false;
+
+    } else
+        if (!(HCPAddr.equals(other.HCPAddr)))
+            return false;
+
+
+    if ((HCPName) == null) {
+        if ((other.HCPName) != null)
+            return false;
+
+    } else
+        if (!(HCPName.equals(other.HCPName)))
+            return false;
+
+
+    if ((HCPSpecialty) == null) {
+        if ((other.HCPSpecialty) != null)
+            return false;
+
+    } else
+        if (!(HCPSpecialty.equals(other.HCPSpecialty)))
+            return false;
+
+
+    if ((OVDate) == null) {
+        if ((other.OVDate) != null)
+            return false;
+
+    } else
+        if (!(OVDate.equals(other.OVDate)))
+            return false;
+
+
+    if ((designated) != (other.designated))
+        return false;
+
+    if ((hcpMID) != (other.hcpMID))
+        return false;
+
+    return true;
+}

@@ -1,0 +1,5 @@
+DayTypeAlternance(GPCalendar.DayType dayType, TaskLength duration, Date endDate) {
+    myDayType = dayType;
+    myDuration = duration;
+    myEnd = endDate;
+}

@@ -1,0 +1,6 @@
+/**
+ * Gets the bounds of the invalidated area on the drawing view.
+ */
+public Rectangle getInvalidatedArea() {
+    return invalidatedArea;
+}

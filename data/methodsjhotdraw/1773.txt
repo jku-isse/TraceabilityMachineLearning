@@ -1,0 +1,3 @@
+public void setDrawingActions(Collection<Action> drawingActions) {
+    this.drawingActions = drawingActions;
+}

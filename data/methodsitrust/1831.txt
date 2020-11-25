@@ -1,0 +1,12 @@
+public long getAgeInWeeks() {
+    long age;
+    long ageInMs;
+    try {
+        ageInMs = (System.currentTimeMillis()) - (new SimpleDateFormat("MM/dd/yyyy").parse(dateOfBirthStr).getTime());
+        age = ageInMs / ((((1000L * 60L) * 60L) * 24L) * 7L);
+    } catch (ParseException e) {
+        e.printStackTrace();
+        return -1;
+    }
+    return age;
+}

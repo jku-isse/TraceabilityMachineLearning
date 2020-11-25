@@ -1,0 +1,3 @@
+public void referral_sort_testdata() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/referral_sort_testdata.sql"));
+}

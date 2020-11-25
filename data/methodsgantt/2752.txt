@@ -1,0 +1,16 @@
+private void createAssignment(Object value) {
+    if (value instanceof ProjectResource) {
+        ResourceAssignment newAssignment = myMutator.addAssignment(((ProjectResource) (value)));
+        newAssignment.setLoad(100);
+        boolean coord = false;
+        if (myAssignments.isEmpty())
+            coord = true;
+
+        newAssignment.setCoordinator(coord);
+        if ((newAssignment.getResource()) instanceof HumanResource)
+            newAssignment.setRoleForAssignment(((HumanResource) (newAssignment.getResource())).getRole());
+
+        myAssignments.add(newAssignment);
+        fireTableRowsInserted(myAssignments.size(), myAssignments.size());
+    }
+}

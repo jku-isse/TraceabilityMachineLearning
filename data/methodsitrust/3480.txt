@@ -1,0 +1,8 @@
+public void testAllTransactionsException() throws Exception {
+    try {
+        evilDAO.getAllTransactions();
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

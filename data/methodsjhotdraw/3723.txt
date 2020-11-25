@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((JAttributeTextAreaBeanInfo.beanDescriptor) == null) {
+        JAttributeTextAreaBeanInfo.beanDescriptor = new BeanDescriptor(JAttributeTextAreaBeanInfo.class);
+    }
+    JAttributeTextAreaBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    JAttributeTextAreaBeanInfo.beanDescriptor.setDisplayName("JAttributeTextArea");
+    return JAttributeTextAreaBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

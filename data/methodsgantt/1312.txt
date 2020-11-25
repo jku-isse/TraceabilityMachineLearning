@@ -1,0 +1,7 @@
+protected Icon createIcon(String iconSize) {
+    if ((iconSize == null) || (false == (iconVisible))) {
+        return null;
+    }
+    URL resource = getClass().getResource((((((getIconFileDirectory()) + "/") + (getIconFilePrefix())) + iconSize) + ".gif"));
+    return resource == null ? null : new ImageIcon(resource);
+}

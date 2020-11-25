@@ -1,0 +1,14 @@
+// Utility methods.
+/**
+ * Converts a pixels X coordinate into a horizontal tile index
+ * relative to a given tile grid layout specified by its X offset
+ * and tile width.
+ */
+public static int XToTileX(int x, int tileGridXOffset, int tileWidth) {
+    x -= tileGridXOffset;
+    if (x < 0) {
+        x += 1 - tileWidth;// Force round to -infinity
+
+    }
+    return x / tileWidth;
+}

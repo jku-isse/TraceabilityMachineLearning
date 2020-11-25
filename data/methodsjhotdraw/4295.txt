@@ -1,0 +1,11 @@
+protected void uninstallDefaults() {
+    LookAndFeel.uninstallBorder(toolBar);
+    dockingColor = null;
+    floatingColor = null;
+    dockingBorderColor = null;
+    floatingBorderColor = null;
+    installNormalBorders(toolBar);
+    PaletteToolBarUI.rolloverBorder = null;
+    PaletteToolBarUI.nonRolloverBorder = null;
+    PaletteToolBarUI.nonRolloverToggleBorder = null;
+}

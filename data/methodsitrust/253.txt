@@ -1,0 +1,12 @@
+public void testGetAppt() throws Exception {
+    List<ApptBean> appts = viewAction.getMyAppointments();
+    ApptBean b1 = appts.get(0);
+    ApptBean b2 = editAction.getAppt(b1.getApptID());
+    assertEquals(b1.getApptID(), b2.getApptID());
+    assertEquals(b1.getApptType(), b2.getApptType());
+    assertEquals(b1.getComment(), b2.getComment());
+    assertEquals(b1.getHcp(), b2.getHcp());
+    assertEquals(b1.getPatient(), b2.getPatient());
+    assertEquals(b1.getClass(), b2.getClass());
+    assertEquals(b1.getDate(), b2.getDate());
+}

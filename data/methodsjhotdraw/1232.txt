@@ -1,0 +1,11 @@
+@Override
+public boolean addEdit(UndoableEdit anEdit) {
+    if (anEdit instanceof BezierNodeEdit) {
+        BezierNodeEdit that = ((BezierNodeEdit) (anEdit));
+        if (((that.owner) == (this.owner)) && ((that.index) == (this.index))) {
+            this.newValue = that.newValue;
+            return true;
+        }
+    }
+    return false;
+}

@@ -1,0 +1,3 @@
+public boolean isADayOff(Date date) {
+    return ((date.equals(myStart.getTime())) || (date.equals(myFinish.getTime()))) || ((date.before(myFinish.getTime())) && (date.after(myStart.getTime())));
+}

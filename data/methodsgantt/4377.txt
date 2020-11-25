@@ -1,0 +1,9 @@
+public void setEnd(final GanttCalendar end) {
+    if ((myEndChange) == null) {
+        myEndChange = new TaskImpl.FieldChange();
+        myEndChange.myEventSender = myPropertiesEventSender;
+    }
+    myEndChange.setOldValue(this.myEnd);
+    myEndChange.setValue(end);
+    myActivities = null;
+}

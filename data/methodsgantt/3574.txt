@@ -1,0 +1,7 @@
+public String getMonth(int m) {
+    GregorianCalendar month = new GregorianCalendar(2000, m, 1);
+    SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM", this.currentLocale);
+    StringBuffer result = new StringBuffer();
+    result = dateFormat.format(month.getTime(), result, new FieldPosition(DateFormat.MONTH_FIELD));
+    return result.toString();
+}

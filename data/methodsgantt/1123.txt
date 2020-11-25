@@ -1,0 +1,4 @@
+public void addMandatoryColumn(ResourceColumn column) {
+    this.addColumn(column.getColumn());
+    ttModel.addMandatoryColumn(column);
+}

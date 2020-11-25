@@ -1,0 +1,10 @@
+@Override
+protected final JComponent getDisclosedComponent(int state) {
+    if ((panels) == null) {
+        panels = new JPanel[getDisclosureStateCount()];
+        for (int i = 0; i < (panels.length); i++) {
+            panels[i] = new AbstractToolBar.ProxyPanel();
+        }
+    }
+    return panels[state];
+}

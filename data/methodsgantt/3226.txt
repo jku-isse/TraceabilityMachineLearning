@@ -1,0 +1,3 @@
+public String formatRoleForTooltip(Role role) {
+    return MessageFormat.format("<li>{0}</li>", ((Object[]) (new String[]{ role.getName() })));
+}

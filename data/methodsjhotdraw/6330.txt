@@ -1,0 +1,6 @@
+/**
+ * Removes a property name modifier.
+ */
+public static void removePropertyNameModifier(String name) {
+    ResourceBundleUtil.propertyNameModifiers.remove(name);
+}

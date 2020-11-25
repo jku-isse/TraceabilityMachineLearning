@@ -1,0 +1,6 @@
+/**
+ * Creates new instance.
+ */
+public ProgressIndicator() {
+    this(null, null);
+}

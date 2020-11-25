@@ -1,0 +1,6 @@
+/**
+ * Change the value of a filed
+ */
+public void go(int field, int value) {
+    this.add(field, value);
+}

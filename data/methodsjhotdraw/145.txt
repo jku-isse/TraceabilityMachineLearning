@@ -1,0 +1,30 @@
+/**
+ * Returns the wrapped desktop pane.
+ */
+protected Component wrapDesktopPane(Component c, LinkedList<Action> toolBarActions) {
+    if ((getModel()) != null) {
+        int id = 0;
+        for (JToolBar tb : new ReversedList<JToolBar>(getModel().createToolBars(this, null))) {
+            id++;
+            JPanel panel = new JPanel(new BorderLayout());
+            panel.add(tb, BorderLayout.NORTH);
+            panel.add(c, BorderLayout.CENTER);
+            c = panel;
+            PreferencesUtil.installToolBarPrefsHandler(prefs, ("toolbar." + id), tb);
+            toolBarActions.addFirst(new ToggleToolBarAction(tb, tb.getName()));
+        }
+        /* JToolBar tb = new JToolBar();
+        tb.setName(labels.getString("standardToolBarTitle"));
+        addStandardActionsTo(tb);
+        id++;
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(tb, BorderLayout.NORTH);
+        panel.add(c, BorderLayout.CENTER);
+        c = panel;
+        PreferencesUtil.installToolBarPrefsHandler(prefs, "toolbar."+id, tb);
+        toolBarActions.addFirst(new ToggleToolBarAction(tb, tb.getName()));
+        panel.putClientProperty("toolBarActions", toolBarActions);
+         */
+    }
+    return c;
+}

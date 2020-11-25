@@ -1,0 +1,7 @@
+/**
+ * Set the flag for a check.
+ *
+ * @param check,
+ * 		true if the oppenent is in check.
+ */
+void setCheck(boolean check);

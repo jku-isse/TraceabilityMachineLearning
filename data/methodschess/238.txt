@@ -1,0 +1,9 @@
+/**
+ * Set a new hashtable for this ply generator.
+ *
+ * @param hashtable
+ * 		The new hashtable for this ply generator.
+ */
+public final void setHashtable(PlyHashtable hashtable) {
+    _hashtable = hashtable;
+}

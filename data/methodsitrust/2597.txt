@@ -1,0 +1,13 @@
+public void testAddLOINC() throws Exception {
+    LOINCbean lb = new LOINCbean();
+    lb.setLabProcedureCode("33333-3");
+    lb.setComponent("boo");
+    lb.setKindOfProperty("");
+    lb.setMethodType(" ");
+    lb.setScaleType("453");
+    lb.setSystem("Windows");
+    lb.setTimeAspect("30 minutes");
+    lDAO.addLOINC(lb);
+    LOINCbean lb2 = lDAO.getProcedures("33333-3").get(0);
+    assertEquals("boo", lb2.getComponent());
+}

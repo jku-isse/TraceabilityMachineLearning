@@ -1,0 +1,8 @@
+/**
+ * Sets the start point of the connection.
+ */
+protected void setLocation(Point2D.Double p) {
+    getOwner().willChange();
+    getOwner().setStartPoint(p);
+    getOwner().changed();
+}

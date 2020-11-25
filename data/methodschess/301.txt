@@ -1,0 +1,7 @@
+// Methods
+/**
+ * Get the computed ply.
+ *
+ * @return The computed ply.
+ */
+AnalyzedPly getPly();

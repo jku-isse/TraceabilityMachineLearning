@@ -1,0 +1,14 @@
+public void writeTasksFromLoaded(ArrayList tasks) throws IOException {
+    write(((((s) + "<previous-tasks name="") + (myName)) + "">
+"));
+    for (int i = 0; i < (tasks.size()); i++) {
+        os.write((((((s) + (s)) + "<previous-task id="") + (((GanttPreviousStateTask) (tasks.get(i))).getId())) + """));
+        os.write(((" start="" + (((GanttPreviousStateTask) (tasks.get(i))).getStart().toXMLString())) + """));
+        os.write(((" duration="" + (((GanttPreviousStateTask) (tasks.get(i))).getDuration())) + """));
+        os.write(((" meeting="" + (((GanttPreviousStateTask) (tasks.get(i))).isMilestone())) + """));
+        os.write(((" super="" + (((GanttPreviousStateTask) (tasks.get(i))).hasNested())) + """));
+        os.write("/>
+");
+    }
+    write(((s) + "</previous-tasks>"));
+}

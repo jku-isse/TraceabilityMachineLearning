@@ -1,0 +1,4 @@
+/**
+ * Returns true, if this application shares tools among multiple views.
+ */
+public boolean isSharingToolsAmongViews();

@@ -1,0 +1,29 @@
+/**
+ * The that an integer is the proper format, and is in the correct range
+ *
+ * @param name
+ * 		
+ * @param value
+ * 		
+ * @param lower
+ * 		
+ * @param upper
+ * 		
+ * @param isNullable
+ * 		
+ * @return 
+ */
+protected String checkInt(String name, String value, int lower, int upper, boolean isNullable) {
+    if (isNullable && ((value == null) || ("".equals(value))))
+        return "";
+
+    try {
+        int intValue = Integer.valueOf(value);
+        if ((lower <= intValue) && (intValue <= upper))
+            return "";
+
+    } catch (NumberFormatException e) {
+        // just fall through to returning the error message
+    }
+    return ((((name + " must be an integer in [") + lower) + ",") + upper) + "]";
+}

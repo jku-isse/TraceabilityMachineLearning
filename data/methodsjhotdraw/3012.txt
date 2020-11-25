@@ -1,0 +1,4 @@
+public South(DrawingEditor editor) {
+    super(editor);
+    labels.configureAction(this, "edit.alignSouth");
+}

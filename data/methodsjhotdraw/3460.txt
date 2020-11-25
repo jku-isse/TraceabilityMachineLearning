@@ -1,0 +1,23 @@
+private double[] computeThickLine(double x1, double y1, double x2, double y2, double thickness, double[] corners) {
+    double dx = x2 - x1;
+    double dy = y2 - y1;
+    // line length
+    double lineLength = Math.sqrt(((dx * dx) + (dy * dy)));
+    double scale = thickness / (2.0 * lineLength);
+    // The x and y increments from an endpoint needed to create a rectangle...
+    double ddx = (-scale) * dy;
+    double ddy = scale * dx;
+    /* ddx += (ddx > 0) ? 0.5 : -0.5;
+    ddy += (ddy > 0) ? 0.5 : -0.5;
+     */
+    // Now we can compute the corner points...
+    corners[0] = x1 + ddx;
+    corners[1] = y1 + ddy;
+    corners[2] = x1 - ddx;
+    corners[3] = y1 - ddy;
+    corners[4] = x2 + ddx;
+    corners[5] = y2 + ddy;
+    corners[6] = x2 - ddx;
+    corners[7] = y2 - ddy;
+    return corners;
+}

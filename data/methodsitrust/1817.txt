@@ -1,0 +1,8 @@
+@Override
+public boolean equals(Object other) {
+    if ((other == null) || (!(this.getClass().equals(other.getClass()))))
+        return false;
+
+    OverrideReasonBean orb = ((OverrideReasonBean) (other));
+    return (((orb.description.equals(description)) && (orb.reasonCode.equals(reasonCode))) && ((orb.presID) == (presID))) && ((orb.id) == (id));
+}

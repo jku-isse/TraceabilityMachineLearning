@@ -1,0 +1,15 @@
+public void testCSVParseHeader() {
+    Scanner CSVHeader = new Scanner("test1,test2,test3");
+    CSVParser test = null;
+    try {
+        test = new CSVParser(CSVHeader);
+    } catch (Exception e) {
+        assertTrue(false);
+    }
+    ArrayList<String> header = test.getHeader();
+    assertEquals(3, header.size());
+    assertEquals("test1", header.get(0));
+    assertEquals("test2", header.get(1));
+    assertEquals("test3", header.get(2));
+    assertFalse(test.getErrors().hasErrors());
+}

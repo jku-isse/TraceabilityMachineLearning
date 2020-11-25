@@ -1,0 +1,3 @@
+public BottomUnitLineRendererImpl(ChartModelBase model, UIConfiguration projectConfig) {
+    this(model, new GraphicPrimitiveContainer(), projectConfig);
+}

@@ -1,0 +1,6 @@
+/**
+ * Returns the number of components used by this ColorSliderModel.
+ *
+ * @return Component count.
+ */
+public int getComponentCount();

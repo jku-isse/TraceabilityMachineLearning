@@ -1,0 +1,4 @@
+/**
+ * Try to remove the oldest entry.
+ */
+void removeOldestEntry();

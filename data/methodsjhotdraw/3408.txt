@@ -1,0 +1,60 @@
+/**
+ * Converts the BezierPath into a GeneralPath.
+ */
+public GeneralPath toGeneralPath() {
+    GeneralPath gp = new GeneralPath();
+    gp.setWindingRule(windingRule);
+    if ((size()) == 0) {
+        gp.moveTo(0, 0);
+        gp.lineTo(0, (0 + 1));
+    } else
+        if ((size()) == 1) {
+            BezierPath.Node current = get(0);
+            gp.moveTo(((float) (current.x[0])), ((float) (current.y[0])));
+            gp.lineTo(((float) (current.x[0])), (((float) (current.y[0])) + 1));
+        } else {
+            BezierPath.Node previous;
+            BezierPath.Node current;
+            previous = current = get(0);
+            gp.moveTo(((float) (current.x[0])), ((float) (current.y[0])));
+            for (int i = 1, n = size(); i < n; i++) {
+                previous = current;
+                current = get(i);
+                if (((previous.mask) & (BezierPath.C2_MASK)) == 0) {
+                    if (((current.mask) & (BezierPath.C1_MASK)) == 0) {
+                        gp.lineTo(((float) (current.x[0])), ((float) (current.y[0])));
+                    } else {
+                        gp.quadTo(((float) (current.x[1])), ((float) (current.y[1])), ((float) (current.x[0])), ((float) (current.y[0])));
+                    }
+                } else {
+                    if (((current.mask) & (BezierPath.C1_MASK)) == 0) {
+                        gp.quadTo(((float) (previous.x[2])), ((float) (previous.y[2])), ((float) (current.x[0])), ((float) (current.y[0])));
+                    } else {
+                        gp.curveTo(((float) (previous.x[2])), ((float) (previous.y[2])), ((float) (current.x[1])), ((float) (current.y[1])), ((float) (current.x[0])), ((float) (current.y[0])));
+                    }
+                }
+            }
+            if (isClosed) {
+                if ((size()) > 1) {
+                    previous = get(((size()) - 1));
+                    current = get(0);
+                    if (((previous.mask) & (BezierPath.C2_MASK)) == 0) {
+                        if (((current.mask) & (BezierPath.C1_MASK)) == 0) {
+                            gp.lineTo(((float) (current.x[0])), ((float) (current.y[0])));
+                        } else {
+                            gp.quadTo(((float) (current.x[1])), ((float) (current.y[1])), ((float) (current.x[0])), ((float) (current.y[0])));
+                        }
+                    } else {
+                        if (((current.mask) & (BezierPath.C1_MASK)) == 0) {
+                            gp.quadTo(((float) (previous.x[2])), ((float) (previous.y[2])), ((float) (current.x[0])), ((float) (current.y[0])));
+                        } else {
+                            gp.curveTo(((float) (previous.x[2])), ((float) (previous.y[2])), ((float) (current.x[1])), ((float) (current.y[1])), ((float) (current.x[0])), ((float) (current.y[0])));
+                        }
+                    }
+                }
+                gp.closePath();
+            }
+        }
+
+    return gp;
+}

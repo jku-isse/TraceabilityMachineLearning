@@ -1,0 +1,8 @@
+public void testgetImmunizationCPTCodes2() {
+    try {
+        evilCptDAO.getImmunizationCPTCodes();
+        fail("Should have thrown DBException");
+    } catch (DBException e) {
+        // success
+    }
+}

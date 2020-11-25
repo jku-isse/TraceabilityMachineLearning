@@ -1,0 +1,3 @@
+public void setMaxInactiveInterval(int arg0) {
+    MockHttpSession.mins = arg0;
+}

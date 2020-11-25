@@ -1,0 +1,3 @@
+public boolean getResourceMail() {
+    return cbResMail.isSelected();
+}

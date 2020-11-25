@@ -1,0 +1,6 @@
+protected TaskActionBase(TaskManager taskManager, TaskSelectionManager selectionManager, UIFacade uiFacade) {
+    myTaskManager = taskManager;
+    selectionManager.addSelectionListener(this);
+    selectionChanged(selectionManager.getSelectedTasks());
+    myUIFacade = uiFacade;
+}

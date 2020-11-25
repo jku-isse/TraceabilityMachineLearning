@@ -1,0 +1,20 @@
+private static final Object nullValueOf(Class rt) {
+    if (!(rt.isPrimitive())) {
+        return null;
+    } else
+        if (rt == (void.class)) {
+            return null;
+        } else
+            if (rt == (boolean.class)) {
+                return Boolean.FALSE;
+            } else
+                if (rt == (char.class)) {
+                    return GenericListener.DefaultInvoker.char_0;
+                } else {
+                    // this will convert to any other kind of number
+                    return GenericListener.DefaultInvoker.byte_0;
+                }
+
+
+
+}

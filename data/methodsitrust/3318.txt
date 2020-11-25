@@ -1,0 +1,8 @@
+public void testAddEmptyPersonnelException() throws Exception {
+    try {
+        evilDAO.addEmptyPersonnel(Role.HCP);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

@@ -1,0 +1,3 @@
+public AdverseEventBean getAdverseEvent(int id) throws DBException {
+    return adEventDAO.getReport(id);
+}

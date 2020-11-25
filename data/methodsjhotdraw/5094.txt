@@ -1,0 +1,4 @@
+public void addDependency(DependencyFigure f) {
+    dependencies.add(f);
+    updateStartTime();
+}

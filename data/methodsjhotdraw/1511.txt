@@ -1,0 +1,4 @@
+/**
+ * Adds a change listener.
+ */
+public void addChangeListener(ChangeListener listener);

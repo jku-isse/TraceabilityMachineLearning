@@ -1,0 +1,3 @@
+public MyObject(String name) {
+    this.name = name;
+}

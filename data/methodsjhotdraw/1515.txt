@@ -1,0 +1,4 @@
+/**
+ * Draws the constrainer grid for the specified drawing view.
+ */
+public void draw(Graphics2D g, DrawingView view);

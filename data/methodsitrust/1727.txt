@@ -1,0 +1,7 @@
+/* public void setOvID(String ovID) {
+this.ovID = Long.parseLong(ovID);
+}
+ */
+public Timestamp getTimestamp() {
+    return timestamp;
+}

@@ -1,0 +1,3 @@
+public ProjectBoundsAlgorithm getProjectBoundsAlgorithm() {
+    return myProjectBoundsAlgorithm;
+}

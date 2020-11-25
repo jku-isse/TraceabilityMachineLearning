@@ -1,0 +1,3 @@
+public HashMap<TransactionType, Integer> getTotalCount() {
+    return totalCount;
+}

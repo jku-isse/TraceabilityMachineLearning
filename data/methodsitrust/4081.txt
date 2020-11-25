@@ -1,0 +1,31 @@
+public void testSearchForHCPSurveyResults2() throws Exception {
+    gen.surveyResults();
+    // log in as uap
+    WebConversation wc = login("8000000009", "uappass1");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - UAP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 8000000009L, 0L, "");
+    // go to page with HCP Survey Results
+    wr = wr.getLinkWith("Satisfaction Survey Results").click();
+    assertTrue(wr.getText().contains("Search HCP Survey Results"));
+    WebForm form = wr.getForms()[0];
+    form.setParameter("hcpZip", "27613");
+    form.setParameter("hcpSpecialty", SurveyResultBean.HEART_SPECIALTY);
+    // view current page to ensure data is correct
+    wr = form.submit();
+    WebTable wt = wr.getTableStartingWith("LHCP Search Results:");
+    assertEquals("Bad Doctor", wt.getTableCell(2, 0).getText());
+    assertEquals("Avenue 1", wt.getTableCell(2, 1).getText());
+    assertEquals("Avenue 2", wt.getTableCell(2, 2).getText());
+    assertEquals("Raleigh", wt.getTableCell(2, 3).getText());
+    assertEquals("NC", wt.getTableCell(2, 4).getText());
+    assertEquals("27613", wt.getTableCell(2, 5).getText());
+    assertEquals("Heart Specialist", wt.getTableCell(2, 6).getText());
+    assertEquals("na", wt.getTableCell(2, 7).getText());
+    assertEquals("20.00", wt.getTableCell(2, 8).getText());
+    assertEquals("30.00", wt.getTableCell(2, 9).getText());
+    assertEquals("1.00", wt.getTableCell(2, 10).getText());
+    assertEquals("2.00", wt.getTableCell(2, 11).getText());
+    assertEquals("75%", wt.getTableCell(2, 12).getText());
+    iTrustHTTPTest.assertLogged(TransactionType.SATISFACTION_SURVEY_VIEW, 8000000009L, 0L, "");
+}

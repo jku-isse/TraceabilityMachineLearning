@@ -1,0 +1,3 @@
+protected ProjectResource(int id) {
+    this.id = id;
+}

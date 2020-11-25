@@ -1,0 +1,10 @@
+public void testFilterByInvalidUpperAge() throws Exception {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.UPPER_AGE_LIMIT, "-1", factory);
+    try {
+        List<PatientBean> res = filter.filter(allPatients);
+    } catch (NumberFormatException e) {
+        // exception is good
+        return;
+    }
+    assertTrue(false);
+}

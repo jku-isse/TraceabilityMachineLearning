@@ -1,0 +1,25 @@
+public ResourceTreeTableModel(ResourceManager resMgr, TaskManager taskManager) {
+    super();
+    myResourceManager = ((HumanResourceManager) (resMgr));
+    myTaskManager = taskManager;
+    myTaskManager.addTaskListener(new TaskListenerAdapter() {
+        public void taskRemoved(TaskHierarchyEvent e) {
+            fireResourceChange(e.getTask());
+        }
+
+        public void taskScheduleChanged(TaskScheduleEvent e) {
+            fireResourceChange(e.getTask());
+        }
+
+        void fireResourceChange(Task task) {
+            ResourceAssignment[] assignments = task.getAssignments();
+            for (int i = 0; i < (assignments.length); i++) {
+                assignments[i].getResource().resetLoads();
+                resourceAssignmentsChanged(new ProjectResource[]{ assignments[i].getResource() });
+            }
+        }
+    });
+    changeLanguage(ResourceTreeTableModel.language);
+    root = buildTree();
+    this.setRoot(root);
+}

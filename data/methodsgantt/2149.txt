@@ -1,0 +1,27 @@
+/**
+ * The delay is calculated as follow : The reference date is today. The
+ * check is performed on the end date of the task. There could be a delay
+ * only if percentage completion is not equal to 100%. If task end date <
+ * today && completion < 100 there is a delay. The delay is critical is the
+ * task is critical.
+ *
+ * @param t
+ * 		The task.
+ * @return The calculated delay
+ */
+private Delay calculateDelay(Task t) {
+    Delay res = Delay.getDelay(Delay.NONE);
+    int completionPercentage = t.getCompletionPercentage();
+    if ((t.isMilestone()) || (completionPercentage == 100))
+        return res;
+
+    Date endDate = t.getEnd().getTime();
+    if (endDate.before(myToday))
+        if (t.isCritical())
+            res.setType(Delay.CRITICAL);
+        else
+            res.setType(Delay.NORMAL);
+
+
+    return res;
+}

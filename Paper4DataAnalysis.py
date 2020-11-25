@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-
+import numpy as np
 
 Frequency = [15097,1207,645,93,68,15,19,10,20,3,4,3,1,1,1,1,1,1,2]
 variableAmount = ['0', '1', '2', '3', '4', '5', '6', '7', '8','10', '12','13','14', '15', '20', '23', '24', '26', '30'] #sample names
@@ -18,29 +18,44 @@ plt.show()
 ###########################################
 
 dataset = pd.read_csv( 'TNUPercentages.txt', sep= ',', index_col=False) 
-X_ticks_array=[i for i in range(0, 100, 10)]
-plt.xticks(X_ticks_array)
 
+fig, ax = plt.subplots(figsize=(10,5))
+(
+    pd.cut(dataset['percT'], bins=np.arange(-10, 110, 10))
+        .value_counts()
+        .sort_index()
+        .plot.bar(ax=ax)
+)
+plt.xlabel('T percentage')
+plt.ylabel('Frequency')
+plt.show()
+#######################################
 
-Tdata= dataset['percT']
-print(Tdata.head())
-plt.hist(Tdata);
-plt.xlabel('Percentages of T')
+dataset = pd.read_csv( 'TNUPercentages.txt', sep= ',', index_col=False) 
+
+fig, ax = plt.subplots(figsize=(10,5))
+(
+    pd.cut(dataset['percN'], bins=np.arange(-10, 110, 10))
+        .value_counts()
+        .sort_index()
+        .plot.bar(ax=ax)
+)
+plt.xlabel('N percentage')
+plt.ylabel('Frequency')
+plt.show()
+#######################################
+dataset = pd.read_csv( 'TNUPercentages.txt', sep= ',', index_col=False) 
+
+fig, ax = plt.subplots(figsize=(10,5))
+(
+    pd.cut(dataset['percU'], bins=np.arange(-10, 110, 10))
+        .value_counts()
+        .sort_index()
+        .plot.bar(ax=ax)
+)
+plt.xlabel('U percentage')
 plt.ylabel('Frequency')
 plt.show()
 
-Ndata= dataset['percN']
-print(Ndata.head())
-plt.hist(Ndata);
-plt.xlabel('Percentages of N')
-plt.ylabel('Frequency')
-plt.show()
-
-Udata= dataset['percU']
-print(Udata.head())
-plt.hist(Udata);
-plt.xlabel('Percentages of U')
-plt.ylabel('Frequency')
-plt.show()
 
 

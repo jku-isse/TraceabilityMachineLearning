@@ -1,0 +1,6 @@
+/**
+ * Standardconstructor
+ */
+public PlayerDialog() {
+    super();
+}

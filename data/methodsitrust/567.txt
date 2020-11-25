@@ -1,0 +1,27 @@
+/**
+ * Check appointments appearing on the calendar for conflicts
+ * with other appointments on the calendar.
+ *
+ * The array from this method is used to determine what appointments
+ * will appear in bold on the calendar.
+ *
+ * @return An array of items that are in conflict with other items.
+ * @throws SQLException
+ * 		
+ */
+public boolean[] getConflicts() throws SQLException {
+    boolean[] conflicts = new boolean[send.size()];
+    for (int i = 0; i < (send.size()); i++) {
+        ApptBean ab = send.get(i);
+        long t = ab.getDate().getTime();
+        long m = ((apptTypeDAO.getApptType(ab.getApptType()).getDuration()) * 60L) * 1000L;
+        Timestamp time = new Timestamp((t + m));
+        for (int j = i + 1; j < (send.size()); j++) {
+            if (send.get(j).getDate().before(time)) {
+                conflicts[i] = true;
+                conflicts[j] = true;
+            }
+        }
+    }
+    return conflicts;
+}

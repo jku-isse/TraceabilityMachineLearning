@@ -1,0 +1,3 @@
+public void projectModified() {
+    setEnabled(true);
+}

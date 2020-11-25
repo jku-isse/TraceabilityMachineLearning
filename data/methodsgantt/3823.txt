@@ -1,0 +1,10 @@
+/**
+ * Move down the resource number index
+ */
+public void down(HumanResource hr) {
+    int index = resources.indexOf(hr);
+    assert index >= 0;
+    resources.remove(index);
+    resources.add((index + 1), hr);
+    fireResourceChanged(hr);
+}

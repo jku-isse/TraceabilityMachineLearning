@@ -1,0 +1,3 @@
+public OfficeVisitBean getOfficeVisit() {
+    return officeVisit;
+}

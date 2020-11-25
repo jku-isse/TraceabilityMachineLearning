@@ -1,0 +1,7 @@
+public void setView(DrawingView view) {
+    this.view = view;
+    prefs = Preferences.userNodeForPackage(getClass());
+    GridConstrainer constrainer = ((GridConstrainer) (view.getVisibleConstrainer()));
+    constrainer.setHeight(prefs.getDouble("view.gridSize", 8.0));
+    constrainer.setWidth(prefs.getDouble("view.gridSize", 8.0));
+}

@@ -1,0 +1,14 @@
+public void testAcceptAnAppointment() throws Exception {
+    gen.clearAllTables();
+    gen.standardData();
+    gen.pendingAppointmentAlert();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr.getLinkWith("Appointment Requests").click();
+    wr = wc.getCurrentPage();
+    wr.getLinkWith("Approve").click();
+    wr = wc.getCurrentPage();
+    wr.getLinkWith("Home").click();
+    wr = wc.getCurrentPage();
+    assertFalse(wr.getText().contains("Appointment requests."));
+}

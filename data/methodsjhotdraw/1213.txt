@@ -1,0 +1,7 @@
+/**
+ * Sets a control point.
+ */
+public void setNode(int index, BezierPath.Node p) {
+    path.set(index, p);
+    invalidate();
+}

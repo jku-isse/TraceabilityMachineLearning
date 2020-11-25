@@ -1,0 +1,20 @@
+protected void fileSaved(View p, File file, Object value) {
+    if (value == null) {
+        p.setFile(file);
+        p.markChangesAsSaved();
+        doIt(p);
+    } else {
+        String message;
+        if ((value instanceof Throwable) && ((((Throwable) (value)).getMessage()) != null)) {
+            message = ((Throwable) (value)).getMessage();
+        } else {
+            message = value.toString();
+        }
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        JSheet.showMessageSheet(getActiveView().getComponent(), ((((("<html>" + (UIManager.getString("OptionPane.css"))) + "<b>") + (labels.getFormatted("file.saveBefore.couldntSave.message", file.getName()))) + "</b><br>") + (message == null ? "" : message)), JOptionPane.ERROR_MESSAGE);
+    }
+    p.setEnabled(true);
+    if ((oldFocusOwner) != null) {
+        oldFocusOwner.requestFocus();
+    }
+}

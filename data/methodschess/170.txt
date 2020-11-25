@@ -1,0 +1,8 @@
+/**
+ * Get the current opening book.
+ *
+ * @return The current opening book.
+ */
+private final OpeningBook getOpeningBook() {
+    return _openingBook;
+}

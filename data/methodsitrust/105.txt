@@ -1,0 +1,8 @@
+public String addApptRequest(ApptRequestBean bean) throws SQLException {
+    List<ApptBean> conflicts = aDAO.getAllHCPConflictsForAppt(bean.getRequestedAppt().getHcp(), bean.getRequestedAppt());
+    if ((conflicts != null) && (!(conflicts.isEmpty()))) {
+        return "The appointment you requested conflicts with other existing appointments.";
+    }
+    arDAO.addApptRequest(bean);
+    return "Your appointment request has been saved and is pending.";
+}

@@ -1,0 +1,10 @@
+/**
+ * Adds a quadratic curve to the current path segment.
+ * This is only allowed, when the current path segment is open.
+ */
+public void quadTo(Object x1, Object y1, Object x2, Object y2) {
+    if (((size()) == 0) || ((get(((size()) - 1)).type) == (EnhancedPath.SegType.CLOSE))) {
+        throw new IllegalPathStateException("quadTo is only allowed when a path segment is open");
+    }
+    add(new EnhancedPath.Segment(EnhancedPath.SegType.QUADTO, x1, y1, x2, y2));
+}

@@ -1,0 +1,3 @@
+protected void onFileChosen(File file) {
+    myState.setFile(file);
+}

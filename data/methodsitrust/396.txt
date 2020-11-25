@@ -1,0 +1,15 @@
+public void testConstructPoorly() throws Exception {
+    try {
+        action = new EditPHRAction(factory, 9000000000L, "500");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("Patient does not exist", e.getMessage());
+    }
+    // I know its bad form to have two test in one, but its so we dont have to redo the database
+    try {
+        action = new EditPHRAction(factory, 9000000000L, "<br />");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("Patient ID is not a number: &lt;br /&gt;", e.getMessage());
+    }
+}

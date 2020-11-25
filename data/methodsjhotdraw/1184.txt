@@ -1,0 +1,4 @@
+public Rectangle2D.Double getBounds() {
+    Rectangle2D.Double bounds = path.getBounds2D();
+    return bounds;
+}

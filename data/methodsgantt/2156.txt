@@ -1,0 +1,3 @@
+public void taskProgressChanged(TaskPropertyEvent e) {
+    fireDelayObservation();
+}

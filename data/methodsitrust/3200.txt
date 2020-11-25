@@ -1,0 +1,62 @@
+/* public void testGetPrescriptionReportsException() throws Exception {
+try {
+evilDAO.getPrescriptionReports(new ArrayList<Long>(), 0L);
+fail("DBException should have been thrown");
+} catch (DBException e) {
+assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+}
+}
+ */
+/* public void testGetPrescriptionsException() throws Exception {
+try {
+evilDAO.getPrescriptions(0L);
+fail("DBException should have been thrown");
+} catch (DBException e) {
+assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+}
+}
+ */
+/* public void testGetProceduresException() throws Exception {
+try {
+evilDAO.getProcedures(0L);
+fail("DBException should have been thrown");
+} catch (DBException e) {
+assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+}
+}
+ */
+/* public void testRemoveDiagnosisFromOVException() throws Exception {
+try {
+evilDAO.removeDiagnosisFromOfficeVisit(0L);
+fail("DBException should have been thrown");
+} catch (DBException e) {
+assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+}
+}
+ */
+/* public void testRemovePrescriptionException() throws Exception {
+try {
+evilDAO.removePrescription(0L);
+fail("DBException should have been thrown");
+} catch (DBException e) {
+assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+}
+}
+ */
+/* public void testRemoveProcedureFromOVException() throws Exception {
+try {
+evilDAO.removeProcedureFromOfficeVisit(0L);
+fail("DBException should have been thrown");
+} catch (DBException e) {
+assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+}
+}
+ */
+public void testUpdateOVException() throws Exception {
+    try {
+        evilDAO.update(new OfficeVisitBean());
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

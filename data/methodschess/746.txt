@@ -1,0 +1,11 @@
+/**
+ * Increase the capacity of the stack.
+ */
+private final void increaseCapacity() {
+    // Create a new bigger array.
+    Object[] newStack = new Object[(_items.length) + (_incSize)];
+    // Copy the content of the old array to the new one.
+    System.arraycopy(_items, 0, newStack, 0, _nItems);
+    // Set the new array.
+    _items = newStack;
+}

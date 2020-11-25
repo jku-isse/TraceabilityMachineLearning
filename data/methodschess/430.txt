@@ -1,0 +1,6 @@
+/**
+ * Get the ply of this notation.
+ *
+ * @return The ply for this notation.
+ */
+Ply getPly();

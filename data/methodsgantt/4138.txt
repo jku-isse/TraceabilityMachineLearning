@@ -1,0 +1,1 @@
+void setPriority(int priority);

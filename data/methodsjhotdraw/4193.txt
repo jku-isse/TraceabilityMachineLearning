@@ -1,0 +1,55 @@
+@Override
+protected void initComponentDefaults(UIDefaults table) {
+    super.initComponentDefaults(table);
+    table.addResourceBundle("org.jhotdraw.gui.Labels");
+    // *** Shared Fonts
+    Integer eleven = new Integer(11);
+    Integer twelve = new Integer(12);
+    Integer fontPlain = new Integer(Font.PLAIN);
+    Integer fontBold = new Integer(Font.BOLD);
+    Object dialogPlain11 = new UIDefaults.ProxyLazyValue("javax.swing.plaf.FontUIResource", null, new Object[]{ "Dialog Sans", fontPlain, eleven });
+    Object dialogPlain12 = new UIDefaults.ProxyLazyValue("javax.swing.plaf.FontUIResource", null, new Object[]{ "Dialog Sans", fontPlain, twelve });
+    Object fieldPlain12 = new UIDefaults.ProxyLazyValue("javax.swing.plaf.FontUIResource", null, new Object[]{ "Verdana", fontPlain, twelve });
+    Object serifPlain12 = new UIDefaults.ProxyLazyValue("javax.swing.plaf.FontUIResource", null, new Object[]{ "Serif", fontPlain, twelve });
+    Object sansSerifPlain12 = new UIDefaults.ProxyLazyValue("javax.swing.plaf.FontUIResource", null, new Object[]{ "SansSerif", fontPlain, twelve });
+    Object monospacedPlain12 = new UIDefaults.ProxyLazyValue("javax.swing.plaf.FontUIResource", null, new Object[]{ "MonoSpaced", fontPlain, twelve });
+    Object dialogBold12 = new UIDefaults.ProxyLazyValue("javax.swing.plaf.FontUIResource", null, new Object[]{ "Dialog", fontBold, twelve });
+    // *** Shared Colors
+    ColorUIResource black = new ColorUIResource(Color.black);
+    ColorUIResource control = new ColorUIResource(15790320);
+    ColorUIResource controlText = black;
+    ColorUIResource selectionBackground = new ColorUIResource(11916799);
+    ColorUIResource selectionForeground = black;
+    // *** Shared Insets
+    InsetsUIResource zeroInsets = new InsetsUIResource(0, 0, 0, 0);
+    InsetsUIResource twoInsets = new InsetsUIResource(2, 2, 2, 2);
+    // *** Shared Borders
+    /* Object buttonBorder = 
+    new ProxyLazyValue(
+    "org.jhotdraw.gui.plaf.palette.BackdropBorder$UIResource",
+    new Object[] {new PaletteButtonBorder()});
+     */
+    Object buttonBorder = new BackdropBorder.UIResource(new PaletteButtonBorder());
+    Object textBorder = new BackdropBorder.UIResource(new PaletteTextComponentBorder());
+    Object[] defaults = // "ToolBar.separatorSize", toolBarSeparatorSize,
+    new Object[]{ // *** Fonts
+    "SmallSystemFont", dialogPlain11, // *** Buttons
+    "Button.font", dialogPlain12, "Button.background", control, "Button.foreground", controlText, "Button.border", buttonBorder, "Button.margin", zeroInsets, // *** FontChooser
+    "Button.background", control, "Button.foreground", controlText, "Button.border", buttonBorder, "Button.margin", zeroInsets, // *** FormattedTextField
+    "FormattedTextField.font", fieldPlain12, "FormattedTextField.background", control, "FormattedTextField.foreground", controlText, "FormattedTextField.border", textBorder, "FormattedTextField.margin", zeroInsets, "FormattedTextField.opaque", Boolean.TRUE, "FormattedTextField.errorIndicatorForeground", new ColorUIResource(16665153), "FormattedTextField.selectionBackground", selectionBackground, "FormattedTextField.selectionForeground", selectionForeground, // *** Labels
+    "Label.font", dialogPlain12, // *** Ribbons
+    "Ribbon.border", new UIDefaults.ProxyLazyValue("javax.swing.border.MatteBorder", new Object[]{ new Insets(1, 0, 0, 0), new Color(10855845) })// 
+    , // *** ScrollPane
+    "ScrollPane.border", new UIDefaults.ProxyLazyValue("javax.swing.border.MatteBorder", new Object[]{ new Insets(1, 1, 1, 1), new Color(10855845) })// 
+    , // *** Slider
+    "Slider.background", control, "Slider.foreground", controlText, "Slider.horizontalSize", new DimensionUIResource(100, 20), "Slider.verticalSize", new DimensionUIResource(20, 100), // *** TextArea
+    "TextArea.selectionBackground", selectionBackground, "TextArea.selectionForeground", selectionForeground, // *** TextField
+    "TextField.font", fieldPlain12, "TextField.background", control, "TextField.foreground", controlText, "TextField.border", textBorder, "TextField.margin", zeroInsets, "TextField.opaque", Boolean.TRUE, "TextField.selectionBackground", selectionBackground, "TextField.selectionForeground", selectionForeground, // *** ToolBar
+    "ToolBar.font", dialogPlain12, "ToolBar.background", control, "ToolBar.foreground", controlText, "ToolBar.dockingBackground", control, // "ToolBar.dockingForeground", red,
+    "ToolBar.floatingBackground", control, // "ToolBar.floatingForeground", darkGray,
+    // "ToolBar.border", etchedBorder,
+    "ToolBar.border", new UIDefaults.ProxyLazyValue("org.jhotdraw.gui.plaf.palette.PaletteToolBarBorder$UIResource")// 
+     }// "ToolBar.separatorSize", toolBarSeparatorSize,
+    ;
+    table.putDefaults(defaults);
+}

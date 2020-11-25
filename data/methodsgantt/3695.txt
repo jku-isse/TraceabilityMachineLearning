@@ -1,0 +1,11 @@
+/**
+ * Las a role
+ */
+private void loadRoles(Attributes atts) {
+    String roleName = atts.getValue("name");
+    RolePersistentID persistentID = new RolePersistentID(atts.getValue("id"));
+    Role existingRole = myRoleSet.findRole(persistentID.getRoleID());
+    if (existingRole == null) {
+        myRoleSet.createRole(roleName, persistentID.getRoleID());
+    }
+}

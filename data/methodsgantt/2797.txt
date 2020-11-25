@@ -1,0 +1,3 @@
+Worker(MouseEvent e) {
+    myEvent = new ActionEvent(this, ActionEvent.ACTION_PERFORMED, getActionCommand(), EventQueue.getMostRecentEventTime(), e.getModifiers());
+}

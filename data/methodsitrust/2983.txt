@@ -1,0 +1,8 @@
+private void setValues(PreparedStatement ps, OfficeVisitBean ov) throws SQLException {
+    ps.setDate(1, new Date(ov.getVisitDate().getTime()));
+    ps.setString(2, ov.getNotes());
+    ps.setLong(3, ov.getHcpID());
+    ps.setLong(4, ov.getPatientID());
+    ps.setString(5, ov.getHospitalID());
+    ps.setBoolean(6, ov.isERIncident());
+}

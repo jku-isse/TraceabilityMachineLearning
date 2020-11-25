@@ -1,0 +1,6 @@
+private TransactionType(int code, String description, String actionPhrase, boolean patientViewable) {
+    this.code = code;
+    this.description = description;
+    this.actionPhrase = actionPhrase;
+    this.patientView = patientViewable;
+}

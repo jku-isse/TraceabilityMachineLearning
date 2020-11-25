@@ -1,0 +1,4 @@
+/**
+ * Gets all drawing views associated with this editor.
+ */
+Collection<DrawingView> getDrawingViews();

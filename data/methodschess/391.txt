@@ -1,0 +1,8 @@
+/**
+ * Get the bitmask for the moved pieces.
+ *
+ * @return The bitmask for the moved pieces.
+ */
+private final long getMovedPieces() {
+    return _movedPieces;
+}

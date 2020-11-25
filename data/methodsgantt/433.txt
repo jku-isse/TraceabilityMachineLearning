@@ -1,0 +1,6 @@
+/**
+ * Set new working directory value.
+ */
+public void setWorkingDirectory(String workingDirectory) {
+    workingDir = workingDirectory;
+}

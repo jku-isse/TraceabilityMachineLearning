@@ -1,0 +1,17 @@
+private void writePreviousTask(Attributes attrs) {
+    String id = attrs.getValue("id");
+    String meetingAsString = attrs.getValue("meeting");
+    boolean meeting = false;
+    if (meetingAsString.equals("true"))
+        meeting = true;
+
+    String start = attrs.getValue("start");
+    String duration = attrs.getValue("duration");
+    String nestedAsString = attrs.getValue("super");
+    boolean nested = false;
+    if (nestedAsString.equals("true"))
+        nested = true;
+
+    GanttPreviousStateTask task = new GanttPreviousStateTask(new Integer(id).intValue(), GanttCalendar.parseXMLDate(start), new Integer(duration).intValue(), meeting, nested);
+    tasks.add(task);
+}

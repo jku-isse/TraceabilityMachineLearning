@@ -1,0 +1,19 @@
+/**
+ *
+ *
+ * @param req
+ * 		
+ * @throws SQLException
+ * 		
+ */
+public void updateApptRequest(ApptRequestBean req) throws SQLException {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    conn = factory.getConnection();
+    stmt = conn.prepareStatement("UPDATE appointmentrequests SET pending=?, accepted=? WHERE appt_id=?");
+    stmt.setBoolean(1, req.isPending());
+    stmt.setBoolean(2, req.isAccepted());
+    stmt.setInt(3, req.getRequestedAppt().getApptID());
+    stmt.executeUpdate();
+    DBUtil.closeConnection(conn, stmt);
+}

@@ -1,0 +1,28 @@
+/**
+ * Get all lab procedures associated with a particular HCP.
+ *
+ * @param mid
+ * 		The HCPs id.
+ * @return 
+ * @throws DBException
+ * 		
+ */
+public List<LabProcedureBean> getHCPLabProcedures(long mid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (mid == 0L)
+            throw new SQLException("HCP id cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("SELECT * FROM LabProcedure WHERE labprocedure.OfficeVisitID IN " + "(SELECT officevisits.ID FROM officevisits WHERE officevisits.HCPID = ?)"));
+        ps.setLong(1, mid);
+        ResultSet rs = ps.executeQuery();
+        return labProcedureLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

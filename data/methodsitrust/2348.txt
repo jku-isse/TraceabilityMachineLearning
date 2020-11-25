@@ -1,0 +1,8 @@
+public DrugInteractionBean loadSingle(ResultSet rs) throws SQLException {
+    // MedicationBean med = new MedicationBean();
+    DrugInteractionBean drugIt = new DrugInteractionBean();
+    drugIt.setDescription(rs.getString("Description"));
+    drugIt.setFirstDrug(rs.getString("FirstDrug"));
+    drugIt.setSecondDrug(rs.getString("SecondDrug"));
+    return drugIt;
+}

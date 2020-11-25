@@ -1,0 +1,22 @@
+public void startElement(String namespaceURI, String sName, String qName, Attributes attrs) {
+    String eName = qName;// element name
+
+    if (attrs != null) {
+        for (int i = 0; i < (attrs.getLength()); i++) {
+            String aName = attrs.getLocalName(i);// Attr name
+
+            if ("".equals(aName)) {
+                aName = attrs.getQName(i);
+                // The project part
+            }
+            if (eName.equals("calendar")) {
+                if (aName.equals("name")) {
+                    name = attrs.getValue(i);
+                } else
+                    if (aName.equals("type")) {
+                    }
+
+            }
+        }
+    }
+}

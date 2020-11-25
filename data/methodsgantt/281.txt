@@ -1,0 +1,3 @@
+public void beginDrawDependencyInteraction(MouseEvent initiatingEvent, TaskRegularAreaChartItem taskArea, GanttGraphicArea.MouseSupport mouseSupport) {
+    setActiveInteraction(new GanttGraphicArea.DrawDependencyInteraction(initiatingEvent, taskArea, mouseSupport));
+}

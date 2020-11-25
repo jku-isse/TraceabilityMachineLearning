@@ -1,0 +1,52 @@
+public void testGetOfficeVisitsWithInstructions() throws Exception {
+    // Empty database.
+    assertEquals(0, dao.getOfficeVisitsWithInstructions(1).size());
+    // Patient 5 has one office visit with instructions.
+    OfficeVisitBean ovbean = new OfficeVisitBean();
+    ovbean.setPatientID(5);
+    ovbean.setHospitalID("1");
+    ovbean.setNotes("notes");
+    ovbean.setVisitDateStr("1/1/2011");
+    long ovid1 = ovdao.add(ovbean);
+    ovbean.setPatientID(6);
+    long ovid2 = ovdao.add(ovbean);
+    PatientInstructionsBean bean = new PatientInstructionsBean();
+    bean.setName("name");
+    bean.setComment("comment");
+    bean.setModified(new Date());
+    bean.setVisitID(ovid1);
+    dao.add(bean);
+    bean.setVisitID(ovid2);
+    dao.add(bean);
+    // Ensure it only returns the one office visit with patient
+    // instructions assigned to patient 5.
+    List<OfficeVisitBean> list = dao.getOfficeVisitsWithInstructions(5);
+    assertEquals(1, list.size());
+    assertEquals(5, list.get(0).getPatientID());
+    assertEquals(ovid1, list.get(0).getID());
+    // Patient 5 has two office visits, one with instructions.
+    ovbean.setPatientID(5);
+    long ovid3 = ovdao.add(ovbean);
+    list = dao.getOfficeVisitsWithInstructions(5);
+    assertEquals(1, list.size());
+    assertEquals(ovid1, list.get(0).getID());
+    // Patient 5 has two office visits, both with instructions
+    bean = new PatientInstructionsBean();
+    bean.setName("name");
+    bean.setComment("comment");
+    bean.setModified(new Date());
+    bean.setVisitID(ovid3);
+    dao.add(bean);
+    // Ensure it returns both offices visit with patient instructions
+    // assigned to patient 5.
+    list = dao.getOfficeVisitsWithInstructions(5);
+    assertEquals(2, list.size());
+    assertEquals(ovid1, list.get(0).getID());
+    assertEquals(ovid3, list.get(1).getID());
+    // Patient 7 has an office visit, but no patient instructions.
+    ovbean.setPatientID(7);
+    ovdao.add(ovbean);
+    assertEquals(0, dao.getOfficeVisitsWithInstructions(7).size());
+    // Check that empty list is returned with bad id even when items are in DB.
+    assertEquals(0, dao.getOfficeVisitsWithInstructions(123321).size());
+}

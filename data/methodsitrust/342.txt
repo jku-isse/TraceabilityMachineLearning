@@ -1,0 +1,31 @@
+/**
+ * Patient id and office visit id validated by super class
+ *
+ * @param factory
+ * 		The DAOFactory to be used in creating the DAOs for this action.
+ * @param loggedInMID
+ * 		The MID of the user who is authorizing this action.
+ * @param pidString
+ * 		The patient who this action is performed on.
+ * @param ovIDString
+ * 		The ID of the office visit in play.
+ * @throws iTrustException
+ * 		
+ */
+public EditOfficeVisitAction(DAOFactory factory, long loggedInMID, String pidString, String ovIDString) throws iTrustException {
+    super(factory, loggedInMID, pidString, ovIDString);
+    pid = Long.parseLong(pidString);
+    ovDAO = factory.getOfficeVisitDAO();
+    this.personnelDAO = factory.getPersonnelDAO();
+    this.hospitalDAO = factory.getHospitalsDAO();
+    this.patDAO = factory.getPatientDAO();
+    this.prescriptionsAction = new EditPrescriptionsAction(factory, loggedInMID, pidString, ovIDString);
+    this.proceduresAction = new EditProceduresAction(factory, loggedInMID, pidString, ovIDString);
+    this.immunizationsAction = new EditImmunizationsAction(factory, loggedInMID, pidString, ovIDString);
+    this.diagnosesAction = new EditDiagnosesAction(factory, loggedInMID, pidString, ovIDString);
+    this.labProceduresAction = new EditLabProceduresAction(factory, loggedInMID, pidString, ovIDString);
+    this.patientInstructionsAction = new EditPatientInstructionsAction(factory, loggedInMID, pidString, ovIDString);
+    this.referralsAction = new EditReferralsAction(factory, loggedInMID, pidString, ovIDString);
+    this.loggingAction = new EventLoggingAction(factory);
+    this.loggedInMID = loggedInMID;
+}

@@ -1,0 +1,3 @@
+public List<RemoteMonitoringDataBean> getPatientDataWithoutLogging() throws DBException {
+    return rmDAO.getPatientsData(loggedInMID);
+}

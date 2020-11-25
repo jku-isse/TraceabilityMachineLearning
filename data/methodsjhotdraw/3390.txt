@@ -1,0 +1,55 @@
+/**
+ * Returns a relative point on the path.
+ * Where 0 is the start point of the path and 1 is the end point of the
+ * path.
+ *
+ * @param relative
+ * 		a value between 0 and 1.
+ */
+public Point2D.Double getPointOnPath(double relative, double flatness) {
+    // This method works only for straight lines
+    if ((size()) == 0) {
+        return null;
+    } else
+        if ((size()) == 1) {
+            return get(0).getControlPoint(0);
+        }
+
+    if (relative <= 0) {
+        return get(0).getControlPoint(0);
+    } else
+        if (relative >= 1) {
+            return get(((size()) - 1)).getControlPoint(0);
+        }
+
+    validatePath();
+    // Compute the relative point on the path
+    double len = getLengthOfPath(flatness);
+    double relativeLen = len * relative;
+    double pos = 0;
+    double[] coords = new double[6];
+    PathIterator i = generalPath.getPathIterator(new AffineTransform(), flatness);
+    int type = i.currentSegment(coords);
+    double prevX = coords[0];
+    double prevY = coords[1];
+    i.next();
+    for (; !(i.isDone()); i.next()) {
+        i.currentSegment(coords);
+        double segLen = Geom.length(prevX, prevY, coords[0], coords[1]);
+        if ((pos + segLen) >= relativeLen) {
+            // if (true) return new Point2D.Double(coords[0], coords[1]);
+            // Compute the relative Point2D.Double on the line
+            /* return new Point2D.Double(
+            prevX * pos / len + coords[0] * (pos + segLen) / len,
+            prevY * pos / len + coords[1] * (pos + segLen) / len
+            );
+             */
+            double factor = (relativeLen - pos) / segLen;
+            return new Point2D.Double(((prevX * (1 - factor)) + ((coords[0]) * factor)), ((prevY * (1 - factor)) + ((coords[1]) * factor)));
+        }
+        pos += segLen;
+        prevX = coords[0];
+        prevY = coords[1];
+    }
+    throw new InternalError("We should never get here");
+}

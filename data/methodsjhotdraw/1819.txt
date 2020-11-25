@@ -1,0 +1,9 @@
+/**
+ * Removes the specified figures temporarily from the drawing.
+ *
+ * @see #basicAddAll(int, Collection)
+ * @param figures
+ * 		A collection of figures which are part of the drawing
+ * 		and should be removed
+ */
+void basicRemoveAll(Collection<? extends Figure> figures);

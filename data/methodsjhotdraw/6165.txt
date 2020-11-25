@@ -1,0 +1,6 @@
+/**
+ * Sets the line separator for the println() methods.
+ */
+public void setLineSeparator(String lineSeparator) {
+    this.lineSeparator = lineSeparator;
+}

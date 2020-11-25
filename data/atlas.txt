@@ -1,0 +1,43 @@
+Atlas (robot)
+
+Atlas is a bipedal humanoid robot primarily developed by the American robotics company Boston Dynamics, with funding and oversight from the United States Defense Advanced Research Projects Agency (DARPA). The 1.8-meter (6 ft) robot is designed for a variety of search and rescue tasks, and was unveiled to the public on July 11, 2013.[1]
+
+Design and development
+
+The design and production of Atlas was overseen by the DARPA, an agency of the United States Department of Defense, in cooperation with Boston Dynamics. One of the robot's hands was developed by Sandia National Laboratories, while the other was developed by iRobot.[2] In 2013, DARPA program manager Gill Pratt compared the prototype version of Atlas to a small child, saying that "a 1-year-old child can barely walk, a 1-year-old child falls down a lot ... this is where we are right now."[1]
+
+Atlas is based on Boston Dynamics' earlier PETMAN humanoid robot, and has four hydraulically-actuated limbs.[3] Constructed of aircraft-grade aluminum and titanium, it stands approximately 6 feet tall and weighs 330 pounds, and is illuminated with blue LEDs.[1][3] Atlas is equipped with two vision systems – a laser rangefinder and stereo cameras, both controlled by an onboard computer – and has hands with fine motor skill capabilities.[3] Its limbs possess a total of 28 degrees of freedom.[3] Atlas can navigate rough terrain and climb independently using its arms and legs, although the 2013 prototype version was tethered to an outside power supply to maintain stability.[3]
+
+In October 2013 Boston Dynamics uploaded a video showing Atlas could withstand being hit by projectiles and balance on one leg.[4]
+
+In 2014, Atlas robots programmed by six different teams will compete in the DARPA Robotics Challenge to test the robot's ability to perform various tasks, including getting in and out of a vehicle and driving it, opening a door, and using a power tool. A variety of other robots will also compete. The contest was inspired by the 2011 Fukushima Daiichi nuclear disaster, and carries a USD 2 million prize for the winning team.[1]
+
+In the 2015 DARPA robotics finals Atlas (or Running Man) came second behind the Korean team Kaist and their robot DRC-Hubo by a margin of six minutes, completing the entire course in a time of 50:26[5]
+
+Applications
+
+Atlas is intended to aid emergency services in search and rescue operations, performing tasks such as shutting off valves, opening doors and operating powered equipment in environments where humans could not survive.[1] The Department of Defense stated in 2013 that it had no interest in using the robot for offensive or defensive warfare.[1]
+
+In the 2015 Darpa competition of robotics Atlas was able to complete all eight tasks as follows:
+
+1. Drive a utility vehicle at the site.
+2. Travel dismounted across rubble.
+3. Remove debris blocking an entryway.
+4. Open a door and enter a building.
+5. Climb an industrial ladder and traverse an industrial walkway.
+6. Use a tool to break through a concrete panel.
+7. Locate and close a valve near a leaking pipe.
+8. Connect a fire hose to a standpipe and turn on a valve.[6]
+
+Reactions
+
+Atlas was unveiled to the public on July 11, 2013. The New York Times said that its debut was "a striking example of how computers are beginning to grow legs and move around in the physical world", describing the robot as "a giant – though shaky – step toward the long-anticipated age of humanoid robots."[1] Gary Bradski, a specialist in artificial intelligence, declared that "a new species, Robo sapiens, are emerging".[1]
+
+References
+
+1. John Markoff (July 11, 2013). "Modest Debut of Atlas May Foreshadow Age of 'Robo Sapiens'". New York Times. Retrieved July 14, 2013.
+2. Emi Kolawole (July 12, 2013). "What if this ATLAS shrugged? — DARPA unveils new humanoid robot". Washington Post. Retrieved July 14, 2013.
+3. Tim Hornyak (July 11, 2013). "Be afraid: DARPA unveils Terminator-like Atlas robot". CNET. Retrieved July 14, 2013.
+4. VIDEO: Robot performs balancing act. 3 News NZ. 9 October 2013.
+5. "Home | DRC Finals". www.theroboticschallenge.org. Retrieved 2015-12-30.
+6. "DARPA Robotics Challenge".

@@ -1,0 +1,11 @@
+/**
+ * Add a castling ply.
+ *
+ * @param source
+ * 		The position square of the king.
+ * @param goesLeft
+ * 		The flag that indicates if the castling goes to the left.
+ */
+private final void addCastlingPly(int source, boolean goesLeft) {
+    addPly(new CastlingPlyImpl(new PositionImpl(source), goesLeft), REGULAR_PLY);
+}

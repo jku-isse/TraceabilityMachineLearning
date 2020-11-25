@@ -1,0 +1,6 @@
+/**
+ * Starts the application.
+ * This usually creates a new view, and adds it to the application.
+ * <code>init()</code> must have been invoked before the application is started.
+ */
+public void start();

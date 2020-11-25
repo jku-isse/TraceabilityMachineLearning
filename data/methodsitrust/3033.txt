@@ -1,0 +1,25 @@
+/**
+ * Returns a list of UAPs who work for this LHCP.
+ *
+ * @param hcpid
+ * 		The MID of the personnel in question.
+ * @return A java.util.List of UAPs.
+ * @throws DBException
+ * 		
+ */
+public List<PersonnelBean> getUAPsForHCP(long hcpid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM personnel WHERE MID IN (SELECT UAP FROM hcprelations WHERE HCP=?)");
+        ps.setLong(1, hcpid);
+        ResultSet rs = ps.executeQuery();
+        return personnelLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

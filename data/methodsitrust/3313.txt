@@ -1,0 +1,6 @@
+public void testEditPersonnelZipCode() throws Exception {
+    PersonnelBean p = personnelDAO.getPersonnel(8000000009L);
+    p.setZip("55555-6666");
+    personnelDAO.editPersonnel(p);
+    assertEquals("55555-6666", p.getZip());
+}

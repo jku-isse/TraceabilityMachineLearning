@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @param success
+ * 		
+ * @param failure
+ * 		
+ */
+public ParsingState(ProxyDocument.SuccessState success, ProxyDocument.FailureState failure) {
+    mySuccessState = success;
+    myFailureState = failure;
+}

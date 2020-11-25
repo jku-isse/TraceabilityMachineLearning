@@ -1,0 +1,17 @@
+public void testEvilFactory() throws Exception {
+    action = new UpdateLOINCListAction(EvilDAOFactory.getEvilInstance());
+    String code = "28473-7";
+    String com = "Poison Ivy";
+    String kop = "VOL";
+    LOINCbean db = new LOINCbean();
+    db.setLabProcedureCode(code);
+    db.setComponent(com);
+    db.setKindOfProperty(kop);
+    try {
+        action.add(db);
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getExtendedMessage());
+    }
+    assertEquals("A database exception has occurred. Please see the log in the console for stacktrace", action.updateInformation(db));
+}

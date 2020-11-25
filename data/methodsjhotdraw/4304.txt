@@ -1,0 +1,7 @@
+public void mouseDragged(MouseEvent e) {
+    getHandler().tb = toolBar;
+    getHandler().origin = origin;
+    getHandler().mouseDragged(e);
+    isDragging = getHandler().isDragging;
+    origin = getHandler().origin;
+}

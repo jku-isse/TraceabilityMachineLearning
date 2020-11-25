@@ -1,0 +1,6 @@
+/**
+ * Creates a view action which acts on the specified view.
+ */
+public AbstractDrawingViewAction(DrawingView view) {
+    this.view = view;
+}

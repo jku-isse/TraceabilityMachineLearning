@@ -1,0 +1,3 @@
+public TextHolderFigure getLabelFor() {
+    return (target) == null ? this : target;
+}

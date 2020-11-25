@@ -1,0 +1,6 @@
+/**
+ * Creates new instance.
+ */
+public MessagePanel() {
+    this(null, null);
+}

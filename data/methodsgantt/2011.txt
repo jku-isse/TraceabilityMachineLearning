@@ -1,0 +1,4 @@
+public int getTimeFrameWidth(TimeFrame timeFrame) {
+    int defaultUnitsPerTopUnit = timeFrame.getUnitCount(myTimeUnitStack.getDefaultTimeUnit());
+    return ((int) (defaultUnitsPerTopUnit * (myWidthPerDefaultUnit)));
+}

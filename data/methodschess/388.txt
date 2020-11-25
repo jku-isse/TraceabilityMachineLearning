@@ -1,0 +1,17 @@
+// Constructors
+/**
+ * Create a game status from a ply and a moved pieces bitmask.
+ *
+ * @param ply
+ * 		The ply for this game status.
+ * @param bitmask
+ * 		The moved pieces _before_ this ply.
+ */
+GameStatus(Ply ply, long bitmask) {
+    // Store the ply in an instance variable.
+    setPly(ply);
+    // Store the moved pieces of the previous game status.
+    setMovedPieces(bitmask);
+    // And store the moved piece of the current ply.
+    setMoved(ply.getSource());
+}

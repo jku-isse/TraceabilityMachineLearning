@@ -1,0 +1,3 @@
+public IStatus isDeletable() {
+    return Status.OK_STATUS;
+}

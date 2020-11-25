@@ -1,0 +1,9 @@
+/**
+ * Set a new search depth.
+ *
+ * @param searchDepth
+ * 		The new search depth.
+ */
+public final void setSearchDepth(int searchDepth) {
+    _searchDepth = searchDepth;
+}

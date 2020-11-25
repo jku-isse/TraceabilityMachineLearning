@@ -1,0 +1,6 @@
+/**
+ * Returns the X coordinate of the leftmost column of the image.
+ */
+public int getMinX() {
+    return minX;
+}

@@ -1,0 +1,4 @@
+public AssignmentNode(ResourceAssignment res) {
+    super(res);
+    resourceAssignment = res;
+}

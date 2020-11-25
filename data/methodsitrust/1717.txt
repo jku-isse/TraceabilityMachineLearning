@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the numericalResult
+ */
+public String getNumericalResult() {
+    return numericalResult;
+}

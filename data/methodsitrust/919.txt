@@ -1,0 +1,8 @@
+public void testDiagnosisBeanStringConstructor() throws Exception {
+    DiagnosisBean bean = new DiagnosisBean("999.99", "Test OK", "Long Term");
+    assertEquals("999.99", bean.getICDCode());
+    assertEquals("Test OK", bean.getDescription());
+    bean = new DiagnosisBean("0", "Test OK", "Long Term");
+    assertEquals("0", bean.getICDCode());
+    assertEquals("Test OK", bean.getDescription());
+}

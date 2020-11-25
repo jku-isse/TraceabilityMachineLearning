@@ -1,0 +1,9 @@
+/**
+ * Get the last ply.
+ *
+ * @return The last ply.
+ */
+public final Ply getLastPly() {
+    GameImpl.GameStatus lastStatus = getLastGameStatus();
+    return lastStatus == null ? null : lastStatus.getPly();
+}

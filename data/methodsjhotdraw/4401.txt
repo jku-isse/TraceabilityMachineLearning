@@ -1,0 +1,19 @@
+/**
+ * Ignored: The minimum of an input stream is always zero.
+ *
+ * Sets the models minimum to <I>newMinimum</I>.   The
+ * other three properties may be changed as well, to ensure
+ * that:
+ * <pre>
+ * minimum <= value <= value+extent <= maximum
+ * </pre>
+ * <p>
+ * Notifies any listeners if the model changes.
+ *
+ * @param newMinimum
+ * 		the models new minimum
+ * @see #getMinimum
+ * @see #addChangeListener
+ */
+public void setMinimum(int newMinimum) {
+}

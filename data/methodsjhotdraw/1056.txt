@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public AbstractTool() {
+    editorProxy = new DrawingEditorProxy();
+    setInputMap(createInputMap());
+    setActionMap(createActionMap());
+}

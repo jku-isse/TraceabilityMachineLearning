@@ -1,0 +1,8 @@
+/**
+ * Get a iterator for the elements of this stack.
+ *
+ * @return A iterator for the elements of this stack.
+ */
+public final Iterator iterator() {
+    return new ArrayStackIterator(_items, _nItems);
+}

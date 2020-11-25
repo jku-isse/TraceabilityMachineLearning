@@ -1,0 +1,27 @@
+/**
+ * Edit an existing patient instructions record in the database.
+ *
+ * @param bean
+ * 		The instruction to modify.
+ * @return The id of the modified instruction.  This will be that same as the id given in the bean itself.
+ * @throws DBException
+ * 		
+ */
+public long edit(PatientInstructionsBean bean) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        String statement = "UPDATE patientspecificinstructions " + ("SET VisitID=?, Modified=?, Name=?, URL=?, Comment=? " + "WHERE ID=?");
+        ps = conn.prepareStatement(statement);
+        loader.loadParameters(ps, bean);
+        ps.setLong(6, bean.getId());
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

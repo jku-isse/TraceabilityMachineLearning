@@ -1,0 +1,6 @@
+/**
+ * Returns the width of the image.
+ */
+public int getWidth() {
+    return width;
+}

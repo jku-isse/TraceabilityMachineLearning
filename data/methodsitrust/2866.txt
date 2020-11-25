@@ -1,0 +1,29 @@
+/**
+ * Reset the security question and answer for a particular user
+ *
+ * @param question
+ * 		The security question as a string.
+ * @param answer
+ * 		The security answer as a string.
+ * @param mid
+ * 		The MID of the user as a long.
+ * @throws DBException
+ * 		
+ */
+public void setSecurityQuestionAnswer(String question, String answer, long mid) throws DBException {
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    try {
+        conn = factory.getConnection();
+        pstmt = conn.prepareStatement("UPDATE users SET sQuestion = ?, sAnswer = ? WHERE MID = ?");
+        pstmt.setString(1, question);
+        pstmt.setString(2, answer);
+        pstmt.setLong(3, mid);
+        pstmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, pstmt);
+    }
+}

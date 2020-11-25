@@ -1,0 +1,6 @@
+/**
+ * Returns the JOptionPane pane on the sheet.
+ */
+public JOptionPane getOptionPane() {
+    return ((JOptionPane) (pane));
+}

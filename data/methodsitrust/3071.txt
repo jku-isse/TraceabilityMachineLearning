@@ -1,0 +1,29 @@
+/**
+ * Set referral message.
+ *
+ * @param id
+ * 		The id of the referral to retrieve.
+ * @return A ReferralBean.
+ * @throws DBException
+ * 		
+ */
+public long isReferralMessage(long messageID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM referralmessage WHERE messageID = ?");
+        ps.setLong(1, messageID);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return rs.getLong(2);
+        } else {
+            return 0;
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

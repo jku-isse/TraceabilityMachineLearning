@@ -1,0 +1,3 @@
+public TaskDependency[] toArray() {
+    return myDependencyCollection.getDependencies(myTask);
+}

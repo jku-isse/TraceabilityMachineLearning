@@ -1,0 +1,4 @@
+public NewProjectWizardWindow(UIFacade uiFacade, I18N i18n) {
+    super(uiFacade, i18n.getNewProjectWizardWindowTitle());
+    myI18n = i18n;
+}

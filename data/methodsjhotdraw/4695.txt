@@ -1,0 +1,5 @@
+public void initView(Application a, View p) {
+    if (a.isSharingToolsAmongViews()) {
+        ((ODGView) (p)).setEditor(getSharedEditor());
+    }
+}

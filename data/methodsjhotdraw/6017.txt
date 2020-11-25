@@ -1,0 +1,11 @@
+protected IXMLElement createLine(IXMLElement doc, double x1, double y1, double x2, double y2, Map<AttributeKey, Object> attributes) throws IOException {
+    IXMLElement elem = doc.createElement("line");
+    writeAttribute(elem, "x1", x1, 0.0);
+    writeAttribute(elem, "y1", y1, 0.0);
+    writeAttribute(elem, "x2", x2, 0.0);
+    writeAttribute(elem, "y2", y2, 0.0);
+    writeShapeAttributes(elem, attributes);
+    writeOpacityAttribute(elem, attributes);
+    writeTransformAttribute(elem, attributes);
+    return elem;
+}

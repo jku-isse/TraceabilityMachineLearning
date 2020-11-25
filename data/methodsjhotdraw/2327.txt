@@ -1,0 +1,16 @@
+public void updateConnection() {
+    willChange();
+    if ((getStartConnector()) != null) {
+        Point2D.Double start = getStartConnector().findStart(this);
+        if (start != null) {
+            setStartPoint(start);
+        }
+    }
+    if ((getEndConnector()) != null) {
+        Point2D.Double end = getEndConnector().findEnd(this);
+        if (end != null) {
+            setEndPoint(end);
+        }
+    }
+    changed();
+}

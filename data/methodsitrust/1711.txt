@@ -1,0 +1,3 @@
+public void allow() {
+    this.rights = LabProcedureBean.Allow;
+}

@@ -1,0 +1,3 @@
+EastHandle(Figure owner) {
+    super(owner, RelativeLocator.east());
+}

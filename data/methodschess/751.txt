@@ -1,0 +1,14 @@
+/**
+ * Return the position of a object on the stack, or -1 if it
+ * is not found.
+ *
+ * @return The position of the object on the stack.
+ */
+public final int search(Object o) {
+    for (int i = 0; i < (_nItems); i++) {
+        if (_items[i].equals(o)) {
+            return i;
+        }
+    }
+    return -1;
+}

@@ -1,0 +1,15 @@
+/**
+ * Initially create a logfile
+ */
+private void createLogFile() {
+    File homedir = new File(System.getProperty("user.home"));
+    f = new File(homedir, ChessEngineImpl.LOG_FILENAME);
+    try {
+        FileWriter fileWriter = new FileWriter(f);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        printWriter.println("## Java-Chess Engine Logfile, do not edit! ##");
+        printWriter.println("## For internal use only! ##");
+        printWriter.close();
+    } catch (IOException e) {
+    }
+}

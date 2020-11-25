@@ -1,0 +1,10 @@
+/**
+ * Returns the date a certain number of days ago
+ *
+ * @param days
+ * 		how many days ago
+ * @return the date it was however many days ago
+ */
+public static Date getSQLdateXDaysAgoFromNow(int days) {
+    return new Date(DateUtil.getDateXDaysAgoFromNow(days).getTime());
+}

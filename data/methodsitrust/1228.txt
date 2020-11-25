@@ -1,0 +1,14 @@
+/**
+ * Get all referrals for a patient sorted by the given field and in the given direction.
+ *
+ * @param field
+ * 		The name of the pseudo-field to sort by.
+ * @param dir
+ * 		The direction of the sort.
+ * @return 
+ * @throws DBException
+ * 		
+ */
+public List<VerboseReferralBean> getReferrals(String field, SortDirection dir) throws DBException {
+    return referralDAO.getPatientQuery(patientID).query(field, dir);
+}

@@ -1,0 +1,5 @@
+public void init() {
+    setLayout(new BorderLayout());
+    add(constructGeneralPanel(), BorderLayout.NORTH);
+    add(constructSouthPanel(), BorderLayout.SOUTH);
+}

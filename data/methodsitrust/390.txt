@@ -1,0 +1,21 @@
+/**
+ * Checks to see if a particular family member smokes
+ *
+ * @param member
+ * 		the family member to check
+ * @return true if the family member smokes.  False if there are no records or the family member does not
+ * @throws iTrustException
+ * 		
+ */
+public boolean isFamilyMemberSmoker(FamilyMemberBean member) throws iTrustException {
+    List<HealthRecord> records = hrDAO.getAllHealthRecords(member.getMid());
+    if ((records.size()) == 0)
+        return false;
+
+    for (HealthRecord record : records) {
+        if (record.isSmoker())
+            return true;
+
+    }
+    return false;
+}

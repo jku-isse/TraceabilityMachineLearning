@@ -1,0 +1,1 @@
+public boolean isPublicHoliDay(Date curDayStart);

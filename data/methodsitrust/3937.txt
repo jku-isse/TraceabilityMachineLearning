@@ -1,0 +1,26 @@
+/**
+ * test update Immunization record2
+ *  throws Exception
+ *
+ * @author student
+ * @author student
+ */
+public void testDocumentImmunization2() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Document Office Visit").click();
+    assertEquals("iTrust - Please Select a Patient", wr.getTitle());
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "7");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    wr = wr.getLinkWith("05/10/2006").click();
+    WebTable table = wr.getTableStartingWith("[Top]Immunizations");
+    assertEquals("90696", table.getCellAsText(2, 0));
+    wr = wr.getLinkWith("Remove").click();
+    table = wr.getTableStartingWith("[Top]Immunizations");
+    assertEquals("No immunizations on record", table.getCellAsText(2, 0));
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_VIEW, 9000000000L, 7L, "Office visit");
+}

@@ -1,0 +1,3 @@
+public ChopEllipseConnector(Figure owner) {
+    super(owner);
+}

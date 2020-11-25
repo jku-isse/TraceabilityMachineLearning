@@ -1,0 +1,9 @@
+/**
+ * Set a new board.
+ *
+ * @param board
+ * 		The new board.
+ */
+final void setBoard(BitBoard board) {
+    _board = board;
+}

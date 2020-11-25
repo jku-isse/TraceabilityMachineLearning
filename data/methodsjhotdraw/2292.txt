@@ -1,0 +1,3 @@
+public void undoableEditHappened(UndoableEditEvent e) {
+    owner.fireUndoableEditHappened(e.getEdit());
+}

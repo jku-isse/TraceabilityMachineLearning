@@ -1,0 +1,6 @@
+/**
+ * Get the piece of this ply.
+ *
+ * @return The piece, that is moved with this ply.
+ */
+Piece getPiece();

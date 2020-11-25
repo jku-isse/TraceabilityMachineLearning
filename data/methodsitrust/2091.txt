@@ -1,0 +1,3 @@
+public void setReporterMID(long reporterMID) {
+    this.reporterMID = reporterMID;
+}

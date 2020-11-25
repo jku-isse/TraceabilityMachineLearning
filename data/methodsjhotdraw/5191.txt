@@ -1,0 +1,71 @@
+/**
+ * Loads the drawing.
+ * By convention this method is invoked on a worker thread.
+ *
+ * @param progress
+ * 		A ProgressIndicator to inform the user about the progress
+ * 		of the operation.
+ * @return The Drawing that was loaded.
+ */
+protected Drawing loadDrawing(ProgressIndicator progress) throws IOException {
+    Drawing drawing = createDrawing();
+    InputStream in = null;
+    try {
+        if ((getParameter("datafile")) != null) {
+            ByteArrayOutputStream buf = new ByteArrayOutputStream();
+            URL url = new URL(getDocumentBase(), getParameter("datafile"));
+            URLConnection uc = url.openConnection();
+            // Disable caching. This ensures that we always request the
+            // newest version of the drawing from the server.
+            // (Note: The server still needs to set the proper HTTP caching
+            // properties to prevent proxies from caching the drawing).
+            if (uc instanceof HttpURLConnection) {
+                ((HttpURLConnection) (uc)).setUseCaches(false);
+            }
+            // Read the data into a buffer
+            int contentLength = uc.getContentLength();
+            in = uc.getInputStream();
+            if (contentLength != (-1)) {
+                in = new BoundedRangeInputStream(in);
+                ((BoundedRangeInputStream) (in)).setMaximum((contentLength + 1));
+                progress.setProgressModel(((BoundedRangeModel) (in)));
+                progress.setIndeterminate(false);
+            }
+            BufferedInputStream bin = new BufferedInputStream(in);
+            bin.mark(512);
+            // Read the data using all supported input formats
+            // until we succeed
+            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+            IOException formatException = null;
+            for (InputFormat format : drawing.getInputFormats()) {
+                try {
+                    bin.reset();
+                } catch (IOException e) {
+                    uc = url.openConnection();
+                    in = uc.getInputStream();
+                    in = new BoundedRangeInputStream(in);
+                    ((BoundedRangeInputStream) (in)).setMaximum((contentLength + 1));
+                    progress.setProgressModel(((BoundedRangeModel) (in)));
+                    bin = new BufferedInputStream(in);
+                    bin.mark(512);
+                }
+                try {
+                    bin.reset();
+                    format.read(bin, drawing, true);
+                    formatException = null;
+                    break;
+                } catch (IOException e) {
+                    formatException = e;
+                }
+            }
+            if (formatException != null) {
+                throw formatException;
+            }
+        }
+    } finally {
+        if (in != null) {
+            in.close();
+        }
+    }
+    return drawing;
+}

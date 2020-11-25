@@ -1,0 +1,10 @@
+/**
+ * Moves the given angle (in radians) to the closest constrained orientation
+ * in the specified direction.
+ *
+ * @param angle
+ * 		The angle (in radians).
+ * @return The closest constrained angle (in radians) in the specified
+direction.
+ */
+public double rotateAngle(double angle, RotationDirection dir);

@@ -1,0 +1,6 @@
+public CustomColumEvent(int type, String colName) {
+    myType = type;
+    myColName = colName;
+    myColumn = null;
+    myOldName = colName;
+}

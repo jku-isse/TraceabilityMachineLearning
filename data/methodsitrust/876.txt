@@ -1,0 +1,12 @@
+public void testUpdateInformationCorrectly() throws Exception {
+    gen.patient2();
+    action = new SetSecurityQuestionAction(factory, 2L);
+    SecurityQA qa = action.retrieveInformation();
+    qa.setAnswer("12345678");
+    qa.setConfirmAnswer("12345678");
+    qa.setQuestion("12345678");
+    action.updateInformation(qa);
+    qa = action.retrieveInformation();
+    assertEquals("12345678", qa.getAnswer());
+    assertEquals("12345678", qa.getQuestion());
+}

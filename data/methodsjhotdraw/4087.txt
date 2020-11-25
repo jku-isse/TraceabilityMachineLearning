@@ -1,0 +1,18 @@
+/**
+ * Splits an image into count subimages.
+ */
+public static BufferedImage[] split(Image image, int count, boolean isHorizontal) {
+    BufferedImage src = Images.toBufferedImage(image);
+    if (count == 1) {
+        return new BufferedImage[]{ src };
+    }
+    BufferedImage[] parts = new BufferedImage[count];
+    for (int i = 0; i < count; i++) {
+        if (isHorizontal) {
+            parts[i] = src.getSubimage((((src.getWidth()) / count) * i), 0, ((src.getWidth()) / count), src.getHeight());
+        } else {
+            parts[i] = src.getSubimage(0, (((src.getHeight()) / count) * i), src.getWidth(), ((src.getHeight()) / count));
+        }
+    }
+    return parts;
+}

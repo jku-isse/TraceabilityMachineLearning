@@ -1,0 +1,12 @@
+public DeleteHumanAction(ResourceManager hrManager, ResourceContext context, GanttProject projectFrame, UIFacade uiFacade) {
+    super(hrManager);
+    myUIFacade = uiFacade;
+    myProjectFrame = projectFrame;
+    this.putValue(AbstractAction.NAME, GanttProject.correctLabel(getLanguage().getText("deleteHuman")));
+    this.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_J, MENU_MASK));
+    URL iconUrl = this.getClass().getClassLoader().getResource(DeleteHumanAction.ICON_URL);
+    if (iconUrl != null) {
+        this.putValue(Action.SMALL_ICON, new ImageIcon(iconUrl));
+    }
+    myContext = context;
+}

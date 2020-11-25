@@ -1,0 +1,5 @@
+public void testRemoveNonExistant() throws Exception {
+    assertEquals("no current prescriptions on office vist 1", 0, dao.getList(1).size());
+    dao.remove(50L);
+    assertEquals("no current prescriptions on office vist 1", 0, dao.getList(1).size());
+}

@@ -1,0 +1,3 @@
+public FileChooserPage(ImportFileWizardImpl.State state) {
+    myState = state;
+}

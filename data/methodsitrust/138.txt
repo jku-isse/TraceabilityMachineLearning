@@ -1,0 +1,23 @@
+/**
+ * Tests adding a new LT
+ *
+ * @throws Exception
+ * 		
+ */
+public void testAddLT() throws Exception {
+    // Step 2. For each test, set up the expectations of what will be called (started in initMocks)
+    expect(ActionTestWithMocks.personnelDAO.addEmptyPersonnel(Role.LT)).andReturn(5000000001L).once();
+    ActionTestWithMocks.personnelDAO.editPersonnel(personnel);
+    expectLastCall().once();
+    // Step 3. Exit recording mode, go into playback mode
+    ActionTestWithMocks.control.replay();// Dont forget this!
+
+    // Step 3. Actually run the method under test, checking its return value
+    action = new AddLTAction(ActionTestWithMocks.factory, 5000000002L);// this lines needs to be AFTER the replay()
+
+    long newMID = action.add(personnel);
+    assertEquals(5000000001L, newMID);
+    // Step 4. Verify the mocks were hit as you expected
+    ActionTestWithMocks.control.verify();// Dont forget this!
+
+}

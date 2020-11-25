@@ -1,0 +1,13 @@
+public void testGetPatientHistory() throws Exception {
+    PatientBean p = patientDAO.getPatient(2);
+    p.setFirstName("Person1");
+    p.setEmail("another email");
+    p.setEmergencyName("another emergency person");
+    p.setTopicalNotes("some topical notes");
+    p.setDateOfBirthStr("05/20/1984");
+    patientDAO.editPatient(p, 9000000003L);
+    List<PatientHistoryBean> pList = patientDAO.getPatientHistory(p.getMID());
+    assertEquals(pList.size(), 1);
+    assertEquals("Person1", pList.get(0).getFirstName());
+    assertEquals(9000000003L, pList.get(0).getChangeMID());
+}

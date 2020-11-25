@@ -1,0 +1,3 @@
+public TaskDependencyException(Throwable cause) {
+    super(cause);
+}

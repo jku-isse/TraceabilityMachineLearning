@@ -1,0 +1,3 @@
+public void setBaseClass(Class baseClass) {
+    this.baseClass = baseClass;
+}

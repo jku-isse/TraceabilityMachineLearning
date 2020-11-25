@@ -1,0 +1,14 @@
+public static SortDirection parse(String str) {
+    for (SortDirection sort : SortDirection.values()) {
+        if (sort.dirString.toLowerCase().equals(str.toLowerCase()))
+            return sort;
+
+    }
+    if (str.toLowerCase().equals("ascending")) {
+        return SortDirection.ASCENDING;
+    }
+    if (str.toLowerCase().equals("descending")) {
+        return SortDirection.DESCENDING;
+    }
+    throw new IllegalArgumentException((("SortDirection " + str) + " does not exist"));
+}

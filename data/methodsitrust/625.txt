@@ -1,0 +1,11 @@
+public void testTestVaricella() throws Exception {
+    // TODO: add boundary tests
+    gen.standardData();
+    // Login as kelly doctor
+    action = new GetVisitRemindersAction(factory, 9000000000L);
+    Calendar cal = Calendar.getInstance();
+    cal.add(Calendar.YEAR, (-1));
+    assertEquals("90396 Varicella (12 months), ", GetVisitRemindersAction.testVaricella(0, cal.getTime(), 0L));
+    cal.add(Calendar.YEAR, (-3));
+    assertEquals("90396 Varicella (4 years), ", GetVisitRemindersAction.testVaricella(1, cal.getTime(), 0L));
+}

@@ -1,0 +1,3 @@
+public static Delay getDelay(int type) {
+    return new Delay(type);
+}

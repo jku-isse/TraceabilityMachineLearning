@@ -1,0 +1,6 @@
+/**
+ * Up to 500 alphanumeric characters
+ */
+public void setCommentary(String commentary) {
+    this.commentary = commentary;
+}

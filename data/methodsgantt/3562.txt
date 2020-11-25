@@ -1,0 +1,3 @@
+public SimpleDateFormat createDateFormat(String string) {
+    return new SimpleDateFormat(string, currentLocale);
+}

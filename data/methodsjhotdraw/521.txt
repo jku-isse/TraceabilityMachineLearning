@@ -1,0 +1,4 @@
+public void setColorComponentIndex(int index) {
+    this.componentIndex = index;
+    isDirty = true;
+}

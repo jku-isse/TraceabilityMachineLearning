@@ -1,0 +1,15 @@
+/* (non-Javadoc)
+@see java.lang.Object#hashCode()
+ */
+@Override
+public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = (prime * result) + ((HCPAddr) == null ? 0 : HCPAddr.hashCode());
+    result = (prime * result) + ((HCPName) == null ? 0 : HCPName.hashCode());
+    result = (prime * result) + ((HCPSpecialty) == null ? 0 : HCPSpecialty.hashCode());
+    result = (prime * result) + ((OVDate) == null ? 0 : OVDate.hashCode());
+    result = (prime * result) + (designated ? 1231 : 1237);
+    result = (prime * result) + ((int) ((hcpMID) ^ ((hcpMID) >>> 32)));
+    return result;
+}

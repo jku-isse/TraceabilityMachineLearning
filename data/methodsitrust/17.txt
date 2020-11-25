@@ -1,0 +1,42 @@
+/**
+ * Parses the passed line character-by-character
+ *
+ * @param line
+ * 		Line from the CSV file to parse
+ * @return ArrayList of Strings, each containing the data from one field
+ * @throws CSVFormatException
+ * 		
+ */
+private ArrayList<String> parseCSVLine(String line) throws CSVFormatException {
+    // Contains the fields from each line parsed
+    ArrayList<String> aLine = new ArrayList<String>();
+    // Contains the data from the current field being read
+    String currentField = "";
+    // Contains the status of whether or not the parser is inside a quoted area
+    // Used to handle commas and other special characters within the field.
+    boolean insideQuotes = false;
+    // Read the line character-by-character
+    for (int i = 0; i < (line.length()); i++) {
+        // Comma denotes the end of the current field unless it is quoted
+        if (((line.charAt(i)) == ,) && (!insideQuotes)) {
+            aLine.add(currentField);
+            currentField = "";
+            // If the field is not ending
+        } else {
+            // If the character is a ", ignore it and flip the quote status
+            if ((line.charAt(i)) == ") {
+                insideQuotes = !insideQuotes;
+                // Otherwise, add the character to the string
+            } else {
+                currentField = currentField + (line.substring(i, (i + 1)));
+            }
+        }
+    }
+    // If the line parser ends while still inside a quoted section, the input line was invalid
+    if (insideQuotes) {
+        throw new CSVFormatException("Line ended while inside quotes");
+    }
+    // Grab text from last field too, since the last field does not end with a comma
+    aLine.add(currentField);
+    return aLine;
+}

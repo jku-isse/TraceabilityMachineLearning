@@ -1,0 +1,4 @@
+// TODO: remove this hack. ID must never be changed
+protected void setTaskIDHack(int taskID) {
+    myID = taskID;
+}

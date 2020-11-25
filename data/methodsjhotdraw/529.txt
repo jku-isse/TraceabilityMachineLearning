@@ -1,0 +1,5 @@
+public void setColorToModel(Color color) {
+    if ((updatingChooser) == 0) {
+        getColorSelectionModel().setSelectedColor(color);
+    }
+}

@@ -1,0 +1,5 @@
+public AbstractConstrainer clone() {
+    AbstractConstrainer that = ((AbstractConstrainer) (super.clone()));
+    that.listenerList = new EventListenerList();
+    return that;
+}

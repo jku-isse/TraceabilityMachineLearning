@@ -1,0 +1,30 @@
+void constructOffsets(List topUnitOffsets, List bottomUnitOffsets) {
+    {
+        int offsetEnd = 0;
+        Date currentDate = myStartDate;
+        do {
+            final TimeUnit bottomUnit = getBottomUnit();
+            final TimeUnit defaultUnit = myTimeUnitStack.getDefaultTimeUnit();
+            TimeFrame currentFrame = myTimeUnitStack.createTimeFrame(currentDate, bottomUnit, defaultUnit);
+            Date endDate = currentFrame.getFinishDate();
+            offsetEnd += getBottomUnitWidth();
+            bottomUnitOffsets.add(new ChartModelBase.Offset(bottomUnit, myStartDate, endDate, offsetEnd, null));
+            currentDate = endDate;
+        } while (offsetEnd <= (getChartWidth()) );
+    }
+    {
+        int offsetEnd = 0;
+        Date currentDate = myStartDate;
+        SkewedFrameOffsetBuilder.SkewedFramesWidthFunction widthFunction = new SkewedFrameOffsetBuilder.SkewedFramesWidthFunction();
+        widthFunction.initialize();
+        do {
+            final TimeUnit topUnit = getTopUnit(currentDate);
+            final TimeUnit defaultUnit = myTimeUnitStack.getDefaultTimeUnit();
+            final TimeFrame currentFrame = myTimeUnitStack.createTimeFrame(currentDate, topUnit, defaultUnit);
+            Date endDate = currentFrame.getFinishDate();
+            offsetEnd += widthFunction.getTimeFrameWidth(currentFrame);
+            topUnitOffsets.add(new ChartModelBase.Offset(topUnit, myStartDate, endDate, offsetEnd, null));
+            currentDate = endDate;
+        } while (offsetEnd <= (getChartWidth()) );
+    }
+}

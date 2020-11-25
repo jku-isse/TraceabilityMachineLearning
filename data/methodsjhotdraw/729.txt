@@ -1,0 +1,23 @@
+public void drawFigure(Graphics2D g) {
+    drawChildren(g);
+    if ((AttributeKeys.FILL_COLOR.get(this)) != null) {
+        g.setColor(AttributeKeys.FILL_COLOR.get(this));
+        drawFill(g);
+    }
+    if (((AttributeKeys.STROKE_COLOR.get(this)) != null) && ((AttributeKeys.STROKE_WIDTH.get(this)) > 0.0)) {
+        g.setStroke(AttributeKeys.getStroke(this));
+        g.setColor(AttributeKeys.STROKE_COLOR.get(this));
+        drawStroke(g);
+    }
+    if ((AttributeKeys.TEXT_COLOR.get(this)) != null) {
+        if (((AttributeKeys.TEXT_SHADOW_COLOR.get(this)) != null) && ((AttributeKeys.TEXT_SHADOW_OFFSET.get(this)) != null)) {
+            Dimension2DDouble d = AttributeKeys.TEXT_SHADOW_OFFSET.get(this);
+            g.translate(d.width, d.height);
+            g.setColor(AttributeKeys.TEXT_SHADOW_COLOR.get(this));
+            drawText(g);
+            g.translate((-(d.width)), (-(d.height)));
+        }
+        g.setColor(AttributeKeys.TEXT_COLOR.get(this));
+        drawText(g);
+    }
+}

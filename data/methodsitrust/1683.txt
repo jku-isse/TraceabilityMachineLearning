@@ -1,0 +1,3 @@
+public String getHospitalCity() {
+    return hospitalCity;
+}

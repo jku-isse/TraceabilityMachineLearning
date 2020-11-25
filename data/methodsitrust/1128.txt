@@ -1,0 +1,6 @@
+public void setViewed(List<LabProcedureBean> procs) throws DBException {
+    for (LabProcedureBean b : procs) {
+        b.setViewedByPatient(true);
+        labDAO.markViewed(b);
+    }
+}

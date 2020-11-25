@@ -1,0 +1,6 @@
+public void taskScheduleChanged(TaskScheduleEvent e) {
+    if (!(e.getNewFinishDate().equals(e.getOldFinishDate()))) {
+        // ourCriticProcess = false;
+        fireDelayObservation();
+    }
+}

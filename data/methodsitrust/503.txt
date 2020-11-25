@@ -1,0 +1,5 @@
+public void testGetPatientName() throws Exception {
+    action = new EditReferralsAction(factory, 9000000000L, "2", "955");
+    ReferralBean bean = action.getReferral(1L);
+    assertEquals("Andy Programmer", action.getPatientName(bean));
+}

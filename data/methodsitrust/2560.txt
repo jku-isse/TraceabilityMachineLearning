@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return this DAOFactorys TransactionDAO
+ */
+public TransactionDAO getTransactionDAO() {
+    return new TransactionDAO(this);
+}

@@ -1,0 +1,3 @@
+public String getConfirmAnswer() {
+    return confirmAnswer;
+}

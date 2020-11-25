@@ -1,0 +1,6 @@
+/**
+ * Installs listeners on the application object.
+ */
+protected void uninstallApplicationListeners(Application app) {
+    app.removePropertyChangeListener(applicationListener);
+}

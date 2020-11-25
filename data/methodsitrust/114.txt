@@ -1,0 +1,11 @@
+/**
+ * Loads the given file input stream into the drug database.
+ *
+ * @param fileContent
+ * 		
+ * @throws IOException
+ * 		
+ */
+public void LoadFile(InputStream fileContent) throws DBException, IOException {
+    strategy.LoadFile(fileContent, factory, loggingAction, loggedInMID);
+}

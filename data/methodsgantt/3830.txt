@@ -1,0 +1,3 @@
+CustomPropertyDefinition getCustomPropertyDefinition(String nextName) {
+    return ((CustomPropertyDefinition) (customFields.get(nextName)));
+}

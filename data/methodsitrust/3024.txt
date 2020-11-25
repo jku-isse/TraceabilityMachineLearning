@@ -1,0 +1,22 @@
+/**
+ * Returns all personnel in the database.
+ *
+ * @return A java.util.List of personnel.
+ * @throws DBException
+ * 		
+ */
+public List<PersonnelBean> getAllPersonnel() throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM personnel where role in (hcp,uap,er) ");
+        ResultSet rs = ps.executeQuery();
+        return personnelLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

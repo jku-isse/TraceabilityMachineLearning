@@ -1,0 +1,1 @@
+public TaskLength createLength(TimeUnit timeUnit, Date startDate, Date endDate);

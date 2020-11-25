@@ -1,0 +1,3 @@
+public Figure getEndFigure() {
+    return (endConnector) == null ? null : endConnector.getOwner();
+}

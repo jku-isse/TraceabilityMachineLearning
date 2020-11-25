@@ -1,0 +1,12 @@
+variableAmountPerMethod,Frequency
+0,561
+1,130
+2,38
+3,3
+4,3
+5,3
+6,2
+7,3
+8,7
+10,1
+23,1

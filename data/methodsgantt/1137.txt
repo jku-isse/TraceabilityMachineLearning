@@ -1,0 +1,7 @@
+public void importData(CustomPropertyManager source) {
+    List sourceDefs = source.getDefinitions();
+    for (int i = 0; i < (sourceDefs.size()); i++) {
+        CustomPropertyDefinition nextDefinition = ((CustomPropertyDefinition) (sourceDefs.get(i)));
+        createDefinition(nextDefinition.getID(), nextDefinition.getTypeAsString(), nextDefinition.getName(), nextDefinition.getDefaultValueAsString());
+    }
+}

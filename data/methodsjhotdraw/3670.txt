@@ -1,0 +1,7 @@
+/**
+ * Removes a property change listener.
+ *
+ * @param l
+ * 		
+ */
+public void removePropertyChangeListener(PropertyChangeListener l);

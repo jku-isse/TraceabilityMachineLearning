@@ -1,0 +1,36 @@
+/**
+ * Sets the attribute and returns an UndoableEditEvent which can be used
+ * to undo it.
+ */
+public UndoableEdit setUndoable(final Figure figure, final T value) {
+    if ((value == null) && (!(isNullValueAllowed))) {
+        throw new NullPointerException(("Null value not allowed for AttributeKey " + (key)));
+    }
+    final Object restoreData = figure.getAttributesRestoreData();
+    figure.willChange();
+    figure.setAttribute(this, value);
+    figure.changed();
+    UndoableEdit edit = new AbstractUndoableEdit() {
+        @Override
+        public String getPresentationName() {
+            return AttributeKey.this.getPresentationName();
+        }
+
+        @Override
+        public void undo() {
+            super.undo();
+            figure.willChange();
+            figure.restoreAttributesTo(restoreData);
+            figure.changed();
+        }
+
+        @Override
+        public void redo() {
+            super.redo();
+            figure.willChange();
+            figure.setAttribute(AttributeKey.this, value);
+            figure.changed();
+        }
+    };
+    return edit;
+}

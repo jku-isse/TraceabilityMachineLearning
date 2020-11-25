@@ -1,0 +1,4 @@
+public void mouseReleased(MouseEvent e) {
+    super.mouseReleased(e);
+    getImplementation().finishInteraction();
+}

@@ -1,0 +1,7 @@
+@Override
+protected void setUp() throws Exception {
+    action = new UpdateNDCodeListAction(factory, UpdateReasonCodeListActionTest.performingAdmin);
+    gen.clearAllTables();
+    gen.admin1();
+    gen.ndCodes();
+}

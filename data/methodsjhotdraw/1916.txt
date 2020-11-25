@@ -1,0 +1,5 @@
+/**
+ * Sets the cursor of the DrawingView.
+ * This is a bound property.
+ */
+public void setCursor(Cursor c);

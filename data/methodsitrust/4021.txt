@@ -1,0 +1,24 @@
+public void testViewPrescriptionRecords2() throws Exception {
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    wr = wr.getLinkWith("Prescription Records").click();
+    assertEquals("iTrust - Get My Prescription Report", wr.getTitle());
+    wr.getForms()[0].getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.PRESCRIPTION_REPORT_VIEW, 2L, 2L, "");
+    WebTable wt = wr.getTableStartingWith("Andy Programmer");
+    // assertEquals("00904-2407", wt.getCellAsText(2, 0));
+    // assertEquals("Tetracycline", wt.getCellAsText(2, 1));
+    // assertEquals("10/10/2006 to 10/11/2006", wt.getCellAsText(2, 2));
+    // assertEquals("Kelly Doctor", wt.getCellAsText(2, 3));
+    // assertEquals("00904-2407", wt.getCellAsText(3, 0));
+    // assertEquals("Tetracycline", wt.getCellAsText(3, 1));
+    // assertEquals("10/10/2006 to 10/11/2006", wt.getCellAsText(3, 2));
+    // assertEquals("Kelly Doctor", wt.getCellAsText(3, 3));
+    assertEquals("64764-1512", wt.getCellAsText(2, 0));
+    assertEquals("Prioglitazone", wt.getCellAsText(2, 1));
+    assertEquals("10/10/2006 to 10/11/2020", wt.getCellAsText(2, 2));
+    assertEquals("Kelly Doctor", wt.getCellAsText(2, 3));
+}

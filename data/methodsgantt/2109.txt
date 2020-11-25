@@ -1,0 +1,3 @@
+public BufferedImage getChart(GanttExportSettings settings) {
+    throw new UnsupportedOperationException();
+}

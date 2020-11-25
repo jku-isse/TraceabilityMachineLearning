@@ -1,0 +1,6 @@
+/**
+ * Gets an OutputStream, that allows to write to the document.
+ *
+ * @return OutputStream to write to
+ */
+public OutputStream getOutputStream() throws IOException;

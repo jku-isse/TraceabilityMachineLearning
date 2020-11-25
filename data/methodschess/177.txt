@@ -1,0 +1,6 @@
+/**
+ * Increase the search depth by 1.
+ */
+public final void increaseSearchDepth() {
+    (_searchDepth)++;
+}

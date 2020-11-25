@@ -1,0 +1,3 @@
+public void setTool(Tool t) {
+    target.setTool(t);
+}

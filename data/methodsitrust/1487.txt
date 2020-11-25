@@ -1,0 +1,3 @@
+public String getPrescriber() {
+    return Prescriber;
+}

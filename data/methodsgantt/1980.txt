@@ -1,0 +1,9 @@
+/**
+ * Returns the Y coordinate of the row immediately below the
+ * bottom row of the image.  getMaxY() is implemented in terms of
+ * getMinY() and getHeight() and so does not need to be
+ * implemented by subclasses.
+ */
+public final int getMaxY() {
+    return (getMinY()) + (getHeight());
+}

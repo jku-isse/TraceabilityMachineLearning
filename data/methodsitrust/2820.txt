@@ -1,0 +1,20 @@
+public String getNameForCode(String code) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT PresImmu FROM adverseevents WHERE code=?");
+        ps.setString(1, code);
+        ResultSet rs;
+        rs = ps.executeQuery();
+        if (rs.next()) {
+            return rs.getString("PresImmu");
+        }
+        return "Name not Found";
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

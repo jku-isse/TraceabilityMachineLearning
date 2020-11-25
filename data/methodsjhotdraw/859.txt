@@ -1,0 +1,6 @@
+/**
+ * Initializes the change connection handle.
+ */
+protected AbstractConnectionHandle(ConnectionFigure owner) {
+    super(owner);
+}

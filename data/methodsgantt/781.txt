@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return id of successor task
+ */
+public int getSuccessorTaskID() {
+    return successorTaskID;
+}

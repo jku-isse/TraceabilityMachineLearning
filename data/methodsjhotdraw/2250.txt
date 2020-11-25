@@ -1,0 +1,3 @@
+private ChildHandler(LabeledLineConnectionFigure owner) {
+    this.owner = owner;
+}

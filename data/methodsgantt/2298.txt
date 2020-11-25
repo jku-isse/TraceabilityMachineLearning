@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @param parsing
+ * 		
+ * @param failure
+ * 		
+ */
+public OpenCopyConfirmationState(ProxyDocument.ParsingState parsing, ProxyDocument.FailureState failure) {
+    myParsingState = parsing;
+    myExitState = failure;
+}

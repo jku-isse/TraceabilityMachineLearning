@@ -1,0 +1,15 @@
+/**
+ * Removes all children.
+ *
+ * @see #add
+ */
+public void removeAllChildren() {
+    willChange();
+    for (Figure f : new LinkedList<Figure>(getChildren())) {
+        if ((getDrawing()) != null) {
+            f.removeNotify(getDrawing());
+        }
+        int index = basicRemove(f);
+    }
+    changed();
+}

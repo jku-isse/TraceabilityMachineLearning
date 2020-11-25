@@ -1,0 +1,8 @@
+/**
+ * Get a description of this file filter.
+ *
+ * @return A description of this file filter.
+ */
+public String getDescription() {
+    return "PGN - Portable Game Notation format";
+}

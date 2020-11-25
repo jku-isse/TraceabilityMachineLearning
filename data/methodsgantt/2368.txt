@@ -1,0 +1,3 @@
+public void setViewIndex(int viewIndex) {
+    // TODO Auto-generated method stub
+}

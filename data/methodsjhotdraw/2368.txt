@@ -1,0 +1,3 @@
+public static Handle east(Figure owner) {
+    return new MoveHandle(owner, RelativeLocator.east());
+}

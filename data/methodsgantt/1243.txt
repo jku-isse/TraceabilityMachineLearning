@@ -1,0 +1,3 @@
+public Chart getActiveChart() {
+    return myFallbackDelegate.getActiveChart();
+}

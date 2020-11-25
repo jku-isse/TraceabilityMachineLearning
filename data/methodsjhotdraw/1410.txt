@@ -1,0 +1,15 @@
+/**
+ * Returns the drawing area of the decorator.
+ */
+public Rectangle2D.Double getDrawingArea(Figure f, Point2D.Double p1, Point2D.Double p2) {
+    Rectangle2D.Double r = null;
+    for (LineDecoration decoration : decorations) {
+        Rectangle2D.Double aR = decoration.getDrawingArea(f, p1, p2);
+        if (r == null)
+            r = aR;
+        else
+            r.add(aR);
+
+    }
+    return r;
+}

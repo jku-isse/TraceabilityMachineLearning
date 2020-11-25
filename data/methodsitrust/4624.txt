@@ -1,0 +1,6 @@
+// Heres how this behavior works: you can set EvilDAOFactory to count down to 0, giving correct
+// connections the whole way. Then, when you want it to, it starts throwing exceptions
+public EvilDAOFactory(int numCorrect) {
+    this.driver = TestDAOFactory.getTestInstance();
+    this.numCorrect = numCorrect;
+}

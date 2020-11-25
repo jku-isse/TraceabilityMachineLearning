@@ -1,0 +1,3 @@
+public static Point east(Rectangle r) {
+    return new Point(((r.x) + (r.width)), ((r.y) + ((r.height) / 2)));
+}

@@ -1,0 +1,20 @@
+/**
+ * Updates a hospital (based on the hospital id) using new information from the HospitalBean passed as a
+ * parameter
+ *
+ * @param hosp
+ * 		the new hospital information with the same hospital id
+ * @return Status message
+ * @throws FormValidationException
+ * 		
+ */
+public String updateInformation(HospitalBean hosp) throws FormValidationException {
+    new HospitalBeanValidator().validate(hosp);
+    try {
+        int rows = 0;
+        return 0 == (rows = updateHospital(hosp)) ? "Error: Hospital not found." : ("Success: " + rows) + " row(s) updated";
+    } catch (DBException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    }
+}

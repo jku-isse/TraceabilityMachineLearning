@@ -1,0 +1,4 @@
+public Item(String id, String displayValue) {
+    myID = id;
+    myDisplayValue = displayValue;
+}

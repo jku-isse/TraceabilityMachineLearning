@@ -1,0 +1,9 @@
+/**
+ * Button Cancel pressed
+ *
+ * @param e
+ * 		The event
+ */
+private void jbCancel_actionPerformed(ActionEvent e) {
+    this.dispose();
+}

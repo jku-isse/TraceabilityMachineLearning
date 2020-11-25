@@ -1,0 +1,10 @@
+// Methods
+/**
+ * The action action.
+ *
+ * @param event
+ * 		The event, that triggered the action.
+ */
+public void actionPerformed(ActionEvent event) {
+    // Just a dummy so far...
+}

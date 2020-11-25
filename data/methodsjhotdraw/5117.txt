@@ -1,0 +1,9 @@
+@Override
+public void attributeChanged(FigureEvent evt) {
+    // We could fire a property change event here, in case
+    // some other object would like to observe us.
+    // target.firePropertyChange("duration", e.getOldValue(), e.getNewValue());
+    for (TaskFigure succ : target.getSuccessors()) {
+        succ.updateStartTime();
+    }
+}

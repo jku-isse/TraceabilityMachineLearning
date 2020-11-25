@@ -1,0 +1,6 @@
+/**
+ * Request a key for this entry.
+ *
+ * @return The key for this entry.
+ */
+long hashKey();

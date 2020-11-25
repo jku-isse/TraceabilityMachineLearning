@@ -1,0 +1,4 @@
+public void testNothingWithSessionDestroyed() throws Exception {
+    SessionTimeoutListener listener = new SessionTimeoutListener(TestDAOFactory.getTestInstance());
+    listener.sessionDestroyed(null);
+}

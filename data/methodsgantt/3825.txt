@@ -1,0 +1,3 @@
+private void fireCleanup() {
+    fireResourcesRemoved(((ProjectResource[]) (resources.toArray(new ProjectResource[resources.size()]))));
+}

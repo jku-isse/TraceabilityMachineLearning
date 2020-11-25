@@ -1,0 +1,10 @@
+/**
+ * Sets all component size properties ( maximum, minimum, preferred)
+ * to the given dimension.
+ */
+public void setAllSize(Dimension d) {
+    setMinimumSize(d);
+    setMaximumSize(d);
+    setPreferredSize(d);
+    setBounds(0, 0, d.width, d.height);
+}

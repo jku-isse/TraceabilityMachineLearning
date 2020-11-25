@@ -1,0 +1,4 @@
+/**
+ * Gets the file chooser for exporting the view.
+ */
+public JFileChooser getExportChooser();

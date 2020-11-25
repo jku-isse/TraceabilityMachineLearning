@@ -1,0 +1,7 @@
+public DoubleStroke(float innerWidth, float outlineWidth, int cap, int join, float miterLimit, float[] dashes, float dashPhase) {
+    this.innerWidth = innerWidth;
+    this.outlineWidth = outlineWidth;
+    this.miterLimit = miterLimit;
+    // outlineStroke = new BasicStroke(outlineWidth, cap, join, miterLimit, dashes, dashPhase);
+    outlineStroke = new BasicStroke(outlineWidth, cap, BasicStroke.JOIN_BEVEL, miterLimit, dashes, dashPhase);
+}

@@ -1,0 +1,7 @@
+public GroupAction(DrawingEditor editor, CompositeFigure prototype, boolean isGroupingAction) {
+    super(editor);
+    this.prototype = prototype;
+    this.isGroupingAction = isGroupingAction;
+    labels.configureAction(this, GroupAction.ID);
+    updateEnabledState();
+}

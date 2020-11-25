@@ -1,0 +1,3 @@
+private Delay(int type) {
+    myType = type;
+}

@@ -1,0 +1,6 @@
+public JPanel getComponent() {
+    if ((resourcesPanel) == null) {
+        constructResourcesPanel(getTask().getAssignmentCollection());
+    }
+    return resourcesPanel;
+}

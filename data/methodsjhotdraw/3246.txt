@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public MoveAction(DrawingEditor editor, int dx, int dy) {
+    super(editor);
+    this.dx = dx;
+    this.dy = dy;
+}

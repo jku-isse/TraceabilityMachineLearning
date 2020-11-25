@@ -1,0 +1,6 @@
+/**
+ * Returns true if null values are allowed.
+ */
+public boolean getAppendsDotZero() {
+    return appendsDotZero;
+}

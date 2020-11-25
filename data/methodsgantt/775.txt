@@ -1,0 +1,6 @@
+/**
+ * get the difference
+ */
+public int getDifference() {
+    return difference;
+}

@@ -1,0 +1,11 @@
+/**
+ * Sets whether or not a patient has viewed the lab procedure. Cannot be true until status is Completed
+ *
+ * @param viewedByPatient
+ * 		
+ */
+public void setViewedByPatient(boolean viewedByPatient) {
+    if (status.equals(LabProcedureBean.Completed)) {
+        this.viewedByPatient = viewedByPatient;
+    }
+}

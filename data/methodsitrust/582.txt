@@ -1,0 +1,4 @@
+public void testCorrectFormat() throws Exception {
+    gen.hcp0();
+    assertEquals("Kelly Doctor", new GetUserNameAction(factory).getUserName("9000000000"));
+}

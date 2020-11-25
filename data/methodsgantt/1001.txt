@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @unknown 
+ */
+public void columnRemoved(TableColumnModelEvent arg0) {
+    (nbCol)--;
+}

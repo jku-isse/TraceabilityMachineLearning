@@ -1,0 +1,7 @@
+protected void updateEnabledState() {
+    if ((getView()) != null) {
+        setEnabled(getView().isEnabled());
+    } else {
+        setEnabled(false);
+    }
+}

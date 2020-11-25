@@ -1,0 +1,6 @@
+/**
+ * Copy constructor
+ */
+public GanttCalendar(GanttCalendar g) {
+    super(g.getYear(), g.getMonth(), g.getDate());
+}

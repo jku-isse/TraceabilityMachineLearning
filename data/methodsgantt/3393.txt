@@ -1,0 +1,6 @@
+protected void onOkPressed() {
+    super.onOkPressed();
+    // myProject.getTree().addBlankLine(null, myProject.getTree().getRoot().getChildCount());
+    boolean merge = mergeProjects();
+    myState.myImporter.run(myProject, myProject.getUIFacade(), myState.getFile(), merge);
+}

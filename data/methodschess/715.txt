@@ -1,0 +1,10 @@
+/**
+ * Set the length of the countdown in seconds.
+ *
+ * @param time
+ * 		The length of the countdown.
+ */
+public void setCountdown(int time) {
+    _remainingTime = _time = 1000L * ((long) (time));
+    display(_time);
+}

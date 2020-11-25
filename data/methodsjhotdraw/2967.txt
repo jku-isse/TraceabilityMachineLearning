@@ -1,0 +1,10 @@
+/**
+ * Creates a new instance.
+ */
+public AbstractDrawingEditorAction(DrawingEditor editor) {
+    this.editor = editor;
+    if (editor != null) {
+        editor.addPropertyChangeListener(propertyChangeHandler);
+        updateEnabledState();
+    }
+}

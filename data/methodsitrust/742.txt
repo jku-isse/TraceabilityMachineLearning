@@ -1,0 +1,12 @@
+@Override
+protected void setUp() throws Exception {
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.hcp0();
+    gen.pha0();
+    gen.patient1();
+    gen.adverseEventPres();
+    gen.ndCodes();
+    gen.cptCodes();
+    action = new MonitorAdverseEventAction(TestDAOFactory.getTestInstance(), 9999999990L);
+}

@@ -1,0 +1,8 @@
+public void actionPerformed(ActionEvent e) {
+    final DefaultMutableTreeNode selectedNode = myGanttTree.getSelectedNode();
+    Mediator.getUndoManager().undoableEdit("add blank line", new Runnable() {
+        public void run() {
+            myGanttTree.addBlankLine(selectedNode, (selectedNode == null ? -1 : selectedNode.getParent().getIndex(selectedNode)));
+        }
+    });
+}

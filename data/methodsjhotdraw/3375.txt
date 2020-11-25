@@ -1,0 +1,81 @@
+/**
+ * Returns a point on the edge of the bezier path which crosses the line
+ * from the center of the bezier path to the specified point.
+ * If no edge crosses the line, the nearest C0 control point is returned.
+ */
+public Point2D.Double chop(Point2D.Double p) {
+    validatePath();
+    return Geom.chop(generalPath, p);
+    /* Point2D.Double ctr = getCenter();
+
+    // Chopped point
+    double cx = -1;
+    double cy = -1;
+    double len = Double.MAX_VALUE;
+
+    // Try for points along edge
+    validatePath();
+    PathIterator i = generalPath.getPathIterator(new AffineTransform(), 1);
+    double[] coords = new double[6];
+    int type = i.currentSegment(coords);
+    double prevX = coords[0];
+    double prevY = coords[1];
+    i.next();
+    for (; ! i.isDone(); i.next()) {
+    i.currentSegment(coords);
+    Point2D.Double chop = Geom.intersect(
+    prevX, prevY,
+    coords[0], coords[1],
+    p.x, p.y,
+    ctr.x, ctr.y
+    );
+
+    if (chop != null) {
+    double cl = Geom.length2(chop.x, chop.y, p.x, p.y);
+    if (cl < len) {
+    len = cl;
+    cx = chop.x;
+    cy = chop.y;
+    }
+    }
+
+    prevX = coords[0];
+    prevY = coords[1];
+    }
+
+    //
+    if (isClosed() && size() > 1) {
+    Node first = get(0);
+    Node last = get(size() - 1);
+    Point2D.Double chop = Geom.intersect(
+    first.x[0], first.y[0],
+    last.x[0], last.y[0],
+    p.x, p.y,
+    ctr.x, ctr.y
+    );
+    if (chop != null) {
+    double cl = Geom.length2(chop.x, chop.y, p.x, p.y);
+    if (cl < len) {
+    len = cl;
+    cx = chop.x;
+    cy = chop.y;
+    }
+    }
+    }
+
+
+    // if none found, pick closest vertex
+    if (len == Double.MAX_VALUE) {
+    for (int j = 0, n = size(); j < n; j++) {
+    Node cp = get(j);
+    double l = Geom.length2(cp.x[0], cp.y[0], p.x, p.y);
+    if (l < len) {
+    len = l;
+    cx = cp.x[0];
+    cy = cp.y[0];
+    }
+    }
+    }
+    return new Point2D.Double(cx, cy);
+     */
+}

@@ -1,0 +1,3 @@
+public void setComponent(String aComponent) {
+    component = aComponent;
+}

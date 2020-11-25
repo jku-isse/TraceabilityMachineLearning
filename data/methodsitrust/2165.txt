@@ -1,0 +1,3 @@
+public void setPercentSatisfactionResults(float percent) {
+    this.percentSatResultsAvailable = percent;
+}

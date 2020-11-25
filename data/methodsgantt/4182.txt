@@ -1,0 +1,7 @@
+/**
+ * Deletes all the assignments and all the related assignments
+ */
+public void delete() {
+    this.deleteAssignment(getResource());
+    myAssignmentToResource.delete();
+}

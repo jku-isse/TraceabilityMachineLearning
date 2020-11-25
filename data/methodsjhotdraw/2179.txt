@@ -1,0 +1,3 @@
+public Object getTransformRestoreData() {
+    return ((Rectangle2D.Double) (rectangle.clone()));
+}

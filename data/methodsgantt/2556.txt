@@ -1,0 +1,15 @@
+public void setVisible(boolean visible) {
+    Component rootComponent = getComponent();
+    getUIFacade().showDialog(rootComponent, new Action[]{ new OkAction() {
+        public void actionPerformed(ActionEvent e) {
+            myOptionGroup.commit();
+            myDate.commit();
+            GanttDialogCustomColumn.this.ok();
+        }
+    }, new CancelAction() {
+        public void actionPerformed(ActionEvent e) {
+            myOptionGroup.rollback();
+            myDate.rollback();
+        }
+    } });
+}

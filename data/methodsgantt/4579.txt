@@ -1,0 +1,31 @@
+/**
+ * Returns a list of the last-ended tasks.
+ *
+ * @return A list of the last-ended tasks.
+ */
+private List getLastTasks() {
+    List res = new ArrayList();
+    Enumeration en = this.root.preorderEnumeration();
+    GanttCalendar end = null;
+    while (en.hasMoreElements()) {
+        Object next = en.nextElement();
+        if (!(next instanceof TaskNode))
+            continue;
+
+        TaskNode tn = ((TaskNode) (next));
+        if (tn.isRoot())
+            continue;
+
+        GanttCalendar tnEnd = tn.getEnd();
+        if ((end == null) || (end.before(tnEnd))) {
+            res.clear();
+            end = tnEnd.Clone();
+            res.add(tn.getUserObject());
+        } else
+            if ((end.compareTo(tnEnd)) == 0)
+                res.add(tn.getUserObject());
+
+
+    } 
+    return res;
+}

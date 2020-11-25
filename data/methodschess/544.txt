@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the type of this piece.
+ *
+ * @return The type of this piece.
+ */
+public final byte getType() {
+    return ((byte) ((_typeColor) >> 1));
+}

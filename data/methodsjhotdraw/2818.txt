@@ -1,0 +1,6 @@
+// FIMXE - Maybe we can remove method getLabelFor().
+/**
+ * Sometimes we want to use a TextHolderFigure as a label for another
+ * TextHolderFigure. Returns the TextHolderFigure that should be really used.
+ */
+public TextHolderFigure getLabelFor();

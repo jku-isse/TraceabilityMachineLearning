@@ -1,0 +1,4 @@
+String createTemporaryFile() throws IOException {
+    File tempFile = File.createTempFile("project", ".gan", getWorkingDirectoryFile());
+    return tempFile.getAbsolutePath();
+}

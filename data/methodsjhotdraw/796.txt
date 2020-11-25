@@ -1,0 +1,10 @@
+public final void addAll(int index, Collection<? extends Figure> figures) {
+    for (Figure f : figures) {
+        basicAdd((index++), f);
+        if ((getDrawing()) != null) {
+            f.addNotify(getDrawing());
+        }
+        fireFigureAdded(f, index);
+    }
+    invalidate();
+}

@@ -1,0 +1,4 @@
+public void changeLanguage(GanttLanguage ganttLanguage) {
+    this.language = ganttLanguage;
+    // this.treetable.changeLanguage(language);
+}

@@ -1,0 +1,5 @@
+@Override
+public void activate(DrawingEditor editor) {
+    super.activate(editor);
+    clearHoverHandles();
+}

@@ -1,0 +1,3 @@
+public Collection<Handle> createHandles(BezierPath path) {
+    return null;
+}

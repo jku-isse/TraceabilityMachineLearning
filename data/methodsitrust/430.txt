@@ -1,0 +1,14 @@
+/**
+ * Get the list of patient instructions associated with the office visit.
+ *
+ * @return A list of patient instructions.
+ * @throws DBException
+ * 		
+ */
+public List<PatientInstructionsBean> getPatientInstructions() throws DBException {
+    if (isUnsaved()) {
+        return new ArrayList<PatientInstructionsBean>();
+    } else {
+        return instructionsDAO.getList(getOvID());
+    }
+}

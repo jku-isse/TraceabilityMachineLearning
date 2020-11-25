@@ -1,0 +1,9 @@
+/**
+ * Set the square index of this position.
+ *
+ * @param squareIndex
+ * 		The new square index of this position.
+ */
+public final void setSquareIndex(int squareIndex) {
+    _squareIndex = squareIndex;
+}

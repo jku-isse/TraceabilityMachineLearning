@@ -1,0 +1,3 @@
+private static boolean olderThan(Date patientDOB, int years, int months, int weeks) {
+    return GetVisitRemindersAction.endBefore(patientDOB, new Date(), years, months, weeks);
+}

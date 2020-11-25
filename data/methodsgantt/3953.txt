@@ -1,0 +1,5 @@
+public void setDefaultRole(Role defRole) {
+    if ((resource) instanceof HumanResource)
+        ((HumanResource) (resource)).setRole(defRole);
+
+}

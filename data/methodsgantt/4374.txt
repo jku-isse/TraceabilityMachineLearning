@@ -1,0 +1,7 @@
+public void setCompletionPercentage(final int percentage) {
+    if ((myCompletionPercentageChange) == null) {
+        myCompletionPercentageChange = new TaskImpl.FieldChange();
+        myCompletionPercentageChange.myEventSender = myProgressEventSender;
+    }
+    myCompletionPercentageChange.setValue(new Integer(percentage));
+}

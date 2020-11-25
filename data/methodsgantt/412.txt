@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param pvString
+ * 		
+ */
+public void setFTPUrl(String pvString) {
+    FTPUrl = pvString;
+}

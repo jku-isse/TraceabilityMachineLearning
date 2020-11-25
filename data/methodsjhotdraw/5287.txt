@@ -1,0 +1,8 @@
+@Override
+protected void updateEnabledState() {
+    if ((getView()) != null) {
+        setEnabled((isCombineAction ? canGroup() : canUngroup()));
+    } else {
+        setEnabled(false);
+    }
+}

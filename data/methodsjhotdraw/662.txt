@@ -1,0 +1,6 @@
+protected Point getColorLocation(float hue, float saturation, float brightness) {
+    Point p = colorWheelProducer.getColorLocation(hue, saturation, brightness, (((getWidth()) - (wheelInsets.left)) - (wheelInsets.right)), (((getHeight()) - (wheelInsets.top)) - (wheelInsets.bottom)));
+    p.x += wheelInsets.left;
+    p.y += wheelInsets.top;
+    return p;
+}

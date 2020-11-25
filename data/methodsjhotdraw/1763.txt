@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public DelegationSelectionTool() {
+    this(new LinkedList<javax.swing.Action>(), new LinkedList<javax.swing.Action>());
+}

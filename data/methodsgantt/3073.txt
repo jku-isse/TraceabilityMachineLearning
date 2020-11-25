@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the web dav locking value.
+ */
+public int getLockDAVMinutes() {
+    return ((Integer) (spLockDAV.getValue())).intValue();
+}

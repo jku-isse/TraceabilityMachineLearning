@@ -1,0 +1,9 @@
+/**
+ * Sets a value for an individual component.
+ *
+ * @param componentIndex
+ * 		
+ * @param newValue
+ * 		
+ */
+public void setComponentValue(int componentIndex, float newValue);

@@ -1,0 +1,5 @@
+public void testFilterByStateNoResult() {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.STATE, "Dalpe", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertTrue(res.isEmpty());
+}

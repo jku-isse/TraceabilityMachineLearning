@@ -1,0 +1,7 @@
+private void fireLanguageChanged() {
+    GanttLanguage.Event event = new GanttLanguage.Event(this);
+    for (int i = 0; i < (myListeners.size()); i++) {
+        GanttLanguage.Listener next = ((GanttLanguage.Listener) (myListeners.get(i)));
+        next.languageChanged(event);
+    }
+}

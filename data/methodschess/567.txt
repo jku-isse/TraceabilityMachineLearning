@@ -1,0 +1,7 @@
+/**
+ * Set the position of the attacked pawn.
+ *
+ * @param position
+ * 		The position of the attacked pawn.
+ */
+void setAttackedPosition(Position attackedPosition);

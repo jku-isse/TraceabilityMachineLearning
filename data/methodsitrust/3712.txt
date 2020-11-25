@@ -1,0 +1,12 @@
+/**
+ * Constructor with error messages passed as a list of parameters to the method.
+ *
+ * @param errorMessages
+ * 		The list of error messages to be returned in the special form validation box.
+ */
+public FormValidationException(String... errorMessages) {
+    errorList = new ErrorList();
+    for (String msg : errorMessages) {
+        errorList.addIfNotNull(msg);
+    }
+}

@@ -1,0 +1,15 @@
+/**
+ * Creates the overlay for the given Container using a
+ * specific font.
+ */
+public void createOverlay(DrawingView view, TextHolderFigure figure) {
+    view.getComponent().add(textField, 0);
+    textField.setText(figure.getText());
+    textField.setColumns(figure.getTextColumns());
+    textField.selectAll();
+    textField.setVisible(true);
+    editedFigure = figure;
+    editedFigure.addFigureListener(figureHandler);
+    this.view = view;
+    updateWidget();
+}

@@ -1,0 +1,3 @@
+public ResourceTreeUIFacade getResourceTree() {
+    return myFallbackDelegate.getResourceTree();
+}

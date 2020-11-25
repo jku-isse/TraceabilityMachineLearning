@@ -1,0 +1,10 @@
+@Override
+protected void writePoints(DOMOutput out) throws IOException {
+    super.writePoints(out);
+    out.openElement("startConnector");
+    out.writeObject(getStartConnector());
+    out.closeElement();
+    out.openElement("endConnector");
+    out.writeObject(getEndConnector());
+    out.closeElement();
+}

@@ -1,0 +1,5 @@
+public void testAddNotNumber() throws Exception {
+    action = new EditRepresentativesAction(factory, 9000000000L, "2");
+    assertEquals("MID not a number", action.addRepresentative("a"));
+    assertEquals("MID not a number", action.removeRepresentative("a"));
+}

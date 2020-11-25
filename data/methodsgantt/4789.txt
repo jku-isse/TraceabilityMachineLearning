@@ -1,0 +1,4 @@
+public TaskHierarchyItem createItem(Task task) {
+    TaskHierarchyItem result = new TaskHierarchyItem(task, myRootItem);
+    return result;
+}

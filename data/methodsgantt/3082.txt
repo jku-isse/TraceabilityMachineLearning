@@ -1,0 +1,6 @@
+/**
+ * Return the web link
+ */
+public String getWebLink() {
+    return tfWebLink.getText();
+}

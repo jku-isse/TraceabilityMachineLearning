@@ -1,0 +1,6 @@
+/**
+ * Sets the start index for the findNext(), findPrevious() methods.
+ */
+public void setStartIndex(int newValue) {
+    startIndex = newValue;
+}

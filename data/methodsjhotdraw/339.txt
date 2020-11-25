@@ -1,0 +1,8 @@
+public void actionPerformed(ActionEvent evt) {
+    JFrame frame = getFrame();
+    if (frame != null) {
+        frame.setExtendedState(((frame.getExtendedState()) ^ (Frame.MAXIMIZED_BOTH)));
+    } else {
+        Toolkit.getDefaultToolkit().beep();
+    }
+}

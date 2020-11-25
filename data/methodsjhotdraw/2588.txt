@@ -1,0 +1,4 @@
+protected Point2D.Double getCenter() {
+    Rectangle2D.Double bounds = getTransformedBounds();
+    return new Point2D.Double(bounds.getCenterX(), bounds.getCenterY());
+}

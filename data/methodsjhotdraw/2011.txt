@@ -1,0 +1,4 @@
+/**
+ * Sent when the geometry (for example the bounds) of the figure has changed.
+ */
+public void figureChanged(FigureEvent e);

@@ -1,0 +1,9 @@
+public void testEditInstructions() throws Exception {
+    pres = prDAO.getList(955).get(0);
+    assertEquals("Take twice daily", pres.getInstructions());
+    pres.setInstructions("Take thrice daily");
+    epa.editPrescription(pres);
+    pres.setInstructions("fail");
+    pres = prDAO.getList(955).get(0);
+    assertEquals("Take thrice daily", pres.getInstructions());
+}

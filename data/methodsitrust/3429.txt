@@ -1,0 +1,8 @@
+public void testAddNDCode() throws DBException, iTrustException {
+    final String code = "999999999";
+    final String desc = "testAddNDCode description";
+    genericAdd(code, desc);
+    List<MedicationBean> allCodes = ndDAO.getAllNDCodes();
+    assertEquals(code, allCodes.get(((allCodes.size()) - 1)).getNDCode());
+    assertEquals(desc, allCodes.get(((allCodes.size()) - 1)).getDescription());
+}

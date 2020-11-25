@@ -1,0 +1,11 @@
+public void testGetDiagnoses() throws Exception {
+    action = new EditDiagnosesAction(factory, 9000000000L, "2", "955");
+    List<DiagnosisBean> list = action.getDiagnoses();
+    assertEquals(1, list.size());
+    assertEquals("250.10", list.get(0).getICDCode());
+    action = new EditDiagnosesAction(factory, 9000000000L, "2", "952");
+    assertEquals(0, action.getDiagnoses().size());
+    // An EditDiagnosesAction without an ovID returns an empty list.
+    action = new EditDiagnosesAction(factory, 9000000000L, "2");
+    assertEquals(0, action.getDiagnoses().size());
+}

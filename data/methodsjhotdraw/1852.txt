@@ -1,0 +1,6 @@
+/**
+ * Gets a default attribute from the editor.
+ * The default attribute will be used by creation tools, to create a new
+ * figure.
+ */
+public <T> T getDefaultAttribute(AttributeKey<T> key);

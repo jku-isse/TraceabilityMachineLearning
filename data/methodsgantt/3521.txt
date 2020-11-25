@@ -1,0 +1,47 @@
+public void save(OutputStream stream) throws IOException {
+    try {
+        AttributesImpl attrs = new AttributesImpl();
+        StreamResult result = new StreamResult(stream);
+        SAXTransformerFactory factory = ((SAXTransformerFactory) (SAXTransformerFactory.newInstance()));
+        TransformerHandler handler = factory.newTransformerHandler();
+        Transformer serializer = handler.getTransformer();
+        serializer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        serializer.setOutputProperty(OutputKeys.INDENT, "yes");
+        serializer.setOutputProperty(OutputKeys.METHOD, "xml");
+        serializer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+        handler.setResult(result);
+        handler.startDocument();
+        addAttribute("name", getProject().getProjectName(), attrs);
+        addAttribute("company", getProject().getOrganization(), attrs);
+        addAttribute("webLink", getProject().getWebLink(), attrs);
+        addAttribute("view-date", new GanttCalendar(area.getViewState().getStartDate()).toXMLString(), attrs);
+        addAttribute("view-index", ("" + (myUIFacade.getViewIndex())), attrs);
+        // TODO for GP 2.0: move view configurations into <view> tag (see ViewSaver)
+        addAttribute("gantt-divider-location", ("" + (myUIFacade.getGanttDividerLocation())), attrs);
+        addAttribute("resource-divider-location", ("" + (myUIFacade.getResourceDividerLocation())), attrs);
+        addAttribute("version", GanttXMLSaver.VERSION, attrs);
+        startElement("project", attrs, handler);
+        // 
+        cdataElement("description", getProject().getDescription(), attrs, handler);
+        saveViews(handler);
+        emptyComment(handler);
+        saveCalendar(handler);
+        saveTasks(handler);
+        saveResources(handler);
+        saveAssignments(handler);
+        saveVacations(handler);
+        saveGanttChartView(handler);
+        saveHistory(handler);
+        saveRoles(handler);
+        endElement("project", handler);
+        handler.endDocument();
+        stream.close();
+    } catch (Throwable e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+        IOException propagatedException = new IOException("Failed to save the project file");
+        propagatedException.initCause(e);
+        throw propagatedException;
+    }
+}

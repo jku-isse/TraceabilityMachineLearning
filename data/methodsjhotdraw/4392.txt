@@ -1,0 +1,10 @@
+/**
+ * Returns true if the current changes to the value property are part
+ * of a series of changes.
+ *
+ * @return the valueIsAdjustingProperty.
+ * @see #setValueIsAdjusting
+ */
+public boolean getValueIsAdjusting() {
+    return valueIsAdjusting_;
+}

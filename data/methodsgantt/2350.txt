@@ -1,0 +1,4 @@
+public Chart getActiveChart() {
+    // TODO Auto-generated method stub
+    return null;
+}

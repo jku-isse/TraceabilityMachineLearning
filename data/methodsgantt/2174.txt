@@ -1,0 +1,2 @@
+public void setUserInfo(String user, String pass) {
+}

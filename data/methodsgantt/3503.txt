@@ -1,0 +1,3 @@
+public TagHandler getDefaultTagHandler() {
+    return new GanttXMLOpen.DefaultTagHandler();
+}

@@ -1,0 +1,4 @@
+/**
+ * Returns true, if the text does not fit into the bounds of the Figure.
+ */
+public boolean isTextOverflow();

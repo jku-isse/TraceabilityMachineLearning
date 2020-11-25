@@ -1,0 +1,5 @@
+public final void resultTag() throws RecognitionException, TokenStreamException {
+    match(PGNTokenTypes.TAG_RESULT);
+    whiteSpaces();
+    match(PGNTokenTypes.STRING_LITERAL);
+}

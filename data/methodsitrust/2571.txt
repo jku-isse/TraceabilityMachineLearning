@@ -1,0 +1,10 @@
+public Connection getConnection() throws SQLException {
+    try {
+        if ((initialContext) == null)
+            initialContext = new InitialContext();
+
+        return ((DataSource) (((Context) (initialContext.lookup("java:comp/env"))).lookup("jdbc/itrust"))).getConnection();
+    } catch (NamingException e) {
+        throw new SQLException(("Context Lookup Naming Exception: " + (e.getMessage())));
+    }
+}

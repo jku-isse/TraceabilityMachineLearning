@@ -1,0 +1,7 @@
+public void testRegularAge() throws Exception {
+    p.setDateOfBirthStr(DateUtil.yearsAgo(44));
+    assertFalse(factor.hasRiskFactor());
+    p.setDateOfBirthStr(DateUtil.yearsAgo(46));
+    factor = new AgeFactor(p, 45);
+    assertTrue(factor.hasRiskFactor());
+}

@@ -1,0 +1,24 @@
+/**
+ * Draw text for the taskObject.
+ */
+public void drawtext(OutputStreamWriter fout, GanttXFIGSaver.TextObject txtObj) throws IOException {
+    if (debug)
+        System.out.println("drawtext begin");
+
+    fout.write("4 ");
+    fout.write(((txtObj.sub_type) + " "));
+    fout.write(((txtObj.color) + " "));
+    fout.write(((txtObj.depth) + " "));
+    fout.write(((txtObj.pen_style) + " "));
+    fout.write(((txtObj.font) + " "));
+    fout.write(((txtObj.font_size) + " "));
+    fout.write(((txtObj.angle) + " "));
+    fout.write(((txtObj.font_flags) + " "));
+    fout.write(((((txtObj.height) + " ") + (txtObj.length)) + " "));
+    fout.write(((((txtObj.x) + " ") + (txtObj.y)) + " "));
+    fout.write(((txtObj.str) + "\001
+"));
+    if (debug)
+        System.out.println("drawtext end");
+
+}

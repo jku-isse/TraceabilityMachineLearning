@@ -1,0 +1,12 @@
+/**
+ * Checks to see if the number of reset password attempts has been exceeded for the given ipAddress
+ *
+ * @param ipAddress
+ * 		The IPv4 or IPv6 IP address as a String.
+ * @return true if the the number of reset attempts is greater than or equal to MAX_RESET_ATTEMPTS
+ * @throws DBException
+ * 		
+ */
+public boolean isMaxedOut(String ipAddress) throws DBException {
+    return (authDAO.getResetPasswordFailures(ipAddress)) >= (ResetPasswordAction.MAX_RESET_ATTEMPTS);
+}

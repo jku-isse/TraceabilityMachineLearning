@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public SVGPathFigure() {
+    add(new SVGBezierFigure());
+    SVGAttributeKeys.setDefaults(this);
+}

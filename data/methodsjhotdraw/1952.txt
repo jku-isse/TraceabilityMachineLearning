@@ -1,0 +1,6 @@
+/**
+ * Checks if a point is contained by the figure.
+ * <p>
+ * This is used for hit testing by Tools.
+ */
+boolean contains(Point2D.Double p);

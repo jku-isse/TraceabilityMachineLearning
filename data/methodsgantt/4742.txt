@@ -1,0 +1,3 @@
+public FinishStartConstraintImpl() {
+    super(GanttTaskRelationship.FS, GanttLanguage.getInstance().getText("finishstart"));
+}

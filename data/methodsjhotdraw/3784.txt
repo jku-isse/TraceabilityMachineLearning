@@ -1,0 +1,9 @@
+/**
+ * Returns the look and feel (L&F) object that renders this component.
+ *
+ * @return the PanelUI object that renders this component
+ * @since 1.4
+ */
+public FontChooserUI getUI() {
+    return ((FontChooserUI) (ui));
+}

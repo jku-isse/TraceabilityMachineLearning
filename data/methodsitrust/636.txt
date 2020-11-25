@@ -1,0 +1,51 @@
+public void testGetComprehensiveMedicalInfo() throws DBException {
+    PatientBean b = factory.getPatientDAO().getPatient(2L);
+    for (MedicalReportFilter.MedicalReportFilterType filterType : MedicalReportFilter.MedicalReportFilterType.values()) {
+        String res = action.getComprehensiveMedicalInfo(b, filterType);
+        switch (filterType) {
+            case ALLERGY :
+                assertEquals("
+664662530
+", res);
+                break;
+            case CURRENT_PRESCRIPTIONS :
+                assertEquals("64764-1512
+", res);
+                break;
+            case DIAGNOSIS_ICD_CODE :
+                assertEquals("250.10
+79.30
+250.10
+250.10
+11.40
+15.00
+", res);
+                break;
+            case LOWER_OFFICE_VISIT_DATE :
+                assertEquals("09/14/2009
+06/10/2007
+06/09/2007
+10/10/2006
+10/10/2005
+10/10/2005
+10/10/2005
+10/10/2005
+10/10/2005
+10/10/1985
+", res);
+                break;
+            case PASTCURRENT_PRESCRIPTIONS :
+                assertEquals("00904-2407
+00904-2407
+64764-1512
+", res);
+                break;
+            case PROCEDURE :
+                assertEquals("1270F
+", res);
+                break;
+            default :
+                break;
+        }
+    }
+}

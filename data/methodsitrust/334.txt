@@ -1,0 +1,15 @@
+/**
+ * Adds a patient to the current HCPs remote monitoring list
+ *
+ * @param patientMID
+ * 		the patient
+ * @param permissions
+ * 		Array indicating what data the patient is allowed to enter.
+ * 		Ordered by Systolic Blood Pressure, Diastolic Blood Pressure, Glucose Level, Weight, Pedometer Reading.
+ * @return true if added successfully. False if already in list.
+ * @throws DBException
+ * 		
+ */
+public boolean addToList(long patientMID, TelemedicineBean tBean) throws DBException {
+    return rmDAO.addPatientToList(patientMID, loggedInMID, tBean);
+}

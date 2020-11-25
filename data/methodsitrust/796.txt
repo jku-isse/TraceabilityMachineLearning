@@ -1,0 +1,23 @@
+/**
+ * A method used to send a single e-mail. Used in immunizations.
+ *
+ * @param aeBean
+ * 		
+ * @return Email returns the Email for testing purposes.
+ */
+public Email sendMail(AdverseEventBean aeBean) throws DBException, FormValidationException, iTrustException {
+    Email email = new Email();
+    String fromEmail;
+    email.setFrom("noreply@itrust.com");
+    List<String> toList = new ArrayList<String>();
+    PatientBean sender = patientDAO.getPatient(loggedInMID);
+    PersonnelBean receiver = personnelDAO.getPersonnel(hcpID);
+    toList.add(receiver.getEmail());
+    fromEmail = sender.getEmail();
+    email.setToList(toList);
+    email.setFrom(fromEmail);
+    email.setSubject(String.format("Adverse Event Report (Immunization)"));
+    email.setBody(String.format(((((((((((" Patient: " + (patientDAO.getName(Long.parseLong(aeBean.getMID())))) + " (MID ") + (aeBean.getMID())) + ") Has Reported the following adverse event") + " Drug: ") + (aeBean.getDrug())) + "(") + (aeBean.getCode())) + ") Description: ") + (aeBean.getDescription()))));
+    emailer.sendEmail(email);
+    return email;
+}

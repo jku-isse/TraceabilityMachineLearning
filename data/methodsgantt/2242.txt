@@ -1,0 +1,13 @@
+public boolean canWrite() {
+    boolean writable = file.canWrite();
+    if ((!writable) && (!(file.exists()))) {
+        try {
+            if (file.createNewFile()) {
+                file.delete();
+                writable = true;
+            }
+        } catch (IOException e) {
+        }
+    }
+    return writable;
+}

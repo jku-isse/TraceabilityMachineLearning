@@ -1,0 +1,12 @@
+public int isADayOffInWeek(Date date) {
+    GanttCalendar start = myStart.Clone();
+    GanttCalendar finish = myFinish.Clone();
+    for (int i = 0; i < 7; i++) {
+        start.add((-1));
+        finish.add((-1));
+        if (((date.equals(start.getTime())) || (date.equals(finish.getTime()))) || ((date.before(finish.getTime())) && (date.after(start.getTime()))))
+            return i + 1;
+
+    }
+    return -1;
+}

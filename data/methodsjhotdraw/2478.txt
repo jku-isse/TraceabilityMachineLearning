@@ -1,0 +1,10 @@
+// ATTRIBUTES
+// EDITING
+// CONNECTING
+// COMPOSITE FIGURES
+// CLONING
+public RectangleFigure clone() {
+    RectangleFigure that = ((RectangleFigure) (super.clone()));
+    that.rectangle = ((Rectangle2D.Double) (this.rectangle.clone()));
+    return that;
+}

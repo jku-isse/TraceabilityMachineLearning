@@ -1,0 +1,7 @@
+/**
+ * Save the project on a server (with a GanttURLChooser)
+ */
+public boolean saveAsURLProject() throws IOException {
+    getProjectUIFacade().saveProjectRemotely(getProject());
+    return true;
+}

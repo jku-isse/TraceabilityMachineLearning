@@ -1,0 +1,15 @@
+public void testgetAllWardRoomsByWardID() {
+    List<WardRoomBean> list = new ArrayList<WardRoomBean>();
+    try {
+        list = wd1.getAllWardRoomsByWardID(1L);
+        assertNotNull(list);
+    } catch (DBException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.getAllWardRoomsByWardID(1L);
+        fail();
+    } catch (Exception e) {
+    }
+}

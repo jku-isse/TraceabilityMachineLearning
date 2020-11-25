@@ -1,0 +1,7 @@
+// Constructors
+/**
+ * Create a new instance of this test.
+ */
+public MinimaxTest2() {
+    super("A test of the minimax implementation, if piece captures are not recognized");
+}

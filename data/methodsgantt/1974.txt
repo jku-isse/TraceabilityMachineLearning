@@ -1,0 +1,20 @@
+/**
+ * Returns the entire image in a single Raster.  For images with
+ * multiple tiles this will require making a copy.
+ *
+ * <p> The returned Raster is semantically a copy.  This means
+ * that updates to the source image will not be reflected in the
+ * returned Raster.  For non-writable (immutable) source images,
+ * the returned value may be a reference to the images internal
+ * data.  The returned Raster should be considered non-writable;
+ * any attempt to alter its pixel data (such as by casting it to
+ * WritableRaster or obtaining and modifying its DataBuffer) may
+ * result in undefined behavior.  The copyData method should be
+ * used if the returned Raster is to be modified.
+ *
+ * @return a Raster containing a copy of this images data.
+ */
+public Raster getData() {
+    Rectangle rect = new Rectangle(getMinX(), getMinY(), getWidth(), getHeight());
+    return getData(rect);
+}

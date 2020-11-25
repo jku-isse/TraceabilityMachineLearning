@@ -1,0 +1,1 @@
+void setViewIndex(int viewIndex);

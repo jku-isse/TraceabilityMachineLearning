@@ -1,0 +1,6 @@
+private void updateSelectionUI(int selectedIndex) {
+    AbstractButton prevSelected = myButtons[mySelectedIndex];
+    prevSelected.setText(mySavedSelectedText);
+    setEnabledTree(myOptionComponents[mySelectedIndex], false);
+    setSelected(selectedIndex);
+}

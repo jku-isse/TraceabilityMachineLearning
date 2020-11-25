@@ -1,0 +1,31 @@
+// --- DragGestureListener methods -----------------------------------
+/**
+ * a Drag gesture has been recognized
+ */
+public void dragGestureRecognized(DragGestureEvent dge) {
+    JComponent c = ((JComponent) (dge.getComponent()));
+    DefaultDrawingViewTransferHandler th = ((DefaultDrawingViewTransferHandler) (c.getTransferHandler()));
+    Transferable t = transferable;
+    if (t != null) {
+        scrolls = c.getAutoscrolls();
+        c.setAutoscrolls(false);
+        try {
+            // dge.startDrag(null, t, this);
+            Icon icon = th.getVisualRepresentation(t);
+            Image dragImage;
+            if (icon instanceof ImageIcon) {
+                dragImage = ((ImageIcon) (icon)).getImage();
+            } else {
+                dragImage = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
+                Graphics g = ((BufferedImage) (dragImage)).createGraphics();
+                icon.paintIcon(c, g, 0, 0);
+                g.dispose();
+            }
+            dge.startDrag(null, dragImage, imageOffset, t, this);
+            return;
+        } catch (RuntimeException re) {
+            c.setAutoscrolls(scrolls);
+        }
+    }
+    th.exportDone(c, t, TransferHandler.NONE);
+}

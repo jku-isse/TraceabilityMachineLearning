@@ -1,0 +1,5 @@
+public void setGridVisible(boolean newValue) {
+    boolean oldValue = isGridVisible();
+    view.setConstrainerVisible(newValue);
+    firePropertyChange(ODGView.GRID_VISIBLE_PROPERTY, oldValue, newValue);
+}

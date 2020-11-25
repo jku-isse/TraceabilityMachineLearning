@@ -1,0 +1,9 @@
+public void testUpdate() throws Exception {
+    LOINCbean lb = new LOINCbean();
+    try {
+        lDAO.update(lb);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

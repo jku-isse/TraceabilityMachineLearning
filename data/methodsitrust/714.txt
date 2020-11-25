@@ -1,0 +1,3 @@
+private String doAssignment(String hospitalID) throws DBException, iTrustException {
+    return action.assignHCPToHospital(("" + (ManageHospitalAssignmentsActionTest.hcp0)), hospitalID);
+}

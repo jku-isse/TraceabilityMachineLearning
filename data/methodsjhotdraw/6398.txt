@@ -1,0 +1,7 @@
+/**
+ * Adds a DOMStorable class to the DOMFactory.
+ */
+public void addStorableClass(String name, Class c) {
+    DefaultDOMFactory.nameToPrototypeMap.put(name, c);
+    DefaultDOMFactory.classToNameMap.put(c, name);
+}

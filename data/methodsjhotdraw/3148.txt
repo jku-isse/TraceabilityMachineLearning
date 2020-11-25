@@ -1,0 +1,3 @@
+public void add(DrawingView view) {
+    target.add(view);
+}

@@ -1,0 +1,3 @@
+public void setIcID(String icID) {
+    this.icID = icID;
+}

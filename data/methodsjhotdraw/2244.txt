@@ -1,0 +1,6 @@
+public void figureRemoved(FigureEvent e) {
+    if ((e.getFigure()) == (target)) {
+        target.removeFigureListener(this);
+        target = null;
+    }
+}

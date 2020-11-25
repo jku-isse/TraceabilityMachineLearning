@@ -1,0 +1,31 @@
+/**
+ * A method to handle action events coming from the dialog.
+ *
+ * @param event
+ * 		The event that triggered this action.
+ */
+public void actionPerformed(ActionEvent event) {
+    // Get the source of the event.
+    Object eventSource = event.getSource();
+    // If the user closed the dialog.
+    if (eventSource == (_okButton)) {
+        setVisible(false);
+        return;
+    }
+    // Check for the radio buttons.
+    if (eventSource == (_queenButton)) {
+        _pieceType = Piece.QUEEN;
+    } else
+        if (eventSource == (_rookButton)) {
+            _pieceType = Piece.ROOK;
+        } else
+            if (eventSource == (_knightButton)) {
+                _pieceType = Piece.KNIGHT;
+            } else
+                if (eventSource == (_bishopButton)) {
+                    _pieceType = Piece.BISHOP;
+                }
+
+
+
+}

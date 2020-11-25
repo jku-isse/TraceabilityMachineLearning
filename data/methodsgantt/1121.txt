@@ -1,0 +1,42 @@
+/* creates a custom property column in the datamodel and on the screen */
+public void addCustomColumn(ResourceColumn column) {
+    if (column == null) {
+        /* create dialog and create column */
+        column = newResourceColumn();
+        ResourceDialogCustomColumn d = new ResourceDialogCustomColumn(Mediator.getGanttProjectSingleton().getUIFacade(), column);
+        d.setVisible(true);
+        if (!(d.isOk())) {
+            return;
+        }
+        column = d.getColumn();
+    }
+    if ((column.getTitle()) != null) {
+        /* adding the column into the datamodel */
+        try {
+            ttModel.addCustomColumn(column.getTitle(), column);
+        } catch (Exception e) {
+            /* TODO add translation */
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Column add", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        /* adding the column to the screen */
+        this.addColumn(column.getColumn());
+        /* setting the cell renderer */
+        String colClass = column.getType().getName();
+        int align;
+        if ((colClass.equals("java.lang.Integer")) || (colClass.equals("java.lang.Double"))) {
+            align = SwingConstants.RIGHT;
+            setColumnHorizontalAlignment(column.getTitle(), align);
+        } else
+            if (colClass.equals("java.util.GregorianCalendar")) {
+                align = SwingConstants.CENTER;
+                setColumnHorizontalAlignment(column.getTitle(), align);
+                /* the customised date cell editor */
+                column.getColumn().setCellEditor(newDateCellEditor());
+            } else {
+                align = SwingConstants.LEFT;
+                setColumnHorizontalAlignment(column.getTitle(), align);
+            }
+
+    }
+}

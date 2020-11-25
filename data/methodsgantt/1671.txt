@@ -1,0 +1,3 @@
+public GPOptionGroup[] getChartOptionGroups() {
+    return new GPOptionGroup[]{ myChartGrid.getOptions() };
+}

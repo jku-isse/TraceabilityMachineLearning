@@ -1,0 +1,10 @@
+/**
+ * Test, if this ply is equal to another ply.
+ *
+ * @param ply
+ * 		The other ply.
+ * @return true, if the 2 plies are equal.
+ */
+public final boolean equals(Ply ply) {
+    return (ply.getSource().equals(getSource())) && (ply.getDestination().equals(getDestination()));
+}

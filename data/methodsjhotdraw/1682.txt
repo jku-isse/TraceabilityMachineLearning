@@ -1,0 +1,4 @@
+public void areaInvalidated(HandleEvent evt) {
+    repaint(evt.getInvalidatedArea());
+    invalidateDimension();
+}

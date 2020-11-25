@@ -1,0 +1,4 @@
+public void setDescription(String description) {
+    prjInfos._sDescription = description;
+    setAskForSave(true);
+}

@@ -1,0 +1,14 @@
+/**
+ * Computes the convex hull from a set of points.
+ *
+ * @param points
+ * 		
+ * @return convex hull of the points as a Polygon2D object.
+ */
+public static Polygon2D.Double getConvexHullPath2D(List<Point2D.Double> points) {
+    Polygon2D.Double convexHull = new Polygon2D.Double();
+    for (Point p : ConvexHull.getConvexHull(points.toArray(new Point[points.size()]))) {
+        convexHull.add(p);
+    }
+    return convexHull;
+}

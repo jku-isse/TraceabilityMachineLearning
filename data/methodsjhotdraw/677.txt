@@ -1,0 +1,5 @@
+public void setVerticalComponentIndex(int newValue) {
+    verticalIndex = newValue;
+    colorWheelImage = null;
+    repaint();
+}

@@ -1,0 +1,7 @@
+/**
+ * Enables number parsing for decimal numbers and for hexadecimal numbers
+ */
+public void parseHexNumbers() {
+    parseNumbers();
+    isParseHexNumbers = true;
+}

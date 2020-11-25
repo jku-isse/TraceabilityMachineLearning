@@ -1,0 +1,5 @@
+public void testChecked() {
+    HCPLinkBean hl = new HCPLinkBean();
+    hl.setChecked(true);
+    assertTrue(hl.isChecked());
+}

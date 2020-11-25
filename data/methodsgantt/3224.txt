@@ -1,0 +1,7 @@
+public void setDefaultName() {
+    if (!(nameTextField.getText().equals((((GanttSaveAsPreviousStateBean.defaultName) + "_") + (GanttSaveAsPreviousStateBean.count))))) {
+        GanttSaveAsPreviousStateBean.defaultName = nameTextField.getText();
+        GanttSaveAsPreviousStateBean.count = 0;
+    }
+    (GanttSaveAsPreviousStateBean.count)++;
+}

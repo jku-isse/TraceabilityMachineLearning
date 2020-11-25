@@ -1,0 +1,62 @@
+/**
+ * Returns a list of old people who need a flu shot
+ *
+ * CURRENT SPEC: Alive patient, over 50 years old, no flu shot - 90656, 90658, 90660 a) during the months
+ * 09 - 12 of current calendar year if in 09 - 12 b) during the months 09 - 12 of last calendar year if
+ * not in 09 - 12
+ *
+ * Determines current date and calls one of two private methods these methods return different sets of
+ * people - a: people who havent had a flu shot yet this year and need one - b: people who missed last
+ * years flu shot and need a check-up
+ *
+ * @return A java.util.List of Visit Reminder Forms.
+ * @param hcpid
+ * 		The MID of the HCP in question.
+ * @param patientBirthday
+ * 		The birthday of the patient in question.
+ * @throws DBException
+ * 		
+ */
+public List<VisitReminderReturnForm> getFluShotDelinquents(long hcpid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    /* Fall 2007 Bug Fix: Use the correct range for a zero-based calendar (eg January is 0) */
+    boolean thisYear = DateUtil.currentlyInMonthRange(8, 11);
+    String flagType = (thisYear) ? VisitFlag.MISSING_MEDICATION : VisitFlag.MISSED_MEDICATION;
+    Date september = new Date(0L);
+    Date december = new Date(0L);
+    DateUtil.setSQLMonthRange(september, 8, (thisYear ? 0 : 1), december, 11, (thisYear ? 0 : 1));
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("SELECT DISTINCT " + (((((((((((("? as hid, p.mid as patientid, p.lastname, p.firstname, p.phone " + "FROM officevisits ov, patients p ") + "WHERE (ov.patientid=p.mid ") + "OR p.mid NOT IN (SELECT ov.patientid FROM officevisits ov)) ") + "AND p.dateofdeath IS NULL ") + "AND p.dateofbirth < DATE_SUB(CURDATE(), INTERVAL 50 YEAR) ") + "AND p.mid NOT IN ") + "(SELECT patientid AS mid FROM officevisits ov, ovprocedure op ") + "WHERE ov.id=op.visitid ") + "AND CPTCode IN (90656, 90658, 90660) ") + "AND ((ov.visitdate BETWEEN ? AND ?) ") + "OR (ov.visitdate BETWEEN ? AND ?))) ") + "ORDER BY lastname, firstname, p.mid")));
+        // ps = conn.prepareStatement("SELECT DISTINCT "
+        // + "? as hid, ov.patientid, p.lastname, p.firstname, " + "p.phone1, p.phone2, p.phone3 "
+        // + "FROM OfficeVisits ov, Patients p " + "WHERE ov.patientid=p.mid "
+        // + "AND p.dateofdeath IS NULL "
+        // + "AND p.dateofbirth < DATE_SUB(CURDATE(), INTERVAL 50 YEAR) " + "AND patientid NOT IN "
+        // + "(SELECT patientid FROM OfficeVisits ov, OVMedication om " + "WHERE ov.id=om.visitid "
+        // + "AND NDCode IN (90656, 90658, 90660) " + "AND ((StartDate BETWEEN ? AND ?) "
+        // + "OR (EndDate BETWEEN ? AND ?))) " + "ORDER BY lastname, firstname, ov.patientid");
+        ps.setLong(1, hcpid);
+        ps.setDate(2, september);
+        ps.setDate(3, december);
+        ps.setDate(4, september);
+        ps.setDate(5, december);
+        rs = ps.executeQuery();
+        List<VisitReminderReturnForm> patients = new ArrayList<VisitReminderReturnForm>();
+        VisitReminderReturnForm temp;
+        VisitReminderReturnFormLoader loader = new VisitReminderReturnFormLoader();
+        while (rs.next()) {
+            temp = loader.loadSingle(rs);
+            temp.addVisitFlag(new VisitFlag(flagType, "Flu Shot"));
+            patients.add(temp);
+        } 
+        return patients;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

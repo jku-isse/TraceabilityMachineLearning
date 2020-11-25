@@ -1,0 +1,6 @@
+/**
+ * Adds a column that cannot be removed afterwards.
+ */
+public void addMandatoryColumn(ResourceColumn col) {
+    columns.put(new Integer(col.getIndex()), col);
+}

@@ -1,0 +1,7 @@
+// /**
+// * Resets the critical path, i.e. reset all critical tasks to normal
+// tasks.
+// * @param root The root of the tasks to consider.
+// */
+// public void resetCriticalPath(TaskNode root);
+public void deleteTask(Task tasktoRemove);

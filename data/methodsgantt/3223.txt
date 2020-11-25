@@ -1,0 +1,6 @@
+public void init() {
+    setLayout(new BorderLayout());
+    add(constructNamePanel(), BorderLayout.CENTER);
+    add(constructSouthPanel(), BorderLayout.SOUTH);
+    nameTextField.requestFocusInWindow();
+}

@@ -1,0 +1,6 @@
+public void testYearsAgo() throws Exception {
+    int yearsAgo = 50;
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
+    String year = "" + ((Integer.valueOf(formatter.format(new Date()))) - yearsAgo);
+    assertEquals(year, DateUtil.yearsAgo(yearsAgo).split("/")[2]);
+}

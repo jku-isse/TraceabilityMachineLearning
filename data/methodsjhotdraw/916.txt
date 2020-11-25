@@ -1,0 +1,3 @@
+public FontRenderContext getFontRenderContext() {
+    return fontRenderContext;
+}

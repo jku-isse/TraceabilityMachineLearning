@@ -1,0 +1,16 @@
+/**
+ *
+ *
+ * @return the list of the selected nodes.
+ */
+public DefaultMutableTreeNode[] getSelectedNodes() {
+    TreePath[] currentSelection = getTreeTable().getTree().getSelectionPaths();
+    if ((currentSelection == null) || ((currentSelection.length) == 0)) {
+        return new DefaultMutableTreeNode[0];
+    }
+    DefaultMutableTreeNode[] dmtnselected = new DefaultMutableTreeNode[currentSelection.length];
+    for (int i = 0; i < (currentSelection.length); i++) {
+        dmtnselected[i] = ((DefaultMutableTreeNode) (currentSelection[i].getLastPathComponent()));
+    }
+    return dmtnselected;
+}

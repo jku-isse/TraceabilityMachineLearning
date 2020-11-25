@@ -1,0 +1,9 @@
+/**
+ * Sets the regular expression pattern.
+ *
+ * @param pattern
+ * 		The regular expression pattern to set.
+ */
+protected void setPattern(String pattern) {
+    this.pattern = Pattern.compile(pattern);
+}

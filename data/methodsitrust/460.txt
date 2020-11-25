@@ -1,0 +1,12 @@
+/**
+ * Returns a list of known medications.  This can be called even if the
+ * office visit is unsaved.
+ *
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public List<MedicationBean> getMedications() throws DBException, iTrustException {
+    return medDAO.getAllNDCodes();
+}

@@ -1,0 +1,8 @@
+public void redo() throws CannotRedoException {
+    super.redo();
+    for (Figure f : figures) {
+        f.willChange();
+        f.transform(tx);
+        f.changed();
+    }
+}

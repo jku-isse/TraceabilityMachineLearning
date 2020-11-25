@@ -1,0 +1,7 @@
+// Calculate the insets for the *JTREE*, not the viewport
+// the tree is in. This makes it a bit messy.
+public Insets getAutoscrollInsets() {
+    Rectangle raOuter = getBounds();
+    Rectangle raInner = getParent().getBounds();
+    return new Insets((((raInner.y) - (raOuter.y)) + (GanttTree2.AUTOSCROLL_MARGIN)), (((raInner.x) - (raOuter.x)) + (GanttTree2.AUTOSCROLL_MARGIN)), (((((raOuter.height) - (raInner.height)) - (raInner.y)) + (raOuter.y)) + (GanttTree2.AUTOSCROLL_MARGIN)), (((((raOuter.width) - (raInner.width)) - (raInner.x)) + (raOuter.x)) + (GanttTree2.AUTOSCROLL_MARGIN)));
+}

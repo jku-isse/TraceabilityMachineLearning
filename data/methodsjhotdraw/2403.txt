@@ -1,0 +1,6 @@
+/**
+ * Creates a new image output format for Portable Network Graphics PNG.
+ */
+public PictImageInputFormat(ImageHolderFigure prototype) {
+    this(prototype, "PICT", "PICT (pct)", "pct", BufferedImage.TYPE_INT_ARGB);
+}

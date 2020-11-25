@@ -1,0 +1,30 @@
+private Component createOptionComponent(GPOption option) {
+    Component result = null;
+    if (option instanceof EnumerationOption) {
+        result = createEnumerationComponent(((EnumerationOption) (option)));
+    } else
+        if (option instanceof BooleanOption) {
+            result = createBooleanComponent(((BooleanOption) (option)));
+        } else
+            if (option instanceof ColorOption) {
+                result = createColorComponent(((ColorOption) (option)));
+            } else
+                if (option instanceof DateOption) {
+                    result = createDateComponent(((DateOption) (option)));
+                } else
+                    if (option instanceof GPOptionGroup) {
+                        result = createButtonComponent(((GPOptionGroup) (option)));
+                    } else
+                        if (option instanceof StringOption) {
+                            result = createStringComponent(((StringOption) (option)));
+                        }
+
+
+
+
+
+    if (result == null) {
+        result = new JLabel(("Unknown option class=" + (option.getClass())));
+    }
+    return result;
+}

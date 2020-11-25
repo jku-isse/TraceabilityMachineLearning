@@ -1,0 +1,12 @@
+public TaskNode[] getSelectedTaskNodes() {
+    TreePath[] currentSelection = treetable.getTree().getSelectionPaths();
+    if ((currentSelection == null) || ((currentSelection.length) == 0))
+        return null;
+
+    DefaultMutableTreeNode[] dmtnselected = new DefaultMutableTreeNode[currentSelection.length];
+    for (int i = 0; i < (currentSelection.length); i++)
+        dmtnselected[i] = ((DefaultMutableTreeNode) (currentSelection[i].getLastPathComponent()));
+
+    TaskNode[] res = getOnlyTaskNodes(dmtnselected);
+    return res;
+}

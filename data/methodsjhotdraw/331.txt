@@ -1,0 +1,19 @@
+protected void openFile(final View view, JFileChooser fileChooser) {
+    final File file = fileChooser.getSelectedFile();
+    view.setEnabled(false);
+    // Open the file
+    view.execute(new Worker() {
+        public Object construct() {
+            try {
+                view.read(file);
+                return null;
+            } catch (IOException e) {
+                return e;
+            }
+        }
+
+        public void finished(Object value) {
+            fileOpened(view, file, value);
+        }
+    });
+}

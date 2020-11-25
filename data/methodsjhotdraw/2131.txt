@@ -1,0 +1,6 @@
+/**
+ * Returns the drawing area of the handle.
+ * Note: The drawing area must be returned in the coordinate
+ * system of the DrawingView.
+ */
+Rectangle getDrawingArea();

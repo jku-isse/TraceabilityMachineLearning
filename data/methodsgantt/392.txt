@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return true is options are loaded from the options file.
+ */
+public boolean isLoaded() {
+    return isloaded;
+}

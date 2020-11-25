@@ -1,0 +1,4 @@
+public void validate() {
+    super.validate();
+    layout();
+}

@@ -1,0 +1,3 @@
+public void setNDCode(String ndcode) {
+    this.ndcode = ndcode;
+}

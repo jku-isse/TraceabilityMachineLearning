@@ -1,0 +1,11 @@
+public SelectionComponentDisplayer(DrawingEditor editor, JComponent component) {
+    this.editor = editor;
+    this.component = component;
+    if ((editor.getActiveView()) != null) {
+        DrawingView view = editor.getActiveView();
+        view.addPropertyChangeListener(this);
+        view.addFigureSelectionListener(this);
+    }
+    editor.addPropertyChangeListener(this);
+    updateVisibility();
+}

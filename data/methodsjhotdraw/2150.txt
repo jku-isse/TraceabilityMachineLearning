@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public HandleMulticaster(Handle handle) {
+    this.handles = new LinkedList<Handle>();
+    this.handles.add(handle);
+}

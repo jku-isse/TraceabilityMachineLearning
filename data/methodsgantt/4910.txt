@@ -1,0 +1,12 @@
+private Date calculateEndDate() {
+    // int countFrameable =
+    // myTopUnit.getAtomCount((TimeUnit)myHighestFrameable);
+    Date date = myTopUnit.adjustRight(myBaseDate);
+    if (date.before(myStartDate)) {
+        throw new IllegalStateException(((((("End date=" + date) + " start=") + (myStartDate)) + " base=") + (myBaseDate)));
+    }
+    // for (int i=0; i<countFrameable; i++) {
+    // date = myHighestFrameable.adjustRight(date);
+    // }
+    return date;
+}

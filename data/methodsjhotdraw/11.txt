@@ -1,0 +1,4 @@
+public void dispose(View p) {
+    remove(p);
+    p.dispose();
+}

@@ -1,0 +1,85 @@
+public int toRGB(float... components) {
+    float hue = components[0];
+    float saturation = components[1];
+    float lightness = components[2];
+    // compute p and q from saturation and lightness
+    float q;
+    if (lightness < 0.5F) {
+        q = lightness * (1.0F + saturation);
+    } else {
+        q = (lightness + saturation) - (lightness * saturation);
+    }
+    float p = (2.0F * lightness) - q;
+    // normalize hue to -1..+1
+    float hk = hue - ((float) (Math.floor(hue)));// / 360f;
+
+    // compute red, green and blue
+    float red = hk + (1.0F / 3.0F);
+    float green = hk;
+    float blue = hk - (1.0F / 3.0F);
+    // normalize rgb values
+    if (red < 0) {
+        red = red + 1.0F;
+    } else
+        if (red > 1) {
+            red = red - 1.0F;
+        }
+
+    if (green < 0) {
+        green = green + 1.0F;
+    } else
+        if (green > 1) {
+            green = green - 1.0F;
+        }
+
+    if (blue < 0) {
+        blue = blue + 1.0F;
+    } else
+        if (blue > 1) {
+            blue = blue - 1.0F;
+        }
+
+    // adjust rgb values
+    if (red < (1.0F / 6.0F)) {
+        red = p + (((q - p) * 6) * red);
+    } else
+        if (red < 0.5F) {
+            red = q;
+        } else
+            if (red < (2.0F / 3.0F)) {
+                red = p + (((q - p) * 6) * ((2.0F / 3.0F) - red));
+            } else {
+                red = p;
+            }
+
+
+    if (green < (1.0F / 6.0F)) {
+        green = p + (((q - p) * 6) * green);
+    } else
+        if (green < 0.5F) {
+            green = q;
+        } else
+            if (green < (2.0F / 3.0F)) {
+                green = p + (((q - p) * 6) * ((2.0F / 3.0F) - green));
+            } else {
+                green = p;
+            }
+
+
+    if (blue < (1.0F / 6.0F)) {
+        blue = p + (((q - p) * 6) * blue);
+    } else
+        if (blue < 0.5F) {
+            blue = q;
+        } else
+            if (blue < (2.0F / 3.0F)) {
+                blue = p + (((q - p) * 6) * ((2.0F / 3.0F) - blue));
+            } else {
+                blue = p;
+            }
+
+
+    // pack red, green and blue into 24-bit rgb
+    int rgb = ((((int) (red * 255)) << 16) | (((int) (green * 255)) << 8)) | ((int) (blue * 255));
+    return rgb;
+}

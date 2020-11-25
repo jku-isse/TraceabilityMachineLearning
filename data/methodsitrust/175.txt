@@ -1,0 +1,9 @@
+@Override
+protected void setUp() throws Exception {
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.hcp0();
+    gen.patient1();
+    gen.patient2();
+    action = new AddRemoteMonitoringDataAction(TestDAOFactory.getTestInstance(), 1, 1);
+}

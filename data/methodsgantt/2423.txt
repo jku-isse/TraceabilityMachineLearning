@@ -1,0 +1,3 @@
+public void setOptions(GanttOptions options) {
+    myOptions = options;
+}

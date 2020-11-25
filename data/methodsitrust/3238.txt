@@ -1,0 +1,5 @@
+public void testGetPatient2() throws Exception {
+    PatientBean p = patientDAO.getPatient(2);
+    assertNotNull(p);
+    assertIsPatient2(p);
+}

@@ -1,0 +1,9 @@
+public ReportAdverseEventAction(String hcpID, DAOFactory factory, long loggedInMID) {
+    this.loggedInMID = loggedInMID;
+    this.patientDAO = factory.getPatientDAO();
+    this.personnelDAO = factory.getPersonnelDAO();
+    this.emailer = new EmailUtil(factory);
+    this.adverseEventDAO = factory.getAdverseEventDAO();
+    this.hcpID = Long.parseLong(hcpID);
+    this.validator = new AdverseEventValidator();
+}

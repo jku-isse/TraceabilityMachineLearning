@@ -1,0 +1,3 @@
+protected AbstractCompositeFigure.EventHandler createEventHandler() {
+    return new QuadTreeDrawing.QuadTreeEventHandler();
+}

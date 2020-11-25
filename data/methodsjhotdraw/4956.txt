@@ -1,0 +1,3 @@
+public int hashCode() {
+    return (((type.hashCode()) << 24) | ((Arrays.hashCode(coords)) & 268369920)) | ((Arrays.hashCode(modifiers)) & 65535);
+}

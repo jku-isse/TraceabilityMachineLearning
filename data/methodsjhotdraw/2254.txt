@@ -1,0 +1,3 @@
+public void addCompositeFigureListener(CompositeFigureListener listener) {
+    listenerList.add(CompositeFigureListener.class, listener);
+}

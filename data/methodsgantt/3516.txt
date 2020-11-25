@@ -1,0 +1,7 @@
+// ===========================================================
+// SAX DocumentHandler methods
+// ===========================================================
+public void startDocument() throws SAXException {
+    super.startDocument();
+    myTagStack.clear();
+}

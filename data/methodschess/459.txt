@@ -1,0 +1,9 @@
+/**
+ * Set the current parser.
+ *
+ * @param parser
+ * 		The new PGN parser.
+ */
+private final void setPGNParser(PGNParser parser) {
+    _parser = parser;
+}

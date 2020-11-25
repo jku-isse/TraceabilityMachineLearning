@@ -1,0 +1,6 @@
+/**
+ * Draws this handle.
+ */
+public void draw(Graphics2D g) {
+    drawCircle(g, ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.HANDLE_FILL_COLOR))), ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.HANDLE_STROKE_COLOR))));
+}

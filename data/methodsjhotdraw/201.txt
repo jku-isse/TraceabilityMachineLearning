@@ -1,0 +1,3 @@
+public Set<Window> getPalettes() {
+    return Collections.unmodifiableSet(palettes);
+}

@@ -1,0 +1,5 @@
+private List<String> parseAndCache(String fileName) throws FileNotFoundException, IOException {
+    List<String> queries = parseSQLFile(fileName);
+    cache.put(fileName, queries);
+    return queries;
+}

@@ -1,0 +1,21 @@
+public void testFilterByZip2() throws Exception {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.ZIP, "27606-1234", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertEquals(8, res.size());
+    assertTrue(((res.get(0).getMID()) == 1L));// random person
+
+    assertTrue(((res.get(1).getMID()) == 3L));// care needs
+
+    assertTrue(((res.get(2).getMID()) == 4L));// norecords has
+
+    assertTrue(((res.get(3).getMID()) == 5L));// baby programmer
+
+    assertTrue(((res.get(4).getMID()) == 6L));// baby a
+
+    assertTrue(((res.get(5).getMID()) == 7L));// baby b
+
+    assertTrue(((res.get(6).getMID()) == 8L));// baby c
+
+    assertTrue(((res.get(7).getMID()) == 42L));// bad horse
+
+}

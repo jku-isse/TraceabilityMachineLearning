@@ -1,0 +1,18 @@
+/**
+ * Change the end date of the task
+ */
+public void setEnd(GanttCalendar dend, boolean test) {
+    myEndDatePicker.setDate(dend.getTime());
+    this.end = dend;
+    if (test == true) {
+        return;
+    }
+    // this.setFinishFixed(dend.isFixed());
+    if ((this.start.compareTo(this.end)) < 0) {
+        adjustLength();
+    } else {
+        GanttCalendar _start = this.end.newAdd((-(length)));
+        this.start = _start;
+        startDateField1.setText(_start.toString());
+    }
+}

@@ -1,0 +1,34 @@
+/**
+ * Adds a hospital
+ *
+ * @param hosp
+ * 		The HospitalBean object to insert.
+ * @return A boolean indicating whether the insertion was successful.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public boolean addHospital(HospitalBean hosp) throws DBException, iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("INSERT INTO hospitals (HospitalID, HospitalName, Address, City, State, Zip) " + "VALUES (?,?,?,?,?,?)"));
+        ps.setString(1, hosp.getHospitalID());
+        ps.setString(2, hosp.getHospitalName());
+        ps.setString(3, hosp.getHospitalAddress());
+        ps.setString(4, hosp.getHospitalCity());
+        ps.setString(5, hosp.getHospitalState());
+        ps.setString(6, hosp.getHospitalZip());
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        e.printStackTrace();
+        if (1062 == (e.getErrorCode()))
+            throw new iTrustException("Error: Hospital already exists.");
+
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

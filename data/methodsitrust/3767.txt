@@ -1,0 +1,16 @@
+public void testEditAppointmentTypeDurationStringInput() throws Exception {
+    // Login
+    WebConversation wc = login("9000000001", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Edit Appointment Types").click();
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_TYPE_VIEW, 9000000001L, 0L, "");
+    // Choose Type to edit
+    WebForm wf = wr.getFormWithID("mainForm");
+    wf.getScriptableObject().setParameterValue("name", "Physical");
+    wf.getScriptableObject().setParameterValue("duration", "foo");
+    wr = wf.submit(wf.getSubmitButton("update"));
+    iTrustHTTPTest.assertNotLogged(TransactionType.APPOINTMENT_TYPE_EDIT, 9000000001L, 0L, "");
+    assertTrue(wr.getText().contains("Error: Physical - Duration: must be an integer value."));
+    assertTrue(wr.getURL().toString().contains("/auth/admin/editApptType.jsp"));
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_TYPE_VIEW, 9000000001L, 0L, "");
+}

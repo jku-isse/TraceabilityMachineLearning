@@ -1,0 +1,8 @@
+/**
+ * Get the game controller.
+ *
+ * @return The game controller.
+ */
+private final GameController getController() {
+    return _controller;
+}

@@ -1,0 +1,3 @@
+public DefaultBooleanOption(String id) {
+    super(id);
+}

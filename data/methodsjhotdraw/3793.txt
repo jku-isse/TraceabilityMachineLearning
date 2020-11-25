@@ -1,0 +1,15 @@
+/**
+ * Resets the UI property with a value from the current look and feel.
+ *
+ * @see JComponent#updateUI
+ */
+@Override
+public void updateUI() {
+    // Try to get a browser UI from the UIManager.
+    // Fall back to BasicBrowserUI, if none is available.
+    if ((UIManager.get(getUIClassID())) != null) {
+        setUI(((FontChooserUI) (UIManager.getUI(this))));
+    } else {
+        setUI(PaletteFontChooserUI.createUI(this));
+    }
+}

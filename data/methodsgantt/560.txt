@@ -1,0 +1,6 @@
+/**
+ * Edit task parameters
+ */
+public void propertiesTask() {
+    myTaskPropertiesAction.actionPerformed(null);
+}

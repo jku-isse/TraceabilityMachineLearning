@@ -1,0 +1,67 @@
+private void fulfilConstraints(TaskDependency dependency) throws TaskDependencyException {
+    Task dependant = dependency.getDependant();
+    TaskDependency[] depsAsDependant = dependant.getDependenciesAsDependant().toArray();
+    if ((depsAsDependant.length) > 0) {
+        ArrayList startLaterVariations = new ArrayList();
+        ArrayList startEarlierVariations = new ArrayList();
+        ArrayList noVariations = new ArrayList();
+        // 
+        for (int i = 0; i < (depsAsDependant.length); i++) {
+            TaskDependency next = depsAsDependant[i];
+            TaskDependencyConstraint.Collision nextCollision = next.getConstraint().getCollision();
+            GanttCalendar acceptableStart = nextCollision.getAcceptableStart();
+            switch (nextCollision.getVariation()) {
+                case TaskDependencyConstraint.Collision.START_EARLIER_VARIATION :
+                    {
+                        startEarlierVariations.add(acceptableStart);
+                        break;
+                    }
+                case TaskDependencyConstraint.Collision.START_LATER_VARIATION :
+                    {
+                        startLaterVariations.add(acceptableStart);
+                        break;
+                    }
+                case TaskDependencyConstraint.Collision.NO_VARIATION :
+                    {
+                        noVariations.add(acceptableStart);
+                        break;
+                    }
+            }
+        }
+        if ((noVariations.size()) > 1) {
+            throw new TaskDependencyException((((("Failed to fulfill constraints of task=" + dependant) + ". There are ") + (noVariations.size())) + " constraints which dont allow for task start variation"));
+        }
+        // 
+        Collections.sort(startEarlierVariations);
+        Collections.sort(startLaterVariations);
+        // 
+        GanttCalendar solution;
+        GanttCalendar earliestStart = ((GanttCalendar) (((startEarlierVariations.size()) == 0) ? null : startEarlierVariations.get(0)));
+        GanttCalendar latestStart = ((GanttCalendar) (((startLaterVariations.size()) >= 0) ? startLaterVariations.get(((startLaterVariations.size()) - 1)) : null));
+        if ((earliestStart == null) && (latestStart == null)) {
+            solution = dependant.getStart();
+        } else {
+            if ((earliestStart == null) && (latestStart != null)) {
+                earliestStart = latestStart;
+            } else
+                if ((earliestStart != null) && (latestStart == null)) {
+                    latestStart = earliestStart;
+                }
+
+            if ((earliestStart.compareTo(latestStart)) < 0) {
+                throw new TaskDependencyException(("Failed to fulfill constraints of task=" + dependant));
+            }
+        }
+        if ((noVariations.size()) > 0) {
+            GanttCalendar notVariableStart = ((GanttCalendar) (noVariations.get(0)));
+            if (((notVariableStart.compareTo(earliestStart)) < 0) || ((notVariableStart.compareTo(latestStart)) > 0)) {
+                throw new TaskDependencyException(("Failed to fulfill constraints of task=" + dependant));
+            }
+            solution = notVariableStart;
+        } else {
+            solution = latestStart;
+        }
+        // 
+        modifyTaskStart(dependant, solution);
+    }
+}

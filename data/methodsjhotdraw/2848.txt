@@ -1,0 +1,4 @@
+/**
+ * Adds a listener for this tool.
+ */
+void addToolListener(ToolListener l);

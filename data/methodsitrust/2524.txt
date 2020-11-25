@@ -1,0 +1,6 @@
+/**
+ * Protected constructor. Call getProductionInstance to get an instance of the DAOFactory
+ */
+protected DAOFactory() {
+    this.driver = new ProductionConnectionDriver();
+}

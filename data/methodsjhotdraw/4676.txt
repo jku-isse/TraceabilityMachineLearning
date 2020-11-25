@@ -1,0 +1,7 @@
+@Override
+public <T> void setAttribute(AttributeKey<T> key, T newValue) {
+    super.setAttribute(key, newValue);
+    if ((getDecorator()) != null) {
+        key.basicSet(getDecorator(), newValue);
+    }
+}

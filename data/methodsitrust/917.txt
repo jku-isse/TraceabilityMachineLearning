@@ -1,0 +1,11 @@
+public void testAddDuplicate() throws Exception {
+    gen.icd9cmCodes();
+    final String code = "000.00";
+    final String descrip0 = "description 0";
+    DiagnosisBean proc = new DiagnosisBean(code, descrip0, "Short Term");
+    assertEquals(getAddCodeSuccessString(proc), action.addICDCode(proc));
+    proc.setDescription("description 1");
+    assertEquals("Error: Code already exists.", action.addICDCode(proc));
+    proc = factory.getICDCodesDAO().getICDCode(code);
+    assertEquals(descrip0, proc.getDescription());
+}

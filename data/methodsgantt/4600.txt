@@ -1,0 +1,19 @@
+private void fulfilDependencies() throws TaskDependencyException {
+    // System.err.println("[RecalculateTaskSchedule]
+    // >>>fulfilDependencies()");
+    for (Iterator distances = myDistance2dependencyList.entrySet().iterator(); distances.hasNext();) {
+        Map.Entry nextEntry = ((Map.Entry) (distances.next()));
+        List nextDependenciesList = ((List) (nextEntry.getValue()));
+        for (int i = 0; i < (nextDependenciesList.size()); i++) {
+            TaskDependency nextDependency = ((TaskDependency) (nextDependenciesList.get(i)));
+            TaskDependencyConstraint nextConstraint = nextDependency.getConstraint();
+            TaskDependencyConstraint.Collision collision = nextConstraint.getCollision();
+            if (collision.isActive()) {
+                fulfilConstraints(nextDependency);
+                nextDependency.getDependant().applyThirdDateConstraint();
+            }
+        }
+    }
+    // System.err.println("[RecalculateTaskSchedule]
+    // <<<fulfilDependencies()");
+}

@@ -1,0 +1,23 @@
+/**
+ * Delete a given lab procedure form the database.
+ *
+ * @param procedureID
+ * 		
+ * @throws DBException
+ * 		
+ */
+public void removeLabProcedure(long procedureID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("DELETE FROM labprocedure WHERE LaboratoryProcedureID=? ");
+        ps.setLong(1, procedureID);
+        ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,29 @@
+/**
+ * Returns a WardRoom specified by the id
+ *
+ * @param wardRoomID
+ * 		The id of the ward room to get
+ * @return A WardRoomBean with the ID specified
+ * @throws DBException
+ * 		
+ */
+public WardRoomBean getWardRoom(String wardRoomID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM wardrooms where RoomID = ?");
+        ps.setString(1, wardRoomID);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return wardRoomLoader.loadSingle(rs);
+        } else {
+            return null;
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,10 @@
+public void refreshData(CustomColumnsStorage cch) {
+    customColumnsHandler = cch;
+    this.dataVector = new Vector();
+    Iterator it = customColumnsHandler.getCustomColums().iterator();
+    while (it.hasNext()) {
+        CustomColumn cc = ((CustomColumn) (it.next()));
+        Object[] o = new Object[]{ cc.getName(), cc.getType(), cc.getDefaultValue() };
+        this.addRow(o);
+    } 
+}

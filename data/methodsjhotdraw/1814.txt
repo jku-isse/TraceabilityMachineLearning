@@ -1,0 +1,4 @@
+/**
+ * Adds a listener for undooable edit events.
+ */
+void addUndoableEditListener(UndoableEditListener l);

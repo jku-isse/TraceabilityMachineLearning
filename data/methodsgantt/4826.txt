@@ -1,0 +1,3 @@
+public TimeUnit getDirectAtomUnit() {
+    return this.getDirectAtomUnit();
+}

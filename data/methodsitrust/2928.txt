@@ -1,0 +1,22 @@
+/**
+ * Gets all lab procedures, period.
+ *
+ * @return A java.util.List of LabProcedureBeans.
+ * @throws DBException
+ * 		
+ */
+public List<LabProcedureBean> getAllLabProcedures() throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM labprocedure ORDER BY UpdatedDate ASC");
+        ResultSet rs = ps.executeQuery();
+        return labProcedureLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,1 @@
+Component buildPageComponent(IGanttProject project, UIFacade uiFacade);

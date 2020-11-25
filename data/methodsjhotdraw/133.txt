@@ -1,0 +1,55 @@
+protected JMenu createWindowMenu() {
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+    ApplicationModel mo = getModel();
+    JMenu m;
+    JMenuItem mi;
+    m = new JMenu();
+    final JMenu windowMenu = m;
+    labels.configureMenu(m, "window");
+    m.add(mo.getAction(ArrangeAction.CASCADE_ID));
+    m.add(mo.getAction(ArrangeAction.VERTICAL_ID));
+    m.add(mo.getAction(ArrangeAction.HORIZONTAL_ID));
+    m.addSeparator();
+    for (View pr : views()) {
+        if ((pr.getAction(FocusAction.ID)) != null) {
+            windowMenu.add(pr.getAction(FocusAction.ID));
+        }
+    }
+    if ((toolBarActions.size()) > 0) {
+        m.addSeparator();
+        for (Action a : toolBarActions) {
+            JCheckBoxMenuItem cbmi = new JCheckBoxMenuItem(a);
+            Actions.configureJCheckBoxMenuItem(cbmi, a);
+            m.add(cbmi);
+        }
+    }
+    addPropertyChangeListener(new PropertyChangeListener() {
+        public void propertyChange(PropertyChangeEvent evt) {
+            String name = evt.getPropertyName();
+            ApplicationModel mo = getModel();
+            if (name == "viewCount") {
+                JMenu m = windowMenu;
+                m.removeAll();
+                m.add(mo.getAction(ArrangeAction.CASCADE_ID));
+                m.add(mo.getAction(ArrangeAction.VERTICAL_ID));
+                m.add(mo.getAction(ArrangeAction.HORIZONTAL_ID));
+                m.addSeparator();
+                for (Iterator i = views().iterator(); i.hasNext();) {
+                    View pr = ((View) (i.next()));
+                    if ((pr.getAction(FocusAction.ID)) != null) {
+                        m.add(pr.getAction(FocusAction.ID));
+                    }
+                }
+                if ((toolBarActions.size()) > 0) {
+                    m.addSeparator();
+                    for (Action a : toolBarActions) {
+                        JCheckBoxMenuItem cbmi = new JCheckBoxMenuItem(a);
+                        Actions.configureJCheckBoxMenuItem(cbmi, a);
+                        m.add(cbmi);
+                    }
+                }
+            }
+        }
+    });
+    return m;
+}

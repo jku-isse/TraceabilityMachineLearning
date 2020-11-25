@@ -1,0 +1,6 @@
+/**
+ * Returns the index of the displayed tab.
+ *
+ * @return the index of the displayed tab.
+ */
+int getViewIndex();

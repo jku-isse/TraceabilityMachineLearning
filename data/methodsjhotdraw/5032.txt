@@ -1,0 +1,8 @@
+public String getAppletInfo() {
+    return (((((PertApplet.NAME) + "
+Version ") + (getVersion())) + "
+
+Copyright 1996-2009 (c) by the original authors of JHotDraw and all its contributors") + "
+This software is licensed under LGPL or") + "
+Creative Commons 3.0 BY";
+}

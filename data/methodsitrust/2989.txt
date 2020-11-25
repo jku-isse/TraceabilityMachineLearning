@@ -1,0 +1,27 @@
+/**
+ * Check if a patient has declared the given HCP
+ *
+ * @param pid
+ * 		The MID of the patient in question as a long.
+ * @param hcpid
+ * 		The MID of the HCP in question as a long.
+ * @return 
+ * @throws DBException
+ * 		
+ */
+public boolean checkDeclaredHCP(long pid, long hcpid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM declaredhcp WHERE PatientID=? AND HCPID=?");
+        ps.setLong(1, pid);
+        ps.setLong(2, hcpid);
+        return ps.executeQuery().next();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

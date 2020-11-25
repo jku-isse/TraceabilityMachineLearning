@@ -1,0 +1,3 @@
+protected int getLineBottomPosition() {
+    return 0;
+}

@@ -1,0 +1,4 @@
+public void changeCustomColumnDefaultValue(String colName, Object newDefaultValue) throws CustomColumnsException {
+    // ganttTreeTable.changeDefaultValue(colName, newDefaultValue);
+    myStorage.changeDefaultValue(colName, newDefaultValue);
+}

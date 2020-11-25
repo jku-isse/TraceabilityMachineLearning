@@ -1,0 +1,8 @@
+public DefaultListModel initIconList() {
+    DefaultListModel list = new DefaultListModel();
+    int[] icons = options.getIconList();
+    for (int i = 0; i < (icons.length); i++)
+        addButton(icons[i], list);
+
+    return list;
+}

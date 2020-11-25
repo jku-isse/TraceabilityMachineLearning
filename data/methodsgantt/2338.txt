@@ -1,0 +1,6 @@
+void setDefaultDocument(Document document) {
+    if ((myDefaultDocument) != null) {
+        throw new IllegalStateException("Dont set default document twice");
+    }
+    myDefaultDocument = document;
+}

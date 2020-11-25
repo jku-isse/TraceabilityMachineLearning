@@ -1,0 +1,20 @@
+public void testDeleteReferral() throws Exception {
+    long senderid = 9000000000L;
+    long receiverid = 9000000003L;
+    long patientid = 2L;
+    action = new EditSingleReferralAction(factory, senderid);
+    // get existing referral
+    ReferralBean bean = action.getReferral(3L);
+    assertEquals("Gandalf will help you defeat the orcs!", bean.getReferralDetails());
+    // delete referral
+    action.deleteReferral(bean);
+    // trying to retrieve deleted referral should return null
+    assertEquals(null, action.getReferral(3L));
+    // part 2: check that messages were sent
+    List<MessageBean> msgs = msgDAO.getMessagesFor(senderid);
+    assertEquals(0, countMessageWithSubject(msgs, "Your Referral Was Cancelled"));
+    msgs = msgDAO.getMessagesFor(receiverid);
+    assertEquals(1, countMessageWithSubject(msgs, "Your Referral Was Cancelled"));
+    msgs = msgDAO.getMessagesFor(patientid);
+    assertEquals(1, countMessageWithSubject(msgs, "Your Referral Was Cancelled"));
+}

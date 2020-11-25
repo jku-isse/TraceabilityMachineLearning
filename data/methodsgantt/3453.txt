@@ -1,0 +1,54 @@
+/**
+ *
+ *
+ * @return the csv settings as an xml schema.
+ */
+public String getXml() {
+    String res = "    <csv-export>
+";
+    // general options
+    res += "      <csv-general 
+";
+    res += ("        fixed="" + (bFixedSize)) + ""
+";
+    res += ("        separatedChar="" + (correct(sSeparatedChar))) + ""
+";
+    res += ("        separatedTextChar="" + (correct(sSeparatedTextChar))) + ""/>
+";
+    // tasks export options
+    res += "      <csv-tasks
+";
+    res += ("        id="" + (bExportTaskID)) + ""
+";
+    res += ("        name="" + (bExportTaskName)) + ""
+";
+    res += ("        start-date="" + (bExportTaskStartDate)) + ""
+";
+    res += ("        end-date="" + (bExportTaskEndDate)) + ""
+";
+    res += ("        percent="" + (bExportTaskPercent)) + ""
+";
+    res += ("        duration="" + (bExportTaskDuration)) + ""
+";
+    res += ("        webLink="" + (bExportTaskWebLink)) + ""
+";
+    res += ("        resources="" + (bExportTaskResources)) + ""
+";
+    res += ("        notes="" + (bExportTaskNotes)) + ""/>
+";
+    // resources export options
+    res += "      <csv-resources
+";
+    res += ("        id="" + (bExportResourceID)) + ""
+";
+    res += ("        name="" + (bExportResourceName)) + ""
+";
+    res += ("        mail="" + (bExportResourceMail)) + ""
+";
+    res += ("        phone="" + (bExportResourcePhone)) + ""
+";
+    res += ("        role="" + (bExportResourceRole)) + ""/>
+";
+    return res += "    </csv-export>
+";
+}

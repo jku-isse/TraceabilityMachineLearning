@@ -1,0 +1,130 @@
+private String getIconPositions(DefaultListModel list) {
+    String sIcons = "";
+    if (list != null) {
+        int i = 0;
+        if (list.equals(deletedIconList))
+            i++;
+
+        for (; i < (list.size()); i++) {
+            if (!(sIcons.equals("")))
+                sIcons = sIcons + ",";
+
+            if (list.elementAt(i).equals(GPToolBar.SEPARATOR_OBJECT))
+                sIcons = sIcons + (GanttOptions.SEPARATOR);
+            else
+                if (((TestGanttRolloverButton) (list.elementAt(i))) == (bNew))
+                    sIcons = sIcons + (GanttOptions.NEW);
+                else
+                    if (((TestGanttRolloverButton) (list.elementAt(i))) == (bOpen))
+                        sIcons = sIcons + (GanttOptions.OPEN);
+                    else
+                        if (((TestGanttRolloverButton) (list.elementAt(i))) == (bSave))
+                            sIcons = sIcons + (GanttOptions.SAVE);
+                        else
+                            if (((TestGanttRolloverButton) (list.elementAt(i))) == (bImport))
+                                sIcons = sIcons + (GanttOptions.IMPORT);
+                            else
+                                if (((TestGanttRolloverButton) (list.elementAt(i))) == (bExport))
+                                    sIcons = sIcons + (GanttOptions.EXPORT);
+                                else
+                                    if (((TestGanttRolloverButton) (list.elementAt(i))) == (bPrint))
+                                        sIcons = sIcons + (GanttOptions.PRINT);
+                                    else
+                                        if (((TestGanttRolloverButton) (list.elementAt(i))) == (bPreviewPrint))
+                                            sIcons = sIcons + (GanttOptions.PREVIEWPRINT);
+                                        else
+                                            if (((TestGanttRolloverButton) (list.elementAt(i))) == (bCut))
+                                                sIcons = sIcons + (GanttOptions.CUT);
+                                            else
+                                                if (((TestGanttRolloverButton) (list.elementAt(i))) == (bCopy))
+                                                    sIcons = sIcons + (GanttOptions.COPY);
+                                                else
+                                                    if (((TestGanttRolloverButton) (list.elementAt(i))) == (bPaste))
+                                                        sIcons = sIcons + (GanttOptions.PASTE);
+                                                    else
+                                                        if (((TestGanttRolloverButton) (list.elementAt(i))) == (bNewTask))
+                                                            sIcons = sIcons + (GanttOptions.NEWTASK);
+                                                        else
+                                                            if (((TestGanttRolloverButton) (list.elementAt(i))) == (bDelete))
+                                                                sIcons = sIcons + (GanttOptions.DELETE);
+                                                            else
+                                                                if (((TestGanttRolloverButton) (list.elementAt(i))) == (bProperties))
+                                                                    sIcons = sIcons + (GanttOptions.PROPERTIES);
+                                                                else// else if ((TestGanttRolloverButton) list.elementAt(i) == bUnlink)
+                                                                // sIcons = sIcons + GanttOptions.UNLINK;
+                                                                // else if ((TestGanttRolloverButton) list.elementAt(i) == bLink)
+                                                                // sIcons = sIcons + GanttOptions.LINK;
+                                                                // else if ((TestGanttRolloverButton) list.elementAt(i) == bInd)
+                                                                // sIcons = sIcons + GanttOptions.IND;
+                                                                // else if ((TestGanttRolloverButton) list.elementAt(i) == bUnind)
+                                                                // sIcons = sIcons + GanttOptions.UNIND;
+                                                                // else if ((TestGanttRolloverButton) list.elementAt(i) == bUp)
+                                                                // sIcons = sIcons + GanttOptions.UP;
+                                                                // else if ((TestGanttRolloverButton) list.elementAt(i) == bDown)
+                                                                // sIcons = sIcons + GanttOptions.DOWN;
+
+                                                                    if (((TestGanttRolloverButton) (list.elementAt(i))) == (bPrev))
+                                                                        sIcons = sIcons + (GanttOptions.PREV);
+                                                                    else
+                                                                        if (((TestGanttRolloverButton) (list.elementAt(i))) == (bScrollCenter))
+                                                                            sIcons = sIcons + (GanttOptions.CENTER);
+                                                                        else
+                                                                            if (((TestGanttRolloverButton) (list.elementAt(i))) == (bNext))
+                                                                                sIcons = sIcons + (GanttOptions.NEXT);
+                                                                            else
+                                                                                if (((TestGanttRolloverButton) (list.elementAt(i))) == (bZoomOut))
+                                                                                    sIcons = sIcons + (GanttOptions.ZOOMOUT);
+                                                                                else
+                                                                                    if (((TestGanttRolloverButton) (list.elementAt(i))) == (bZoomIn))
+                                                                                        sIcons = sIcons + (GanttOptions.ZOOMIN);
+                                                                                    else
+                                                                                        if (((TestGanttRolloverButton) (list.elementAt(i))) == (bUndo))
+                                                                                            sIcons = sIcons + (GanttOptions.UNDO);
+                                                                                        else
+                                                                                            if (((TestGanttRolloverButton) (list.elementAt(i))) == (bRedo))
+                                                                                                sIcons = sIcons + (GanttOptions.REDO);
+                                                                                            else
+                                                                                                if (((TestGanttRolloverButton) (list.elementAt(i))) == (bCritical))
+                                                                                                    sIcons = sIcons + (GanttOptions.CRITICAL);
+                                                                                                else
+                                                                                                    if (((TestGanttRolloverButton) (list.elementAt(i))) == (bAbout))
+                                                                                                        sIcons = sIcons + (GanttOptions.ABOUT);
+                                                                                                    else
+                                                                                                        if (((TestGanttRolloverButton) (list.elementAt(i))) == (bSaveCurrent))
+                                                                                                            sIcons = sIcons + (GanttOptions.SAVECURRENT);
+                                                                                                        else
+                                                                                                            if (((TestGanttRolloverButton) (list.elementAt(i))) == (bComparePrev))
+                                                                                                                sIcons = sIcons + (GanttOptions.COMPAREPREV);
+                                                                                                            else
+                                                                                                                if (((TestGanttRolloverButton) (list.elementAt(i))) == (bRefresh))
+                                                                                                                    sIcons = sIcons + (GanttOptions.REFRESH);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+    return sIcons;
+}

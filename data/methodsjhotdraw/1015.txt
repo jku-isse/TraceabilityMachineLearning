@@ -1,0 +1,7 @@
+/**
+ * Returns true, if the given handle is an instance of the same
+ * class or of a subclass of this handle,.
+ */
+public boolean isCombinableWith(Handle handle) {
+    return getClass().isAssignableFrom(handle.getClass());
+}

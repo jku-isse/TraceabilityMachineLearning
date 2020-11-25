@@ -1,0 +1,11 @@
+/**
+ * Initialize the component.
+ */
+public void initialize() {
+    cbAutomatic.setSelected(appli.getOptions().getAutomatic());
+    // cbDrag.setSelected(appli.getOptions().getDragTime());
+    tfTaskPrefix.setText(appli.getOptions().getTaskNamePrefix());
+    spLockDAV.setValue(new Integer(appli.getOptions().getLockDAVMinutes()));
+    // spUndoNumber.setValue(new
+    // Integer(appli.getOptions().getUndoNumber()));
+}

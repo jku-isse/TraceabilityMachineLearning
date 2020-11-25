@@ -1,0 +1,5 @@
+protected void basicSetPresentationFigureBounds(Point2D.Double anchor, Point2D.Double lead) {
+    if ((getPresentationFigure()) != null) {
+        getPresentationFigure().setBounds(anchor, lead);
+    }
+}

@@ -1,0 +1,10 @@
+public void testCheckRole() throws Exception {
+    gen.patient2();
+    gen.hcp0();
+    gen.uap1();
+    assertEquals("patient", action.checkRole(2L, "patient"));
+    assertEquals("hcp", action.checkRole(9000000000L, "hcp"));
+    assertEquals("uap", action.checkRole(8000000009L, "uap"));
+    assertEquals(null, action.checkRole(0L, "admin"));
+    assertEquals(null, action.checkRole(0L, "HCP"));
+}

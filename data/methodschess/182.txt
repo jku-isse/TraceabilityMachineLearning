@@ -1,0 +1,10 @@
+/**
+ * Notifies all registered listeners that the engine has taken a change.
+ */
+public void notifyListeners() {
+    Iterator iterator = listeners.iterator();
+    while (iterator.hasNext()) {
+        EngineStatusListener listener = ((EngineStatusListener) (iterator.next()));
+        listener.engineStatusChanged(this);
+    } 
+}

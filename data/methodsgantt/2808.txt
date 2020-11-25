@@ -1,0 +1,6 @@
+public void mousePressed(MouseEvent e) {
+    if ((myAutoRepeatMilliseconds) > 0) {
+        myWorker = new TestGanttRolloverButton.Worker(e);
+        myWorker.start();
+    }
+}

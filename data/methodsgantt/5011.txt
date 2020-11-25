@@ -1,0 +1,10 @@
+State(Object context, Object font) {
+    this.context = context;
+    this.font = font;
+    if (context == null) {
+        throw new NullPointerException();
+    }
+    if (font == null) {
+        throw new NullPointerException();
+    }
+}

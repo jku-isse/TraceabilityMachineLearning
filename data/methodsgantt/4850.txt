@@ -1,0 +1,3 @@
+protected TextFormatter getTextFormatter() {
+    return myTextFormatter;
+}

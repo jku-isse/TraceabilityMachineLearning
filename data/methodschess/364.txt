@@ -1,0 +1,20 @@
+/**
+ * Prepare the test(s).
+ */
+protected void setUp() {
+    // Create a new game.
+    _game = new GameImpl();
+    // Create a new board.
+    _board = new BitBoardImpl();
+    // Create the ply generator.
+    _plyGenerator = new PlyGenerator(_game, ((BitBoard) (_board)), new PlyHashtableImpl(100));
+    // And the analyzer.
+    _analyzer = new BitBoardAnalyzerImpl(_game, _plyGenerator);
+    _plyGenerator.setAnalyzer(_analyzer);
+    // Set the pieces on their initial positions.
+    _board.initialPosition();
+    // Perform the moves to get to the tested board position.
+    for (int i = 0; i < (_prevMoves.length); i++) {
+        doPly(new PlyImpl(new PositionImpl(_prevMoves[i][0]), new PositionImpl(_prevMoves[i][1]), false));
+    }
+}

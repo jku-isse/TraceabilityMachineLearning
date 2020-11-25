@@ -1,0 +1,14 @@
+@Override
+protected void setUp() throws Exception {
+    super.setUp();
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.standardData();
+    this.pateientId = 2L;
+    this.hcpId = 9000000000L;
+    this.factory = TestDAOFactory.getTestInstance();
+    this.adverseDAO = new AdverseEventDAO(this.factory);
+    this.advAction = new ReportAdverseEventAction(String.valueOf(this.hcpId), this.factory, this.pateientId);
+    this.advMultiAction = new ReportAdverseEventAction(this.factory, this.pateientId);
+    // this.gCal = new GregorianCalendar();
+}

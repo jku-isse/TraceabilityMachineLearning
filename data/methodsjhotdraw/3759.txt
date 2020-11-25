@@ -1,0 +1,4 @@
+public int getDisclosureStateCount() {
+    Integer value = ((Integer) (disclosureButton.getClientProperty(DisclosureIcon.STATE_COUNT_PROPERTY)));
+    return value == null ? 2 : value;
+}

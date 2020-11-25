@@ -1,0 +1,3 @@
+public void setTransform(AffineTransform tx) {
+    transform = tx;
+}

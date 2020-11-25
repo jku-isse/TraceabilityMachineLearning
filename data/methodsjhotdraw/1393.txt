@@ -1,0 +1,11 @@
+/**
+ * Removes the specified child.
+ * Returns true, if the Figure contained the removed child.
+ * <p>
+ * This is a convenience method for calling
+ * {@code removeChild(getChildren().indexOf(child));}
+ * <p>
+ * This method calls {@code figureRemoved} on all registered
+ * {@code CompositeFigureListener}s.
+ */
+public boolean remove(Figure child);

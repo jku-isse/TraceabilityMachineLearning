@@ -1,0 +1,3 @@
+public ViewTagHandler(UIFacade uiFacade) {
+    myUIFacade = uiFacade;
+}

@@ -1,0 +1,7 @@
+public void testAddCPTCodeEvil() throws FormValidationException {
+    action = new UpdateCPTCodeListAction(evil, UpdateCPTCodeListActionTest.performingAdmin);
+    final String code = "9999F";
+    final String desc = "testAddCPTCode";
+    ProcedureBean proc = new ProcedureBean(code, desc);
+    assertEquals("A database exception has occurred. Please see the log in the console for stacktrace", action.addCPTCode(proc));
+}

@@ -1,0 +1,15 @@
+public void setActive(boolean b) {
+    if (false == b) {
+        for (int i = 0; i < (myExporters.length); i++) {
+            if ((myExporters[i].getOptions()) != null) {
+                myExporters[i].getOptions().commit();
+            }
+        }
+    } else {
+        for (int i = 0; i < (myExporters.length); i++) {
+            if ((myExporters[i].getOptions()) != null) {
+                myExporters[i].getOptions().lock();
+            }
+        }
+    }
+}

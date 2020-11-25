@@ -1,0 +1,8 @@
+/**
+ * For exceptions which show a lot of technical detail, usually delegated to a subclass
+ *
+ * @return 
+ */
+public String getExtendedMessage() {
+    return "No extended information.";
+}

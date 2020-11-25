@@ -1,0 +1,14 @@
+@Override
+protected void setUp() throws Exception {
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.labProcedures();
+    // first procedure
+    l1 = new LabProcedureBean();
+    l1.setPid(3L);
+    l1.setOvID(905L);
+    l1.setLoinc("10763-1");
+    l1.statusComplete();
+    l1.setCommentary("");
+    // l1.setStatus("");
+}

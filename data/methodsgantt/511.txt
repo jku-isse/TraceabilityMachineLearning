@@ -1,0 +1,3 @@
+public GanttLanguage getI18n() {
+    return getLanguage();
+}

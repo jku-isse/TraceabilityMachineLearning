@@ -1,0 +1,8 @@
+public void repaint2() {
+    getResourcePanel().getResourceTreeTableModel().updateResources();
+    getResourcePanel().getResourceTreeTable().setRowHeight(20);
+    if ((myDelayManager) != null) {
+        myDelayManager.fireDelayObservation();
+    }
+    super.repaint();
+}

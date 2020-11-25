@@ -1,0 +1,3 @@
+public void remove(DateIntervalListEditor.DateInterval interval) {
+    myIntervals.remove(interval);
+}

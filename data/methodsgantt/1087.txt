@@ -1,0 +1,9 @@
+Component getComponent() {
+    if ((myTabContentPanel) == null) {
+        myTabContentPanel = new JPanel(new BorderLayout());
+        Component buttonPanel = createButtonPanel();
+        myTabContentPanel.add(buttonPanel, BorderLayout.NORTH);
+        myTabContentPanel.add(myTreeFacade.getUIComponent(), BorderLayout.CENTER);
+    }
+    return myTabContentPanel;
+}

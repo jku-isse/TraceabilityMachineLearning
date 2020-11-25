@@ -1,0 +1,5 @@
+public JPaintList(Paint[] list) {
+    super(list);
+    setCellRenderer(new PaintCellRenderer());
+    setSelectedIndex(0);
+}

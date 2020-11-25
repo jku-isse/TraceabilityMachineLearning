@@ -1,0 +1,135 @@
+/**
+ * Constructor.
+ */
+public LnFSettingsPanel(GanttProject parent) {
+    super(GanttLanguage.getInstance().getText("looknfeel"), GanttLanguage.getInstance().getText("settingsLooknFeel"), parent);
+    appli = parent;
+    // create the combo box with all languages
+    cbLnf = new JComboBox();
+    cbLnf.setName("comboLnf");
+    // cbLnf.addActionListener(this);
+    GanttLookAndFeelInfo[] lookAndFeels = GanttLookAndFeels.getGanttLookAndFeels().getInstalledLookAndFeels();
+    for (int i = 0; i < (lookAndFeels.length); i++) {
+        cbLnf.addItem(lookAndFeels[i]);
+    }
+    cbLnf.addItemListener(this);
+    JPanel languagePanel = new JPanel(new BorderLayout());
+    languagePanel.add(cbLnf, BorderLayout.NORTH);
+    vb.add(languagePanel);
+    vb.add(new JPanel());
+    // use small icons
+    JPanel iconTextPanel = new JPanel(new FlowLayout());
+    iconTextPanel.add(new JLabel(language.getText("show")));
+    iconTextPanel.add((cbButtonType = new JComboBox()));
+    cbButtonType.addItem(language.getText("buttonIcon"));
+    cbButtonType.addItem(language.getText("buttonIconText"));
+    cbButtonType.addItem(language.getText("buttonText"));
+    iconTextPanel.add(new JLabel("  "));
+    iconTextPanel.add((cbSmallIcon = new JCheckBox()));
+    iconTextPanel.add(new JLabel(language.getText("useSmalIcons")));
+    JPanel iconTextPanel2 = new JPanel(new BorderLayout());
+    iconTextPanel2.add(iconTextPanel, BorderLayout.WEST);
+    vb.add(iconTextPanel2);
+    vb.add(new JPanel());
+    // // status bar setting
+    // JPanel statusPanel = new JPanel(new BorderLayout());
+    // statusPanel.add(cbShowStatus = new JCheckBox(), BorderLayout.WEST);
+    // statusPanel.add(new JLabel(language.getText("showStatusBar")),
+    // BorderLayout.CENTER);
+    // vb.add(statusPanel);
+    // vb.add(new JPanel());
+    JPanel positionPanel = new JPanel(new FlowLayout());
+    JPanel currentPanel = new JPanel(new BorderLayout());
+    JPanel deletedPanel = new JPanel(new BorderLayout());
+    currentPanel.add(new JLabel(language.getText("currentToolBar")), BorderLayout.NORTH);
+    deletedPanel.add(new JLabel(language.getText("availableToolBar")), BorderLayout.NORTH);
+    /* iconList = new DefaultListModel (); buttonList = new DefaultListModel
+    (); for (int i = 0 ; i < appli.getButtonList().size() ; i++)
+    buttonList.addElement(appli.getButtonList().getElementAt(i)); for
+    (int i = 0 ; i < buttonList.size() ; i++) { if
+    (buttonList.elementAt(i).equals(language.getText("separator").toUpperCase()))
+    iconList.addElement (buttonList.getElementAt(i)); else { if
+    (((TestGanttRolloverButton)buttonList.getElementAt(i)).getIcon() ==
+    null) iconList.addElement
+    (((TestGanttRolloverButton)buttonList.getElementAt(i)).getText());
+    else iconList.addElement
+    (((TestGanttRolloverButton)buttonList.getElementAt(i)).getIcon()); } }
+     */
+    list = new JList();
+    listDeleted = new JList();
+    listDeleted.setName("listDeleted");
+    scrollPane = new JScrollPane(listDeleted);
+    scrollPane.setPreferredSize(new Dimension(110, 200));
+    deletedPanel.add(scrollPane, BorderLayout.EAST);
+    // list = new JList(iconList);
+    list.setName("list");
+    scrollPane = new JScrollPane(list);
+    scrollPane.setPreferredSize(new Dimension(110, 200));
+    currentPanel.add(scrollPane, BorderLayout.EAST);
+    Box currentButtonBox = Box.createVerticalBox();
+    Box deletedButtonBox = Box.createVerticalBox();
+    JButton bUp = new JButton();
+    bUp.setIcon(new ImageIcon(getClass().getResource("/icons/up_16.gif")));
+    bUp.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("upTask"))));
+    bUp.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            upButtonActionPerformed(evt);
+        }
+    });
+    JButton bDown = new JButton();
+    bDown.setIcon(new ImageIcon(getClass().getResource("/icons/down_16.gif")));
+    bDown.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("downTask"))));
+    bDown.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            downButtonActionPerformed(evt);
+        }
+    });
+    JButton bSeparator = new JButton();
+    bSeparator.setIcon(new ImageIcon(getClass().getResource("/icons/separator_16.gif")));
+    bSeparator.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("separator"))));
+    bSeparator.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            separatorButtonActionPerformed(evt);
+        }
+    });
+    JButton bDelete = new JButton();
+    bDelete.setIcon(new ImageIcon(getClass().getResource("/icons/indent_16.gif")));
+    bDelete.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("delete"))));
+    bDelete.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            deleteButtonActionPerformed(evt);
+        }
+    });
+    JButton bAdd = new JButton();
+    bAdd.setIcon(new ImageIcon(getClass().getResource("/icons/unindent_16.gif")));
+    bAdd.setToolTipText(GanttProject.getToolTip(GanttProject.correctLabel(language.getText("add"))));
+    bAdd.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            addButtonActionPerformed(evt);
+        }
+    });
+    currentButtonBox.add(new JPanel());
+    currentButtonBox.add(new JPanel());
+    currentButtonBox.add(bUp);
+    currentButtonBox.add(new JPanel());
+    currentButtonBox.add(bDown);
+    currentButtonBox.add(new JPanel());
+    currentButtonBox.add(new JPanel());
+    deletedButtonBox.add(new JPanel());
+    deletedButtonBox.add(new JPanel());
+    deletedButtonBox.add(bAdd);
+    deletedButtonBox.add(new JPanel());
+    deletedButtonBox.add(bDelete);
+    deletedButtonBox.add(new JPanel());
+    deletedButtonBox.add(new JPanel());
+    positionPanel.add(currentButtonBox);
+    positionPanel.add(currentPanel);
+    positionPanel.add(new JPanel());
+    positionPanel.add(deletedButtonBox);
+    positionPanel.add(new JPanel());
+    positionPanel.add(deletedPanel);
+    positionPanel.add(new JPanel());
+    vb.add(positionPanel);
+    vb.add(new JPanel());
+    applyComponentOrientation(language.getComponentOrientation());
+}

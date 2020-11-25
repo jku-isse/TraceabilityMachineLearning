@@ -1,0 +1,3 @@
+public void setHandleAttribute(AttributeKey key, Object value) {
+    handleAttributes.put(key, value);
+}

@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public PertFactory() {
+    for (Object[] o : PertFactory.classTagArray) {
+        addStorableClass(((String) (o[1])), ((Class) (o[0])));
+    }
+}

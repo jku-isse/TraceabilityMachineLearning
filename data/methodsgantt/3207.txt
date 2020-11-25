@@ -1,0 +1,3 @@
+public int getSelected() {
+    return nameComboBox.getSelectedIndex();
+}

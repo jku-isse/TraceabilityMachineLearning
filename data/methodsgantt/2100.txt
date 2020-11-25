@@ -1,0 +1,3 @@
+protected WestPointVector(Point point) {
+    super(point);
+}

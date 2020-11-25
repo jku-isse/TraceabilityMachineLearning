@@ -1,0 +1,6 @@
+/**
+ * Change date to next month.
+ */
+public void goNextMonth() {
+    this.add(Calendar.MONTH, 1);
+}

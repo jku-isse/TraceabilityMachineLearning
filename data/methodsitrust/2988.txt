@@ -1,0 +1,32 @@
+/**
+ * Assign a representer to the representee
+ *
+ * @param representer
+ * 		The MID of the representer as a long.
+ * @param representee
+ * 		The MID of the representee as a long.
+ * @return A boolean as to whether the insertion was correct.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public boolean addRepresentative(long representer, long representee) throws DBException, iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO representatives(RepresenterMID,RepresenteeMID) VALUES (?,?)");
+        ps.setLong(1, representer);
+        ps.setLong(2, representee);
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        if (1062 == (e.getErrorCode()))
+            throw new iTrustException(((("Patient " + representer) + " already represents patient ") + representee));
+
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,3 @@
+public PreparedStatement loadParameters(PreparedStatement ps, VerboseReferralBean ref) throws SQLException {
+    throw new RuntimeException("Not Implemented");
+}

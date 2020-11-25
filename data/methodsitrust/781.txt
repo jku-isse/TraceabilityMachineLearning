@@ -1,0 +1,25 @@
+/**
+ * Takes the patients representee as a param and returns it as a long if the patient represents the input
+ * param
+ *
+ * @param input
+ * 		the patients representee mid
+ * @return representees mid as a long
+ * @throws iTrustException
+ * 		
+ */
+public long representPatient(String input) throws iTrustException {
+    try {
+        long reppeeMID = Long.valueOf(input);
+        if (patientDAO.represents(loggedInMID, reppeeMID)) {
+            loggedInMID = reppeeMID;
+            pid = reppeeMID;
+            isRepresenting = true;
+            return reppeeMID;
+        } else
+            throw new iTrustException(("You do not represent patient " + reppeeMID));
+
+    } catch (NumberFormatException e) {
+        throw new iTrustException("MID is not a number");
+    }
+}

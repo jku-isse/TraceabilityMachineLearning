@@ -1,0 +1,12 @@
+/**
+ * Use this method to perform a typeface put operation of an attribute
+ * into a Map.
+ *
+ * @param a
+ * 		An attribute map.
+ * @param value
+ * 		The new value.
+ */
+public void set(Map<AttributeKey, Object> a, T value) {
+    put(a, value);
+}

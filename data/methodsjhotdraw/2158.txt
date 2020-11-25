@@ -1,0 +1,6 @@
+public void trackStart(Point anchor, int modifiersEx, DrawingView view) {
+    view.getDrawing().fireUndoableEditHappened((edit = new CompositeEdit()));
+    for (Handle h : handles) {
+        h.trackStart(anchor, modifiersEx);
+    }
+}

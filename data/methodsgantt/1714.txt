@@ -1,0 +1,3 @@
+public String toString() {
+    return (("end date: " + (myOffsetEnd)) + " end pixel: ") + (myOffsetPixels);
+}

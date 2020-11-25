@@ -1,0 +1,8 @@
+public void testFilterHCPListByName() {
+    // Filter on last name only.
+    List<HCPVisitBean> beanslist = action.filterHCPList("Frank", "", "");
+    ArrayList<HCPVisitBean> beans = new ArrayList<HCPVisitBean>(beanslist);
+    assertEquals(2, beans.size());
+    assertEquals("Jason Frankenstein", beans.get(1).getHCPName());
+    assertEquals("Lauren Frankenstein", beans.get(0).getHCPName());
+}

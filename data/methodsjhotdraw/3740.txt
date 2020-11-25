@@ -1,0 +1,3 @@
+public boolean isMultipleValues() {
+    return isMultipleValues;
+}

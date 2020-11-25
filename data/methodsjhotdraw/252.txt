@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public AbstractSaveBeforeAction(Application app) {
+    super(app);
+}

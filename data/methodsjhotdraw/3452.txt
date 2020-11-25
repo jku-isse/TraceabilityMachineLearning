@@ -1,0 +1,14 @@
+/**
+ * Gets the size of this <code>Dimension2DDouble</code> object.
+ * This method is included for completeness, to parallel the
+ * <code>getSize</code> method defined by <code>Component</code>.
+ *
+ * @return the size of this dimension, a new instance of
+<code>Dimension2DDouble</code> with the same width and height
+ * @see Dimension2DDouble#setSize
+ * @see java.awt.Component#getSize
+ * @since JDK1.1
+ */
+public Dimension2DDouble getSize() {
+    return new Dimension2DDouble(width, height);
+}

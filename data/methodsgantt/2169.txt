@@ -1,0 +1,3 @@
+public Portfolio getPortfolio() {
+    throw new UnsupportedOperationException();
+}

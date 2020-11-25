@@ -1,0 +1,3 @@
+public TaskContainmentHierarchyFacade getTaskContainment() {
+    return getTaskManager().getTaskHierarchy();
+}

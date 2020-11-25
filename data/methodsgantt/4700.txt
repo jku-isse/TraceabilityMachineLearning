@@ -1,0 +1,9 @@
+public TaskDependencyImpl(Task dependant, Task dependee, TaskDependencyCollectionImpl collection) {
+    myDependant = dependant;
+    myDependee = dependee;
+    myCollection = collection;
+    if ((dependee == null) || (dependant == null)) {
+        throw new IllegalArgumentException(((("invalid participants of dependency: dependee=" + dependee) + " dependant=") + dependant));
+    }
+    myHardness = TaskDependency.Hardness.STRONG;
+}

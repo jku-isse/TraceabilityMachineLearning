@@ -1,0 +1,10 @@
+public void setDelay(final Task task, final Delay delay) {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            TaskNode taskNode = ((TaskNode) (getNode(task.getTaskID())));
+            if (taskNode != null)
+                treetable.setDelay(taskNode, delay);
+
+        }
+    });
+}

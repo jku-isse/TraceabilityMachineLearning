@@ -1,0 +1,13 @@
+/**
+ * Return the information of the mother and father of this patient
+ *
+ * @param pid
+ * 		-
+ * 		this patient
+ * @return 
+ * @throws DBException
+ * 		
+ */
+public List<FamilyMemberBean> getParents(long pid) throws DBException {
+    return getFamilyMembers(pid, "Parent", ("SELECT p2.FirstName AS FirstName, p2.LastName AS LastName, p2.MID as MID " + ("FROM patients p1, patients p2 " + "WHERE p1.MID=? AND (p1.MotherMID=p2.MID OR p1.FatherMID=p2.MID)")), false);
+}

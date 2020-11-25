@@ -1,0 +1,7 @@
+public TriangleFigure(double x, double y, double width, double height, AttributeKeys.Orientation direction) {
+    rectangle = new Rectangle2D.Double(x, y, width, height);
+    /* setFillColor(Color.white);
+    setStrokeColor(Color.black);
+     */
+    AttributeKeys.ORIENTATION.basicSet(this, direction);
+}

@@ -1,0 +1,15 @@
+/**
+ * Constructor.
+ */
+public RolesSettingsPanel(GanttProject parent) {
+    super(GanttProject.correctLabel(GanttLanguage.getInstance().getText("resourceRole")), GanttLanguage.getInstance().getText("settingsRoles"), parent);
+    appli = parent;
+    myRolesModel = new RolesTableModel();
+    rolesTable = new JTable(myRolesModel);
+    rolesTable.setPreferredScrollableViewportSize(new Dimension(400, 350));
+    rolesTable.setRowHeight(23);
+    rolesTable.getColumnModel().getColumn(0).setPreferredWidth(30);
+    rolesTable.getColumnModel().getColumn(1).setPreferredWidth(370);
+    vb.add(new JScrollPane(rolesTable));
+    applyComponentOrientation(language.getComponentOrientation());
+}

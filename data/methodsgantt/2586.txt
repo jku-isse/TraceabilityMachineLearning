@@ -1,0 +1,6 @@
+public static GanttLookAndFeels getGanttLookAndFeels() {
+    if ((GanttLookAndFeels.singleton) == null) {
+        GanttLookAndFeels.singleton = new GanttLookAndFeels();
+    }
+    return GanttLookAndFeels.singleton;
+}

@@ -1,0 +1,7 @@
+/**
+ * set a new text to the message.
+ */
+public void setText(String text, int mltimer) {
+    message.setText(text);
+    timer = mltimer;
+}

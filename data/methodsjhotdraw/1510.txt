@@ -1,0 +1,18 @@
+public void trackStep(Point anchor, Point lead, int modifiersEx) {
+    // updateConnectors(lead);
+    Point2D.Double p = view.viewToDrawing(lead);
+    fireAreaInvalidated(getDrawingArea());
+    Figure figure = findConnectableFigure(p, view.getDrawing());
+    if (figure != (connectableFigure)) {
+        connectableFigure = figure;
+        repaintConnectors();
+    }
+    connectableConnector = findConnectableConnector(figure, p);
+    if ((connectableConnector) != null) {
+        p = connectableConnector.getAnchor();
+    }
+    getConnection().willChange();
+    getConnection().setEndPoint(p);
+    getConnection().changed();
+    fireAreaInvalidated(getDrawingArea());
+}

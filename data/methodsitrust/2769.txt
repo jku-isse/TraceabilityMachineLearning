@@ -1,0 +1,8 @@
+public void testFailGetLabProcedures() throws Exception {
+    try {
+        lpDAO.getLabProceduresForLHCPForNextMonth(0L);
+        fail();
+    } catch (DBException e) {
+        assertEquals("OfficeVisitID cannot be null", e.getExtendedMessage());
+    }
+}

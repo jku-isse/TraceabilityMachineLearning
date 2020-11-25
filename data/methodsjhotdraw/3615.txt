@@ -1,0 +1,10 @@
+public Collection<T> findIntersects(Rectangle2D.Double r) {
+    HashSet<T> result = new HashSet<T>();
+    root.findIntersects(r, result);
+    for (Map.Entry<T, Rectangle2D.Double> entry : outside.entrySet()) {
+        if (entry.getValue().intersects(r)) {
+            result.add(entry.getKey());
+        }
+    }
+    return result;
+}

@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @param source
+ * 		
+ */
+public ResourceEvent(ResourceManager mgr, ProjectResource resource) {
+    super(mgr);
+    myManager = mgr;
+    myResource = resource;
+    myResources = new ProjectResource[]{ myResource };
+}

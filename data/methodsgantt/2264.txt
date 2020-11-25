@@ -1,0 +1,18 @@
+public HttpDocument(String url, String user, String pass) {
+    this.url = url;
+    try {
+        httpURL = new HttpURL(url);
+        if ((user == null) || ((user.length()) == 0))
+            user = httpURL.getUser();
+
+        if ((pass == null) || ((pass.length()) == 0))
+            pass = httpURL.getPassword();
+
+        if (user != null)
+            httpURL.setUserinfo(user, pass);
+
+    } catch (URIException e) {
+        lastError = e.getMessage();
+        malformedURL = true;
+    }
+}

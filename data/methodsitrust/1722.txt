@@ -1,0 +1,8 @@
+/**
+ * Gets the priority of the lab procedure
+ *
+ * @return the priority code
+ */
+public int getPriorityCode() {
+    return priorityCode;
+}

@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the dosage
+ */
+public String getDosage() {
+    return dosage;
+}

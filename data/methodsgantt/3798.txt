@@ -1,0 +1,3 @@
+public DefaultListModel getDaysOff() {
+    return myDaysOffList;
+}

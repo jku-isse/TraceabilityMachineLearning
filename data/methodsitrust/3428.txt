@@ -1,0 +1,15 @@
+public void testAddDupe() throws DBException, iTrustException, SQLException {
+    clearNDCodes();
+    final String code = "000000000";
+    final String descrip0 = "testAddDupe description";
+    MedicationBean proc = genericAdd(code, descrip0);
+    try {
+        proc.setDescription("");
+        ndDAO.addNDCode(proc);
+        fail("NDCodeTest.testAddDupe failed to catch dupe");
+    } catch (iTrustException e) {
+        assertEquals("Error: Code already exists.", e.getMessage());
+        proc = ndDAO.getNDCode(code);
+        assertEquals(descrip0, proc.getDescription());
+    }
+}

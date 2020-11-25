@@ -1,0 +1,3 @@
+public FontFamilyNode(String name) {
+    this.name = name;
+}

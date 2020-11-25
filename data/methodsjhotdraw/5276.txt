@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public CombineAction(DrawingEditor editor) {
+    this(editor, new SVGPathFigure(true), true);
+}

@@ -1,0 +1,4 @@
+public void testJustSibling() throws Exception {
+    factor = new FamilyHistoryFactor(factory, 6L, 250.0, 251.0);
+    assertTrue(factor.hasRiskFactor());
+}

@@ -1,0 +1,3 @@
+public void setComponentIndex(int newValue) {
+    this.componentIndex = newValue;
+}

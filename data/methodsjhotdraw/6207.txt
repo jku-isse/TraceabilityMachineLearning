@@ -1,0 +1,4 @@
+public FontFormatter(boolean allowsNullValue) {
+    this.allowsNullValue = allowsNullValue;
+    setOverwriteMode(false);
+}

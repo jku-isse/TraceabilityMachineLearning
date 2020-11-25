@@ -1,0 +1,11 @@
+/**
+ * Removes a ChangeListener.
+ *
+ * @param l
+ * 		the ChangeListener to remove
+ * @see #addChangeListener
+ * @see BoundedRangeModel#removeChangeListener
+ */
+public void removeChangeListener(ChangeListener l) {
+    listenerList_.remove(ChangeListener.class, l);
+}

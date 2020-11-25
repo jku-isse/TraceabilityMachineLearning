@@ -1,0 +1,5 @@
+/**
+ * Stops the view.
+ * Invoked after a view window has been minimized or made invisible.
+ */
+public void stop();

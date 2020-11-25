@@ -1,0 +1,3 @@
+private Action getRealRedoAction() {
+    return (getActiveView()) == null ? null : getActiveView().getAction(RedoAction.ID);
+}

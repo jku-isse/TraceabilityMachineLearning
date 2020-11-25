@@ -1,0 +1,8 @@
+public void testCheckHCPIDEvil() {
+    try {
+        action = new ManageHospitalAssignmentsAction(evil, ManageHospitalAssignmentsActionTest.performingAdmin);
+        action.checkHCPID("9000000000");
+        fail();
+    } catch (iTrustException e) {
+    }
+}

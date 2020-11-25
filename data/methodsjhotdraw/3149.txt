@@ -1,0 +1,3 @@
+public void applyDefaultAttributesTo(Figure f) {
+    target.applyDefaultAttributesTo(f);
+}

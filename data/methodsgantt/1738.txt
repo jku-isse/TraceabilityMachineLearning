@@ -1,0 +1,10 @@
+public GPOptionGroup[] getChartOptionGroups() {
+    GPOptionGroup[] superGroups = super.getChartOptionGroups();
+    GPOptionGroup[] rendererGroups = myTaskRendererImpl.getOptionGroups();
+    List result = new ArrayList();
+    result.addAll(Arrays.asList(superGroups));
+    result.addAll(Arrays.asList(rendererGroups));
+    result.add(myDefaultColorOptions);
+    result.add(myStateDiffOptions);
+    return ((GPOptionGroup[]) (result.toArray(new GPOptionGroup[result.size()])));
+}

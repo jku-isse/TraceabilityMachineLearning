@@ -1,0 +1,7 @@
+@Override
+protected void setUp() throws Exception {
+    factor = new SmokingFactor(factory, 2L);
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.patient2();
+}

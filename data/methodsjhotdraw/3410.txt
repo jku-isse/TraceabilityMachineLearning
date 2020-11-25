@@ -1,0 +1,19 @@
+/**
+ * Transforms the BezierPath.
+ *
+ * @param tx
+ * 		the transformation.
+ */
+public void transform(AffineTransform tx) {
+    Point2D.Double p = new Point2D.Double();
+    for (BezierPath.Node cp : this) {
+        for (int i = 0; i < 3; i++) {
+            p.x = cp.x[i];
+            p.y = cp.y[i];
+            tx.transform(p, p);
+            cp.x[i] = p.x;
+            cp.y[i] = p.y;
+        }
+    }
+    invalidatePath();
+}

@@ -1,0 +1,4 @@
+/**
+ * Duplicates the selected region.
+ */
+public void duplicate();

@@ -1,0 +1,9 @@
+public void testEditDiagnosis() throws Exception {
+    action = new EditDiagnosesAction(factory, 9000000000L, "2", "955");
+    DiagnosisBean bean = action.getDiagnoses().get(0);
+    assertEquals("250.10", bean.getICDCode());
+    bean.setICDCode("84.50");
+    action.editDiagnosis(bean);
+    bean = action.getDiagnoses().get(0);
+    assertEquals("84.50", bean.getICDCode());
+}

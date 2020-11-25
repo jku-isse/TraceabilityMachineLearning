@@ -1,0 +1,4 @@
+public void languageChanged(GanttLanguage.Event event) {
+    super.languageChanged(event);
+    initFormats();
+}

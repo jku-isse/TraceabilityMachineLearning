@@ -1,0 +1,10 @@
+public void testPatient1() throws Exception {
+    checker = new HeartDiseaseRisks(factory, 1L);
+    assertTrue(checker.isAtRisk());
+    List<PatientRiskFactor> factors = checker.getPatientRiskFactors();
+    assertEquals(3, factors.size());
+    assertEquals("Patient is over 45", factors.get(0).getDescription());
+    assertEquals("Patients ethnicity is African American", factors.get(1).getDescription());
+    assertEquals("Patient has had related diagnoses", factors.get(2).getDescription());
+    // assertEquals("Patient has a family history of this disease", factors.get(3).getDescription());
+}

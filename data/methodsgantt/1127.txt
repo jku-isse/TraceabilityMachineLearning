@@ -1,0 +1,8 @@
+private void deleteAllColumns() {
+    List customPropsDefinitions = getDefinitions();
+    for (int i = 0; i < (customPropsDefinitions.size()); i++) {
+        CustomPropertyDefinition nextDefinition = ((CustomPropertyDefinition) (customPropsDefinitions.get(i)));
+        deleteCustomColumn(nextDefinition.getName());
+    }
+    ttModel.decreaseCustomPropertyIndex(customPropsDefinitions.size());
+}

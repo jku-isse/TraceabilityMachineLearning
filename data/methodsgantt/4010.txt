@@ -1,0 +1,3 @@
+public int getRoleID() {
+    return myRoleID;
+}

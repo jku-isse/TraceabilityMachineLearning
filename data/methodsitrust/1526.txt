@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return 
+ */
+public ApptBean getRequestedAppt() {
+    return requestedAppt;
+}

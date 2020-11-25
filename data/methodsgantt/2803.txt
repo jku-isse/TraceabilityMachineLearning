@@ -1,0 +1,8 @@
+public void setIcon(Icon icon) {
+    Action a = getAction();
+    if (a != null) {
+        // a.putValue(Action.SMALL_ICON,icon);
+        _iconOn = icon;
+    }
+    super.setIcon(icon);
+}

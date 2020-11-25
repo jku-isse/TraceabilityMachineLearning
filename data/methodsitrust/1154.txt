@@ -1,0 +1,21 @@
+public void testViewMyRecords() throws Exception {
+    assertEquals(pid, action.getPatient().getMID());
+    assertEquals(2, action.getAllergies().size());
+    assertEquals(9, action.getFamily().size());
+    assertEquals(2, action.getAllHealthRecords().size());
+    assertEquals(10, action.getAllOfficeVisits().size());
+    assertEquals(6, action.getRepresented().size());
+    assertEquals(0, action.getRepresenting().size());
+    assertTrue(action.isSurveyCompleted(952));
+    assertEquals(1, action.getLabs().size());
+    action.representPatient("1");
+    assertEquals(1L, action.getPatient().getMID());
+    assertTrue(action.doesFamilyMemberHaveHighBP(fmBean));
+    assertTrue(action.doesFamilyMemberHaveDiabetes(fmBean));
+    assertTrue(action.isFamilyMemberSmoker(fmBean));
+    assertFalse(action.doesFamilyMemberHaveCancer(fmBean));
+    assertFalse(action.doesFamilyMemberHaveHighCholesterol(fmBean));
+    assertFalse(action.doesFamilyMemberHaveHeartDisease(fmBean));
+    assertTrue(action.getFamilyMemberCOD(fmBean).contains("Diabetes"));
+    assertEquals(5, new ViewMyRecordsAction(factory, 5L).getFamilyHistory().size());
+}

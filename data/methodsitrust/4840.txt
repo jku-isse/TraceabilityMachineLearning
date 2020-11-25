@@ -1,0 +1,5 @@
+public void testGoodEmailWithPlus() throws Exception {
+    String value = "disposable.style.email.with+symbol@example.com";
+    String errorMessage = EmailValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, EmailValidatorTest.VALIDATION_FORMAT, false));
+}

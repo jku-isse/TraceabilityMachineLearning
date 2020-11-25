@@ -1,0 +1,10 @@
+protected JMenu createHelpMenu(View p) {
+    ApplicationModel model = getModel();
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+    JMenu m;
+    JMenuItem mi;
+    m = new JMenu();
+    labels.configureMenu(m, "help");
+    m.add(model.getAction(AboutAction.ID));
+    return m;
+}

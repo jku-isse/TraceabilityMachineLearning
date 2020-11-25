@@ -1,0 +1,36 @@
+public final void mGAME_TERMINATOR(boolean _createToken) throws CharStreamException, RecognitionException, TokenStreamException {
+    int _ttype;
+    Token _token = null;
+    int _begin = text.length();
+    _ttype = PGNTokenTypes.GAME_TERMINATOR;
+    int _saveIndex;
+    {
+        switch (LA(1)) {
+            case * :
+                {
+                    match("*");
+                    break;
+                }
+            case 0 :
+                {
+                    match("0-1");
+                    break;
+                }
+            default :
+                if (((LA(1)) == 1) && ((LA(2)) == -)) {
+                    match("1-0");
+                } else
+                    if (((LA(1)) == 1) && ((LA(2)) == /)) {
+                        match("1/2-1/2");
+                    } else {
+                        throw new antlr.NoViableAltForCharException(((char) (LA(1))), getFilename(), getLine());
+                    }
+
+        }
+    }
+    if ((_createToken && (_token == null)) && (_ttype != (Token.SKIP))) {
+        _token = makeToken(_ttype);
+        _token.setText(new String(text.getBuffer(), _begin, ((text.length()) - _begin)));
+    }
+    _returnToken = _token;
+}

@@ -1,0 +1,10 @@
+/**
+ * Returns a list of OfficeVisitBeans for all office visits for the currently logged in patient
+ *
+ * @return a list of OfficeVisitBeans for all office visits for the currently logged in patient
+ * @throws iTrustException
+ * 		
+ */
+public List<OfficeVisitBean> getAllOfficeVisits() throws iTrustException {
+    return ovDAO.getAllOfficeVisits(loggedInMID);
+}

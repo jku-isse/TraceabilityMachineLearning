@@ -1,0 +1,21 @@
+/**
+ * Returns the latest end date.
+ *
+ * @return The latest end date.
+ */
+public Date getLatestEnd() {
+    Date res = null;
+    Iterator it = selectedTasks.iterator();
+    while (it.hasNext()) {
+        Task task = ((Task) (it.next()));
+        Date d = task.getEnd().getTime();
+        if (res == null) {
+            res = d;
+            continue;
+        }
+        if (d.after(res))
+            res = d;
+
+    } 
+    return res;
+}

@@ -1,0 +1,3 @@
+public void setHCPhospital(String hospital) {
+    this.hcpHospitalID = hospital;
+}

@@ -1,0 +1,3 @@
+protected TaskDependency getDependency() {
+    return myDependency;
+}

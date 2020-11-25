@@ -1,0 +1,6 @@
+public void testAll() throws Exception {
+    DiagnosisStatisticsBean dsBean = new DiagnosisStatisticsBean("12346", 2, 5);
+    assertEquals("12346", dsBean.getZipCode());
+    assertEquals(2, dsBean.getZipStats());
+    assertEquals(5, dsBean.getRegionStats());
+}

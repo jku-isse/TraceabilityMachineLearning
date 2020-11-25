@@ -1,0 +1,3 @@
+public void setParent(MutableTreeNode newParent) {
+    this.parent = ((FontCollectionNode) (newParent));
+}

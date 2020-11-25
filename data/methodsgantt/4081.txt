@@ -1,0 +1,9 @@
+/**
+ * Sets the default value.
+ *
+ * @param defaultValue
+ * 		The default value to be set.
+ */
+public void setDefaultValue(Object defaultValue) {
+    this.defaultValue = defaultValue;
+}

@@ -1,0 +1,9 @@
+/**
+ * Calls deactivate on the previously active tool of this drawing editor.
+ * Calls activate on the provided tool.
+ * Forwards all mouse, mouse moation and keyboard events that occur on the
+ * DrawingView to the provided tool.
+ * <p>
+ * This is a bound property.
+ */
+void setTool(Tool t);

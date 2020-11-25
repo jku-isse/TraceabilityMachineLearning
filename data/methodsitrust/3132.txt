@@ -1,0 +1,30 @@
+/**
+ * Adds a Ward
+ *
+ * @param ward
+ * 		The WardBean object to insert.
+ * @return A boolean indicating whether the insertion was successful.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public boolean addWard(WardBean ward) throws DBException, iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("INSERT INTO Wards (RequiredSpecialty, InHospital) " + "VALUES (?,?)"));
+        ps.setString(1, ward.getRequiredSpecialty());
+        ps.setLong(2, ward.getInHospital());
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        e.printStackTrace();
+        if (1062 == (e.getErrorCode()))
+            throw new iTrustException("Error: Ward already exists.");
+
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

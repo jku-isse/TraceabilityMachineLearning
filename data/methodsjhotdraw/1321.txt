@@ -1,0 +1,6 @@
+/**
+ * Gets the connection which is created by this tool
+ */
+protected ConnectionFigure getConnection() {
+    return connection;
+}

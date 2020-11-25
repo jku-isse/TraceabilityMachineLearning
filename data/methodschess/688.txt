@@ -1,0 +1,9 @@
+/**
+ * Set a new notation.
+ *
+ * @param newNotation
+ * 		The new notation.
+ */
+public void setText(String newNotation) {
+    this.jtNotation.setText(newNotation);
+}

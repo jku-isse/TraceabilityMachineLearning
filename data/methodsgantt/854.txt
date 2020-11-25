@@ -1,0 +1,33 @@
+/**
+ * Indent several nodes that are selected. Based on the IndentCurrentNode
+ * method.
+ */
+private void indentCurrentNodes() {
+    final DefaultMutableTreeNode[] cdmtn = getSelectedTaskNodes();
+    if (cdmtn == null) {
+        myUIFacade.setStatusText(language.getText("msg21"));
+        return;
+    }
+    getUndoManager().undoableEdit("Indent", new Runnable() {
+        public void run() {
+            for (int i = 0; i < (cdmtn.length); i++) {
+                // Where is my nearest sibling in ascending order ?
+                DefaultMutableTreeNode newFather = cdmtn[i].getPreviousSibling();
+                // If there is no more indentation possible we must stop
+                if (!(newFather instanceof TaskNode)) {
+                    continue;
+                }
+                if (((cdmtn[i]) instanceof TaskNode) && (newFather instanceof TaskNode)) {
+                    Task nextTask = ((Task) (cdmtn[i].getUserObject()));
+                    Task container = ((Task) (newFather.getUserObject()));
+                    if (!(getTaskManager().getDependencyCollection().canCreateDependency(container, nextTask))) {
+                        continue;
+                    }
+                    getTaskManager().getTaskHierarchy().move(nextTask, container);
+                }
+            }
+            area.repaint();
+            appli.repaint2();
+        }
+    });
+}

@@ -1,0 +1,3 @@
+public String getProjectWeekendPageTitle() {
+    return GanttLanguage.getInstance().getText("selectProjectWeekend");
+}

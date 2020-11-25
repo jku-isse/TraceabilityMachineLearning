@@ -1,0 +1,16 @@
+/**
+ * Run the actual test.
+ */
+private void analyzerTest2() {
+    prepareTest();
+    // Move the black pawn to e5 and analyze the board
+    doPly(new PlyImpl(new PositionImpl("e7"), new PositionImpl("e5"), false));
+    // Do the 1st analysis
+    short score1 = _analyzer.analyze(((BitBoard) (_board)), true);
+    prepareTest();
+    doPly(new PlyImpl(new PositionImpl("g8"), new PositionImpl("h6"), false));
+    // Analyze the board after the ply
+    short score2 = _analyzer.analyze(((BitBoard) (_board)), false);
+    // Check if the 2nd board is better for white.
+    assertTrue("Analyzer prefers pawn move", (score2 > score1));
+}

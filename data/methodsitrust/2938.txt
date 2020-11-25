@@ -1,0 +1,29 @@
+/**
+ * Gets the lab procedures for a given LHCP that occur within the next month.
+ *
+ * @param ovid
+ * 		The Office Visit ID conducted by the LHCP in question.
+ * @return A java.util.List of LabProcedureBeans.
+ * @throws DBException
+ * 		
+ */
+public List<LabProcedureBean> getLabProceduresForLHCPForNextMonth(long ovid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (ovid == 0L)
+            throw new SQLException("OfficeVisitID cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM labprocedure WHERE OfficeVisitID = ? AND Status = ? AND (DateDiff(SYSDATE(),UpdatedDate) <= 30) ORDER BY UpdatedDate DESC");
+        ps.setLong(1, ovid);
+        ps.setString(2, LabProcedureBean.Completed);
+        ResultSet rs = ps.executeQuery();
+        return labProcedureLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((JPopupButtonBeanInfo.beanDescriptor) == null)
+        JPopupButtonBeanInfo.beanDescriptor = new BeanDescriptor(JPopupButtonBeanInfo.class);
+
+    JPopupButtonBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    JPopupButtonBeanInfo.beanDescriptor.setDisplayName("JPopupButton");
+    return JPopupButtonBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

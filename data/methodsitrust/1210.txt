@@ -1,0 +1,10 @@
+/**
+ * Get all office visits for this patient that contain instructions.
+ *
+ * @return A list of office visit beans.
+ * @throws DBException
+ * 		
+ */
+public List<OfficeVisitBean> getOfficeVisitsWithInstructions() throws DBException {
+    return instructionsDAO.getOfficeVisitsWithInstructions(getPid());
+}

@@ -1,0 +1,57 @@
+protected void drawBackground(Graphics2D g) {
+    // Position of the zero coordinate point on the view
+    int x = ((int) ((-(translate.x)) * (scaleFactor)));
+    int y = ((int) ((-(translate.y)) * (scaleFactor)));
+    int w = getWidth();
+    int h = getHeight();
+    // Retrieve the canvasColor color from the drawing
+    Color canvasColor;
+    if ((drawing) == null) {
+        canvasColor = getBackground();
+    } else {
+        canvasColor = AttributeKeys.CANVAS_FILL_COLOR.get(drawing);
+        if (canvasColor != null) {
+            canvasColor = new Color((((canvasColor.getRGB()) & 16777215) | (((int) ((AttributeKeys.CANVAS_FILL_OPACITY.get(drawing)) * 255)) << 24)), true);
+        }
+    }
+    if ((canvasColor == null) || ((canvasColor.getAlpha()) != 255)) {
+        g.setPaint(getBackgroundPaint(x, y));
+        g.fillRect(x, y, (w - x), (h - y));
+    }
+    if (canvasColor != null) {
+        g.setColor(canvasColor);
+        g.fillRect(x, y, (w - x), (h - y));
+    }
+    // Draw a gray canvasColor for the area which is at
+    // negative view coordinates.
+    Color outerBackground = new Color(15790320);
+    if (y > 0) {
+        g.setColor(outerBackground);
+        g.fillRect(0, 0, w, y);
+    }
+    if (x > 0) {
+        g.setColor(outerBackground);
+        g.fillRect(0, y, x, (h - y));
+    }
+    if ((getDrawing()) != null) {
+        Double cw = AttributeKeys.CANVAS_WIDTH.get(getDrawing());
+        Double ch = AttributeKeys.CANVAS_HEIGHT.get(getDrawing());
+        if ((cw != null) && (ch != null)) {
+            Point lowerRight = drawingToView(new Point2D.Double(cw, ch));
+            if ((lowerRight.x) < w) {
+                g.setColor(outerBackground);
+                g.fillRect(lowerRight.x, y, (w - (lowerRight.x)), (h - y));
+            }
+            if ((lowerRight.y) < h) {
+                g.setColor(outerBackground);
+                g.fillRect(x, lowerRight.y, (w - x), (h - (lowerRight.y)));
+            }
+        }
+    }
+    /* //Fill canvasColor with alternating colors to debug clipping
+    rainbow = (rainbow + 10) % 360;
+    g.setColor(
+    new Color(Color.HSBtoRGB((float) (rainbow / 360f), 0.3f, 1.0f)));
+    g.fill(g.getClipBounds());
+     */
+}

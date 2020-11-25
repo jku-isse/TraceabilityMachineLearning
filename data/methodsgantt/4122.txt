@@ -1,0 +1,5 @@
+public void renameCustomColumn(String oldName, String newName) {
+    Object o = mapCustomColumnValue.get(oldName);
+    mapCustomColumnValue.put(newName, o);
+    mapCustomColumnValue.remove(oldName);
+}

@@ -1,0 +1,5 @@
+@Override
+public void figureChanged(FigureEvent e) {
+    invalidate();
+    fireFigureChanged(e.getInvalidatedArea());
+}

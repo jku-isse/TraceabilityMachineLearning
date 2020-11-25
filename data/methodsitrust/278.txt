@@ -1,0 +1,6 @@
+public void testDeleteDiagnosis() throws Exception {
+    action = new EditDiagnosesAction(factory, 9000000000L, "2", "955");
+    assertEquals(1, action.getDiagnoses().size());
+    action.deleteDiagnosis(action.getDiagnoses().get(0));
+    assertEquals(0, action.getDiagnoses().size());
+}

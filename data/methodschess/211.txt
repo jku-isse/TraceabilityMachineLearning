@@ -1,0 +1,20 @@
+/**
+ * Add all the plies for knights of the current color.
+ */
+private final void addPliesForKnights() {
+    long knightPositions = getBoard().getPositionOfPieces((_white ? ((Piece.KNIGHT) << 1) | 1 : (Piece.KNIGHT) << 1));
+    while (knightPositions != 0) {
+        int highestBit = BitUtils.getHighestBit(knightPositions);
+        long curMoves = (_knightMask[highestBit]) & ((_emptySquares) | (_attackablePieces));
+        int startBitRange = highestBit - 17;
+        if (startBitRange < 0) {
+            startBitRange = 0;
+        }
+        int endBitRange = highestBit + 17;
+        if (endBitRange > 63) {
+            endBitRange = 63;
+        }
+        addAbsolutePlies(curMoves, startBitRange, endBitRange, highestBit);
+        knightPositions &= ~(1L << highestBit);
+    } 
+}

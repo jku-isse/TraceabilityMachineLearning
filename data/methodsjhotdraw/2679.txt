@@ -1,0 +1,3 @@
+public void read(DOMInput in) {
+    slantSize = in.getAttribute("slant", 20.0);
+}

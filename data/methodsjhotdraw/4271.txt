@@ -1,0 +1,35 @@
+protected void installDefaults() {
+    PaletteLookAndFeel.installBorder(toolBar, "ToolBar.border");
+    PaletteLookAndFeel.installColorsAndFont(toolBar, "ToolBar.background", "ToolBar.foreground", "ToolBar.font");
+    // Toolbar specific defaults
+    if (((dockingColor) == null) || ((dockingColor) instanceof UIResource)) {
+        dockingColor = UIManager.getColor("ToolBar.dockingBackground");
+    }
+    if (((floatingColor) == null) || ((floatingColor) instanceof UIResource)) {
+        floatingColor = UIManager.getColor("ToolBar.floatingBackground");
+    }
+    if (((dockingBorderColor) == null) || ((dockingBorderColor) instanceof UIResource)) {
+        dockingBorderColor = UIManager.getColor("ToolBar.dockingForeground");
+    }
+    if (((floatingBorderColor) == null) || ((floatingBorderColor) instanceof UIResource)) {
+        floatingBorderColor = UIManager.getColor("ToolBar.floatingForeground");
+        // ToolBar rollover button borders
+    }
+    Object rolloverProp = toolBar.getClientProperty(PaletteToolBarUI.IS_ROLLOVER);
+    if (rolloverProp == null) {
+        rolloverProp = UIManager.get("ToolBar.isRollover");
+    }
+    if (rolloverProp != null) {
+        rolloverBorders = ((Boolean) (rolloverProp)).booleanValue();
+    }
+    if ((PaletteToolBarUI.rolloverBorder) == null) {
+        PaletteToolBarUI.rolloverBorder = createRolloverBorder();
+    }
+    if ((PaletteToolBarUI.nonRolloverBorder) == null) {
+        PaletteToolBarUI.nonRolloverBorder = createNonRolloverBorder();
+    }
+    if ((PaletteToolBarUI.nonRolloverToggleBorder) == null) {
+        PaletteToolBarUI.nonRolloverToggleBorder = createNonRolloverToggleBorder();
+    }
+    setRolloverBorders(isRolloverBorders());
+}

@@ -1,0 +1,7 @@
+/**
+ * Sets all component size properties ( maximum, minimum, preferred)
+ * to the given width and height.
+ */
+public void setAllSize(int width, int height) {
+    setAllSize(new Dimension(width, height));
+}

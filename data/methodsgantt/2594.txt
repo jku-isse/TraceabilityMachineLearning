@@ -1,0 +1,3 @@
+public FontUIResource getUserTextFont() {
+    return font;
+}

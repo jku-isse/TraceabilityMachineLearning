@@ -1,0 +1,23 @@
+/**
+ * Test prescription for scenario 2
+ *
+ * @throws Exception
+ * 		
+ */
+public void testAddPrescription2() throws Exception {
+    action = new EditPrescriptionsAction(factory, 9000000000L, "2", "952");
+    PrescriptionBean bean = new PrescriptionBean();
+    MedicationBean med = factory.getNDCodesDAO().getNDCode("664662530");
+    bean.setMedication(med);
+    bean.setDosage(10);
+    bean.setStartDateStr("01/31/2011");
+    bean.setEndDateStr("02/12/2011");
+    bean.setInstructions("Take as needed");
+    bean.setVisitID(952);
+    try {
+        action.addPrescription(bean);
+        fail("Expected a PrescriptionWarningException.");
+    } catch (PrescriptionWarningException e) {
+        assertTrue(e.getDisplayMessage().contains("Allergy: Penicillin"));
+    }
+}

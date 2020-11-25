@@ -1,0 +1,10 @@
+void enableNotifier(final Runnable notifier) {
+    myLabel = new JLabel("<html><body><b>Errors happened. Click here to see the details</b></body></html>");
+    myLabel.addMouseListener(new MouseAdapter() {
+        public void mouseClicked(MouseEvent e) {
+            notifier.run();
+        }
+    });
+    add(myLabel);
+    revalidate();
+}

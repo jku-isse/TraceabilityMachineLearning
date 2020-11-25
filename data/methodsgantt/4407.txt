@@ -1,0 +1,6 @@
+public void setLength(TimeUnit unit, long length) {
+    if (!(unit.equals(myUnit))) {
+        throw new IllegalArgumentException(((("Cant convert unit=" + unit) + " to my unit=") + (myUnit)));
+    }
+    myCount = length;
+}

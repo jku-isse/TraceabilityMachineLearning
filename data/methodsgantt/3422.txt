@@ -1,0 +1,11 @@
+public void run(GanttProject project, final UIFacade uiFacade, final File selectedFile, final boolean bMerge) {
+    myUIFacade = project.getUIFacade();
+    final GanttProject targetProject = project;
+    final ImporterFromGanttFile.BufferProject bufferProject = createBufferProject(targetProject, uiFacade);
+    project.getUndoManager().undoableEdit("Import", new Runnable() {
+        public void run() {
+            openDocument(targetProject, bufferProject, uiFacade, selectedFile, bMerge);
+            myUIFacade.getTaskTree().getVisibleFields().importData(bufferProject.getVisibleFields());
+        }
+    });
+}

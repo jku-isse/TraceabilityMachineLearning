@@ -1,0 +1,7 @@
+@Override
+public void redo() throws CannotRedoException {
+    super.redo();
+    owner.willChange();
+    owner.setAttribute(name, newValue);
+    owner.changed();
+}

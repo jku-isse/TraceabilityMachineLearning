@@ -1,0 +1,7 @@
+public boolean equals(Object obj) {
+    if (false == (obj instanceof DateIntervalListEditor.DateInterval)) {
+        return false;
+    }
+    DateIntervalListEditor.DateInterval rvalue = ((DateIntervalListEditor.DateInterval) (obj));
+    return (this.start.equals(rvalue.start)) && (this.end.equals(rvalue.end));
+}

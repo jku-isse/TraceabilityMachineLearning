@@ -1,0 +1,62 @@
+/* Choose Add Patient option.
+Last name: Kent
+First name: Clark
+Contact email: clark@ncsu.edu
+Street address 1: 1100 Main Campus Dr
+Street address 2: Rm 500
+City: Raleigh
+State: NC
+Zip code: 27606-4321
+Phone: 919-555-2000
+Emergency contact name: Lana Lang
+Emergency contact phone: 919-400-4000 
+Insurance company name: BlueCross
+Insurance company address 1: 1000 Walnut Street
+Insurance company address 2: Room 5454
+Insurance company city: Cary
+Insurance company state: NC 
+Insurance company zip code: 27513-9999
+Insurance company phone: 919-300-3000
+Insurance identification: BLUE0000000001
+ */
+public void testCreatePatient1() throws Exception {
+    // login as uap
+    WebConversation wc = login("8000000009", "uappass1");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - UAP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 8000000009L, 0L, "");
+    WebResponse addPatient = wr.getLinkWith("Add Patient").click();
+    // add a patient with valid information
+    WebForm form = addPatient.getForms()[0];
+    form.setParameter("firstName", "Clark");
+    form.setParameter("lastName", "Kent");
+    form.setParameter("email", "clark@ncsu.edu");
+    WebResponse editPatient = form.submit();
+    WebTable table = editPatient.getTables()[0];
+    String newMID = table.getCellAsText(1, 1);
+    assertTrue(editPatient.getText().contains("New patient Clark Kent successfully added!"));
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_CREATE, 8000000009L, Long.parseLong(newMID), "");
+    editPatient = editPatient.getLinkWith("Continue to patient information.").click();
+    assertEquals("iTrust - Edit Patient", editPatient.getTitle());
+    form = editPatient.getForms()[1];
+    form.setParameter("streetAddress1", "1100 Main Campus Dr");
+    form.setParameter("streetAddress2", "Rm 500");
+    form.setParameter("city", "Raleigh");
+    form.setParameter("state", "NC");
+    form.setParameter("zip", "27606-4321");
+    form.setParameter("phone", "919-555-2000");
+    form.setParameter("emergencyName", "Lana Lang");
+    form.setParameter("emergencyPhone", "919-400-4000");
+    form.setParameter("icName", "BlueCross");
+    form.setParameter("icAddress1", "1000 Walnut Street");
+    form.setParameter("icAddress2", "Room 5454");
+    form.setParameter("icCity", "Cary");
+    form.setParameter("icState", "NC");
+    form.setParameter("icZip", "27513-9999");
+    form.setParameter("icPhone", "919-300-3000");
+    form.setParameter("icID", "BLUE0000000001");
+    form.getButtons()[2].click();
+    WebResponse add = wc.getCurrentPage();
+    assertTrue(add.getText().contains("Information Successfully Updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.DEMOGRAPHICS_EDIT, 8000000009L, Long.parseLong(newMID), "");
+}

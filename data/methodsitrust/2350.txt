@@ -1,0 +1,7 @@
+public List<OverrideReasonBean> loadList(ResultSet rs) throws SQLException {
+    List<OverrideReasonBean> list = new ArrayList<OverrideReasonBean>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

@@ -1,0 +1,3 @@
+public List getActivities(Date startDate, Date endDate) {
+    return Collections.singletonList(new CalendarActivityImpl(startDate, endDate, true));
+}

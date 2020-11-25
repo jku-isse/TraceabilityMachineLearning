@@ -1,0 +1,6 @@
+public void addVisitFlag(VisitFlag flag) {
+    if (null == (visitFlags))
+        visitFlags = new ArrayList<VisitFlag>();
+
+    visitFlags.add(flag);
+}

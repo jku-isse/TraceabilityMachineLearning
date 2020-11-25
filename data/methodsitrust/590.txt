@@ -1,0 +1,27 @@
+/**
+ * Returns a list of VisitReminderReturnForms for the type passed in as a param
+ *
+ * @param type
+ * 		the ReminderType
+ * @return the list of VisitReminderReturnForms
+ * @throws iTrustException
+ * 		
+ * @throws FormValidationException
+ * 		
+ */
+public List<VisitReminderReturnForm> getVisitReminders(GetVisitRemindersAction.ReminderType type) throws FormValidationException, iTrustException {
+    if (null == type)
+        throw new iTrustException("Reminder Type DNE");
+
+    switch (type) {
+        case DIAGNOSED_CARE_NEEDERS :
+            return visitReminderDAO.getDiagnosedVisitNeeders(loggedInMID);
+            // return stripDupes(visitReminderDAO.getDiagnosedVisitNeeders(loggedInMID));
+        case FLU_SHOT_NEEDERS :
+            return visitReminderDAO.getFluShotDelinquents(loggedInMID);
+        case IMMUNIZATION_NEEDERS :
+            return getImmunizationNeeders(loggedInMID);
+        default :
+            throw new iTrustException("Reminder Type DNE");
+    }
+}

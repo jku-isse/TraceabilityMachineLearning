@@ -1,0 +1,40 @@
+/**
+ * Write a portion of an array of characters.
+ *
+ * @param cbuf
+ * 		Buffer of characters to be written
+ * @param off
+ * 		Offset from which to start reading characters
+ * @param len
+ * 		Number of characters to be written
+ * @exception IOException  If an I/O error occurs
+ */
+public void write(char[] cbuf, int off, int len) throws IOException {
+    int end = off + len;
+    for (int i = off; i < end; i++) {
+        switch (cbuf[i]) {
+            case  :
+                out.write(cbuf, off, (i - off));
+                off = i + 1;
+                out.write(lineSeparator);
+                skipLF = true;
+                break;
+            case 
+ :
+                out.write(cbuf, off, (i - off));
+                off = i + 1;
+                if (skipLF) {
+                    skipLF = false;
+                } else {
+                    out.write(lineSeparator);
+                }
+                break;
+            default :
+                skipLF = false;
+                break;
+        }
+    }
+    if (off < end)
+        out.write(cbuf, off, (end - off));
+
+}

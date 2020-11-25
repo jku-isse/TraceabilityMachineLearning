@@ -1,0 +1,14 @@
+public void paint(Graphics g) {
+    super.paint(g);
+    if (getTopUnit().isConstructedFrom(myBottomUnit)) {
+        myFrameWidthFunction = myRegularFrameWidthFunction;
+        for (int i = 0; i < (myTimeUnitVisitors.size()); i++) {
+            ((TimeUnitVisitor) (myTimeUnitVisitors.get(i))).setEnabled(true);
+        }
+        paintRegularTimeFrames(g, getTimeFrames(null));
+    } else {
+        myFrameWidthFunction = mySkewedFrameWidthFunction;
+        mySkewedFrameWidthFunction.initialize();
+        paintSkewedTimeFrames(g);
+    }
+}

@@ -1,0 +1,7 @@
+public float[] getComponents(float[] reuse) {
+    if ((reuse == null) || ((reuse.length) != (system.getComponentCount()))) {
+        reuse = new float[system.getComponentCount()];
+    }
+    System.arraycopy(components, 0, reuse, 0, system.getComponentCount());
+    return reuse;
+}

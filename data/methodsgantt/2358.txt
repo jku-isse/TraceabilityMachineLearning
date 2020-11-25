@@ -1,0 +1,4 @@
+public TaskSelectionContext getTaskSelectionContext() {
+    // TODO Auto-generated method stub
+    return null;
+}

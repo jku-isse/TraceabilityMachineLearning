@@ -1,0 +1,7 @@
+private void addPagesFromProviders() {
+    Object[] extensions = Mediator.getPluginManager().getExtensions("net.sourceforge.ganttproject.OptionPageProvider", OptionPageProvider.class);
+    for (int i = 0; i < (extensions.length); i++) {
+        OptionPageProvider nextProvider = ((OptionPageProvider) (extensions[i]));
+        addObject(nextProvider, null);
+    }
+}

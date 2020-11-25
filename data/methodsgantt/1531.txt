@@ -1,0 +1,3 @@
+public boolean isADayOff(GanttCalendar date) {
+    return ((date.equals(myStart)) || (date.equals(myFinish))) || ((date.before(myFinish)) && (date.after(myStart)));
+}

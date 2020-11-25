@@ -1,0 +1,9 @@
+/**
+ * Gets the selected Font.
+ * This is a bound property.
+ *
+ * @return The selected font, or null, if no font is selected.
+ */
+public Font getSelectedFont() {
+    return selectedFont;
+}

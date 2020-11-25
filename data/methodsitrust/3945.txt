@@ -1,0 +1,10 @@
+private File tempNDCFile2() throws IOException {
+    File f = File.createTempFile("ndcodes2", null);
+    FileWriter fw = new FileWriter(f);
+    fw.write(("0573-0150	HUMAN OTC DRUG	ADVIL NEW		IBUPROFEN	TABLET, COATED	ORAL	19840518		NDA	NDA018989	Pfizer Consumer Healthcare	IBUPROFEN	200	mg/1	Nonsteroidal Anti-inflammatory Drug [EPC], Cyclooxygenase Inhibitors [MoA], Nonsteroidal Anti-inflammatory Compounds [Chemical/Ingredient]	
+" + "50458-513	HUMAN PRESCRIPTION DRUG	TYLENOL with Coke		ACETAMINOPHEN AND CODEINE PHOSPHATE	TABLET	ORAL	19770817		ANDA	ANDA085055	Janssen Pharmaceuticals, Inc.	ACETAMINOPHEN; CODEINE PHOSPHATE	300; 30	mg/1; mg/1		CIII
+"));
+    fw.flush();
+    fw.close();
+    return f;
+}

@@ -1,0 +1,6 @@
+public void testDeleteInteraction() throws Exception {
+    gen.drugInteractions();
+    interactionDAO.deleteInteraction("009042407", "548680955");
+    List<DrugInteractionBean> testList = interactionDAO.getInteractions("548680955");
+    assertTrue(testList.isEmpty());
+}

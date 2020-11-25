@@ -1,0 +1,7 @@
+protected GPAction(String name, String iconSize) {
+    super(name);
+    setIconSize(iconSize);
+    updateName();
+    updateTooltip();
+    GanttLanguage.getInstance().addListener(this);
+}

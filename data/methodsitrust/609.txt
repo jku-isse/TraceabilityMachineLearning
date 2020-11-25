@@ -1,0 +1,7 @@
+public void testGetReminderType() throws Exception {
+    // Test that Enum->String translation works properly
+    gen.standardData();
+    // Login as kelly doctor
+    action = new GetVisitRemindersAction(factory, 9000000000L);
+    assertEquals(GetVisitRemindersAction.ReminderType.DIAGNOSED_CARE_NEEDERS, GetVisitRemindersAction.ReminderType.getReminderType("Diagnosed Care Needers"));
+}

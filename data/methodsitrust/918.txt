@@ -1,0 +1,10 @@
+public void testAddICDCode() throws Exception {
+    gen.icd9cmCodes();
+    final String code = "999.99";
+    final String desc = "testAddICDCode";
+    final String classification = "Long Term";
+    DiagnosisBean proc = new DiagnosisBean(code, desc, classification);
+    assertEquals(getAddCodeSuccessString(proc), action.addICDCode(proc));
+    proc = factory.getICDCodesDAO().getICDCode(code);
+    assertEquals(desc, proc.getDescription());
+}

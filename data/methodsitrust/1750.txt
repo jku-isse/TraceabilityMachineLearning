@@ -1,0 +1,3 @@
+public void statusPending() {
+    this.status = LabProcedureBean.Pending;
+}

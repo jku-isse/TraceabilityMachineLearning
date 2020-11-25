@@ -1,0 +1,10 @@
+// public void setApproverMID(long approverMID) {
+// this.approverMID = approverMID;
+// }
+// 
+// public long getApproverMID() {
+// return approverMID;
+// }
+public void setRequestedDate(Date requestedDate) {
+    this.requestedDate = (requestedDate == null) ? null : ((Date) (requestedDate.clone()));
+}

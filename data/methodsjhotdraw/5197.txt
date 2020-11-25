@@ -1,0 +1,7 @@
+@Override
+public List<JMenu> createMenus(Application a, View pr) {
+    LinkedList<JMenu> mb = new LinkedList<JMenu>();
+    mb.add(createEditMenu(a, pr));
+    mb.add(createViewMenu(a, pr));
+    return mb;
+}

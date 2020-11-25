@@ -1,0 +1,4 @@
+public GanttCellListRenderer() {
+    setOpaque(true);
+    applyComponentOrientation(GanttLanguage.getInstance().getComponentOrientation());
+}

@@ -1,0 +1,3 @@
+public MatchType getMatchType() {
+    return matchType;
+}

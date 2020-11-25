@@ -1,0 +1,6 @@
+public MedicationBean loadSingle(ResultSet rs) throws SQLException {
+    // MedicationBean med = new MedicationBean();
+    MedicationBean med = new MedicationBean(rs.getString("Code"));
+    med.setDescription(rs.getString("Description"));
+    return med;
+}

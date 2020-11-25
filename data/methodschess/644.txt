@@ -1,0 +1,4 @@
+public void alignText() {
+    this._display.setHorizontalTextPosition(SwingConstants.CENTER);
+    this._display.setHorizontalAlignment(SwingConstants.CENTER);
+}

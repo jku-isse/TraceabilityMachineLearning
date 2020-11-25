@@ -1,0 +1,4 @@
+public void setColumnCount(int count, boolean isVertical) {
+    columnCount = count;
+    getPopupMenu().setLayout(new VerticalGridLayout(0, getColumnCount(), isVertical));
+}

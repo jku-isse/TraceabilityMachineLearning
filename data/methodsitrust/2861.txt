@@ -1,0 +1,6 @@
+private void insertResetPasswordRow(String ipAddr, int failureCount, Connection conn) throws DBException, SQLException {
+    PreparedStatement ps = conn.prepareStatement("INSERT INTO resetpasswordfailures(IPAddress, failureCount) VALUES(?,?)");
+    ps.setString(1, ipAddr);
+    ps.setInt(2, failureCount);
+    ps.executeUpdate();
+}

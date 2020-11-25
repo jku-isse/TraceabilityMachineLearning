@@ -1,0 +1,6 @@
+/**
+ * Digits of the format nnnnn-n
+ */
+public void setLoinc(String loinc) {
+    this.loinc = loinc;
+}

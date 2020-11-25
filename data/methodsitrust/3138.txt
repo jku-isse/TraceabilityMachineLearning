@@ -1,0 +1,25 @@
+/**
+ * Returns a list of all wards assigned to a HCP sorted alphabetically
+ *
+ * @param id
+ * 		The id of the HCP to get wards for
+ * @return A java.util.List of all WardBeans.
+ * @throws DBException
+ * 		
+ */
+public List<WardBean> getAllWardsByHCP(long id) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM HCPAssignedToWard haw INNER JOIN Wards w WHERE HCP = ? AND haw.ward = w.wardid ORDER BY RequiredSpecialty");
+        ps.setLong(1, id);
+        ResultSet rs = ps.executeQuery();
+        return wardLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

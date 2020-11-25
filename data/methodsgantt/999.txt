@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @unknown 
+ */
+public void columnMarginChanged(ChangeEvent arg0) {
+    // TODO Auto-generated method stub
+}

@@ -1,0 +1,26 @@
+/**
+ * Add a new patient instructions record.
+ *
+ * @param bean
+ * 		The instructions to add.
+ * @return The id of the newly added instructions record.
+ * @throws DBException
+ * 		
+ */
+public long add(PatientInstructionsBean bean) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        String statement = "INSERT INTO patientspecificinstructions " + "(VisitID,Modified,Name,URL,Comment) VALUES (?,?,?,?,?)";
+        ps = conn.prepareStatement(statement);
+        ps = loader.loadParameters(ps, bean);
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

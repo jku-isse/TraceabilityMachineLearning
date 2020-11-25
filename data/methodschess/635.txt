@@ -1,0 +1,32 @@
+// Instance variables
+// Constructors
+/**
+ * Create a new chess set component.
+ *
+ * @param c
+ * 		The parent component.
+ */
+public ChessSet(Component c) {
+    super(240, 80, BufferedImage.TYPE_INT_ARGB);
+    Image im = null;
+    // try {
+    // URL url = getClass().getResource("ChessPieces_neu.gif");
+    // im = Toolkit.getDefaultToolkit().getImage( url );
+    // im = Toolkit.getDefaultToolkit().getImage( new URL( "jar:file:javaChess.jar!/de/java_chess/javaChess/renderer2d/images/ChessPieces02.gif"));
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // original
+    // im = ResourceLoader.getInstance().loadImage( "ChessPieces02.gif");
+    // achraf
+    URL urlStart = getClass().getResource("images/ChessPieces02.gif");
+    im = Toolkit.getDefaultToolkit().getImage(urlStart);
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // } catch( MalformedURLException ignored) {}
+    MediaTracker mT = new MediaTracker(c);
+    mT.addImage(im, 0);
+    try {
+        mT.waitForID(0);
+    } catch (InterruptedException ie) {
+    }
+    Graphics g = getGraphics();
+    g.drawImage(im, 0, 0, c);
+}

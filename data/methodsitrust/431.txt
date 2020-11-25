@@ -1,0 +1,15 @@
+/**
+ * Verify the contents of the given instruction bean.
+ *
+ * @param bean
+ * 		The instructions to check.
+ * @throws iTrustException
+ * 		
+ * @throws FormValidationException
+ * 		
+ */
+public void validate(PatientInstructionsBean bean) throws FormValidationException, iTrustException {
+    verifySaved();
+    PatientInstructionsBeanValidator validator = new PatientInstructionsBeanValidator();
+    validator.validate(bean);
+}

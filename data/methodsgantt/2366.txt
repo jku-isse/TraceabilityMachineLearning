@@ -1,0 +1,3 @@
+public void setResourceDividerLocation(int location) {
+    // TODO Auto-generated method stub
+}

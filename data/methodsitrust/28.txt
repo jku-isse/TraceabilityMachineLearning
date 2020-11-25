@@ -1,0 +1,5 @@
+public void dropTables() throws FileNotFoundException, IOException, SQLException {
+    List<String> queries = SQLFileCache.getInstance().getQueries("sql/dropTables.sql");
+    executeSQL(queries);
+    System.out.println("Tables dropped.");
+}

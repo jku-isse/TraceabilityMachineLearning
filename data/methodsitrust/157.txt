@@ -1,0 +1,14 @@
+/**
+ * Tests adding a new patient
+ *
+ * @throws Exception
+ * 		
+ */
+public void testAddPatient() throws Exception {
+    PatientBean p = new PatientBean();
+    p.setFirstName("Cosmo");
+    p.setLastName("Kramer");
+    p.setEmail("cosmo@kramer.com");
+    long newMID = action.addPatient(p);
+    assertEquals(p.getMID(), newMID);
+}

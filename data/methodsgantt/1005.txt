@@ -1,0 +1,11 @@
+/**
+ * Delete a custom column.
+ *
+ * @param title
+ * 		
+ */
+public void deleteCustomColumn(String title) {
+    customColumns.remove(title);
+    this.columnRemoved(null);
+    (nbColTot)--;
+}

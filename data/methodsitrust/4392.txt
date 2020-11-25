@@ -1,0 +1,24 @@
+/**
+ * This method exists purely for performance - just stop once you hit the threshold. <br />
+ * <br />
+ * Also, the risk factors should be cached in the RiskFactor implementors - in getPatientRiskFactors there
+ * should be no double-querying
+ *
+ * @return isAtRisk
+ */
+public boolean isAtRisk() {
+    if (qualifiesForDisease()) {
+        int numRisks = 0;
+        List<PatientRiskFactor> diseaseRiskFactors = getDiseaseRiskFactors();
+        for (PatientRiskFactor factor : diseaseRiskFactors) {
+            if (factor.hasRiskFactor())
+                numRisks++;
+
+            if (numRisks >= (RiskChecker.RISK_THRESHOLD))
+                return true;
+
+        }
+    }
+    return false;// both an else from qualifies or NOT over the threshold
+
+}

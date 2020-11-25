@@ -1,0 +1,10 @@
+/**
+ * Specifies whether ".0" is appended to double and float
+ * values. By default this is true.
+ *
+ * @param newValue
+ * 		
+ */
+public void setAppendsDotZero(boolean newValue) {
+    appendsDotZero = newValue;
+}

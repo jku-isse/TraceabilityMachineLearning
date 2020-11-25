@@ -1,0 +1,3 @@
+public void transactionLog2() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/transactionLog2.sql"));
+}

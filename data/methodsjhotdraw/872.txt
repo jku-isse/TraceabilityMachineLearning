@@ -1,0 +1,4 @@
+/**
+ * Returns the start point of the connection.
+ */
+protected abstract Point2D.Double getLocation();

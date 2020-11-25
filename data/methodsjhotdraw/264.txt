@@ -1,0 +1,6 @@
+/**
+ * Installs listeners on the view object.
+ */
+protected void installViewListeners(View p) {
+    p.addPropertyChangeListener(viewListener);
+}

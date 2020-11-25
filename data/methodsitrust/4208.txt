@@ -1,0 +1,36 @@
+/* Authenticate HCP
+MID 9000000000
+Password: pw
+Choose "Diagnosis Trends"
+Enter Fields:
+ICDCode: 487.00
+ZipCode: 276
+StartDate: 09/28/2011, EndDate: 08/28/2011
+ */
+public void testViewDiagnosisTrends_InvalidDates() throws Exception {
+    // hcp views diagnosis statistics for malaria with invalid dates
+    // login hcp
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    // click Diagnosis Trends
+    wr = wr.getLinkWith("Diagnosis Trends").click();
+    WebForm form = wr.getFormWithID("formSelectFlow");
+    form.getScriptableObject().setParameterValue("viewSelect", "trends");
+    form.getSubmitButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-pha/viewDiagnosisStatistics.jsp"), wr.getURL().toString());
+    // View Trend
+    form = wr.getFormWithID("formMain");
+    form.getScriptableObject().setParameterValue("icdCode", "84.50");
+    form.getScriptableObject().setParameterValue("zipCode", "27519");
+    form.getScriptableObject().setParameterValue("startDate", "09/28/2011");
+    form.getScriptableObject().setParameterValue("endDate", "08/28/2011");
+    form.getSubmitButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-pha/viewDiagnosisStatistics.jsp"), wr.getURL().toString());
+    iTrustHTTPTest.assertLogged(TransactionType.DIAGNOSIS_TRENDS_VIEW, 9000000000L, 0L, "");
+    assertTrue(wr.getText().contains("Information not valid"));
+    assertTrue(wr.getText().contains("Start date must be before end date!"));
+}

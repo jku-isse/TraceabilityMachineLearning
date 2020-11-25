@@ -1,0 +1,90 @@
+/**
+ * Displays a progress indicator and then invokes <code>loadDrawing</code>
+ * on a worker thread. Displays the drawing panel when finished successfully.
+ * Displays an error message when finished unsuccessfully.
+ *
+ * @see #loadDrawing
+ */
+@Override
+public final void init() {
+    // set the language of the applet
+    if ((getParameter("Locale")) != null) {
+        Locale.setDefault(new Locale(getParameter("Locale")));
+    }
+    final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+    // Set look and feel
+    // -----------------
+    try {
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    } catch (Throwable e) {
+        // Do nothing.
+        // If we cant set the desired look and feel, UIManager does
+        // automaticaly the right thing for us.
+    }
+    // Display a progress indicator while we are loading the drawing
+    // ----------------------------------------------------------
+    Container c = getContentPane();
+    final ProgressIndicator progress = new ProgressIndicator(getName(), labels.getString("progressInitializing"));
+    c.add(progress);
+    progress.revalidate();
+    // Load the drawing using a worker thread
+    // --------------------------------------
+    new Worker() {
+        public Object construct() {
+            try {
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+                        drawingComponent = createDrawingComponent();
+                    }
+                };
+                t.start();
+                progress.setNote(labels.getString("progressLoading"));
+                Object drawing = loadDrawing(progress);
+                progress.setNote(labels.getString("progressOpeningEditor"));
+                progress.setIndeterminate(true);
+                t.join();
+                return drawing;
+            } catch (Throwable t) {
+                return t;
+            }
+        }
+
+        public void finished(Object result) {
+            Container c = getContentPane();
+            c.setLayout(new BorderLayout());
+            c.removeAll();
+            if (result instanceof Throwable) {
+                Throwable error = ((Throwable) (result));
+                error.printStackTrace();
+                String message = ((error.getMessage()) == null) ? error.toString() : error.getMessage();
+                MessagePanel mp = new MessagePanel(UIManager.getIcon("OptionPane.errorIcon"), labels.getFormatted("messageLoadFailed", SVGApplet.htmlencode(getParameter("DrawingURL")), SVGApplet.htmlencode(message)));
+                c.add(mp);
+                mp.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getActionCommand().equals("close")) {
+                            close();
+                        }
+                    }
+                });
+            } else {
+                c.add(drawingComponent.getComponent());
+                initComponents();
+                if (result != null) {
+                    if (result instanceof Drawing) {
+                        setDrawing(((Drawing) (result)));
+                    } else
+                        if (result instanceof Throwable) {
+                            setDrawing(createDrawing());
+                            getDrawing().add(new SVGTextFigure(result.toString()));
+                            ((Throwable) (result)).printStackTrace();
+                        }
+
+                }
+            }
+            c.validate();
+            long end = System.currentTimeMillis();
+            System.out.println(("AbstractDrawingApplet startup latency:" + (end - (start))));
+        }
+    }.start();
+}

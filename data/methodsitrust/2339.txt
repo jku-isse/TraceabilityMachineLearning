@@ -1,0 +1,11 @@
+/**
+ * Contains the instructions for mapping the rows in this java.sql.ResultSet into
+ * beans of type <T>.
+ *
+ * @param rs
+ * 		The java.sql.ResultSet to be loaded.
+ * @return A Bean of type T containing the loaded information, typically of the first (or next) item in the result set.
+ * @throws SQLException
+ * 		
+ */
+public T loadSingle(ResultSet rs) throws SQLException;

@@ -1,0 +1,10 @@
+/**
+ * The specialized constructor, which takes a particular DAOFactory to be used when checking for the pre-specified
+ * timeout limit.
+ *
+ * @param factory
+ * 		The DAOFactory to be used.
+ */
+public SessionTimeoutListener(DAOFactory factory) {
+    this.factory = factory;
+}

@@ -1,0 +1,4 @@
+public void setRadialComponentIndex(int newValue) {
+    radialIndex = newValue;
+    isPixelsValid = false;
+}

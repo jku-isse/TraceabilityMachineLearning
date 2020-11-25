@@ -1,0 +1,6 @@
+/**
+ *
+ *
+ * @return 
+ */
+boolean isEnabled();

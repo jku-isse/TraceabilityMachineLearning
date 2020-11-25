@@ -1,0 +1,15 @@
+public void actionPerformed(ActionEvent evt) {
+    Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
+    if (focusOwner != null) {
+        if (focusOwner instanceof EditableComponent) {
+            ((EditableComponent) (focusOwner)).clearSelection();
+        } else
+            if (focusOwner instanceof JTextComponent) {
+                JTextComponent tc = ((JTextComponent) (focusOwner));
+                tc.select(tc.getSelectionStart(), tc.getSelectionStart());
+            } else {
+                focusOwner.getToolkit().beep();
+            }
+
+    }
+}

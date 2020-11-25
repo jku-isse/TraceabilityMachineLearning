@@ -1,0 +1,7 @@
+public int getDuration() {
+    try {
+        return Integer.valueOf(getDurationFigure().getText());
+    } catch (NumberFormatException e) {
+        return 0;
+    }
+}

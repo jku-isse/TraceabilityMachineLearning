@@ -1,0 +1,10 @@
+public void draw(Graphics2D g) {
+    Rectangle2D clipBounds = g.getClipBounds();
+    if (clipBounds != null) {
+        Collection<Figure> c = quadTree.findIntersects(clipBounds);
+        Collection<Figure> toDraw = sort(c);
+        draw(g, toDraw);
+    } else {
+        draw(g, children);
+    }
+}

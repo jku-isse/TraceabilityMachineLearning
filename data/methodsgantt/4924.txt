@@ -1,0 +1,6 @@
+private int getUnitCount(TimeFrameImpl.LineHeader higherHeader, TimeFrameImpl.LineHeader header, TimeFrameImpl.LineItem higherItem) {
+    TimeUnit higherUnit = ((higherHeader.myUnit) instanceof TimeUnitFunctionOfDate) ? ((TimeUnitFunctionOfDate) (higherHeader.myUnit)).createTimeUnit(higherItem.myStartDate) : higherHeader.myUnit;
+    TimeUnit lowerUnit = header.myUnit;
+    int result = higherUnit.getAtomCount(lowerUnit);
+    return result;
+}

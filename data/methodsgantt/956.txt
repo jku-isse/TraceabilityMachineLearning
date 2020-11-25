@@ -1,0 +1,9 @@
+/**
+ * Set the initial index of the table column.
+ *
+ * @param initIndex
+ * 		The initial index of the table column.
+ */
+public void setInitIndex(int initIndex) {
+    index = initIndex;
+}

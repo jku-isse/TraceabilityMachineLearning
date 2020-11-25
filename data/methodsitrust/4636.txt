@@ -1,0 +1,3 @@
+public String getThing() {
+    return thing;
+}

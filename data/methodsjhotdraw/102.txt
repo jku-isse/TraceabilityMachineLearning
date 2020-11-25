@@ -1,0 +1,4 @@
+/**
+ * Puts an action with the specified id.
+ */
+public void putAction(String id, Action action);

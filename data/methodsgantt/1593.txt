@@ -1,0 +1,1 @@
+public IStatus canPaste(ChartSelection selection);

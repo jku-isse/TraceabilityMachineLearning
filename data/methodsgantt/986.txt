@@ -1,0 +1,9 @@
+// 
+public void requestFocus() {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            field.requestFocus();
+            field.selectAll();
+        }
+    });
+}

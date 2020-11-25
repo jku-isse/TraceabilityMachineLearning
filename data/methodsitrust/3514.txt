@@ -1,0 +1,3 @@
+public void appointmentType() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/appointmentType.sql"));
+}

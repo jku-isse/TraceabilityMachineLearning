@@ -1,0 +1,5 @@
+/**
+ * Clears the list of recent files.
+ * This fires a property change event for the property "recentFiles".
+ */
+public void clearRecentFiles();

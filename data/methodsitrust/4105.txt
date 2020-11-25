@@ -1,0 +1,26 @@
+public void testNoAllergyPrescribe() throws Exception {
+    gen.standardData();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Document Office Visit").click();
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "25");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    wr = wr.getFormWithID("formMain").submit();
+    wr.getFormWithID("mainForm").setParameter("visitDate", new SimpleDateFormat("02/01/2012").format(new Date()));
+    wr = wr.getFormWithID("mainForm").submit();
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_CREATE, 9000000000L, 25L, "");
+    patientForm = wr.getFormWithID("prescriptionForm");
+    patientForm.setParameter("medID", "01864020");
+    patientForm.setParameter("dosage", "20");
+    patientForm.setParameter("startDate", new SimpleDateFormat("02/01/2012").format(new Date()));
+    patientForm.setParameter("endDate", new SimpleDateFormat("08/01/2012").format(new Date()));
+    patientForm.setParameter("instructions", "Take once daily.");
+    wr = patientForm.submit();
+    assertTrue(wr.getText().contains("information successfully updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.PRESCRIPTION_ADD, 9000000000L, 25L, "");
+}

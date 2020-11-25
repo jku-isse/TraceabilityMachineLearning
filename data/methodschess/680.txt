@@ -1,0 +1,13 @@
+/**
+ * Standardconstructor
+ */
+public NotationPanel(GameNotation gameNotation) {
+    super();
+    // Store the game notation in this instance.
+    setGameNotation(gameNotation);
+    try {
+        jbInit();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}

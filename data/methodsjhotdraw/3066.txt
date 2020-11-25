@@ -1,0 +1,34 @@
+/**
+ * Creates a color button, with an action region and a popup menu. The
+ * button works like the color button in Microsoft Office:
+ * <ul>
+ * <li>When the user clicks on the action region, the default color of the
+ * DrawingEditor is applied to the selected figures.</li>
+ * <li>When the user opens the popup menu, a color palette is displayed.
+ * Choosing a color from the palette changes the default color of the
+ * editor and also changes the color of the selected figures.</li>
+ * <li>A rectangle on the color button displays the current default color of
+ * the DrawingEditor. The rectangle has the dimensions 1, 17, 20, 4 (x, y,
+ * width, height).</li>
+ * </ul>
+ *
+ * @param editor
+ * 		The DrawingEditor.
+ * @param attributeKey
+ * 		The AttributeKey of the color.
+ * @param swatches
+ * 		A list with labeled colors containing the color palette
+ * 		of the popup menu. The actual labels are retrieved from the supplied
+ * 		resource bundle. This is usually a LinkedMap, so that the colors have
+ * 		a predictable order.
+ * @param columnCount
+ * 		The number of columns of the color palette.
+ * @param labelKey
+ * 		The resource bundle key used for retrieving the icon and
+ * 		the tooltip of the button.
+ * @param labels
+ * 		The resource bundle.
+ */
+public static JPopupButton createEditorColorButton(DrawingEditor editor, AttributeKey<Color> attributeKey, List<ColorIcon> swatches, int columnCount, String labelKey, ResourceBundleUtil labels) {
+    return ButtonFactory.createEditorColorButton(editor, attributeKey, swatches, columnCount, labelKey, labels, null);
+}

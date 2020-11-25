@@ -1,0 +1,9 @@
+public void write(String s) {
+    try {
+        os.write(s);
+    } catch (IOException e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+    }
+}

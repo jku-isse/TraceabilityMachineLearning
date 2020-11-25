@@ -1,0 +1,6 @@
+/**
+ * Add a number of day to the current date
+ */
+public void add(int dayNumber) {
+    this.add(Calendar.DATE, dayNumber);
+}

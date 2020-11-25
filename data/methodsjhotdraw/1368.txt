@@ -1,0 +1,5 @@
+/**
+ * Only used for DOMStorable input.
+ */
+public ChopTriangleConnector() {
+}

@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the toolbar position.
+ */
+public int getToolBarPosition() {
+    return toolBarPosition;
+}

@@ -1,0 +1,3 @@
+private TimeFrameImpl.LineHeader createHeader(TimeUnit unit) {
+    return new TimeFrameImpl.LineHeader(unit);
+}

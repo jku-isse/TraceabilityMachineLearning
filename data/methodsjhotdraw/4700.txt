@@ -1,0 +1,18 @@
+/**
+ * Sets ODG default values.
+ */
+public static void setDefaults(Figure f) {
+    // Fill properties
+    AttributeKeys.FILL_COLOR.basicSet(f, Color.black);
+    AttributeKeys.WINDING_RULE.basicSet(f, AttributeKeys.WindingRule.NON_ZERO);
+    // Stroke properties
+    AttributeKeys.STROKE_COLOR.basicSet(f, null);
+    AttributeKeys.STROKE_WIDTH.basicSet(f, 1.0);
+    AttributeKeys.STROKE_CAP.basicSet(f, BasicStroke.CAP_BUTT);
+    AttributeKeys.STROKE_JOIN.basicSet(f, BasicStroke.JOIN_MITER);
+    AttributeKeys.STROKE_MITER_LIMIT.basicSet(f, 4.0);
+    AttributeKeys.IS_STROKE_MITER_LIMIT_FACTOR.basicSet(f, false);
+    AttributeKeys.STROKE_DASHES.basicSet(f, null);
+    AttributeKeys.STROKE_DASH_PHASE.basicSet(f, 0.0);
+    AttributeKeys.IS_STROKE_DASH_FACTOR.basicSet(f, false);
+}

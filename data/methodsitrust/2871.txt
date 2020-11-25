@@ -1,0 +1,22 @@
+/**
+ * Returns a list of all CPT codes.
+ *
+ * @return A java.util.List of ProcedureBeans for the CPT codes.
+ * @throws DBException
+ * 		
+ */
+public List<ProcedureBean> getAllCPTCodes() throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM cptcodes ORDER BY CODE");
+        ResultSet rs = ps.executeQuery();
+        return procedureBeanLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

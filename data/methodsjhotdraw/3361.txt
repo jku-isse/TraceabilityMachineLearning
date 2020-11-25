@@ -1,0 +1,8 @@
+/**
+ * Return the distance between two points
+ */
+private static double v2SquaredDistanceBetween2Points(Point2D.Double a, Point2D.Double b) {
+    double dx = (a.x) - (b.x);
+    double dy = (a.y) - (b.y);
+    return (dx * dx) + (dy * dy);
+}

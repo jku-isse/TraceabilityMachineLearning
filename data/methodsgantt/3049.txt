@@ -1,0 +1,9 @@
+private Component createButtonComponent(GPOptionGroup optionGroup) {
+    Action action = new AbstractAction(myi18n.getAdvancedActionTitle()) {
+        public void actionPerformed(ActionEvent e) {
+            System.err.println("[OptionsPageBuilder] createButtonComponent: ");
+        }
+    };
+    JButton result = new JButton(action);
+    return result;
+}

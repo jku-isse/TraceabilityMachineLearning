@@ -1,0 +1,16 @@
+/**
+ * Add a new referral to the database.
+ *
+ * @param bean
+ * 		
+ * @throws Exception
+ * 		
+ */
+public void addReferral(ReferralBean bean) throws Exception {
+    if ((bean.getSenderID()) != (hcpid)) {
+        throw new iTrustException("New referrals must be from the current HCP.");
+    }
+    long id = referralDAO.addReferral(bean);
+    bean = referralDAO.getReferral(id);
+    sendReferralCreatedMessages(bean);
+}

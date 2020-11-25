@@ -1,0 +1,6 @@
+/**
+ * Select the row of the tree
+ */
+public void selectTreeRow(int row) {
+    treetable.getTree().setSelectionRow(row);
+}

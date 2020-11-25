@@ -1,0 +1,25 @@
+/**
+ * Get all referrals associated with a particular office visit.
+ *
+ * @param ovid
+ * 		The office visit id.
+ * @return A list of ReferralBeans.
+ * @throws DBException
+ * 		
+ */
+public List<ReferralBean> getReferralsFromOV(long ovid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM referrals WHERE ovID = ?");
+        ps.setLong(1, ovid);
+        ResultSet rs = ps.executeQuery();
+        return referralLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

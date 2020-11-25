@@ -1,0 +1,6 @@
+public void setHeight(double newValue) {
+    double oldValue = height;
+    height = newValue;
+    firePropertyChange("height", oldValue, newValue);
+    fireStateChanged();
+}

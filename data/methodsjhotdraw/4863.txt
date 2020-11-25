@@ -1,0 +1,5 @@
+public void invalidate() {
+    super.invalidate();
+    cachedPath = null;
+    cachedDrawingArea = null;
+}

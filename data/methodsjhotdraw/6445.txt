@@ -1,0 +1,16 @@
+private void writeStorable(DOMStorable o) throws IOException {
+    String tagName = factory.getName(o);
+    if (tagName == null)
+        throw new IllegalArgumentException(("no tag name for:" + o));
+
+    openElement(tagName);
+    if (objectids.containsKey(o)) {
+        addAttribute("ref", ((String) (objectids.get(o))));
+    } else {
+        String id = Integer.toString(objectids.size(), 16);
+        objectids.put(o, id);
+        addAttribute("id", id);
+        o.write(this);
+    }
+    closeElement();
+}

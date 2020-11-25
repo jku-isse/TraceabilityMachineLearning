@@ -1,0 +1,23 @@
+/**
+ * Show the list of HCPs monitoring this patient
+ *
+ * @param patientMID
+ * 		The MID of the patient
+ * @return list of HCPs monitoring the provided patient
+ */
+public List<PersonnelBean> getMonitoringHCPs(long patientMID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("SELECT * FROM personnel, remotemonitoringlists " + "WHERE remotemonitoringlists.PatientMID=? AND remotemonitoringlists.HCPMID=personnel.MID"));
+        ps.setLong(1, patientMID);
+        ResultSet rs = ps.executeQuery();
+        return personnelLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

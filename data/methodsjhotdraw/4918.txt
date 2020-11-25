@@ -1,0 +1,4 @@
+public void trackStart(Point anchor, int modifiersEx) {
+    ODGRectFigure odgRect = ((ODGRectFigure) (getOwner()));
+    originalArc2D = odgRect.getArc();
+}

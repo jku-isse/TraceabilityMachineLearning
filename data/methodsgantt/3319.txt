@@ -1,0 +1,3 @@
+public String getColumnName(int column) {
+    return ((String) (columnIdentifiers.get(column)));
+}

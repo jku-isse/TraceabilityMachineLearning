@@ -1,0 +1,4 @@
+public void finish() {
+    super.finish(myMutator);
+    getTask().applyThirdDateConstraint();
+}

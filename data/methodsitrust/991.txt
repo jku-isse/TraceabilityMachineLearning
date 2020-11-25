@@ -1,0 +1,15 @@
+private MessageBean constructMessage(ApptBean appt, boolean accepted) throws DBException, FormValidationException, iTrustException, SQLException {
+    MessageBean msg = new MessageBean();
+    msg.setFrom(appt.getHcp());
+    msg.setTo(appt.getPatient());
+    msg.setSubject("Your appointment request");
+    msg.setSentDate(new Timestamp(System.currentTimeMillis()));
+    String body = ((("Your appointment request with " + (pnDAO.getName(appt.getHcp()))) + " on ") + (appt.getDate())) + " has been ";
+    if (accepted)
+        body += "accepted.";
+    else
+        body += "rejected.";
+
+    msg.setBody(body);
+    return msg;
+}

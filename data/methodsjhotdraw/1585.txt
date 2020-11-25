@@ -1,0 +1,5 @@
+public void setCanvasSize(Dimension2DDouble newValue) {
+    Dimension2DDouble oldValue = canvasSize;
+    canvasSize = (newValue == null) ? null : ((Dimension2DDouble) (newValue.clone()));
+    firePropertyChange(Drawing.CANVAS_SIZE_PROPERTY, oldValue, newValue);
+}

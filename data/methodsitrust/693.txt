@@ -1,0 +1,12 @@
+/**
+ * Checks to see if the current user can login (#failures<3)
+ *
+ * @return true if the user is valid to login
+ */
+public boolean isValidForLogin() {
+    try {
+        return ((authDAO.getLoginFailures(ipAddr)) < 3) || (validCaptcha);
+    } catch (DBException e) {
+        return false;
+    }
+}

@@ -1,0 +1,6 @@
+/**
+ * Return the tooltip in html (with yello bgcolor
+ */
+public static String getToolTip(String msg) {
+    return ("<html><body bgcolor=#EAEAEA>" + msg) + "</body></html>";
+}

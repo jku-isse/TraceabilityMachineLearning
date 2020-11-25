@@ -1,0 +1,6 @@
+// May not make sense here, but this shows what the method does.
+public void testNoEthnicities() throws Exception {
+    factor = new EthnicityFactor(p);// Why check for a non-existent risk?
+
+    assertFalse(factor.hasRiskFactor());
+}

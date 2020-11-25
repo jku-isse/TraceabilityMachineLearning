@@ -1,0 +1,10 @@
+public void testPatient2() throws Exception {
+    checker = new Type2DiabetesRisks(factory, 2L);
+    List<PatientRiskFactor> factors = checker.getPatientRiskFactors();
+    assertEquals(5, factors.size());
+    assertEquals("Patients body mass index is over 25", factors.get(0).getDescription());
+    assertEquals("Patient has hypertension", factors.get(1).getDescription());
+    assertEquals("Patient has bad cholesterol", factors.get(2).getDescription());
+    assertEquals("Patient has had related diagnoses", factors.get(3).getDescription());
+    assertEquals("Patient has a family history of this disease", factors.get(4).getDescription());
+}

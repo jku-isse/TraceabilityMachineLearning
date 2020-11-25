@@ -1,0 +1,11 @@
+/**
+ *
+ *
+ * @see net.sourceforge.ganttproject.parser.TagHandler#startElement(String,
+String, String, Attributes)
+ */
+public void startElement(String namespaceURI, String sName, String qName, Attributes attrs) {
+    if (qName.equals("date")) {
+        loadHoliday(attrs);
+    }
+}

@@ -1,0 +1,6 @@
+@Override
+public void setUp() throws Exception {
+    super.setUp();
+    gen.clearAllTables();
+    gen.standardData();
+}

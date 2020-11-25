@@ -1,0 +1,4 @@
+@Override
+protected String getID() {
+    return "canvas";
+}

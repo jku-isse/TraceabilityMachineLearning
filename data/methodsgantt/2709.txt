@@ -1,0 +1,1 @@
+void createProject(IGanttProject project);

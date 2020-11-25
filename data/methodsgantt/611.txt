@@ -1,0 +1,9 @@
+public Chart getActiveChart() {
+    GanttProjectBase.GPViewImpl activeView = myViewManager.mySelectedView;
+    return activeView.myChart;
+    // Chart resourcesChart = getResourceChart();
+    // Chart ganttChart = getGanttChart();
+    // Chart visibleChart = (getTabs().getSelectedIndex() == UIFacade.RESOURCES_INDEX) ? resourcesChart
+    // : ganttChart;
+    // return visibleChart;
+}

@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((FillToolBarBeanInfo.beanDescriptor) == null)
+        FillToolBarBeanInfo.beanDescriptor = new BeanDescriptor(FillToolBarBeanInfo.class);
+
+    FillToolBarBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    FillToolBarBeanInfo.beanDescriptor.setDisplayName("FillToolBar");
+    return FillToolBarBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

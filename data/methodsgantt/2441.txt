@@ -1,0 +1,7 @@
+FileChooserPage(ExportFileWizardImpl.State state, IGanttProject project) {
+    myState = state;
+    myProject = project;
+    myWebPublishingGroup = new GPOptionGroup("exporter.webPublishing", new GPOption[]{ state.getPublishInWebOption() });
+    myWebPublishingGroup.setTitled(false);
+    // myOptionsBuilder = new OptionsPageBuilder();
+}

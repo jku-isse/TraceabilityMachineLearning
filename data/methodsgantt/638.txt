@@ -1,0 +1,3 @@
+public ZoomManager getZoomManager() {
+    return myUIFacade.getZoomManager();
+}

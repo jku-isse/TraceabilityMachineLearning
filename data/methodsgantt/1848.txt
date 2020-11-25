@@ -1,0 +1,4 @@
+public DependencyInteractionRenderer() {
+    x1 = x2 = y1 = y2 = 0;
+    draw = false;
+}

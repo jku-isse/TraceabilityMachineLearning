@@ -1,0 +1,9 @@
+/**
+ * Set a new pieces layer.
+ *
+ * @param piecesLayer
+ * 		The new pieces layer.
+ */
+void setPiecesLayer(PiecesLayer piecesLayer) {
+    _piecesLayer = piecesLayer;
+}

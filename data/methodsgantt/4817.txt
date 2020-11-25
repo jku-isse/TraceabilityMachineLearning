@@ -1,0 +1,3 @@
+public TimeUnit createTimeUnit(Date date) {
+    return new TimeUnitFunctionOfDateImpl.ParameterizedTimeUnitImpl(date);
+}

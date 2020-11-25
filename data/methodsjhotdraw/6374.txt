@@ -1,0 +1,4 @@
+/**
+ * Reads an object from the current element.
+ */
+public Object readObject(int index) throws IOException;

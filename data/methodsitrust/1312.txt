@@ -1,0 +1,16 @@
+/**
+ * Set up defaults
+ *
+ * @param factory
+ * 		The DAOFactory used to create the DAOs used in this action.
+ * @param loggedInMID
+ * 		The MID of the person viewing the visited HCPs.
+ */
+public ViewVisitedHCPsAction(DAOFactory factory, long loggedInMID) {
+    patientMID = loggedInMID;
+    docDAO = factory.getPersonnelDAO();
+    visitDAO = factory.getOfficeVisitDAO();
+    patientDAO = factory.getPatientDAO();
+    // visits = new ArrayList<HCPVisitBean>();
+    declareAction = new DeclareHCPAction(factory, loggedInMID);
+}

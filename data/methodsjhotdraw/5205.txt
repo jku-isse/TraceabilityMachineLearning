@@ -1,0 +1,18 @@
+/**
+ * Gets the fill paint for the specified figure based on the attributes
+ * FILL_GRADIENT, FILL_OPACITY, FILL_PAINT and the bounds of the figure.
+ * Returns null if the figure is not filled.
+ */
+public static Paint getFillPaint(Figure f) {
+    double opacity = SVGAttributeKeys.FILL_OPACITY.get(f);
+    if ((SVGAttributeKeys.FILL_GRADIENT.get(f)) != null) {
+        return SVGAttributeKeys.FILL_GRADIENT.get(f).getPaint(f, opacity);
+    }
+    Color color = AttributeKeys.FILL_COLOR.get(f);
+    if (color != null) {
+        if (opacity != 1) {
+            color = new Color((((color.getRGB()) & 16777215) | (((int) (opacity * 255)) << 24)), true);
+        }
+    }
+    return color;
+}

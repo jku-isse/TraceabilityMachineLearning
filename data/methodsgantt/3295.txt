@@ -1,0 +1,3 @@
+public void removeScrollingListener(ScrollingListener listener) {
+    myListeners.remove(listener);
+}

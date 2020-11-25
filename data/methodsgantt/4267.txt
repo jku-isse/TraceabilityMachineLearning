@@ -1,0 +1,1 @@
+int compareDocumentOrder(Task next, Task dependeeTask);

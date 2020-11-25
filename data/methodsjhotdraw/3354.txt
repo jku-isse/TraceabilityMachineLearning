@@ -1,0 +1,13 @@
+/* -------------------------------------------------------------------------
+GraphicsGems.c
+2d and 3d Vector C Library
+by Andrew Glassner
+from "Graphics Gems", Academic Press, 1990
+-------------------------------------------------------------------------
+ */
+/**
+ * Return the distance between two points
+ */
+private static double v2DistanceBetween2Points(Point2D.Double a, Point2D.Double b) {
+    return Math.sqrt(Bezier.v2SquaredDistanceBetween2Points(a, b));
+}

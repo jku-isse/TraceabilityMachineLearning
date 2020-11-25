@@ -1,0 +1,4 @@
+/**
+ * Returns a clone of the Connection.
+ */
+public Object clone();

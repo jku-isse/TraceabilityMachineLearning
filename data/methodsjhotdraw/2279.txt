@@ -1,0 +1,10 @@
+public void removeAllChildren() {
+    willChange();
+    while ((children.size()) > 0) {
+        Figure figure = basicRemoveChild(((children.size()) - 1));
+        if ((getDrawing()) != null) {
+            figure.removeNotify(getDrawing());
+        }
+    } 
+    changed();
+}

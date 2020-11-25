@@ -1,0 +1,31 @@
+/* Writes viewport attributes. */
+private void writeViewportAttributes(IXMLElement elem, Map<AttributeKey, Object> a) throws IOException {
+    Object value;
+    Double doubleValue;
+    if (((SVGAttributeKeys.VIEWPORT_WIDTH.get(a)) != null) && ((SVGAttributeKeys.VIEWPORT_HEIGHT.get(a)) != null)) {
+        // width of the viewport
+        writeAttribute(elem, "width", SVGOutputFormat.toNumber(SVGAttributeKeys.VIEWPORT_WIDTH.get(a)), null);
+        // height of the viewport
+        writeAttribute(elem, "height", SVGOutputFormat.toNumber(SVGAttributeKeys.VIEWPORT_HEIGHT.get(a)), null);
+    }
+    // viewport-fill
+    // Value:	 "none" | <color> | inherit
+    // Initial:	 none
+    // Applies to:	viewport-creating elements
+    // Inherited:	 no
+    // Percentages:	 N/A
+    // Media:	 visual
+    // Animatable:	 yes
+    // Computed value:  	 "none" or specified <color> value, except inherit
+    writeAttribute(elem, "viewport-fill", SVGOutputFormat.toColor(SVGAttributeKeys.VIEWPORT_FILL.get(a)), "none");
+    // viewport-fill-opacity
+    // Value:	<opacity-value> | inherit
+    // Initial:	 1.0
+    // Applies to:	viewport-creating elements
+    // Inherited:	 no
+    // Percentages:	 N/A
+    // Media:	 visual
+    // Animatable:	 yes
+    // Computed value:  	 Specified value, except inherit
+    writeAttribute(elem, "viewport-fill-opacity", SVGAttributeKeys.VIEWPORT_FILL_OPACITY.get(a), 1.0);
+}

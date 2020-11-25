@@ -1,0 +1,6 @@
+/**
+ * Reset (remove) the user plies.
+ */
+public final void resetUserPlies() {
+    _userPlies = null;
+}

@@ -1,0 +1,3 @@
+public static TaskManager newInstance(TaskContainmentHierarchyFacade.Factory containmentFacadeFactory, TaskManagerConfig config) {
+    return new TaskManagerImpl(containmentFacadeFactory, config, null);
+}

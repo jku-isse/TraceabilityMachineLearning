@@ -1,0 +1,13 @@
+private void assertIsPersonnel2(PersonnelBean p) {
+    assertEquals(8000000009L, p.getMID());
+    assertEquals("FirstUAP", p.getFirstName());
+    assertEquals("LastUAP", p.getLastName());
+    // assertEquals("opposite of yin", p.getSecurityQuestion());
+    // assertEquals("yang", p.getSecurityAnswer());
+    assertEquals("100 Ave", p.getStreetAddress1());
+    assertEquals("", p.getStreetAddress2());
+    assertEquals("Raleigh", p.getCity());
+    assertEquals("NC", p.getState());
+    assertEquals("27607", p.getZip());
+    assertEquals("111-111-1111", p.getPhone());
+}

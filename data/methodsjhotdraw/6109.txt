@@ -1,0 +1,5 @@
+protected StyledDocument createDocument() {
+    DefaultStyledDocument doc = new DefaultStyledDocument();
+    doc.setParagraphAttributes(0, 1, ((StyledEditorKit) (editor.getEditorKit())).getInputAttributes(), true);
+    return doc;
+}

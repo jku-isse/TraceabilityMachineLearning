@@ -1,0 +1,7 @@
+public void testOkayBean1() throws Exception {
+    OkayBean ok = new OkayBean();
+    assertFalse(ok.equals(""));
+    OkayBean ok2 = new OkayBean();
+    assertTrue(ok.equals(ok2));
+    assertEquals(42, ok.hashCode());
+}

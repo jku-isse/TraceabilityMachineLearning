@@ -1,0 +1,17 @@
+public void setSize(int newValue) {
+    int oldSize = size();
+    while ((colors.size()) > newValue) {
+        colors.remove(((colors.size()) - 1));
+    } 
+    ColorSystem sys = sliderModel.getColorSystem();
+    while ((colors.size()) < newValue) {
+        colors.add(null);
+    } 
+    if (oldSize < newValue) {
+        fireIntervalRemoved(this, oldSize, (newValue - 1));
+    } else
+        if (oldSize > newValue) {
+            fireIntervalRemoved(this, newValue, (oldSize - 1));
+        }
+
+}

@@ -1,0 +1,7 @@
+/**
+ * This must be called after the EnhancedPath has been changed.
+ */
+public void invalidatePath() {
+    generalPath = null;
+    bounds = null;
+}

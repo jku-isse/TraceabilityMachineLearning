@@ -1,0 +1,24 @@
+/**
+ * Print the help for ganttproject on the system.out
+ */
+private static void usage() {
+    System.out.println();
+    System.out.println("GanttProject usage : java -jar ganttproject-(VERSION).jar <OPTIONS>");
+    System.out.println();
+    System.out.println("  Here are the possible options:");
+    System.out.println("    -h, --help : Print this message");
+    System.out.println("    [project_file_name] a XML file based on ganttproject format to directly open (project.xml or project.gan)");
+    System.out.println("    -html [project_file_name] [export_directory_name], export directly a ganttproject file to web pages");
+    System.out.println("         -xsl-dir [xsl_directory]                        localisation of the xsl directory for html export");
+    System.out.println("    -pdf  [project_file_name] [pdf_file_name],         export directly a ganttproject file to web pages");
+    System.out.println("         -xsl-fo [xsl_fo_file]                           localisation of the xsl-fo file for pdf export");
+    System.out.println("    -csv  [project_file_name] [csv_image_filename],    export directly a ganttproject file to csv document compatible with spreadsheets");
+    System.out.println("    -png  [project_file_name] [png_image_filename],    export directly a ganttproject file to png image");
+    System.out.println("    -jpg  [project_file_name] [jpg_image_filename],    export directly a ganttproject file to jpg image");
+    System.out.println("    -fig/-xfig  [project_file_name] [fig_image_filename],    export directly a ganttproject file to xfig image");
+    System.out.println();
+    System.out.println("    In all these cases the project_file_name can either be a file on local disk or an URL.");
+    System.out.println("    If the URL is password-protected, you can give credentials this way:");
+    System.out.println("      http://username:password@example.com/filename");
+    System.out.println(" ");
+}

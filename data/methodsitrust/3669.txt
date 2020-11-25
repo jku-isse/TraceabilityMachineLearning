@@ -1,0 +1,4 @@
+private PrescriptionAlerts(String rName, String rNDCode) {
+    this.name = rName;
+    this.NDCode = rNDCode;
+}

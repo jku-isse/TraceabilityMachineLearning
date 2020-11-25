@@ -1,0 +1,18 @@
+public void actionPerformed(ActionEvent event) {
+    // final HumanResource people =
+    // ((HumanResourceManager)getManager()).newHumanResource();
+    // people.setRole(myRoleManager.getDefaultRole());
+    // GanttDialogPerson dp = new GanttDialogPerson(getProjectFrame(),
+    // getLanguage(), people);
+    // dp.show();
+    // if(dp.result()) {
+    // 
+    // myProject.getUndoManager().undoableEdit("new Resource", new
+    // Runnable(){
+    // public void run() {
+    // getManager().add(people);
+    // }});
+    // myProject.quickSave ("new Resource");
+    // }
+    myProject.newHumanResource();
+}

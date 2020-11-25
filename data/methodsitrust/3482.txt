@@ -1,0 +1,8 @@
+public void testRecordAccessesException() throws Exception {
+    try {
+        evilDAO.getRecordAccesses(0L, (-1), new Date(), new Date(), false);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

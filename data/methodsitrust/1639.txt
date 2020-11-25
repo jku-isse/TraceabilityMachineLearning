@@ -1,0 +1,5 @@
+public void setHCPAddr(String addr) {
+    if (null != addr) {
+        HCPAddr = addr;
+    }
+}

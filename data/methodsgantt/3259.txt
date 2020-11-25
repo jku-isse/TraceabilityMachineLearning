@@ -1,0 +1,7 @@
+public void actionPerformed(ActionEvent evt) {
+    if ((evt.getSource()) instanceof JComboBox) {
+        if ((evt.getSource()) == (JCCalendar))
+            myCalendar.setPublicHolidays(getProjectCalendar(), myProject);
+
+    }
+}

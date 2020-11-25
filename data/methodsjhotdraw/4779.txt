@@ -1,0 +1,13 @@
+@Override
+protected boolean canGroup() {
+    boolean canCombine = (getView().getSelectionCount()) > 1;
+    if (canCombine) {
+        for (Figure f : getView().getSelectedFigures()) {
+            if (!(f instanceof ODGPathFigure)) {
+                canCombine = false;
+                break;
+            }
+        }
+    }
+    return canCombine;
+}

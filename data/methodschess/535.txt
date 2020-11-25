@@ -1,0 +1,6 @@
+/**
+ * Get the color of this piece.
+ *
+ * @return The color of this piece.
+ */
+public byte getColor();

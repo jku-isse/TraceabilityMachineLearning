@@ -1,0 +1,3 @@
+public void deleteResources() {
+    myDeleteHumanAction.actionPerformed(null);
+}

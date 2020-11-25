@@ -1,0 +1,4 @@
+public void testGetPersonnel() throws Exception {
+    PersonnelBean hcp = action.getPersonnel();
+    assertNotNull(hcp.getFirstName(), "Kelly");
+}

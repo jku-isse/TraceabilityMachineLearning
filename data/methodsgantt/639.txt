@@ -1,0 +1,3 @@
+public void logErrorMessage(Throwable e) {
+    myUIFacade.logErrorMessage(e);
+}

@@ -1,0 +1,10 @@
+/**
+ * Returns the prescriptions associated with the ovID initially passed to the constructor
+ *
+ * @return list of PrescriptionBeans for the ovID
+ * @throws DBException
+ * 		
+ */
+public List<PrescriptionBean> getPrescriptions() throws DBException {
+    return prescriptionsDAO.getList(ovID);
+}

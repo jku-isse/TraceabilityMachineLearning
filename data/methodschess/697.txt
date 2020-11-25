@@ -1,0 +1,13 @@
+// Instance variables.
+// Constructors
+/**
+ * Create a new position rendering for a empty position.
+ */
+PositionRenderer() {
+    super();// Create a empty JLabel instance.
+
+    // Even if we do not have to render an image yet, it might
+    // get added later, when a piece moves on this square.
+    setHorizontalAlignment(SwingConstants.CENTER);
+    setVerticalAlignment(SwingConstants.CENTER);
+}

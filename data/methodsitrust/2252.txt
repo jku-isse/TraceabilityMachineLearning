@@ -1,0 +1,3 @@
+public void setInWard(long inWard) {
+    this.inWard = inWard;
+}

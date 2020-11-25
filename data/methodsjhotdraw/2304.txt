@@ -1,0 +1,3 @@
+public Connector getEndConnector() {
+    return endConnector;
+}

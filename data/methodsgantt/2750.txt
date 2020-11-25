@@ -1,0 +1,5 @@
+public ResourcesTableModel(ResourceAssignmentCollection assignmentCollection) {
+    myAssignmentCollection = assignmentCollection;
+    myAssignments = new ArrayList(Arrays.asList(assignmentCollection.getAssignments()));
+    myMutator = assignmentCollection.createMutator();
+}

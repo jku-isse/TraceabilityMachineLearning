@@ -1,0 +1,35 @@
+/**
+ * Pulls Action Phrase from the associated TransactionType Enum
+ * Forms an English sentence with actor, action, and timestamp.
+ *
+ * @param actor
+ * 		
+ * @param timestamp
+ * 		
+ * @param code
+ * 		
+ * @return 
+ */
+public String getMessageAsSentence(String actor, Timestamp timestamp, TransactionType code) {
+    String result = actor + " ";
+    for (TransactionType type : TransactionType.values()) {
+        if (((code.getCode()) == (type.getCode())) && (type.isPatientViewable()))
+            result += type.getActionPhrase();
+
+    }
+    SimpleDateFormat formatter = new SimpleDateFormat("h:mma.");
+    switch (ActivityFeedAction.recent(new Date(timestamp.getTime()))) {
+        case 0 :
+            result += " today";
+            break;
+        case 1 :
+            result += " yesterday";
+            break;
+        case 2 :
+            DateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+            result += " on " + (sdf.format(new Date(timestamp.getTime())));
+            break;
+    }
+    result += " at " + (formatter.format(timestamp));
+    return replaceNameWithYou(result);
+}

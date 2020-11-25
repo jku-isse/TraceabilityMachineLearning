@@ -1,0 +1,3 @@
+public Border getBackdropBorder() {
+    return backgroundBorder;
+}

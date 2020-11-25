@@ -1,0 +1,3 @@
+SaveURLAction(GanttProject mainFrame) {
+    myMainFrame = mainFrame;
+}

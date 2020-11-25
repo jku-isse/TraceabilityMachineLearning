@@ -1,0 +1,4 @@
+/**
+ * Gets the title of the view.
+ */
+public String getTitle();

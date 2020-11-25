@@ -1,0 +1,6 @@
+public void testAllCorrect() throws Exception {
+    HospitalBean h = new HospitalBean();
+    h.setHospitalName("Sta. Marias Children Hospital");
+    h.setHospitalID("1234567890");
+    validator.validate(h);
+}

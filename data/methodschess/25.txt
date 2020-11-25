@@ -1,0 +1,4 @@
+private void busy() {
+    glasspane.requestFocus();
+    glasspane.setVisible(true);
+}

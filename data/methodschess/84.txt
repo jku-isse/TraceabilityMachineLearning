@@ -1,0 +1,59 @@
+private void jbInit() throws Exception {
+    titledBorder1 = new TitledBorder("");
+    jLTitle.setBackground(Color.white);
+    jLTitle.setForeground(Color.black);
+    jLTitle.setText("Java-Chess 1.0.1 pre-alpha2");
+    tAAuthors.setBackground(Color.black);
+    tAAuthors.setForeground(Color.white);
+    tAAuthors.setNextFocusableComponent(tAThanks);
+    tAAuthors.setEditable(false);
+    tAAuthors.setMargin(new Insets(20, 70, 50, 20));
+    // I use absolute path, you have to change it
+    // setRegister(tAAuthors, "/home/weigo/Documents/Progs/authors");
+    setRegister(tAAuthors, getDialogResource("authors.txt"));
+    tAThanks.setBackground(Color.black);
+    tAThanks.setForeground(Color.white);
+    tAThanks.setNextFocusableComponent(tALicense);
+    tAThanks.setEditable(false);
+    tAThanks.setMargin(new Insets(20, 50, 50, 20));
+    // I use absolute path, you have to change it
+    // setRegister(tAThanks, "/home/weigo/Documents/Progs/thanks");
+    setRegister(tAThanks, getDialogResource("thanks.txt"));
+    tALicense.setBackground(Color.black);
+    tALicense.setForeground(Color.white);
+    tALicense.setNextFocusableComponent(bCloseButton);
+    tALicense.setEditable(false);
+    tALicense.setMargin(new Insets(20, 50, 50, 20));
+    // I use absolute path, you have to change it
+    // setRegister(tALicense, "/home/weigo/Documents/Progs/license");
+    setRegister(tALicense, getDialogResource("license.txt"));
+    tAAbout.setBackground(Color.black);
+    tAAbout.setForeground(Color.white);
+    tAAbout.setNextFocusableComponent(tAAuthors);
+    tAAbout.setEditable(false);
+    tAAbout.setMargin(new Insets(20, 70, 50, 20));
+    // I use absolute path, you have to change it
+    // setRegister(tAAbout, "/home/weigo/Documents/Progs/about");
+    setRegister(tAAbout, getDialogResource("about.txt"));
+    bCloseButton.setBackground(Color.black);
+    bCloseButton.setForeground(Color.red);
+    bCloseButton.setNextFocusableComponent(tAAbout);
+    bCloseButton.setToolTipText("close the about dialog");
+    bCloseButton.setMnemonic(0);
+    bCloseButton.setText("close");
+    bCloseButton.addKeyListener(new DialogAbout_CloseButton_keyAdapter(this));
+    jPanel2.setBackground(Color.lightGray);
+    jPanel2.setBorder(BorderFactory.createEtchedBorder());
+    this.getContentPane().setBackground(Color.lightGray);
+    jPanel1.setBackground(Color.lightGray);
+    jPanel1.add(jLTitle, null);
+    this.getContentPane().add(jPanel2, BorderLayout.SOUTH);
+    jPanel2.add(bCloseButton, null);
+    this.getContentPane().add(tPAboutDialog, BorderLayout.CENTER);
+    tPAboutDialog.add(tAAbout, "About");
+    tPAboutDialog.add(tAAuthors, "Authors");
+    this.getContentPane().add(jPanel1, BorderLayout.NORTH);
+    tPAboutDialog.add(tAThanks, "Thanks to");
+    tPAboutDialog.add(tALicense, "License agreements");
+    bCloseButton.addActionListener(this);
+}

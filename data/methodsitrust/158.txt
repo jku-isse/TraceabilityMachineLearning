@@ -1,0 +1,31 @@
+/**
+ * Accepts the DAO factory and the CSV stream from the view and parses it.
+ *
+ * @param factory
+ * 		The DAO factory
+ * @param loggedInMID
+ * 		The MID of the HCP
+ * @param CSVStream
+ * 		The CSV stream uploaded by the user
+ * @throws CSVFormatException
+ * 		
+ * @throws AddPatientFileExceptionTest
+ * 		
+ */
+public AddPatientFileAction(InputStream CSVStream, DAOFactory factory, long loggedInMID) throws AddPatientFileException, CSVFormatException {
+    if (factory != null) {
+        this.patientDAO = factory.getPatientDAO();
+        this.loggedInMID = loggedInMID;
+        this.authDAO = factory.getAuthDAO();
+    }
+    CSVParser parser = new CSVParser(CSVStream);
+    CSVHeader = parser.getHeader();
+    CSVData = parser.getData();
+    errors = parser.getErrors();
+    buildMappings(CSVHeader);
+    try {
+        createPatients();
+    } catch (DBException e) {
+        throw new AddPatientFileException("Database error while adding new patients!");
+    }
+}

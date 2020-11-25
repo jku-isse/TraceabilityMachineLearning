@@ -1,0 +1,10 @@
+/* (non-Javadoc)
+@see edu.ncsu.csc.itrust.beans.loaders.BeanLoader#loadList(java.sql.ResultSet)
+ */
+public List<PatientInstructionsBean> loadList(ResultSet rs) throws SQLException {
+    ArrayList<PatientInstructionsBean> list = new ArrayList<PatientInstructionsBean>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

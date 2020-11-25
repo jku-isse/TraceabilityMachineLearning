@@ -1,0 +1,6 @@
+/**
+ * Returns the left insets in double precision.
+ *
+ * @return the left insets of this <code>Insets2D</code>.
+ */
+public abstract double getLeft();

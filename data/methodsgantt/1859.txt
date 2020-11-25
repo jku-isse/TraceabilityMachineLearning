@@ -1,0 +1,6 @@
+public void clear() {
+    myRectangles.clear();
+    myLines.clear();
+    myTexts.clear();
+    myModelObject2primitive.clear();
+}

@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((LinkToolBarBeanInfo.beanDescriptor) == null)
+        LinkToolBarBeanInfo.beanDescriptor = new BeanDescriptor(LinkToolBarBeanInfo.class);
+
+    LinkToolBarBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    LinkToolBarBeanInfo.beanDescriptor.setDisplayName("LinkToolPane");
+    return LinkToolBarBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

@@ -1,0 +1,22 @@
+/**
+ * Returns the view component. Eventually wraps it into
+ * another component in order to provide additional functionality.
+ */
+protected Component wrapViewComponent(View p) {
+    JComponent c = p.getComponent();
+    if ((getModel()) != null) {
+        LinkedList<Action> toolBarActions = new LinkedList<Action>();
+        int id = 0;
+        for (JToolBar tb : new ReversedList<JToolBar>(getModel().createToolBars(this, p))) {
+            id++;
+            JPanel panel = new JPanel(new BorderLayout());
+            panel.add(tb, BorderLayout.NORTH);
+            panel.add(c, BorderLayout.CENTER);
+            c = panel;
+            PreferencesUtil.installToolBarPrefsHandler(prefs, ("toolbar." + id), tb);
+            toolBarActions.addFirst(new ToggleVisibleAction(tb, tb.getName()));
+        }
+        c.putClientProperty("toolBarActions", toolBarActions);
+    }
+    return c;
+}

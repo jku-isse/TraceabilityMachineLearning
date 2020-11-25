@@ -1,0 +1,29 @@
+/**
+ * Returns the hospital that the specified user is located in
+ *
+ * @param pid
+ * 		The id of the user to get the hospital for
+ * @return The HospitalBean that the specified patient is located in.
+ * @throws DBException
+ * 		
+ */
+public HospitalBean getHospitalByPatientID(long pid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM hospitals h inner join wards ward inner join wardrooms room where room.OccupiedBy = ? and room.inward = ward.wardid and ward.inhospital = h.hospitalid");
+        ps.setLong(1, pid);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return hospitalLoader.loadSingle(rs);
+        } else {
+            return null;
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

@@ -1,0 +1,8 @@
+public void testAddCPTCode() throws Exception {
+    final String code = "9999F";
+    final String desc = "testAddCPTCode";
+    ProcedureBean proc = new ProcedureBean(code, desc);
+    assertEquals(getAddCodeSuccessString(proc), action.addCPTCode(proc));
+    proc = factory.getCPTCodesDAO().getCPTCode(code);
+    assertEquals(desc, proc.getDescription());
+}

@@ -1,0 +1,20 @@
+public void reorganize() {
+    root.join();
+    outside.putAll(root.objects);
+    root.objects.clear();
+    Iterator<Map.Entry<T, Rectangle2D.Double>> i = outside.entrySet().iterator();
+    Map.Entry<T, Rectangle2D.Double> entry = i.next();
+    Rectangle2D.Double treeBounds = ((Rectangle2D.Double) (entry.getValue().clone()));
+    while (i.hasNext()) {
+        entry = i.next();
+        Rectangle2D.Double bounds = entry.getValue();
+        treeBounds.add(bounds);
+    } 
+    root.bounds = treeBounds;
+    i = outside.entrySet().iterator();
+    while (i.hasNext()) {
+        entry = i.next();
+        root.add(entry.getKey(), entry.getValue());
+    } 
+    outside.clear();
+}

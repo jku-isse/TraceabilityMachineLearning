@@ -1,0 +1,13 @@
+public void delete() {
+    if ((myContainerItem) != null) {
+        TaskHierarchyItem previousSibling = myContainerItem.myFirstNestedItem;
+        if ((this) == previousSibling) {
+            myContainerItem.myFirstNestedItem = myNextSiblingItem;
+        } else {
+            for (; (previousSibling.myNextSiblingItem) != (this); previousSibling = previousSibling.myNextSiblingItem);
+            previousSibling.myNextSiblingItem = myNextSiblingItem;
+        }
+        myContainerItem = null;
+    }
+    myNextSiblingItem = null;
+}

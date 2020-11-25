@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return this DAOFactorys OfficeVisitDAO
+ */
+public OfficeVisitDAO getOfficeVisitDAO() {
+    return new OfficeVisitDAO(this);
+}

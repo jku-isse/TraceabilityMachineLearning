@@ -1,0 +1,3 @@
+public Color getForegroundColor() {
+    return myForegroundColor;
+}

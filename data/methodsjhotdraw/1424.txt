@@ -1,0 +1,3 @@
+protected boolean canConnect(Connector existingEnd, Connector targetEnd) {
+    return getOwner().canConnect(existingEnd, targetEnd);
+}

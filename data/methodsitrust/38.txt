@@ -1,0 +1,13 @@
+/**
+ * Same as isInMonthRange but uses the current date as the date value.
+ *
+ * @see DateUtil#isInMonthRange(Date, int, int)
+ * @param firstMonth
+ * 		
+ * @param secondMonth
+ * 		
+ * @return 
+ */
+public static boolean currentlyInMonthRange(int firstMonth, int secondMonth) {
+    return DateUtil.isInMonthRange(new Date(), firstMonth, secondMonth);
+}

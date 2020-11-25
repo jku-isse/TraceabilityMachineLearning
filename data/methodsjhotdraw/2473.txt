@@ -1,0 +1,13 @@
+/**
+ * Implementation note: Sorting can not be done for orphaned children.
+ */
+public List<Figure> sort(Collection<? extends Figure> c) {
+    ensureSorted();
+    ArrayList<Figure> sorted = new ArrayList<Figure>(c.size());
+    for (Figure f : children) {
+        if (c.contains(f)) {
+            sorted.add(f);
+        }
+    }
+    return sorted;
+}

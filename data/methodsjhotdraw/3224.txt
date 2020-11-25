@@ -1,0 +1,3 @@
+public GroupAction(DrawingEditor editor, CompositeFigure prototype) {
+    this(editor, prototype, true);
+}

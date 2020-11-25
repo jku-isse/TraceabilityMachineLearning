@@ -1,0 +1,4 @@
+public void clear() {
+    myQueue.clear();
+    myCleanupMutation = new TaskDependencyCollectionImpl.MutationInfo(null, TaskDependencyCollectionImpl.MutationInfo.CLEAR);
+}

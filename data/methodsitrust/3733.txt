@@ -1,0 +1,36 @@
+public void testOlderActivities() throws Exception {
+    gen.transactionLog6();
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    int entries = 0;
+    String s = wr.getText();
+    int start = s.indexOf("Activity Feed</h2>");
+    int end = s.indexOf("<a href="home.jsp?date=");
+    s = s.substring(start, end);
+    // Check for 20 items
+    entries = 0;
+    while (s.contains("<li")) {
+        entries++;
+        s = s.substring(((s.indexOf("<li")) + 1));
+    } 
+    assertEquals(entries, 20);
+    wr = wr.getLinkWith("Older Activities").click();
+    s = wr.getText();
+    s = s.substring(s.indexOf("<h2"), s.indexOf("</h2"));
+    // Check for 40 items
+    entries = 40;
+    while (s.contains("<div")) {
+        entries++;
+        s = s.substring(((s.indexOf("<div")) + 1));
+    } 
+    assertEquals(entries, 40);
+    wr = wr.getLinkWith("Older Activities").click();
+    s = wr.getText();
+    s = s.substring(s.indexOf("Activity Feed</h2>"), s.lastIndexOf("</ul>"));
+    entries = 0;
+    while (s.contains("<li")) {
+        entries++;
+        s = s.substring(((s.indexOf("<li")) + 1));
+    } 
+    assertEquals((entries - 3), 60);
+}

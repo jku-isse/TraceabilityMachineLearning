@@ -1,0 +1,3 @@
+public boolean getExpand() {
+    return bExpand;
+}

@@ -1,0 +1,10 @@
+/**
+ * Removes all children.
+ *
+ * @see #add
+ */
+public void basicRemoveAllChildren() {
+    for (Figure f : new LinkedList<Figure>(getChildren())) {
+        basicRemove(f);
+    }
+}

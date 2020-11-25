@@ -1,0 +1,12 @@
+/**
+ * KILLS-- M FAIL: edu.ncsu.csc.itrust.action.UpdateHospitalListAction:49: changed return value (areturn)
+ */
+public void testEvilFactory2() {
+    action = new UpdateHospitalListAction(EvilDAOFactory.getEvilInstance(), 0L);
+    HospitalBean db = new HospitalBean("2223", "ananana");
+    try {
+        String x = action.updateInformation(db);
+        assertEquals("A database exception has occurred. Please see the log in the console for stacktrace", x);
+    } catch (Exception e) {
+    }
+}

@@ -1,0 +1,9 @@
+/**
+ * Set the opening book, we are operating on.
+ *
+ * @param book
+ * 		The new opening book.
+ */
+private final void setOpeningBook(OpeningBook book) {
+    _openingBook = book;
+}

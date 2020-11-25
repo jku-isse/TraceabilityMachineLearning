@@ -1,0 +1,1 @@
+public Figure createPolygon(Point2D.Double[] points, Map<AttributeKey, Object> attributes);

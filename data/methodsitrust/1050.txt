@@ -1,0 +1,6 @@
+public void testNoProblemsDependentLog() throws Exception {
+    action = new ViewMyAccessLogAction(TestDAOFactory.getTestInstance(), 24L);
+    String today = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
+    List<TransactionBean> accesses = action.getAccesses(today, today, "23", false);
+    assertEquals(0, accesses.size());
+}

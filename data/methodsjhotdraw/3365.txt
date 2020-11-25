@@ -1,0 +1,3 @@
+public Node(BezierPath.Node that) {
+    setTo(that);
+}

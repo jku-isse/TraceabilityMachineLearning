@@ -1,0 +1,23 @@
+protected void updateAttributeEditor() {
+    if (((updateDepth)++) == 0) {
+        Set<Figure> figures = getEditedFigures();
+        if (((activeView) == null) || (figures.isEmpty())) {
+            attributeEditor.getComponent().setEnabled(false);
+        } else {
+            attributeEditor.getComponent().setEnabled(true);
+            T value = attributeKey.get(figures.iterator().next());
+            boolean isMultiple = false;
+            for (Figure f : figures) {
+                T v = attributeKey.get(f);
+                if ((((v == null) || (value == null)) && (v != value))// 
+                 || (((v != null) && (value != null)) && (!(v.equals(value))))) {
+                    isMultiple = true;
+                    break;
+                }
+            }
+            attributeEditor.setAttributeValue(value);
+            attributeEditor.setMultipleValues(isMultiple);
+        }
+    }
+    (updateDepth)--;
+}

@@ -1,0 +1,4 @@
+Composition(TimeUnit atomUnit, int atomCount) {
+    myAtom = atomUnit;
+    myAtomCount = atomCount;
+}

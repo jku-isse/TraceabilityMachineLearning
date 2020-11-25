@@ -1,0 +1,16 @@
+@Override
+public Dimension getPreferredSize() {
+    if ((cachedPreferredSize) == null) {
+        Rectangle2D.Double r = getDrawingArea();
+        Double cw = ((getDrawing()) == null) ? null : AttributeKeys.CANVAS_WIDTH.get(getDrawing());
+        Double ch = ((getDrawing()) == null) ? null : AttributeKeys.CANVAS_HEIGHT.get(getDrawing());
+        Insets insets = getInsets();
+        if ((cw == null) || (ch == null)) {
+            cachedPreferredSize = new Dimension(((((int) (((Math.max(0, r.x)) + (r.width)) * (scaleFactor))) + (insets.left)) + (insets.right)), ((((int) (((Math.max(0, r.y)) + (r.height)) * (scaleFactor))) + (insets.top)) + (insets.bottom)));
+        } else {
+            cachedPreferredSize = new Dimension(((((int) ((Math.max(((Math.max(0, r.x)) + (r.width)), cw)) * (scaleFactor))) + (insets.left)) + (insets.right)), ((((int) ((Math.max(((Math.max(0, r.y)) + (r.height)), ch)) * (scaleFactor))) + (insets.top)) + (insets.bottom)));
+        }
+        validateViewTranslation();
+    }
+    return ((Dimension) (cachedPreferredSize.clone()));
+}

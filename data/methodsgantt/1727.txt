@@ -1,0 +1,69 @@
+public ChartModelImpl(TaskManager taskManager, TimeUnitStack timeUnitStack, final UIConfiguration projectConfig) {
+    super(taskManager, timeUnitStack, projectConfig);
+    this.taskManager = taskManager;
+    myTaskRendererImpl = new TaskRendererImpl(this);
+    myTaskGridRendererImpl = new TaskGridRendererImpl(this);
+    // myResourcesRendererImpl = new ResourcesRendererImpl(this);
+    // myTaskProgressRendererImpl = new TaskProgressRendererImpl(this);
+    myTimeUnitVisitors.add(myTaskGridRendererImpl);
+    myTimeUnitVisitors.add(myTaskRendererImpl);
+    class NewTaskColorOption extends DefaultColorOption implements GP1XOptionConverter {
+        private NewTaskColorOption() {
+            super("newTaskDefaultColor");
+        }
+
+        public String getTagName() {
+            return "colors";
+        }
+
+        public String getAttributeName() {
+            return "tasks";
+        }
+
+        public void loadValue(String legacyValue) {
+            lock();
+            loadPersistentValue(legacyValue);
+            commit();
+        }
+
+        public void commit() {
+            super.commit();
+            projectConfig.setTaskColor(getValue());
+        }
+    }
+    myTaskDefaultColorOption = new NewTaskColorOption();
+    myDefaultColorOptions = new ChartOptionGroup("ganttChartDefaultColors", new GPOption[]{ myTaskDefaultColorOption, projectConfig.getWeekendAlphaRenderingOption() }, getOptionEventDispatcher());
+    {
+        myTaskAheadOfScheduleColor = new DefaultColorOption("ganttChartStateDiffColors.taskAheadOfScheduleColor") {
+            public void commit() {
+                super.commit();
+                projectConfig.setEarlierPreviousTaskColor(getValue());
+            }
+        };
+        myTaskAheadOfScheduleColor.lock();
+        myTaskAheadOfScheduleColor.setValue(new Color(50, 229, 50));
+        myTaskAheadOfScheduleColor.commit();
+        // 
+        myTaskBehindScheduleColor = new DefaultColorOption("ganttChartStateDiffColors.taskBehindScheduleColor") {
+            public void commit() {
+                super.commit();
+                projectConfig.setLaterPreviousTaskColor(getValue());
+            }
+        };
+        myTaskBehindScheduleColor.lock();
+        myTaskBehindScheduleColor.setValue(new Color(229, 50, 50));
+        myTaskBehindScheduleColor.commit();
+        // 
+        myTaskOnScheduleColor = new DefaultColorOption("ganttChartStateDiffColors.taskOnScheduleColor") {
+            public void commit() {
+                super.commit();
+                projectConfig.setPreviousTaskColor(getValue());
+            }
+        };
+        myTaskOnScheduleColor.lock();
+        myTaskOnScheduleColor.setValue(Color.LIGHT_GRAY);
+        myTaskOnScheduleColor.commit();
+        // 
+        myStateDiffOptions = new ChartOptionGroup("ganttChartStateDiffColors", new GPOption[]{ myTaskOnScheduleColor, myTaskAheadOfScheduleColor, myTaskBehindScheduleColor }, getOptionEventDispatcher());
+    }
+}

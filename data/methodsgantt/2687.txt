@@ -1,0 +1,4 @@
+public boolean isProjectTask() {
+    isProjectTask = projectTaskCheckBox1.isSelected();
+    return isProjectTask;
+}

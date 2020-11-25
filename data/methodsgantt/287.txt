@@ -1,0 +1,19 @@
+public void changeValue(ChangeValueEvent event) {
+    Object id = event.getID();
+    if (id.equals("up")) {
+        upText.text = GanttGraphicArea.ChartOptionsPreviewPanel.getI18n(event.getNewValue().toString());
+    } else
+        if (id.equals("down")) {
+            downText.text = GanttGraphicArea.ChartOptionsPreviewPanel.getI18n(event.getNewValue().toString());
+        } else
+            if (id.equals("left")) {
+                leftText.text = GanttGraphicArea.ChartOptionsPreviewPanel.getI18n(event.getNewValue().toString());
+            } else
+                if (id.equals("right")) {
+                    rightText.text = GanttGraphicArea.ChartOptionsPreviewPanel.getI18n(event.getNewValue().toString());
+                }
+
+
+
+    repaint();
+}

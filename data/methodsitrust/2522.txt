@@ -1,0 +1,14 @@
+@Override
+protected void tearDown() throws SQLException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = TestDAOFactory.getTestInstance().getConnection();
+        ps = conn.prepareStatement("DROP TABLE IF EXISTS testincrement");
+        ps.executeUpdate();
+    } catch (SQLException ex) {
+        throw ex;
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

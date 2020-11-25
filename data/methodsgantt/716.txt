@@ -1,0 +1,23 @@
+/* Create the popup menu */
+private void createPopupMenu(MouseEvent e) {
+    JPopupMenu menu = new JPopupMenu();
+    AbstractAction[] resourceActions = myResourceActionSet.getActions();
+    menu.add(resourceActions[0]);
+    if ((table.getSelectedNodes().length) == 1) {
+        menu.add(myResourcePropertiesAction);
+        for (int i = 1; i < (resourceActions.length); i++) {
+            menu.add(resourceActions[i]);
+        }
+        menu.add(appli.createNewItem(GanttProject.correctLabel(lang.getText("sendMail")), "/icons/send_mail_16.gif"));
+        menu.addSeparator();
+        menu.add(myMoveUpAction);
+        menu.add(myMoveDownAction);
+        menu.addSeparator();
+        menu.add(appli.getCutAction());
+        menu.add(appli.getCopyAction());
+        menu.add(appli.getPasteAction());
+    }
+    menu.applyComponentOrientation(lang.getComponentOrientation());
+    Point popupPoint = getPopupMenuPoint(e);
+    menu.show(this, popupPoint.x, popupPoint.y);
+}

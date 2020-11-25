@@ -1,0 +1,3 @@
+public OfficeVisitBean getOVDate(long id) throws DBException {
+    return ovDAO.getOfficeVisit(id);
+}

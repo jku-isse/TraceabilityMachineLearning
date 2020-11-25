@@ -1,0 +1,31 @@
+/**
+ * Sets the border of the component to have a non-rollover border which
+ * was created by <code>createNonRolloverBorder</code>.
+ *
+ * @param c
+ * 		component which will have a non-rollover border installed
+ * @see #createNonRolloverBorder
+ * @since 1.4
+ */
+protected void setBorderToNonRollover(Component c) {
+    if (true) {
+        return;
+    }
+    if (c instanceof AbstractButton) {
+        AbstractButton b = ((AbstractButton) (c));
+        Border border = ((Border) (borderTable.get(b)));
+        if ((border == null) || (border instanceof UIResource)) {
+            borderTable.put(b, b.getBorder());
+        }
+        // Only set the border if its the default border
+        if ((b.getBorder()) instanceof UIResource) {
+            if (b instanceof JToggleButton) {
+                ((JToggleButton) (b)).setBorder(PaletteToolBarUI.nonRolloverToggleBorder);
+            } else {
+                b.setBorder(PaletteToolBarUI.nonRolloverBorder);
+            }
+        }
+        rolloverTable.put(b, (b.isRolloverEnabled() ? Boolean.TRUE : Boolean.FALSE));
+        b.setRolloverEnabled(false);
+    }
+}

@@ -1,0 +1,5 @@
+protected void drawPresentationFigure(Graphics2D g) {
+    if ((getPresentationFigure()) != null) {
+        getPresentationFigure().draw(g);
+    }
+}

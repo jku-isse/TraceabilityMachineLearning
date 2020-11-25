@@ -1,0 +1,3 @@
+public LabProcedureBean getLabProcedure(long id) throws DBException {
+    return lpDAO.getLabProcedure(id);
+}

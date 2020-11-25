@@ -1,0 +1,10 @@
+/**
+ * Set a new game timer.
+ *
+ * @param timer
+ * 		The new game timer.
+ */
+final void setGameTimer(GameTimer timer) {
+    _gameTimer = timer;
+    timer.addActionListener(this);
+}

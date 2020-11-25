@@ -1,0 +1,10 @@
+public Collection<Action> createDrawingActions(Application app, DrawingEditor editor) {
+    LinkedList<Action> a = new LinkedList<Action>();
+    a.add(new CutAction());
+    a.add(new CopyAction());
+    a.add(new PasteAction());
+    a.add(new SelectAllAction());
+    a.add(new ClearSelectionAction());
+    a.add(new SelectSameAction(editor));
+    return a;
+}

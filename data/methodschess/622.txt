@@ -1,0 +1,8 @@
+/**
+ * Get the square size.
+ *
+ * @return The square size.
+ */
+final int getSquareSize() {
+    return _squareSize;
+}

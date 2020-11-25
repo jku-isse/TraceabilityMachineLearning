@@ -1,0 +1,4 @@
+public void rebuildView() {
+    revalidate();
+    repaint();
+}

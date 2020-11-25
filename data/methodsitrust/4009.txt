@@ -1,0 +1,46 @@
+/* Auuthenticate UAP
+MID 8000000009
+Password: pw
+Choose Edit Basic Health History
+enter 0000000002 and confirm
+Enter fields:
+Height: 10 inches
+Weight: 400 pounds
+Blood Pressure: 999/000
+Smokes: Y
+HDL: 150
+LDL: 200
+Triglycerides: 200
+Confirm and approve entries
+ */
+public void testCreatePHIRecord3() throws Exception {
+    // login as uap
+    WebConversation wc = login("8000000009", "uappass1");
+    WebResponse wr = wc.getResponse(((iTrustHTTPTest.ADDRESS) + "auth/uap/home.jsp"));
+    assertEquals("iTrust - UAP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 8000000009L, 0L, "");
+    // click on Edit Basic Health Information
+    wr = wr.getLinkWith("Basic Health Information").click();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/getPatientID.jsp?forward=hcp-uap/editBasicHealth.jsp"), wr.getURL().toString());
+    // choose patient 2
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/editBasicHealth.jsp"), wr.getURL().toString());
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_HEALTH_INFORMATION_VIEW, 8000000009L, 2L, "");
+    // attempt to add a record with invalid hdl
+    WebForm form = wr.getForms()[0];
+    form.getButtons()[0].click();
+    form.setParameter("height", "10");
+    form.setParameter("weight", "400");
+    form.setParameter("isSmoker", "1");
+    form.setParameter("bloodPressureN", "999");
+    form.setParameter("bloodPressureD", "000");
+    form.setParameter("cholesterolHDL", "150");
+    form.setParameter("cholesterolLDL", "200");
+    form.setParameter("cholesterolTri", "200");
+    form.getButtons()[0].click();
+    WebResponse add = wc.getCurrentPage();
+    assertTrue(add.getText().contains("Cholesterol HDL must be an integer in [0,89]"));
+}

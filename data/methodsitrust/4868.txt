@@ -1,0 +1,5 @@
+public void testNameLotsOfBadStuff() throws Exception {
+    String value = "Bad!@#$%^&*()?.:;";
+    String errorMessage = InsuranceIDValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.INSURANCE_ID, false));
+}

@@ -1,0 +1,3 @@
+public void setDate(Date d) {
+    date = d;
+}

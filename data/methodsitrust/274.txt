@@ -1,0 +1,3 @@
+public List<DiagnosisBean> getDiagnosisCodes() throws DBException {
+    return icdDAO.getAllICDCodes();
+}

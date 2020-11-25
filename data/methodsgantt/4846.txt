@@ -1,0 +1,3 @@
+public TimeUnitText format(Date baseDate) {
+    return (myTextFormatter) == null ? new TimeUnitText("") : myTextFormatter.format(this, baseDate);
+}

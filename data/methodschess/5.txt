@@ -1,0 +1,41 @@
+/**
+ * Perform a ply.
+ *
+ * @param ply
+ * 		The ply to do.
+ */
+private final void doPly(Ply ply) {
+    // If the game is over, stop here.
+    if ((_gameState) == (GameState.TIMEOUT)) {
+        return;
+    }
+    // Store the ply notation to set the check flags a bit later, since they are computed in the gameOver()
+    // call in the move right toggle.
+    PlyNotation plyNotation = new PlyNotationImpl(ply, getBoard().getPiece(ply.getSource()));
+    getGame().doPly(ply);
+    getBoard().doPly(ply);
+    getRenderer().doPly(ply);
+    // Now try to get some info on the current game state.
+    boolean gameOver = gameOver((!(_moveRight)));
+    // Set check info for this ply.
+    if ((_gameState) == (GameState.CHECKMATE)) {
+        plyNotation.setCheckMate(true);
+    } else {
+        if ((_gameState) == (GameState.CHECK)) {
+            plyNotation.setCheck(true);
+        }
+    }
+    // Add the ply to the notation.
+    getGameNotation().addPly(plyNotation);
+    if (gameOver) {
+        getGameTimer().stop();// The game has ended.
+
+        if ((_gameState) == (GameState.DRAW)) {
+            signalGameOver("Draw! Use File -> Reset to play again!");
+        } else {
+            signalGameOver(((_moveRight) == (_computerIsWhite) ? "Checkmate! I win! :-)" : "Checkmate! I lose... :-("));
+        }
+    } else {
+        toggleMoveRight();
+    }
+}

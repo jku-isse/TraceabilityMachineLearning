@@ -1,0 +1,19 @@
+public void testAddPrescription_AllergyOverride() throws Exception {
+    action = new EditPrescriptionsAction(factory, 9000000000L, "100", "1093");
+    PrescriptionBean pres = new PrescriptionBean();
+    pres.setDosage(50);
+    pres.setInstructions("Take it");
+    pres.setStartDateStr("01/31/2011");
+    pres.setEndDateStr("02/12/2011");
+    pres.addReason(new OverrideReasonBean("1234"));
+    MedicationBean med = factory.getNDCodesDAO().getNDCode("00882219");
+    pres.setMedication(med);
+    pres.setVisitID(1093);
+    try {
+        action.addPrescription(pres);
+    } catch (Exception e) {
+        fail("Exception should not be thrown since override set");
+    }
+    boolean emailSent = (factory.getFakeEmailDAO().getEmailWithBody("Allergy: Lantus").size()) > 0;
+    assertTrue(emailSent);
+}

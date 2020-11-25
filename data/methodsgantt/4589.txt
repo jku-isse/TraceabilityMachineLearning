@@ -1,0 +1,4 @@
+private Result(Date lowerBound, Date upperBound) {
+    this.lowerBound = lowerBound;
+    this.upperBound = upperBound;
+}

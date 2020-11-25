@@ -1,0 +1,8 @@
+private void setFrameSize(Dimension screenSize, Dimension frameSize) {
+    if ((frameSize.height) > (screenSize.height)) {
+        frameSize.height = screenSize.height;
+    }
+    if ((frameSize.width) > (screenSize.width)) {
+        frameSize.width = screenSize.width;
+    }
+}

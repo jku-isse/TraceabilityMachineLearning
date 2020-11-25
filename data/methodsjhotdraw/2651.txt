@@ -1,0 +1,14 @@
+public void toolDone(ToolEvent event) {
+    // Empty
+    Tool newTracker = getSelectAreaTracker();
+    if (newTracker != null) {
+        if ((tracker) != null) {
+            tracker.deactivate(getEditor());
+            tracker.removeToolListener(this);
+        }
+        tracker = newTracker;
+        tracker.activate(getEditor());
+        tracker.addToolListener(this);
+    }
+    fireToolDone();
+}

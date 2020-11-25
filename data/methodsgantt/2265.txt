@@ -1,0 +1,34 @@
+/* (non-Javadoc)
+
+@see net.sourceforge.ganttproject.document.Document#acquireLock(java.lang.String)
+ */
+public boolean acquireLock() {
+    if (locked)
+        return true;
+
+    if (null == (getWebdavResource()))
+        return false;
+
+    try {
+        String userName = " (GanttProject)";
+        try {
+            userName = (" (" + (System.getProperty("user.name"))) + "@GanttProject)";
+        } catch (AccessControlException e) {
+            if (!(GPLogger.log(e))) {
+                e.printStackTrace(System.err);
+            }
+        }
+        int lockSeconds = ((HttpDocument.lockDAVMinutes) > 0) ? (HttpDocument.lockDAVMinutes) * 60 : 15;
+        locked = getWebdavResource().lockMethod(((httpURL.getUser()) + userName), lockSeconds);
+        return locked;
+    } catch (HttpException e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+    } catch (IOException e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+    }
+    return false;
+}

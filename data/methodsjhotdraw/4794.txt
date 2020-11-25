@@ -1,0 +1,16 @@
+@Override
+public Collection<Action> getActions(Point2D.Double p) {
+    LinkedList<Action> actions = new LinkedList<Action>();
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+        actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+                ODGAttributedFigure.this.willChange();
+                fireUndoableEditHappened(AttributeKeys.TRANSFORM.setUndoable(ODGAttributedFigure.this, null));
+                ODGAttributedFigure.this.changed();
+            }
+        });
+    }
+    return actions;
+}

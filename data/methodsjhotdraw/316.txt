@@ -1,0 +1,13 @@
+protected void fileExported(ExportableView view, File file, Object value) {
+    if (value != null) {
+        System.out.flush();
+        ((Throwable) (value)).printStackTrace();
+        // FIXME localize this error messsage
+        JSheet.showMessageSheet(view.getComponent(), (((((("<html>" + (UIManager.getString("OptionPane.css"))) + "<b>Couldn	 export to the file "") + file) + "".<p>") + "Reason: ") + value), JOptionPane.ERROR_MESSAGE);
+    }
+    view.setEnabled(true);
+    SwingUtilities.getWindowAncestor(view.getComponent()).toFront();
+    if ((oldFocusOwner) != null) {
+        oldFocusOwner.requestFocus();
+    }
+}

@@ -1,0 +1,100 @@
+public void testGetComprehensiveDemographicInfo() throws DBException {
+    PatientBean b = factory.getPatientDAO().getPatient(2L);
+    for (DemographicReportFilter.DemographicReportFilterType filterType : DemographicReportFilter.DemographicReportFilterType.values()) {
+        String res = action.getComprehensiveDemographicInfo(b, filterType);
+        switch (filterType) {
+            case GENDER :
+                assertEquals("Male", res);
+                break;
+            case LAST_NAME :
+                assertEquals("Programmer", res);
+                break;
+            case FIRST_NAME :
+                assertEquals("Andy", res);
+                break;
+            case CONTACT_EMAIL :
+                assertEquals("andy.programmer@gmail.com", res);
+                break;
+            case STREET_ADDR :
+                assertEquals("344 Bob Street ", res);
+                break;
+            case CITY :
+                assertEquals("Raleigh", res);
+                break;
+            case STATE :
+                assertEquals("NC", res);
+                break;
+            case ZIP :
+                assertEquals("27607", res);
+                break;
+            case PHONE :
+                assertEquals("555-555-5555", res);
+                break;
+            case EMER_CONTACT_NAME :
+                assertEquals("Mr Emergency", res);
+                break;
+            case EMER_CONTACT_PHONE :
+                assertEquals("555-555-5551", res);
+                break;
+            case INSURE_NAME :
+                assertEquals("IC", res);
+                break;
+            case INSURE_ADDR :
+                assertEquals("Street1 Street2", res);
+                break;
+            case INSURE_CITY :
+                assertEquals("City", res);
+                break;
+            case INSURE_STATE :
+                assertEquals("PA", res);
+                break;
+            case INSURE_ZIP :
+                assertEquals("19003-2715", res);
+                break;
+            case INSURE_PHONE :
+                assertEquals("555-555-5555", res);
+                break;
+            case INSURE_ID :
+                assertEquals("1", res);
+                break;
+            case PARENT_FIRST_NAME :
+                assertEquals("Random
+", res);
+                break;
+            case PARENT_LAST_NAME :
+                assertEquals("Person
+", res);
+                break;
+            case CHILD_FIRST_NAME :
+                assertEquals("Baby
+Baby
+Baby
+Baby
+", res);
+                break;
+            case CHILD_LAST_NAME :
+                assertEquals("Programmer
+A
+B
+C
+", res);
+                break;
+            case SIBLING_FIRST_NAME :
+                assertEquals("Care
+NoRecords
+Bowser
+Princess
+", res);
+                break;
+            case SIBLING_LAST_NAME :
+                assertEquals("Needs
+Has
+Koopa
+Peach
+", res);
+                break;
+            default :
+                break;
+        }
+    }
+}

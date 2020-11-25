@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the patientName
+ */
+public String getPatientName() {
+    return patientName;
+}

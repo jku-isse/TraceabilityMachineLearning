@@ -1,0 +1,22 @@
+/**
+ * Draw a marker at the given square.
+ *
+ * @param square
+ * 		The square to mark.
+ * @param g
+ * 		The graphics context.
+ */
+private final void markSquare(int square, Graphics g) {
+    int xpos = (square & 7) * (_squareSize);
+    // Compute the location of the
+    int ypos = (7 - (square >> 3)) * (_squareSize);// square
+
+    int rectSize = (_squareSize) - 1;
+    // and its size.
+    g.setColor(Color.blue);
+    // Simply draw a blue frame there.
+    for (int i = 0; i < 3; i++) {
+        g.drawRect((xpos++), (ypos++), rectSize, rectSize);
+        rectSize -= 2;
+    }
+}

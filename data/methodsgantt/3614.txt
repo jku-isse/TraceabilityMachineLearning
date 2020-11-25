@@ -1,0 +1,4 @@
+private String getShortDayName(int i) {
+    myCalendar.set(Calendar.DAY_OF_WEEK, i);
+    return myShortFormat.format(myCalendar.getTime()).toLowerCase();
+}

@@ -1,0 +1,5 @@
+public void testAge10() throws Exception {
+    PatientHistoryBean kid = new PatientHistoryBean();
+    kid.setDateOfBirthStr(DateUtil.yearsAgo(10));
+    assertEquals(10, kid.getAge());
+}

@@ -1,0 +1,7 @@
+public String getRequestedDateString() {
+    if ((requestedDate) == null)
+        return "";
+    // $NON-NLS-1$
+
+    return new SimpleDateFormat(ReportRequestBean.dateFormat).format(requestedDate);
+}

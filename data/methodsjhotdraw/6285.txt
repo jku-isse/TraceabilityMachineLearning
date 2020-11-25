@@ -1,0 +1,24 @@
+/**
+ * Invokes the specified accessible method with a string parameter if it exists.
+ *
+ * @param obj
+ * 		The object on which to invoke the method.
+ * @param methodName
+ * 		The name of the method.
+ * @param stringParameter
+ * 		The String parameter
+ * @return The return value of the method or METHOD_NOT_FOUND.
+ * @return NoSuchMethodException if the method does not exist or is not accessible.
+ */
+public static Object invoke(Object obj, String methodName, String stringParameter) throws NoSuchMethodException {
+    try {
+        Method method = obj.getClass().getMethod(methodName, new Class[]{ String.class });
+        Object result = method.invoke(obj, new Object[]{ stringParameter });
+        return result;
+    } catch (IllegalAccessException e) {
+        throw new NoSuchMethodException((methodName + " is not accessible"));
+    } catch (InvocationTargetException e) {
+        // The method is not supposed to throw exceptions
+        throw new InternalError(e.getMessage());
+    }
+}

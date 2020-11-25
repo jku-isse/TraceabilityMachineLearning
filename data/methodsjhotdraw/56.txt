@@ -1,0 +1,5 @@
+protected void setHasUnsavedChanges(boolean newValue) {
+    boolean oldValue = hasUnsavedChanges;
+    hasUnsavedChanges = newValue;
+    firePropertyChange(View.HAS_UNSAVED_CHANGES_PROPERTY, oldValue, newValue);
+}

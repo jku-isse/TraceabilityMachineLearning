@@ -1,0 +1,42 @@
+/* public XmlGenerator(){
+
+
+}
+ */
+/**
+ * generateXml converts the headers and data into a xml file
+ *
+ * @param headers
+ * 		- Column names
+ * @param Data
+ * 		- Data for columns
+ * @return - Xml document
+ */
+public static Document generateXml(ArrayList<String> headers, ArrayList<ArrayList<String>> Data) {
+    Document report;
+    try {
+        // sorced from http://stackoverflow.com/questions/8865099/xml-file-generator-in-java
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        // new document
+        report = builder.newDocument();
+        // head element
+        Element head = report.createElement("PatientReport");
+        report.appendChild(head);
+        // assumed has document builder and factory
+        // for each top level element
+        for (int x = 0; x < (Data.size()); x++) {
+            // makes format <Patient name="blah" age="xx" birthdate=""/> etc...
+            Element patient = report.createElement("Patient");
+            for (int y = 0; (y < (Data.get(x).size())) && (y < (headers.size())); y++) {
+                patient.setAttribute(XmlGenerator.parse(headers.get(y)), XmlGenerator.parse(Data.get(x).get(y)));
+            }
+            head.appendChild(patient);
+        }
+        // for each first level element, loop through second level and
+    } catch (ParserConfigurationException e) {
+        // TODO log error
+        return null;
+    }
+    return report;
+}

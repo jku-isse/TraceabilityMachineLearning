@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param visitID
+ * 		the visitID to set
+ */
+public void setVisitID(long visitID) {
+    this.visitID = visitID;
+}

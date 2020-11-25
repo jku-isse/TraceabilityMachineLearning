@@ -1,0 +1,8 @@
+// This uses a rudimentary mock object system - where we create these objects that are
+// essentially stubs, except for keeping track of info passed to them.
+public void testListenerWorked() throws Exception {
+    SessionTimeoutListener listener = new SessionTimeoutListener(TestDAOFactory.getTestInstance());
+    HttpSessionEvent event = new MockHttpSessionEvent();
+    listener.sessionCreated(event);
+    assertEquals(1200, MockHttpSession.mins);
+}

@@ -1,0 +1,4 @@
+public DockingListener(JToolBar t) {
+    this.toolBar = t;
+    getHandler().tb = t;
+}

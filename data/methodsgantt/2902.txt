@@ -1,0 +1,7 @@
+/* (non-Javadoc)
+
+@see net.sourceforge.ganttproject.gui.options.GeneralOptionPanel#initialize()
+ */
+public void initialize() {
+    // nothing to change
+}

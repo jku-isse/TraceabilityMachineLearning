@@ -1,0 +1,11 @@
+public void testParseLOINCFile2() throws Exception {
+    gen.clearAllTables();
+    List<String> expected = new ArrayList<String>();
+    expected.add("Successfully added 3 lines of new LOINC data. Updated 0 lines of existing LOINC data.");
+    String filename = "./testing-files/sample_loinc/sampleLoinc2.txt";
+    FileInputStream stream = new FileInputStream(filename);
+    List<String> actual = action.parseLOINCFile(stream, false);
+    assertEquals(expected, actual);
+    assertEquals(3, dao.getAllLOINC().size());
+    assertTrue(dao.getProcedures("10053-7").get(0).getComponent().equals("S wave duration.lead V2"));
+}

@@ -1,0 +1,15 @@
+public void shift(TaskLength shift) {
+    float unitCount = shift.getLength(myLength.getTimeUnit());
+    if (unitCount != 0.0F) {
+        Task resultTask = shift(unitCount);
+        GanttCalendar oldStart = myStart;
+        GanttCalendar oldEnd = myEnd;
+        myStart = resultTask.getStart();
+        myLength = resultTask.getDuration();
+        myEnd = resultTask.getEnd();
+        if (areEventsEnabled()) {
+            myManager.fireTaskScheduleChanged(this, oldStart, oldEnd);
+        }
+        recalculateActivities();
+    }
+}

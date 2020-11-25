@@ -1,0 +1,5 @@
+public void testGetRepresented() throws Exception {
+    List<PatientBean> rep = patientDAO.getRepresented(2L);
+    assertEquals(1, rep.size());
+    assertEquals(1L, rep.get(0).getMID());
+}

@@ -1,0 +1,3 @@
+TaskModelModificationListener(IGanttProject ganttProject) {
+    myGanttProject = ganttProject;
+}

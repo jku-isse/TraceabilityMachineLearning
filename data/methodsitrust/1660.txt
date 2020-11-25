@@ -1,0 +1,8 @@
+/**
+ * Note that this is a simplistic view. See the Wikipedia article on cholesterol.
+ *
+ * @return 
+ */
+public int getTotalCholesterol() {
+    return ((getCholesterolHDL()) + (getCholesterolLDL())) + (getCholesterolTri());
+}

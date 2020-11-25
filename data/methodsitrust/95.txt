@@ -1,0 +1,18 @@
+public String addAppt(ApptBean appt, boolean ignoreConflicts) throws FormValidationException, SQLException {
+    validator.validate(appt);
+    if (appt.getDate().before(new Timestamp(System.currentTimeMillis()))) {
+        return ("The scheduled date of this Appointment (" + (appt.getDate())) + ") has already passed.";
+    }
+    if (!ignoreConflicts) {
+        if ((getConflictsForAppt(appt.getHcp(), appt).size()) > 0) {
+            return "Warning! This appointment conflicts with other appointments";
+        }
+    }
+    try {
+        apptDAO.scheduleAppt(appt);
+        return ((("Success: " + (appt.getApptType())) + " for ") + (appt.getDate())) + " added";
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    }
+}

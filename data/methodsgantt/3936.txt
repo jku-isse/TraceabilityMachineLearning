@@ -1,0 +1,9 @@
+/**
+ * Retrieves an ancestor of ProjectResource identified by an identity value.
+ *
+ * @param id
+ * 		The id is an integer value that is unique for every resource.
+ * @return Ancestor of ProjectResource containing the requested resource.
+ * @see ProjectResource
+ */
+public ProjectResource getById(int id);

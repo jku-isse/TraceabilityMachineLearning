@@ -1,0 +1,24 @@
+/**
+ * Sends an e-mail to a patient requesting more information
+ *
+ * @param patientMID
+ * 		The patient to receive the message
+ * @param message
+ * 		The message
+ * @return string for testing purposes
+ * @throws DBException
+ * 		
+ */
+public String sendEmail(long patientMID, String message) throws DBException {
+    String rValue;
+    List<String> toList = new ArrayList<String>();
+    PatientBean receiver = patientDAO.getPatient(patientMID);
+    toList.add(receiver.getEmail());
+    Email mail = new Email();
+    mail.setBody(message);
+    mail.setFrom(((loggedInMID) + ""));
+    mail.setToList(toList);
+    emailer.sendEmail(mail);
+    rValue = (("" + (mail.getFrom())) + " ") + (mail.getBody());
+    return rValue;
+}

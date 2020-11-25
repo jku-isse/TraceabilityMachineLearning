@@ -1,0 +1,6 @@
+public void testExists() throws Exception {
+    new TestDataGenerator().officeVisit1();
+    assertTrue(ovDAO.checkOfficeVisitExists(1, 1));
+    // wrong patient
+    assertFalse(ovDAO.checkOfficeVisitExists(1, 2));
+}

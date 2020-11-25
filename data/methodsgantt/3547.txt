@@ -1,0 +1,3 @@
+static String encodeFieldType(Class fieldType) {
+    return CustomPropertyManager.PropertyTypeEncoder.encodeFieldType(fieldType);
+}

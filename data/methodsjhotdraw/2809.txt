@@ -1,0 +1,8 @@
+/**
+ * Sets the text shown by the text figure.
+ * This is a convenience method for calling willChange,
+ * AttribuTEXT.basicSet, changed.
+ */
+public void setText(String newText) {
+    AttributeKeys.TEXT.set(this, newText);
+}

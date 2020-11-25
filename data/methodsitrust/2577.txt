@@ -1,0 +1,15 @@
+public void testGetHospitalByWard() {
+    HospitalBean hb = new HospitalBean();
+    try {
+        hb = wd1.getHospitalByWard("name");
+        assertNull(hb);
+    } catch (DBException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.getHospitalByWard("name");
+        fail();
+    } catch (Exception e) {
+    }
+}

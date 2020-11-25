@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the drug the event is being reported for
+ */
+public String getDrug() {
+    return drug;
+}

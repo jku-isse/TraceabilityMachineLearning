@@ -1,0 +1,26 @@
+/**
+ * Get all sent referrals sorted by the time they were created.
+ *
+ * @return 
+ * @throws DBException
+ * 		
+ */
+/* public List<VerboseReferralBean> getReferrals() throws DBException {
+return referralDAO.getSenderQuery(hcpid).query("timestamp", SortDirection.DESCENDING);
+}
+ */
+/**
+ * Get all sent referrals sorted by the given field and in the given
+ * direction.
+ *
+ * @param field
+ * 		The name of the pseudo-field to sort by.
+ * @param dir
+ * 		The direction of the sort.
+ * @return 
+ * @throws DBException
+ * 		
+ */
+public List<VerboseReferralBean> getReferrals(String field, SortDirection dir) throws DBException {
+    return referralDAO.getSenderQuery(hcpid).query(field, dir);
+}

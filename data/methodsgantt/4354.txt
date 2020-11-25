@@ -1,0 +1,22 @@
+void cacheDate(Date date, int length) {
+    if ((myDates) == null) {
+        myDates = new ArrayList();
+    }
+    int index = length - (myMinLength);
+    while (index <= (-1)) {
+        myDates.add(0, null);
+        index++;
+    } 
+    while (index > (myDates.size())) {
+        myDates.add(null);
+    } 
+    if (index == (-1)) {
+        myDates.add(0, date);
+    } else
+        if (index == (myDates.size())) {
+            myDates.add(date);
+        } else {
+            myDates.set(index, date);
+        }
+
+}

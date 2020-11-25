@@ -1,0 +1,4 @@
+public void testIsSurveyCompleted() throws Exception {
+    assertEquals(false, surveyDAO.isSurveyCompleted(951L));
+    assertEquals(true, surveyDAO.isSurveyCompleted(952L));
+}

@@ -1,0 +1,43 @@
+/**
+ * Render a ply.
+ *
+ * @param ply
+ * 		The ply to render.
+ */
+public final void doPly(Ply ply) {
+    if (_animatedMoves) {
+        getAnimationLayer().animatePly(ply);
+        getAnimationLayer().start();
+        repaint();
+    } else {
+        // Check, if it was a castling
+        if (ply instanceof CastlingPly) {
+            int source = ply.getSource().getSquareIndex();
+            if (((CastlingPly) (ply)).isLeftCastling()) {
+                _square[(source - 2)].getPieceFrom(_square[source]);
+                _square[(source - 1)].getPieceFrom(_square[(source - 4)]);// Move the rook to the right
+
+            } else {
+                _square[(source + 2)].getPieceFrom(_square[source]);
+                _square[(source + 1)].getPieceFrom(_square[(source + 3)]);// Move the rook to the left
+
+            }
+        } else {
+            // If a pawn has just reached the last row
+            if (ply instanceof TransformationPly) {
+                // Copy the piece from source square to destination square.
+                _square[ply.getDestination().getSquareIndex()].getPieceFrom(_square[ply.getSource().getSquareIndex()]);
+                // Now change the rendering to the new piece type.
+                _square[ply.getDestination().getSquareIndex()].setIcon(new ImageIcon(new PieceRenderer(((ply.getDestination().getSquareIndex()) < 8 ? Piece.BLACK : Piece.WHITE), ((TransformationPly) (ply)).getTypeAfterTransformation(), _set, this)));
+            } else {
+                // Copy the piece from source square to destination square.
+                _square[ply.getDestination().getSquareIndex()].getPieceFrom(_square[ply.getSource().getSquareIndex()]);
+                // If its a en passant ply, remove the attacked pawn.
+                if (ply instanceof EnPassantPly) {
+                    _square[((EnPassantPly) (ply)).getAttackedPosition().getSquareIndex()].setIcon(null);
+                }
+            }
+        }
+        repaint();
+    }
+}

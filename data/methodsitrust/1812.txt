@@ -1,0 +1,3 @@
+public void setPersonnelCount(HashMap<TransactionType, Integer> personnelCount) {
+    this.personnelCount = personnelCount;
+}

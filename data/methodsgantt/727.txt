@@ -1,0 +1,3 @@
+public ResourceTreeTable getResourceTreeTable() {
+    return table;
+}

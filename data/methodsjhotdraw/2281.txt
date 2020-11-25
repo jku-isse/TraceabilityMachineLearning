@@ -1,0 +1,3 @@
+public void removeCompositeFigureListener(CompositeFigureListener listener) {
+    listenerList.remove(CompositeFigureListener.class, listener);
+}

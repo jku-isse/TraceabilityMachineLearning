@@ -1,0 +1,8 @@
+public void testAddUserException() throws Exception {
+    try {
+        evilDAO.addUser(0L, Role.ADMIN, "");
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

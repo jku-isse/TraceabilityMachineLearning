@@ -1,0 +1,7 @@
+/**
+ * A layout algorithm is used to define how the child components
+ * should be laid out in relation to each other. The task for
+ * layouting the child components for presentation is delegated
+ * to a Layouter which can be plugged in at runtime.
+ */
+public void layout();

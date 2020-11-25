@@ -1,0 +1,26 @@
+/**
+ * Retrieves a PersonnelBean for the mid passed as a param
+ *
+ * @param input
+ * 		the mid for which the PersonnelBean will be returned
+ * @return PersonnelBean
+ * @throws iTrustException
+ * 		
+ */
+public PersonnelBean getPersonnel(String input) throws iTrustException {
+    try {
+        long mid = Long.valueOf(input);
+        PersonnelBean personnel = personnelDAO.getPersonnel(mid);
+        if (personnel != null) {
+            return personnel;
+        }// $NON-NLS-1$
+         else
+            throw new iTrustException(Messages.getString("ViewPersonnelAction.1"));
+        // $NON-NLS-1$
+
+    } catch (NumberFormatException e) {
+        e.printStackTrace();
+        throw new iTrustException(Messages.getString("ViewPersonnelAction.2"));// $NON-NLS-1$
+
+    }
+}

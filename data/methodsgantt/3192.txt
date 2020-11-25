@@ -1,0 +1,3 @@
+public GPOption[] getOptions() {
+    return myOptions;
+}

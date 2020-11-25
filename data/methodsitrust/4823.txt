@@ -1,0 +1,5 @@
+public void testTooLong() throws Exception {
+    String value = "123456";
+    String errorMessage = CPTCodeValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, CPTCodeValidatorTest.VALIDATION_FORMAT, false));
+}

@@ -1,0 +1,3 @@
+protected boolean canFinish() {
+    return ((myState.getExporter()) != null) && ((myState.myFile) != null);
+}

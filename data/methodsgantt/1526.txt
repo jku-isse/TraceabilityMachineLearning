@@ -1,0 +1,3 @@
+public boolean equals(GanttDaysOff dayOffs) {
+    return (dayOffs.getStart().equals(myStart)) && (dayOffs.getFinish().equals(myFinish));
+}

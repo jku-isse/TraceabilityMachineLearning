@@ -1,0 +1,10 @@
+/**
+ * Returns the start position of the token relative
+ * to the position that the stream had, when the
+ * StreamPosTokenizer was constructed.
+ *
+ * @return the start position of the token.
+ */
+public int getStartPosition() {
+    return startpos;
+}

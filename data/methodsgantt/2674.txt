@@ -1,0 +1,4 @@
+public GanttCalendar getFinish() {
+    // end.setFixed(isFinishFixed);
+    return end;
+}

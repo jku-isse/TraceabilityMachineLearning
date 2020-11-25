@@ -1,0 +1,5 @@
+public void testFilterMessages() throws iTrustException, SQLException, ParseException {
+    List<MessageBean> mbList = action2.getAllMyMessages();
+    mbList = action2.filterMessages(mbList, "Random Person,Appointment,Appointment,Lab,01/01/2010,01/31/2010");
+    assertEquals(1, mbList.size());
+}

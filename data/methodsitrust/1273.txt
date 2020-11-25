@@ -1,0 +1,7 @@
+@Override
+protected void setUp() throws Exception {
+    super.setUp();
+    action = new ViewReceivingReferralsAction(factory, 9000000003L);
+    gen.clearAllTables();
+    gen.standardData();
+}

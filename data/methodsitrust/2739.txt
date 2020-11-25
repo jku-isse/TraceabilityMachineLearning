@@ -1,0 +1,9 @@
+public void testDoItTwice() throws Exception {
+    hosDAO.assignHospital(9000000000L, "1");
+    try {
+        hosDAO.assignHospital(9000000000L, "1");
+        fail("Exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("HCP 9000000000 already assigned to hospital 1", e.getMessage());
+    }
+}

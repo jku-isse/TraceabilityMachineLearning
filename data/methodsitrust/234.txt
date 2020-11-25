@@ -1,0 +1,14 @@
+/**
+ * Method to return a list of drug interactions for a given drug
+ *
+ * @param drugCode
+ * 		- The ND Code of the drug
+ * @return 
+ */
+public List<DrugInteractionBean> getInteractions(String drugCode) throws iTrustException {
+    try {
+        return drugDAO.getInteractions(drugCode);
+    } catch (DBException e) {
+        throw new iTrustException(e.getMessage());
+    }
+}

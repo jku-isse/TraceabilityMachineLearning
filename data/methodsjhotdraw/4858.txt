@@ -1,0 +1,4 @@
+@Override
+public ODGBezierFigure getChild(int index) {
+    return ((ODGBezierFigure) (super.getChild(index)));
+}

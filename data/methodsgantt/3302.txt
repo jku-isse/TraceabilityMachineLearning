@@ -1,0 +1,6 @@
+/**
+ * Constructor.
+ */
+public ServerDialog(GanttProject parent) {
+    super(parent, GanttProject.correctLabel(GanttLanguage.getInstance().getText("webServer")), true, new ConnectionPanel(parent));
+}

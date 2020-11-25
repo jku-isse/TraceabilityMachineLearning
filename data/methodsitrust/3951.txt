@@ -1,0 +1,54 @@
+public void testAddLabProcedureWithLabTech() throws Exception {
+    gen.clearAllTables();
+    gen.standardData();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // select the patient
+    WebForm form = wr.getForms()[0];
+    form.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    form.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // Select the office visit from specific date
+    wr.getLinkWith("6/10/2007").click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    form = wr.getFormWithID("labProcedureForm");
+    form.setParameter("loinc", "10666-6");
+    form.setParameter("labTech", "5000000001");
+    form.setParameter("labProcPriority", "1");
+    form.getButtonWithID("add_labProcedure").click();
+    // check updated page
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Lab Procedure information successfully updated."));
+    iTrustHTTPTest.assertLogged(TransactionType.LAB_PROCEDURE_ADD, 9000000000L, 2L, "");
+    // Get row containing procedure.
+    WebTable tbl = wr.getTableWithID("labProceduresTable");
+    TableRow[] rows = tbl.getRows();
+    int rowi = 0;
+    for (; rowi < (rows.length); rowi++) {
+        if (rows[rowi].getText().startsWith("| 10666-6")) {
+            break;
+        }
+    }
+    assertTrue((rowi < (rows.length)));
+    // Verify data in table
+    assertEquals("Lab Dude", tbl.getCellAsText(rowi, 1));
+    assertEquals("In Transit", tbl.getCellAsText(rowi, 2));// status
+
+    assertEquals("", tbl.getCellAsText(rowi, 5));// commentary
+
+    assertEquals("", tbl.getCellAsText(rowi, 6));// numerical results
+
+    assertEquals("", tbl.getCellAsText(rowi, 7));// lower bound
+
+    assertEquals("", tbl.getCellAsText(rowi, 8));// upper bound
+
+    assertTrue(tbl.getCellAsText(rowi, 10).contains("Remove"));// action
+
+    assertTrue(tbl.getCellAsText(rowi, 10).contains("Reassign"));// action
+
+}

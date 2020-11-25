@@ -1,0 +1,15 @@
+public void testSendMessage() throws FormValidationException, iTrustException, SQLException {
+    String body = "UNIT TEST - SendMessageActionText";
+    MessageBean mBean = new MessageBean();
+    Timestamp timestamp = new Timestamp(this.gCal.getTimeInMillis());
+    mBean.setFrom(this.pateientId);
+    mBean.setTo(this.hcpId);
+    mBean.setSubject(body);
+    mBean.setSentDate(timestamp);
+    mBean.setBody(body);
+    this.smAction.sendMessage(mBean);
+    List<MessageBean> mbList = this.messageDAO.getMessagesFor(this.hcpId);
+    assertEquals(15, mbList.size());
+    MessageBean mBeanDB = mbList.get(0);
+    assertEquals(body, mBeanDB.getBody());
+}

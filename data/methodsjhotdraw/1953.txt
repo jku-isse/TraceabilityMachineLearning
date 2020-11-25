@@ -1,0 +1,12 @@
+/**
+ * Creates handles used to manipulate the figure.
+ *
+ * @param detailLevel
+ * 		The detail level of the handles. Usually this is 0 for
+ * 		bounding box handles and 1 for point handles. The value -1 is used
+ * 		by the SelectAreaTracker and the HandleTracker to highlight figures, over which the mouse
+ * 		pointer is hovering.
+ * @return a Collection of handles
+ * @see Handle
+ */
+public Collection<Handle> createHandles(int detailLevel);

@@ -1,0 +1,3 @@
+public void addView(ResourceView view) {
+    myViews.add(view);
+}

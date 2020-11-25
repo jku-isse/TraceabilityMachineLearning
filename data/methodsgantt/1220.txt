@@ -1,0 +1,15 @@
+private boolean isVisible(Task thetask) {
+    boolean res = true;
+    DefaultMutableTreeNode father = getTree().getFatherNode(thetask);
+    if (father == null) {
+        return false;
+    }
+    while (father != null) {
+        Task taskFather = ((Task) (father.getUserObject()));
+        if (!(taskFather.getExpand())) {
+            res = false;
+        }
+        father = ((DefaultMutableTreeNode) (father.getParent()));
+    } 
+    return res;
+}

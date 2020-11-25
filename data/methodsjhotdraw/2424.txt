@@ -1,0 +1,21 @@
+public Figure findFigure(Point2D.Double p) {
+    Collection<Figure> c = quadTree.findContains(p);
+    switch (c.size()) {
+        case 0 :
+            return null;
+        case 1 :
+            {
+                Figure f = c.iterator().next();
+                return f.contains(p) ? f : null;
+            }
+        default :
+            {
+                for (Figure f : getFiguresFrontToBack()) {
+                    if ((c.contains(f)) && (f.contains(p)))
+                        return f;
+
+                }
+                return null;
+            }
+    }
+}

@@ -1,0 +1,5 @@
+public void setName(String newValue) {
+    String oldValue = name;
+    name = newValue;
+    firePropertyChange(DefaultApplicationModel.NAME_PROPERTY, oldValue, newValue);
+}

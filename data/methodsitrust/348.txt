@@ -1,0 +1,10 @@
+/**
+ * Returns the office visit bean for the office visit
+ *
+ * @return the OfficeVisitBean of the office visit
+ * @throws iTrustException
+ * 		
+ */
+public OfficeVisitBean getOfficeVisit() throws iTrustException {
+    return getBean();
+}

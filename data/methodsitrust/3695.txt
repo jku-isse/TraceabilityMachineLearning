@@ -1,0 +1,9 @@
+public void testBadParse() throws Exception {
+    try {
+        TransactionType.parse(37);
+        TransactionType.parse(99);
+        fail("exception should have been thrown");
+    } catch (IllegalArgumentException e) {
+        assertEquals("No transaction type exists for code 37", e.getMessage());
+    }
+}

@@ -1,0 +1,17 @@
+public void testHCPPatientUploadValidData() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Upload Patient File").click();
+    assertEquals("iTrust - Upload Patient File", wr.getTitle());
+    WebForm wf = wr.getFormWithName("mainForm");
+    wf.setParameter("patientFile", new File("testing-files/sample_patientupload/HCPPatientUploadValidData.csv"));
+    wf.getButtonWithID("sendFile").click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Upload Successful"));
+    assertTrue(wr.getText().contains("<td>Michael</td>"));
+    assertTrue(wr.getText().contains("<td>Marley</td>"));
+    assertTrue(wr.getText().contains("<td>Michael</td>"));
+    assertTrue(wr.getText().contains("<td>Bazik</td>"));
+    assertTrue(wr.getText().contains("<td>Barry</td>"));
+    assertTrue(wr.getText().contains("<td>Peddycord</td>"));
+}

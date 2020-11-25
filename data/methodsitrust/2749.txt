@@ -1,0 +1,8 @@
+public void testUpdateHospitalException() throws Exception {
+    try {
+        evilDAO.updateHospital(new HospitalBean());
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

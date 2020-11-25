@@ -1,0 +1,8 @@
+private int getSelectedType(String typeName) {
+    for (int i = 0; i < (ResourceDialogCustomColumn.availableTypes.length); i++) {
+        if (ResourceDialogCustomColumn.availableTypes[i].equals(typeName)) {
+            return i;
+        }
+    }
+    return -1;
+}

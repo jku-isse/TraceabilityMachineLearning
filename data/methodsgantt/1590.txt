@@ -1,0 +1,7 @@
+public boolean equals(Object o) {
+    if (false == (o instanceof CachingOffsetCalculatorImpl.UnitPair)) {
+        return false;
+    }
+    CachingOffsetCalculatorImpl.UnitPair rvalue = ((CachingOffsetCalculatorImpl.UnitPair) (o));
+    return (rvalue.myMainUnit.equals(myMainUnit)) && (rvalue.myOffsetUnit.equals(myOffsetUnit));
+}

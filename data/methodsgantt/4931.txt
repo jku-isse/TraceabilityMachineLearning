@@ -1,0 +1,3 @@
+public LineHeader(TimeUnit myUnit) {
+    this.myUnit = myUnit;
+}

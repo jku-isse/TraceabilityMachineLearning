@@ -1,0 +1,16 @@
+/**
+ * Constructs an event for the provided CompositeFigure.
+ *
+ * @param source
+ * 		The composite figure.
+ * @param child
+ * 		The changed figure.
+ * @param invalidatedArea
+ * 		The bounds of the invalidated area on the drawing.
+ */
+public CompositeFigureEvent(CompositeFigure source, Figure child, Rectangle2D.Double invalidatedArea, int zIndex) {
+    super(source);
+    this.child = child;
+    this.invalidatedArea = invalidatedArea;
+    this.index = 0;
+}

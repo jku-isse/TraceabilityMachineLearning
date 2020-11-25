@@ -1,0 +1,3 @@
+public void setI18N(OptionsPageBuilder.I18N i18n) {
+    myi18n = i18n;
+}

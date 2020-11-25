@@ -1,0 +1,18 @@
+/**
+ * Method added by PHIL. [Thanks, PHIL. -Rob]
+ * This pads the buffer without closing the stream.
+ */
+public void flushBase64() throws IOException {
+    if ((position) > 0) {
+        if (encode) {
+            out.write(Base64.encode3to4(b4, buffer, position));
+            position = 0;
+        }// end else: decoding
+         else // end if: encoding
+        {
+            throw new IOException("Base64 input not properly padded.");
+        }// end else: decoding
+
+    }// end if: buffer partially full
+
+}// end flush

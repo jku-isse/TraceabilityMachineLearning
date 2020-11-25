@@ -1,0 +1,4 @@
+public double getBaseline() {
+    TextLayout layout = getTextLayout();
+    return ((origin.y) + (layout.getAscent())) - (getBounds().y);
+}

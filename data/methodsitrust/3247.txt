@@ -1,0 +1,5 @@
+public void testCurrentPrescriptions() throws Exception {
+    List<PrescriptionBean> list;
+    list = patientDAO.getCurrentPrescriptions(2);
+    assertEquals(1, list.size());
+}

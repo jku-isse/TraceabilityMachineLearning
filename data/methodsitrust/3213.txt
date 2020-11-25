@@ -1,0 +1,8 @@
+public void testAdd() {
+    try {
+        evilDAO.add(new PrescriptionBean());
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

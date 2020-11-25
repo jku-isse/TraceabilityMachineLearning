@@ -1,0 +1,7 @@
+@Override
+public void redo() throws CannotRedoException {
+    super.redo();
+    figure.willChange();
+    figure.restoreTransformTo(newRestoreData);
+    figure.changed();
+}

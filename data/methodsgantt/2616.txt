@@ -1,0 +1,24 @@
+public void run() {
+    try {
+        // while(true){
+        switch (mode) {
+            case GanttStatusBar.MESSAGE_1 :
+                Thread.sleep(message1.getTimer());
+                message1.hideText();
+                message1.setText("");
+                break;
+            case GanttStatusBar.MESSAGE_2 :
+                Thread.sleep(message2.getTimer());
+                message2.hideText();
+                message2.setText("");
+                break;
+        }
+        mode = GanttStatusBar.NO_MESSAGE;
+        // }
+    } catch (Exception e) {
+        if (!(GPLogger.log(e))) {
+            e.printStackTrace(System.err);
+        }
+    }
+    bRunning = false;
+}

@@ -1,0 +1,39 @@
+/**
+ * write the resources.
+ */
+private void writeResources(OutputStreamWriter out) throws IOException {
+    writeResourceHeaders(out);
+    // parse all resources
+    for (int i = 0; i < (resources.size()); i++) {
+        HumanResource p = ((HumanResource) (resources.get(i)));
+        // ID
+        if (csvOptions.bExportResourceID) {
+            writeCell(out, ("" + (p.getId())));
+        }
+        // Name
+        if (csvOptions.bExportResourceName) {
+            writeTextCell(out, p.getName());
+        }
+        // Mail
+        if (csvOptions.bExportResourceMail) {
+            writeTextCell(out, p.getMail());
+        }
+        // Phone
+        if (csvOptions.bExportResourcePhone) {
+            writeTextCell(out, p.getPhone());
+        }
+        // Role
+        if (csvOptions.bExportResourceRole) {
+            Role role = p.getRole();
+            String sRoleID = (role == null) ? "0" : role.getPersistentID();
+            writeTextCell(out, sRoleID);
+        }
+        List customProps = p.getCustomProperties();
+        for (int j = 0; j < (customProps.size()); j++) {
+            CustomProperty nextProperty = ((CustomProperty) (customProps.get(j)));
+            writeTextCell(out, nextProperty.getValueAsString());
+        }
+        out.write("
+");
+    }
+}// end of write resources

@@ -1,0 +1,7 @@
+/**
+ * Construtor
+ */
+public OpenFileDialog(GanttProject project) {
+    myStartDirectory = new File(System.getProperty("user.home"));
+    myproject = project;
+}

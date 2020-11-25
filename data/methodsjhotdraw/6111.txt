@@ -1,0 +1,3 @@
+public void fireEdit(UndoableEdit edit) {
+    undoManager.addEdit(edit);
+}

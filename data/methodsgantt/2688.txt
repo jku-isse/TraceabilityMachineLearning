@@ -1,0 +1,14 @@
+private boolean isProjectTaskOrContainsProjectTask(Task task) {
+    if (task.isProjectTask()) {
+        return true;
+    }
+    boolean result = false;
+    Task[] nestedTasks = task.getNestedTasks();
+    for (int i = 0; i < (nestedTasks.length); i++) {
+        if (isProjectTaskOrContainsProjectTask(nestedTasks[i])) {
+            result = true;
+            break;
+        }
+    }
+    return result;
+}

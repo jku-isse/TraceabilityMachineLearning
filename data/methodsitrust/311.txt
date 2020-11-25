@@ -1,0 +1,4 @@
+public void deleteLabProcedure(LabProcedureBean bean) throws iTrustException {
+    verifySaved();
+    labProcedureDAO.removeLabProcedure(bean.getProcedureID());
+}

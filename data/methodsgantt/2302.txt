@@ -1,0 +1,3 @@
+public boolean canRead() {
+    return myPhysicalDocument.canRead();
+}

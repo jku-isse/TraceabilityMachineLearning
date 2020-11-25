@@ -1,0 +1,10 @@
+/**
+ * East.
+ *
+ * @param isTransform
+ * 		Set this to true, if RelativeLocator shall honour
+ * 		the AttributesKey.TRANSFORM attribute of the Figure.
+ */
+public static Locator east(boolean isTransform) {
+    return new RelativeLocator(1.0, 0.5, isTransform);
+}

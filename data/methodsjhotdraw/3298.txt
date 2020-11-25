@@ -1,0 +1,4 @@
+public UngroupAction(DrawingEditor editor, CompositeFigure prototype) {
+    super(editor, prototype, false);
+    labels.configureAction(this, UngroupAction.ID);
+}

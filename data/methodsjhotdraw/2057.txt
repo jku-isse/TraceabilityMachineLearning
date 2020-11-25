@@ -1,0 +1,3 @@
+protected double getDecoratorPathRadius(Figure f) {
+    return decorationRadius;
+}

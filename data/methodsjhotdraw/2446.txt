@@ -1,0 +1,6 @@
+@Override
+public void basicAdd(int index, Figure figure) {
+    super.basicAdd(index, figure);
+    quadTree.add(figure, figure.getDrawingArea());
+    needsSorting = true;
+}

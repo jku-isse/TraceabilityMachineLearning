@@ -1,0 +1,9 @@
+// ===========================================================
+// SAX DocumentHandler methods
+// ===========================================================
+public void endDocument() throws SAXException {
+    for (int i = 0; i < (myListeners.size()); i++) {
+        ParsingListener l = ((ParsingListener) (myListeners.get(i)));
+        l.parsingFinished();
+    }
+}

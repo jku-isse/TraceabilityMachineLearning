@@ -1,0 +1,84 @@
+public void addButton(int icon, DefaultListModel list) {
+    switch (icon) {
+        case GanttOptions.SEPARATOR :
+            list.addElement(GPToolBar.SEPARATOR_OBJECT);
+            break;
+        case GanttOptions.NEW :
+            list.addElement(bNew);
+            break;
+        case GanttOptions.OPEN :
+            list.addElement(bOpen);
+            break;
+        case GanttOptions.SAVE :
+            list.addElement(bSave);
+            break;
+        case GanttOptions.IMPORT :
+            list.addElement(bImport);
+            break;
+        case GanttOptions.EXPORT :
+            list.addElement(bExport);
+            break;
+        case GanttOptions.PRINT :
+            list.addElement(bPrint);
+            break;
+        case GanttOptions.PREVIEWPRINT :
+            list.addElement(bPreviewPrint);
+            break;
+        case GanttOptions.CUT :
+            list.addElement(bCut);
+            break;
+        case GanttOptions.COPY :
+            list.addElement(bCopy);
+            break;
+        case GanttOptions.PASTE :
+            list.addElement(bPaste);
+            break;
+        case GanttOptions.NEWTASK :
+            list.addElement(bNewTask);
+            break;
+        case GanttOptions.DELETE :
+            list.addElement(bDelete);
+            break;
+        case GanttOptions.PROPERTIES :
+            list.addElement(bProperties);
+            break;
+        case GanttOptions.PREV :
+            list.addElement(bPrev);
+            break;
+        case GanttOptions.CENTER :
+            list.addElement(bScrollCenter);
+            break;
+        case GanttOptions.NEXT :
+            list.addElement(bNext);
+            break;
+        case GanttOptions.ZOOMOUT :
+            list.addElement(bZoomOut);
+            break;
+        case GanttOptions.ZOOMIN :
+            list.addElement(bZoomIn);
+            break;
+        case GanttOptions.UNDO :
+            list.addElement(bUndo);
+            break;
+        case GanttOptions.REDO :
+            list.addElement(bRedo);
+            break;
+        case GanttOptions.CRITICAL :
+            list.addElement(bCritical);
+            break;
+        case GanttOptions.ABOUT :
+            list.addElement(bAbout);
+            break;
+        case GanttOptions.SAVECURRENT :
+            list.addElement(bSaveCurrent);
+            break;
+        case GanttOptions.COMPAREPREV :
+            list.addElement(bComparePrev);
+            break;
+        case GanttOptions.REFRESH :
+            list.addElement(bRefresh);
+            break;
+        default :
+            break;
+    }
+}

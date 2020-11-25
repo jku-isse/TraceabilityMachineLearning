@@ -1,0 +1,3 @@
+public String getEnumName(Enum o) {
+    return escape(o.getClass().getName());
+}

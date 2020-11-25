@@ -1,0 +1,3 @@
+public void setBackgroundColor(Color myBackgroundColor) {
+    this.myBackgroundColor = myBackgroundColor;
+}

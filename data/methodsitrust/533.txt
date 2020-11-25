@@ -1,0 +1,47 @@
+public void testAddReferral() throws Exception {
+    // When adding a referral, it should appear in the database, and
+    // messages should be sent to the associated users.
+    long senderid = 9000000000L;
+    long receiverid = 9000000003L;
+    long patientid = 2L;
+    action = new EditSingleReferralAction(factory, senderid);
+    // Ensure no referral messages exist for any user.
+    List<MessageBean> msgs = msgDAO.getMessagesFor(senderid);
+    assertEquals(0, countMessageWithSubject(msgs, "You Created a New Referral"));
+    msgs = msgDAO.getMessagesFor(receiverid);
+    assertEquals(0, countMessageWithSubject(msgs, "You Received a New Referral"));
+    msgs = msgDAO.getMessagesFor(patientid);
+    assertEquals(0, countMessageWithSubject(msgs, "You Received a New Referral"));
+    // construct the referral
+    ReferralBean bean = new ReferralBean();
+    bean.setOvid(955L);
+    bean.setPatientID(patientid);
+    bean.setReceiverID(receiverid);
+    bean.setSenderID(senderid);
+    bean.setPriority(1);
+    bean.setReferralDetails("A Test Referral!!!");
+    // send the referral
+    action.addReferral(bean);
+    // get stored referral
+    List<ReferralBean> refs = refDAO.getReferralsFromOV(955L);
+    bean = null;
+    for (ReferralBean r : refs) {
+        if (r.getReferralDetails().equals("A Test Referral!!!")) {
+            bean = r;
+            break;
+        }
+    }
+    assertTrue((bean != null));// make sure we actually found a bean
+
+    // check the contents of the bean
+    assertEquals(patientid, bean.getPatientID());
+    assertEquals(senderid, bean.getSenderID());
+    assertEquals(receiverid, bean.getReceiverID());
+    // check that messages were sent
+    msgs = msgDAO.getMessagesFor(senderid);
+    assertEquals(1, countMessageWithSubject(msgs, "You Created a New Referral"));
+    msgs = msgDAO.getMessagesFor(receiverid);
+    assertEquals(1, countMessageWithSubject(msgs, "You Received a New Referral"));
+    msgs = msgDAO.getMessagesFor(patientid);
+    assertEquals(1, countMessageWithSubject(msgs, "You Received a New Referral"));
+}

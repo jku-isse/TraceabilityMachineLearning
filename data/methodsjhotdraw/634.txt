@@ -1,0 +1,1 @@
+public float[] RGBtoComponent(int rgb, float[] hsb);

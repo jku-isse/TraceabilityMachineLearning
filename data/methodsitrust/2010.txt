@@ -1,0 +1,7 @@
+public Date getStartDate() {
+    try {
+        return new SimpleDateFormat("MM/dd/yyyy").parse(startDateStr);
+    } catch (ParseException e) {
+        return null;
+    }
+}

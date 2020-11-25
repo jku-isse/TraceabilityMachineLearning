@@ -1,0 +1,4 @@
+/**
+ * Converts view coordinates to drawing coordinates.
+ */
+public Rectangle2D.Double viewToDrawing(Rectangle p);

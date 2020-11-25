@@ -1,0 +1,29 @@
+/**
+ * Return a list of prescriptions which are currently prescribed for a patient
+ *
+ * @param patientID
+ * 		The MID of the patient in question.
+ * @return A java.util.List of prescription beans.
+ * @throws DBException
+ * 		
+ */
+public List<PrescriptionBean> getCurrentPrescriptions(long patientID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (patientID == 0L)
+            throw new SQLException("pid cannot be 0");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("Select * From ovmedication,ndcodes,officevisits " + ((("Where officevisits.PatientID = ? AND ovmedication.VisitID = " + "officevisits.ID AND ndcodes.Code=ovmedication.NDCode AND ") + "ovmedication.EndDate >= ?") + "ORDER BY ovmedication.ID DESC;")));
+        ps.setLong(1, patientID);
+        ps.setDate(2, DateUtil.getSQLdateXDaysAgoFromNow(0));
+        ResultSet rs = ps.executeQuery();
+        return prescriptionLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

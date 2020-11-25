@@ -1,0 +1,8 @@
+/**
+ * Gets the reason Description for this procedure
+ *
+ * @return The reason Description for this procedure
+ */
+public String getDescription() {
+    return description;
+}

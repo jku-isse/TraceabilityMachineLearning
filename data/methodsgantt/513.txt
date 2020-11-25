@@ -1,0 +1,3 @@
+public GanttLanguage getLanguage() {
+    return this.language;
+}

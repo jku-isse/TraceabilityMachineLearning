@@ -1,0 +1,8 @@
+/**
+ * Creates a <code>NumberFormatter</code> with the a default
+ * <code>NumberFormat</code> instance obtained from
+ * <code>NumberFormat.getNumberInstance()</code>.
+ */
+public JavaNumberFormatter() {
+    super();
+}

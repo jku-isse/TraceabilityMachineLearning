@@ -1,0 +1,7 @@
+void fireRolesChanged(RoleSet changedRoleSet) {
+    RoleManager.RoleEvent event = new RoleManager.RoleEvent(this, changedRoleSet);
+    for (int i = 0; i < (myListeners.size()); i++) {
+        RoleManager.Listener next = ((RoleManager.Listener) (myListeners.get(i)));
+        next.rolesChanged(event);
+    }
+}

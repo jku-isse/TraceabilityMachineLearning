@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @return true if you want to export the relations of the task on the
+exported chart.
+ */
+public boolean getExportRelations() {
+    return bExportRelations;
+}

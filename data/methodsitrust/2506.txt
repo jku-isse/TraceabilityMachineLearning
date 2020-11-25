@@ -1,0 +1,26 @@
+public void testProduceDataset2() {
+    chart = new HealthData();
+    String codeName = "Weight";
+    Calendar mytime = Calendar.getInstance();
+    int quarter = ((mytime.get(Calendar.MONTH)) / 3) + 1;
+    List<HealthRecord> healthRecordBeans = new LinkedList<HealthRecord>();
+    HealthRecord hRecord = new HealthRecord();
+    hRecord.setWeight(0);
+    hRecord.setDateRecorded(new Timestamp(mytime.getTime().getTime()));
+    healthRecordBeans.add(hRecord);
+    Map<String, String> params = new HashMap<String, String>();
+    SimpleDateFormat sdf = new SimpleDateFormat("yy");
+    try {
+        chart.initializeHealthRecords(healthRecordBeans, codeName);
+        DefaultCategoryDataset data = ((DefaultCategoryDataset) (chart.produceDataset(params)));
+        try {
+            data.getValue(codeName, ((("Q" + quarter) + " ") + (sdf.format(mytime.getTime()))));
+        } catch (UnknownKeyException e) {
+            assertEquals(1, 1);
+        }
+        assertTrue(chart.hasData());
+    } catch (DatasetProduceException e) {
+        e.printStackTrace();
+        fail();
+    }
+}

@@ -1,0 +1,4 @@
+public void testGetDiagnosisCodes() throws Exception {
+    List<DiagnosisBean> db = action.getDiagnosisCodes();
+    assertEquals(15, db.size());
+}

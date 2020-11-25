@@ -1,0 +1,4 @@
+public WardRoomBean loadSingle(ResultSet rs) throws SQLException {
+    WardRoomBean wardRoom = new WardRoomBean(rs.getLong("RoomID"), rs.getLong("OccupiedBy"), rs.getLong("InWard"), rs.getString("roomName"), rs.getString("Status"));
+    return wardRoom;
+}

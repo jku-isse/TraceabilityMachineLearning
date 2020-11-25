@@ -1,0 +1,3 @@
+public void setCoordinator(boolean responsible) {
+    myCoordinator = responsible;
+}

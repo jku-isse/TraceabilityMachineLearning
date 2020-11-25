@@ -1,0 +1,4 @@
+public void setGraphics(Graphics g) {
+    myGraphics = g;
+    myTextLengthCalculator.setGraphics(g);
+}

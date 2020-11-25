@@ -1,0 +1,9 @@
+UndoableEditImpl(String localizedName, Runnable editImpl, UndoManagerImpl manager) throws IOException {
+    // System.out.println ("UndoableEditImpl : " + localizedName);
+    myManager = manager;
+    myPresentationName = localizedName;
+    myEditImpl = editImpl;
+    myDocumentBefore = saveFile();
+    editImpl.run();
+    myDocumentAfter = saveFile();
+}

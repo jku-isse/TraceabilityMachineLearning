@@ -1,0 +1,4 @@
+public static Image createImage(URL resource) {
+    Image image = Toolkit.getDefaultToolkit().createImage(resource);
+    return image;
+}

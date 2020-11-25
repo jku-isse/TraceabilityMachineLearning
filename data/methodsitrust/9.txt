@@ -1,0 +1,6 @@
+public void testOverloadedConstructor() throws Exception {
+    HashMap<String, Object> map = new HashMap<String, Object>();
+    map.put("description", new String[]{ "test text" });
+    DiagnosisBean diag = new BeanBuilder<DiagnosisBean>().build(map, new DiagnosisBean());
+    assertEquals("test text", diag.getDescription());
+}

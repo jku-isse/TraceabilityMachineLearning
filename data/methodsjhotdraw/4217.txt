@@ -1,0 +1,8 @@
+@Override
+public Dimension getPreferredVerticalSize() {
+    Dimension vertDim = ((Dimension) (PaletteLookAndFeel.getInstance().get("Slider.verticalSize")));
+    if (vertDim == null) {
+        vertDim = new Dimension(21, 100);
+    }
+    return vertDim;
+}

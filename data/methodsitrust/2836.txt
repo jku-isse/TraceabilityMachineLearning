@@ -1,0 +1,11 @@
+public List<ApptBean> getAppt(int apptID) throws SQLException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    conn = factory.getConnection();
+    ps = conn.prepareStatement("SELECT * FROM appointment WHERE appt_id=?");
+    ps.setInt(1, apptID);
+    ResultSet rs = ps.executeQuery();
+    List<ApptBean> abList = this.abloader.loadList(rs);
+    DBUtil.closeConnection(conn, ps);
+    return abList;
+}

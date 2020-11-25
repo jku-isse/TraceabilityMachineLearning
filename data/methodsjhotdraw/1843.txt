@@ -1,0 +1,4 @@
+/**
+ * Sets the font render context used to do text leyout and text drawing.
+ */
+void setFontRenderContext(FontRenderContext frc);

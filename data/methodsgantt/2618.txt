@@ -1,0 +1,3 @@
+public void setFirstText(String text) {
+    message1.setText(text);
+}

@@ -1,0 +1,6 @@
+public EditLabProceduresAction(DAOFactory factory, long hcpid, String pidString) throws iTrustException {
+    super(factory, hcpid, pidString);
+    labProcedureDAO = factory.getLabProcedureDAO();
+    personnelDAO = factory.getPersonnelDAO();
+    loincDAO = factory.getLOINCDAO();
+}

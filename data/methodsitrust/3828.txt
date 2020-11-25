@@ -1,0 +1,11 @@
+public void testPatientDeactivatedLogin() throws Exception {
+    // begin at the iTrust home page
+    WebConversation wc = new WebConversation();
+    WebResponse loginResponse = wc.getResponse(iTrustHTTPTest.ADDRESS);
+    // log in using the given username and password
+    WebForm form = loginResponse.getForms()[0];
+    form.setParameter("j_username", "314159");
+    form.setParameter("j_password", "pw");
+    WebResponse homePage = loginResponse.getForms()[0].submit();
+    assertTrue(homePage.getText().contains("Failed login attempts"));
+}

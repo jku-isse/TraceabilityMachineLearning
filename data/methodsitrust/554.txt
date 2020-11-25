@@ -1,0 +1,19 @@
+public void testGetTransactions() throws FormValidationException, SQLException {
+    try {
+        action.logEvent(TransactionType.LOGIN_FAILURE, mid, 0, "");
+        TransactionDAO dao = factory.getTransactionDAO();
+        List<TransactionBean> all = dao.getAllTransactions();
+        boolean passes = false;
+        for (TransactionBean log : all) {
+            if (((log.getLoggedInMID()) == (mid)) && ((log.getTransactionType()) == (TransactionType.LOGIN_FAILURE))) {
+                passes = true;
+                break;
+            }
+        }
+        if (!passes) {
+            fail();
+        }
+    } catch (DBException e) {
+        fail();
+    }
+}

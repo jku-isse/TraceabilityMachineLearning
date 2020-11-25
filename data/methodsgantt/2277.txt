@@ -1,0 +1,13 @@
+private WebdavResource getWebdavResource() {
+    if (null == (webdavResource))
+        try {
+            webdavResource = new WebdavResource(httpURL, WebdavResource.NOACTION, 0);
+            webdavResource.setFollowRedirects(true);
+        } catch (HttpException e) {
+            lastError = (((e.getMessage()) + "(") + (e.getReasonCode())) + ")";
+        } catch (IOException e) {
+            lastError = e.getMessage();
+        }
+
+    return webdavResource;
+}

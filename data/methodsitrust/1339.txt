@@ -1,0 +1,17 @@
+/**
+ * The default constructor.
+ *
+ * @param factory
+ * 		A database access object factory for supplying a runtime context.
+ * @param pidString
+ * 		The patients MID as a String, to be passed to the super constructor (for PatientBaseAction)
+ * @param ovIDString
+ * 		The unique identifier of the office visit as a String.
+ * @throws iTrustException
+ * 		If any of the supplied parameters is incorrect or there is a DB problem.
+ */
+public OfficeVisitBaseAction(DAOFactory factory, String pidString, String ovIDString) throws iTrustException {
+    super(factory, pidString);
+    this.ovDAO = factory.getOfficeVisitDAO();
+    this.ovID = checkOfficeVisitID(ovIDString);
+}

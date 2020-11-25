@@ -1,0 +1,3 @@
+public String proposeFileExtension() {
+    return ExporterToCSV.FILE_EXTENSIONS[0];
+}

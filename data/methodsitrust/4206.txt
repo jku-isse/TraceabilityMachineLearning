@@ -1,0 +1,10 @@
+/**
+ * Sets up the test. Clears the tables then adds necessary data
+ */
+protected void setUp() throws Exception {
+    super.setUp();
+    gen.clearAllTables();
+    gen.standardData();
+    gen.patient_hcp_vists();
+    gen.hcp_diagnosis_data();
+}

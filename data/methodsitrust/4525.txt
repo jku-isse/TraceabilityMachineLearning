@@ -1,0 +1,11 @@
+public void testStateSelectException() throws Exception {
+    StateSelect tag = new StateSelect();
+    tag.setPageContext(mockContext);
+    // were okay with any strings written here - normally you want to be more specific
+    mockWriter.write(((String) (anyObject())));
+    expectLastCall().andThrow(new IOException());// nothing done but stacktrace
+
+    ctrl.replay();
+    assertEquals(Tag.SKIP_BODY, tag.doStartTag());
+    ctrl.verify();
+}

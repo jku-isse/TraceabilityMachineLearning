@@ -1,0 +1,4 @@
+public void testGetSpecificLabs() throws iTrustException {
+    List<LabProcedureBean> lpbList = action.getSpecificLabs(pid, "10640-1");
+    assertEquals(1, lpbList.size());
+}

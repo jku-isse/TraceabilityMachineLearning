@@ -1,0 +1,18 @@
+public void trackStep(Point anchor, Point lead, int modifiersEx) {
+    BezierFigure figure = getOwner();
+    figure.willChange();
+    Point2D.Double p = view.getConstrainer().constrainPoint(view.viewToDrawing(lead));
+    if ((AttributeKeys.TRANSFORM.get(getTransformOwner())) != null) {
+        try {
+            AttributeKeys.TRANSFORM.get(getTransformOwner()).inverseTransform(p, p);
+        } catch (NoninvertibleTransformException ex) {
+            ex.printStackTrace();
+        }
+    }
+    BezierPath.Node n = figure.getNode(index);
+    // fireAreaInvalidated(n);
+    n.moveTo(p);
+    // fireAreaInvalidated(n);
+    figure.setNode(index, n);
+    figure.changed();
+}

@@ -1,0 +1,7 @@
+/**
+ * Updates the enabled state of this action depending on the new enabled
+ * state of the application.
+ */
+protected void updateApplicationEnabled() {
+    firePropertyChange("enabled", Boolean.valueOf((!(isEnabled()))), Boolean.valueOf(isEnabled()));
+}

@@ -1,0 +1,5 @@
+public void testAddRemoveFromList() throws Exception {
+    TelemedicineBean tBean = new TelemedicineBean();
+    assertTrue(rmDAO.addPatientToList(2L, 9000000000L, tBean));
+    assertTrue(rmDAO.removePatientFromList(2L, 9000000000L));
+}

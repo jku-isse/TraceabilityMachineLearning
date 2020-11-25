@@ -1,0 +1,27 @@
+// //////////////////////////////////////////////////////////////////////////
+// ResourceContext interface
+public ProjectResource[] getResources() {
+    // ProjectResource[] res;
+    // List allRes = model.getAllResouces();
+    // res = new ProjectResource[allRes.size()];
+    // model.getAllResouces().toArray(res);
+    // return res;
+    ProjectResource[] res;
+    DefaultMutableTreeNode[] tNodes = table.getSelectedNodes();
+    if (tNodes == null) {
+        return new ProjectResource[0];
+    }
+    int nbProjectResource = 0;
+    for (int i = 0; i < (tNodes.length); i++)
+        if ((tNodes[i]) instanceof ResourceNode)
+            nbProjectResource++;
+
+
+    res = new ProjectResource[nbProjectResource];
+    for (int i = 0; i < nbProjectResource; i++)
+        if ((tNodes[i]) instanceof ResourceNode)
+            res[i] = ((ProjectResource) (((ResourceNode) (tNodes[i])).getUserObject()));
+
+
+    return res;
+}

@@ -1,0 +1,21 @@
+public void setData(String text) {
+    if ((text != null) && ((text.length()) > 0)) {
+        StringReader in = new StringReader(text);
+        try {
+            NanoXMLDOMInput domi = new NanoXMLDOMInput(new NetFactory(), in);
+            domi.openElement("Net");
+            setDrawing(((Drawing) (domi.readObject(0))));
+        } catch (Throwable e) {
+            getDrawing().removeAllChildren();
+            TextFigure tf = new TextFigure();
+            tf.setText(e.getMessage());
+            tf.setBounds(new Point2D.Double(10, 10), new Point2D.Double(100, 100));
+            getDrawing().add(tf);
+            e.printStackTrace();
+        } finally {
+            if (in != null)
+                in.close();
+
+        }
+    }
+}

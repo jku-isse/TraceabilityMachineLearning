@@ -1,0 +1,3 @@
+public AutoscrollingTree(DefaultTreeModel treeModel) {
+    super(treeModel);
+}

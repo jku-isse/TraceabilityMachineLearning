@@ -1,0 +1,22 @@
+/**
+ * Transforms the figure.
+ *
+ * @param tx
+ * 		The transformation.
+ */
+public void transform(AffineTransform tx) {
+    invalidateTransformedShape();
+    if (((AttributeKeys.TRANSFORM.get(this)) != null) || (((tx.getType()) & ((AffineTransform.TYPE_TRANSLATION) | (AffineTransform.TYPE_MASK_SCALE))) != (tx.getType()))) {
+        if ((AttributeKeys.TRANSFORM.get(this)) == null) {
+            AttributeKeys.TRANSFORM.basicSet(this, ((AffineTransform) (tx.clone())));
+        } else {
+            AffineTransform t = AttributeKeys.TRANSFORM.getClone(this);
+            t.preConcatenate(tx);
+            AttributeKeys.TRANSFORM.basicSet(this, t);
+        }
+    } else {
+        Point2D.Double anchor = getStartPoint();
+        Point2D.Double lead = getEndPoint();
+        setBounds(((Point2D.Double) (tx.transform(anchor, anchor))), ((Point2D.Double) (tx.transform(lead, lead))));
+    }
+}

@@ -1,0 +1,3 @@
+public TaskHierarchyItem getRootItem() {
+    return myRootItem;
+}

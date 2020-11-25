@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public ODGGroupFigure() {
+    ODGAttributeKeys.setDefaults(this);
+}

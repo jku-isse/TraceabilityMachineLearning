@@ -1,0 +1,14 @@
+/**
+ * Returns true, if this view can be saved to the specified file.
+ * A reason why the view cant be saved to a file, is that the
+ * view is unable to write to a file with the given filename
+ * extension without losing data.
+ * <p>
+ * The SaveAction uses this method to decide, whether to display
+ * a file dialog before saving the file.
+ *
+ * @param file
+ * 		A file. If this parameter is null, a NullPointerException
+ * 		is thrown.
+ */
+public boolean canSaveTo(File file);

@@ -1,0 +1,29 @@
+private Component createDialogContentComponent(int dialogType, String message) {
+    JLabel label;
+    switch (dialogType) {
+        case GanttDialogInfo.ERROR :
+            label = new JLabel(new ImageIcon(getClass().getResource("/icons/error.png")));
+            break;
+        case GanttDialogInfo.WARNING :
+            label = new JLabel(new ImageIcon(getClass().getResource("/icons/warning.png")));
+            break;
+        case GanttDialogInfo.INFO :
+            label = new JLabel(new ImageIcon(getClass().getResource("/icons/info.png")));
+            break;
+        case GanttDialogInfo.QUESTION :
+            label = new JLabel(new ImageIcon(getClass().getResource("/icons/question.png")));
+            break;
+        default :
+            throw new IllegalStateException("We should not be here");
+    }
+    JPanel imagePanel = new JPanel(new BorderLayout());
+    imagePanel.add(label, BorderLayout.NORTH);
+    // 
+    JTextArea textArea = new JTextArea(message);
+    textArea.setEditable(false);
+    textArea.setBackground(new JLabel().getBackground());
+    JPanel result = new JPanel(new BorderLayout());
+    result.add(imagePanel, BorderLayout.WEST);
+    result.add(textArea, BorderLayout.CENTER);
+    return result;
+}

@@ -1,0 +1,19 @@
+public VerboseReferralBean loadSingle(ResultSet rs) throws SQLException {
+    VerboseReferralBean ref = new VerboseReferralBean();
+    // ERIC: fixed to correct for the mysql database bug plaguing java 1.5
+    ref.setId(rs.getInt("id"));
+    ref.setSenderID(rs.getLong("SenderID"));
+    ref.setReceiverID(rs.getLong("ReceiverID"));
+    ref.setPatientID(rs.getInt("PatientID"));
+    ref.setReferralDetails(rs.getString("ReferralDetails"));
+    ref.setOvid(rs.getLong("OVID"));
+    ref.setTimeStamp(VerboseReferralBeanLoader.dateFormat.format(rs.getTimestamp("TimeStamp")));
+    ref.setViewedByHCP(rs.getBoolean("viewed_by_HCP"));
+    ref.setViewedByPatient(rs.getBoolean("viewed_by_patient"));
+    ref.setPriority(rs.getInt("PriorityCode"));
+    ref.setOvDate(new SimpleDateFormat("MM/dd/yyyy").format(rs.getDate("visitDate")));
+    ref.setPatientName(rs.getString("patientName"));
+    ref.setReceiverName(rs.getString("receiverName"));
+    ref.setSenderName(rs.getString("senderName"));
+    return ref;
+}

@@ -1,0 +1,10 @@
+/**
+ * Returns the index of the specified child.
+ * <p>
+ * This is a convenience method for calling
+ * {@code getChildren().indexOf(index);}.
+ *
+ * @return The index of the child, or -1 if the specified figure is not
+a child of this CompositeFigure.
+ */
+public int indexOf(Figure child);

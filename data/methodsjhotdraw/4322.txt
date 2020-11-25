@@ -1,0 +1,8 @@
+public void componentRemoved(ContainerEvent evt) {
+    Component c = evt.getChild();
+    if ((toolBarFocusListener) != null) {
+        c.removeFocusListener(toolBarFocusListener);
+    }
+    // Revert the button border
+    setBorderToNormal(c);
+}

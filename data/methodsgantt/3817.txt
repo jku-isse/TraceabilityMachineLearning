@@ -1,0 +1,8 @@
+public void addCustomField(CustomPropertyDefinition definition) {
+    customFields.put(definition.getName(), definition);
+    /* all the existant resources are added the new property field */
+    Iterator it = resources.iterator();
+    while (it.hasNext()) {
+        ((HumanResource) (it.next())).addCustomField(definition.getName(), definition.getDefaultValue());
+    } 
+}

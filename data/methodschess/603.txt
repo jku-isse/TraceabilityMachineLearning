@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the square index of this position (0-63).
+ *
+ * @return The square index of this position.
+ */
+public final int getSquareIndex() {
+    return _squareIndex;
+}

@@ -1,0 +1,9 @@
+@Override
+public <T> void setAttribute(AttributeKey<T> key, T value) {
+    if (key == (ODGAttributeKeys.OPACITY)) {
+        attributes.put(key, value);
+    } else {
+        super.setAttribute(key, value);
+    }
+    invalidate();
+}

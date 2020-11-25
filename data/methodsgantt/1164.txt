@@ -1,0 +1,16 @@
+private void buildAssignmentsSubtree(ResourceNode resourceNode) {
+    ProjectResource resource = resourceNode.getResource();
+    resourceNode.removeAllChildren();
+    ResourceAssignment[] assignments = resource.getAssignments();
+    int[] indices = new int[assignments.length];
+    TreeNode[] children = new TreeNode[assignments.length];
+    if ((assignments.length) > 0) {
+        for (int i = 0; i < (assignments.length); i++) {
+            indices[i] = i;
+            AssignmentNode an = new AssignmentNode(assignments[i]);
+            children[i] = an;
+            resourceNode.add(an);
+        }
+    }
+    fireTreeStructureChanged(this, resourceNode.getPath(), indices, children);
+}

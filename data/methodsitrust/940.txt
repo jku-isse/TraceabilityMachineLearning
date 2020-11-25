@@ -1,0 +1,12 @@
+public void testParseLOINCFileReplace() throws Exception {
+    gen.clearAllTables();
+    String filename1 = "./testing-files/sample_loinc/sampleLoinc.txt";
+    String filename2 = "./testing-files/sample_loinc/sampleLoinc2.txt";
+    FileInputStream stream1 = new FileInputStream(filename1);
+    FileInputStream stream2 = new FileInputStream(filename2);
+    action.parseLOINCFile(stream1, false);
+    assertEquals(29, dao.getAllLOINC().size());
+    action.parseLOINCFile(stream2, false);
+    assertEquals(29, dao.getAllLOINC().size());
+    assertTrue(((dao.getProcedures("10054-5").get(0).getSystem()) == null));
+}

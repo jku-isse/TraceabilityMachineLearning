@@ -1,0 +1,13 @@
+public void testRemoveWard() {
+    try {
+        wd1.removeWard(1L);
+    } catch (DBException e) {
+    }
+    try {
+        expect(factory2.getConnection()).andThrow(new SQLException());
+        ctrl.replay();
+        wd2.removeWard(1L);
+        fail();
+    } catch (Exception e) {
+    }
+}

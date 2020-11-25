@@ -1,0 +1,39 @@
+protected IXMLElement createText(IXMLElement doc, Point2D.Double[] coordinates, double[] rotate, StyledDocument text, Map<AttributeKey, Object> attributes) throws IOException {
+    IXMLElement elem = doc.createElement("text");
+    StringBuilder bufX = new StringBuilder();
+    StringBuilder bufY = new StringBuilder();
+    for (int i = 0; i < (coordinates.length); i++) {
+        if (i != 0) {
+            bufX.append(,);
+            bufY.append(,);
+        }
+        bufX.append(SVGOutputFormat.toNumber(coordinates[i].getX()));
+        bufY.append(SVGOutputFormat.toNumber(coordinates[i].getY()));
+    }
+    StringBuilder bufR = new StringBuilder();
+    if (rotate != null) {
+        for (int i = 0; i < (rotate.length); i++) {
+            if (i != 0) {
+                bufR.append(,);
+            }
+            bufR.append(SVGOutputFormat.toNumber(rotate[i]));
+        }
+    }
+    writeAttribute(elem, "x", bufX.toString(), "0");
+    writeAttribute(elem, "y", bufY.toString(), "0");
+    writeAttribute(elem, "rotate", bufR.toString(), "");
+    String str;
+    try {
+        str = text.getText(0, text.getLength());
+    } catch (BadLocationException e) {
+        InternalError error = new InternalError(e.getMessage());
+        error.initCause(e);
+        throw error;
+    }
+    elem.setContent(str);
+    writeShapeAttributes(elem, attributes);
+    writeOpacityAttribute(elem, attributes);
+    writeTransformAttribute(elem, attributes);
+    writeFontAttributes(elem, attributes);
+    return elem;
+}

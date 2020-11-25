@@ -1,0 +1,3 @@
+protected TimeUnitText getCachedText(Date startDate) {
+    return ((TimeUnitText) (myTextCache.get(startDate)));
+}

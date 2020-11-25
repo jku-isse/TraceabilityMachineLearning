@@ -1,0 +1,7 @@
+public void testPatientAllCorrect() throws Exception {
+    PersonnelBean p = new PersonnelBean();
+    p.setFirstName("Persona");
+    p.setLastName("LastName");
+    p.setEmail("andy.programmer@gmail.com");
+    new AddPersonnelValidator().validate(p);
+}

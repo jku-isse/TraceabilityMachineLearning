@@ -1,0 +1,11 @@
+public void endElement(String namespaceURI, String sName, String qName) {
+    indent = indent.substring(0, ((indent.length()) - 4));
+    if ("description".equals(qName)) {
+        myProjectInfo._sDescription = getCorrectString(myCharacterBuffer.toString());
+    } else
+        if ("notes".equals(qName)) {
+            Task currentTask = myTaskManager.getTask(getContext().getTaskID());
+            currentTask.setNotes(getCorrectString(myCharacterBuffer.toString()));
+        }
+
+}

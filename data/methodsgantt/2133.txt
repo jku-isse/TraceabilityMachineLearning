@@ -1,0 +1,3 @@
+protected String getLocalizedName() {
+    return (myChart) == null ? null : myChart.getName();
+}

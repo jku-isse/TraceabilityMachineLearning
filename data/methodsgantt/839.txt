@@ -1,0 +1,10 @@
+/**
+ * Return the selected task
+ */
+private GanttTask getSelectedTask() {
+    DefaultMutableTreeNode node = getSelectedTaskNode();
+    if (node == null)
+        return null;
+
+    return ((GanttTask) (node.getUserObject()));
+}

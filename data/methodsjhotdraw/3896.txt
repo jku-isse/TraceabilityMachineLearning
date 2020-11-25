@@ -1,0 +1,21 @@
+/**
+ * Brings up a sheet where the number of choices is determined
+ * by the <code>optionType</code> parameter.
+ *
+ * @param parentComponent
+ * 		determines the <code>Frame</code> in which the
+ * 		sheet is displayed; if <code>null</code>,
+ * 		or if the <code>parentComponent</code> has no
+ * 		<code>Frame</code>, the sheet is displayed as a dialog.
+ * @param message
+ * 		the <code>Object</code> to display
+ * @param optionType
+ * 		an int designating the options available on the dialog:
+ * 		<code>YES_NO_OPTION</code>, or
+ * 		<code>YES_NO_CANCEL_OPTION</code>
+ * @param listener
+ * 		The listener for SheetEvents.
+ */
+public static void showConfirmSheet(Component parentComponent, Object message, int optionType, SheetListener listener) {
+    JSheet.showConfirmSheet(parentComponent, message, optionType, JOptionPane.QUESTION_MESSAGE, listener);
+}

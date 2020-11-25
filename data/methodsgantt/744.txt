@@ -1,0 +1,3 @@
+public void resourceAdded(ResourceEvent event) {
+    newHuman(((HumanResource) (event.getResource())));
+}

@@ -1,0 +1,29 @@
+/**
+ * Makes the patient (pid) represent the input mid parameter
+ *
+ * @param pidString
+ * 		the mid of the person who will be represented (the representee)
+ * @return a message
+ * @throws iTrustException
+ * 		
+ */
+public String addRepresentative(String pidString) throws iTrustException {
+    try {
+        long representee = Long.valueOf(pidString);
+        if ((authDAO.getUserRole(representee)) != (Role.PATIENT))
+            throw new iTrustException("This user is not a patient!");
+        else
+            if ((super.pid) == representee)
+                throw new iTrustException("This user cannot represent themselves.");
+
+
+        boolean confirm = patientDAO.addRepresentative(pid, representee);
+        if (confirm) {
+            return "Patient represented";
+        } else
+            return "No change made";
+
+    } catch (NumberFormatException e) {
+        return "MID not a number";
+    }
+}

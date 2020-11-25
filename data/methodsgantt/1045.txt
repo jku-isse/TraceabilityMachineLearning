@@ -1,0 +1,1 @@
+UIConfiguration getUIConfiguration();

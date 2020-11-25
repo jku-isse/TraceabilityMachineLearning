@@ -1,0 +1,9 @@
+/**
+ * Writes a Drawing into an output stream.
+ *
+ * @param out
+ * 		The output stream.
+ * @param drawing
+ * 		The drawing.
+ */
+public void write(OutputStream out, Drawing drawing) throws IOException;

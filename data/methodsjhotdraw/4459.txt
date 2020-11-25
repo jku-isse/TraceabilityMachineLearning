@@ -1,0 +1,12 @@
+private JPanel createSliderChooser(ColorSystem sys) {
+    JPanel p = new JPanel(new GridLayout(0, 1));
+    DefaultColorSliderModel m = new DefaultColorSliderModel(sys);
+    models.add(m);
+    m.addChangeListener(handler);
+    for (int i = 0; i < (m.getComponentCount()); i++) {
+        JSlider s = new JSlider(JSlider.HORIZONTAL);
+        m.configureSlider(i, s);
+        p.add(s);
+    }
+    return p;
+}

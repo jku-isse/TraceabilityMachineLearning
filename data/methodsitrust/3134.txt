@@ -1,0 +1,30 @@
+/**
+ * Assigns an HCP to a the specified ward.
+ *
+ * @param hcpID
+ * 		The id of the HCP to assign
+ * @param wardID
+ * 		The ward to assign the HCP to.
+ * @return A boolean whether or not the insert worked correctly.
+ * @throws iTrustException
+ * 		
+ */
+public boolean assignHCPToWard(long hcpID, long wardID) throws iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO HCPAssignedToWard (HCP, WARD) Values(?,?)");
+        ps.setLong(1, hcpID);
+        ps.setLong(2, wardID);
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        e.printStackTrace();
+        if (1062 == (e.getErrorCode()))
+            throw new iTrustException("Error: HCP or WARD ID dont exist!");
+
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

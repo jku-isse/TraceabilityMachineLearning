@@ -1,0 +1,19 @@
+/**
+ * Returns the persons name that matches the inputMID param
+ *
+ * @param inputMID
+ * 		The MID to look up.
+ * @return the persons name
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public String getUserName(String inputMID) throws iTrustException {
+    try {
+        long mid = Long.valueOf(inputMID);
+        return factory.getAuthDAO().getUserName(mid);
+    } catch (NumberFormatException e) {
+        throw new iTrustException("MID not in correct form");
+    }
+}

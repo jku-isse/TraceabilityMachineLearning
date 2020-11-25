@@ -1,0 +1,84 @@
+/**
+ * Gets the local and regional counts for the specified week and calculates the prior average.
+ *
+ * @param startDate
+ * 		a date in the week to analyze
+ * @param icdCode
+ * 		the diagnosis to analyze
+ * @param zip
+ * 		the area to analyze
+ * @param threshold
+ * 		
+ * @return statistics for the week and previous averages
+ * @throws FormValidationException
+ * 		
+ * @throws DBException
+ * 		
+ */
+public ArrayList<DiagnosisStatisticsBean> getEpidemicStatistics(String startDate, String icdCode, String zip, String threshold) throws DBException, FormValidationException {
+    if ((startDate == null) || (icdCode == null))
+        return null;
+
+    if (!((icdCode.equals("84.50")) || (icdCode.equals("487.00")))) {
+        throw new FormValidationException("Exception");
+    }
+    if (ViewDiagnosisStatisticsAction.ICD_MALARIA.equals(icdCode)) {
+        try {
+            Integer.parseInt(threshold);
+        } catch (NumberFormatException e) {
+            throw new FormValidationException("Threshold must be an integer.");
+        }
+    }
+    Date lower;// lower, which is parsed to startDate
+
+    try {
+        lower = new SimpleDateFormat("MM/dd/yyyy").parse(startDate);
+    } catch (ParseException e) {
+        throw new FormValidationException("Enter dates in MM/dd/yyyy");
+    }
+    if (!(zip.matches("([0-9]{5})|([0-9]{5}-[0-9]{4})")))
+        throw new FormValidationException("Zip Code must be 5 digits!");
+
+    DiagnosisStatisticsBean dbWeek = diagnosesDAO.getCountForWeekOf(icdCode, zip, lower);
+    DiagnosisStatisticsBean dbAvg = new DiagnosisStatisticsBean(zip, 0, 0, lower, lower);
+    Calendar cal = Calendar.getInstance();
+    Date start = diagnosesDAO.findEarliestIncident(icdCode);// start, which is set to earliest incident
+
+    Calendar startCal = Calendar.getInstance();
+    startCal.setTime(start);
+    ArrayList<DiagnosisStatisticsBean> ret = new ArrayList<DiagnosisStatisticsBean>();
+    if (start == null) {
+        ret.add(dbWeek);
+        ret.add(dbAvg);
+        return ret;
+    }
+    cal.setTime(lower);// cal, which is set to lower
+
+    Calendar lowerCal = Calendar.getInstance();
+    lowerCal.setTime(lower);
+    int weekOfYr = cal.get(Calendar.WEEK_OF_YEAR);
+    cal.set(Calendar.YEAR, startCal.get(Calendar.YEAR));// cals year then gets set to starts year
+
+    ArrayList<DiagnosisStatisticsBean> dbList = new ArrayList<DiagnosisStatisticsBean>();
+    while ((cal.getTime().before(lower)) && ((cal.get(Calendar.YEAR)) != (lowerCal.get(Calendar.YEAR)))) {
+        dbList.add(diagnosesDAO.getCountForWeekOf(icdCode, zip, cal.getTime()));
+        cal.add(Calendar.YEAR, 1);
+        cal.set(Calendar.WEEK_OF_YEAR, weekOfYr);
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+    } 
+    long avg = 0;
+    long avgRegion = 0;
+    if ((dbList.size()) > 0) {
+        for (DiagnosisStatisticsBean d : dbList) {
+            avg += d.getZipStats();
+            avgRegion += d.getRegionStats();
+        }
+        avg /= dbList.size();
+        avgRegion /= dbList.size();
+    }
+    dbAvg.setRegionStats(avgRegion);
+    dbAvg.setZipStats(avg);
+    ret.add(dbWeek);
+    ret.add(dbAvg);
+    return ret;
+}

@@ -1,0 +1,5 @@
+public void testGoodAnswer() throws Exception {
+    String value = "this is my answer5";
+    String errorMessage = AnswerValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, AnswerValidatorTest.VALIDATION_FORMAT, false));
+}

@@ -1,0 +1,10 @@
+/**
+ * Overrides the original, to solve the october duplicated day bug
+ */
+public void add(int field, int value) {
+    if (field == (Calendar.DATE))
+        this.add(Calendar.HOUR, (value * 24));
+    else
+        super.add(field, value);
+
+}

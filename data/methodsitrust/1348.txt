@@ -1,0 +1,3 @@
+protected DAOFactory getFactory() {
+    return factory;
+}

@@ -1,0 +1,51 @@
+/**
+ * draw the box of the task.
+ */
+public void drawbox(OutputStreamWriter fout, GanttXFIGSaver.BoxObject boxObject) throws IOException {
+    if (debug)
+        System.out.println("drawbox begin");
+
+    // draw an xfig box object;
+    fout.write("2 ");
+    fout.write(((boxObject.sub_type) + " "));
+    fout.write(((boxObject.line_style) + " "));
+    fout.write(((boxObject.thickness) + " "));
+    fout.write(((boxObject.pen_color) + " "));
+    fout.write(((boxObject.fill_color) + " "));
+    fout.write(((boxObject.depth) + " "));
+    fout.write(((boxObject.pen_style) + " "));
+    fout.write(((boxObject.area_fill) + " "));
+    fout.write(((" " + (boxObject.style_val)) + "  "));
+    fout.write(((boxObject.join_style) + " "));
+    fout.write(((boxObject.cap_style) + " "));
+    fout.write(((boxObject.radius) + " "));
+    fout.write(((boxObject.forward_arrow) + " "));
+    fout.write(((boxObject.backward_arrow) + " "));
+    fout.write(((boxObject.npoints) + "
+	"));
+    int arrow_type = 1;
+    int arrow_style = 1;
+    float arrow_thickness = 1.0F;
+    float arrow_width = 60.0F;
+    float arrow_height = 60.0F;
+    if ((boxObject.sub_type) == 3) {
+        if ((boxObject.forward_arrow) != 0) {
+            System.out.println("forward");
+            fout.write(((((((((("      " + ((int) (arrow_type))) + " ") + ((int) (arrow_style))) + " ") + ((int) (arrow_thickness))) + ((int) (arrow_width))) + " ") + ((int) (arrow_height))) + "
+"));
+        }
+        if ((boxObject.backward_arrow) != 0) {
+            fout.write(((((((((("      " + ((int) (arrow_type))) + " ") + ((int) (arrow_style))) + " ") + ((int) (arrow_thickness))) + ((int) (arrow_width))) + " ") + ((int) (arrow_height))) + "
+"));
+            System.out.println("back");
+        }
+    }
+    for (int i = 0; i < (boxObject.points.length); i++)
+        fout.write((((int) (boxObject.points[i])) + " "));
+
+    fout.write("
+");
+    if (debug)
+        System.out.println("drawbox end");
+
+}

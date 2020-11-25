@@ -1,0 +1,17 @@
+private void doFinish() {
+    Iterator itMutators = myMutators.iterator();
+    while (itMutators.hasNext())
+        ((TaskMutator) (itMutators.next())).commit();
+
+    try {
+        getTaskManager().getAlgorithmCollection().getRecalculateTaskScheduleAlgorithm().run();
+    } catch (TaskDependencyException e) {
+        getUIFacade().showErrorDialog(e);
+    }
+    Iterator itTasks = myTasks.iterator();
+    while (itTasks.hasNext()) {
+        Task t = ((Task) (itTasks.next()));
+        t.applyThirdDateConstraint();
+    } 
+    this.repaint();
+}

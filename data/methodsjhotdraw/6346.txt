@@ -1,0 +1,3 @@
+public void ancestorAdded(AncestorEvent event) {
+    locationChanged();
+}

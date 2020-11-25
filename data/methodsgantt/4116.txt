@@ -1,0 +1,5 @@
+public void reset() {
+    CustomColumnsStorage.initTypes();
+    mapIdCustomColum.clear();
+    CustomColumnsStorage.nextId = 0;
+}

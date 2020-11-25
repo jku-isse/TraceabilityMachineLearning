@@ -1,0 +1,7 @@
+/**
+ * Set a new ply.
+ *
+ * @param ply
+ * 		The new ply.
+ */
+void setPly(Ply ply);

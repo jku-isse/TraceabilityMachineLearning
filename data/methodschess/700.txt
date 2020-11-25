@@ -1,0 +1,14 @@
+/**
+ * Set a new icon and align it properly.
+ *
+ * @param icon
+ * 		The new icon.
+ */
+public void setIcon(ImageIcon icon) {
+    super.setIcon(icon);
+    if (icon != null) {
+        invalidate();
+    } else {
+        revalidate();
+    }
+}

@@ -1,0 +1,3 @@
+public void operationalProfile() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/operationalProfile.sql"));
+}

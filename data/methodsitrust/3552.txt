@@ -1,0 +1,3 @@
+public void labProcedures2() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/labprocedures2.sql"));
+}

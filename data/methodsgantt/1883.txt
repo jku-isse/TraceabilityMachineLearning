@@ -1,0 +1,3 @@
+public int getMiddleY() {
+    return (myTopY) + ((myHeight) / 2);
+}

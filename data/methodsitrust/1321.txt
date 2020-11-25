@@ -1,0 +1,24 @@
+/**
+ * Set a given HCP as undeclared.
+ *
+ * @param name
+ * 		HCP to undeclare.
+ * @return An empty string.
+ * @throws iTrustException
+ * 		
+ */
+public String undeclareHCP(String name) throws iTrustException {
+    for (HCPVisitBean visit : getVisitedHCPs()) {
+        if (0 == (visit.getHCPName().toLowerCase().compareTo(name.toLowerCase()))) {
+            Long mid = Long.valueOf(visit.getHCPMID());
+            declareAction.undeclareHCP(mid.toString());
+            // }
+            visit.setDesignated(false);
+            /* if (0 == visit.getOVDate().compareTo("")) {
+            remove = visit;
+            }
+             */
+        }
+    }
+    return "";
+}

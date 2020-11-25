@@ -1,0 +1,9 @@
+public DiagnosisBean loadSingle(ResultSet rs) throws SQLException {
+    DiagnosisBean diag = new DiagnosisBean(rs.getString("Code"), rs.getString("Description"), rs.getString("Chronic"), rs.getString("URL"));
+    // DiagnosisBean diag = new DiagnosisBean(rs.getString("Code"), rs.getString("Description"), rs.getString("Chronic"));
+    if (loadOVDiagnosisID) {
+        diag.setOvDiagnosisID(rs.getInt("ID"));
+        diag.setVisitID(rs.getLong("VisitID"));
+    }
+    return diag;
+}

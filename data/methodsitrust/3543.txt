@@ -1,0 +1,13 @@
+/**
+ * Adds HCP John Zoidberg for testing purposes.
+ *
+ * @throws FileNotFoundException
+ * 		
+ * @throws SQLException
+ * 		
+ * @throws IOException
+ * 		
+ */
+public void hcp9() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/hcp9.sql"));
+}// NEW

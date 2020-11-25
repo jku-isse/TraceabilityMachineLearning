@@ -1,0 +1,4 @@
+public void addProjectNamePage(IGanttProject project) {
+    WizardPage projectNamePage = new ProjectNamePage(null, project, myI18n);
+    addPage(projectNamePage);
+}

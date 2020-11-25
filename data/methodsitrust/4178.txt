@@ -1,0 +1,19 @@
+public void testUAPReportPatientStatus() throws Exception {
+    gen.remoteMonitoringUAP();
+    WebConversation wc = login("8000000009", "uappass1");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - UAP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 8000000009L, 0L, "");
+    wr = wr.getLinkWith("Report Telemedicine Status").click();
+    assertEquals("iTrust - View Monitored Patients", wr.getTitle());
+    wr = wr.getLinkWith("Andy Programmer").click();
+    assertEquals("iTrust - Report Status", wr.getTitle());
+    WebForm dataForm = wr.getForms()[0];
+    dataForm.getScriptableObject().setParameterValue("systolicBloodPressure", "100");
+    dataForm.getScriptableObject().setParameterValue("diastolicBloodPressure", "75");
+    dataForm.getScriptableObject().setParameterValue("glucoseLevel", "120");
+    dataForm.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Information Successfully Added"));
+    iTrustHTTPTest.assertLogged(TransactionType.TELEMEDICINE_DATA_REPORT, 8000000009L, 2L, "");
+}

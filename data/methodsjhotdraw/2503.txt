@@ -1,0 +1,18 @@
+/**
+ *
+ *
+ * @param relativeX
+ * 		x-position relative to bounds expressed as a value
+ * 		between 0 and 1.
+ * @param relativeY
+ * 		y-position relative to bounds expressed as a value
+ * 		between 0 and 1.
+ * @param isTransform
+ * 		Set this to true, if the locator shall honor the
+ * 		TRANSFORM attribute of the Figure.
+ */
+public RelativeLocator(double relativeX, double relativeY, boolean isTransform) {
+    this.relativeX = relativeX;
+    this.relativeY = relativeY;
+    this.isTransform = isTransform;
+}

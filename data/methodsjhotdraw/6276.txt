@@ -1,0 +1,3 @@
+public static Locale getDefault() {
+    return (LocaleUtil.defaultLocale) == null ? Locale.getDefault() : LocaleUtil.defaultLocale;
+}

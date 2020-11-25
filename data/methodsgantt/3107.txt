@@ -1,0 +1,4 @@
+public myIconPanel() {
+    icon = new ImageIcon(getClass().getResource("/icons/top.gif"));
+    applyComponentOrientation(GanttLanguage.getInstance().getComponentOrientation());
+}

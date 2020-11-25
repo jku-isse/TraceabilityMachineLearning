@@ -1,0 +1,6 @@
+/**
+ * sets the status to "Received"
+ */
+public void statusReceived() {
+    this.status = LabProcedureBean.Received;
+}

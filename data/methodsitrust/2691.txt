@@ -1,0 +1,5 @@
+public void testResetPassword() throws Exception {
+    assertEquals(DigestUtils.shaHex("pw"), getPassword(2L));
+    authDAO.resetPassword(2L, "password");
+    assertEquals(DigestUtils.shaHex("password"), getPassword(2L));
+}

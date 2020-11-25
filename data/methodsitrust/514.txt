@@ -1,0 +1,11 @@
+public void testCannotRepresentSelf() throws Exception {
+    action = new EditRepresentativesAction(factory, 9000000000L, "2");
+    try {
+        action.addRepresentative("2");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("This user cannot represent themselves.", e.getMessage());
+    }
+    JUnitiTrustUtils.assertTransactionsNone();
+    assertEquals(1, action.getRepresented(2).size());
+}

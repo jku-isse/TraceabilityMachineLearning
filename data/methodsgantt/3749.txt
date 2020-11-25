@@ -1,0 +1,17 @@
+public static void printChart(Chart chart, GanttExportSettings settings) {
+    BufferedImage image = chart.getChart(settings);
+    PrinterJob printJob = PrinterJob.getPrinterJob();
+    printJob.setPrintable(new GanttPrintable(image, GanttPrintable.REDUCE_FACTOR_DEFAULT));
+    PrintRequestAttributeSet attr = new HashPrintRequestAttributeSet();
+    attr.add(MediaSizeName.ISO_A4);
+    attr.add(OrientationRequested.LANDSCAPE);
+    if (printJob.printDialog(attr)) {
+        try {
+            printJob.print(attr);
+        } catch (Exception e) {
+            if (!(GPLogger.log(e))) {
+                e.printStackTrace(System.err);
+            }
+        }
+    }
+}

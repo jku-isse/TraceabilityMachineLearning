@@ -1,0 +1,16 @@
+private void updateName() {
+    String localizedName = getLocalizedName();
+    if (localizedName == null) {
+        localizedName = String.valueOf(getValue(Action.NAME));
+    }
+    if (localizedName != null) {
+        int bucksPos = localizedName.indexOf($);
+        if (bucksPos >= 0) {
+            localizedName = new StringBuffer(localizedName).deleteCharAt(bucksPos).toString();
+        }
+        putValue(Action.NAME, localizedName);
+        if (bucksPos >= 0) {
+            putValue(Action.MNEMONIC_KEY, new Integer(Character.toLowerCase(localizedName.charAt(bucksPos))));
+        }
+    }
+}

@@ -1,0 +1,13 @@
+public void showPopupMenu(Component invoker, Action[] actions, int x, int y) {
+    JPopupMenu menu = new JPopupMenu();
+    for (int i = 0; i < (actions.length); i++) {
+        Action next = actions[i];
+        if (next == null) {
+            menu.addSeparator();
+        } else {
+            menu.add(next);
+        }
+    }
+    menu.applyComponentOrientation(UIFacadeImpl.getLanguage().getComponentOrientation());
+    menu.show(invoker, x, y);
+}

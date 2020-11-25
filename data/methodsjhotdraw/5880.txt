@@ -1,0 +1,3 @@
+protected static String randomString() {
+    return Long.toString(ClientHttpRequest.random.nextLong(), 36);
+}

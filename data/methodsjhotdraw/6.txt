@@ -1,0 +1,3 @@
+protected View basicCreateView() {
+    return model.createView();
+}

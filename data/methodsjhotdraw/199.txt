@@ -1,0 +1,4 @@
+public void addPalette(Window palette) {
+    palette.addWindowFocusListener(focusHandler);
+    palettes.add(palette);
+}

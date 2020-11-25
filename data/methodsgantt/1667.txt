@@ -1,0 +1,8 @@
+int getBottomUnitWidth(TimeFrame nextFrame) {
+    int frameWidth = myFrameWidthFunction.getTimeFrameWidth(nextFrame);
+    int bottomUnitsCount = nextFrame.getUnitCount(nextFrame.getBottomUnit());
+    // System.err.println("ChartModelImpl: getBottomUnitWidth:
+    // nextFrame="+nextFrame+" width="+frameWidth+"
+    // bottomUnitsCount="+bottomUnitsCount);
+    return frameWidth / bottomUnitsCount;
+}

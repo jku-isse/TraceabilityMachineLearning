@@ -1,0 +1,6 @@
+/**
+ * Get the current game.
+ *
+ * @return The current game.
+ */
+Game getGame();

@@ -1,0 +1,4 @@
+public void testGetCPTCodeFromEmptyTable() throws Exception {
+    clearCPTCodes();
+    assertNull(cptDAO.getCPTCode("87"));
+}

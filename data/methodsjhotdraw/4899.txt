@@ -1,0 +1,13 @@
+private Shape getTransformedShape() {
+    if ((cachedTransformedShape) == null) {
+        if (((getArcHeight()) == 0) || ((getArcWidth()) == 0)) {
+            cachedTransformedShape = roundrect.getBounds2D();
+        } else {
+            cachedTransformedShape = ((Shape) (roundrect.clone()));
+        }
+        if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+            cachedTransformedShape = AttributeKeys.TRANSFORM.get(this).createTransformedShape(cachedTransformedShape);
+        }
+    }
+    return cachedTransformedShape;
+}

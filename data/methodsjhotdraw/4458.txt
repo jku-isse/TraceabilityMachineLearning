@@ -1,0 +1,16 @@
+private JPanel createColorWheelChooser(ColorSystem sys, int angularIndex, int radialIndex, int verticalIndex) {
+    JPanel p = new JPanel(new BorderLayout());
+    DefaultColorSliderModel m = new DefaultColorSliderModel(sys);
+    models.add(m);
+    m.addChangeListener(handler);
+    JColorWheel w = new JColorWheel();
+    w.setAngularComponentIndex(angularIndex);
+    w.setRadialComponentIndex(radialIndex);
+    w.setVerticalComponentIndex(verticalIndex);
+    w.setModel(m);
+    JSlider s = new JSlider(JSlider.VERTICAL);
+    m.configureSlider(verticalIndex, s);
+    p.add(w, BorderLayout.CENTER);
+    p.add(s, BorderLayout.EAST);
+    return p;
+}

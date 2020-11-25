@@ -1,0 +1,10 @@
+public void testAddAddress() throws Exception {
+    String id = "9999999999";
+    HospitalBean hosp = new HospitalBean(id, "shouldnt be here", "Address", "City", "ST", "00000-0000");
+    action.addHospital(hosp);
+    hosp = factory.getHospitalsDAO().getHospital(id);
+    assertEquals("Address", hosp.getHospitalAddress());
+    assertEquals("City", hosp.getHospitalCity());
+    assertEquals("ST", hosp.getHospitalState());
+    assertEquals("00000-0000", hosp.getHospitalZip());
+}

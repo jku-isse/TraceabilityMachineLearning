@@ -1,0 +1,6 @@
+protected void fireChangeValueEvent(ChangeValueEvent event) {
+    Iterator it = myListeners.iterator();
+    while (it.hasNext()) {
+        ((ChangeValueListener) (it.next())).changeValue(event);
+    } 
+}

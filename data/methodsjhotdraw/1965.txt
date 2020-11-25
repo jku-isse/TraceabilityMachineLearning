@@ -1,0 +1,5 @@
+/**
+ * Returns a decompositon of a figure into its parts.
+ * A figure is considered as a part of itself.
+ */
+public Collection<Figure> getDecomposition();

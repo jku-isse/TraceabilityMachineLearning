@@ -1,0 +1,9 @@
+/**
+ * Creates a new instance.
+ */
+public DrawingPageable(Drawing drawing) {
+    this.drawing = drawing;
+    Paper paper = new Paper();
+    pageFormat = new PageFormat();
+    pageFormat.setPaper(paper);
+}

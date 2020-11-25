@@ -1,0 +1,5 @@
+public void testGetAllMyMessages() throws SQLException {
+    List<MessageBean> mbList = action.getAllMyMessages();
+    assertEquals(1, mbList.size());
+    // Should send a message and recheck later.
+}

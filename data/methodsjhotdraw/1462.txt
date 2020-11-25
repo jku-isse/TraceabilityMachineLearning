@@ -1,0 +1,9 @@
+public ConnectionTool(ConnectionFigure prototype, Map<AttributeKey, Object> attributes, String presentationName) {
+    this.prototype = prototype;
+    this.prototypeAttributes = attributes;
+    if (presentationName == null) {
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        presentationName = labels.getString("edit.createConnectionFigure.text");
+    }
+    this.presentationName = presentationName;
+}

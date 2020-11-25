@@ -1,0 +1,4 @@
+/**
+ * Tests if a point is contained in the connector.
+ */
+public boolean contains(Point2D.Double p);

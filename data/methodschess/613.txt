@@ -1,0 +1,19 @@
+/**
+ * Paint the animated piece.
+ *
+ * @param g
+ * 		The graphics context.
+ */
+/* public void paint( Graphics g) {
+System.out.println( "Repaint piece at " + _currentPoint.x + "," + _currentPoint.y);
+// g.drawImage( _piece, _currentPoint.x, _currentPoint.y, this);
+}
+ */
+/**
+ * Get the current pieces layer.
+ *
+ * @return The current pieces layer.
+ */
+PiecesLayer getPiecesLayer() {
+    return _piecesLayer;
+}

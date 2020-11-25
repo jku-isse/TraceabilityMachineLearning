@@ -1,0 +1,10 @@
+void start(String task, int totalWork) {
+    myProgressBar.setMaximum(totalWork);
+    myProgressBar.setMinimum(0);
+    myTask = task;
+    myLabel.setText(getLabelText());
+    pack();
+    setSize(400, 60);
+    DialogAligner.center(this, myMainFrame);
+    setVisible(true);
+}

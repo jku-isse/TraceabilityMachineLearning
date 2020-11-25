@@ -1,0 +1,3 @@
+public MedicationBean(String code) {
+    NDCode = code;
+}

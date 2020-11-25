@@ -1,0 +1,3 @@
+public void read(InputStream iccProfile) throws IOException {
+    this.colorSpace = new ICC_ColorSpace(ICC_Profile.getInstance(iccProfile));
+}

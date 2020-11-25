@@ -1,0 +1,11 @@
+protected IXMLElement createImage(IXMLElement doc, double x, double y, double w, double h, byte[] imageData, Map<AttributeKey, Object> attributes) throws IOException {
+    IXMLElement elem = doc.createElement("image");
+    writeAttribute(elem, "x", x, 0.0);
+    writeAttribute(elem, "y", y, 0.0);
+    writeAttribute(elem, "width", w, 0.0);
+    writeAttribute(elem, "height", h, 0.0);
+    writeAttribute(elem, "xlink:href", ("data:image;base64," + (Base64.encodeBytes(imageData))), "");
+    writeOpacityAttribute(elem, attributes);
+    writeTransformAttribute(elem, attributes);
+    return elem;
+}

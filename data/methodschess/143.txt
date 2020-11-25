@@ -1,0 +1,7 @@
+/**
+ * Request a menu from the chess engine, where the user
+ * can change its settings.
+ *
+ * @return A menu for the engine settings.
+ */
+JMenu getMenu();

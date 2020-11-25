@@ -1,0 +1,14 @@
+/**
+ * Get all referrals associated with this office visit.
+ *
+ * @return List of ReferralBeans.
+ * @throws DBException
+ * 		
+ */
+public List<ReferralBean> getReferrals() throws DBException {
+    if (isUnsaved()) {
+        return new ArrayList<ReferralBean>();
+    } else {
+        return referralDAO.getReferralsFromOV(getOvID());
+    }
+}

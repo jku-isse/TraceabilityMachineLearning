@@ -1,0 +1,28 @@
+/**
+ * Returns a list of HCPs who are declared by the given patient
+ *
+ * @param pid
+ * 		The MID of the patient in question.
+ * @return A java.util.List of Personnel Beans.
+ * @throws DBException
+ * 		
+ */
+public List<PersonnelBean> getDeclaredHCPs(long pid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (pid == 0L)
+            throw new SQLException("pid cannot be 0");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("SELECT * FROM declaredhcp, personnel " + "WHERE PatientID=? AND personnel.MID=declaredhcp.HCPID"));
+        ps.setLong(1, pid);
+        ResultSet rs = ps.executeQuery();
+        return personnelLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

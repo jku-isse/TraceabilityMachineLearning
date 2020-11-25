@@ -1,0 +1,3 @@
+public boolean getTaskWebLink() {
+    return cbTaskWebLink.isSelected();
+}

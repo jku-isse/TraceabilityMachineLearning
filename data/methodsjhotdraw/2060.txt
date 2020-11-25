@@ -1,0 +1,6 @@
+public void redo() throws CannotRedoException {
+    super.redo();
+    owner.willChange();
+    owner.restoreTransformTo(newGeometry);
+    owner.changed();
+}

@@ -1,0 +1,12 @@
+/**
+ * Medication information should already be validated
+ *
+ * @param med
+ * 		
+ * @return 
+ * @throws DBException
+ * 		
+ */
+private int updateCode(MedicationBean med) throws DBException {
+    return ndDAO.updateCode(med);
+}

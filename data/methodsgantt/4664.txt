@@ -1,0 +1,14 @@
+void delete(TaskDependency dep) {
+    myDependencies.remove(dep);
+    SearchKey key1 = new SearchKey(SearchKey.DEPENDANT, dep.getDependant().getTaskID(), dep.getDependee().getTaskID());
+    SearchKey key2 = new SearchKey(SearchKey.DEPENDEE, dep.getDependee().getTaskID(), dep.getDependant().getTaskID());
+    mySearchKey2dependency.remove(key1);
+    mySearchKey2dependency.remove(key2);
+    myEventDispatcher.fireDependencyRemoved(dep);
+    // SearchKey fromKey = new RangeSearchFromKey(dep.getDependant());
+    // SearchKey toKey = new RangeSearchToKey(dep.getDependant());
+    // mySearchKey2dependency.subMap(fromKey, toKey).clear();
+    // fromKey = new RangeSearchFromKey(dep.getDependee());
+    // toKey = new RangeSearchToKey(dep.getDependee());
+    // mySearchKey2dependency.subMap(fromKey, toKey).clear();
+}

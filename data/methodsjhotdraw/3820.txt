@@ -1,0 +1,16 @@
+/**
+ * Updates the value from the text of the field.
+ */
+protected void updateValue() {
+    if (((updatingDepth)++) == 0) {
+        if ((getFormatter()) != null) {
+            try {
+                Object newValue = getFormatter().stringToValue(getText());
+                setValue(newValue);
+            } catch (ParseException ex) {
+                // ex.printStackTrace();// do nothing
+            }
+        }
+    }
+    (updatingDepth)--;
+}

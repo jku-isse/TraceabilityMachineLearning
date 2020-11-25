@@ -1,0 +1,7 @@
+/**
+ * The default size.
+ */
+public Dimension getPreferredSize() {
+    return new Dimension(230, 105);// 210
+
+}

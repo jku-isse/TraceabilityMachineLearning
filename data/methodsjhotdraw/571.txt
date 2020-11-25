@@ -1,0 +1,4 @@
+public void setComponentValue(int componentIndex, float newValue) {
+    BoundedRangeModel brm = componentModels[componentIndex];
+    brm.setValue((((int) (((brm.getMaximum()) - (brm.getMinimum())) * newValue)) + (brm.getMinimum())));
+}

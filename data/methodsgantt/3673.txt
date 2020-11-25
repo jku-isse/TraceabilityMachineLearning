@@ -1,0 +1,3 @@
+public PreviousStateTasksTagHandler(List previousStates) {
+    myPreviousStates = previousStates;
+}

@@ -1,0 +1,12 @@
+/**
+ * Returns a list of RemoteMonitoringDataBeans for the logged in HCP
+ *
+ * @return list of TransactionBeans
+ * @throws DBException
+ * 		
+ * @throws FormValidationException
+ * 		
+ */
+public List<RemoteMonitoringDataBean> getPatientsData() throws DBException {
+    return rmDAO.getPatientsData(loggedInMID);
+}

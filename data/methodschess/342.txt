@@ -1,0 +1,16 @@
+/**
+ * Run the actual test.
+ */
+private void plygeneratorTest1() {
+    // Get the plies for black
+    Ply[] plies = _plyGenerator.getPliesForColor(false);
+    // Check if e7 - e5 was delivered as a potential ply.
+    boolean containsInvalidMoves = false;
+    for (int i = 0; i < (plies.length); i++) {
+        if (((plies[i].getSource().getSquareIndex()) == 52) && ((plies[i].getDestination().getSquareIndex()) == (52 - 16))) {
+            containsInvalidMoves = true;
+            break;
+        }
+    }
+    assertTrue("PlyGenerator computes invalid move e7 - e5", (!containsInvalidMoves));
+}

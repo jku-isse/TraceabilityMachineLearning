@@ -1,0 +1,5 @@
+protected Point getColorLocation(Color c, int width, int height) {
+    float[] hsb = new float[3];
+    hsb = colorSystem.toComponents(c.getRGB(), hsb);
+    return getColorLocation(hsb[0], hsb[1], hsb[2], width, height);
+}

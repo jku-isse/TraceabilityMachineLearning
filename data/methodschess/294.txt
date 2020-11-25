@@ -1,0 +1,25 @@
+/**
+ * Get the response for a user ply.
+ *
+ * @param ply
+ * 		The ply of the human player.
+ * @return The precomputed response for the user ply.
+ */
+public final PreComputedPly getPlyForUserPly(Ply ply) {
+    if ((_computedPlies) != null) {
+        // Stop the computation
+        // (but should already be done by the game controller)
+        stopComputation();
+        // Get the index of the user ply.
+        Ply[] userPlies = getUserPlies();
+        int plyCount = userPlies.length;
+        for (int i = 0; i < plyCount; i++) {
+            if (userPlies[i].equals(ply)) {
+                // i holds the index of the user ply now, which equals the
+                // index of the computed response.
+                return _computedPlies[i];
+            }
+        }
+    }
+    return null;
+}

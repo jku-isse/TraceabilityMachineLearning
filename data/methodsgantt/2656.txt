@@ -1,0 +1,20 @@
+/**
+ * Constructor
+ */
+public GanttTaskPropertiesBean(GanttTask[] selectedTasks, IGanttProject project, UIFacade uifacade) {
+    this.onlyOneTask = false;
+    if ((selectedTasks.length) == 1)
+        this.onlyOneTask = true;
+
+    this.selectedTasks = selectedTasks;
+    setInitialValues(selectedTasks[0]);
+    myHumanResourceManager = ((HumanResourceManager) (project.getHumanResourceManager()));
+    myRoleManager = project.getRoleManager();
+    myTaskManager = project.getTaskManager();
+    myProject = project;
+    myUIfacade = uifacade;
+    // setTree(tree);
+    init();
+    // this.managerHash = managerHash;
+    setSelectedTask();
+}

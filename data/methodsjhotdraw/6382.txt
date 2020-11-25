@@ -1,0 +1,5 @@
+/**
+ * Adds an attribute to current element of the DOM Document if it is
+ * different from the default value.
+ */
+public void addAttribute(String name, int value, int defaultValue);

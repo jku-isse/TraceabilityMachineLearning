@@ -1,0 +1,4 @@
+RoleSetPage(RoleSet[] roleSets, I18N i18n) {
+    myI18N = i18n;
+    myListModel = new RoleSetPage.RoleSetListModel(roleSets, i18n);
+}

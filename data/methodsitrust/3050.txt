@@ -1,0 +1,27 @@
+/**
+ * Adds a diagnosis bean to the database.
+ *
+ * @param pres
+ * 		The prescription bean to be added.
+ * @return The unique ID of the newly added bean.
+ * @throws DBException
+ * 		
+ */
+public long add(ProcedureBean bean) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        String statement = "INSERT INTO ovprocedure " + "(VisitID,CPTCode) VALUES (?,?)";
+        ps = conn.prepareStatement(statement);
+        ps.setLong(1, bean.getVisitID());
+        ps.setString(2, bean.getCPTCode());
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

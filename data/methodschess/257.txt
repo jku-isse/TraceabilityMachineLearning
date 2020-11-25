@@ -1,0 +1,12 @@
+/**
+ * Get a hashcode for a given board and piece color.
+ *
+ * @param board
+ * 		The current board.
+ * @param white
+ * 		true, if its a ply with the white pieces.
+ * @return A hashcode for the given board and color.
+ */
+public static long hashKey(Board board, boolean white) {
+    return ZobristKeyImpl.getInstance().computeKey(((BitBoard) (board)), white);
+}

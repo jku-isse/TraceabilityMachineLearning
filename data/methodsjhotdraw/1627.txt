@@ -1,0 +1,3 @@
+public Collection<Figure> findFiguresWithin(Rectangle r) {
+    return getDrawing().findFiguresWithin(viewToDrawing(r));
+}

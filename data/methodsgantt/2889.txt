@@ -1,0 +1,1 @@
+UIFacade.Choice showConfirmationDialog(String message, String title);

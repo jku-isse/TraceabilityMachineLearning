@@ -1,0 +1,17 @@
+public void testEditApptConflict() throws Exception {
+    Calendar c = Calendar.getInstance();
+    c.add(Calendar.DATE, 12);
+    c.set(Calendar.HOUR, 9);
+    c.set(Calendar.AM_PM, Calendar.AM);
+    c.set(Calendar.MINUTE, 45);
+    List<ApptBean> appts = viewAction.getMyAppointments();
+    ApptBean orig = appts.get(0);
+    ApptBean b = new ApptBean();
+    b.setApptID(orig.getApptID());
+    b.setDate(new Timestamp(c.getTimeInMillis()));
+    b.setApptType(orig.getApptType());
+    b.setHcp(orig.getHcp());
+    b.setPatient(orig.getPatient());
+    String s = editAction.editAppt(b, false);
+    assertTrue(s.contains("conflict"));
+}

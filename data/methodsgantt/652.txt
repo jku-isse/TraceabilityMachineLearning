@@ -1,0 +1,3 @@
+public void showErrorDialog(String message) {
+    myUIFacade.showErrorDialog(message);
+}

@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((ActionsToolBarBeanInfo.beanDescriptor) == null)
+        ActionsToolBarBeanInfo.beanDescriptor = new BeanDescriptor(ActionsToolBarBeanInfo.class);
+
+    ActionsToolBarBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    ActionsToolBarBeanInfo.beanDescriptor.setDisplayName("ActionToolPane");
+    return ActionsToolBarBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

@@ -1,0 +1,10 @@
+/**
+ * Returns a PatientBean for the pid
+ *
+ * @return PatientBean
+ * @throws DBException
+ * 		
+ */
+public PatientBean getPatient() throws DBException {
+    return patientDAO.getPatient(pid);
+}

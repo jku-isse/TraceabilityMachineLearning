@@ -1,0 +1,5 @@
+/**
+ * Opens the element with the specified name and index and makes it the
+ * current node.
+ */
+public void openElement(String tagName, int index) throws IOException;

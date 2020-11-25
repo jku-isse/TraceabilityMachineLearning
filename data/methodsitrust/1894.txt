@@ -1,0 +1,3 @@
+public void setEthnicityStr(String ethnicity) {
+    this.ethnicity = Ethnicity.parse(ethnicity);
+}

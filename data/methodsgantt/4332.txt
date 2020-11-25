@@ -1,0 +1,3 @@
+public void setExpand(boolean expand) {
+    bExpand = expand;
+}

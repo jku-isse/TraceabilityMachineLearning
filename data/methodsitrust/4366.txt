@@ -1,0 +1,5 @@
+public void testGetFilterType() {
+    filter = new PersonnelReportFilter(PersonnelReportFilter.PersonnelReportFilterType.DLHCP, "city!", factory);
+    PersonnelReportFilter.PersonnelReportFilterType expected = PersonnelReportFilter.PersonnelReportFilterType.DLHCP;
+    assertEquals(expected, filter.getFilterType());
+}

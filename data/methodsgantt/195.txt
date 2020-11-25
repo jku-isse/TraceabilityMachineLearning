@@ -1,0 +1,3 @@
+public void setStartDate(Date date) {
+    startDate = date;
+}

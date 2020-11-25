@@ -1,0 +1,4 @@
+public void testBadLDL() throws Exception {
+    hr.setCholesterolLDL(241);
+    assertTrue(factor.hasRiskFactor());
+}

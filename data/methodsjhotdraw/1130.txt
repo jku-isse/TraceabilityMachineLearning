@@ -1,0 +1,15 @@
+/**
+ * Convenience method for seting a clone of a value on the
+ * specified figure and calling willChange before and changed
+ * after setting the value.
+ *
+ * @param f
+ * 		the Figure
+ * @param value
+ * 		the attribute value
+ */
+public void setClone(Figure f, T value) {
+    f.willChange();
+    basicSetClone(f, value);
+    f.changed();
+}

@@ -1,0 +1,29 @@
+/**
+ * Returns the user name of a user from just the MID
+ *
+ * @param mid
+ * 		The MID of the user to get the name of.
+ * @return The users name as a String.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public String getUserName(long mid) throws DBException, iTrustException {
+    Role role = getUserRole(mid);
+    switch (role) {
+        case HCP :
+        case PHA :
+        case ADMIN :
+        case UAP :
+        case ER :
+        case LT :
+            return factory.getPersonnelDAO().getName(mid);
+        case PATIENT :
+            return factory.getPatientDAO().getName(mid);
+        case TESTER :
+            return String.valueOf(mid);
+        default :
+            throw new iTrustException((("Role " + role) + " not supported"));
+    }
+}

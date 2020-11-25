@@ -1,0 +1,9 @@
+protected void setEditor(DrawingEditor newValue) {
+    if ((editor) != null) {
+        editor.removePropertyChangeListener(propertyChangeHandler);
+    }
+    editor = newValue;
+    if ((editor) != null) {
+        editor.addPropertyChangeListener(propertyChangeHandler);
+    }
+}

@@ -1,0 +1,14 @@
+@Override
+protected Transferable createTransferable(JComponent c) {
+    if (DefaultDrawingViewTransferHandler.DEBUG) {
+        System.out.println(((this) + ".createTransferable"));
+    }
+    Transferable retValue;
+    if (c instanceof DrawingView) {
+        DrawingView view = ((DrawingView) (c));
+        retValue = createTransferable(view, view.getSelectedFigures());
+    } else {
+        retValue = super.createTransferable(c);
+    }
+    return retValue;
+}

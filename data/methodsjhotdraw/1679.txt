@@ -1,0 +1,3 @@
+public Rectangle2D.Double viewToDrawing(Rectangle r) {
+    return new Rectangle2D.Double((((r.x) / (scaleFactor)) + (translate.x)), (((r.y) / (scaleFactor)) + (translate.y)), ((r.width) / (scaleFactor)), ((r.height) / (scaleFactor)));
+}

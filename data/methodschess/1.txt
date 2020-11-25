@@ -1,0 +1,22 @@
+// Constructors
+/**
+ * Create a new controller instance.
+ *
+ * @param game
+ * 		The current game.
+ * @param gameNotation
+ * 		The notation of the game.
+ * @param engine
+ * 		The current engine.
+ * @param board
+ * 		The current board.
+ * @param timer
+ * 		The game timer.
+ */
+public GameController(Game game, GameNotation gameNotation, ChessEngine engine, Board board, GameTimer timer) {
+    setGame(game);
+    setGameNotation(gameNotation);
+    setEngine(engine);
+    setBoard(board);
+    setGameTimer(timer);
+}

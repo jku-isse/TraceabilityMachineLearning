@@ -1,0 +1,4 @@
+public void testGainFivePounds() throws Exception {
+    hr.setWeight(205);
+    assertTrue(factor.hasRiskFactor());
+}

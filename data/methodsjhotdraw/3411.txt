@@ -1,0 +1,8 @@
+/**
+ * Recomputes the BezierPath, if it is invalid.
+ */
+public void validatePath() {
+    if ((generalPath) == null) {
+        generalPath = toGeneralPath();
+    }
+}

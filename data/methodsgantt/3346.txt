@@ -1,0 +1,4 @@
+public BooleanRenderer() {
+    super();
+    setHorizontalAlignment(JLabel.CENTER);
+}

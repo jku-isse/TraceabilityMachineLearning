@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the visitID
+ */
+public long getVisitID() {
+    return visitID;
+}

@@ -1,0 +1,3 @@
+public void setNumPatientTransactions(int numPatientTransactions) {
+    this.numPatientTransactions = numPatientTransactions;
+}

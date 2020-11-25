@@ -1,0 +1,9 @@
+/**
+ * Constrains the given angle (in radians).
+ * This method changes the angle which is passed as a parameter.
+ *
+ * @param angle
+ * 		The angle (in radians).
+ * @return The closest constrained angle (in radians).
+ */
+public double constrainAngle(double angle);

@@ -1,0 +1,31 @@
+/**
+ * Edits an existing prescription bean.
+ *
+ * @param pres
+ * 		The newly updated prescription bean.
+ * @return A long indicating the ID of the newly updated prescription bean.
+ * @throws DBException
+ * 		
+ */
+public long edit(DiagnosisBean bean) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        // String statement = "UPDATE ovdiagnosis " +
+        // "SET VisitID=?, ICDCode=? " +
+        // "WHERE ID=?";
+        String statement = "UPDATE ovdiagnosis " + ("SET VisitID=?, ICDCode=? " + "WHERE ID = ?");
+        ps = conn.prepareStatement(statement);
+        ps.setLong(1, bean.getVisitID());
+        ps.setString(2, bean.getICDCode());
+        ps.setLong(3, bean.getOvDiagnosisID());
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

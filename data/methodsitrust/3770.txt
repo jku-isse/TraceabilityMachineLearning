@@ -1,0 +1,25 @@
+public void testScheduleAppointment() throws Exception {
+    // Login
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Schedule Appointment").click();
+    // Select Patient
+    WebForm wf = wr.getFormWithID("mainForm");
+    wf.getScriptableObject().setParameterValue("UID_PATIENTID", "1");
+    wr = wf.submit();
+    wf = wr.getFormWithID("mainForm");
+    int year = (Calendar.getInstance().get(Calendar.YEAR)) + 1;
+    String scheduledDate = "07/06/" + year;
+    wf.getScriptableObject().setParameterValue("apptType", "General Checkup");
+    wf.getScriptableObject().setParameterValue("schedDate", scheduledDate);
+    wf.getScriptableObject().setParameterValue("time1", "09");
+    wf.getScriptableObject().setParameterValue("time2", "00");
+    wf.getScriptableObject().setParameterValue("time3", "AM");
+    wf.getScriptableObject().setParameterValue("comment", "This is the next checkup for your blood pressure medication.");
+    wr = wf.submit();
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_ADD, 9000000000L, 1L, "");
+    assertEquals("iTrust - Schedule an Appointment", wr.getTitle());
+    wr = wr.getLinkWith("View My Appointments").click();
+    assertTrue(wr.getText().contains((scheduledDate + " 09:00 AM")));
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_ALL_VIEW, 9000000000L, 0L, "");
+}

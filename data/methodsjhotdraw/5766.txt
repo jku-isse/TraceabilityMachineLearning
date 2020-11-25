@@ -1,0 +1,3 @@
+public void setIndeterminate(boolean b) {
+    progressBar.setIndeterminate(b);
+}

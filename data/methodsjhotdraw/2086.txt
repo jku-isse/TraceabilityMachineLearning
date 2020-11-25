@@ -1,0 +1,15 @@
+/**
+ * Moves the figure. This is the
+ * method that subclassers override. Clients usually
+ * call displayBox.
+ */
+public void setBounds(Point2D.Double anchor, Point2D.Double lead) {
+    if ((getLayouter()) == null) {
+        super.setBounds(anchor, lead);
+        basicSetPresentationFigureBounds(anchor, lead);
+    } else {
+        Rectangle2D.Double r = getLayouter().layout(this, anchor, lead);
+        basicSetPresentationFigureBounds(new Point2D.Double(r.getX(), r.getY()), new Point2D.Double(Math.max(lead.x, ((int) (r.getMaxX()))), Math.max(lead.y, ((int) (r.getMaxY())))));
+        invalidate();
+    }
+}

@@ -1,0 +1,12 @@
+/**
+ * Get diagnosis list for the given patient
+ *
+ * @param pid
+ * 		the patient of interest
+ * @return list of diagnoses
+ * @throws iTrustException
+ * 		
+ */
+public List<DiagnosisBean> getDiagnoses(long pid) throws iTrustException {
+    return patientDAO.getDiagnoses(pid);
+}

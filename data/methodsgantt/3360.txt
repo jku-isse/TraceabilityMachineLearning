@@ -1,0 +1,5 @@
+ZoomState(TimeUnitPair timeUnitPair, int bottomUnitWidth, int stateNumber) {
+    myTimeUnitPair = timeUnitPair;
+    myBottomUnitWidth = bottomUnitWidth;
+    myStateNumber = stateNumber;
+}

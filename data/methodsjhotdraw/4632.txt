@@ -1,0 +1,6 @@
+public DefaultDrawingEditor getSharedEditor() {
+    if ((sharedEditor) == null) {
+        sharedEditor = new DefaultDrawingEditor();
+    }
+    return sharedEditor;
+}

@@ -1,0 +1,7 @@
+// Methods
+/**
+ * Get the color, that is supposed to apply this ply.
+ *
+ * @return true, if white applies this ply.
+ */
+boolean isWhiteMove();

@@ -1,0 +1,6 @@
+private TimeFrameImpl.LineHeader getLineHeader() {
+    if ((myLineHeader) == null) {
+        myLineHeader = calculateLines(null);
+    }
+    return myLineHeader;
+}

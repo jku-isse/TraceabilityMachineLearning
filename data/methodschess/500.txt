@@ -1,0 +1,5 @@
+public final void eventTag() throws RecognitionException, TokenStreamException {
+    match(PGNTokenTypes.TAG_EVENT);
+    whiteSpaces();
+    match(PGNTokenTypes.STRING_LITERAL);
+}

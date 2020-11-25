@@ -1,0 +1,5 @@
+public void testChangeTimeout() throws Exception {
+    assertEquals(20, accessDAO.getSessionTimeoutMins());
+    accessDAO.setSessionTimeoutMins(5);
+    assertEquals(5, accessDAO.getSessionTimeoutMins());
+}

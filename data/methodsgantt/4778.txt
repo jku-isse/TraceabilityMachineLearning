@@ -1,0 +1,3 @@
+public GanttCalendar getNewStartDate() {
+    return myNewStartDate;
+}

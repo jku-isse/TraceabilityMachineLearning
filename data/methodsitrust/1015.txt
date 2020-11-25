@@ -1,0 +1,4 @@
+public void testGetDiagnosisStatisticsValidNull() throws Exception {
+    DiagnosisStatisticsBean dsBean = action.getDiagnosisStatistics(null, null, "487.00", "27606");
+    assertEquals(null, dsBean);
+}

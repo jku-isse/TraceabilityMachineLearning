@@ -1,0 +1,15 @@
+/**
+ * Positions and sizes the overlay.
+ *
+ * @param r
+ * 		the bounding Rectangle2D.Double for the overlay
+ * @param text
+ * 		the text to edit
+ */
+public void setBounds(Rectangle2D.Double r, String text) {
+    textArea.setText(text);
+    editScrollContainer.setBounds(view.drawingToView(r));
+    editScrollContainer.setVisible(true);
+    textArea.setCaretPosition(0);
+    textArea.requestFocus();
+}

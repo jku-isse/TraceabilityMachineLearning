@@ -1,0 +1,14 @@
+/**
+ * Reads figures from a file and adds them to the specified drawing.
+ *
+ * @param file
+ * 		The file.
+ * @param drawing
+ * 		The drawing.
+ * @param replace
+ * 		Set this to true, if the contents of the file replaces the
+ * 		contents of the drawing (for example, when loading a drawing from a file).
+ * 		Set this to false, to add the contents of the file to the drawing (for
+ * 		example, when the file has been dropped into the drawing view).
+ */
+public void read(File file, Drawing drawing, boolean replace) throws IOException;

@@ -1,0 +1,8 @@
+@Override
+public boolean isCombinableWith(Handle h) {
+    if (super.isCombinableWith(h)) {
+        BezierControlPointHandle that = ((BezierControlPointHandle) (h));
+        return (((that.index) == (this.index)) && ((that.controlPointIndex) == (this.controlPointIndex))) && ((that.getBezierFigure().getNodeCount()) == (this.getBezierFigure().getNodeCount()));
+    }
+    return false;
+}

@@ -1,0 +1,64 @@
+/**
+ * This method returns an image object that can be used to
+ * represent the bean in toolboxes, toolbars, etc.   Icon images
+ * will typically be GIFs, but may in future include other formats.
+ * <p>
+ * Beans arent required to provide icons and may return null from
+ * this method.
+ * <p>
+ * There are four possible flavors of icons (16x16 color,
+ * 32x32 color, 16x16 mono, 32x32 mono).  If a bean choses to only
+ * support a single icon we recommend supporting 16x16 color.
+ * <p>
+ * We recommend that icons have a "transparent" background
+ * so they can be rendered onto an existing background.
+ *
+ * @param iconKind
+ * 		The kind of icon requested.  This should be
+ * 		one of the constant values ICON_COLOR_16x16, ICON_COLOR_32x32,
+ * 		ICON_MONO_16x16, or ICON_MONO_32x32.
+ * @return An image object representing the requested icon.  May
+return null if no suitable icon is available.
+ */
+public Image getIcon(int iconKind) {
+    switch (iconKind) {
+        case BeanInfo.ICON_COLOR_16x16 :
+            if ((JPopupButtonBeanInfo.iconNameC16) == null)
+                return null;
+            else {
+                if ((JPopupButtonBeanInfo.iconColor16) == null)
+                    JPopupButtonBeanInfo.iconColor16 = loadImage(JPopupButtonBeanInfo.iconNameC16);
+
+                return JPopupButtonBeanInfo.iconColor16;
+            }
+        case BeanInfo.ICON_COLOR_32x32 :
+            if ((JPopupButtonBeanInfo.iconNameC32) == null)
+                return null;
+            else {
+                if ((JPopupButtonBeanInfo.iconColor32) == null)
+                    JPopupButtonBeanInfo.iconColor32 = loadImage(JPopupButtonBeanInfo.iconNameC32);
+
+                return JPopupButtonBeanInfo.iconColor32;
+            }
+        case BeanInfo.ICON_MONO_16x16 :
+            if ((JPopupButtonBeanInfo.iconNameM16) == null)
+                return null;
+            else {
+                if ((JPopupButtonBeanInfo.iconMono16) == null)
+                    JPopupButtonBeanInfo.iconMono16 = loadImage(JPopupButtonBeanInfo.iconNameM16);
+
+                return JPopupButtonBeanInfo.iconMono16;
+            }
+        case BeanInfo.ICON_MONO_32x32 :
+            if ((JPopupButtonBeanInfo.iconNameM32) == null)
+                return null;
+            else {
+                if ((JPopupButtonBeanInfo.iconMono32) == null)
+                    JPopupButtonBeanInfo.iconMono32 = loadImage(JPopupButtonBeanInfo.iconNameM32);
+
+                return JPopupButtonBeanInfo.iconMono32;
+            }
+        default :
+            return null;
+    }
+}

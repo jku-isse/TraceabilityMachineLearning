@@ -1,0 +1,6 @@
+/**
+ * Get the scrore of this ply.
+ *
+ * @return The score of this ply.
+ */
+short getScore();

@@ -1,0 +1,4 @@
+/**
+ * Gets the drawing area of the connector.
+ */
+public Rectangle2D.Double getDrawingArea();

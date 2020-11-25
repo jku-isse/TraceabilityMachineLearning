@@ -1,0 +1,9 @@
+public void testNotANumber() throws Exception {
+    try {
+        action.changeSessionTimeout("a");
+        fail("exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals(1, e.getErrorList().size());
+        assertEquals("That is not a number", e.getErrorList().get(0));
+    }
+}

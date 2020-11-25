@@ -1,0 +1,9 @@
+/**
+ * Returns the Figures connector for the specified location.
+ * By default a ChopBoxConnector is returned.
+ *
+ * @see ChopRectangleConnector
+ */
+public Connector findConnector(Point2D.Double p, ConnectionFigure prototype) {
+    return new ChopRectangleConnector(this);
+}

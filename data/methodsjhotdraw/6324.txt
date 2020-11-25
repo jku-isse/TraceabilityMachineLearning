@@ -1,0 +1,20 @@
+/**
+ * Get a String for a JavaBeans "text" property from the ResourceBundle.
+ * <br>Convenience method.
+ *
+ * @param key
+ * 		The key of the property. This method appends ".text" to the key.
+ * @return The ToolTip. Returns null if no tooltip is defined.
+ */
+public String getTextProperty(String key) {
+    try {
+        String value = getStringRecursive((key + ".text"));
+        return value;
+    } catch (MissingResourceException e) {
+        if (ResourceBundleUtil.isVerbose) {
+            System.err.println((((("Warning ResourceBundleUtil[" + (baseName)) + "] "") + key) + ".text" not found."));
+            // e.printStackTrace();
+        }
+        return null;
+    }
+}

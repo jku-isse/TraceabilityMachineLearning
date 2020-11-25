@@ -1,0 +1,7 @@
+public String getEnumName(Enum e) {
+    String name = DefaultDOMFactory.enumClassToNameMap.get(e.getClass());
+    if (name == null) {
+        throw new IllegalArgumentException(("Enum class not known to factory:" + (e.getClass())));
+    }
+    return name;
+}

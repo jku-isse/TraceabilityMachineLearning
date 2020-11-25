@@ -1,0 +1,5 @@
+public void testDefaultNoList() throws Exception {
+    String today = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
+    assertEquals(today, action.getDefaultStart(new ArrayList<edu.ncsu.csc.itrust.beans.TransactionBean>()));
+    assertEquals(today, action.getDefaultEnd(new ArrayList<edu.ncsu.csc.itrust.beans.TransactionBean>()));
+}

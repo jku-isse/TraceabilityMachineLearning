@@ -1,0 +1,12 @@
+public void testHashCode() {
+    HCPVisitBean a = new HCPVisitBean();
+    a.setDesignated(true);
+    a.setHCPAddr("abc");
+    a.setHCPMID(1);
+    a.setHCPName("My HCP");
+    a.setHCPSpecialty("Tree Surgeon");
+    a.setOVDate("The day before tomorrow.");
+    assertEquals(a.hashCode(), a.hashCode());
+    a.setDesignated(false);
+    assertEquals(a.hashCode(), a.hashCode());
+}

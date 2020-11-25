@@ -1,0 +1,54 @@
+/**
+ * Installs the sheet on the owner.
+ * This method is invoked just before the JSheet is shown.
+ */
+protected void installSheet() {
+    if ((!(JSheet.isNativeSheetSupported())) && (!(isInstalled))) {
+        Window owner = getOwner();
+        if (owner != null) {
+            // Determine the location for the sheet and its owner while
+            // the sheet will be visible.
+            // In case we have to shift the owner to fully display the
+            // dialog, we remember the shift back position.
+            Point ownerLoc = owner.getLocation();
+            Point sheetLoc;
+            if (isShowAsSheet()) {
+                if (owner instanceof JFrame) {
+                    sheetLoc = new Point(((ownerLoc.x) + (((owner.getWidth()) - (getWidth())) / 2)), (((ownerLoc.y) + (owner.getInsets().top)) + (((JFrame) (owner)).getRootPane().getContentPane().getY())));
+                } else
+                    if (owner instanceof JDialog) {
+                        sheetLoc = new Point(((ownerLoc.x) + (((owner.getWidth()) - (getWidth())) / 2)), (((ownerLoc.y) + (owner.getInsets().top)) + (((JDialog) (owner)).getRootPane().getContentPane().getY())));
+                    } else {
+                        sheetLoc = new Point(((ownerLoc.x) + (((owner.getWidth()) - (getWidth())) / 2)), ((ownerLoc.y) + (owner.getInsets().top)));
+                    }
+
+                if ((sheetLoc.x) < 0) {
+                    owner.setLocation(((ownerLoc.x) - (sheetLoc.x)), ownerLoc.y);
+                    sheetLoc.x = 0;
+                    shiftBackLocation = ownerLoc;
+                    oldLocation = owner.getLocation();
+                } else {
+                    shiftBackLocation = null;
+                    oldLocation = ownerLoc;
+                }
+            } else {
+                sheetLoc = new Point(((ownerLoc.x) + (((owner.getWidth()) - (getWidth())) / 2)), ((ownerLoc.y) + (((owner.getHeight()) - (getHeight())) / 2)));
+            }
+            setLocation(sheetLoc);
+            oldFocusOwner = owner.getFocusOwner();
+            // Note: We mustnt change the windows focusable state because
+            // this also affects the focusable state of the JSheet.
+            // owner.setFocusableWindowState(false);
+            owner.setEnabled(false);
+            // ((JFrame) owner).setResizable(false);
+            if (isShowAsSheet()) {
+                owner.addComponentListener(ownerMovementHandler);
+            } else {
+                if (owner instanceof Frame) {
+                    setTitle(((Frame) (owner)).getTitle());
+                }
+            }
+        }
+        isInstalled = true;
+    }
+}

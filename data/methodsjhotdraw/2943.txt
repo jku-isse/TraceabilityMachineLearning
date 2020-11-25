@@ -1,0 +1,7 @@
+public Collection<Handle> createHandles(int detailLevel) {
+    LinkedList<Handle> handles = ((LinkedList<Handle>) (super.createHandles(detailLevel)));
+    if (detailLevel == 0) {
+        handles.add(new TriangleRotationHandler(this));
+    }
+    return handles;
+}

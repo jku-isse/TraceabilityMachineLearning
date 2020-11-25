@@ -1,0 +1,3 @@
+void addParsingListener(ParsingListener listener) {
+    myListeners.add(listener);
+}

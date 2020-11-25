@@ -1,0 +1,23 @@
+private String getCorrectString(String s) {
+    // return s.replaceAll("
+" + indent, "
+");
+    s = s.replaceAll(("
+" + (indent)), "
+");
+    s = s.replaceAll(marge, "");
+    while (s.startsWith("
+")) {
+        s = s.substring(1, s.length());
+    } 
+    while (s.endsWith("
+")) {
+        s = s.substring(0, ((s.length()) - 1));
+    } 
+    s = s.replaceAll("&#38;", "&");
+    s = s.replaceAll("&#60;", "<");
+    s = s.replaceAll("&#62;", ">");
+    s = s.replaceAll("&#47;", "/");
+    s = s.replaceAll("&#34;", """);
+    return s;
+}

@@ -1,0 +1,8 @@
+/**
+ * Get the current notation.
+ *
+ * @return The current notation.
+ */
+public final GameNotation getNotation() {
+    return _notation;
+}

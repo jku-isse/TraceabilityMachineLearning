@@ -1,0 +1,5 @@
+public void testDateGood() throws Exception {
+    String value = "05/19/1984";
+    String errorMessage = DateValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.DATE, false));
+}

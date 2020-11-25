@@ -1,0 +1,60 @@
+/**
+ * Returns a String representation of the Object <code>value</code>.
+ * This invokes <code>format</code> on the current <code>Format</code>.
+ *
+ * @throws ParseException
+ * 		if there is an error in the conversion
+ * @param value
+ * 		Value to convert
+ * @return String representation of value
+ */
+@Override
+public String valueToString(Object value) throws ParseException {
+    if ((value == null) && (allowsNullValue)) {
+        return "";
+    }
+    if (value instanceof Double) {
+        double v = ((Double) (value)).doubleValue();
+        v *= scaleFactor;
+        String str = Double.toString(v);
+        if ((!(appendsDotZero)) && (str.endsWith(".0"))) {
+            str = str.substring(0, ((str.length()) - 2));
+        }
+        return str;
+    } else
+        if (value instanceof Float) {
+            float v = ((Float) (value)).floatValue();
+            v = ((float) (v * (scaleFactor)));
+            String str = Float.toString(v);
+            if ((appendsDotZero) && (str.endsWith(".0"))) {
+                str = str.substring(0, ((str.length()) - 2));
+            }
+            return str;
+        } else
+            if (value instanceof Long) {
+                long v = ((Long) (value)).longValue();
+                v = ((long) (v * (scaleFactor)));
+                return Long.toString(v);
+            } else
+                if (value instanceof Integer) {
+                    int v = ((Integer) (value)).intValue();
+                    v = ((int) (v * (scaleFactor)));
+                    return Integer.toString(v);
+                } else
+                    if (value instanceof Byte) {
+                        byte v = ((Byte) (value)).byteValue();
+                        v = ((byte) (v * (scaleFactor)));
+                        return Byte.toString(v);
+                    } else
+                        if (value instanceof Short) {
+                            short v = ((Short) (value)).shortValue();
+                            v = ((short) (v * (scaleFactor)));
+                            return Short.toString(v);
+                        }
+
+
+
+
+
+    throw new ParseException(("Value is of unsupported class " + value), 0);
+}

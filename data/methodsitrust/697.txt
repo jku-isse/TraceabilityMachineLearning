@@ -1,0 +1,3 @@
+public void setCaptcha(boolean val) {
+    validCaptcha = val;
+}

@@ -1,0 +1,58 @@
+Parrot AR.Drone
+
+Parrot AR.Drone is a remote controlled flying quadcopter helicopter built by the French company Parrot. The drone is designed to be controlled by mobile or tablet operating systems such as the supported iOS or Android[1] within their respective apps or the unofficial software available for Windows Phone, Samsung BADA and Symbian devices.[2]
+
+Design and development
+
+Version 1.0
+
+The Parrot AR.Drone was revealed at the International CES 2010 in Las Vegas along with demonstration of the iOS applications used to control it. Along with AR.Freeflight, the application designed for free operation of the drone, Parrot also released AR.Race, allowing users take part in solo games, or interact with other drones in combat simulations.[3]
+
+The airframe of the AR.Drone, constructed of nylon and carbon fiber parts, measures 57 cm (22 in) across.[4] Two interchangeable hulls were supplied with the airframe, one designed for indoor and one for external flight. The indoor hull is made from foam, and encases the circumference of the blades for protection. The outdoors use hull is made from lightweight plastic, and allows for increased maneuvrability. In total, the AR.Drone has six degrees of freedom, with a miniaturized inertial measurement unit tracking the pitch, roll and yaw for use in stabilisation.[5]
+
+Inside the airframe, a range of sensors assist flight, enabling the interface used by pilots to be simpler, and making advanced flight easier. The onboard computer runs a Linux operating system, and communicates with the pilot through a self-generated Wi-Fi hotspot. The onboard sensors include an ultrasonic altimeter, which is used to provide vertical stabilisation up to 6 m (19 ft 8 in). The rotors are powered by 15 watt, brushless motors powered by an 11.1 Volt lithium polymer battery. This provides approximately 12 minutes of flight time at a speed of 5 m/s (11 mph). Coupled with software on the piloting device, the forward-facing camera allowed the drone to build a 3D environment, track objects and drones, and validate shots in augmented reality games.
+
+Technical specifications
+Interfaces: USB and Wi-Fi 802.11b/g
+Front camera: VGA sensor with 93° lens
+Vertical camera: 64° lens, recording up to 60fps
+
+Version 2.0
+
+The successor to the original drone, the AR.Drone 2.0 was unveiled at CES Las Vegas 2012. Rather than redesigning the product, improvements were made to its functionality, along with developing a larger ecosystem to support pilots. The equipment on board AR.Drone 2.0 was significantly upgraded to improve the drone's function. The camera quality was increased, and many of the onboard sensors were made more sensitive, allowing for greater control. The ultrasound altimeter was enhanced with the addition of an air pressure sensor, allowing for more stable flight and hovering. The resources available to the onboard computer were also improved, and the Wi-Fi hardware was updated to a newer standard. Other sensor improvements upgraded the gyroscope to a 3-axis version, along with a 3-axis accelerometer and magnetometer.
+
+At CES 2013, Parrot announced dog Flight Recorder for the AR.Drone 2.0. It adds 4GB of storage to the drone, along with GPS tracking and navigation. It will allow pilots to define a flight path by selecting a series of waypoints that the drone will follow. This will be the first official support for desktop applications in the piloting of AR.Drones. An extended battery designed to increase flight time by up to 50% was launched alongside the Flight Recorder.
+
+Technical Specifications
+Interfaces: USB and Wi-Fi 802.11n
+Front camera: 720p sensor with 93° lens, recording up to 30fps
+Vertical camera: QVGA sensor with 64° lens, recording up to 60fps
+
+Applications
+
+AR.Drone
+Previously known as AR.Freeflight, provides piloting function for AR.Drones, and the ability to take photos and videos. AR.Drone was launched in 2010 alongside the original drone, and provides piloting capabilities via iOS devices.[6] It allows pilots to record video or capture images from their drone's onboard cameras. When originally launched pilots could control drones by tilting their device, and data from the onboard accelerometer was converted into flight controls. [7] On-screen controls provide joystick-style movement, and other functions that allow pilots to perform aerobatics, play games, or update their drone's firmware. The app also integrates with AR.Drone Academy, where pilots can map and share flight details with other AR.Drone users. AR.Drone is available on the Google Play store, where it has kept the name AR.Freeflight.[8]
+
+AR.Race 2 (previously AR.Race)
+AR.Race is a piloting and multiplayer gaming application for the AR.Drone 2.0. Using a target included with the drone, pilots can define a race course with a start and finish line. The drone will then detect when it crosses this line, and records the flight time in between these two events. Pilots may invite other AR.Drones to join the race, and scores are aggregated into a leaderboard.[9] The application also integrates with AR.Drone Academy and, when the AR.Freeflight application was removed from the iOS App Store, was updated to include basic piloting controls. AR.Race 2, and its predecessor AR.Race are only available on for iOS devices.
+
+AR.Rescue 2 (previously AR.Rescue)
+A single-player augmented reality application for iOS devices. It uses the target provided with the AR.Drone 2.0 to build a 3D environment in which pilots must perform tasks. The object of the game is to construct a rocket out of pieces that are placed into the physical environment by the drone's software. Along with these pieces, enemies are generated that must be fought. The drone also records the time it takes to complete this task successfully, and this is recorded in AR.Drone Academy, where a global leaderboard is generated, and videos and images can be shared amongst the community.[10]
+
+AR.Hunter
+An augmented, multiplayer game that allows pilots to engage a human target with virtual weapons within a 3D space. Unlike the other multiplayer games made by Parrot, AR.Hunter only requires one AR.Drone. Both the pilot and the 'target' have the application installed on iOS devices, and the 'target' uses theirs to fire their virtual weapons at the drone. In order for the drone to recognise and engage the 'target', they must wear a colored cap, purchased separately from Parrot. The game can be played without the cap, but the drone is unable to engage the 'target', and the pilot must instead evade detection or attack. AR.Hunter is not compatible with the AR.Drone 2.0.
+
+Third party uses
+
+To aid third party developers, Parrot launched the AR.Drone open API game development platform.[12] Due to this open platform, affordability, and wide range of onboard sensory equipment, the AR.Drone is becoming an increasingly popular tool in research and education.[13][14] It has been used for experiments with visual-based autonomous navigation,[15][16][17] autonomous surveillance,[18] and human-machine interaction.[19] Research in these areas has resulted in third party applications being released, some open source, that extend the official capabilities of the drone.
+
+In France, the AR.Drone 2.0 was tested by a Special Operations unit for aerial reconnaissance,[20] whilst other companies have been developing software that allows the drone to track sports activities,[21] and generate training feedback.[22] An AR.Drone was used by Tim Pool during the Occupy Wall Street protest, running modified software that allowed it to stream directly to an internet channel. He theorised that a chain of command could be set up, where multiple people could step up and take control should the primary operator be detained by police. To further this, he began development of a new control system, replacing the existing Wi-Fi hotspot with a 3G chip. This would allow users to control drones via the internet, and potentially from remote locations.[23]
+
+Reception
+
+Since the launch of the original AR.Drone, around half a million units have been sold.[24] It received a 2010 CES Innovations award for Electronic Gaming Hardware.[25] The AR.Drone 2.0 was praised for the relative ease with which pilots could learn how to fly it; the original release required more intense practice.[26]
+
+Since its initial release, individuals,[27][28] organizations, and governments have expressed concern over the use of AR.Drones for surveillance. Although the technology required to feed and record live video taken from unmanned aerial vehicles existed prior to the release of the AR.Drone, it was not widely available to members of the public. In Germany, consumer affairs minister Ilse Aigner described the drone as a privacy threat, and called for restrictions to be placed on the use of cameras mounted on aerial platforms.[29] A UK advertising campaign, showing an AR.Drone being flown into the grounds of Buckingham Palace was withdrawn after concerns that it was demonstrating illegal use of the drone.[30] In the US, the use of AR.Drones is governed by the Federal Aviation Administration at the Federal level and local jurisdiction,[31] who restrict the use of drone and any other UAVs above 400 ft, and do not allow them to be used for commercial purposes.[32] This is expected to change by the end of next year when the FAA will release a definite set of regulations for commercial drone use.[33]
+
+
+References

@@ -1,0 +1,38 @@
+/**
+ * Connects the figures if the mouse is released over another
+ * figure.
+ */
+public void mouseReleased(MouseEvent e) {
+    Figure c = null;
+    Point2D.Double p = viewToDrawing(new Point(e.getX(), e.getY()));
+    if ((getStartConnector()) != null) {
+        c = findTarget(p, getDrawing());
+    }
+    if (c != null) {
+        setEndConnector(findConnector(p, c, prototype));
+        if ((getEndConnector()) != null) {
+            CompositeEdit creationEdit = new CompositeEdit("Verbindung erstellen");
+            getDrawing().fireUndoableEditHappened(creationEdit);
+            getDrawing().add(getConnection());
+            if (getConnection().canConnect(getStartConnector(), getEndConnector())) {
+                getConnection().setStartConnector(getStartConnector());
+                getConnection().setEndConnector(getEndConnector());
+            } else {
+                getConnection().setStartConnector(getEndConnector());
+                getConnection().setEndConnector(getStartConnector());
+            }
+            getConnection().updateConnection();
+            getConnection().removeFigureListener(this);
+            getDrawing().fireUndoableEditHappened(creationEdit);
+        }
+    } else
+        if ((getConnection()) != null) {
+            getDrawing().remove(getConnection());
+        }
+
+    setConnection(null);
+    setStartConnector(null);
+    setEndConnector(null);
+    setCreatedFigure(null);
+    fireToolDone();
+}

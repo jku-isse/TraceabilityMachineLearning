@@ -1,0 +1,7 @@
+private void setLastUsedInputFormat(ColorFormatter.Format newValue) {
+    lastUsedInputFormat = newValue;
+    if (isAdaptive) {
+        outputFormat = lastUsedInputFormat;
+    }
+    prefs.put("ColorFormatter.lastUsedInputFormat", newValue.name());
+}

@@ -1,0 +1,5 @@
+protected Rectangle basicGetBounds() {
+    // if (connection.getPointCount() == 0) return new Rectangle(0, 0, getHandlesize(), getHandlesize());
+    Point center = view.drawingToView(getLocation());
+    return new Rectangle(((center.x) - ((getHandlesize()) / 2)), ((center.y) - ((getHandlesize()) / 2)), getHandlesize(), getHandlesize());
+}

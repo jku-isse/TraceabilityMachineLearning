@@ -1,0 +1,3 @@
+public void removeSelectionListener(ChartSelectionListener listener) {
+    // TODO Auto-generated method stub
+}

@@ -1,0 +1,11 @@
+private ChartItem findTaskProgressItem(int x, int y) {
+    ChartItem result = null;
+    GraphicPrimitiveContainer.GraphicPrimitive primitive = myTaskRendererImpl.getPrimitiveContainer().getLayer(1).getPrimitive(x, 4, (y - (getChartUIConfiguration().getHeaderHeight())), 0);
+    if (primitive instanceof GraphicPrimitiveContainer.Rectangle) {
+        GraphicPrimitiveContainer.Rectangle rect = ((GraphicPrimitiveContainer.Rectangle) (primitive));
+        if ((("task.progress.end".equals(primitive.getStyle())) && ((rect.getRightX()) >= (x - 4))) && ((rect.getRightX()) <= (x + 4))) {
+            result = new TaskProgressChartItem(x, getBottomUnitWidth(), getBottomUnit(), ((Task) (primitive.getModelObject())));
+        }
+    }
+    return result;
+}

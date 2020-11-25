@@ -1,0 +1,3 @@
+public void setDeletedIconList(String list) {
+    deletedIconListAsString = list;
+}

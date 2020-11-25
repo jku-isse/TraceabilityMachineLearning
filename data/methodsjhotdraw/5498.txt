@@ -1,0 +1,3 @@
+protected void drawStroke(Graphics2D g) {
+    g.draw(getTextShape());
+}

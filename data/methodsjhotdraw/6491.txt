@@ -1,0 +1,3 @@
+public String getEnumValue(Enum o) {
+    return o.name();
+}

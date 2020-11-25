@@ -1,0 +1,3 @@
+public void UC32Acceptance() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/UC32Acceptance.sql"));
+}

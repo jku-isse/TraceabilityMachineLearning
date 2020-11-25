@@ -1,0 +1,8 @@
+public void setUseFileDialog(boolean newValue) {
+    useFileDialog = newValue;
+    if (useFileDialog) {
+        fileChooser = null;
+    } else {
+        fileDialog = null;
+    }
+}

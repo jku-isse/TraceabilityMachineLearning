@@ -1,0 +1,9 @@
+public String getViewedDateString() {
+    if ((viewedDate) == null)
+        return "";
+    // $NON-NLS-1$
+
+    // DateFormat dateFormatter = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT,Localization.instance().getCurrentLocale());
+    // return dateFormatter.format(viewedDate);
+    return new SimpleDateFormat(ReportRequestBean.dateFormat).format(viewedDate);
+}

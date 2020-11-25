@@ -1,0 +1,5 @@
+public void trackStep(Point anchor, Point lead, int modifiersEx, DrawingView view) {
+    for (Handle h : handles) {
+        h.trackStep(anchor, lead, modifiersEx);
+    }
+}

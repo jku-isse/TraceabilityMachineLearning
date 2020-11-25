@@ -1,0 +1,10 @@
+/**
+ * Get the number of unviewed lab procedures that the current user has.
+ *
+ * @return The number of unviewed lab procedures.
+ * @throws SQLException
+ * 		
+ */
+public int getUnviewedCount() throws DBException {
+    return labProcedureDAO.getPatientUnviewedCount(patient);
+}

@@ -1,0 +1,20 @@
+/**
+ * Checks to see if family member is dead, and if so, what their cause of death was
+ *
+ * @param member
+ * 		the family member in question
+ * @return the cause of death for the family member
+ * @throws iTrustException
+ * 		
+ */
+public String getFamilyMemberCOD(FamilyMemberBean member) throws iTrustException {
+    PatientBean patient = patientDAO.getPatient(member.getMid());
+    if ((patient.getCauseOfDeath()) == null)
+        return "";
+
+    DiagnosisBean diag = icdDAO.getICDCode(patient.getCauseOfDeath());
+    if (diag == null)
+        return "";
+
+    return diag.getDescription();
+}

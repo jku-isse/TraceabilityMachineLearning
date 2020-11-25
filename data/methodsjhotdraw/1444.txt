@@ -1,0 +1,8 @@
+/**
+ * Sets the end Connector of the connection.
+ * Set this to null to disconnect the end connection.
+ *
+ * @param end
+ * 		the end Connector of the connection
+ */
+public void setEndConnector(Connector end);

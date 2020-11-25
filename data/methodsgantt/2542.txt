@@ -1,0 +1,6 @@
+public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+    setText(String.valueOf(value));
+    setBackground((isSelected ? new Color(((float) (0.29)), ((float) (0.349)), ((float) (0.643))) : Color.white));
+    setForeground((isSelected ? Color.white : Color.black));
+    return this;
+}

@@ -1,0 +1,10 @@
+/**
+ * Invoked when an action occurs.
+ */
+public void actionPerformed(ActionEvent evt) {
+    try {
+        redo();
+    } catch (CannotRedoException e) {
+        System.out.println(("Cannot redo: " + e));
+    }
+}

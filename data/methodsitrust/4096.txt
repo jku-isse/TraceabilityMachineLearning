@@ -1,0 +1,20 @@
+public void testUC31() throws Exception {
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    wr = wr.getLinkWith("My Expired Prescription Reports").click();
+    assertEquals("iTrust - Get My Expired Prescription Reports", wr.getTitle());
+    assertTrue(wr.getText().contains("Tetracycline"));
+    /* If you fail here, you need to make the first column a link */
+    assertTrue("First column in prescription table must be a link", ((wr.getLinkWith("00904-2407")) != null));
+    wr = wr.getLinkWith("00904-2407").click();
+    /* The rest of this test must be written once an instruction-modifying
+    jsp has been specd out.
+     */
+    assertTrue(wr.getText().contains("Prescription Information"));
+    WebTable wt = wr.getTableStartingWith("Prescription Information");
+    assertEquals("5mg", wt.getTableCell(2, 2).getText());
+    assertEquals("Take twice daily", wt.getTableCell(2, 4).getText());
+    iTrustHTTPTest.assertLogged(TransactionType.EXPIRED_PRESCRIPTION_VIEW, 2L, 2L, "");
+}

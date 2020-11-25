@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param name
+ * 		
+ */
+private PersonnelReportFilterType(String name) {
+    this.name = name;
+}

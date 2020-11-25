@@ -1,0 +1,8 @@
+/**
+ * Returns the name from within the JTextField
+ *
+ * @return The new name
+ */
+public String getNewName() {
+    return this.jtNewName.getText();
+}

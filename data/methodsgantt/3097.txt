@@ -1,0 +1,20 @@
+/**
+ * Construct the menu settings.
+ */
+public void constructSections() {
+    addPagesFromProviders();
+    DefaultMutableTreeNode projectNode = addObject(GanttProject.correctLabel(language.getText("project")), null);
+    DefaultMutableTreeNode generalNode = addObject(language.getText("general"), null);
+    DefaultMutableTreeNode exportNode = addObject(GanttProject.correctLabel(language.getText("export")), null);
+    DefaultMutableTreeNode roleNode = addObject(language.getText("resourceRole"), null);
+    // general section
+    addObject(language.getText("parameters"), generalNode);
+    addObject(language.getText("looknfeel"), generalNode);
+    addObject(language.getText("languages"), generalNode);
+    // addObject(language.getText("colors"), generalNode);
+    // Export section
+    // addObject ("html", exportNode);
+    addObject("csv", exportNode);
+    // Just to see the first level of the tree
+    treeSections.scrollPathToVisible(new TreePath(projectNode.getPath()));
+}

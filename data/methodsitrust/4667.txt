@@ -1,0 +1,16 @@
+/**
+ * Check that the value fits the "true" or "false"
+ *
+ * @param name
+ * 		
+ * @param value
+ * 		
+ * @return 
+ */
+protected String checkBoolean(String name, String value) {
+    if (("true".equals(value)) || ("false".equals(value)))
+        return "";
+    else
+        return name + " must be either true or false";
+
+}

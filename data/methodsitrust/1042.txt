@@ -1,0 +1,16 @@
+@Override
+protected void setUp() throws Exception {
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.hcp0();
+    gen.hcp3();
+    gen.hcp8();
+    gen.er4();
+    gen.uap1();
+    gen.admin1();
+    gen.patient1();
+    gen.patient2();
+    gen.patient23();
+    gen.patient24();
+    action = new ViewMyAccessLogAction(TestDAOFactory.getTestInstance(), 2L);
+}

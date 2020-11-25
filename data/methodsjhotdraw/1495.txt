@@ -1,0 +1,7 @@
+/**
+ * Creates the ConnectionFigure. By default the figure prototype is
+ * cloned.
+ */
+protected ConnectionFigure createConnection() {
+    return ((ConnectionFigure) (prototype.clone()));
+}

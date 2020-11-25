@@ -1,0 +1,3 @@
+public void testGetPHRFor1() throws Exception {
+    assertEquals(1, hrDAO.getAllHealthRecords(1).size());
+}

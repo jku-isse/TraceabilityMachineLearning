@@ -1,0 +1,6 @@
+/**
+ * Calculates the radius of the decorator path.
+ */
+protected double getDecoratorPathRadius(Figure f) {
+    return 0.5;
+}

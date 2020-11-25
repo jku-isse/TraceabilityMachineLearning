@@ -1,0 +1,5 @@
+public void testBadCapital() throws Exception {
+    String value = "mI";
+    String errorMessage = StateValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, StateValidatorTest.VALIDATION_FORMAT, false));
+}

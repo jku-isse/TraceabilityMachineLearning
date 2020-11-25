@@ -1,0 +1,26 @@
+/**
+ * Creates new form FindDialog
+ */
+private FindDialog(Frame parent, boolean modal) {
+    super(parent, modal);
+    labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.teddy.Labels");
+    initComponents();
+    buttonPanel.setBorder(new EmptyBorder(0, (-5), 0, (-5)));
+    setAlwaysOnTop(true);
+    prefs = Preferences.userNodeForPackage(getClass());
+    PreferencesUtil.installFramePrefsHandler(prefs, "find", this);
+    modeCombo.setModel(new DefaultComboBoxModel(new Object[]{ labels.getString("find.contains.text"), labels.getString("find.startsWith.text"), labels.getString("find.word.text") }));
+    ignoreCaseCheck.setSelected(prefs.getBoolean("find.ignoreCase", true));
+    wrapAroundCheck.setSelected(prefs.getBoolean("find.wrapAround", true));
+    modeCombo.setSelectedIndex(Math.min(0, Math.max(((modeCombo.getModel().getSize()) - 1), prefs.getInt("find.mode", 0))));
+    getRootPane().setDefaultButton(nextButton);
+    InputMap im = new InputMap();
+    LookAndFeel.loadKeyBindings(im, new String[]{ "shift ENTER", DefaultEditorKit.insertBreakAction, "alt ENTER", DefaultEditorKit.insertBreakAction, "ENTER", JTextField.notifyAction });
+    im.setParent(findField.getInputMap(JComponent.WHEN_FOCUSED));
+    findField.setInputMap(JComponent.WHEN_FOCUSED, im);
+    im = new InputMap();
+    LookAndFeel.loadKeyBindings(im, new String[]{ "shift ENTER", DefaultEditorKit.insertBreakAction, "alt ENTER", DefaultEditorKit.insertBreakAction, "ENTER", JTextField.notifyAction });
+    im.setParent(replaceField.getInputMap(JComponent.WHEN_FOCUSED));
+    replaceField.setInputMap(JComponent.WHEN_FOCUSED, im);
+    pack();
+}

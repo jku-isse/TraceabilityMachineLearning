@@ -1,0 +1,5 @@
+public void render() {
+    beforeProcessingTimeFrames();
+    renderTopUnits();
+    renderBottomUnits();
+}

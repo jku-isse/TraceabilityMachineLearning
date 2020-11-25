@@ -1,0 +1,8 @@
+public void testRemoveAllHospitalAssignmentsException() throws Exception {
+    try {
+        evilDAO.removeAllHospitalAssignmentsFrom(0L);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

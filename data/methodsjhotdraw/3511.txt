@@ -1,0 +1,19 @@
+/**
+ * Constructs and initializes an <code>Insets2D</code> with the
+ * specified insets.
+ *
+ * @param top
+ * 		The top insets.
+ * @param left
+ * 		The left insets.
+ * @param bottom
+ * 		The bottom insets.
+ * @param right
+ * 		The right insets.
+ */
+public Double(double top, double left, double bottom, double right) {
+    this.top = top;
+    this.left = left;
+    this.bottom = bottom;
+    this.right = right;
+}

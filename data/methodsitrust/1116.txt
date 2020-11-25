@@ -1,0 +1,10 @@
+/**
+ * Returns a PatientBean for the currently logged in patient
+ *
+ * @return PatientBean for the currently logged in patient
+ * @throws iTrustException
+ * 		
+ */
+public PatientBean getPatient() throws iTrustException {
+    return patientDAO.getPatient(loggedInMID);
+}

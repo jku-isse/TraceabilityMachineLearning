@@ -1,0 +1,41 @@
+/**
+ * Check if a ply made by the user is valid.
+ *
+ * @param ply
+ * 		The user ply.
+ * @return true, if the ply is valid. false otherwise.
+ */
+public final boolean validateUserPly(Ply ply) {
+    // Get the user plies from the permanent brain, where they
+    // were hopefully already computed (if the PB is actually active).
+    Ply[] plies = getPermanentBrain().getUserPlies();
+    // If the permanent brain is not activated at the moment, remove the
+    // computed plies immediately, so they are recomputed for the next move!
+    if (!(usePermanentBrain())) {
+        getPermanentBrain().resetUserPlies();
+    }
+    for (int p = 0; p < (plies.length); p++) {
+        // For each ply
+        if (plies[p].equals(ply)) {
+            // if the user ply equals this computed
+            // Perform this ply in the opening book
+            getOpeningBook().doUserPly(ply);
+            // Store the last user ply in a instance variable.
+            _lastUserPly = ply;
+            return true;// ply, it seems to be valid.
+
+        }
+    }
+    // The computer could not compute the ply, the user has made,
+    // so we assume, that it is not valid.
+    System.out.println(("Invalid move " + (ply.toString())));
+    System.out.println(("Piecetype on source square " + ((getBoard().getPiece(ply.getSource())) == null ? "null" : "" + (getBoard().getPiece(ply.getSource()).getType()))));
+    System.out.println(("Piecetype on destination square " + ((getBoard().getPiece(ply.getDestination())) == null ? "null" : "" + (getBoard().getPiece(ply.getDestination()).getType()))));
+    System.out.println("Valid moves are:");
+    for (int p = 0; p < (plies.length); p++) {
+        // For each ply
+        System.out.print(((plies[p].toString()) + " "));
+    }
+    System.out.println();
+    return false;
+}

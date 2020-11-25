@@ -1,0 +1,12 @@
+/**
+ * Removes the CustomColumn whose name is given in parameter. If the column
+ * name does not exist, nothing is done.
+ *
+ * @param name
+ * 		Name of the column to remove.
+ */
+public void removeCustomColumn(CustomColumn column) {
+    CustomColumEvent event = new CustomColumEvent(CustomColumEvent.EVENT_REMOVE, column);
+    fireCustomColumnsChange(event);
+    mapIdCustomColum.remove(column.getId());
+}

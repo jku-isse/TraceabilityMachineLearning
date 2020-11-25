@@ -1,0 +1,42 @@
+void constructOffsets(List topUnitOffsets, /* <Offset> */
+List bottomUnitOffsets, /* <Offset> */
+int initialEnd) {
+    // Number relative to the chart start. It can only be increased.
+    float offsetEnd = 0;
+    Date currentDate = myStartDate;
+    // We dont want to create numerous vertical stripes for weekend units (e.g., for 16
+    // non-working hours may produce 16 vertical stripes that looks awful). We
+    // accumulate consecutive weekend units instead and add just a single block.
+    do {
+        TimeFrame currentFrame = getTimeUnitStack().createTimeFrame(currentDate, getTopUnit(currentDate), myBottomUnit);
+        int bottomUnitCount = currentFrame.getUnitCount(getBottomUnit());
+        // int bottomUnit
+        // This will be true if there is at least one working bottom unit in this time frame
+        // If there are only weekend bottom units, well merge neighbor top units
+        // (like merging two weekend days into one continuous grey stripe)
+        boolean addTopUnitOffset = false;
+        int bottomUnitWidth = getBottomUnitWidth();
+        float offsetStep = getOffsetStep(currentFrame);
+        if (bottomUnitWidth == 0) {
+            bottomUnitWidth = 1;
+        }
+        for (int i = 0; i < bottomUnitCount; i++) {
+            Date startDate = currentFrame.getUnitStart(getBottomUnit(), i);
+            Date endDate = currentFrame.getUnitFinish(getBottomUnit(), i);
+            GPCalendar.DayType dayType = getCalendar().getDayTypeDate(startDate);
+            if (dayType == (GPCalendar.DayType.WEEKEND)) {
+                offsetEnd += offsetStep / (myWeekendDecreaseFactor);
+                bottomUnitOffsets.add(new ChartModelBase.Offset(getBottomUnit(), myStartDate, endDate, (initialEnd + ((int) (offsetEnd * bottomUnitWidth))), dayType));
+                continue;
+            }
+            addTopUnitOffset = true;
+            offsetEnd += offsetStep;
+            bottomUnitOffsets.add(new ChartModelBase.Offset(getBottomUnit(), myStartDate, endDate, (initialEnd + ((int) (offsetEnd * bottomUnitWidth))), dayType));
+        }
+        currentDate = currentFrame.getFinishDate();
+        if (!addTopUnitOffset) {
+            continue;
+        }
+        topUnitOffsets.add(new ChartModelBase.Offset(getTopUnit(), myStartDate, currentDate, (initialEnd + ((int) (offsetEnd * bottomUnitWidth))), GPCalendar.DayType.WORKING));
+    } while ((offsetEnd * (getBottomUnitWidth())) <= (getChartWidth()) );
+}

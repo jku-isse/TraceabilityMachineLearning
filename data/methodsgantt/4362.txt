@@ -1,0 +1,7 @@
+public void addNotes(final String notes) {
+    myCommands.add(new Runnable() {
+        public void run() {
+            TaskImpl.this.addNotes(notes);
+        }
+    });
+}

@@ -1,0 +1,3 @@
+public UIFacade.Choice showConfirmationDialog(String message, String title) {
+    return myUIFacade.showConfirmationDialog(message, title);
+}

@@ -1,0 +1,5 @@
+@Override
+public String getToolTipText(Point p) {
+    return (SVGAttributeKeys.LINK.get(getOwner())) != null ? // 
+    ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels").getString("handle.link.toolTipText") : null;
+}

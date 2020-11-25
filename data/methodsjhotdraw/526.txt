@@ -1,0 +1,3 @@
+public Icon getLargeDisplayIcon() {
+    return UIManager.getIcon("ColorChooser.colorWheelIcon");
+}

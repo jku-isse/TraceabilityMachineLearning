@@ -1,0 +1,4 @@
+/**
+ * Returns an immutable Map with the default attributes of this editor.
+ */
+public Map<AttributeKey, Object> getDefaultAttributes();

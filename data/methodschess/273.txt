@@ -1,0 +1,8 @@
+/**
+ * Add a opening in PGN format to the opening book and return
+ * the error status.
+ *
+ * @param file
+ * 		The File to add to the opening book.
+ */
+void addPGNopening(File file);

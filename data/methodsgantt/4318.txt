@@ -1,0 +1,3 @@
+public String getWebLink() {
+    return myWebLink;
+}

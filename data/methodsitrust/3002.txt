@@ -1,0 +1,21 @@
+public List<PatientHistoryBean> getPatientHistory(long mid) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ArrayList<PatientHistoryBean> pList;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM historypatients WHERE MID = ?");
+        ps.setLong(1, mid);
+        ResultSet rs = ps.executeQuery();
+        pList = new ArrayList<PatientHistoryBean>();
+        while (rs.next()) {
+            pList.add(patientLoader.loadSingleHistory(rs));
+        } 
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+    return pList;
+}

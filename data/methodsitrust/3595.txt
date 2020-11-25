@@ -1,0 +1,13 @@
+/**
+ * Adds patient Devils Advocate for testing purposes.
+ *
+ * @throws FileNotFoundException
+ * 		
+ * @throws SQLException
+ * 		
+ * @throws IOException
+ * 		
+ */
+public void patient24() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/patient24.sql"));
+}

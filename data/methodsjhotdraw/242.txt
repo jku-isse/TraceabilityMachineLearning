@@ -1,0 +1,7 @@
+public void actionPerformed(ActionEvent evt) {
+    Application app = getApplication();
+    JOptionPane.showMessageDialog(app.getComponent(), (((((((((app.getName()) + " ") + (app.getVersion())) + "
+") + (app.getCopyright())) + "
+
+Running on Java ") + (System.getProperty("java.vm.version"))) + ", ") + (System.getProperty("java.vendor"))), "About", JOptionPane.PLAIN_MESSAGE);
+}

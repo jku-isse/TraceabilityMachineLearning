@@ -1,0 +1,43 @@
+public void testUAPAddHCPMonitor() throws Exception {
+    gen.remoteMonitoring8();
+    WebConversation wc = login("8000000009", "uappass1");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - UAP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 8000000009L, 0L, "");
+    wr = wr.getLinkWith("Edit Patient List").click();
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    WebForm confirmForm = wr.getForms()[0];
+    assertEquals("Add Andy Programmer", confirmForm.getButtons()[0].getValue());
+    confirmForm.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Patient Andy Programmer Added"));
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_LIST_ADD, 8000000009L, 2L, "");
+    // go to reporting page
+    wr = wr.getLinkWith("Report Telemedicine Status").click();
+    assertTrue(wr.getText().contains("Andy Programmer"));
+    assertEquals("iTrust - Report Status", wr.getTitle());
+    WebForm wf = wr.getForms()[0];
+    wf.setParameter("systolicBloodPressure", "110");
+    wf.setParameter("diastolicBloodPressure", "85");
+    wr = wf.submit();
+    assertTrue(wr.getText().contains("Information Successfully Added"));
+    iTrustHTTPTest.assertLogged(TransactionType.TELEMEDICINE_DATA_REPORT, 8000000009L, 2L, "");
+    // logout
+    wr = wr.getLinkWith("Logout").click();
+    iTrustHTTPTest.assertLogged(TransactionType.LOGOUT, 8000000009L, 8000000009L, "");
+    // log back in
+    WebConversation wcHCP = login("9000000000", "pw");
+    wr = wcHCP.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Monitor Patients").click();
+    WebTable table = wr.getTableStartingWithPrefix("Patient Physiologic Statistics");
+    assertEquals("Andy Programmer (MID 2)", table.getCellAsText(2, 0));
+    assertEquals("110", table.getCellAsText(2, 2));
+    assertEquals("85", table.getCellAsText(2, 3));
+    assertEquals("", table.getCellAsText(2, 4));
+    iTrustHTTPTest.assertLogged(TransactionType.TELEMEDICINE_DATA_VIEW, 9000000000L, 0L, "");
+}

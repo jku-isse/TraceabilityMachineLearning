@@ -1,0 +1,13 @@
+/**
+ * Shows a question-message sheet requesting input from the user
+ * parented to <code>parentComponent</code>.
+ *
+ * @param parentComponent
+ * 		the parent <code>Component</code> for the
+ * 		dialog
+ * @param listener
+ * 		The listener for SheetEvents.
+ */
+public static void showInputSheet(Component parentComponent, Object message, SheetListener listener) {
+    JSheet.showInputSheet(parentComponent, message, JOptionPane.QUESTION_MESSAGE, listener);
+}

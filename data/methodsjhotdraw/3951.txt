@@ -1,0 +1,18 @@
+/**
+ * Calls #construct on the current thread and invokes
+ * #finished on the AWT event dispatcher thread.
+ */
+public final void run() {
+    final Runnable doFinished = new Runnable() {
+        public void run() {
+            finished(getValue());
+        }
+    };
+    try {
+        setValue(construct());
+    } catch (Throwable e) {
+        e.printStackTrace();
+    } finally {
+        SwingUtilities.invokeLater(doFinished);
+    }
+}

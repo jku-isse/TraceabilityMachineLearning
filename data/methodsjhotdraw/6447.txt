@@ -1,0 +1,18 @@
+public NanoXMLDOMInput(DOMFactory factory, Reader in) throws IOException {
+    this.factory = factory;
+    try {
+        IXMLParser parser = XMLParserFactory.createDefaultXMLParser();
+        IXMLReader reader = new StdXMLReader(in);
+        parser.setReader(reader);
+        document = new XMLElement();
+        current = ((XMLElement) (parser.parse()));
+        if ((current) != null) {
+            document.addChild(current);
+        }
+        current = document;
+    } catch (Exception e) {
+        IOException error = new IOException(e.getMessage());
+        error.initCause(e);
+        throw error;
+    }
+}

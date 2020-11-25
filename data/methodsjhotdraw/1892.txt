@@ -1,0 +1,5 @@
+/**
+ * Gets the drawing.
+ * This is a bound property.
+ */
+public Drawing getDrawing();

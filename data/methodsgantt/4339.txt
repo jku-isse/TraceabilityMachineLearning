@@ -1,0 +1,10 @@
+public void setStart(GanttCalendar start) {
+    Date closestWorkingStart = myManager.findClosestWorkingTime(start.getTime());
+    start.setTime(closestWorkingStart);
+    GanttCalendar oldStart = ((myStart) == null) ? null : myStart.Clone();
+    myStart = start;
+    GanttCalendar oldEnd = getEnd();
+    // if (myID>=0) {
+    recalculateActivities();
+    // }
+}

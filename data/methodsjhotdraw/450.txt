@@ -1,0 +1,11 @@
+public float[] toComponents(int r, int g, int b, float[] component) {
+    if ((component == null) || ((component.length) != 4)) {
+        component = new float[4];
+    }
+    component[0] = r / 255.0F;
+    component[1] = g / 255.0F;
+    component[2] = b / 255.0F;
+    float[] cmyk = colorSpace.fromRGB(component);
+    System.arraycopy(cmyk, 0, component, 0, 4);
+    return component;
+}

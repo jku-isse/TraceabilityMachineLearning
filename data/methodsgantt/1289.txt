@@ -1,0 +1,3 @@
+protected String getIconFilePrefix() {
+    return isOn() ? CalculateCriticalPathAction.ICON_PREFIX_ON : CalculateCriticalPathAction.ICON_PREFIX_OFF;
+}

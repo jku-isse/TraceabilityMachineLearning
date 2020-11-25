@@ -1,0 +1,16 @@
+/**
+ * Determines whether or not the tokenizer recognizes C-style comments.
+ * If the flag argument is <code>true</code>, this stream tokenizer
+ * recognizes C-style comments. All text between successive
+ * occurrences of <code>/*</code> and <code>*&#47;</code> are discarded.
+ * <p>
+ * If the flag argument is <code>false</code>, then C-style comments
+ * are not treated specially.
+ *
+ * @param flag
+ * 		<code>true</code> indicates to recognize and ignore
+ * 		C-style comments.
+ */
+public void slashStarComments(boolean flag) {
+    slashStarCommentsP = flag;
+}

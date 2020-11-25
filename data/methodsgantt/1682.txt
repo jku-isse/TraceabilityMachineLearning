@@ -1,0 +1,3 @@
+protected TaskManager getTaskManager() {
+    return myTaskManager;
+}

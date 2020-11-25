@@ -1,0 +1,82 @@
+public void actionPerformed(ActionEvent evt) {
+    final Application app = getApplication();
+    if (app.isEnabled()) {
+        app.setEnabled(false);
+        int unsavedViewsCount = 0;
+        View documentToBeReviewed = null;
+        for (View p : app.views()) {
+            if (p.hasUnsavedChanges()) {
+                if (p.isEnabled()) {
+                    documentToBeReviewed = p;
+                }
+                unsavedViewsCount++;
+            }
+        }
+        if ((unsavedViewsCount > 0) && (documentToBeReviewed == null)) {
+            // Silently abort, if no view can be reviewed.
+            app.setEnabled(true);
+            return;
+        }
+        switch (unsavedViewsCount) {
+            case 0 :
+                {
+                    doExit();
+                    break;
+                }
+            case 1 :
+                {
+                    unsavedView = documentToBeReviewed;
+                    oldFocusOwner = SwingUtilities.getWindowAncestor(unsavedView.getComponent()).getFocusOwner();
+                    unsavedView.setEnabled(false);
+                    JOptionPane pane = new JOptionPane((((("<html>" + (UIManager.getString("OptionPane.css"))) + "<b>Do you want to save changes to this document ") + "before exiting?</b><p>") + "If you dont save, your changes will be lost."), JOptionPane.WARNING_MESSAGE);
+                    Object[] options = new Object[]{ "Save", "Cancel", "Dont Save" };
+                    pane.setOptions(options);
+                    pane.setInitialValue(options[0]);
+                    pane.putClientProperty("Quaqua.OptionPane.destructiveOption", new Integer(2));
+                    JSheet.showSheet(pane, unsavedView.getComponent(), new SheetListener() {
+                        public void optionSelected(SheetEvent evt) {
+                            Object value = evt.getValue();
+                            if ((value == null) || (value.equals("Cancel"))) {
+                                unsavedView.setEnabled(true);
+                                app.setEnabled(true);
+                            } else
+                                if (value.equals("Dont Save")) {
+                                    doExit();
+                                    unsavedView.setEnabled(true);
+                                } else
+                                    if (value.equals("Save")) {
+                                        saveChanges();
+                                    }
+
+
+                        }
+                    });
+                    break;
+                }
+            default :
+                {
+                    JOptionPane pane = new JOptionPane((((((((("<html>" + (UIManager.get("OptionPane.css"))) + "<b>You have ") + unsavedViewsCount) + " documents with unsaved changes. ") + "Do you want to ") + "review these changes before quitting?</b><p>") + "If you dont review your documents, ") + "all your changes will be lost."), JOptionPane.QUESTION_MESSAGE);
+                    Object[] options = new Object[]{ "Review Changes", "Cancel", "Discard Changes" };
+                    pane.setOptions(options);
+                    pane.setInitialValue(options[0]);
+                    pane.putClientProperty("Quaqua.OptionPane.destructiveOption", new Integer(2));
+                    JDialog dialog = pane.createDialog(app.getComponent(), null);
+                    dialog.setVisible(true);
+                    Object value = pane.getValue();
+                    if ((value == null) || (value.equals("Cancel"))) {
+                        app.setEnabled(true);
+                    } else
+                        if (value.equals("Discard Changes")) {
+                            doExit();
+                            app.setEnabled(true);
+                        } else
+                            if (value.equals("Review Changes")) {
+                                unsavedView = documentToBeReviewed;
+                                reviewChanges();
+                            }
+
+
+                }
+        }
+    }
+}

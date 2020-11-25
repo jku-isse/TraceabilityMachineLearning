@@ -1,0 +1,4 @@
+@Override
+public void attributeChanged(FigureEvent evt) {
+    component.repaint();
+}

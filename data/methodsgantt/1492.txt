@@ -1,0 +1,5 @@
+public CalendarActivityImpl(Date startDate, Date endDate, boolean isWorkingTime) {
+    myStartDate = startDate;
+    myEndDate = endDate;
+    this.isWorkingTime = isWorkingTime;
+}

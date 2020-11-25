@@ -1,0 +1,3 @@
+public String getRoleString() {
+    return roleString;
+}

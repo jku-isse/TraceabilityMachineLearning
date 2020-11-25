@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param mID
+ * 		the patients MID
+ */
+public void setMID(String mID) {
+    MID = mID;
+}

@@ -1,0 +1,6 @@
+private void saveIconPositions(TransformerHandler handler) throws TransformerConfigurationException, TransformerFactoryConfigurationError, SAXException {
+    AttributesImpl attrs = new AttributesImpl();
+    addAttribute("icons-list", iconListAsString, attrs);
+    addAttribute("deletedIcons-list", deletedIconListAsString, attrs);
+    emptyElement("positions", attrs, handler);
+}

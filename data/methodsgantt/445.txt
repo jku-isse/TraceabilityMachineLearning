@@ -1,0 +1,9 @@
+public ArrayList load() throws IOException, ParserConfigurationException, SAXException {
+    ArrayList tasks = null;
+    PreviousStateTasksTagHandler handler = new PreviousStateTasksTagHandler(null);
+    SAXParserFactory factory = SAXParserFactory.newInstance();
+    SAXParser saxParser = factory.newSAXParser();
+    saxParser.parse(myFile, handler);
+    tasks = handler.getTasks();
+    return tasks;
+}

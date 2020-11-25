@@ -1,0 +1,3 @@
+public void setMilestone(boolean milestone) {
+    isMilestone = milestone;
+}

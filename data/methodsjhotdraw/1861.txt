@@ -1,0 +1,4 @@
+/**
+ * Sets the cursor on the view(s) of the drawing editor.
+ */
+void setCursor(Cursor c);

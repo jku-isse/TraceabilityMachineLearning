@@ -1,0 +1,4 @@
+protected void drawBorder(Graphics g, GraphicPrimitiveContainer.Rectangle next) {
+    g.drawLine(((next.myLeftX) - (getCorrectionShift())), next.myTopY, ((next.getRightX()) - (getCorrectionShift())), next.myTopY);
+    g.drawLine(((next.myLeftX) - (getCorrectionShift())), next.getBottomY(), ((next.getRightX()) - (getCorrectionShift())), next.getBottomY());
+}

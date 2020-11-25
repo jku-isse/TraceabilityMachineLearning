@@ -1,0 +1,8 @@
+public void forwardScheduling() {
+    RecalculateTaskScheduleAlgorithm alg = getTaskManager().getAlgorithmCollection().getRecalculateTaskScheduleAlgorithm();
+    try {
+        alg.run();
+    } catch (TaskDependencyException e) {
+        myUIFacade.showErrorDialog(e);
+    }
+}

@@ -1,0 +1,23 @@
+public PathIterator getPathIterator(AffineTransform at) {
+    /* validatePath();
+    PathIterator git = generalPath.getPathIterator(at);
+    PathIterator bit = new BezierPathIterator(this, at);
+    float gcoords[] = new float[6];
+    float bcoords[] = new float[6];
+    int i=0;
+    while (! git.isDone() && ! bit.isDone()) {
+    int gtype = git.currentSegment(gcoords);
+    int btype = bit.currentSegment(bcoords);
+    System.out.println(i+" "+gtype+"["+gcoords[0]+","+gcoords[1]+","+gcoords[2]+","+gcoords[3]+","+gcoords[4]+","+gcoords[5]+
+    "]="+btype+"["+bcoords[0]+","+bcoords[1]+","+bcoords[2]+","+bcoords[3]+","+bcoords[4]+","+bcoords[5]+"]");
+    git.next();
+    bit.next();
+    i++;
+    }
+    System.out.println("- "+git.isDone()+"="+bit.isDone());
+
+
+    //  return generalPath.getPathIterator(at);
+     */
+    return new BezierPathIterator(this, at);
+}

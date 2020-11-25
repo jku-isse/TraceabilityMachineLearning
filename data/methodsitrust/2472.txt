@@ -1,0 +1,6 @@
+/**
+ * Returns a unique ID for this DatasetProducer
+ */
+public String getProducerId() {
+    return "AdverseEventsData DatasetProducer";
+}

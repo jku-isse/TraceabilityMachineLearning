@@ -1,0 +1,14 @@
+/**
+ * Edits an existing prescription in the database.  If the office visit is
+ * unsaved, this will throw an exception.
+ *
+ * @param pres
+ * 		The prescription bean that has been changed.
+ * @throws iTrustException
+ * 		
+ */
+public void editPrescription(PrescriptionBean pres) throws iTrustException {
+    verifySaved();
+    checkForAllergiesAndInteractions(pres);
+    psDAO.edit(pres);
+}

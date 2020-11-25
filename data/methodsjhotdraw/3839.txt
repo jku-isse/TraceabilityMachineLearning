@@ -1,0 +1,3 @@
+public void add(JComponent submenu) {
+    getPopupMenu().add(submenu);
+}

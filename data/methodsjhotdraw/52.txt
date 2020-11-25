@@ -1,0 +1,3 @@
+public void markChangesAsSaved() {
+    setHasUnsavedChanges(false);
+}

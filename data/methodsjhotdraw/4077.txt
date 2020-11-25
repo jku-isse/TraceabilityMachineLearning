@@ -1,0 +1,4 @@
+public BackdropBorder(Border foregroundBorder, Border backgroundBorder) {
+    this.foregroundBorder = foregroundBorder;
+    this.backgroundBorder = backgroundBorder;
+}

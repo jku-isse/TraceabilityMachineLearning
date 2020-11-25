@@ -1,0 +1,10 @@
+/**
+ * Transforms the figure.
+ */
+public void transform(AffineTransform tx) {
+    for (Figure f : getChildren()) {
+        f.transform(tx);
+    }
+    invalidate();
+    // invalidate();
+}

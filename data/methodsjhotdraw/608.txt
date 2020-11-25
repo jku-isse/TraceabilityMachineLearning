@@ -1,0 +1,10 @@
+@Override
+protected Point getColorLocation(float hue, float saturation, float brightness, int width, int height) {
+    float radius = (Math.min(width, height)) / 2.0F;
+    float radiusH = radius / 2.0F;
+    saturation = Math.max(0.0F, Math.min(1.0F, saturation));
+    brightness = Math.max(0.0F, Math.min(1.0F, brightness));
+    Point p;
+    p = new Point(((width / 2) + ((int) ((radius - (radius * brightness)) * (Math.cos(((hue * (Math.PI)) * 2.0)))))), ((height / 2) - ((int) ((radius - (radius * brightness)) * (Math.sin(((hue * (Math.PI)) * 2.0)))))));
+    return p;
+}

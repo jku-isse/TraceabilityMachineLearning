@@ -1,0 +1,9 @@
+public void run(File outputFile, ExportFinalizationJob finalizationJob) throws Exception {
+    Chart chart = myUIFacade.getActiveChart();
+    if (chart == null) {
+        chart = myUIFacade.getGanttChart();
+    }
+    RenderedImage renderedImage = chart.getRenderedImage(new GanttExportSettings());
+    ImageIO.write(renderedImage, myFileTypeOption.proposeFileExtension(), outputFile);
+    finalizationJob.run(new File[]{ outputFile });
+}

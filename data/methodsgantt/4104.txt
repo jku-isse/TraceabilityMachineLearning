@@ -1,0 +1,3 @@
+public CustomColumn getCustomColumnByID(String id) {
+    return ((CustomColumn) (mapIdCustomColum.get(id)));
+}

@@ -1,0 +1,1 @@
+ChartComponentBase.MouseInteraction finishInteraction();

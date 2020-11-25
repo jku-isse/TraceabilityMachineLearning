@@ -1,0 +1,3 @@
+public boolean isUnplugged() {
+    return (myTaskHierarchyItem) == null;
+}

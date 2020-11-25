@@ -1,0 +1,6 @@
+/**
+ * Constructor with loggedInMID parameter
+ */
+public RemoteMonitoringDataBean(long patientMID) {
+    this.patientMID = patientMID;
+}

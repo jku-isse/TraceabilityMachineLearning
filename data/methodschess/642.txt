@@ -1,0 +1,16 @@
+/**
+ * The start time of the thread.
+ */
+// long _startTime;
+// Constructors
+/**
+ * Create a new countdown timer panel.
+ */
+public CountdownTimerPanel() {
+    _actionListeners = new ArrayList();
+    // _startTime = -1L;
+    _display = new JLabel("0:00:00", JLabel.RIGHT);
+    _display.setPreferredSize(new Dimension(CountdownTimerPanel._displayWidth, CountdownTimerPanel._displayHeight));
+    _display.setHorizontalTextPosition(SwingConstants.CENTER);
+    add(_display);
+}

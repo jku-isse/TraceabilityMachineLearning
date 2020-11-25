@@ -1,0 +1,3 @@
+public String toString() {
+    return GanttLanguage.getInstance().getText("ganttChart");
+}

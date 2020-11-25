@@ -1,0 +1,4 @@
+protected String getTooltipText() {
+    String localizedName = getLocalizedName();
+    return localizedName == null ? "" : GanttLanguage.getInstance().correctLabel(getLocalizedName());
+}

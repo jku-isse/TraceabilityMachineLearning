@@ -1,0 +1,20 @@
+private void load(ActionEvent evt) {
+    // GEN-FIRST:event_load
+    try {
+        String methodName = getParameter("dataread");
+        if ((methodName.indexOf(()) > 0) {
+            methodName = methodName.substring(0, ((methodName.indexOf(()) - 1));
+        }
+        JSObject win = JSObject.getWindow(this);
+        Object result = win.call(methodName, new Object[0]);
+        if (result instanceof String) {
+            setData(((String) (result)));
+        }
+    } catch (Throwable t) {
+        TextFigure tf = new TextFigure(("Fehler: " + t));
+        AffineTransform tx = new AffineTransform();
+        tx.translate(10, 20);
+        tf.transform(tx);
+        getDrawing().add(tf);
+    }
+}// GEN-LAST:event_load

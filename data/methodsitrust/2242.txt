@@ -1,0 +1,3 @@
+public void setWardID(long wardID) {
+    this.wardID = wardID;
+}

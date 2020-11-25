@@ -1,0 +1,49 @@
+public void testModifyExistingReferral() throws Exception {
+    // login
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // select the patient
+    WebForm form = wr.getForms()[0];
+    form.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    form.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // Select the office visit from specific date
+    wr.getLinkWith("6/10/2007").click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    // get the row containing the referral to edit
+    int rown = 3;
+    WebTable tbl = wr.getTableWithID("referralsTable");
+    assertTrue(tbl.getCellAsText(rown, 3).contains("07/09/2007"));
+    form = tbl.getTableCell(rown, 4).getForms()[0];
+    form.getButtons()[0].click();
+    // we should be on the edit referral page now
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Edit Referral", wr.getTitle());
+    // fill in the form
+    form = wr.getFormWithID("editReferralForm");
+    form.setParameter("priority", "1");
+    form.setParameter("referralDetails", "Gandalf will take care of you--for a price!");
+    form.getButtonWithID("submitEdit").click();
+    // we should be back on the edit office visit page
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    // verify that no exceptions were thrown
+    assertFalse(wr.getText().contains("NumberFormatException"));
+    assertFalse(wr.getText().contains("<h2>Oops! Your page wasnt found</h2>"));
+    assertFalse(wr.getText().contains("NullPointerException"));
+    // see that referral is now in the table
+    tbl = wr.getTableWithID("referralsTable");
+    assertEquals("Gandalf Stormcrow", tbl.getCellAsText(rown, 0));// receiving HCP
+
+    assertEquals("Gandalf will take care of you--for a price!", tbl.getCellAsText(rown, 1));// notes
+
+    assertEquals("1", tbl.getCellAsText(rown, 2));// priority
+
+    assertTrue(tbl.getCellAsText(rown, 3).contains("07/09/2007"));// time stamp
+
+}

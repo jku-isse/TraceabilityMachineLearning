@@ -1,0 +1,21 @@
+public void repaintHandles() {
+    validateHandles();
+    Rectangle r = null;
+    for (Handle h : getSelectionHandles()) {
+        if (r == null) {
+            r = h.getDrawingArea();
+        } else {
+            r.add(h.getDrawingArea());
+        }
+    }
+    for (Handle h : getSecondaryHandles()) {
+        if (r == null) {
+            r = h.getDrawingArea();
+        } else {
+            r.add(h.getDrawingArea());
+        }
+    }
+    if (r != null) {
+        repaint(r);
+    }
+}

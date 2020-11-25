@@ -1,0 +1,17 @@
+/**
+ * set the first row in all the tabbed pane. thus give them a common look
+ */
+private void setFirstRow(Container container, GridBagConstraints gbc, JLabel nameLabel, JTextField nameField, JLabel durationLabel, JTextField durationField) {
+    container.setLayout(new GridBagLayout());
+    gbc.weightx = 0;
+    gbc.weighty = 0;
+    gbc.anchor = GridBagConstraints.WEST;
+    gbc.insets.right = 15;
+    gbc.insets.left = 10;
+    gbc.insets.top = 10;
+    addUsingGBL(container, nameLabel, gbc, 0, 0, 1, 1);
+    addUsingGBL(container, nameField, gbc, 1, 0, 1, 1);
+    addUsingGBL(container, durationLabel, gbc, 2, 0, 1, 1);
+    gbc.weightx = 1;
+    addUsingGBL(container, durationField, gbc, 3, 0, 1, 1);
+}

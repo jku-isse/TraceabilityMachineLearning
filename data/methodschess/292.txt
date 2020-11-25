@@ -1,0 +1,10 @@
+// Constructors
+/**
+ * Create a new PermanentBrain instance.
+ *
+ * @param engine
+ * 		The used chess engine.
+ */
+public PermanentBrain(ChessEngine engine) {
+    setEngine(engine);
+}

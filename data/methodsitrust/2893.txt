@@ -1,0 +1,25 @@
+/**
+ * Updates a particular codes description
+ *
+ * @param orc
+ * 		A bean representing the particular override reason to be updated.
+ * @return An int representing the number of updated rows.
+ * @throws DBException
+ * 		
+ */
+public int updateCode(OverrideReasonBean orc) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("UPDATE drugreactionoverridecodes SET Description = ? " + "WHERE Code = ?"));
+        ps.setString(1, orc.getDescription());
+        ps.setString(2, orc.getORCode());
+        return ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

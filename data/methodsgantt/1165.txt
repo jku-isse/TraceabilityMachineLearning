@@ -1,0 +1,14 @@
+private ResourceNode buildTree() {
+    ResourceNode root = new ResourceNode(null);
+    List listResources = myResourceManager.getResources();
+    Iterator itRes = listResources.iterator();
+    while (itRes.hasNext()) {
+        ProjectResource pr = ((ProjectResource) (itRes.next()));
+        ResourceAssignment[] tra = pr.getAssignments();
+        ResourceNode rnRes = new ResourceNode(pr);// the first for the
+
+        // resource
+        root.add(rnRes);
+    } 
+    return root;
+}

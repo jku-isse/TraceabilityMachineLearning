@@ -1,0 +1,8 @@
+/**
+ * This method is called whenever new resource appears in the resource
+ * manager
+ *
+ * @param event
+ * 		Resource event object
+ */
+public void resourceAdded(ResourceEvent event);

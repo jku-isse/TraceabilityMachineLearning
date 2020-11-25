@@ -1,0 +1,10 @@
+/**
+ * Creates a new ColumnKeeper for the given TableColumn.
+ *
+ * @param tc
+ * 		TableColumn to manage.
+ */
+public ColumnKeeper(TableColumn tc) {
+    column = tc;
+    index = column.getModelIndex();
+}

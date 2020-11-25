@@ -1,0 +1,4 @@
+void setScale(int scale) {
+    myScalePercents = scale;
+    repaint();
+}

@@ -1,0 +1,8 @@
+public URL getProjectCalendar() {
+    int index = JCCalendar.getSelectedIndex();
+    if (index == 0)
+        return null;
+    else
+        return calendars[(index - 1)];
+
+}

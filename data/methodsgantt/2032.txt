@@ -1,0 +1,3 @@
+protected int getHeight() {
+    return ((int) (getChartModel().getBounds().getHeight())) - (getConfig().getHeaderHeight());
+}

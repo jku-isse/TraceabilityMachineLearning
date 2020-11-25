@@ -1,0 +1,3 @@
+protected JTextPane createEditor() {
+    return new JTextPane();
+}

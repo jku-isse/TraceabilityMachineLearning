@@ -1,0 +1,3 @@
+public <T> T getHandleAttribute(AttributeKey<T> key) {
+    return target.getHandleAttribute(key);
+}

@@ -1,0 +1,4 @@
+/**
+ * Gets the number of characters used to expand tabs.
+ */
+public int getTabSize();

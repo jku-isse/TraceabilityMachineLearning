@@ -1,0 +1,3 @@
+public Action getCutAction() {
+    return getViewManager().getCutAction();
+}

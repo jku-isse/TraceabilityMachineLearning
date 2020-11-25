@@ -1,0 +1,10 @@
+// public void setFunction (int function) {
+// this.function=function;
+// }
+// public int getFunction () {
+// return myRole==null ? 0 : myRole.getID();
+// }
+public void setRole(Role role) {
+    myRole = role;
+    fireResourceChanged();
+}

@@ -1,0 +1,4 @@
+public void testNotPatient200() throws Exception {
+    List<DiagnosisBean> diagnoses = patientDAO.getDiagnoses(200L);
+    assertEquals(0, diagnoses.size());
+}

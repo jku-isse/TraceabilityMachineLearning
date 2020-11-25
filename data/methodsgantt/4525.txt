@@ -1,0 +1,8 @@
+/**
+ * Returns the name of the task.
+ *
+ * @return The name of the task.
+ */
+public String getName() {
+    return task.getName();
+}

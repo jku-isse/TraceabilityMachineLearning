@@ -1,0 +1,19 @@
+public void testSendTwoMail() throws DBException, FormValidationException, iTrustException {
+    List<AdverseEventBean> BeanList = new ArrayList<AdverseEventBean>();
+    AdverseEventBean aBean = new AdverseEventBean();
+    AdverseEventBean aBeanTwo = new AdverseEventBean();
+    aBean.setMID("2");
+    aBean.setDrug("Prioglitazone");
+    aBean.setCode("647641512");
+    aBean.setDescription("IM DYING!");
+    aBean.setPrescriber("9000000000");
+    aBeanTwo.setMID("2");
+    aBeanTwo.setDrug("Prioglitazone");
+    aBeanTwo.setCode("647641512");
+    aBeanTwo.setDescription("IM DEAD!");
+    aBeanTwo.setPrescriber("9000000000");
+    BeanList.add(aBean);
+    BeanList.add(aBeanTwo);
+    Email email = advMultiAction.sendMails(BeanList);
+    assertEquals(" Patient: Andy Programmer (MID 2) Has Reported the following adverse event(s) Drug: Prioglitazone (647641512) Description: IM DYING! Drug: Prioglitazone (647641512) Description: IM DEAD!", email.getBody());
+}

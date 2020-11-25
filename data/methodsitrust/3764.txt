@@ -1,0 +1,17 @@
+public void testAddAppointmentType() throws Exception {
+    // Login
+    WebConversation wc = login("9000000001", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Edit Appointment Types").click();
+    // Fill form
+    assertEquals("iTrust - Maintain Appointment Types", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_TYPE_VIEW, 9000000001L, 0L, "");
+    WebForm wf = wr.getFormWithID("mainForm");
+    wf.getScriptableObject().setParameterValue("name", "Immunization");
+    wf.getScriptableObject().setParameterValue("duration", "30");
+    wr = wf.submit(wf.getSubmitButton("add"));
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_TYPE_ADD, 9000000001L, 0L, "");
+    assertTrue(wr.getTables()[1].getRows()[8].getText().contains("Immunization"));
+    assertTrue(wr.getTables()[1].getRows()[8].getText().contains("30"));
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_TYPE_VIEW, 9000000001L, 0L, "");
+}

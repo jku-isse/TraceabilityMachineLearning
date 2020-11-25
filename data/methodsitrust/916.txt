@@ -1,0 +1,7 @@
+@Override
+protected void setUp() throws Exception {
+    gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.admin1();
+    action = new UpdateICDCodeListAction(factory, UpdateICDCodeListActionTest.performingAdmin);
+}

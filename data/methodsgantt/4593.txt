@@ -1,0 +1,6 @@
+private void recalculateSupertaskCompletionPercentageBottomUp(Task task, TaskContainmentHierarchyFacade facade) {
+    while (task != null) {
+        recalculateSupertaskCompletionPercentage(task, facade);
+        task = facade.getContainer(task);
+    } 
+}

@@ -1,0 +1,14 @@
+/**
+ * Resets this matcher and then attempts to find the next
+ * subsequence of the input sequence that matches the pattern,
+ * starting at the specified index.
+ *
+ * @param startIndex
+ * 		the index from which to start the search.
+ * @return the index of the first occurrence of the search string,
+starting at the specified offset, or -1 if no occurrence was found.
+ */
+public int findNext(int startIndex) {
+    this.startIndex = startIndex;
+    return findNext();
+}

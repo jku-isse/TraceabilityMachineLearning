@@ -1,0 +1,12 @@
+/**
+ *
+ *
+ * @param unit
+ * 		
+ * @param length
+ * 		
+ */
+public TaskLengthImpl(TimeUnit unit, float length) {
+    myUnit = unit;
+    myCount = length;
+}

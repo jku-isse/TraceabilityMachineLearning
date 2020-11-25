@@ -1,0 +1,8 @@
+public void testGetAllLabProceduresLOINC() {
+    try {
+        dao.getAllLabProceduresLOINC(9000000000L);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

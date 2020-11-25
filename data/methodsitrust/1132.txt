@@ -1,0 +1,3 @@
+public void testDoesFamilyMemberHaveDiabetes() throws iTrustException {
+    assertTrue(action.doesFamilyMemberHaveDiabetes(fmBean));
+}

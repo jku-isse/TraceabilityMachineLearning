@@ -1,0 +1,12 @@
+protected void installDefaults(JSlider slider) {
+    super.installDefaults(slider);
+    focusInsets = new Insets(0, 0, 0, 0);
+    slider.setOpaque(false);
+    if ((slider.getOrientation()) == (JSlider.HORIZONTAL)) {
+        slider.setBorder(new EmptyBorder(0, 1, (-1), 1));
+    } else {
+        slider.setBorder(new EmptyBorder(0, 0, 0, 1));
+    }
+    // slider.setRequestFocusEnabled(QuaquaManager.getBoolean("Slider.requestFocusEnabled"));
+    slider.setRequestFocusEnabled(true);
+}

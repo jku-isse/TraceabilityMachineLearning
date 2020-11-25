@@ -1,0 +1,6 @@
+/**
+ * Sent when a figure was added.
+ */
+public void figureAdded(FigureEvent e) {
+    // Empty
+}

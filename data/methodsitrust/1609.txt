@@ -1,0 +1,3 @@
+public List<MedicationBean> getMedList() {
+    return medList;
+}

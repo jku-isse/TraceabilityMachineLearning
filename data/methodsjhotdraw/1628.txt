@@ -1,0 +1,19 @@
+/**
+ * Finds a handle at a given coordinates.
+ *
+ * @return A handle, null if no handle is found.
+ */
+public Handle findHandle(Point p) {
+    validateHandles();
+    for (Handle handle : new ReversedList<Handle>(getSecondaryHandles())) {
+        if (handle.contains(p)) {
+            return handle;
+        }
+    }
+    for (Handle handle : new ReversedList<Handle>(getSelectionHandles())) {
+        if (handle.contains(p)) {
+            return handle;
+        }
+    }
+    return null;
+}

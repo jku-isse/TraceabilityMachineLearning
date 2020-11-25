@@ -1,0 +1,4 @@
+public void projectClosed() {
+    clearTree();
+    getTreeTable().reloadColumns();
+}

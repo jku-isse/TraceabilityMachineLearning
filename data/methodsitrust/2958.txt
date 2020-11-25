@@ -1,0 +1,3 @@
+public long getMessageID(MessageBean mBean) throws DBException {
+    return mBean.getMessageId();
+}

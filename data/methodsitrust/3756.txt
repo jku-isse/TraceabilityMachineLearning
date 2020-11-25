@@ -1,0 +1,50 @@
+public void testAddApptConflictOverride() throws Exception {
+    // Login
+    WebConversation wc = login("9000000003", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Schedule Appointment").click();
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "42");
+    patientForm.submit();
+    wr = wc.getCurrentPage();
+    WebForm apptForm = wr.getForms()[0];
+    apptForm.setParameter("apptType", "General Checkup");
+    apptForm.setParameter("schedDate", "08/24/2014");
+    apptForm.setParameter("time1", "09");
+    apptForm.setParameter("time2", "00");
+    apptForm.setParameter("time3", "AM");
+    wr = apptForm.submit();
+    assertTrue(wr.getText().contains("Success: General Checkup for"));
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_ADD, 9000000003L, 42L, "");
+    /* wr = wr.getLinkWith("Select a Different Patient").click();
+    patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "5");
+    patientForm.submit();
+    wr = wc.getCurrentPage();
+
+    apptForm = wr.getForms()[0];
+    apptForm.setParameter("apptType", "Ultrasound");
+    apptForm.setParameter("schedDate", "08/24/2014");
+    apptForm.setParameter("time1", "09");
+    apptForm.setParameter("time2", "15");
+    apptForm.setParameter("time3", "AM");
+    wr = apptForm.submit();
+
+    assertTrue(wr.getText().contains("Warning"));
+    System.out.println(wr.getText());
+    apptForm = wr.getForms()[0];
+    apptForm.setParameter("apptType", "Ultrasound");
+    apptForm.setParameter("schedDate", "08/24/2014");
+    apptForm.setParameter("time1", "09");
+    apptForm.setParameter("time2", "15");
+    apptForm.setParameter("time3", "AM");
+    apptForm.getSubmitButtonWithID("overrideButton").click();
+    wr=wc.getCurrentPage();
+
+    System.out.println(wr.getText());
+
+    assertTrue(wr.getText().contains("Success"));
+    assertLogged(TransactionType.APPOINTMENT_ADD,9000000003L,5L,"");
+    assertLogged(TransactionType.APPOINTMENT_CONFLICT_OVERRIDE,9000000003L,5L,"");
+     */
+}

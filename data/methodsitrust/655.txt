@@ -1,0 +1,3 @@
+public List<LabProcedureBean> viewProceduresByHCP() throws DBException {
+    return lpDAO.getHCPLabProcedures(loggedInMID);
+}

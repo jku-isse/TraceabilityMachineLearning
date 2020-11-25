@@ -1,0 +1,13 @@
+public void testPatientAllErrors() throws Exception {
+    MedicationBean d = new MedicationBean();
+    d.setDescription("An description!");
+    d.setNDCode("-1");
+    try {
+        validator.validate(d);
+        fail("exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals(("ND Code: " + (ValidationFormat.ND.getDescription())), e.getErrorList().get(0));
+        assertEquals(("Description: " + (ValidationFormat.ND_CODE_DESCRIPTION.getDescription())), e.getErrorList().get(1));
+        assertEquals("number of errors", 2, e.getErrorList().size());
+    }
+}

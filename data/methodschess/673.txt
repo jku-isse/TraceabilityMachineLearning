@@ -1,0 +1,11 @@
+/**
+ * Standardconstructor
+ */
+public NavigationPanel() {
+    super();
+    try {
+        jbInit();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}

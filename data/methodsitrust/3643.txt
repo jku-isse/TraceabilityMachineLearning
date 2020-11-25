@@ -1,0 +1,3 @@
+public void uc47SetUp() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/uc47SetUp.sql"));
+}

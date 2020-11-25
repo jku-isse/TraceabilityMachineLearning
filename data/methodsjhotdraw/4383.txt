@@ -1,0 +1,24 @@
+/**
+ * Calls {@link #write(int)} repeatedly until <var>len</var>
+ * bytes are written.
+ *
+ * @param theBytes
+ * 		array from which to read bytes
+ * @param off
+ * 		offset for array
+ * @param len
+ * 		max number of bytes to read into array
+ * @since 1.3
+ */
+public void write(byte[] theBytes, int off, int len) throws IOException {
+    // Encoding suspended?
+    if (suspendEncoding) {
+        super.out.write(theBytes, off, len);
+        return;
+    }// end if: supsended
+
+    for (int i = 0; i < len; i++) {
+        write(theBytes[(off + i)]);
+    }// end for: each byte written
+
+}// end write

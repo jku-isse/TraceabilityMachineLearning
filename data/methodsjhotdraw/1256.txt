@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public BezierOutlineHandle(BezierFigure owner) {
+    this(owner, false);
+}

@@ -1,0 +1,5 @@
+public final void dateTag() throws RecognitionException, TokenStreamException {
+    match(PGNTokenTypes.TAG_DATE);
+    whiteSpaces();
+    match(PGNTokenTypes.STRING_LITERAL);
+}

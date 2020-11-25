@@ -1,0 +1,16 @@
+/**
+ * Calls authDAO to record the login failure in the database
+ *
+ * @return How many login failure attempts or a DBException message
+ */
+public String recordLoginFailure() {
+    try {
+        authDAO.recordLoginFailure(ipAddr);
+        int loginFailures = authDAO.getLoginFailures(ipAddr);
+        hasAttempts = true;
+        return "Login failed, attempt " + loginFailures;
+    } catch (DBException e) {
+        e.printStackTrace();
+        return e.getMessage();
+    }
+}

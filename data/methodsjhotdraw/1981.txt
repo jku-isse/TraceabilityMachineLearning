@@ -1,0 +1,9 @@
+/**
+ * After cloning a collection of figures, the ConnectionFigures contained
+ * in this collection still connect to the original figures instead of
+ * to the clones.
+ * Using This operation and providing a map, which maps from the original
+ * collection of figures to the new collection, connections can be remapped
+ * to the new figures.
+ */
+public void remap(Map<Figure, Figure> oldToNew, boolean disconnectIfNotInMap);

@@ -1,0 +1,16 @@
+/**
+ * Try to determine whether this application is running under Windows or
+ * some other platform by examing the "os.name" property.
+ *
+ * @return the ID of the platform
+ */
+private static int getPlatform() {
+    String os = System.getProperty("os.name");
+    if ((os != null) && (os.startsWith(BrowserControl.WIN_PREFIX)))
+        return BrowserControl.WIN_ID;
+
+    if ((os != null) && (os.startsWith(BrowserControl.MAC_PREFIX)))
+        return BrowserControl.MAC_ID;
+
+    return BrowserControl.OTHER_ID;
+}

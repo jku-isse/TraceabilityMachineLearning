@@ -1,0 +1,7 @@
+/**
+ * A lineout algorithm is used to define how the child components
+ * should be laid out in relation to each other. The task for
+ * lineouting the child components for presentation is delegated
+ * to a Liner which can be plugged in at runtime.
+ */
+public void lineout();

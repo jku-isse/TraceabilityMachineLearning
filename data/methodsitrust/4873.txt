@@ -1,0 +1,5 @@
+public void testMIDNegative() throws Exception {
+    Long value = -1L;
+    String errorMessage = MIDValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.MID, false));
+}

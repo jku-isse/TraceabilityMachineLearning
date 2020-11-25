@@ -1,0 +1,6 @@
+/**
+ * Checks, wether the document is readable.
+ *
+ * @return readability
+ */
+public boolean canRead();

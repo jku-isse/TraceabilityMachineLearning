@@ -1,0 +1,8 @@
+/**
+ * Getter for End Date
+ *
+ * @return The end date for the data
+ */
+public Date getEndDate() {
+    return endDate;
+}

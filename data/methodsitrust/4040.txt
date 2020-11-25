@@ -1,0 +1,19 @@
+/* A boundary-value test for a patient who should appear on the list.
+(Designated Tester Arehart, special-diagnosis-history, prescription expires today)
+Diagnosed with 459.99 (This is the closest possible to 460 because the table uses
+ decimal(5,2) )
+ */
+public void testPatientFourteen() throws Exception {
+    WebConversation wc = login("9900000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9900000000L, 0L, "");
+    wr = wr.getLinkWith("Potential Prescription-Renewals").click();
+    assertTrue(wr.getText().contains("Tester Arehart</th>"));
+    assertFalse(wr.getText().contains("9900000000"));
+    assertTrue(wr.getText().contains("Zack"));
+    assertTrue(wr.getText().contains("Arthur"));
+    assertTrue(wr.getText().contains("k@l.com"));
+    assertTrue(wr.getText().contains("919-555-1234"));
+    iTrustHTTPTest.assertLogged(TransactionType.PRECONFIRM_PRESCRIPTION_RENEWAL, 9900000000L, 14L, "");
+}

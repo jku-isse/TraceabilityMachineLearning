@@ -1,0 +1,32 @@
+public Object getValueAt(int row, int col) {
+    String colName = ((String) (((Vector) (this.dataVector.get(row))).get(0)));
+    CustomColumn res = customColumnsHandler.getCustomColumn(colName);
+    if (res != null) {
+        switch (col) {
+            case 0 :
+                return res.getName();
+            case 1 :
+                {
+                    Class cl = res.getType();
+                    if (cl.equals(String.class))
+                        return CustomColumnsPanel.language.getText("text");
+
+                    if (GregorianCalendar.class.isAssignableFrom(cl))
+                        return CustomColumnsPanel.language.getText("date");
+
+                    if (cl.equals(Boolean.class))
+                        return CustomColumnsPanel.language.getText("boolean");
+
+                    if (cl.equals(Integer.class))
+                        return CustomColumnsPanel.language.getText("integer");
+
+                    if (cl.equals(Double.class))
+                        return CustomColumnsPanel.language.getText("double");
+
+                }
+            case 2 :
+                return res.getDefaultValue();
+        }
+    }
+    return null;
+}

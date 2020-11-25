@@ -1,0 +1,9 @@
+public void testAddRemoveOneOVPrescription() throws Exception {
+    assertEquals("no current prescriptions on office vist 1", 0, dao.getList(1).size());
+    long ovMedID = dao.add(pres);
+    List<PrescriptionBean> meds = dao.getList(1);
+    assertEquals("now theres 1", 1, meds.size());
+    assertEquals(pres, meds.get(0));
+    dao.remove(ovMedID);
+    assertEquals("now theres none", 0, dao.getList(1).size());
+}

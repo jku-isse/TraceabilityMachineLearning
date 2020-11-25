@@ -1,0 +1,6 @@
+public void testDeleteLabProcedure() throws Exception {
+    action = new EditLabProceduresAction(factory, 9000000000L, "2", "952");
+    assertEquals(1, action.getLabProcedures().size());
+    action.deleteLabProcedure(action.getLabProcedures().get(0));
+    assertEquals(0, action.getLabProcedures().size());
+}

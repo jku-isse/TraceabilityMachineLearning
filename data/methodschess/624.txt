@@ -1,0 +1,54 @@
+// Constructors
+/**
+ * Create a new renderer instance.
+ *
+ * @param controller
+ * 		The game controller.
+ * @param board
+ * 		The current board.
+ */
+public ChessBoardRenderer2D(GameController controller, Board board) {
+    setBoard(board);// Store the board in a class variable.
+
+    // Use a boarder layout for the entire component, since it holds
+    // more that the chessboard itself.
+    setLayout(new BorderLayout());
+    // Add the row numbers to the board.
+    JPanel rowNumbers = new JPanel();
+    rowNumbers.setLayout(new GridLayout(8, 1));
+    rowNumbers.setPreferredSize(new Dimension(((ChessBoardRenderer2D._squareSize) / 2), (8 * (ChessBoardRenderer2D._squareSize))));
+    for (int i = 8; i > 0; i--) {
+        rowNumbers.add(new JLabel(("" + i), JLabel.CENTER));
+    }
+    add(rowNumbers, BorderLayout.WEST);
+    // Add the board itself.
+    JLayeredPane boardPane = new JLayeredPane();
+    boardPane.setPreferredSize(new Dimension((8 * (ChessBoardRenderer2D._squareSize)), (8 * (ChessBoardRenderer2D._squareSize))));
+    boardPane.setOpaque(false);
+    // The squares of the board are drawn on the board layer.
+    boardPane.add(new BoardLayer(), JLayeredPane.DEFAULT_LAYER);
+    // The next layer holds the pieces.
+    boardPane.add((_piecesLayer = new PiecesLayer(getBoard())), JLayeredPane.PALETTE_LAYER);
+    // The next layer holds the control markers, when the user moves a piece.
+    if (controller != null)
+        boardPane.add((_controlLayer = new ControlLayer(controller, _piecesLayer)), JLayeredPane.MODAL_LAYER);
+
+    // The next layer shows the animated pieces.
+    boardPane.add(_piecesLayer.getAnimationLayer(), JLayeredPane.DRAG_LAYER);
+    add(boardPane);
+    // Add the line names to the board
+    JPanel lineNames = new JPanel();
+    lineNames.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+    lineNames.setPreferredSize(new Dimension(((8 * (ChessBoardRenderer2D._squareSize)) + ((ChessBoardRenderer2D._squareSize) / 2)), ((ChessBoardRenderer2D._squareSize) / 2)));
+    JLabel placeHolder = new JLabel();
+    placeHolder.setPreferredSize(new Dimension(((ChessBoardRenderer2D._squareSize) / 2), ((ChessBoardRenderer2D._squareSize) / 2)));
+    lineNames.add(placeHolder);
+    byte[] name = new byte[1];
+    for (int i = 0; i < 8; i++) {
+        name[0] = ((byte) (a + i));
+        JLabel nameLabel = new JLabel(new String(name), JLabel.CENTER);
+        nameLabel.setPreferredSize(new Dimension(ChessBoardRenderer2D._squareSize, ((ChessBoardRenderer2D._squareSize) / 2)));
+        lineNames.add(nameLabel);
+    }
+    add(lineNames, BorderLayout.SOUTH);
+}

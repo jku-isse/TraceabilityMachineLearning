@@ -1,0 +1,3 @@
+public void treeStructureChanged(TreeModelEvent e) {
+    isValid = false;
+}

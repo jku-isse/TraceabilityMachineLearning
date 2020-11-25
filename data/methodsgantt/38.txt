@@ -1,0 +1,3 @@
+private ChartModelBase getChartModel() {
+    return (myChartModel) == null ? this.getChartModel() : myChartModel;
+}

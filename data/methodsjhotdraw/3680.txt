@@ -1,0 +1,4 @@
+public void setDrawing(Drawing newValue) {
+    drawing = newValue;
+    updateAttributeEditor();
+}

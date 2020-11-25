@@ -1,0 +1,3 @@
+public void removeProjectEventListener(ProjectEventListener listener) {
+    myModifiedStateChangeListeners.remove(listener);
+}

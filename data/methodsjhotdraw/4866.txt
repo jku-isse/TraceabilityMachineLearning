@@ -1,0 +1,13 @@
+@Override
+@SuppressWarnings("unchecked")
+public void restoreTransformTo(Object geometry) {
+    invalidate();
+    Object[] restoreData = ((Object[]) (geometry));
+    ArrayList<BezierPath> paths = ((ArrayList<BezierPath>) (restoreData[0]));
+    for (int i = 0, n = getChildCount(); i < n; i++) {
+        getChild(i).setBezierPath(paths.get(i));
+    }
+    AttributeKeys.TRANSFORM.basicSetClone(this, ((AffineTransform) (restoreData[1])));
+    ODGAttributeKeys.FILL_GRADIENT.basicSetClone(this, ((Gradient) (restoreData[2])));
+    ODGAttributeKeys.STROKE_GRADIENT.basicSetClone(this, ((Gradient) (restoreData[3])));
+}

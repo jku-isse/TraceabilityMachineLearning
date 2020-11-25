@@ -1,0 +1,25 @@
+/**
+ * Assign parameter values to digitized points
+ * using relative distances between points.
+ *
+ * @param d
+ * 		Digitized points.
+ * @param first
+ * 		Indice of first point of region in d.
+ * @param last
+ * 		Indice of last point of region in d.
+ */
+private static double[] chordLengthParameterize(ArrayList<Point2D.Double> d, int first, int last) {
+    int i;
+    double[] u;/* Parameterization */
+
+    u = new double[(last - first) + 1];
+    u[0] = 0.0;
+    for (i = first + 1; i <= last; i++) {
+        u[(i - first)] = (u[((i - first) - 1)]) + (Bezier.v2DistanceBetween2Points(d.get(i), d.get((i - 1))));
+    }
+    for (i = first + 1; i <= last; i++) {
+        u[(i - first)] = (u[(i - first)]) / (u[(last - first)]);
+    }
+    return u;
+}

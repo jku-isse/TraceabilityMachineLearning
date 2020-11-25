@@ -1,0 +1,8 @@
+/**
+ * Get the current search depth.
+ *
+ * @return The current search depth.
+ */
+public final int getSearchDepth() {
+    return _searchDepth;
+}

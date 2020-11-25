@@ -1,0 +1,8 @@
+public GanttSaveAsPreviousStateBean(GanttProject project) {
+    myPreviousStates = project.getPreviouStates();
+    if ((myPreviousStates.size()) == 0) {
+        GanttSaveAsPreviousStateBean.defaultName = GanttLanguage.getInstance().getText("save");
+        GanttSaveAsPreviousStateBean.count = 1;
+    }
+    init();
+}

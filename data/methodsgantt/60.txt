@@ -1,0 +1,6 @@
+public void startCopyClipboardTransaction() {
+    if (isTransactionRunning) {
+        throw new IllegalStateException("Transaction is already running");
+    }
+    isTransactionRunning = true;
+}

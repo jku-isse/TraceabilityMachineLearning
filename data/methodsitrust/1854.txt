@@ -1,0 +1,3 @@
+public String getIcAddress2() {
+    return icAddress2;
+}

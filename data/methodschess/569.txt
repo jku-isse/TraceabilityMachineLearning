@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the position of the attacked pawn.
+ *
+ * @return Get the position of the attacked pawn.
+ */
+public final Position getAttackedPosition() {
+    return _attackedPosition;
+}

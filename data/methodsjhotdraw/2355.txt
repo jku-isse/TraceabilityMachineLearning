@@ -1,0 +1,7 @@
+@Override
+public void read(DOMInput in) throws IOException {
+    super.read(in);
+    in.openElement("locator");
+    this.locator = ((Locator) (in.readObject(0)));
+    in.closeElement();
+}

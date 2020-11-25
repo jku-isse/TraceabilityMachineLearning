@@ -1,0 +1,47 @@
+/**
+ * Construction a la JBuilder to be able to use JBuilder designer
+ *
+ * @throws Exception
+ * 		
+ */
+private void jbInit() throws Exception {
+    this.setLayout(gridBagText);
+    this.jtNotation.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED, Color.white, Color.white, new Color(148, 145, 140), new Color(103, 101, 98)));
+    this.jtNotation.setEditable(false);
+    this.jtNotation.setLineWrap(true);
+    this.jtNotation.setWrapStyleWord(true);
+    this.jScrollPane = new JScrollPane(this.jtNotation);
+    this.jlHeadline = new JLabel("Notation and game details:");
+    jlHeadline.setFont(new Font("Dialog", 1, 12));
+    jpPlayers.setLayout(gridBagLayout1);
+    jlWhite.setText("White:");
+    try {
+        // Get the account of the user.
+        String username = System.getProperty("user.name");
+        // Capitalize the name.
+        username = (Character.toUpperCase(username.charAt(0))) + (username.substring(1));
+        // Use it as the default player name.
+        setWhitePlayerName(username);
+    } catch (Exception e) {
+        setWhitePlayerName("white player name");
+    }
+    // jbWhite.setText("white player name");
+    jbWhite.setBackground(Color.white);
+    jbWhite.setForeground(Color.black);
+    jbWhite.setFocusPainted(false);
+    jbWhite.addActionListener(this);
+    jlBlack.setText("Black:");
+    // jbBlack.setText("black player name");
+    setBlackPlayerName("Java-Chess");
+    jbBlack.setBackground(Color.black);
+    jbBlack.setForeground(Color.white);
+    jbBlack.setFocusPainted(false);
+    jbBlack.addActionListener(this);
+    this.add(jScrollPane, new GridBagConstraints(0, 2, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+    this.add(jlHeadline, new GridBagConstraints(0, 0, 1, 1, 1.0, 0.0, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+    this.add(jpPlayers, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
+    jpPlayers.add(jlWhite, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 4));
+    jpPlayers.add(jbWhite, new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 5, 0, 5), 0, 0));
+    jpPlayers.add(jlBlack, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 5, 0, 0), 0, 0));
+    jpPlayers.add(jbBlack, new GridBagConstraints(3, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 5, 0, 5), 0, 0));
+}

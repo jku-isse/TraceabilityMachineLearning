@@ -1,0 +1,11 @@
+/**
+ * Constructs a {@link Base64.InputStream} in DECODE mode.
+ *
+ * @param in
+ * 		the <tt>java.io.InputStream</tt> from which to read data.
+ * @since 1.3
+ */
+// end constructor
+public InputStream(InputStream in) {
+    this(in, Base64.DECODE);
+}

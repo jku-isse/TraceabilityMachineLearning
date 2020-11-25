@@ -1,0 +1,3 @@
+public void hcp2() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/hcp2.sql"));
+}

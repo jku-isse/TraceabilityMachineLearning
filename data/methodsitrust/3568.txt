@@ -1,0 +1,3 @@
+public void officeVisit0Multiple() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/ov0Multiple.sql"));
+}

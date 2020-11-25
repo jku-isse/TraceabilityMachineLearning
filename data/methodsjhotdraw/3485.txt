@@ -1,0 +1,6 @@
+/**
+ * Gets the distance between to points
+ */
+public static double length(Point2D.Double p1, Point2D.Double p2) {
+    return Math.sqrt(Geom.length2(p1.x, p1.y, p2.x, p2.y));
+}

@@ -1,0 +1,10 @@
+public void undo() throws CannotUndoException {
+    super.undo();
+    owner.willChange();
+    try {
+        owner.transform(tx.createInverse());
+    } catch (NoninvertibleTransformException ex) {
+        ex.printStackTrace();
+    }
+    owner.changed();
+}

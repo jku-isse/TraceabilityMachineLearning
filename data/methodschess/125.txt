@@ -1,0 +1,139 @@
+/**
+ * Analyze the current board.
+ */
+public final short analyze() {
+    // A check thread has a value, too.
+    short checkValue = 0;
+    // Start with the tests, if one of the players is in check.
+    // Its important to start the test with the color that moves next!
+    if (whiteHasMoveRight()) {
+        if (isInCheck(true)) {
+            // If the king of the moving player is in check,
+            checkValue += BitBoardAnalyzer.BLACK_WIN;// the player seems to win.
+
+        }
+        if (isInCheck(false)) {
+            // If the opponents king is in check,
+            checkValue += BitBoardAnalyzer.WHITE_WIN;// the opponent seems to win.
+
+        }
+    } else {
+        if (isInCheck(false)) {
+            // If the opponents king is in check,
+            checkValue += BitBoardAnalyzer.WHITE_WIN;// the opponent seems to win.
+
+        }
+        if (isInCheck(true)) {
+            // If the king of the moving player is in check,
+            checkValue += BitBoardAnalyzer.BLACK_WIN;// the player seems to win.
+
+        }
+    }
+    // Early checks hinder the position building are punished therefore.
+    if ((getGame().getNumberOfPlies()) < 12) {
+        checkValue = ((short) (checkValue / 4));
+    }
+    // Now compute the position and material value of all pieces.
+    short materialValue = 0;
+    // Count the figures and their material value.
+    short positionalValue = 0;// Score the position value.
+
+    // Check the entire board.
+    // Use a bitmask to speedup the test for a piece on the square
+    long emptySquareMask = getBoard().getEmptySquares();
+    // Get the positions of the white and black pawns.
+    long[] pawnPos = new long[2];
+    pawnPos[0] = getBoard().getPositionOfPieces(((Piece.PAWN) << 1));
+    pawnPos[1] = getBoard().getPositionOfPieces((((Piece.PAWN) << 1) | 1));
+    // I reuse the same PositionImpl object to avoid the overhead of
+    // object instancing for each square.
+    Position pos = new PositionImpl(0);
+    for (int i = 0; i < 64; i++) {
+        if ((emptySquareMask & 1) == 0) {
+            // If theres a piece on the square
+            pos.setSquareIndex(i);
+            Piece p = getBoard().getPiece(pos);
+            if (p != null) {
+                short mValue = 0;
+                short pValue = 0;
+                // Add the value of the piece
+                switch (p.getType()) {
+                    case Piece.PAWN :
+                        mValue = 10;
+                        pValue = BitBoardAnalyzerImpl._pawnPositionalValue[((getGame().getNumberOfPlies()) <= 12 ? 0 : 1)][(p.isWhite() ? i : ((7 - (i >>> 3)) << 3) + (i & 7))];
+                        // Check, if this pawn could be promoted
+                        if (p.isWhite()) {
+                            int j = i + 8;
+                            Position pos2 = new PositionImpl(0);
+                            while (j < 64) {
+                                pos2.setSquareIndex(j);
+                                Piece p2 = getBoard().getPiece(pos2);
+                                if ((p2 != null) && ((p2.getType()) == (Piece.PAWN))) {
+                                    pValue -= 2;
+                                    break;
+                                }
+                                j += 8;
+                            } 
+                        } else {
+                            int j = i - 8;
+                            Position pos2 = new PositionImpl(0);
+                            while (j >= 0) {
+                                pos2.setSquareIndex(j);
+                                Piece p2 = getBoard().getPiece(pos2);
+                                if ((p2 != null) && ((p2.getType()) == (Piece.PAWN))) {
+                                    pValue -= 2;
+                                    break;
+                                }
+                                j += 8;
+                            } 
+                        }
+                        break;
+                    case Piece.KNIGHT :
+                        pValue = BitBoardAnalyzerImpl._knightPositionalValue[((getGame().getNumberOfPlies()) <= 8 ? 0 : 1)][(p.isWhite() ? i : ((7 - (i >>> 3)) << 3) + (i & 7))];
+                        if ((getGame().getNumberOfPlies()) < 12) {
+                            // Check if this piece blocks a own pawn
+                            int row = i >>> 3;
+                            if ((((p.isWhite()) && ((row == 2) || (row == 3))) && ((((1L << (i - 8)) | (1L << (i - 16))) & (pawnPos[1])) != 0L)) || (((!(p.isWhite())) && ((row == 4) || (row == 5))) && ((((1L << (i + 8)) | (1L << (i + 16))) & (pawnPos[0])) != 0L))) {
+                                pValue -= BitBoardAnalyzerImpl._pawnBlocker;
+                            }
+                        }
+                        mValue = 30;
+                        break;
+                    case Piece.BISHOP :
+                        pValue = BitBoardAnalyzerImpl._bishopPositionalValue[((getGame().getNumberOfPlies()) <= 8 ? 0 : 1)][(p.isWhite() ? i : ((7 - (i >>> 3)) << 3) + (i & 7))];
+                        if ((getGame().getNumberOfPlies()) <= 12) {
+                            // Check if this piece blocks a own pawn
+                            int row = i >>> 3;
+                            if ((((p.isWhite()) && ((row == 2) || (row == 3))) && ((((1L << (i - 8)) | (1L << (i - 16))) & (pawnPos[1])) != 0L)) || (((!(p.isWhite())) && ((row == 4) || (row == 5))) && ((((1L << (i + 8)) | (1L << (i + 16))) & (pawnPos[0])) != 0L))) {
+                                pValue -= BitBoardAnalyzerImpl._pawnBlocker;
+                            }
+                        }
+                        mValue = 30;
+                        break;
+                    case Piece.ROOK :
+                        mValue = 45;
+                        pValue = BitBoardAnalyzerImpl._rookPositionalValue[((getGame().getNumberOfPlies()) <= 8 ? 0 : 1)][(p.isWhite() ? i : ((7 - (i >>> 3)) << 3) + (i & 7))];
+                        break;
+                    case Piece.QUEEN :
+                        mValue = 80;
+                        pValue = BitBoardAnalyzerImpl._queenPositionalValue[((getGame().getNumberOfPlies()) <= 14 ? 0 : 1)][(p.isWhite() ? i : ((7 - (i >>> 3)) << 3) + (i & 7))];
+                        break;
+                    case Piece.KING :
+                        pValue = BitBoardAnalyzerImpl._kingPositionalValue[(p.isWhite() ? i : ((7 - (i >>> 3)) << 3) + (i & 7))];
+                        break;
+                }
+                if (p.isWhite()) {
+                    materialValue += mValue;
+                    positionalValue += pValue;
+                } else {
+                    materialValue -= mValue;
+                    positionalValue -= pValue;
+                }
+            }
+        }
+        // Shift the mask to test the next square
+        emptySquareMask >>>= 1;
+    }
+    // Return a weighted score
+    return ((short) (((((short) (2)) * positionalValue) + (((short) (7)) * materialValue)) + checkValue));
+}

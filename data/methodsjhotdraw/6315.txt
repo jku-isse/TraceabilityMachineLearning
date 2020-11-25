@@ -1,0 +1,10 @@
+/**
+ * Get the appropriate ResourceBundle subclass.
+ *
+ * @see java.util.ResourceBundle
+ */
+public static ResourceBundleUtil getBundle(String baseName, Locale locale) throws MissingResourceException {
+    ResourceBundleUtil r;
+    r = new ResourceBundleUtil(baseName, locale);
+    return r;
+}

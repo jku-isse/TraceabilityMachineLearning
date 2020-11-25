@@ -1,0 +1,6 @@
+public void addOutputFormat(OutputFormat format) {
+    outputFormats.add(format);
+    if (AbstractDrawing.DEBUG) {
+        System.out.println(((((this) + ".addOutputFormat(") + format) + ")"));
+    }
+}

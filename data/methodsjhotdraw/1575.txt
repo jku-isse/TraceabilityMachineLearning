@@ -1,0 +1,8 @@
+public Figure findFigureExcept(Point2D.Double p, Collection<? extends Figure> ignore) {
+    for (Figure f : getFiguresFrontToBack()) {
+        if (((!(ignore.contains(f))) && (f.isVisible())) && (f.contains(p))) {
+            return f;
+        }
+    }
+    return null;
+}

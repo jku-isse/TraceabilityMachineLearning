@@ -1,0 +1,20 @@
+public static JPopupButton createStrokeTypeButton(DrawingEditor editor) {
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    JPopupButton strokeTypePopupButton = new JPopupButton();
+    labels.configureToolBarButton(strokeTypePopupButton, "attribute.strokeType");
+    strokeTypePopupButton.setFocusable(false);
+    strokeTypePopupButton.add(new AttributeAction(editor, AttributeKeys.STROKE_TYPE, AttributeKeys.StrokeType.BASIC, labels.getString("attribute.strokeType.basic"), new StrokeIcon(new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL))));
+    HashMap<AttributeKey, Object> attr = new HashMap<AttributeKey, Object>();
+    attr.put(AttributeKeys.STROKE_TYPE, AttributeKeys.StrokeType.DOUBLE);
+    attr.put(AttributeKeys.STROKE_INNER_WIDTH_FACTOR, 2.0);
+    strokeTypePopupButton.add(new AttributeAction(editor, attr, labels.getString("attribute.strokeType.double"), new StrokeIcon(new DoubleStroke(2, 1))));
+    attr = new HashMap<AttributeKey, Object>();
+    attr.put(AttributeKeys.STROKE_TYPE, AttributeKeys.StrokeType.DOUBLE);
+    attr.put(AttributeKeys.STROKE_INNER_WIDTH_FACTOR, 3.0);
+    strokeTypePopupButton.add(new AttributeAction(editor, attr, labels.getString("attribute.strokeType.double"), new StrokeIcon(new DoubleStroke(3, 1))));
+    attr = new HashMap<AttributeKey, Object>();
+    attr.put(AttributeKeys.STROKE_TYPE, AttributeKeys.StrokeType.DOUBLE);
+    attr.put(AttributeKeys.STROKE_INNER_WIDTH_FACTOR, 4.0);
+    strokeTypePopupButton.add(new AttributeAction(editor, attr, labels.getString("attribute.strokeType.double"), new StrokeIcon(new DoubleStroke(4, 1))));
+    return strokeTypePopupButton;
+}

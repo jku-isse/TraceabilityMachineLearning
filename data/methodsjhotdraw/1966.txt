@@ -1,0 +1,9 @@
+/**
+ * Returns the drawing area of the figure as a Rectangle.
+ * The drawing area is used to improve the performance of GraphicView, for
+ * example for clipping of repaints and for clipping of mouse events.
+ * <p>
+ * The drawing area needs to be large enough, to take line width, line caps
+ * and other decorations into account that exceed the bounds of the Figure.
+ */
+public Rectangle2D.Double getDrawingArea();

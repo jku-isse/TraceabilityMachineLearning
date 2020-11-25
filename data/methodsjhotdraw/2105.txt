@@ -1,0 +1,44 @@
+/**
+ * Constrains the placement of a rectangle towards a direction.
+ * <p>
+ * This method changes the location of the rectangle which is passed as a
+ * parameter. This method does not change the size of the rectangle.
+ *
+ * @param r
+ * 		A rectangle on the drawing.
+ * @param dir
+ * 		A direction.
+ * @return Returns the constrained rectangle.
+ */
+protected Rectangle2D.Double constrainRectangle(Rectangle2D.Double r, TranslationDirection dir) {
+    Point2D.Double p0 = new Point2D.Double(r.x, r.y);
+    switch (dir) {
+        case NORTH :
+        case NORTH_WEST :
+        case WEST :
+            constrainPoint(p0, dir);
+            break;
+        case EAST :
+        case NORTH_EAST :
+            p0.x += r.width;
+            constrainPoint(p0, dir);
+            p0.x -= r.width;
+            break;
+        case SOUTH :
+        case SOUTH_WEST :
+            p0.y += r.height;
+            constrainPoint(p0, dir);
+            p0.y -= r.height;
+            break;
+        case SOUTH_EAST :
+            p0.y += r.height;
+            p0.x += r.width;
+            constrainPoint(p0, dir);
+            p0.y -= r.height;
+            p0.x -= r.width;
+            break;
+    }
+    r.x = p0.x;
+    r.y = p0.y;
+    return r;
+}

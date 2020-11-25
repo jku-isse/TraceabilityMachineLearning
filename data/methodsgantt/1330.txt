@@ -1,0 +1,4 @@
+public NewArtefactAction(NewArtefactAction.ActiveActionProvider provider, String iconSize) {
+    super("", iconSize);
+    myProvider = provider;
+}

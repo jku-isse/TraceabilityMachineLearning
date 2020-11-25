@@ -1,0 +1,7 @@
+/**
+ * Checks if a Point2D.Double is inside the figure.
+ */
+public boolean contains(Point2D.Double p) {
+    // XXX - This does not take the stroke width into account!
+    return getTransformedShape().contains(p);
+}

@@ -1,0 +1,3 @@
+public static TaskManager newInstance(TaskContainmentHierarchyFacade.Factory factory, TaskManagerConfig taskConfig, CustomColumnsStorage customColumnsStorage) {
+    return new TaskManagerImpl(factory, taskConfig, customColumnsStorage);
+}

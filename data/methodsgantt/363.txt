@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return 
+ */
+public String getFTPPwd() {
+    return FTPPwd;
+}

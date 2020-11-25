@@ -1,0 +1,14 @@
+private void initOptions() {
+    // Color color = GanttGraphicArea.taskDefaultColor;
+    // myApplicationConfig.register(options);
+    options.setUIConfiguration(myUIConfiguration);
+    options.setDocumentsMRU(documentsMRU);
+    options.setLookAndFeel(lookAndFeel);
+    if (options.load()) {
+        language = options.getLanguage();
+        GanttGraphicArea.taskDefaultColor = options.getDefaultColor();
+        lookAndFeel = options.getLnfInfos();
+        HttpDocument.setLockDAVMinutes(options.getLockDAVMinutes());
+    }
+    myUIConfiguration = options.getUIConfiguration();
+}

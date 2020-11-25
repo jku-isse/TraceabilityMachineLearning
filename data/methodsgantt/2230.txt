@@ -1,0 +1,3 @@
+public FTPOptions(String id, GPOption[] options) {
+    super(id, options);
+}

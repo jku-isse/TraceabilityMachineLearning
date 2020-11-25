@@ -1,0 +1,10 @@
+/**
+ * Get a figure which renders this BasicCompositeFigure. The presentation
+ * tasks for the BasicCompositeFigure are delegated to this presentation
+ * figure.
+ *
+ * @return figure takes over the presentation tasks
+ */
+public Figure getPresentationFigure() {
+    return presentationFigure;
+}

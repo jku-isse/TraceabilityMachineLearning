@@ -1,0 +1,23 @@
+protected void writeAttributes(DOMOutput out) throws IOException {
+    Figure prototype = ((Figure) (out.getPrototype()));
+    boolean isElementOpen = false;
+    for (Map.Entry<AttributeKey, Object> entry : attributes.entrySet()) {
+        AttributeKey key = entry.getKey();
+        if (((forbiddenAttributes) == null) || (!(forbiddenAttributes.contains(key)))) {
+            Object prototypeValue = key.get(prototype);
+            Object attributeValue = key.get(this);
+            if ((prototypeValue != attributeValue) || (((prototypeValue != null) && (attributeValue != null)) && (!(prototypeValue.equals(attributeValue))))) {
+                if (!isElementOpen) {
+                    out.openElement("a");
+                    isElementOpen = true;
+                }
+                out.openElement(key.getKey());
+                out.writeObject(entry.getValue());
+                out.closeElement();
+            }
+        }
+    }
+    if (isElementOpen) {
+        out.closeElement();
+    }
+}

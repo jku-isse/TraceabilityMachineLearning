@@ -1,0 +1,29 @@
+public void testRenameDrugs() throws Exception {
+    InputStream is = new ByteArrayInputStream(inputDrugs1.getBytes());
+    action = new AddDrugListAction(new AddDrugListAction.SkipDuplicateDrugStrategy(), factory, new EventLoggingAction(factory), 9000000001L);
+    action.LoadFile(is);
+    NDCodesDAO ndCodesDAO = factory.getNDCodesDAO();
+    assertEquals(4, ndCodesDAO.getAllNDCodes().size());
+    assertNotNull(ndCodesDAO.getNDCode("05730150"));
+    assertEquals("ADVIL", ndCodesDAO.getNDCode("05730150").getDescription());
+    assertNotNull(ndCodesDAO.getNDCode("50458513"));
+    assertEquals("TYLENOL with Codeine", ndCodesDAO.getNDCode("50458513").getDescription());
+    assertNotNull(ndCodesDAO.getNDCode("10544591"));
+    assertEquals("OxyContin", ndCodesDAO.getNDCode("10544591").getDescription());
+    assertNotNull(ndCodesDAO.getNDCode("115237197"));
+    assertEquals("Claritin", ndCodesDAO.getNDCode("115237197").getDescription());
+    is = new ByteArrayInputStream(inputDrugs2.getBytes());
+    action = new AddDrugListAction(new AddDrugListAction.OverwriteDuplicateDrugStrategy(), factory, new EventLoggingAction(factory), 9000000001L);
+    action.LoadFile(is);
+    assertEquals(5, ndCodesDAO.getAllNDCodes().size());
+    assertNotNull(ndCodesDAO.getNDCode("05730150"));
+    assertEquals("New Advil", ndCodesDAO.getNDCode("05730150").getDescription());
+    assertNotNull(ndCodesDAO.getNDCode("50458513"));
+    assertEquals("TYLENOL with Codeine", ndCodesDAO.getNDCode("50458513").getDescription());
+    assertNotNull(ndCodesDAO.getNDCode("10544591"));
+    assertEquals("OxyContin", ndCodesDAO.getNDCode("10544591").getDescription());
+    assertNotNull(ndCodesDAO.getNDCode("115237197"));
+    assertEquals("Totally Legal Drug", ndCodesDAO.getNDCode("115237197").getDescription());
+    assertNotNull(ndCodesDAO.getNDCode("05740230"));
+    assertEquals("New Drug", ndCodesDAO.getNDCode("05740230").getDescription());
+}

@@ -1,0 +1,10 @@
+/**
+ * Set the flag, if white is about to move.
+ *
+ * @param white
+ * 		Flag to indicate, if white has the
+ * 		next move.
+ */
+public final void setMoveRight(boolean white) {
+    _whiteMoves = white;
+}

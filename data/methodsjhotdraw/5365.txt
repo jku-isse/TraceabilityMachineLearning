@@ -1,0 +1,13 @@
+@Override
+public <T> void setAttribute(AttributeKey<T> key, T value) {
+    if (key == (SVGAttributeKeys.OPACITY)) {
+        attributes.put(key, value);
+    } else
+        if ((key == (SVGAttributeKeys.LINK)) || (key == (SVGAttributeKeys.LINK_TARGET))) {
+            attributes.put(key, value);
+        } else {
+            super.setAttribute(key, value);
+        }
+
+    invalidate();
+}

@@ -1,0 +1,6 @@
+public JMenuItem createMenuItem(Action a, String baseName) {
+    JMenuItem mi = new JMenuItem();
+    mi.setAction(a);
+    configureMenu(mi, baseName);
+    return mi;
+}

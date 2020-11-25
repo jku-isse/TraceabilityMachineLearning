@@ -1,0 +1,3 @@
+public int getMaxIntervalLength() {
+    return 1;
+}

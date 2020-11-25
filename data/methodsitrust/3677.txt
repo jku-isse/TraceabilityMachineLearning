@@ -1,0 +1,8 @@
+public static Role parse(String str) {
+    for (Role role : Role.values()) {
+        if (role.userRolesString.toLowerCase().equals(str.toLowerCase()))
+            return role;
+
+    }
+    throw new IllegalArgumentException((("Role " + str) + " does not exist"));
+}

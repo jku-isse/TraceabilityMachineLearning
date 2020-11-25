@@ -1,0 +1,9 @@
+/**
+ * Creates a new ResouceBundleUtil which wraps
+ * the provided resource bundle.
+ */
+public ResourceBundleUtil(String baseName, Locale locale) {
+    this.locale = locale;
+    this.baseName = baseName;
+    this.resource = ResourceBundle.getBundle(baseName, locale);
+}

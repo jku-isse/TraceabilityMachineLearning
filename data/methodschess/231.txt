@@ -1,0 +1,20 @@
+/**
+ * Compute the knight plies for each square. This is done at startup,
+ * so we can get the plies by a simple array access.
+ */
+private final void precomputeKnightPlies() {
+    for (int i = 0; i < 64; i++) {
+        long currentMask = 0L;
+        int line = i & 7;
+        int row = i >> 3;
+        for (int currentPlyIndex = 0; currentPlyIndex < (PlyGenerator._knightPlyOffset.length); currentPlyIndex++) {
+            int[] curOffsets = PlyGenerator._knightPlyOffset[currentPlyIndex];
+            int targetRow = row + (curOffsets[1]);
+            int targetLine = line + (curOffsets[0]);
+            if ((((targetRow >= 0) && (targetRow < 8)) && (targetLine >= 0)) && (targetLine < 8)) {
+                currentMask |= 1L << ((targetRow << 3) + targetLine);
+            }
+        }
+        _knightMask[i] = currentMask;
+    }
+}

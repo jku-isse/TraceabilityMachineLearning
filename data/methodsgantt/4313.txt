@@ -1,0 +1,5 @@
+// 
+public Task getSupertask() {
+    TaskHierarchyItem container = myTaskHierarchyItem.getContainerItem();
+    return container.getTask();
+}

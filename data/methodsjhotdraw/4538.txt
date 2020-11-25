@@ -1,0 +1,4 @@
+private void checkboxPerformed(ActionEvent evt) {
+    // GEN-FIRST:event_checkboxPerformed
+    canvas.repaint();
+}// GEN-LAST:event_checkboxPerformed

@@ -1,0 +1,4 @@
+public GPUndoManager getUndoManager() {
+    // TODO Auto-generated method stub
+    return null;
+}

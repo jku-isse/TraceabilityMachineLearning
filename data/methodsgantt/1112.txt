@@ -1,0 +1,8 @@
+ResourceTreeImageGenerator(HumanResourceManager resourceManager) {
+    myResourceManager = resourceManager;
+    final BufferedImage testImage = new BufferedImage(10, 10, BufferedImage.TYPE_INT_RGB);
+    final Graphics g = testImage.getGraphics();
+    final int nameFontHeight = g.getFontMetrics().getHeight();
+    final int nameLinePadding = 3;
+    myRowHeight = nameFontHeight + (2 * nameLinePadding);
+}

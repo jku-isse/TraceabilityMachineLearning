@@ -1,0 +1,6 @@
+/**
+ * Creates a Pageable object for printing the View.
+ */
+public Pageable createPageable() {
+    return new DrawingPageable(svgPanel.getDrawing());
+}

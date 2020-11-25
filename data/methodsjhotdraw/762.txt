@@ -1,0 +1,4 @@
+public void read(DOMInput in) throws IOException {
+    super.read(in);
+    readDecorator(in);
+}

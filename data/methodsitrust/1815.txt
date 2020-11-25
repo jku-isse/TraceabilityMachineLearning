@@ -1,0 +1,3 @@
+public OverrideReasonBean(String code) {
+    reasonCode = code;
+}

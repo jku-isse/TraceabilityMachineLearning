@@ -1,0 +1,3 @@
+public void add(FontFaceNode newChild) {
+    insert(newChild, getChildCount());
+}

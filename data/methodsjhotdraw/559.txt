@@ -1,0 +1,8 @@
+protected void fireColorChanged(int componentIndex) {
+    Integer index = new Integer(componentIndex);
+    CompositeColor value = getCompositeColor();
+    for (JSlider slider : sliders) {
+        slider.putClientProperty("colorComponentChange", index);
+        slider.putClientProperty("colorComponentValue", value);
+    }
+}

@@ -1,0 +1,10 @@
+public void testGetBothParents() throws Exception {
+    List<FamilyMemberBean> parents = familyDAO.getParents(3);
+    assertEquals(2, parents.size());
+    Collections.sort(parents, this);
+    assertEquals("Dad", parents.get(0).getFirstName());
+    assertEquals("", parents.get(0).getLastName());
+    assertEquals("Dad ", parents.get(0).getFullName());
+    assertEquals("Mom", parents.get(1).getFirstName());
+    assertEquals("Parent", parents.get(0).getRelation());
+}

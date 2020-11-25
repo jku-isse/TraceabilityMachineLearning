@@ -1,0 +1,7 @@
+public void write(DOMOutput out) throws IOException {
+    for (LineDecoration decoration : decorations) {
+        out.openElement("decoration");
+        out.writeObject(decoration);
+        out.closeElement();
+    }
+}

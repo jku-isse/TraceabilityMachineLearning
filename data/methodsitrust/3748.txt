@@ -1,0 +1,35 @@
+public void testHCPAppointmentRequestConflictReject() throws Exception {
+    WebConversation wcP = login("26", "pw");// log in as Fry
+
+    WebResponse wrP = wcP.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wrP.getTitle());
+    wrP = wrP.getLinkWith("Appointment Requests").click();
+    assertEquals("iTrust - Appointment Requests", wrP.getTitle());
+    Calendar cal = Calendar.getInstance();
+    SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+    cal.add(Calendar.DAY_OF_YEAR, 7);
+    WebForm wfP = wrP.getForms()[0];
+    wfP.getScriptableObject().setParameterValue("apptType", "General Checkup");
+    wfP.getScriptableObject().setParameterValue("startDate", format.format(cal.getTime()));
+    wfP.getScriptableObject().setParameterValue("time1", "01");
+    wfP.getScriptableObject().setParameterValue("time2", "45");
+    wfP.getScriptableObject().setParameterValue("time3", "PM");
+    wfP.getScriptableObject().setParameterValue("lhcp", "9000000010");
+    wrP = wfP.submit();
+    assertEquals("iTrust - Appointment Requests", wrP.getTitle());
+    assertTrue(wrP.getText().contains("conflicts with other existing appointments"));
+    assertTrue(wrP.getText().contains("The following nearby time slots are available"));
+    wrP.getForms()[2].submit();
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_REQUEST_SUBMITTED, 26L, 9000000010L, "");
+    wrP = wrP.getLinkWith("Logout").click();// log out as Fry
+
+    WebConversation wcHCP = login("9000000010", "pw");// log in as Zoidberg
+
+    WebResponse wrHCP = wcHCP.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wrHCP.getTitle());
+    wrHCP = wrHCP.getLinkWith("Appointment Requests").click();
+    assertEquals("iTrust - View My Appointment Requests", wrHCP.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_REQUEST_VIEW, 9000000010L, 0L, "");
+    assertTrue(wrHCP.getText().contains("4:00"));
+    wrHCP = wrHCP.getLinkWith("Approve").click();
+}

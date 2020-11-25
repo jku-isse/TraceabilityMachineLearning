@@ -1,0 +1,16 @@
+/**
+ * Sets the popup anchor.
+ * <p>
+ * <ul>
+ * <li>SOUTH_WEST places the popup below the button and aligns it with its
+ * left bound.</li>
+ * <li>SOUTH_EAST places the popup below the button and aligns it with its
+ * right bound.</li>
+ * </ul>
+ *
+ * @param newValue
+ * 		SwingConstants.SOUTH_WEST or SOUTH_EAST.
+ */
+public void setPopupAnchor(int newValue) {
+    popupAnchor = newValue;
+}

@@ -1,0 +1,8 @@
+/**
+ * Returns the horizontal index of the rightmost column of tiles.
+ * getMaxTileX() is implemented in terms of getMaxX()
+ * and so does not need to be implemented by subclasses.
+ */
+public int getMaxTileX() {
+    return XToTileX(((getMaxX()) - 1));
+}

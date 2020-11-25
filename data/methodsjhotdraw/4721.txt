@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((ODGDrawingPanelBeanInfo.beanDescriptor) == null)
+        ODGDrawingPanelBeanInfo.beanDescriptor = new BeanDescriptor(ODGDrawingPanelBeanInfo.class);
+
+    ODGDrawingPanelBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    ODGDrawingPanelBeanInfo.beanDescriptor.setDisplayName("DrawingPanel");
+    return ODGDrawingPanelBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

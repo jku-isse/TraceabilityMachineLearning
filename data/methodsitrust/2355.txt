@@ -1,0 +1,7 @@
+public PreparedStatement loadParameters(PreparedStatement ps, Email email) throws SQLException {
+    ps.setString(1, email.getToListStr());
+    ps.setString(2, email.getFrom());
+    ps.setString(3, email.getSubject());
+    ps.setString(4, email.getBody());
+    return ps;
+}

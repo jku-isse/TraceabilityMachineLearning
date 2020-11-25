@@ -1,0 +1,7 @@
+@Override
+public void keyPressed(KeyEvent evt) {
+    multicaster.keyPressed(evt);
+    if (!(evt.isConsumed())) {
+        super.keyPressed(evt);
+    }
+}

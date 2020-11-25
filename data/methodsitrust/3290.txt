@@ -1,0 +1,8 @@
+public void testCreateException() throws Exception {
+    try {
+        evilDAO.add(new PatientInstructionsBean());
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

@@ -1,0 +1,6 @@
+public void testGenderRisk() throws Exception {
+    assertFalse(factor.hasRiskFactor());
+    p.setGender(Gender.Female);
+    factor = new GenderFactor(p, Gender.Female);
+    assertTrue(factor.hasRiskFactor());
+}

@@ -1,0 +1,10 @@
+/**
+ * Parses the string for a xml compliant one
+ *
+ * @param s
+ * 		- The string to be fixed
+ * @return - The xml compliant string
+ */
+private static String parse(String s) {
+    return s.replaceAll(" ", "_").replaceAll("#", "NUMBER").replaceAll("", "");
+}

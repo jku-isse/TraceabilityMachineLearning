@@ -1,0 +1,5 @@
+OpenProjectAction(GanttProject mainFrame) {
+    super("openProject", "16");
+    myMainFrame = mainFrame;
+    putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_O, GPAction.MENU_MASK));
+}

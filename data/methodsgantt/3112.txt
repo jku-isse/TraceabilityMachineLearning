@@ -1,0 +1,6 @@
+/**
+ * Initialize the component.
+ */
+public void initialize() {
+    // nothing to do :)
+}

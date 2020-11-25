@@ -1,0 +1,3 @@
+public void setPrescription(PrescriptionBean prescription) {
+    this.prescription = prescription;
+}

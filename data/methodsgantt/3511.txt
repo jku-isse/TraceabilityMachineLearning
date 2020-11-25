@@ -1,0 +1,87 @@
+public void startElement(String namespaceURI, String sName, String qName, Attributes attrs) {
+    indent += "    ";
+    String eName = sName;// element name
+
+    if ("".equals(eName)) {
+        eName = qName;// not namespaceAware
+
+    }
+    if (eName.equals("description")) {
+        myCharacterBuffer = new StringBuffer();
+        typeChar = 0;
+    }
+    if (eName.equals("notes")) {
+        myCharacterBuffer = new StringBuffer();
+        typeChar = 1;
+        // barmeier: we know that this tag has only attibutes no nested
+        // tags
+        // we can do we need here.
+    }
+    /* if (eName.equals("allocation")) { String aName; int taskId = 0;
+    int resourceId = 0; int load = 0; for (int i = 0; i <
+    attrs.getLength(); i++) { aName = attrs.getQName(i); if
+    (aName.equals("task-id")) { taskId = new
+    Integer(attrs.getValue(i)).intValue(); } else if
+    (aName.equals("resource-id")) { resourceId = new
+    Integer(attrs.getValue(i)).intValue(); } else if
+    (aName.equals("load")) { load = new
+    Integer(attrs.getValue(i)).intValue(); } } // if no load is
+    specified I assume 100% load // this should only be the case if
+    old files // were loaded. if (load == 0) { load = 100; }
+    GanttTask the_task = treePanel.getTask(taskId); HumanResource
+    user = peop.getUserByNumber(resourceId - 1); //
+    user.setLoad(load+user.getMaximumUnitsPerDay());
+    the_task.taskUser(peop.getUserByNumber(resourceId - 1), load); }
+     */
+    // int task_id = 0;
+    // GanttTask task = new GanttTask(new String(), new GanttCalendar(),
+    // 1);
+    // GanttTask task = myTaskManager.createTask();
+    // task.setLength(1);
+    if (attrs != null) {
+        for (int i = 0; i < (attrs.getLength()); i++) {
+            String aName = attrs.getLocalName(i);// Attr name
+
+            if ("".equals(aName)) {
+                aName = attrs.getQName(i);
+                // The project part
+            }
+            if ((eName.equals("project")) && ((myTagStack.size()) == 1)) {
+                if (aName.equals("name")) {
+                    myProjectInfo._sProjectName = attrs.getValue(i);
+                } else
+                    if (aName.equals("company")) {
+                        myProjectInfo._sOrganization = attrs.getValue(i);
+                    } else
+                        if (aName.equals("webLink")) {
+                            myProjectInfo._sWebLink = attrs.getValue(i);
+                        } else// TODO: 1.12 repair scrolling to the saved date
+
+                            if (aName.equals("view-date")) {
+                                myUIFacade.getScrollingManager().scrollLeft(GanttCalendar.parseXMLDate(attrs.getValue(i)).getTime());
+                            } else
+                                if (aName.equals("view-index")) {
+                                    viewIndex = new Integer(attrs.getValue(i)).hashCode();
+                                } else
+                                    if (aName.equals("gantt-divider-location")) {
+                                        ganttDividerLocation = new Integer(attrs.getValue(i)).intValue();
+                                    } else
+                                        if (aName.equals("resource-divider-location")) {
+                                            resourceDividerLocation = new Integer(attrs.getValue(i)).intValue();
+                                        }
+
+
+
+
+
+
+            } else
+                if (eName.equals("tasks")) {
+                    if (aName.equals("color")) {
+                        myUIConfig.setProjectLevelTaskColor(determineColor(attrs.getValue(i)));
+                    }
+                }
+
+        }
+    }
+}

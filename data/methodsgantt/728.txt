@@ -1,0 +1,3 @@
+public ResourceTreeTableModel getResourceTreeTableModel() {
+    return model;
+}

@@ -1,0 +1,6 @@
+/**
+ * Returns the ColorSystem used by this ColorSliderModel.
+ *
+ * @return ColorSystem.
+ */
+public ColorSystem getColorSystem();

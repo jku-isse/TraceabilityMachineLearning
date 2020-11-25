@@ -1,0 +1,4 @@
+protected void enableRenderers2() {
+    super.enableRenderers2();
+    myTaskRendererImpl.setEnabled(false);
+}

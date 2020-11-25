@@ -1,0 +1,4 @@
+public void areaInvalidated(FigureEvent evt) {
+    repaintDrawingArea(evt.getInvalidatedArea());
+    invalidateDimension();
+}

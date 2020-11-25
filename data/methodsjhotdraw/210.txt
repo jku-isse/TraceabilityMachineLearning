@@ -1,0 +1,4 @@
+/**
+ * Adds a property change listener.
+ */
+public void addPropertyChangeListener(PropertyChangeListener l);

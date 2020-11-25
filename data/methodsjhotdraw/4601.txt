@@ -1,0 +1,6 @@
+@Override
+public void handleDisconnect(Connector start, Connector end) {
+    setAttributeEnabled(AttributeKeys.STROKE_TYPE, true);
+    AttributeKeys.STROKE_TYPE.set(this, AttributeKeys.StrokeType.BASIC);
+    setAttributeEnabled(AttributeKeys.STROKE_TYPE, false);
+}

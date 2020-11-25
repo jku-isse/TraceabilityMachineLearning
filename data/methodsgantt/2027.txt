@@ -1,0 +1,3 @@
+public TaskGridRendererImpl(ChartModelImpl model) {
+    super(model);
+}

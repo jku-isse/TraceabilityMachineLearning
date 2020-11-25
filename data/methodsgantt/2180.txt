@@ -1,0 +1,7 @@
+/**
+ * Gets the description of the document (can be displayed in the
+ * applications titlebar).
+ *
+ * @return the description of the document
+ */
+public String getDescription();

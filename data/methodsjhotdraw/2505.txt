@@ -1,0 +1,10 @@
+/**
+ * Center.
+ *
+ * @param isTransform
+ * 		Set this to true, if RelativeLocator shall honour
+ * 		the AttributesKey.TRANSFORM attribute of the Figure.
+ */
+public static Locator center(boolean isTransform) {
+    return new RelativeLocator(0.5, 0.5, isTransform);
+}

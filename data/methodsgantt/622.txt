@@ -1,0 +1,3 @@
+protected IGanttProject getProject() {
+    return this;
+}

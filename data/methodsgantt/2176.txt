@@ -1,0 +1,6 @@
+/**
+ * "URLDocuments" dont return null on calls to getURLPath().
+ */
+public String getURLPath() {
+    return getPath();
+}

@@ -1,0 +1,4 @@
+public void testUserExists() throws Exception {
+    assertTrue(authDAO.checkUserExists(1L));
+    assertFalse(authDAO.checkUserExists(200L));
+}

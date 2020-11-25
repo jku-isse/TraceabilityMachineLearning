@@ -1,0 +1,9 @@
+/**
+ * Analyzed a new board.
+ *
+ * @param board
+ * 		The new board to analyze.
+ * @param white
+ * 		Flag to indicate, if white has the next move.
+ */
+short analyze(BitBoard board, boolean white);

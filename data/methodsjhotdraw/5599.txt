@@ -1,0 +1,3 @@
+public ToggleGridAction getToggleGridAction() {
+    return toggleGridAction;
+}

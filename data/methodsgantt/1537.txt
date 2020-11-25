@@ -1,0 +1,3 @@
+public List getActivities(Date startingFrom, TaskLength period) {
+    return getActivities(startingFrom, period.getTimeUnit(), period.getLength());
+}

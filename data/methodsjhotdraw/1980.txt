@@ -1,0 +1,5 @@
+/**
+ * A Figure is only drawn by a CompositeFigure, if it is visible.
+ * Layouters should ignore invisible figures too.
+ */
+public boolean isVisible();

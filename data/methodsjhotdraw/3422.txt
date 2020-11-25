@@ -1,0 +1,3 @@
+public int hashCode() {
+    return ((((mask) & 3) << 29) | ((Arrays.hashCode(x)) & 1073676288)) | ((Arrays.hashCode(y)) & 65535);
+}

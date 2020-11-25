@@ -1,0 +1,4 @@
+public void commit() {
+    super.commit();
+    myEventDispatcher.optionsChanged();
+}

@@ -1,0 +1,3 @@
+public void setOvDiagnosisID(long ovDiagnosisID) {
+    this.ovDiagnosisID = ovDiagnosisID;
+}

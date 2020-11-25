@@ -1,0 +1,3 @@
+public Document getDocument() {
+    return myDocument;
+}

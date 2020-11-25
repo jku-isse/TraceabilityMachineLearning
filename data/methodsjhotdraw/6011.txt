@@ -1,0 +1,3 @@
+public String toString() {
+    return (((((((("widthPercentFactor:" + (widthPercentFactor)) + ";") + "heightPercentFactor:") + (heightPercentFactor)) + ";") + "numberFactor:") + (numberFactor)) + ";") + (attributes);
+}

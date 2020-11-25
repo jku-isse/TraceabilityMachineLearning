@@ -1,0 +1,18 @@
+/**
+ * Creates a new patient, returns the new MID. Adds a new user to the table along with a random password.
+ *
+ * @return the new MID of the patient
+ * @throws DBException
+ * 		
+ * @throws FormValidationException
+ * 		
+ */
+public long addPatient(PatientBean p) throws DBException, FormValidationException {
+    new AddPatientValidator().validate(p);
+    long newMID = patientDAO.addEmptyPatient();
+    p.setMID(newMID);
+    String pwd = authDAO.addUser(newMID, Role.PATIENT, RandomPassword.getRandomPassword());
+    p.setPassword(pwd);
+    patientDAO.editPatient(p, loggedInMID);
+    return newMID;
+}

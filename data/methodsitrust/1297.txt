@@ -1,0 +1,12 @@
+/**
+ * Get a specific referral.
+ *
+ * @param id
+ * 		
+ * @return 
+ * @throws DBException
+ * 		
+ */
+public ReferralBean getReferral(long id) throws DBException {
+    return referralDAO.getReferral(id);
+}

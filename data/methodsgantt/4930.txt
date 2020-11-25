@@ -1,0 +1,4 @@
+public void trimLeft(Date exactDate) {
+    myStartDate = exactDate;
+    myLineHeader = null;
+}

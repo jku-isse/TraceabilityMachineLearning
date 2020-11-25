@@ -1,0 +1,8 @@
+public static Ethnicity parse(String input) {
+    for (Ethnicity ethnicity : Ethnicity.values()) {
+        if (ethnicity.name.equals(input))
+            return ethnicity;
+
+    }
+    return Ethnicity.NotSpecified;
+}

@@ -1,0 +1,17 @@
+public void testassignPatient() throws Exception {
+    // WardBean wd = new WardBean(1,"testSpecialty",1);
+    WardRoomBean rm = new WardRoomBean(1, 1, 1, "test", "clean");
+    // //wardDAO.addWard(wd);
+    wardDAO.removeWardRoom(rm.getRoomID());
+    // wardDAO.addWardRoom(rm);
+    action = new PatientRoomAssignmentAction(factory);
+    action.assignPatientToRoom(rm, 1);
+    assertEquals(0, wardDAO.getAllWardRoomsByWardID(0).size());
+    wardDAO.removeWardRoom(rm.getRoomID());
+    // TODO add assert for patient in ward,
+    // getters in dao not there yet
+    // TODO add assert for patient in ward
+    // TODO check logging
+    patient.setMID(1L);
+    action.assignPatientToRoom(rm, patient);
+}

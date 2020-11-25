@@ -1,0 +1,8 @@
+/**
+ * Returns the error list as a java.util.List of Strings.
+ *
+ * @return The error list
+ */
+public List<String> getErrorList() {
+    return errorList.getMessageList();
+}

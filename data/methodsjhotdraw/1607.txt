@@ -1,0 +1,3 @@
+public void toolStarted(ToolEvent evt) {
+    setActiveView(evt.getView());
+}

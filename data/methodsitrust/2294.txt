@@ -1,0 +1,3 @@
+public void setBloodPressureD(String bloodPressureD) {
+    this.bloodPressureD = bloodPressureD;
+}

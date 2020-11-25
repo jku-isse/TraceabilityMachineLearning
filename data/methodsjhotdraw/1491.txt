@@ -1,0 +1,7 @@
+/**
+ * Updates the anchor of the connector.
+ * This method is called when the user manually changes the end point of
+ * the ConnectionFigure. The Connector uses this as a hint for choosing
+ * a new anchor position.
+ */
+public void updateAnchor(Point2D.Double p);

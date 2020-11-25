@@ -1,0 +1,1 @@
+void undoableEdit(String localizedName, Runnable runnableEdit);

@@ -1,0 +1,27 @@
+private void dumpButtonActionPerformed(ActionEvent evt) {
+    // GEN-FIRST:event_dumpButtonActionPerformed
+    if ((dumpDialog) == null) {
+        dumpDialog = new JDialog();
+        dumpDialog.setTitle("Dump");
+        dumpArea = new JTextArea();
+        dumpDialog.add(new JScrollPane(dumpArea));
+        dumpDialog.setSize(400, 400);
+    }
+    StringBuilder buf = new StringBuilder();
+    buf.append("        Point2D.Double[] d = { //  Digitized points 
+");
+    for (int i = 0; i < (examples.size()); i++) {
+        for (BezierPath.Node node : examples.get(i).digitized) {
+            buf.append("            new Point2D.Double(");
+            buf.append(node.x[0]);
+            buf.append(",");
+            buf.append(node.y[0]);
+            buf.append("),
+");
+        }
+    }
+    buf.append("        };
+");
+    dumpArea.setText(buf.toString());
+    dumpDialog.setVisible(true);
+}// GEN-LAST:event_dumpButtonActionPerformed

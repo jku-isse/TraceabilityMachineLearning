@@ -1,0 +1,11 @@
+public void add(DrawingView view) {
+    views.add(view);
+    view.addNotify(this);
+    view.getComponent().addFocusListener(focusHandler);
+    if ((tool) != null) {
+        view.addMouseListener(tool);
+        view.addMouseMotionListener(tool);
+        view.addKeyListener(tool);
+    }
+    updateActiveView();
+}

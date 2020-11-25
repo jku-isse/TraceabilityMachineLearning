@@ -1,0 +1,8 @@
+/**
+ * Gets an attribute from the Figure.
+ *
+ * @see AttributeKey#get
+ * @return Returns the attribute value. If the Figure does not have an
+attribute with the specified key, returns key.getDefaultValue().
+ */
+public <T> T getAttribute(AttributeKey<T> key);

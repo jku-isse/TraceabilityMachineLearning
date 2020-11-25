@@ -1,0 +1,4 @@
+public ResourceNode(ProjectResource res) {
+    super(res);
+    resource = res;
+}

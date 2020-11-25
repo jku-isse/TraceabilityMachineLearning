@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public BidirectionalConnectionTool(ConnectionFigure prototype) {
+    this.prototype = prototype;
+}

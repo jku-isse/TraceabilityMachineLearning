@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public SelectionTool() {
+    tracker = getSelectAreaTracker();
+    tracker.addToolListener(this);
+}

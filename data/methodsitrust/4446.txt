@@ -1,0 +1,5 @@
+public void testNotSpecified() throws Exception {
+    p.setEthnicity(Ethnicity.NotSpecified);
+    factor = new EthnicityFactor(p, Ethnicity.NotSpecified);
+    assertFalse(factor.hasRiskFactor());
+}

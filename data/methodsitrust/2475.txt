@@ -1,0 +1,13 @@
+/**
+ * Called from the JSP page to initialize the list of Adverse Events needed to
+ * produce the desired chart.
+ *
+ * @param adEvents
+ * 		
+ * @param name
+ * 		
+ */
+public void setAdverseEventsList(List<AdverseEventBean> adEvents, String name) {
+    adverseEvents = adEvents;
+    this.codeName = name;
+}

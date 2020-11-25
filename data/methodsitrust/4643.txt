@@ -1,0 +1,18 @@
+private List<String> parseSQLFile(String filepath) throws FileNotFoundException, IOException {
+    List<String> queries = new ArrayList<String>();
+    BufferedReader reader = new BufferedReader(new FileReader(new File(filepath)));
+    String line = "";
+    String currentQuery = "";
+    while ((line = reader.readLine()) != null) {
+        for (int i = 0; i < (line.length()); i++) {
+            if ((line.charAt(i)) == ;) {
+                queries.add(currentQuery);
+                currentQuery = "";
+            } else
+                currentQuery += line.charAt(i);
+
+        }
+    } 
+    reader.close();
+    return queries;
+}

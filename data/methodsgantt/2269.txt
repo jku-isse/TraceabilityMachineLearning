@@ -1,0 +1,10 @@
+public InputStream getInputStream() throws IOException {
+    if (null == (getWebdavResource()))
+        throw new IOException(lastError);
+
+    try {
+        return getWebdavResource().getMethodData();
+    } catch (HttpException e) {
+        throw new IOException(((((e.getMessage()) + "(") + (e.getReasonCode())) + ")"));
+    }
+}

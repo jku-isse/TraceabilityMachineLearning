@@ -1,0 +1,12 @@
+/**
+ * Override Reason information should already be validated
+ *
+ * @param orc
+ * 		
+ * @return 
+ * @throws DBException
+ * 		
+ */
+private int updateCode(OverrideReasonBean orc) throws DBException {
+    return orcDAO.updateCode(orc);
+}

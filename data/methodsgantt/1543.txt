@@ -1,0 +1,8 @@
+private Date getStateChangeDate(Date startDate, TimeUnit timeUnit, boolean changeToWeekend, boolean moveRightNotLeft) {
+    Date nextUnitStart = (moveRightNotLeft) ? timeUnit.adjustRight(startDate) : timeUnit.jumpLeft(startDate);
+    if (!(changeToWeekend ^ (isNonWorkingDay(nextUnitStart)))) {
+        return nextUnitStart;
+    } else {
+        return getStateChangeDate(nextUnitStart, timeUnit, changeToWeekend, moveRightNotLeft);
+    }
+}

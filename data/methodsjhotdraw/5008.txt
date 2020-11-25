@@ -1,0 +1,12 @@
+/**
+ * Reads a &lt;automatic-styles&gt; element from the specified
+ * XML element.
+ * <p>
+ * The automatic-styles element contains automatic styles.
+ *
+ * @param elem
+ * 		A &lt;automatic-styles&gt; element.
+ */
+private void readAutomaticStylesElement(IXMLElement elem) throws IOException {
+    readStylesChildren(elem, automaticStyles);
+}

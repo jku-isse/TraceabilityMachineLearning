@@ -1,0 +1,8 @@
+/**
+ * Get the total number of plies.
+ *
+ * @return The total number of plies.
+ */
+public final int getNumberOfPlies() {
+    return _gameStatus.size();
+}

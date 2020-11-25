@@ -1,0 +1,7 @@
+public Date adjustRight(Date baseDate) {
+    Calendar c = CalendarFactory.newCalendar();
+    c.setTime(baseDate);
+    clearFields(c);
+    c.add(myCalendarField, 1);
+    return c.getTime();
+}

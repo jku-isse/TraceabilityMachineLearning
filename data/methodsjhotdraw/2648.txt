@@ -1,0 +1,12 @@
+/**
+ * Sets the selectBehindEnabled property.
+ * This is a bound property.
+ *
+ * @param newValue
+ * 		The new value.
+ */
+public void setSelectBehindEnabled(boolean newValue) {
+    boolean oldValue = isSelectBehindEnabled;
+    isSelectBehindEnabled = newValue;
+    firePropertyChange(SelectionTool.SELECT_BEHIND_ENABLED_PROPERTY, oldValue, newValue);
+}

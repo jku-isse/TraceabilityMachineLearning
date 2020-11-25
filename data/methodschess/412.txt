@@ -1,0 +1,6 @@
+/**
+ * Get the entire game as a string.
+ *
+ * @return The entire game as a string.
+ */
+String toString();

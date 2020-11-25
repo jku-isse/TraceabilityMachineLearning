@@ -1,0 +1,6 @@
+/**
+ * Returns the z-index of the child figure.
+ */
+public int getIndex() {
+    return index;
+}

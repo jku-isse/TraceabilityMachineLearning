@@ -1,0 +1,5 @@
+public ChangeValueEvent(Object id, Object oldValue, Object newValue) {
+    myID = id;
+    myOldValue = oldValue;
+    myNewValue = newValue;
+}

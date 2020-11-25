@@ -1,0 +1,3 @@
+public Color getBorderColor() {
+    return this.borderColor;
+}

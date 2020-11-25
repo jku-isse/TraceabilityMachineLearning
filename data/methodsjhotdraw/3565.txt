@@ -1,0 +1,4 @@
+public Double() {
+    xpoints = new double[Polygon2D.MIN_LENGTH];
+    ypoints = new double[Polygon2D.MIN_LENGTH];
+}

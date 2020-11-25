@@ -1,0 +1,6 @@
+private MedicationBean genericAdd(String code, String desc) throws DBException, iTrustException {
+    MedicationBean proc = new MedicationBean(code, desc);
+    assertTrue(ndDAO.addNDCode(proc));
+    assertEquals(desc, ndDAO.getNDCode(code).getDescription());
+    return proc;
+}

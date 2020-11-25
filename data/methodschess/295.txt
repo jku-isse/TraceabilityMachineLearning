@@ -1,0 +1,14 @@
+/**
+ * Get the potential plies for a user.
+ * (Required to validate a user ply.)
+ *
+ * @return The potential plies for a user.
+ */
+public final Ply[] getUserPlies() {
+    // Lazy computation for better performance.
+    if ((_userPlies) == null) {
+        _userPlies = getEngine().getUserPlies();
+    }
+    return _userPlies;// Return the user plies.
+
+}

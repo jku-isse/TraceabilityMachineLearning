@@ -1,0 +1,6 @@
+@Override
+public void handleConnect(Connector start, Connector end) {
+    setAttributeEnabled(AttributeKeys.STROKE_TYPE, true);
+    AttributeKeys.STROKE_TYPE.set(this, ((start.getOwner()) == (end.getOwner()) ? AttributeKeys.StrokeType.DOUBLE : AttributeKeys.StrokeType.BASIC));
+    setAttributeEnabled(AttributeKeys.STROKE_TYPE, false);
+}

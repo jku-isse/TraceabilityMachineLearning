@@ -1,0 +1,79 @@
+/* Reads font attributes as listed in
+http://www.w3.org/TR/SVGMobile12/feature.html#Font
+ */
+private void readFontAttributes(IXMLElement elem, Map<AttributeKey, Object> a) throws IOException {
+    String value;
+    double doubleValue;
+    // font-family
+    // Value:  	[[ <family-name> |
+    // <generic-family> ],]* [<family-name> |
+    // <generic-family>] | inherit
+    // Initial:  	depends on user agent
+    // Applies to:  	text content elements
+    // Inherited:  	yes
+    // Percentages:  	N/A
+    // Media:  	visual
+    // Animatable:  	yes
+    // Computed value:  	 Specified value, except inherit
+    value = readInheritAttribute(elem, "font-family", "Dialog");
+    AttributeKeys.FONT_FACE.set(a, new Font(value, Font.PLAIN, 12));
+    // font-getChildCount
+    // Value:  	<absolute-getChildCount> | <relative-getChildCount> |
+    // <length> | inherit
+    // Initial:  	medium
+    // Applies to:  	text content elements
+    // Inherited:  	yes, the computed value is inherited
+    // Percentages:  	N/A
+    // Media:  	visual
+    // Animatable:  	yes
+    // Computed value:  	 Absolute length
+    doubleValue = readInheritFontSizeAttribute(elem, "font-size", "medium");
+    AttributeKeys.FONT_SIZE.set(a, doubleValue);
+    // font-style
+    // Value:  	normal | italic | oblique | inherit
+    // Initial:  	normal
+    // Applies to:  	text content elements
+    // Inherited:  	yes
+    // Percentages:  	N/A
+    // Media:  	visual
+    // Animatable:  	yes
+    // Computed value:  	 Specified value, except inherit
+    value = readInheritAttribute(elem, "font-style", "normal");
+    AttributeKeys.FONT_ITALIC.set(a, value.equals("italic"));
+    // font-variant
+    // Value:  	normal | small-caps | inherit
+    // Initial:  	normal
+    // Applies to:  	text content elements
+    // Inherited:  	yes
+    // Percentages:  	N/A
+    // Media:  	visual
+    // Animatable:  	no
+    // Computed value:  	 Specified value, except inherit
+    value = readInheritAttribute(elem, "font-variant", "normal");
+    // if (DEBUG) System.out.println("font-variant="+value);
+    // font-weight
+    // Value:  	normal | bold | bolder | lighter | 100 | 200 | 300
+    // | 400 | 500 | 600 | 700 | 800 | 900 | inherit
+    // Initial:  	normal
+    // Applies to:  	text content elements
+    // Inherited:  	yes
+    // Percentages:  	N/A
+    // Media:  	visual
+    // Animatable:  	yes
+    // Computed value:  	 one of the legal numeric values, non-numeric
+    // values shall be converted to numeric values according to the rules
+    // defined below.
+    value = readInheritAttribute(elem, "font-weight", "normal");
+    AttributeKeys.FONT_BOLD.set(a, ((((((((value.equals("bold")) || (value.equals("bolder"))) || (value.equals("400"))) || (value.equals("500"))) || (value.equals("600"))) || (value.equals("700"))) || (value.equals("800"))) || (value.equals("900"))));
+    // Note: text-decoration is an SVG 1.1 feature
+    // text-decoration
+    // Value:  	none | [ underline || overline || line-through || blink ] | inherit
+    // Initial:  	none
+    // Applies to:  	text content elements
+    // Inherited:  	no (see prose)
+    // Percentages:  	N/A
+    // Media:  	visual
+    // Animatable:  	yes
+    value = readAttribute(elem, "text-decoration", "none");
+    AttributeKeys.FONT_UNDERLINE.set(a, value.equals("underline"));
+}

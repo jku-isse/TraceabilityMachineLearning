@@ -1,0 +1,35 @@
+/**
+ *
+ *
+ * @param id
+ * 		
+ * @param parseLong
+ * 		
+ * @param parseLong2
+ * 		
+ * @param parseLong3
+ * 		
+ * @throws DBException
+ * 		
+ */
+public void submitTestResults(long id, String numericalResult, String numericalResultUnit, String upper, String lower) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("UPDATE labprocedure SET NumericalResults = ?, NumericalResultsUnit = ?, UpperBound = ?, LowerBound = ?, Status = ?, UpdatedDate = ? WHERE LaboratoryProcedureID=?");
+        ps.setString(1, numericalResult);
+        ps.setString(2, numericalResultUnit);
+        ps.setString(3, upper);
+        ps.setString(4, lower);
+        ps.setString(5, "Pending");
+        ps.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
+        ps.setLong(7, id);
+        ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

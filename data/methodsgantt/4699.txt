@@ -1,0 +1,3 @@
+public TaskDependencyException(String message, Throwable cause) {
+    super(message, cause);
+}

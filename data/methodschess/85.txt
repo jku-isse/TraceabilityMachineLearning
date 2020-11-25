@@ -1,0 +1,14 @@
+void setRegister(JTextArea textArea, Reader in) {
+    try {
+        char[] buffer = new char[4096];
+        int len;
+        textArea.setText("");
+        while ((len = in.read(buffer)) != (-1)) {
+            String s = new String(buffer, 0, len);
+            textArea.append(s);
+        } 
+        textArea.setCaretPosition(0);
+    } catch (IOException e) {
+        textArea.setText((((e.getClass().getName()) + ": ") + (e.getMessage())));
+    }
+}

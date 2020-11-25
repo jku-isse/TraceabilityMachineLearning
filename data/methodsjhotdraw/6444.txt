@@ -1,0 +1,99 @@
+public void writeObject(Object o) throws IOException {
+    if (o == null) {
+        openElement("null");
+        closeElement();
+    } else
+        if (o instanceof DOMStorable) {
+            writeStorable(((DOMStorable) (o)));
+        } else
+            if (o instanceof String) {
+                openElement("string");
+                addText(((String) (o)));
+                closeElement();
+            } else
+                if (o instanceof Integer) {
+                    openElement("int");
+                    addText(o.toString());
+                    closeElement();
+                } else
+                    if (o instanceof Long) {
+                        openElement("long");
+                        addText(o.toString());
+                        closeElement();
+                    } else
+                        if (o instanceof Double) {
+                            openElement("double");
+                            addText(o.toString());
+                            closeElement();
+                        } else
+                            if (o instanceof Float) {
+                                openElement("float");
+                                addText(o.toString());
+                                closeElement();
+                            } else
+                                if (o instanceof Boolean) {
+                                    openElement("boolean");
+                                    addText(o.toString());
+                                    closeElement();
+                                } else
+                                    if (o instanceof Color) {
+                                        Color c = ((Color) (o));
+                                        openElement("color");
+                                        addAttribute("rgba", ("#" + (Integer.toHexString(c.getRGB()))));
+                                        closeElement();
+                                    } else
+                                        if (o instanceof int[]) {
+                                            openElement("intArray");
+                                            int[] a = ((int[]) (o));
+                                            for (int i = 0; i < (a.length); i++) {
+                                                writeObject(new Integer(a[i]));
+                                            }
+                                            closeElement();
+                                        } else
+                                            if (o instanceof float[]) {
+                                                openElement("floatArray");
+                                                float[] a = ((float[]) (o));
+                                                for (int i = 0; i < (a.length); i++) {
+                                                    writeObject(new Float(a[i]));
+                                                }
+                                                closeElement();
+                                            } else
+                                                if (o instanceof double[]) {
+                                                    openElement("doubleArray");
+                                                    double[] a = ((double[]) (o));
+                                                    for (int i = 0; i < (a.length); i++) {
+                                                        writeObject(new Double(a[i]));
+                                                    }
+                                                    closeElement();
+                                                } else
+                                                    if (o instanceof Font) {
+                                                        Font f = ((Font) (o));
+                                                        openElement("font");
+                                                        addAttribute("name", f.getName());
+                                                        addAttribute("style", f.getStyle());
+                                                        addAttribute("size", f.getSize());
+                                                        closeElement();
+                                                    } else
+                                                        if (o instanceof Enum) {
+                                                            openElement("enum");
+                                                            Enum e = ((Enum) (o));
+                                                            addAttribute("type", factory.getEnumName(e));
+                                                            addText(factory.getEnumValue(e));
+                                                            closeElement();
+                                                        } else {
+                                                            throw new IllegalArgumentException(((("unable to store: " + o) + " ") + (o.getClass())));
+                                                        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,25 @@
+private void saveRoles(TransformerHandler handler) throws SAXException {
+    AttributesImpl attrs = new AttributesImpl();
+    RoleManager roleManager = getProject().getRoleManager();
+    RoleSet[] roleSets = roleManager.getRoleSets();
+    for (int i = 0; i < (roleSets.length); i++) {
+        RoleSet next = roleSets[i];
+        if (next.isEnabled()) {
+            addAttribute("roleset-name", next.getName(), attrs);
+            emptyElement("roles", attrs, handler);
+        }
+    }
+    // 
+    RoleSet projectRoleSet = roleManager.getProjectRoleSet();
+    if (!(projectRoleSet.isEmpty())) {
+        startElement("roles", attrs, handler);
+        Role[] projectRoles = projectRoleSet.getRoles();
+        for (int i = 0; i < (projectRoles.length); i++) {
+            Role next = projectRoles[i];
+            addAttribute("id", next.getPersistentID(), attrs);
+            addAttribute("name", next.getName(), attrs);
+            emptyElement("role", attrs, handler);
+        }
+        endElement("roles", handler);
+    }
+}

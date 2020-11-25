@@ -1,0 +1,30 @@
+/**
+ * Helper method for logging in to iTrust
+ *
+ * @param username
+ * 		
+ * @param password
+ * 		
+ * @return {@link WebConversation}
+ * @throws Exception
+ * 		
+ */
+public WebConversation login(String username, String password) throws Exception {
+    try {
+        // begin at the iTrust home page
+        WebConversation wc = new WebConversation();
+        WebResponse loginResponse = wc.getResponse(iTrustHTTPTest.ADDRESS);
+        // log in using the given username and password
+        WebForm form = loginResponse.getForms()[0];
+        form.setParameter("j_username", username);
+        form.setParameter("j_password", password);
+        WebResponse homePage = loginResponse.getForms()[0].submit();
+        if (homePage.getTitle().equals("iTrust Login")) {
+            throw new IllegalArgumentException("Error logging in, user not in database?");
+        }
+        iTrustHTTPTest.assertLogged(TransactionType.LOGIN_SUCCESS, Long.parseLong(username), Long.parseLong(username), "");
+        return wc;
+    } catch (ConnectException e) {
+        throw new ConnectException("Tomcat must be running to run HTTP tests.");
+    }
+}

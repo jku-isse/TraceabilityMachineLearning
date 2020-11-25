@@ -1,0 +1,4 @@
+Text(int position, GanttGraphicArea.ChartOptionsPreviewPanel.TaskBar refBar) {
+    this.position = position;
+    this.taskBar = refBar;
+}

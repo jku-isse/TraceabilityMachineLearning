@@ -1,0 +1,4 @@
+public PreparedStatement loadParameters(PreparedStatement ps, ProcedureBean bean) throws SQLException {
+    ps.setString(1, bean.getDescription());
+    return ps;
+}

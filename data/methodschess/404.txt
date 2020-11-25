@@ -1,0 +1,6 @@
+/**
+ * Get the info on the used opening.
+ *
+ * @return The name of the used opening.
+ */
+String getOpeningInfo();

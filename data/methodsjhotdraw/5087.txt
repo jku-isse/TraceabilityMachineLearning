@@ -1,0 +1,11 @@
+/**
+ * Handles the disconnection of a connection.
+ * Override this method to handle this event.
+ */
+@Override
+protected void handleDisconnect(Connector start, Connector end) {
+    TaskFigure sf = ((TaskFigure) (start.getOwner()));
+    TaskFigure ef = ((TaskFigure) (end.getOwner()));
+    sf.removeDependency(this);
+    ef.removeDependency(this);
+}

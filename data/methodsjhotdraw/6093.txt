@@ -1,0 +1,12 @@
+/**
+ * Returns true if a viewport should always force the width of this
+ * Scrollable to match the width of the viewport.  This is implemented
+ * to return true if the line wrapping policy is true, and false
+ * if lines are not being wrapped.
+ *
+ * @return true if a viewport should force the Scrollables width
+to match its own.
+ */
+public boolean getScrollableTracksViewportWidth() {
+    return wrap;
+}

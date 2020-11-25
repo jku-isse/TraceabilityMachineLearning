@@ -1,0 +1,11 @@
+public JavaxDOMInput(DOMFactory factory, Reader in) throws IOException {
+    this.factory = factory;
+    try {
+        document = JavaxDOMInput.getBuilder().parse(new InputSource(in));
+        current = document;
+    } catch (SAXException ex) {
+        IOException e = new IOException(ex.getMessage());
+        e.initCause(ex);
+        throw e;
+    }
+}

@@ -1,0 +1,7 @@
+public int basicRemove(final Figure figure) {
+    int index = children.indexOf(figure);
+    if (index != (-1)) {
+        basicRemoveChild(index);
+    }
+    return index;
+}

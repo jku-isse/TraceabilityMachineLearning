@@ -1,0 +1,20 @@
+@Override
+public Object stringToValue(String str) throws ParseException {
+    // Handle null and empty case
+    if ((str == null) || ((str.trim().length()) == 0)) {
+        if (allowsNullValue) {
+            return null;
+        } else {
+            throw new ParseException("Null value is not allowed.", 0);
+        }
+    }
+    Font f = Font.decode(str);
+    if (f == null) {
+        throw new ParseException(str, 0);
+    }
+    String fontName = f.getFontName();
+    if ((!(fontName.equals(str))) && (!(fontName.equals((str + "-Derived"))))) {
+        throw new ParseException(str, 0);
+    }
+    return f;
+}

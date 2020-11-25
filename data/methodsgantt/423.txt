@@ -1,0 +1,6 @@
+/**
+ * set a new resources overload tasks color.
+ */
+public void setResourceOverloadColor(Color color) {
+    getUIConfiguration().setResourceOverloadColor(color);
+}

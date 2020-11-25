@@ -1,0 +1,13 @@
+public void characters(char[] buf, int offset, int len) throws SAXException {
+    // len=0;
+    // for(int i=0;i+offset<buf.length && buf[i+offset]!=<;i++,len++);
+    String s = new String(buf, offset, len);
+    if ((typeChar) >= 0) {
+        if (GanttXMLOpen.IGNORABLE_WHITESPACE.matcher(s).matches()) {
+            return;
+        }
+        s = s.replaceAll("^\n\x20*", "
+");
+        myCharacterBuffer.append(s);
+    }
+}

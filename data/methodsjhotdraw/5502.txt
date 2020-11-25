@@ -1,0 +1,3 @@
+public double getBaseline() {
+    return (getFont().getLineMetrics(getText(), getFontRenderContext()).getAscent()) + (getInsets().top);
+}

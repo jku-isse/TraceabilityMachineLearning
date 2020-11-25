@@ -1,0 +1,13 @@
+public Map importData(ResourceManager resourceManager) {
+    Map original2imported = new HashMap();
+    if ((resourceManager instanceof HumanResourceManager) == false) {
+        throw new IllegalArgumentException("I expect resource manager to be HumanResourceManager");
+    }
+    HumanResourceManager hrManager = ((HumanResourceManager) (resourceManager));
+    List resources = hrManager.getResources();
+    for (int i = 0; i < (resources.size()); i++) {
+        HumanResource next = ((HumanResource) (resources.get(i)));
+        importData(next, original2imported);
+    }
+    return original2imported;
+}

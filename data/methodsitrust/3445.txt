@@ -1,0 +1,18 @@
+public void testAddSurveyData2() throws Exception {
+    SurveyBean surveyBean = new SurveyBean();
+    // all this data would generally be set in the JSP
+    String date = "05/02/2008 13:30";
+    surveyBean.setSurveyDateString(date);
+    surveyBean.setExamRoomMinutes(33);
+    surveyBean.setTreatmentSatisfaction(5);
+    surveyBean.setVisitSatisfaction(4);
+    SurveyAction surveyAction = new SurveyAction(TestDAOFactory.getTestInstance(), 2L);
+    surveyAction.addSurvey(surveyBean, 905);
+    SurveyBean newBean = surveyDAO.getSurveyData(905);
+    String dateStr = new SimpleDateFormat(SurveyBean.dateFormat).format(new Date());
+    assertEquals(dateStr, newBean.getSurveyDateString());
+    assertEquals(905, newBean.getVisitID());
+    assertEquals(33, newBean.getExamRoomMinutes());
+    assertEquals(5, newBean.getTreatmentSatisfaction());
+    assertEquals(4, newBean.getVisitSatisfaction());
+}

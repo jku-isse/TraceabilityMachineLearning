@@ -1,0 +1,3 @@
+public void setLoad(float load) {
+    myLoad = load;
+}

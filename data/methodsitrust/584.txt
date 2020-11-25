@@ -1,0 +1,3 @@
+private ReminderType(String typeName) {
+    this.typeName = typeName;
+}

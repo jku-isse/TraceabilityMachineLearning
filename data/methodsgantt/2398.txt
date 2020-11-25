@@ -1,0 +1,4 @@
+void setExporter(Exporter exporter) {
+    myExporter = exporter;
+    ExportFileWizardImpl.ourLastSelectedExporter = exporter;
+}

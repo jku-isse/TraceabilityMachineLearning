@@ -1,0 +1,4 @@
+private void removeOption(String name) {
+    TaskRendererImpl.ourInfoList.remove(name);
+    updateOptions();
+}

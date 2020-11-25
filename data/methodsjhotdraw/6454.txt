@@ -1,0 +1,15 @@
+/**
+ * Returns the number of child elements with the specified tag name
+ * of the current element.
+ */
+public int getElementCount(String tagName) {
+    int count = 0;
+    ArrayList list = current.getChildren();
+    for (int i = 0; i < (list.size()); i++) {
+        XMLElement node = ((XMLElement) (list.get(i)));
+        if (node.getName().equals(tagName)) {
+            count++;
+        }
+    }
+    return count;
+}

@@ -1,0 +1,3 @@
+public void testCheckGender() {
+    assertEquals("", validatorProxy.checkGender("Gender", Gender.Male, ValidationFormat.GENDERCOD, true));
+}

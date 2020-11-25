@@ -1,0 +1,3 @@
+public double getLeft() {
+    return left;
+}

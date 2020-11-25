@@ -1,0 +1,35 @@
+/**
+ * Validates a prescription form, converts it into a bean, and returns that bean.
+ *
+ * @param form
+ * 		The form to convert.
+ * @param defaultInstructions
+ * 		The default value given in the instructions
+ * 		field.  If the field equals this value, the validation will fail.
+ * @return 
+ * @throws FormValidationException
+ * 		
+ * @throws DBException
+ * 		
+ */
+public PrescriptionBean formToBean(EditPrescriptionsForm form, String defaultInstructions) throws DBException, FormValidationException {
+    EditPrescriptionsValidator validator = new EditPrescriptionsValidator(defaultInstructions);
+    validator.validate(form);
+    PrescriptionBean bean = new PrescriptionBean();
+    bean.setVisitID(getOvID());
+    MedicationBean med = medDAO.getNDCode(form.getMedID());
+    bean.setMedication(med);
+    bean.setDosage(Integer.valueOf(form.getDosage()));
+    bean.setStartDateStr(form.getStartDate());
+    bean.setEndDateStr(form.getEndDate());
+    bean.setInstructions(form.getInstructions());
+    ArrayList<OverrideReasonBean> reasons = new ArrayList<OverrideReasonBean>();
+    for (String reason : form.getOverrideCodes()) {
+        OverrideReasonBean override = new OverrideReasonBean();
+        override.setORCode(reason);
+        reasons.add(override);
+    }
+    bean.setReasons(reasons);
+    bean.setOverrideReasonOther(form.getOverrideOther());
+    return bean;
+}

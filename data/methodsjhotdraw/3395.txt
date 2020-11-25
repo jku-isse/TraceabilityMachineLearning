@@ -1,0 +1,4 @@
+public boolean intersects(Rectangle2D r) {
+    validatePath();
+    return generalPath.intersects(r);
+}

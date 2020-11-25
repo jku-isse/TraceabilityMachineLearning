@@ -1,0 +1,3 @@
+public DocumentManager getDocumentManager() {
+    return myDocumentManager;
+}

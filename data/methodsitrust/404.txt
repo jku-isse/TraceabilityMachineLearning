@@ -1,0 +1,18 @@
+/**
+ * Test method for {@link edu.ncsu.csc.itrust.action.EditPHRAction#updateAllergies(long, java.lang.String)}.
+ *
+ * @author Austin Olander
+ * @author Eric Whitmire
+
+This method tests that no warning is shown.
+ * @throws Exception
+ * 		
+ */
+public final void testUpdateAllergiesNoRX() throws Exception {
+    actionPHR = new EditPHRAction(factory, 9000000000L, "100");// HCP Kelly Doctor, patient Trend Setter
+
+    result = actionPHR.updateAllergies(100L, "483013420");// Adds M-maxene
+
+    assertTrue(result.contains("Allergy Added"));// Should return no warning
+
+}

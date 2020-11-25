@@ -1,0 +1,23 @@
+/**
+ * Creates a fake e-mail to notify the user that an emergency report has been created and viewed.
+ *
+ * @return the e-mail to be sent
+ * @throws DBException
+ * 		
+ */
+private Email makeEmail() throws DBException {
+    Email email = new Email();
+    List<PatientBean> reps = patientDAO.getRepresenting(pb.getMID());
+    List<String> toAddrs = new ArrayList<String>();
+    toAddrs.add(pb.getEmail());
+    for (PatientBean r : reps) {
+        toAddrs.add(r.getEmail());
+    }
+    email.setFrom("no-reply@itrust.com");
+    email.setToList(toAddrs);// patient and personal representative
+
+    email.setSubject(String.format("Emergency Report Viewed Notification"));
+    email.setBody(((("Dear " + (pb.getFullName())) + ",
+ An emergency report has been generated. ") + "Please login to iTrust to see who has viewed your records."));
+    return email;
+}

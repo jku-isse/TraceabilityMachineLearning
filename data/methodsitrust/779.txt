@@ -1,0 +1,30 @@
+/**
+ * Used by the JSP, passes a Map from the html form and a list of OfficeVisitBeans Returns a list of
+ * PrescriptionReportBeans
+ *
+ * @param params
+ * 		A java.util.HashMap containing the parameter map.
+ * @param officeVisits
+ * 		A java.util.List of OfficeVisitBeans for the visits.
+ * @return list of PrescriptionReportBeans
+ * @throws DBException
+ * 		
+ */
+public List<PrescriptionReportBean> getPrescriptionReports(Map<String, String> params, List<OfficeVisitBean> officeVisits) throws DBException {
+    HashMap<String, String> myParams = ParameterUtil.convertMap(params);
+    List<Long> ovIDs = new ArrayList<Long>();
+    for (int i = 0; i < (officeVisits.size()); i++) {
+        try {
+            if ((params.get(("ovOff" + i))) != null) {
+                int offset = Integer.valueOf(myParams.get(("ovOff" + i)));
+                ovIDs.add(officeVisits.get(offset).getVisitID());
+            }
+        } catch (NumberFormatException e) {
+            // just skip it
+        }
+    }
+    if ((ovIDs.size()) == 0)
+        return new ArrayList<PrescriptionReportBean>();
+
+    return prDAO.byOfficeVisitAndPatient(ovIDs, pid);
+}

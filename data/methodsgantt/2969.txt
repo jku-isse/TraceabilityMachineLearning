@@ -1,0 +1,3 @@
+public boolean getResourceRole() {
+    return cbResRole.isSelected();
+}

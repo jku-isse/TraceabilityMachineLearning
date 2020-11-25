@@ -1,0 +1,6 @@
+public void clockwiseArcTo(Object x1, Object y1, Object x2, Object y2, Object x3, Object y3, Object x4, Object y4) {
+    if ((size()) == 0) {
+        throw new IllegalPathStateException("clockwiseArcTo only allowed when not empty");
+    }
+    add(new EnhancedPath.Segment(EnhancedPath.SegType.CLOCKWISE_ARCTO, x1, y1, x2, y2, x3, y3, x4, y4));
+}

@@ -1,0 +1,6 @@
+/**
+ * Creates new instance.
+ */
+public ProgressIndicator(String message, String note) {
+    this(message, note, 0, 100, true);
+}

@@ -1,0 +1,8 @@
+/**
+ * Get the name of the user pseudo-field which is used to limit the
+ * query.  Only referrals where this field equals a specific user id
+ * will be returned.  This must be overridden by derived classes.
+ *
+ * @return The user field as a string.
+ */
+protected abstract String getUserField();

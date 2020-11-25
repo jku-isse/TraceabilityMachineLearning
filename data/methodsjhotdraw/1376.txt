@@ -1,0 +1,4 @@
+public void trackStart(Point anchor, int modifiersEx) {
+    pressed = true;
+    fireAreaInvalidated(getDrawingArea());
+}

@@ -1,0 +1,10 @@
+@Override
+protected void generateLookupTables() {
+    wheelScaleFactor = 1.35F;
+    isDiscrete = false;
+    if (isDiscrete) {
+        generateDiscreteLookupTables();
+    } else {
+        generateContiguousLookupTables();
+    }
+}

@@ -1,0 +1,5 @@
+/**
+ * Writes the view to the specified file.
+ * By convention this method is never invoked on the AWT Event Dispatcher Thread.
+ */
+public void write(File f) throws IOException;

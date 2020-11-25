@@ -1,0 +1,14 @@
+/**
+ * Get the current parser, if theres already one, or
+ * create a new parser and return it.
+ *
+ * @return The current PGN parser.
+ */
+private final PGNParser getPGNParser() {
+    if ((_parser) == null) {
+        // If there is no parser yet, create one.
+        _parser = new PGNParser(new PGNLexer(getReader()));
+    }
+    return _parser;// And return it.
+
+}

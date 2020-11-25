@@ -1,0 +1,6 @@
+protected Task findTaskUnderMousePointer(int xpos, int ypos) {
+    // int taskID = detectPosition(xpos, ypos, false);
+    // return taskID==-1 ? null : getTaskManager().getTask(taskID);
+    ChartItem chartItem = myChartModel.getChartItemWithCoordinates(xpos, ypos);
+    return chartItem == null ? null : chartItem.getTask();
+}

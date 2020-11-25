@@ -1,0 +1,12 @@
+protected Rectangle2D.Double getTransformedBounds() {
+    Figure owner = getOwner();
+    Rectangle2D.Double bounds = owner.getBounds();
+    if ((AttributeKeys.TRANSFORM.get(owner)) != null) {
+        Rectangle2D r = AttributeKeys.TRANSFORM.get(owner).createTransformedShape(bounds).getBounds2D();
+        bounds.x = r.getX();
+        bounds.y = r.getY();
+        bounds.width = r.getWidth();
+        bounds.height = r.getHeight();
+    }
+    return bounds;
+}

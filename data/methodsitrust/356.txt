@@ -1,0 +1,10 @@
+/**
+ *
+ *
+ * @return The EditProceduresAction sub action associated with this office visit.
+ * @throws iTrustException
+ * 		
+ */
+public EditProceduresAction procedures() throws iTrustException {
+    return proceduresAction;
+}

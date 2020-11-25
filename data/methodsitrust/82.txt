@@ -1,0 +1,8 @@
+public void testXmlEmpty() {
+    ArrayList<ArrayList<String>> testdata = new ArrayList<ArrayList<String>>();
+    ArrayList<String> headers = new ArrayList<String>();
+    Document emptyDoc = XmlGenerator.generateXml(headers, testdata);
+    NodeList list = emptyDoc.getChildNodes();
+    assertEquals(list.getLength(), 1);
+    assertEquals(list.item(0).getNodeName(), "PatientReport");
+}

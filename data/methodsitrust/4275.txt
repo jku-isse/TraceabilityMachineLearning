@@ -1,0 +1,6 @@
+public void testFilterByChildLastName() throws Exception {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.CHILD_LAST_NAME, "A", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertEquals(1, res.size());
+    assertTrue(((res.get(0).getMID()) == 2L));
+}

@@ -1,0 +1,20 @@
+/**
+ * This method is invoked, when the Figure is being removed from a Drawing.
+ * This method invokes handleDisconnect, if the Figure is connected.
+ *
+ * @see #handleDisconnect
+ */
+@Override
+public void removeNotify(Drawing drawing) {
+    if (((getStartConnector()) != null) && ((getEndConnector()) != null)) {
+        handleDisconnect(getStartConnector(), getEndConnector());
+    }
+    // Note: we do not set the connectors to null here, because we
+    // need them when we are added back to a drawing again. For example,
+    // when an undo is performed, after the LineConnection has been
+    // deleted.
+    /* setStartConnector(null);
+    setEndConnector(null);
+     */
+    super.removeNotify(drawing);
+}

@@ -1,0 +1,4 @@
+@Override
+public String toString() {
+    return (((((("FROM: " + (from)) + " TO: ") + (toList.toString())) + " SUBJECT: ") + (subject)) + " BODY: ") + (body);
+}

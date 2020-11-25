@@ -1,0 +1,22 @@
+public void testGetMessageAsSentence() {
+    Date dNow = new Date();
+    Timestamp tsNow = new Timestamp(dNow.getTime());
+    Timestamp tsYesterday = new Timestamp(((dNow.getTime()) - (((1000 * 60) * 60) * 24)));
+    Timestamp tsLongAgo = new Timestamp(((dNow.getTime()) - ((((1000 * 60) * 60) * 24) * 10)));
+    new SimpleDateFormat();
+    String msg;
+    msg = action.getMessageAsSentence("", tsNow, TransactionType.PATIENT_CREATE);
+    assertTrue(msg.contains(TransactionType.PATIENT_CREATE.getActionPhrase()));
+    msg = action.getMessageAsSentence("", tsNow, TransactionType.PATIENT_DISABLE);
+    assertTrue(msg.contains(TransactionType.PATIENT_DISABLE.getActionPhrase()));
+    msg = action.getMessageAsSentence("", tsNow, TransactionType.DEMOGRAPHICS_VIEW);
+    assertTrue(msg.contains(TransactionType.DEMOGRAPHICS_VIEW.getActionPhrase()));
+    msg = action.getMessageAsSentence("", tsYesterday, TransactionType.DEMOGRAPHICS_EDIT);
+    assertTrue(msg.contains(TransactionType.DEMOGRAPHICS_EDIT.getActionPhrase()));
+    msg = action.getMessageAsSentence("", tsYesterday, TransactionType.PATIENT_HEALTH_INFORMATION_EDIT);
+    assertTrue(msg.contains(TransactionType.PATIENT_HEALTH_INFORMATION_EDIT.getActionPhrase()));
+    msg = action.getMessageAsSentence("", tsLongAgo, TransactionType.PATIENT_HEALTH_INFORMATION_VIEW);
+    assertTrue(msg.contains(TransactionType.PATIENT_HEALTH_INFORMATION_VIEW.getActionPhrase()));
+    msg = action.getMessageAsSentence("", tsLongAgo, TransactionType.OFFICE_VISIT_VIEW);
+    assertTrue(msg.contains(TransactionType.OFFICE_VISIT_VIEW.getActionPhrase()));
+}

@@ -1,0 +1,49 @@
+public int compareDocumentOrder(Task task1, Task task2) {
+    if (task1 == task2) {
+        return 0;
+    }
+    List buffer1 = new ArrayList();
+    for (Task container = task1; container != null; container = getContainer(container)) {
+        buffer1.add(0, container);
+    }
+    List buffer2 = new ArrayList();
+    for (Task container = task2; container != null; container = getContainer(container)) {
+        buffer2.add(0, container);
+    }
+    if (((buffer1.get(0)) != (getRootTask())) && ((buffer2.get(0)) == (getRootTask()))) {
+        return -1;
+    }
+    if (((buffer1.get(0)) == (getRootTask())) && ((buffer2.get(0)) != (getRootTask()))) {
+        return 1;
+    }
+    int result = 0;
+    int i = 0;
+    Task commonRoot = null;
+    while (true) {
+        if (i == (buffer1.size())) {
+            return -1;
+        }
+        if (i == (buffer2.size())) {
+            return 1;
+        }
+        Task root1 = ((Task) (buffer1.get(i)));
+        Task root2 = ((Task) (buffer2.get(i)));
+        if (root1 != root2) {
+            assert commonRoot != null : (((((("Failure comparing task=" + task1) + " and task=") + task2) + "
+. Path1=") + buffer1) + "
+Path2=") + buffer2;
+            Task[] nestedTasks = commonRoot.getNestedTasks();
+            for (int j = 0; j < (nestedTasks.length); j++) {
+                if ((nestedTasks[j]) == root1) {
+                    return -1;
+                }
+                if ((nestedTasks[j]) == root2) {
+                    return 1;
+                }
+            }
+            throw new IllegalStateException("We should not be here");
+        }
+        i++;
+        commonRoot = root1;
+    } 
+}

@@ -1,0 +1,3 @@
+public void testRepresentsTrue() throws Exception {
+    assertTrue(patientDAO.represents(2L, 1L));
+}

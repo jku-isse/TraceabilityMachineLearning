@@ -1,0 +1,13 @@
+public void reverseConnection() {
+    if (((startConnector) != null) && ((endConnector) != null)) {
+        handleDisconnect(startConnector, endConnector);
+        Connector tmpC = startConnector;
+        startConnector = endConnector;
+        endConnector = tmpC;
+        Point2D.Double tmpP = getStartPoint();
+        setStartPoint(getEndPoint());
+        setEndPoint(tmpP);
+        handleConnect(startConnector, endConnector);
+        updateConnection();
+    }
+}

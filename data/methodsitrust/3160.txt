@@ -1,0 +1,9 @@
+public void testEditVisitID() throws Exception {
+    pres = prDAO.getList(955).get(0);
+    assertEquals(5, pres.getDosage());
+    pres.setDosage(6001);
+    pres.setVisitID(11);
+    epa.editPrescription(pres);
+    pres = prDAO.getList(11).get(0);
+    assertEquals(6001, pres.getDosage());
+}

@@ -1,0 +1,8 @@
+/**
+ * Get the current number of entries.
+ *
+ * @return The current number of entries.
+ */
+public final int getSize() {
+    return _hashtable.size();
+}

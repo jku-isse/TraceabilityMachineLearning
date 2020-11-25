@@ -1,0 +1,13 @@
+/**
+ * Sets whether the color formatter adaptively selects its output
+ * format depending on the last input format used by the user.
+ *
+ * @param newValue
+ * 		
+ */
+public void setAdaptive(boolean newValue) {
+    isAdaptive = newValue;
+    if (newValue && ((lastUsedInputFormat) != null)) {
+        outputFormat = lastUsedInputFormat;
+    }
+}

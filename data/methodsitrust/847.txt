@@ -1,0 +1,5 @@
+public void testSearchForPersonnelWithName2() {
+    SearchUsersAction act = new SearchUsersAction(factory, 9000000003L);
+    List<PersonnelBean> personnel = act.searchForPersonnelWithName("", "");
+    assertEquals(0, personnel.size());
+}

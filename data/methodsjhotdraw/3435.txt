@@ -1,0 +1,8 @@
+/**
+ * Tests if there are more points to read.
+ *
+ * @return true if there are more points to read
+ */
+public boolean isDone() {
+    return (index) >= ((path.size()) + (path.isClosed() ? 2 : 0));
+}

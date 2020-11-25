@@ -1,0 +1,3 @@
+public void uc44_acceptance_scenario_2() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/uc44_acceptance_scenario_2.sql"));
+}

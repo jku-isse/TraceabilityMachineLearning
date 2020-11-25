@@ -1,0 +1,11 @@
+public void testUpdateNDInformation0() throws Exception {
+    final String code = "88888";
+    final String desc = "new descrip 0";
+    OverrideReasonBean orc = new OverrideReasonBean(code);
+    addEmpty(code);
+    orc.setDescription(desc);
+    String result = action.updateInformation(orc);
+    assertEquals("Success: 1 row(s) updated", result);
+    orc = factory.getORCodesDAO().getORCode(code);
+    assertEquals(desc, orc.getDescription());
+}

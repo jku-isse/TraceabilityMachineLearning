@@ -1,0 +1,29 @@
+/**
+ * Return the security question for a particular user.
+ *
+ * @param mid
+ * 		The MID of the user we are looking up.
+ * @return The security question of the user we are looking up.
+ * @throws iTrustException
+ * 		
+ */
+public String getSecurityQuestion(long mid) throws iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT sQuestion FROM users WHERE MID=?");
+        ps.setLong(1, mid);
+        ResultSet r = ps.executeQuery();
+        if (r.next())
+            return r.getString("sQuestion");
+        else
+            throw new iTrustException(("No security question set for MID: " + mid));
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

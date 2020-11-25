@@ -1,0 +1,15 @@
+public void changeOrder(DefaultListModel buttonList, DefaultListModel deletedButtonList) {
+    iconList = new DefaultListModel();
+    for (int i = 0; i < (buttonList.size()); i++)
+        iconList.addElement(buttonList.getElementAt(i));
+
+    deletedIconList = new DefaultListModel();
+    for (int i = 0; i < (deletedButtonList.size()); i++)
+        deletedIconList.addElement(deletedButtonList.getElementAt(i));
+
+    addButtons();
+    options.setIconList(getIconPositions(iconList));
+    options.setDeletedIconList(getIconPositions(deletedIconList));
+    setHiddens();
+    refresh();
+}

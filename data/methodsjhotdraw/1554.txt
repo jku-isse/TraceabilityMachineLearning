@@ -1,0 +1,7 @@
+public void write(OutputStream out, Drawing drawing) throws IOException {
+    NanoXMLDOMOutput domo = new NanoXMLDOMOutput(factory);
+    domo.openElement(factory.getName(drawing));
+    drawing.write(domo);
+    domo.closeElement();
+    domo.save(out);
+}

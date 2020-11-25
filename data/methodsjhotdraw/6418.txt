@@ -1,0 +1,9 @@
+private static void getText(Node n, StringBuilder buf) {
+    if ((n.getNodeValue()) != null)
+        buf.append(n.getNodeValue());
+
+    NodeList children = n.getChildNodes();
+    for (int i = 0; i < (children.getLength()); i++) {
+        JavaxDOMInput.getText(children.item(i), buf);
+    }
+}

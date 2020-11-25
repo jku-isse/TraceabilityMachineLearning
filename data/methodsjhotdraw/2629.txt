@@ -1,0 +1,4 @@
+public void deactivate(DrawingEditor editor) {
+    super.deactivate(editor);
+    tracker.deactivate(editor);
+}

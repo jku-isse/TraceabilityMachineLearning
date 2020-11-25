@@ -1,0 +1,8 @@
+/**
+ * Try to remove the oldest entry.
+ * ATTENTION: this version will only work, if theres only _one_ entry for each hashkey!
+ */
+public final void removeOldestEntry() {
+    // Get and remove the oldest ply from the ordered list.
+    _hashtable.remove(_orderedList.removeFirst());
+}

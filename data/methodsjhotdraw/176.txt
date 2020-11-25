@@ -1,0 +1,4 @@
+public Component getComponent() {
+    View p = getActiveView();
+    return p == null ? null : p.getComponent();
+}

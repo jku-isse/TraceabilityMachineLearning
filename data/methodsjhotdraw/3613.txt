@@ -1,0 +1,10 @@
+public Collection<T> findContains(Point2D.Double p) {
+    HashSet<T> result = new HashSet<T>();
+    root.findContains(p, result);
+    for (Map.Entry<T, Rectangle2D.Double> entry : outside.entrySet()) {
+        if (entry.getValue().contains(p)) {
+            result.add(entry.getKey());
+        }
+    }
+    return result;
+}

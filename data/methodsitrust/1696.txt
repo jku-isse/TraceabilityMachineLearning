@@ -1,0 +1,3 @@
+public String getComponent() {
+    return component;
+}

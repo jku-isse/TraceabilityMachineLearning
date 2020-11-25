@@ -1,0 +1,4 @@
+public PathIterator getPathIterator(AffineTransform at) {
+    validatePath();
+    return generalPath.getPathIterator(at);
+}

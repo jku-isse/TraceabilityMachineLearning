@@ -1,0 +1,5 @@
+public void testRemovePersonnelAssignmentToHospital() throws iTrustException {
+    doAssignment();
+    assertEquals("HCP successfully unassigned", action.removeHCPAssignmentToHospital(("" + (ManageHospitalAssignmentsActionTest.hcp0)), ManageHospitalAssignmentsActionTest.hosp0));
+    assertEquals(0, action.getAssignedHospitals(("" + (ManageHospitalAssignmentsActionTest.hcp0))).size());
+}

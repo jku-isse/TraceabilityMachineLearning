@@ -1,0 +1,24 @@
+@SuppressWarnings("unchecked")
+public Transferable createTransferable(Drawing drawing, List<Figure> figures, double scaleFactor) throws IOException {
+    final Drawing d = ((Drawing) (prototype.clone()));
+    HashMap<Figure, Figure> originalToDuplicateMap = new HashMap<Figure, Figure>(figures.size());
+    final ArrayList<Figure> duplicates = new ArrayList<Figure>(figures.size());
+    for (Figure f : figures) {
+        Figure df = ((Figure) (f.clone()));
+        d.add(df);
+        duplicates.add(df);
+        originalToDuplicateMap.put(f, df);
+    }
+    for (Figure f : duplicates) {
+        f.remap(originalToDuplicateMap, true);
+    }
+    return new AbstractTransferable(dataFlavor) {
+        public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
+            if (isDataFlavorSupported(flavor)) {
+                return d;
+            } else {
+                throw new UnsupportedFlavorException(flavor);
+            }
+        }
+    };
+}

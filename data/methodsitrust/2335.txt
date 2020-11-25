@@ -1,0 +1,5 @@
+public PreparedStatement loadParameters(PreparedStatement ps, ApptTypeBean apptType) throws SQLException {
+    ps.setString(1, apptType.getName());
+    ps.setInt(2, apptType.getDuration());
+    return ps;
+}

@@ -1,0 +1,22 @@
+public void testViewTestingProcedures() throws Exception {
+    LabProcedureBean lp = new LabProcedureBean();
+    lp.setLoinc("10763-1");
+    lp.setCommentary("");
+    lp.setOvID(902L);
+    lp.setPid(2L);
+    lp.setResults("");
+    lp.allow();
+    lp.statusTesting();
+    lp.setLTID(5000000005L);
+    long id = lpDAO.addLabProcedure(lp);
+    lp.setProcedureID(id);
+    LabProcedureBean procedures = lpDAO.getLabProcedure(id);
+    List<LabProcedureBean> beans = action.viewTestingProcedures(5000000005L);
+    assertEquals(1, beans.size());
+    LabProcedureBean lpBean = beans.get(0);
+    assertEquals(procedures.getLoinc(), lpBean.getLoinc());
+    assertEquals(procedures.getOvID(), lpBean.getOvID());
+    assertEquals(procedures.getLoinc(), lpBean.getLoinc());
+    assertEquals("Testing", lpBean.getStatus());
+    assertEquals(procedures.getProcedureID(), lpBean.getProcedureID());
+}

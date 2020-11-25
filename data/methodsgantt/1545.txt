@@ -1,0 +1,7 @@
+public boolean isNonWorkingDay(Date curDayStart) {
+    if ((isWeekend(curDayStart)) || (isPublicHoliDay(curDayStart)))
+        return true;
+    else
+        return false;
+
+}

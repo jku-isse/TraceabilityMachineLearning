@@ -1,0 +1,8 @@
+/**
+ * Get the used search depth.
+ *
+ * @return The used search depth.
+ */
+public final int getSearchDepth() {
+    return _searchDepth;
+}

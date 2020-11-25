@@ -1,0 +1,3 @@
+public ResourceAssignment addAssignment(ProjectResource resource) {
+    return auxAddAssignment(resource);
+}

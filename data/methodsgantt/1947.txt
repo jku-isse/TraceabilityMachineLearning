@@ -1,0 +1,3 @@
+private Date getChartEndDate() {
+    return ((ChartModelBase.Offset) (getChartModel().getBottomUnitOffsets().get(((getChartModel().getBottomUnitOffsets().size()) - 1)))).getOffsetEnd();
+}

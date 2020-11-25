@@ -1,0 +1,7 @@
+@Override
+protected void setUp() throws Exception {
+    TestDataGenerator gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.hospitals();
+    gen.hcp0();
+}

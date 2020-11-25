@@ -1,0 +1,7 @@
+/**
+ * Office VisitID	Identifier that specifies the office visit in
+ * which the laboratory procedure was ordered
+ */
+public long getOvID() {
+    return ovID;
+}

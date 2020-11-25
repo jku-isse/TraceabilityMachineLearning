@@ -1,0 +1,12 @@
+public void testMatchWrongFormat() throws Exception {
+    qa.setAnswer(">");
+    qa.setConfirmAnswer(">");
+    qa.setQuestion("12345678");
+    try {
+        qav.validate(qa);
+        fail("exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals(1, e.getErrorList().size());
+        assertEquals("Security Answer: Up to 30 alphanumeric characters", e.getErrorList().get(0));
+    }
+}

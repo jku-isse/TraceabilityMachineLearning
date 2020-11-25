@@ -1,0 +1,7 @@
+public void setFirstFound(Date firstFound) {
+    if (null != firstFound)
+        this.firstFound = ((Date) (firstFound.clone()));
+    else
+        this.firstFound = null;
+
+}

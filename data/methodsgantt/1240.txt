@@ -1,0 +1,3 @@
+public IProgressMonitor createMonitor(Job job, IProgressMonitor group, int ticks) {
+    return group;
+}

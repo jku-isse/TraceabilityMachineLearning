@@ -1,0 +1,9 @@
+public CompositeColor clone() {
+    try {
+        CompositeColor that = ((CompositeColor) (super.clone()));
+        that.components = this.components.clone();
+        return that;
+    } catch (CloneNotSupportedException ex) {
+        throw new InternalError("CompositeColor not cloneable.");
+    }
+}

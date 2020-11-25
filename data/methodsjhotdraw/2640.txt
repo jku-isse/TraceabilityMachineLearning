@@ -1,0 +1,4 @@
+public void mouseEntered(MouseEvent evt) {
+    super.mouseEntered(evt);
+    tracker.mouseEntered(evt);
+}

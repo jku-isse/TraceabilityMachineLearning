@@ -1,0 +1,7 @@
+public void write(DOMOutput out) throws IOException {
+    out.openElement("children");
+    for (Figure child : getChildren()) {
+        out.writeObject(child);
+    }
+    out.closeElement();
+}

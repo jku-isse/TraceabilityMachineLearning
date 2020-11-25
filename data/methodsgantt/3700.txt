@@ -1,0 +1,7 @@
+public TaskDisplayColumnsTagHandler(TableHeaderUIFacade visibleFields, String tagName, String idPropertyName, String orderPropertyName, String widthPropertyName) {
+    myVisibleFields = visibleFields;
+    myTagName = tagName;
+    myIDPropertyName = idPropertyName;
+    myOrderPropertyName = orderPropertyName;
+    myWidthPropertyName = widthPropertyName;
+}

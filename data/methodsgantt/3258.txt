@@ -1,0 +1,6 @@
+CheckBoxAction(int day, String dayName, ButtonModel model, JCheckBox[] allCheckBoxes) {
+    super(dayName);
+    myDay = day;
+    myModel = model;
+    myCheckBoxes = allCheckBoxes;
+}

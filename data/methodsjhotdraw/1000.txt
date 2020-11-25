@@ -1,0 +1,6 @@
+/**
+ * Sent when a figure was removed.
+ */
+public void figureRemoved(FigureEvent e) {
+    // Empty
+}

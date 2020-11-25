@@ -1,0 +1,10 @@
+public void finish(final TaskMutator mutator) {
+    mutator.setIsolationLevel(TaskMutator.READ_COMMITED);
+    // if
+    // ((!myInitialEnd.equals(getTask().getEnd()))||(!myInitialStart.equals(getTask().getStart())))
+    getUndoManager().undoableEdit("Task boundary changed", new Runnable() {
+        public void run() {
+            doFinish(mutator);
+        }
+    });
+}

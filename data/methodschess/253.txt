@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the board of this entry.
+ *
+ * @return The board of this entry.
+ */
+public final Board getBoard() {
+    return _board;
+}

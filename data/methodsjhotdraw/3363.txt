@@ -1,0 +1,15 @@
+/**
+ * Subtract Vector a from Vector b.
+ *
+ * @param a
+ * 		Vector a - the value is not changed by this method
+ * @param b
+ * 		Vector b - the value is not changed by this method
+ * @return Vector a subtracted by Vector v.
+ */
+private static Point2D.Double v2SubII(Point2D.Double a, Point2D.Double b) {
+    Point2D.Double c = new Point2D.Double();
+    c.x = (a.x) - (b.x);
+    c.y = (a.y) - (b.y);
+    return c;
+}

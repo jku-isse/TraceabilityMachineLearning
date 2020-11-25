@@ -1,0 +1,9 @@
+public void testGetProcedureCodes() throws Exception {
+    action = new EditProceduresAction(factory, 9000000000L, "2", "955");
+    List<ProcedureBean> list = action.getProcedureCodes();
+    assertEquals(2, list.size());
+    // It can also be retrieved for an undefined office visit
+    action = new EditProceduresAction(factory, 9000000000L, "1");
+    list = action.getProcedureCodes();
+    assertEquals(2, list.size());
+}

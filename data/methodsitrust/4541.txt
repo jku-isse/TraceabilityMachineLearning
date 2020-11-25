@@ -1,0 +1,3 @@
+public Object getValue(String arg0) {
+    throw new IllegalStateException("should not be hit!");
+}

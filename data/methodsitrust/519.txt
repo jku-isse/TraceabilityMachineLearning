@@ -1,0 +1,8 @@
+public EditSingleReferralAction(DAOFactory factory, long hcpid) throws iTrustException {
+    referralDAO = factory.getReferralDAO();
+    patientDAO = factory.getPatientDAO();
+    personnelDAO = factory.getPersonnelDAO();
+    ovDAO = factory.getOfficeVisitDAO();
+    messageAction = new SendMessageAction(factory, hcpid);
+    this.hcpid = hcpid;
+}

@@ -1,0 +1,33 @@
+/**
+ * Test AddLabProcedure
+ *
+ * @throws Exception
+ * 		
+ */
+public void testAddLabProcedure() throws Exception {
+    // login UAP
+    WebConversation wc = login("8000000009", "uappass1");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - UAP Home", wr.getTitle());
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // choose patient 2
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // click 06/10/2007
+    wr.getLinkWith("06/10/2007").click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/editOfficeVisit.jsp?ovID=955"), wr.getURL().toString());
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    // add new lab procedure
+    WebForm form = wr.getFormWithID("labProcedureForm");
+    form.setParameter("loinc", "10666-6");
+    form.setParameter("labTech", "5000000001");
+    form.getSubmitButton("addLP").click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    assertTrue(wr.getText().contains("information successfully updated"));
+}

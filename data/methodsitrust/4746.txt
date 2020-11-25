@@ -1,0 +1,7 @@
+public void testAllCorrect() throws Exception {
+    DiagnosisBean d = new DiagnosisBean();
+    d.setDescription("A description");
+    d.setICDCode("8.84");
+    d.setOvDiagnosisID(0L);
+    validator.validate(d);
+}

@@ -1,0 +1,3 @@
+public Handle getHandle() {
+    return ((Handle) (getSource()));
+}

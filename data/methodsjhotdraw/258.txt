@@ -1,0 +1,16 @@
+protected void saveToFile(final View p, final File file) {
+    p.execute(new Worker() {
+        public Object construct() {
+            try {
+                p.write(file);
+                return null;
+            } catch (IOException e) {
+                return e;
+            }
+        }
+
+        public void finished(Object value) {
+            fileSaved(p, file, value);
+        }
+    });
+}

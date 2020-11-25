@@ -1,0 +1,7 @@
+/**
+ * This method is invoked by the drawing view, when its transform
+ * has changed. This means, that DrawingView.viewToDrawing and
+ * DrawingView.drawingToView will return different values than they
+ * did before.
+ */
+public void viewTransformChanged();

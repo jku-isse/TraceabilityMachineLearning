@@ -1,0 +1,62 @@
+/**
+ * Reads a &lt;styles&gt; element from the specified
+ * XML element.
+ * <p>
+ * The &lt;style:style&gt; element can represent paragraph, text, and
+ * graphic styles.
+ *
+ * @param elem
+ * 		A &lt;style&gt; element.
+ * @param a
+ * 		Style attributes to be filled in by this method.
+ */
+private void readStyleElement(IXMLElement elem, HashMap<String, ODGStylesReader.Style> styles) throws IOException {
+    // The style:name attribute identifies the name of the style. This attribute, combined with the
+    // style:family attribute, uniquely identifies a style. The <office:styles>,
+    // <office:automatic-styles> and <office:master-styles> elements each must not
+    // contain two styles with the same family and the same name.
+    // For automatic styles, a name is generated during document export. If the document is exported
+    // several times, it cannot be assumed that the same name is generated each time.
+    // In an XML document, the name of each style is a unique name that may be independent of the
+    // language selected for an office applications user interface. Usually these names are the ones used
+    // for the English version of the user interface.
+    String styleName = elem.getAttribute("name", ODGConstants.STYLE_NAMESPACE, null);
+    String family = elem.getAttribute("family", ODGConstants.STYLE_NAMESPACE, null);
+    String parentStyleName = elem.getAttribute("parent-style-name", ODGConstants.STYLE_NAMESPACE, null);
+    if (ODGStylesReader.DEBUG)
+        System.out.println((("ODGStylesReader <style name=" + styleName) + " ...>...</>"));
+
+    if (styleName != null) {
+        ODGStylesReader.Style a = styles.get(styleName);
+        if (a == null) {
+            a = new ODGStylesReader.Style();
+            a.name = styleName;
+            a.family = family;
+            a.parentName = parentStyleName;
+            styles.put(styleName, a);
+        }
+        for (IXMLElement child : elem.getChildren()) {
+            String ns = child.getNamespace();
+            String name = child.getName();
+            if ((name.equals("drawing-page-properties")) && ((ns == null) || (ns.equals(ODGConstants.STYLE_NAMESPACE)))) {
+                readDrawingPagePropertiesElement(child, a);
+            } else
+                if ((name.equals("graphic-properties")) && ((ns == null) || (ns.equals(ODGConstants.STYLE_NAMESPACE)))) {
+                    readGraphicPropertiesElement(child, a);
+                } else
+                    if ((name.equals("paragraph-properties")) && ((ns == null) || (ns.equals(ODGConstants.STYLE_NAMESPACE)))) {
+                        readParagraphPropertiesElement(child, a);
+                    } else
+                        if ((name.equals("text-properties")) && ((ns == null) || (ns.equals(ODGConstants.STYLE_NAMESPACE)))) {
+                            readTextPropertiesElement(child, a);
+                        } else {
+                            if (ODGStylesReader.DEBUG)
+                                System.out.println(((("ODGStylesReader unsupported <" + (elem.getName())) + "> child ") + child));
+
+                        }
+
+
+
+        }
+    }
+}

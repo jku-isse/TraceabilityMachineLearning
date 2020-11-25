@@ -1,0 +1,9 @@
+public void testNotAuthorized() throws Exception {
+    gen.standardData();
+    try {
+        personnelEditor = new EditPersonnelAction(factory, 9000000000L, "9000000003");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("You can only edit your own demographics!", e.getMessage());
+    }
+}

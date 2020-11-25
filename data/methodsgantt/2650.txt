@@ -1,0 +1,3 @@
+public GanttTabbedPane(int tabPlacement, int tabLayoutPolicy) {
+    super(tabPlacement, tabLayoutPolicy);
+}

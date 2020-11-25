@@ -1,0 +1,7 @@
+/**
+ * Set the ply for this notation.
+ *
+ * @param ply
+ * 		The ply for this notation.
+ */
+void setPly(Ply ply);

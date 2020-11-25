@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @deprecated Use TimeUnit class istead and method getDuration()
+ */
+public int getLength() {
+    return ((int) (getDuration().getLength()));
+}

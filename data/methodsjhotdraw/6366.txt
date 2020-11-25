@@ -1,0 +1,5 @@
+/**
+ * Gets an attribute of the current element of the DOM Document and of
+ * all parent DOM elements.
+ */
+public List<String> getInheritedAttribute(String name);

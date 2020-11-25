@@ -1,0 +1,21 @@
+/**
+ * Gets the image data. If necessary, this method creates the image
+ * data from the buffered image.
+ */
+public byte[] getImageData() {
+    if (((bufferedImage) != null) && ((imageData) == null)) {
+        try {
+            ByteArrayOutputStream bout = new ByteArrayOutputStream();
+            ImageIO.write(bufferedImage, "PNG", bout);
+            bout.close();
+            imageData = bout.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // If we cant create image data from the buffered image,
+            // there is no use to keep the buffered image and try again, so
+            // we drop the buffered image.
+            bufferedImage = null;
+        }
+    }
+    return imageData;
+}

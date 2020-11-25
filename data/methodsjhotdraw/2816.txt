@@ -1,0 +1,4 @@
+/**
+ * Gets the font size of the text held by the TextHolderFigure.
+ */
+public float getFontSize();

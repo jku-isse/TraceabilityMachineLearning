@@ -1,0 +1,6 @@
+/**
+ * Constructs a perpendicular line with a height of 10.
+ */
+public PerpendicularBar() {
+    this(10);
+}

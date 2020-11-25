@@ -1,0 +1,3 @@
+public void deadRecurringPatients() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/deadRecurringPatients.sql"));
+}

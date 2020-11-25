@@ -1,0 +1,5 @@
+public AllocationTagHandler(ResourceManager resourceMgr, TaskManager taskMgr, RoleManager roleMgr) {
+    myResourceManager = resourceMgr;
+    myTaskManager = taskMgr;
+    myRoleManager = roleMgr;
+}

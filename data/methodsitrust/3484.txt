@@ -1,0 +1,4 @@
+private int getCurrentMonth() {
+    Calendar cal = new GregorianCalendar();
+    return cal.get(Calendar.MONTH);
+}

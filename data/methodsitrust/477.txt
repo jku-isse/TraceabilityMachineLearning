@@ -1,0 +1,15 @@
+/**
+ * Test edit prescription
+ *
+ * @throws Exception
+ * 		
+ */
+public void testEditPrescription() throws Exception {
+    action = new EditPrescriptionsAction(factory, 9000000000L, "2", "955");
+    PrescriptionBean bean = action.getPrescriptions().get(0);
+    assertEquals(5, bean.getDosage());
+    bean.setDosage(42);
+    action.editPrescription(bean);
+    bean = action.getPrescriptions().get(0);
+    assertEquals(42, bean.getDosage());
+}

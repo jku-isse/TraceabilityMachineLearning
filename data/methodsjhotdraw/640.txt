@@ -1,0 +1,1 @@
+public CompositeColor get(int index);

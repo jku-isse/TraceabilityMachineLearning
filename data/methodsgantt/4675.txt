@@ -1,0 +1,4 @@
+public int compareTo(Object o) {
+    TaskDependencyCollectionImpl.MutationInfo rvalue = ((TaskDependencyCollectionImpl.MutationInfo) (o));
+    return (myOrder) - (rvalue.myOrder);
+}

@@ -1,0 +1,11 @@
+/**
+ * Normalizes the input vector and returns it.
+ */
+private static Point2D.Double v2Normalize(Point2D.Double v) {
+    double len = Bezier.v2Length(v);
+    if (len != 0.0) {
+        v.x /= len;
+        v.y /= len;
+    }
+    return v;
+}

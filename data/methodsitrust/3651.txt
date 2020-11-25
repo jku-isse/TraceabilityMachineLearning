@@ -1,0 +1,3 @@
+private BloodType(String name) {
+    this.name = name;
+}

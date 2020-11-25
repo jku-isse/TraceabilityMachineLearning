@@ -1,0 +1,4 @@
+public IStatus canPaste(ChartSelection selection) {
+    // TODO Auto-generated method stub
+    return null;
+}

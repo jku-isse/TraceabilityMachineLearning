@@ -1,0 +1,10 @@
+/**
+ * Sets the rubberband color for the tool. Setting this to null, disables
+ * the rubberband.
+ *
+ * @param c
+ * 		Rubberband color or null.
+ */
+public void setRubberbandColor(Color c) {
+    rubberbandColor = c;
+}

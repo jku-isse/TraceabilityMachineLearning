@@ -1,0 +1,10 @@
+/**
+ * Removes all children from the composite figure without firing events.
+ * <p>
+ * This method can be used to temporarily remove a child from this
+ * CompositeFigure (for example to reorder the sequence of the children).
+ * <p>
+ * This is a convenience method for
+ * {@code while(getChildCount() > 0) basicRemoveChild(0);}
+ */
+public void basicRemoveAllChildren();

@@ -1,0 +1,6 @@
+/**
+ * Sets the start of the connection.
+ */
+protected void connect(Connector c) {
+    getOwner().setStartConnector(c);
+}

@@ -1,0 +1,6 @@
+private void addEmpty(String id) throws Exception {
+    HospitalBean hosp = new HospitalBean(id, " ");
+    assertEquals(getAddHospitalSuccessString(hosp), action.addHospital(hosp));
+    hosp = factory.getHospitalsDAO().getHospital(id);
+    assertEquals(" ", hosp.getHospitalName());
+}

@@ -1,0 +1,5 @@
+private static EventSetDescriptor[] getEdescriptor() {
+    // GEN-HEADEREND:Events
+    // Here you can add code for customizing the event sets array.
+    return CanvasToolBarBeanInfo.eventSets;
+}// GEN-LAST:Events

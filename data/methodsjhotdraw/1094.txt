@@ -1,0 +1,9 @@
+/**
+ * Sets the InputMap for the Tool.
+ *
+ * @see #keyPressed
+ * @see #setActionMap
+ */
+public void setInputMap(InputMap newValue) {
+    inputMap = newValue;
+}

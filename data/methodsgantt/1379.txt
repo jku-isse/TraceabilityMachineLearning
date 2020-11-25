@@ -1,0 +1,3 @@
+protected String getLocalizedName() {
+    return GanttProject.correctLabel(GanttLanguage.getInstance().getText("undo"));
+}

@@ -1,0 +1,19 @@
+/**
+ * Gets compatible handles.
+ *
+ * @return A collection containing the handle and all compatible handles.
+ */
+public Collection<Handle> getCompatibleHandles(Handle master) {
+    validateHandles();
+    HashSet<Figure> owners = new HashSet<Figure>();
+    LinkedList<Handle> compatibleHandles = new LinkedList<Handle>();
+    owners.add(master.getOwner());
+    compatibleHandles.add(master);
+    for (Handle handle : getSelectionHandles()) {
+        if ((!(owners.contains(handle.getOwner()))) && (handle.isCombinableWith(master))) {
+            owners.add(handle.getOwner());
+            compatibleHandles.add(handle);
+        }
+    }
+    return compatibleHandles;
+}

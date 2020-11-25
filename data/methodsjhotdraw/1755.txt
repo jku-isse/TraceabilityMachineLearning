@@ -1,0 +1,11 @@
+@Override
+public void draw(Graphics2D g) {
+    g.setStroke(rubberbandStroke);
+    g.setColor(rubberbandColor);
+    g.drawRect(rubberband.x, rubberband.y, ((rubberband.width) - 1), ((rubberband.height) - 1));
+    if (((hoverHandles.size()) > 0) && (!(getView().isFigureSelected(hoverFigure)))) {
+        for (Handle h : hoverHandles) {
+            h.draw(g);
+        }
+    }
+}

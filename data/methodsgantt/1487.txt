@@ -1,0 +1,4 @@
+public boolean isPublicHoliDay(Date curDayStart) {
+    // TODO Auto-generated method stub
+    return false;
+}

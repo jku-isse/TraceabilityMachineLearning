@@ -1,0 +1,11 @@
+/**
+ * posts the requests to the server, with all the cookies and parameters that were added
+ *
+ * @return input stream with the server response
+ * @throws IOException
+ * 		
+ */
+public InputStream post() throws IOException {
+    postCookies();
+    return doPost();
+}

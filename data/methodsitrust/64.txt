@@ -1,0 +1,8 @@
+/**
+ * Returns the current locale
+ *
+ * @return the current locale
+ */
+public Locale getCurrentLocale() {
+    return currentLocale;
+}

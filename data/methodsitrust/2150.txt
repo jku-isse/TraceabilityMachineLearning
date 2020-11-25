@@ -1,0 +1,3 @@
+public float getPercentSatisfactionResults() {
+    return percentSatResultsAvailable;
+}

@@ -1,0 +1,16 @@
+public void testUpdateLabProcedure() throws Exception {
+    long id = lpDAO.addLabProcedure(l);
+    LabProcedureBean procedures = lpDAO.getLabProcedure(id);
+    assertEquals(1L, procedures.getPid());
+    l.statusComplete();
+    l.setResults("The results were good");
+    l.setProcedureID(id);
+    // the database cuts off milliseconds so we have to do that here
+    long i = ((System.currentTimeMillis()) / 1000) * 1000;
+    lpDAO.updateLabProcedure(l);
+    Timestamp t = new Timestamp(i);
+    LabProcedureBean updprocedures = lpDAO.getLabProcedure(id);
+    assertEquals(t.toString(), updprocedures.getTimestamp().toString());
+    assertEquals(LabProcedureBean.Completed, updprocedures.getStatus());
+    assertEquals("The results were good", updprocedures.getResults());
+}

@@ -1,0 +1,3 @@
+public void setLoggedInMID(long loggedInMID) {
+    this.loggedInMID = loggedInMID;
+}

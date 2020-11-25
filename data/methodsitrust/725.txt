@@ -1,0 +1,11 @@
+/**
+ * This method checks to make sure checkLTHospital method can correctly handle
+ * and illegal MID.
+ */
+public void testCheckLTIDStringMID() {
+    try {
+        assertFalse(ltAction.checkLTHospital("ABCD"));
+        fail();
+    } catch (iTrustException e) {
+    }
+}

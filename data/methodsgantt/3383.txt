@@ -1,0 +1,4 @@
+public void actionPerformed(ActionEvent e) {
+    ImportFileWizardImpl wizard = new ImportFileWizardImpl(myUIFacade, myProject);
+    wizard.show();
+}

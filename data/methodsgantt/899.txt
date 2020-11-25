@@ -1,0 +1,15 @@
+/**
+ * Collapse
+ */
+public void treeCollapsed(TreeExpansionEvent e) {
+    if ((area) != null) {
+        area.repaint();
+    }
+    DefaultMutableTreeNode node = ((DefaultMutableTreeNode) (e.getPath().getLastPathComponent()));
+    Task task = ((Task) (node.getUserObject()));
+    /* int index = expand.indexOf(new Integer(task.getTaskID())); if
+    (index >= 0) { expand.remove(index); appli.setAskForSave(true); }
+     */
+    task.setExpand(false);
+    appli.setAskForSave(true);
+}

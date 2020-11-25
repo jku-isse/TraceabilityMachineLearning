@@ -1,0 +1,6 @@
+public void remap(Map<Figure, Figure> oldToNew, boolean disconnectIfNotInMap) {
+    super.remap(oldToNew, disconnectIfNotInMap);
+    for (Figure child : children) {
+        child.remap(oldToNew, disconnectIfNotInMap);
+    }
+}

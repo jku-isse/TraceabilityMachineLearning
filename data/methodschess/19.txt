@@ -1,0 +1,9 @@
+/**
+ * Set a new renderer.
+ *
+ * @param renderer
+ * 		The new renderer.
+ */
+final void setRenderer(ChessBoardRenderer renderer) {
+    _renderer = renderer;
+}

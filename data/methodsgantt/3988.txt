@@ -1,0 +1,3 @@
+public static RoleManager getInstance() {
+    return RoleManager.Access.ourInstance;
+}

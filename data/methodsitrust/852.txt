@@ -1,0 +1,16 @@
+/**
+ * Returns the designated HCPs for the given patient.
+ *
+ * @return designated HCPs for the given patient.
+ * @throws iTrustException
+ * 		
+ */
+public List<PersonnelBean> getDLHCPsFor(long pid) throws iTrustException {
+    List<PersonnelBean> dlhcps = new ArrayList<PersonnelBean>();
+    try {
+        dlhcps = patientDAO.getDeclaredHCPs(pid);
+    } catch (DBException e) {
+        e.printStackTrace();
+    }
+    return dlhcps;
+}

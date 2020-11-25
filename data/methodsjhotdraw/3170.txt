@@ -1,0 +1,9 @@
+/**
+ * Creates a new instance.
+ */
+public EditCanvasAction(Application app, DrawingEditor editor) {
+    super(editor);
+    this.app = app;
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    labels.configureAction(this, EditCanvasAction.ID);
+}

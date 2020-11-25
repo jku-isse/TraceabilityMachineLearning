@@ -1,0 +1,10 @@
+/**
+ * Sets the EnginePanel to be able to output in the panel and not only with
+ * System.out.println(...)
+ *
+ * @param panel
+ * 		The EnginePanel to set
+ */
+public void setEnginePanel(EnginePanel panel) {
+    this._enginePanel = panel;
+}

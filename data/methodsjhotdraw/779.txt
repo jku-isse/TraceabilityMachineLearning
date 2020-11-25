@@ -1,0 +1,15 @@
+public Rectangle2D.Double getDrawingArea() {
+    double strokeTotalWidth = AttributeKeys.getStrokeTotalWidth(this);
+    double width = strokeTotalWidth / 2.0;
+    if ((AttributeKeys.STROKE_JOIN.get(this)) == (BasicStroke.JOIN_MITER)) {
+        width *= AttributeKeys.STROKE_MITER_LIMIT.get(this);
+    } else
+        if ((AttributeKeys.STROKE_CAP.get(this)) != (BasicStroke.CAP_BUTT)) {
+            width += strokeTotalWidth * 2;
+        }
+
+    width++;
+    Rectangle2D.Double r = getBounds();
+    Geom.grow(r, width, width);
+    return r;
+}

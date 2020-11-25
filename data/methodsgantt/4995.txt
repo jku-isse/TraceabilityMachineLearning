@@ -1,0 +1,21 @@
+/**
+ *
+ *
+ * @return the color as hexadecimal version like #RRGGBB
+ */
+public static String getColor(Color color) {
+    String res = "#";
+    if ((color.getRed()) <= 15)
+        res += "0";
+
+    res += Integer.toHexString(color.getRed());
+    if ((color.getGreen()) <= 15)
+        res += "0";
+
+    res += Integer.toHexString(color.getGreen());
+    if ((color.getBlue()) <= 15)
+        res += "0";
+
+    res += Integer.toHexString(color.getBlue());
+    return res;
+}

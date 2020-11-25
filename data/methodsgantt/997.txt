@@ -1,0 +1,24 @@
+/**
+ * Changes the language.
+ *
+ * @param ganttLanguage
+ * 		New language to use.
+ */
+public void changeLanguage(GanttLanguage ganttLanguage) {
+    GanttTreeTableModel.strColType = GanttTreeTableModel.language.getText("tableColType");
+    GanttTreeTableModel.strColPriority = GanttTreeTableModel.language.getText("tableColPriority");
+    GanttTreeTableModel.strColInfo = GanttTreeTableModel.language.getText("tableColInfo");
+    GanttTreeTableModel.strColName = GanttTreeTableModel.language.getText("tableColName");
+    GanttTreeTableModel.strColBegDate = GanttTreeTableModel.language.getText("tableColBegDate");
+    GanttTreeTableModel.strColEndDate = GanttTreeTableModel.language.getText("tableColEndDate");
+    GanttTreeTableModel.strColDuration = GanttTreeTableModel.language.getText("tableColDuration");
+    GanttTreeTableModel.strColCompletion = GanttTreeTableModel.language.getText("tableColCompletion");
+    GanttTreeTableModel.strColCoordinator = GanttTreeTableModel.language.getText("tableColCoordinator");
+    GanttTreeTableModel.strColPredecessors = GanttTreeTableModel.language.getText("tableColPredecessors");
+    GanttTreeTableModel.strColID = GanttTreeTableModel.language.getText("tableColID");
+    titles.clear();
+    String[] cols = new String[]{ GanttTreeTableModel.strColType, GanttTreeTableModel.strColPriority, GanttTreeTableModel.strColInfo, GanttTreeTableModel.strColName, GanttTreeTableModel.strColBegDate, GanttTreeTableModel.strColEndDate, GanttTreeTableModel.strColDuration, GanttTreeTableModel.strColCompletion, GanttTreeTableModel.strColCoordinator, GanttTreeTableModel.strColPredecessors, GanttTreeTableModel.strColID };
+    for (int i = 0; i < (cols.length); i++)
+        titles.add(new String(cols[i]));
+
+}

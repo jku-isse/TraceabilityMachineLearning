@@ -1,0 +1,8 @@
+public void testRemove() {
+    try {
+        evilDAO.remove(1L);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

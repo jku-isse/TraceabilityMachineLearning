@@ -1,0 +1,3 @@
+TreeTableCellEditorImpl(TableCellEditor proxiedEditor) {
+    myProxiedEditor = proxiedEditor;
+}

@@ -1,0 +1,23 @@
+/* Authenticate Patient
+MID: 2
+Password: pw
+Choose option View My Records
+ */
+public void testViewRecords3() throws Exception {
+    // login patient 2
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    // click on View My Records
+    wr = wr.getLinkWith("My Records").click();
+    assertTrue(wr.getText().contains("210.0lbs"));
+    assertTrue(wr.getText().contains("500 mg/dL"));
+    // click on a particular office visit to check medication and diagnoses
+    wr = wr.getLinkWith("Jun 10, 2007").click();
+    assertTrue(wr.getText().contains("Diabetes with ketoacidosis"));
+    assertTrue(wr.getText().contains("Prioglitazone"));
+    assertTrue(wr.getText().contains("Tetracycline"));
+    assertTrue(wr.getText().contains("Notes:"));
+    iTrustHTTPTest.assertLogged(TransactionType.MEDICAL_RECORD_VIEW, 2L, 2L, "");
+}

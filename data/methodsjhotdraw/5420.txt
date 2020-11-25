@@ -1,0 +1,87 @@
+@Override
+public Collection<Action> getActions(Point2D.Double p) {
+    final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+    LinkedList<Action> actions = new LinkedList<Action>();
+    if ((AttributeKeys.TRANSFORM.get(this)) != null) {
+        actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                SVGPathFigure.this.willChange();
+                fireUndoableEditHappened(AttributeKeys.TRANSFORM.setUndoable(SVGPathFigure.this, null));
+                SVGPathFigure.this.changed();
+            }
+        });
+        actions.add(new AbstractAction(labels.getString("edit.flattenTransform.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                // CompositeEdit edit = new CompositeEdit(labels.getString("flattenTransform"));
+                // TransformEdit edit = new TransformEdit(SVGPathFigure.this, )
+                final Object restoreData = getTransformRestoreData();
+                UndoableEdit edit = new AbstractUndoableEdit() {
+                    @Override
+                    public String getPresentationName() {
+                        return labels.getString("edit.flattenTransform.text");
+                    }
+
+                    @Override
+                    public void undo() throws CannotUndoException {
+                        super.undo();
+                        willChange();
+                        restoreTransformTo(restoreData);
+                        changed();
+                    }
+
+                    @Override
+                    public void redo() throws CannotRedoException {
+                        super.redo();
+                        willChange();
+                        restoreTransformTo(restoreData);
+                        flattenTransform();
+                        changed();
+                    }
+                };
+                willChange();
+                flattenTransform();
+                changed();
+                fireUndoableEditHappened(edit);
+            }
+        });
+    }
+    if (AttributeKeys.CLOSED.get(getChild(((getChildCount()) - 1)))) {
+        actions.add(new AbstractAction(labels.getString("attribute.openPath.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                SVGPathFigure.this.willChange();
+                for (Figure child : getChildren()) {
+                    getDrawing().fireUndoableEditHappened(AttributeKeys.CLOSED.setUndoable(child, false));
+                }
+                SVGPathFigure.this.changed();
+            }
+        });
+    } else {
+        actions.add(new AbstractAction(labels.getString("attribute.closePath.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                SVGPathFigure.this.willChange();
+                for (Figure child : getChildren()) {
+                    getDrawing().fireUndoableEditHappened(AttributeKeys.CLOSED.setUndoable(child, true));
+                }
+                SVGPathFigure.this.changed();
+            }
+        });
+    }
+    if ((AttributeKeys.WINDING_RULE.get(this)) != (AttributeKeys.WindingRule.EVEN_ODD)) {
+        actions.add(new AbstractAction(labels.getString("attribute.windingRule.evenOdd.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                SVGPathFigure.this.willChange();
+                getDrawing().fireUndoableEditHappened(AttributeKeys.WINDING_RULE.setUndoable(SVGPathFigure.this, AttributeKeys.WindingRule.EVEN_ODD));
+                SVGPathFigure.this.changed();
+            }
+        });
+    } else {
+        actions.add(new AbstractAction(labels.getString("attribute.windingRule.nonZero.text")) {
+            public void actionPerformed(ActionEvent evt) {
+                AttributeKeys.WINDING_RULE.set(SVGPathFigure.this, AttributeKeys.WindingRule.NON_ZERO);
+                getDrawing().fireUndoableEditHappened(AttributeKeys.WINDING_RULE.setUndoable(SVGPathFigure.this, AttributeKeys.WindingRule.NON_ZERO));
+            }
+        });
+    }
+    return actions;
+}

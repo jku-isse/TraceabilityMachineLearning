@@ -1,0 +1,3 @@
+public PrescriptionFieldException(String message) {
+    super(message);
+}

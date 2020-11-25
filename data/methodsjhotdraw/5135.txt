@@ -1,0 +1,3 @@
+public double getX1() {
+    return x1;
+}

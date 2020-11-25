@@ -1,0 +1,16 @@
+public void trackStep(Point anchor, Point lead, int modifiersEx) {
+    if (getOwner().isTransformable()) {
+        Point2D.Double p = view.viewToDrawing(new Point(((lead.x) + (dx)), ((lead.y) + (dy))));
+        view.getConstrainer().constrainPoint(p);
+        if ((AttributeKeys.TRANSFORM.get(getOwner())) != null) {
+            try {
+                AttributeKeys.TRANSFORM.get(getOwner()).inverseTransform(p, p);
+            } catch (NoninvertibleTransformException ex) {
+                if (ResizeHandleKit.DEBUG) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        trackStepNormalized(p);
+    }
+}

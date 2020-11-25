@@ -1,0 +1,23 @@
+/**
+ * Removes the given medication from its office visit
+ *
+ * @param ovMedicationID
+ * 		The unique ID of the medication to be removed.
+ * @throws DBException
+ * 		
+ */
+public void remove(long ovProcedureID) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("DELETE FROM ovprocedure WHERE ID=? ");
+        ps.setLong(1, ovProcedureID);
+        ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

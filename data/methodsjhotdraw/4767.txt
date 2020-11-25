@@ -1,0 +1,11 @@
+public void setEditor(DrawingEditor newValue) {
+    DrawingEditor oldValue = editor;
+    if (oldValue != null) {
+        oldValue.remove(view);
+    }
+    editor = newValue;
+    propertiesPanel.setEditor(editor);
+    if (newValue != null) {
+        newValue.add(view);
+    }
+}

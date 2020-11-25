@@ -1,0 +1,6 @@
+Load(Date startDate, Date endDate, float load, Task ref) {
+    this.load = load;
+    this.refTask = ref;
+    this.startDate = startDate;
+    this.endDate = endDate;
+}

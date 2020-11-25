@@ -1,0 +1,38 @@
+public void keyPressed(KeyEvent evt) {
+    final BezierFigure f = getOwner();
+    BezierPath.Node oldNode = f.getNode(index);
+    switch (evt.getKeyCode()) {
+        case KeyEvent.VK_UP :
+            f.willChange();
+            f.setPoint(index, controlPointIndex, new Point2D.Double(oldNode.x[controlPointIndex], ((oldNode.y[controlPointIndex]) - 1.0)));
+            f.changed();
+            view.getDrawing().fireUndoableEditHappened(new BezierNodeEdit(f, index, oldNode, f.getNode(index)));
+            evt.consume();
+            break;
+        case KeyEvent.VK_DOWN :
+            f.willChange();
+            f.setPoint(index, controlPointIndex, new Point2D.Double(oldNode.x[controlPointIndex], ((oldNode.y[controlPointIndex]) + 1.0)));
+            f.changed();
+            view.getDrawing().fireUndoableEditHappened(new BezierNodeEdit(f, index, oldNode, f.getNode(index)));
+            evt.consume();
+            break;
+        case KeyEvent.VK_LEFT :
+            f.willChange();
+            f.setPoint(index, controlPointIndex, new Point2D.Double(((oldNode.x[controlPointIndex]) - 1.0), oldNode.y[controlPointIndex]));
+            f.changed();
+            view.getDrawing().fireUndoableEditHappened(new BezierNodeEdit(f, index, oldNode, f.getNode(index)));
+            evt.consume();
+            break;
+        case KeyEvent.VK_RIGHT :
+            f.willChange();
+            f.setPoint(index, controlPointIndex, new Point2D.Double(((oldNode.x[controlPointIndex]) + 1.0), oldNode.y[controlPointIndex]));
+            f.changed();
+            view.getDrawing().fireUndoableEditHappened(new BezierNodeEdit(f, index, oldNode, f.getNode(index)));
+            evt.consume();
+            break;
+        case KeyEvent.VK_DELETE :
+        case KeyEvent.VK_BACK_SPACE :
+            evt.consume();
+            break;
+    }
+}

@@ -1,0 +1,1 @@
+public GPCalendar.DayType getDayTypeDate(Date curDayStart);

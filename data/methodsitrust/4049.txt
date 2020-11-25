@@ -1,0 +1,14 @@
+public void testDeclineAnAppointment() throws Exception {
+    gen.clearAllTables();
+    gen.standardData();
+    gen.pendingAppointmentAlert();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr.getLinkWith("Appointment Requests").click();
+    wr = wc.getCurrentPage();
+    wr.getLinkWith("Reject").click();
+    wr = wc.getCurrentPage();
+    wr.getLinkWith("Home").click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("No appointment requests."));
+}

@@ -1,0 +1,4 @@
+/**
+ * Gets the node count.
+ */
+public int getNodeCount();

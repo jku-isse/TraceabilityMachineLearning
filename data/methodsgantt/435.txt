@@ -1,0 +1,6 @@
+/**
+ * Set a new xsl-fo file for pdf export.
+ */
+public void setXslFo(String xslFo) {
+    this.xslFo = xslFo;
+}

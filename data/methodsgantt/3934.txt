@@ -1,0 +1,4 @@
+/**
+ * Removes all resources from the manager.
+ */
+public void clear();

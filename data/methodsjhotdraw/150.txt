@@ -1,0 +1,5 @@
+@Override
+public void configure(String[] args) {
+    System.setProperty("apple.laf.useScreenMenuBar", "true");
+    System.setProperty("com.apple.macos.useScreenMenuBar", "true");
+}

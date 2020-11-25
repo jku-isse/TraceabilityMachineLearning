@@ -1,0 +1,3 @@
+public Set<DependencyFigure> getDependencies() {
+    return Collections.unmodifiableSet(dependencies);
+}

@@ -1,0 +1,34 @@
+public void mouseReleased(MouseEvent evt) {
+    super.mouseReleased(evt);
+    DrawingView view = getView();
+    if (!(view.getSelectedFigures().isEmpty())) {
+        isDragging = false;
+        int x = evt.getX();
+        int y = evt.getY();
+        updateCursor(editor.findView(((Container) (evt.getSource()))), new Point(x, y));
+        Point2D.Double newPoint = view.viewToDrawing(new Point(x, y));
+        Collection<Figure> draggedFigures = new LinkedList<Figure>(view.getSelectedFigures());
+        Figure dropTarget = getDrawing().findFigureExcept(newPoint, draggedFigures);
+        if (dropTarget != null) {
+            boolean snapBack = dropTarget.handleDrop(newPoint, draggedFigures, view);
+            if (snapBack) {
+                AffineTransform tx = new AffineTransform();
+                tx.translate(((anchorOrigin.x) - (previousOrigin.x)), ((anchorOrigin.y) - (previousOrigin.y)));
+                Constrainer c = view.getConstrainer();
+                for (Figure f : draggedFigures) {
+                    f.willChange();
+                    f.transform(tx);
+                    f.changed();
+                }
+                fireToolDone();
+                return;
+            }
+        }
+        AffineTransform tx = new AffineTransform();
+        tx.translate(((-(anchorOrigin.x)) + (previousOrigin.x)), ((-(anchorOrigin.y)) + (previousOrigin.y)));
+        if (!(tx.isIdentity())) {
+            getDrawing().fireUndoableEditHappened(new TransformEdit(draggedFigures, tx));
+        }
+    }
+    fireToolDone();
+}

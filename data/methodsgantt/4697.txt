@@ -1,0 +1,3 @@
+public TaskDependencyException(String message) {
+    super(message);
+}

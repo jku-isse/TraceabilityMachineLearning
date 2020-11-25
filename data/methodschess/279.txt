@@ -1,0 +1,16 @@
+// Methods
+/**
+ * The user just did a ply.
+ *
+ * @param ply
+ * 		The user ply.
+ */
+public final void doUserPly(Ply ply) {
+    // If we are already in a opening, check if the current user
+    // move doesnt lead us out of the opening line.
+    if ((_currentOpening) != (-1)) {
+        if (!(isInOpening(_currentOpening))) {
+            _currentOpening = -1;
+        }
+    }
+}

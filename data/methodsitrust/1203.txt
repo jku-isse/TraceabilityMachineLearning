@@ -1,0 +1,7 @@
+public void testCanRepresent() throws Exception {
+    try {
+        action = new ViewOfficeVisitAction(factory, 2L, "1", "11");
+    } catch (Exception e) {
+        fail(("No exception should be thrown; exception: " + (e.toString())));
+    }
+}

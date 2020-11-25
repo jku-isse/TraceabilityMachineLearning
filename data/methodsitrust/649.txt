@@ -1,0 +1,15 @@
+/**
+ * Sets up defaults
+ *
+ * @param factory
+ * 		The DAOFactory used to create the DAOs used in this action.
+ * @param loggedInMID
+ * 		MID for the logged in HCP
+ */
+public LabProcHCPAction(DAOFactory factory, long loggedInMID) {
+    super(factory, loggedInMID);
+    lpDAO = factory.getLabProcedureDAO();
+    ovDAO = factory.getOfficeVisitDAO();
+    this.loggedInMID = loggedInMID;
+    validator = new LabProcedureValidator();
+}

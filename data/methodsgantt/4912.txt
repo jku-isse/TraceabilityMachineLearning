@@ -1,0 +1,12 @@
+private TimeFrameImpl.LineHeader calculateLines(TimeFrameImpl.LineHeader lastHeader) {
+    TimeUnit curUnit = (lastHeader == null) ? myTopUnit : lastHeader.myUnit.getDirectAtomUnit();
+    TimeFrameImpl.LineHeader curHeader = createHeader(curUnit);
+    fillLine(lastHeader, curHeader);
+    if (lastHeader != null) {
+        lastHeader.append(curHeader);
+    }
+    if (curUnit != (myBottomUnit)) {
+        calculateLines(curHeader);
+    }
+    return curHeader;
+}

@@ -1,0 +1,7 @@
+/**
+ * Finds a figure but descends into a figures
+ * children. Use this method to implement <i>click-through</i>
+ * hit detection, that is, you want to detect the inner most
+ * figure containing the given point.
+ */
+Figure findFigureInside(Point2D.Double p);

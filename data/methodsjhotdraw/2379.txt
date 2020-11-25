@@ -1,0 +1,12 @@
+public void trackStep(Point anchor, Point lead, int modifiersEx) {
+    Figure f = getOwner();
+    if (f.isTransformable()) {
+        Point2D.Double newPoint = view.getConstrainer().constrainPoint(view.viewToDrawing(lead));
+        AffineTransform tx = new AffineTransform();
+        tx.translate(((newPoint.x) - (oldPoint.x)), ((newPoint.y) - (oldPoint.y)));
+        f.willChange();
+        f.transform(tx);
+        f.changed();
+        oldPoint = newPoint;
+    }
+}

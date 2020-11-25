@@ -1,0 +1,6 @@
+public void testGetOfficeVisitsTable() throws iTrustException {
+    this.action = new GenerateCalendarAction(factory, mId);
+    Hashtable<Integer, ArrayList<OfficeVisitBean>> oTable = action.getOfficeVisitsTable(5, 2007);
+    assertTrue(oTable.containsKey(9));
+    assertTrue(oTable.containsKey(10));
+}

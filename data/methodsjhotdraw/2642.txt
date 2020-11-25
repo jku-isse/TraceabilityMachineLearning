@@ -1,0 +1,4 @@
+@Override
+public void mouseMoved(MouseEvent evt) {
+    tracker.mouseMoved(evt);
+}

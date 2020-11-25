@@ -1,0 +1,19 @@
+/**
+ * Joins two segments into one if the given Point2D.Double hits a node
+ * of the polyline.
+ *
+ * @return true if the two segments were joined.
+ * @param join
+ * 		a Point at a node on the bezier path
+ * @param tolerance
+ * 		a tolerance, tolerance should take into account
+ * 		the line width, plus 2 divided by the zoom factor.
+ */
+public boolean joinSegments(Point2D.Double join, double tolerance) {
+    int i = findSegment(join, tolerance);
+    if ((i != (-1)) && (i > 1)) {
+        removeNode(i);
+        return true;
+    }
+    return false;
+}

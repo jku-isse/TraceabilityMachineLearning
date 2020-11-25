@@ -1,0 +1,11 @@
+private String createTooltipText(RoleSet roleSet) {
+    StringBuffer result = new StringBuffer();
+    result.append(myI18n.getRolesetTooltipHeader(roleSet.getName()));
+    Role[] roles = roleSet.getRoles();
+    for (int i = 0; i < (roles.length); i++) {
+        Role nextRole = roles[i];
+        result.append(myI18n.formatRoleForTooltip(nextRole));
+    }
+    result.append(myI18n.getRolesetTooltipFooter());
+    return result.toString();
+}

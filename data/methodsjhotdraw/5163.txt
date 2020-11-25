@@ -1,0 +1,38 @@
+public Paint getPaint(Figure f, double opacity) {
+    if (((stopColors.length) == 0) || ((r) <= 0)) {
+        return new Color(-1600086016, true);
+    }
+    // Compute colors and fractions for the paint
+    Color[] colors = new Color[stopColors.length];
+    float[] fractions = new float[stopColors.length];
+    for (int i = 0; i < (stopColors.length); i++) {
+        fractions[i] = ((float) (stopOffsets[i]));
+        colors[i] = new Color((((stopColors[i].getRGB()) & 16777215) | (((int) ((opacity * (stopOpacities[i])) * 255)) << 24)), true);
+    }
+    // Compute the dimensions and transforms for the paint
+    Point2D.Double cp;
+    Point2D.Double fp;
+    double rr;
+    cp = new Point2D.Double(cx, cy);
+    fp = new Point2D.Double(fx, fy);
+    rr = r;
+    AffineTransform t = transform;
+    if (isRelativeToFigureBounds) {
+        if (!(t.isIdentity()))
+            System.out.println(((("RadialGradient " + (hashCode())) + " t=") + t));
+
+        t = new AffineTransform();
+        Rectangle2D.Double bounds = f.getBounds();
+        t.translate(bounds.x, bounds.y);
+        t.scale(bounds.width, bounds.height);
+    }
+    // Construct a solid color, if only one stop color is given, or if
+    // transform is not invertible
+    if (((stopColors.length) == 1) || ((t.getDeterminant()) == 0)) {
+        return colors[0];
+    }
+    // Construct the paint
+    RadialGradientPaint gp;
+    gp = new <org.apache.batik.ext.awt.RadialGradientPaint, org.apache.batik.ext.awt.RadialGradientPaint>RadialGradientPaint(cp, ((float) (rr)), fp, fractions, colors, t);
+    return gp;
+}

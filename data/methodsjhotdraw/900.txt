@@ -1,0 +1,6 @@
+/**
+ * Sets the connectors owner.
+ */
+protected void setOwner(Figure newValue) {
+    owner = newValue;
+}

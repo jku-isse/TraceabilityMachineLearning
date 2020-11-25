@@ -1,0 +1,12 @@
+public void actionPerformed(ActionEvent e) {
+    final List selection = new ArrayList(mySelection);
+    myUIFacade.getUndoManager().undoableEdit(getLocalizedName(), new Runnable() {
+        public void run() {
+            try {
+                TaskActionBase.this.run(selection);
+            } catch (Exception e) {
+                getUIFacade().showErrorDialog(e);
+            }
+        }
+    });
+}

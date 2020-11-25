@@ -1,0 +1,14 @@
+/**
+ * Creates a new instance.
+ */
+public OSXTogglePaletteAction(DefaultOSXApplication app, Window palette, String label) {
+    super(label);
+    this.app = app;
+    windowHandler = new WindowAdapter() {
+        public void windowClosing(WindowEvent evt) {
+            putValue(Actions.SELECTED_KEY, false);
+        }
+    };
+    setPalette(palette);
+    putValue(Actions.SELECTED_KEY, true);
+}

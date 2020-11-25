@@ -1,0 +1,37 @@
+public void testPatientViewLabProcedureResults() throws Exception {
+    gen.clearAllTables();
+    gen.standardData();
+    WebConversation wc = login("22", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    wr = wr.getLinkWith("My Lab Procedures").click();
+    assertEquals("iTrust - View Lab Procedures", wr.getTitle());
+    WebTable tbl = wr.getTableWithID("labProceduresTable");
+    assertEquals(51, tbl.getRowCount());
+    int numericalColumn = 5;
+    assertEquals("", tbl.getCellAsText(13, numericalColumn));
+    assertEquals("", tbl.getCellAsText(12, numericalColumn));
+    assertEquals("", tbl.getCellAsText(11, numericalColumn));
+    assertEquals("7", tbl.getCellAsText(10, numericalColumn));
+    assertEquals("", tbl.getCellAsText(9, numericalColumn));
+    assertEquals("", tbl.getCellAsText(8, numericalColumn));
+    assertEquals("", tbl.getCellAsText(7, numericalColumn));
+    assertEquals("5.23", tbl.getCellAsText(6, numericalColumn));
+    assertEquals("", tbl.getCellAsText(5, numericalColumn));
+    assertEquals("", tbl.getCellAsText(4, numericalColumn));
+    assertEquals("", tbl.getCellAsText(3, numericalColumn));
+    assertEquals("18", tbl.getCellAsText(2, numericalColumn));
+    int statusColumn = 3;
+    assertEquals("In Transit", tbl.getCellAsText(13, statusColumn));
+    assertEquals("Received", tbl.getCellAsText(12, statusColumn));
+    assertEquals("Pending", tbl.getCellAsText(11, statusColumn));
+    assertEquals("Completed", tbl.getCellAsText(10, statusColumn));
+    assertEquals("In Transit", tbl.getCellAsText(9, statusColumn));
+    assertEquals("Received", tbl.getCellAsText(8, statusColumn));
+    assertEquals("Pending", tbl.getCellAsText(7, statusColumn));
+    assertEquals("Completed", tbl.getCellAsText(6, statusColumn));
+    assertEquals("In Transit", tbl.getCellAsText(5, statusColumn));
+    assertEquals("Received", tbl.getCellAsText(4, statusColumn));
+    assertEquals("Pending", tbl.getCellAsText(3, statusColumn));
+    assertEquals("Completed", tbl.getCellAsText(2, statusColumn));
+}

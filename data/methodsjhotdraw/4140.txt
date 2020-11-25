@@ -1,0 +1,5 @@
+public void treeNodesRemoved(TreeModelEvent e) {
+    updateCollectionList();
+    updateFamilyList();
+    updateFaceList();
+}

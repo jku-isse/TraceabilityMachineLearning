@@ -1,0 +1,3 @@
+protected int getWidth() {
+    return ((int) (getChartModel().getBounds().getWidth()));
+}

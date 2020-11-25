@@ -1,0 +1,10 @@
+/**
+ * Check to see if a given HCP is declared
+ *
+ * @param mid
+ * 		HCP to check
+ * @return true if the HCP is declared, otherwise false
+ */
+public boolean checkDeclared(long mid) throws DBException {
+    return patientDAO.checkDeclaredHCP(patientMID, mid);
+}

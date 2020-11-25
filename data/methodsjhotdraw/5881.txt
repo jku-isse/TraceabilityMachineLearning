@@ -1,0 +1,13 @@
+/**
+ * adds a cookie to the requst
+ *
+ * @param name
+ * 		cookie name
+ * @param value
+ * 		cookie value
+ * @throws IOException
+ * 		
+ */
+public void setCookie(String name, String value) throws IOException {
+    _cookies.put(name, value);
+}

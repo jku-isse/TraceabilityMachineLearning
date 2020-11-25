@@ -1,0 +1,10 @@
+public void testAddLabProcedure() {
+    LabProcedureBean bean = new LabProcedureBean();
+    bean.setPid(1);
+    try {
+        dao.addLabProcedure(bean);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

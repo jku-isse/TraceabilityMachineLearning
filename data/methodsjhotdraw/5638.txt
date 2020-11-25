@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((ArrangeToolBarBeanInfo.beanDescriptor) == null)
+        ArrangeToolBarBeanInfo.beanDescriptor = new BeanDescriptor(ArrangeToolBarBeanInfo.class);
+
+    ArrangeToolBarBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    ArrangeToolBarBeanInfo.beanDescriptor.setDisplayName("AlignToolPane");
+    return ArrangeToolBarBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

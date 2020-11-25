@@ -1,0 +1,11 @@
+/**
+ * Loads a list of the bean of type T from a result set.  Typically makes iterated calls
+ * to loadSingle.
+ *
+ * @param rs
+ * 		The java.sql.ResultSet we are extracting.
+ * @return A java.util.List<T> where T is the type for this loader.
+ * @throws SQLException
+ * 		
+ */
+public List<T> loadList(ResultSet rs) throws SQLException;

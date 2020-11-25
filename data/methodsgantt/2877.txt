@@ -1,0 +1,2 @@
+// void changeWorkingDirectory(File parentFile);
+TaskSelectionContext getTaskSelectionContext();

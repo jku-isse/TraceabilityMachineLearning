@@ -1,0 +1,27 @@
+/**
+ * Returns the maximum amount of space the layout can use.
+ *
+ * @param target
+ * 		the Container for which this layout manager
+ * 		is being used
+ * @return a Dimension object containing the layouts maximum size
+ */
+public Dimension maximumLayoutSize(Container target) {
+    Dimension rd;
+    Dimension mbd;
+    Insets i = rootPane.getInsets();
+    Container contentPane = rootPane.getContentPane();
+    JMenuBar menuBar = rootPane.getJMenuBar();
+    if ((menuBar != null) && (menuBar.isVisible())) {
+        mbd = menuBar.getMaximumSize();
+    } else {
+        mbd = new Dimension(0, 0);
+    }
+    if ((contentPane != null) && (contentPane.isVisible())) {
+        rd = contentPane.getMaximumSize();
+    } else {
+        // This is silly, but should stop an overflow error
+        rd = new Dimension(Integer.MAX_VALUE, (((((Integer.MAX_VALUE) - (i.top)) - (i.bottom)) - (mbd.height)) - 1));
+    }
+    return new Dimension((((Math.min(rd.width, mbd.width)) + (i.left)) + (i.right)), ((((rd.height) + (mbd.height)) + (i.top)) + (i.bottom)));
+}

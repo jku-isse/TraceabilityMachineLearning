@@ -1,0 +1,10 @@
+/**
+ * Get a referral query for a patient.
+ *
+ * @param mid
+ * 		The patient id.
+ * @return A ReferralListQuery object.
+ */
+public ReferralDAO.ReferralListQuery getPatientQuery(long pid) {
+    return new ReferralDAO.PatientReferralListQuery(this.factory, pid);
+}

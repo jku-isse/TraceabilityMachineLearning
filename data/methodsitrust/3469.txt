@@ -1,0 +1,7 @@
+public void testGetAllTransactions() throws Exception {
+    List<TransactionBean> list = tranDAO.getAllTransactions();
+    assertEquals(8, list.size());
+    // that last one inserted should be last because it was backdated
+    assertEquals(1L, list.get(3).getLoggedInMID());
+    assertEquals(TransactionType.DEMOGRAPHICS_EDIT, list.get(3).getTransactionType());
+}

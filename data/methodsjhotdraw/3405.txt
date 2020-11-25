@@ -1,0 +1,11 @@
+public void setTo(BezierPath that) {
+    while ((that.size()) < (size())) {
+        remove(((size()) - 1));
+    } 
+    for (int i = 0, n = size(); i < n; i++) {
+        get(i).setTo(that.get(i));
+    }
+    while ((size()) < (that.size())) {
+        add(((BezierPath.Node) (that.get(size()).clone())));
+    } 
+}

@@ -1,0 +1,8 @@
+/**
+ * Get the hashcode for this ply.
+ *
+ * @return A hashcode for this ply.
+ */
+public final long hashKey() {
+    return PlyHashtableEntryImpl.hashKey(getBoard(), isWhiteMove());
+}

@@ -1,0 +1,5 @@
+public void testPhoneGood() throws Exception {
+    String value = "012-345-6789";
+    String errorMessage = PhoneValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.PHONE_NUMBER, false));
+}

@@ -1,0 +1,1 @@
+GPCalendar.DayType getWeekDayType(int day);

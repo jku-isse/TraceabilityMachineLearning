@@ -1,0 +1,16 @@
+public ToolBarPrefsHandler(JToolBar toolbar, String prefsPrefix, Preferences prefs) {
+    this.toolbar = toolbar;
+    this.prefsPrefix = prefsPrefix;
+    this.prefs = prefs;
+    String constraint = prefs.get((prefsPrefix + ".constraint"), BorderLayout.NORTH);
+    int orientation = ((constraint.equals(BorderLayout.NORTH)) || (constraint.equals(BorderLayout.SOUTH))) ? JToolBar.HORIZONTAL : JToolBar.VERTICAL;
+    toolbar.setOrientation(orientation);
+    toolbar.getParent().add(constraint, toolbar);
+    toolbar.setVisible(prefs.getBoolean((prefsPrefix + ".visible"), true));
+    /* if (prefs.getBoolean(prefsPrefix+".isFloating", false)) {
+    makeToolBarFloat();
+    }
+     */
+    toolbar.addComponentListener(this);
+    toolbar.addAncestorListener(this);
+}

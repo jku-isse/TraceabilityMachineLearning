@@ -1,0 +1,8 @@
+@Override
+public void initView(Application a, View p) {
+    SVGView v = ((SVGView) (p));
+    if (a.isSharingToolsAmongViews()) {
+        v.setEditor(getSharedEditor());
+    }
+    p.putAction(SelectSameAction.ID, new SelectSameAction(v.getEditor()));
+}

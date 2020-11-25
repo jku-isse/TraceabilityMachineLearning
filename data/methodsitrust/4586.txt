@@ -1,0 +1,3 @@
+public ICD9CMLink() {
+    super();
+}

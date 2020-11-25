@@ -1,0 +1,16 @@
+/**
+ *
+ *
+ * @return the name of task with the correct level.
+ */
+private String getName(Task task) {
+    if (bFixedSize)
+        return task.getName();
+
+    String res = "";
+    int depth = task.getManager().getTaskHierarchy().getDepth(task);
+    for (int i = 0; i < depth; i++) {
+        res += "  ";
+    }
+    return res + (task.getName());
+}

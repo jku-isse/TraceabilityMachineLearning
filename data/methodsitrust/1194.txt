@@ -1,0 +1,19 @@
+/**
+ * Returns the name of the HCP for the hcpID passed as a param
+ *
+ * @param hcpID
+ * 		
+ * @return the name of the HCP
+ * @throws iTrustException
+ * 		
+ */
+public String getHCPName(long hcpID) throws iTrustException {
+    String name = null;
+    try {
+        name = personnelDAO.getName(hcpID);
+    } catch (iTrustException e) {
+        e.printStackTrace();
+        name = e.getMessage();
+    }
+    return name;
+}

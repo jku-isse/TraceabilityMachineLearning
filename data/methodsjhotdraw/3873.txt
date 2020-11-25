@@ -1,0 +1,6 @@
+public void addNotify() {
+    super.addNotify();
+    if (UIManager.getBoolean("Sheet.showAsSheet")) {
+        // QuaquaUtilities.setWindowAlpha(this, 240);
+    }
+}

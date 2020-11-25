@@ -1,0 +1,5 @@
+public void testBadLength() throws Exception {
+    String value = "abcabcabcabcabcabcabcabcabcabca";
+    String errorMessage = GenderValidatorTest.FAILED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, GenderValidatorTest.VALIDATION_FORMAT, false));
+}

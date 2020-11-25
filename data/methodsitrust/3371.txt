@@ -1,0 +1,4 @@
+public void testGetMonitoringHCPs() throws Exception {
+    gen.remoteMonitoring5();
+    assertTrue(((rmDAO.getMonitoringHCPs(1).size()) == 1));
+}

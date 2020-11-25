@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param name
+ * 		
+ */
+private MedicalReportFilterType(String name) {
+    this.name = name;
+}

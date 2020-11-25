@@ -1,0 +1,4 @@
+public PGNParser(ParserSharedInputState state) {
+    super(state, 2);
+    tokenNames = PGNParser._tokenNames;
+}

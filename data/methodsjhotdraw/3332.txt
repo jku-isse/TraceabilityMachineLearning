@@ -1,0 +1,3 @@
+private static double b3(double u) {
+    return (u * u) * u;
+}

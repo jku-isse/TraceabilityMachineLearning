@@ -1,0 +1,9 @@
+/**
+ * Reset the game controller.
+ */
+public final void reset() {
+    _moveRight = true;
+    // White has the first move.
+    _gameState = GameState.STOPPED;// The game is stopped until white moves.
+
+}

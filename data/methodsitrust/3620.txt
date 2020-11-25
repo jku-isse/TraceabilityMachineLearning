@@ -1,0 +1,3 @@
+public void remoteMonitoring5() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/remoteMonitoring5.sql"));
+}

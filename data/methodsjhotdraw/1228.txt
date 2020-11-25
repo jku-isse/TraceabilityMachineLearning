@@ -1,0 +1,4 @@
+public Point2D.Double locate(Figure owner, Figure label) {
+    Point2D.Double relativePoint = getRelativeLabelPoint(((BezierFigure) (owner)), label);
+    return relativePoint;
+}

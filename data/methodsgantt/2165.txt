@@ -1,0 +1,6 @@
+public boolean equals(Object o) {
+    if (o instanceof Document) {
+        return ((Document) (o)).getPath().equals(this.getPath());
+    }
+    return false;
+}

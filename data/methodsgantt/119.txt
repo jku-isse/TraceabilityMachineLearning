@@ -1,0 +1,10 @@
+public static boolean log(Throwable e) {
+    if ((GPLogger.ourHandler) == null) {
+        return false;
+    }
+    GPLogger.ourLogger.log(Level.WARNING, e.getMessage(), e);
+    if ((GPLogger.ourUIFacade) != null) {
+        GPLogger.ourUIFacade.logErrorMessage(e);
+    }
+    return true;
+}

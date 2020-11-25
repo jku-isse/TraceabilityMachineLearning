@@ -1,0 +1,15 @@
+/**
+ * Invokes the specified setter method if it exists.
+ *
+ * @param obj
+ * 		The object on which to invoke the method.
+ * @param methodName
+ * 		The name of the method.
+ */
+public static void invokeIfExists(Object obj, String methodName) {
+    try {
+        Methods.invoke(obj, methodName);
+    } catch (NoSuchMethodException e) {
+        // ignore
+    }
+}

@@ -1,0 +1,19 @@
+/**
+ * Sets the selected Font.
+ * <p>
+ * Changing the selected font, causes a change of the
+ * selection path, if the selected font is not the last
+ * path segment of the selection path.
+ *
+ * This is a bound property.
+ *
+ * @param newValue
+ * 		The new selected font, or null if no font is to be
+ * 		selected.
+ */
+public void setSelectedFont(Font newValue) {
+    Font oldValue = selectedFont;
+    this.selectedFont = newValue;
+    firePropertyChange(JFontChooser.SELECTED_FONT_PROPERTY, oldValue, newValue);
+    updateSelectionPath(newValue);
+}

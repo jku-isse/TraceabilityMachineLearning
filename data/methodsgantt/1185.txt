@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @unknown 
+ */
+public boolean isCellEditable(Object node, int column) {
+    return ((node instanceof ResourceNode) && ((((column == (ResourceTreeTableModel.INDEX_RESOURCE_EMAIL)) || (column == (ResourceTreeTableModel.INDEX_RESOURCE_NAME))) || (column == (ResourceTreeTableModel.INDEX_RESOURCE_PHONE))) || (column == (ResourceTreeTableModel.INDEX_RESOURCE_ROLE)))) || (((node instanceof AssignmentNode) && (column == (ResourceTreeTableModel.INDEX_RESOURCE_ROLE_TASK))) || /* assumes the INDEX_RESOURCE_ROLE_TASK is the last mandatory column */
+    (column > (ResourceTreeTableModel.INDEX_RESOURCE_ROLE_TASK)));
+}

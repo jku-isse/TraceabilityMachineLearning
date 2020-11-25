@@ -1,0 +1,24 @@
+/**
+ * Gets a list of anyone who need immunizations
+ *
+ * @param mid
+ * 		the HCP whose patients are being checked
+ * @return a list of all the people who need immunizations--done in a visit reminder
+ * @throws iTrustException
+ * 		
+ */
+private List<VisitReminderReturnForm> getImmunizationNeeders(long mid) throws iTrustException {
+    List<VisitReminderReturnForm> formList;
+    List<VisitReminderReturnForm> needList = new ArrayList<VisitReminderReturnForm>();
+    String reason = "";
+    // Get list of patients that designate this HCP
+    formList = visitReminderDAO.getPatients(mid);
+    for (VisitReminderReturnForm r : formList) {
+        reason = checkImmunizations(r.getPatientID());
+        if (0 < (reason.length())) {
+            needList.add(r);
+            r.addVisitFlag(new VisitFlag(VisitFlag.IMMUNIZATION, reason));
+        }
+    }
+    return needList;
+}

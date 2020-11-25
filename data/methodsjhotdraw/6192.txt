@@ -1,0 +1,16 @@
+public ColorFormatter(ColorFormatter.Format outputFormat, boolean allowsNullValue, boolean isAdaptive) {
+    this.outputFormat = outputFormat;
+    this.allowsNullValue = allowsNullValue;
+    this.isAdaptive = isAdaptive;
+    // Retrieve last used input format from preferences
+    prefs = Preferences.userNodeForPackage(getClass());
+    try {
+        lastUsedInputFormat = ColorFormatter.Format.valueOf(prefs.get("ColorFormatter.lastUsedInputFormat", ColorFormatter.Format.RGB_HEX.name()));
+    } catch (IllegalArgumentException e) {
+        // leave lastUsedInputFormat as null
+    }
+    if (isAdaptive && ((lastUsedInputFormat) != null)) {
+        this.outputFormat = lastUsedInputFormat;
+    }
+    setOverwriteMode(false);
+}

@@ -1,0 +1,44 @@
+/**
+ * Creates a new instance.
+ */
+public TaskFigure() {
+    super(new RectangleFigure());
+    setLayouter(new VerticalLayouter());
+    RectangleFigure nameCompartmentPF = new RectangleFigure();
+    AttributeKeys.STROKE_COLOR.basicSet(nameCompartmentPF, null);
+    nameCompartmentPF.setAttributeEnabled(AttributeKeys.STROKE_COLOR, false);
+    AttributeKeys.FILL_COLOR.basicSet(nameCompartmentPF, null);
+    nameCompartmentPF.setAttributeEnabled(AttributeKeys.FILL_COLOR, false);
+    ListFigure nameCompartment = new ListFigure(nameCompartmentPF);
+    ListFigure attributeCompartment = new ListFigure();
+    SeparatorLineFigure separator1 = new SeparatorLineFigure();
+    applyAttributes(getPresentationFigure());
+    add(nameCompartment);
+    add(separator1);
+    add(attributeCompartment);
+    Insets2D.Double insets = new Insets2D.Double(4, 8, 4, 8);
+    CompositeFigure.LAYOUT_INSETS.basicSet(nameCompartment, insets);
+    CompositeFigure.LAYOUT_INSETS.basicSet(attributeCompartment, insets);
+    TextFigure nameFigure;
+    nameCompartment.add((nameFigure = new TextFigure()));
+    AttributeKeys.FONT_BOLD.basicSet(nameFigure, true);
+    nameFigure.setAttributeEnabled(AttributeKeys.FONT_BOLD, false);
+    TextFigure durationFigure;
+    attributeCompartment.add((durationFigure = new TextFigure()));
+    AttributeKeys.FONT_BOLD.basicSet(durationFigure, true);
+    durationFigure.setText("0");
+    durationFigure.setAttributeEnabled(AttributeKeys.FONT_BOLD, false);
+    TextFigure startTimeFigure;
+    attributeCompartment.add((startTimeFigure = new TextFigure()));
+    startTimeFigure.setEditable(false);
+    startTimeFigure.setText("0");
+    startTimeFigure.setAttributeEnabled(AttributeKeys.FONT_BOLD, false);
+    applyAttributes(this);
+    setAttributeEnabled(AttributeKeys.STROKE_DASHES, false);
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.pert.Labels");
+    setName(labels.getString("pert.task.defaultName"));
+    setDuration(0);
+    dependencies = new HashSet<DependencyFigure>();
+    nameFigure.addFigureListener(new TaskFigure.NameAdapter(this));
+    durationFigure.addFigureListener(new TaskFigure.DurationAdapter(this));
+}

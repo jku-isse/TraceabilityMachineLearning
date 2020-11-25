@@ -1,0 +1,3 @@
+public void testOffSite() {
+    assertFalse(HtmlEncoder.URLOnSite("http://www.google.com"));
+}

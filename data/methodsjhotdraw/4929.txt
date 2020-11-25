@@ -1,0 +1,4 @@
+public boolean contains(Point2D p) {
+    validatePath();
+    return generalPath.contains(p);
+}

@@ -1,0 +1,8 @@
+/**
+ * Get a analyzer for check test.
+ *
+ * @return A analyzer for chess boards.
+ */
+final BitBoardAnalyzer getAnalyzer() {
+    return _analyzer;
+}

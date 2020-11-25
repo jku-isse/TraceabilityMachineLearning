@@ -1,0 +1,9 @@
+public void testFilterByGender() throws Exception {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.GENDER, "Female", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertEquals(4, res.size());
+    assertTrue(((res.get(0).getMID()) == 1L));
+    assertTrue(((res.get(1).getMID()) == 5L));
+    assertTrue(((res.get(2).getMID()) == 6L));
+    assertTrue(((res.get(3).getMID()) == 21L));
+}

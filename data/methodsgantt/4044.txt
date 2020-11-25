@@ -1,0 +1,3 @@
+public ShapePaint getPattern() {
+    return new ShapePaint(pattern, getForeground(), getBackground());
+}

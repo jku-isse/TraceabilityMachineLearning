@@ -1,0 +1,8 @@
+/**
+ * Gets a list of the filters used in the report.
+ *
+ * @return List of FilterTypes used in the report
+ */
+public ArrayList<String> getReportFilterTypes() {
+    return reportFilterTypes;
+}

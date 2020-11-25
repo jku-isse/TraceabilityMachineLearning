@@ -1,0 +1,26 @@
+/**
+ * Validate an HCPs MID and declare them, if possible
+ *
+ * @param hcpStr
+ * 		The MID of an HCP to declare
+ * @return A status message,
+ * @throws iTrustException
+ * 		
+ * @author Andy Meneely
+ */
+public String declareHCP(String hcpStr) throws iTrustException {
+    try {
+        long hcpID = Long.valueOf(hcpStr);
+        if ((authDAO.getUserRole(hcpID)) != (Role.HCP))
+            throw new iTrustException("This user is not a licensed healthcare professional!");
+
+        boolean confirm = patientDAO.declareHCP(loggedInMID, hcpID);
+        if (confirm) {
+            return "HCP successfully declared";
+        } else
+            return "HCP not declared";
+
+    } catch (NumberFormatException e) {
+        throw new iTrustException("HCPs MID not a number");
+    }
+}

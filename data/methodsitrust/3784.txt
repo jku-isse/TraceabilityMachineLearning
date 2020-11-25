@@ -1,0 +1,22 @@
+/* An HCP 9000000000, Admin 9000000001, and Patient MID 2 have been entered into the system. 
+The HCP logs in and requests a comprehensive report for patient 2. 
+The Admin logs in and approves the new request for patient 2. 
+The HCP views the approved comprehensive patient report.
+ */
+public void testComprehensiveAcceptanceSuccess() throws Exception {
+    // The HCP logs in and requests a comprehensive report for patient 2.
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("My Report Requests").click();
+    assertTrue(wr.getText().contains("Report Requests"));
+    wr = wr.getLinkWith("Add a new Report Request").click();
+    assertTrue(wr.getText().contains("Please Select a Patient"));
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "2");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Report Request Accepted"));
+    iTrustHTTPTest.assertLogged(TransactionType.COMPREHENSIVE_REPORT_ADD, 9000000000L, 2L, "Report ID:");
+}

@@ -1,0 +1,7 @@
+/**
+ * Initialize the component.
+ */
+public void initialize() {
+    cbLanguage.setSelectedItem(language.getText("longLanguage").trim());
+    bHasChange = false;
+}

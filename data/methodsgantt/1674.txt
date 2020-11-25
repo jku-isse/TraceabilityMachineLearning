@@ -1,0 +1,66 @@
+protected DayTypeAlternance[] getDayTypeAlternance(TimeFrame timeFrame, TimeUnit timeUnit, int unitIndex) {
+    class AlternanceFactory {
+        private Calendar c = CalendarFactory.newCalendar();
+
+        DayTypeAlternance createAlternance(TimeUnit timeUnit, Date startDate, Date endDate) {
+            c.setTime(startDate);
+            int startDayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+            c.setTime(endDate);
+            int endDayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+            TaskLength duration = myTaskManager.createLength(timeUnit, startDate, endDate);
+            GPCalendar.DayType dayType = getTaskManager().getCalendar().getWeekDayType(startDayOfWeek);
+            dayType = getTaskManager().getCalendar().getDayTypeDate(startDate);
+            return new DayTypeAlternance(dayType, duration, endDate);
+        }
+
+        void createAlternance(TimeUnit timeUnit, TimeFrame timeFrame, List output) {
+            GPCalendar.DayType startType = null;
+            Date startDate = null;
+            int unitCount = timeFrame.getUnitCount(timeUnit);
+            for (int i = 0; i < unitCount; i++) {
+                Date start = timeFrame.getUnitStart(timeUnit, i);
+                c.setTime(start);
+                int startDayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+                GPCalendar.DayType dayType = getTaskManager().getCalendar().getWeekDayType(startDayOfWeek);
+                if (startType == null) {
+                    startType = dayType;
+                    startDate = start;
+                }
+                if (startType != dayType) {
+                    Date end = timeFrame.getUnitFinish(timeUnit, (i - 1));
+                    TaskLength duration = myTaskManager.createLength(timeUnit, startDate, end);
+                    output.add(new DayTypeAlternance(startType, duration, end));
+                    startType = dayType;
+                    startDate = start;
+                }
+            }
+            Date end = timeFrame.getUnitFinish(timeUnit, (unitCount - 1));
+            TaskLength duration = myTaskManager.createLength(timeUnit, startDate, end);
+            output.add(new DayTypeAlternance(startType, duration, end));
+        }
+    }
+    AlternanceFactory f = new AlternanceFactory();
+    DayTypeAlternance[] result;
+    Date startDate = timeFrame.getUnitStart(timeUnit, unitIndex);
+    Date endDate = timeFrame.getUnitFinish(timeUnit, unitIndex);
+    if (timeUnit.equals(myTimeUnitStack.getDefaultTimeUnit())) {
+        result = new DayTypeAlternance[]{ f.createAlternance(timeUnit, startDate, endDate) };
+    } else
+        if (timeUnit.isConstructedFrom(myTimeUnitStack.getDefaultTimeUnit())) {
+            List buf = new ArrayList();
+            TimeUnit defaultUnit = myTimeUnitStack.getDefaultTimeUnit();
+            TimeFrame innerFrame = myTimeUnitStack.createTimeFrame(startDate, timeUnit, defaultUnit);
+            // System.err.println("[ChartModelImpl] topUnit="+timeUnit+"
+            // bottom="+defaultUnit+"
+            // count="+innerFrame.getUnitCount(defaultUnit));
+            f.createAlternance(defaultUnit, innerFrame, buf);
+            result = ((DayTypeAlternance[]) (buf.toArray(new DayTypeAlternance[buf.size()])));
+        } else {
+            throw new RuntimeException("We should not be here");
+        }
+
+    // System.err.println("from "+startDate+" to
+    // "+endDate+"
+"+java.util.Arrays.asList(result));
+    return result;
+}

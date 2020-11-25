@@ -1,0 +1,5 @@
+public void testGetFilterStrings() {
+    List<String> f = bean.getFilterStrings();
+    assertTrue(((f.size()) == 1));
+    assertEquals("Filter by LAST NAME with value Person", f.get(0));
+}

@@ -1,0 +1,7 @@
+public void saveProjectRemotely(IGanttProject project) {
+    Document document = showURLDialog(project);
+    if (document != null) {
+        project.setDocument(document);
+        saveProject(project);
+    }
+}

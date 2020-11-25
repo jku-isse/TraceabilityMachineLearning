@@ -1,0 +1,7 @@
+public void testCheckHCPIDBadMID() {
+    try {
+        action.checkHCPID("90000000001");
+        fail();
+    } catch (iTrustException e) {
+    }
+}

@@ -1,0 +1,3 @@
+public void setAddedInfo(String addedInfo) {
+    this.addedInfo = addedInfo;
+}

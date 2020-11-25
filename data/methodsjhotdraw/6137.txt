@@ -1,0 +1,16 @@
+public void write(File f, String characterSet, String lineSeparator) throws IOException {
+    writeDocument(editor.getDocument(), f, characterSet, lineSeparator);
+    try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+                undoManager.setHasSignificantEdits(false);
+            }
+        });
+    } catch (InterruptedException e) {
+        // ignore
+    } catch (InvocationTargetException e) {
+        InternalError error = new InternalError(e.getMessage());
+        error.initCause(e);
+        throw error;
+    }
+}

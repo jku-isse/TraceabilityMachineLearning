@@ -1,0 +1,34 @@
+public void testInteractionOverride() throws Exception {
+    gen.patient1();
+    gen.officeVisit3();
+    gen.ndCodes1();
+    gen.ndCodes4();
+    gen.drugInteractions4();
+    gen.ORCodes();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Document Office Visit").click();
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "1");
+    patientForm.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    wr = wr.getLinkWith("9/17/2009").click();
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_VIEW, 9000000000L, 1L, "Office visit");
+    patientForm = wr.getFormWithID("prescriptionForm");
+    patientForm.setParameter("medID", "01864020");
+    patientForm.setParameter("dosage", "10");
+    patientForm.setParameter("startDate", new SimpleDateFormat("08/22/2009").format(new Date()));
+    patientForm.setParameter("endDate", new SimpleDateFormat("11/22/2009").format(new Date()));
+    patientForm.setParameter("instructions", "Take once daily with meal");
+    wr = patientForm.submit();
+    assertTrue(wr.getText().contains("Currently Prescribed: Aspirin."));
+    patientForm = wr.getFormWithID("prescriptionForm");
+    patientForm.setParameter("overrideCode", "00001");
+    patientForm.getButtonWithID("continue").click();
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("information successfully updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.PRESCRIPTION_ADD, 9000000000L, 1L, "");
+}

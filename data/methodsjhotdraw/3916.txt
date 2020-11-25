@@ -1,0 +1,4 @@
+public void endResizingFrame(JComponent f) {
+    super.endResizingFrame(f);
+    resizeDesktop();
+}

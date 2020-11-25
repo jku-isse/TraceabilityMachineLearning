@@ -1,0 +1,24 @@
+/**
+ * Add a opening in PGN format to the opening book and return
+ * the error status.
+ *
+ * @param file
+ * 		The File to add to the opening book.
+ */
+public final void addPGNopening(File file) {
+    try {
+        PGNFile pgnFile = new PGNFile(new BufferedReader(new FileReader(file)));
+        GameNotation notation = pgnFile.readGame();
+        _openings.add(notation);
+        // System.out.println( "DEBUG: added opening 
+" + notation.toString());
+    } catch (FileNotFoundException fe) {
+        JOptionPane.showMessageDialog(null, (("File " + (file.getName())) + " not found!"), "File not found", JOptionPane.ERROR_MESSAGE);
+    } catch (IOException ioe) {
+        JOptionPane.showMessageDialog(null, (("IO error while parsing file " + (file.getName())) + "!"), "IO error", JOptionPane.ERROR_MESSAGE);
+    } catch (RecognitionException re) {
+        JOptionPane.showMessageDialog(null, (("Error while parsing file " + (file.getName())) + "!"), "Error in PGN file", JOptionPane.ERROR_MESSAGE);
+    } catch (TokenStreamException te) {
+        System.err.print("Tokenstream exception");
+    }
+}

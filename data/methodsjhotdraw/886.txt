@@ -1,0 +1,10 @@
+public Object clone() {
+    try {
+        AbstractConnector that = ((AbstractConnector) (super.clone()));
+        return that;
+    } catch (CloneNotSupportedException e) {
+        InternalError error = new InternalError(e.toString());
+        // error.initCause(e); <- requires JDK 1.4
+        throw error;
+    }
+}

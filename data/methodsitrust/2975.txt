@@ -1,0 +1,25 @@
+/**
+ * Adds an visit and return its ID
+ *
+ * @param ov
+ * 		The OfficeVisitBean to be added.
+ * @return A long indicating the unique ID for the office visit.
+ * @throws DBException
+ * 		
+ */
+public long add(OfficeVisitBean ov) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("INSERT INTO officevisits (VisitDate, Notes, HCPID, PatientID, HospitalID, IsERIncident) VALUES (?,?,?,?,?,?)");
+        setValues(ps, ov);
+        ps.executeUpdate();
+        return DBUtil.getLastInsert(conn);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

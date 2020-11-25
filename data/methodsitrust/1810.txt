@@ -1,0 +1,3 @@
+public void setNumTotalTransactions(int numTransactions) {
+    this.numTotalTransactions = numTransactions;
+}

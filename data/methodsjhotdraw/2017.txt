@@ -1,0 +1,3 @@
+public Set<Figure> getOldSelection() {
+    return oldValue;
+}

@@ -1,0 +1,4 @@
+public void testInWard() {
+    wrb1.setInWard(1L);
+    assertTrue((1L == (wrb1.getInWard())));
+}

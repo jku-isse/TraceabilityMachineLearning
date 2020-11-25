@@ -1,0 +1,32 @@
+public void testAddDupAllergy() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    // Logs in as Kelly Doctor
+    WebResponse wr = wc.getCurrentPage();
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("PHR Information").click();
+    // Clicks PHR Info
+    assertEquals("iTrust - Please Select a Patient", wr.getTitle());
+    WebForm patientForm = wr.getForms()[0];
+    patientForm.getScriptableObject().setParameterValue("UID_PATIENTID", "25");
+    patientForm.getButtons()[1].click();
+    // Selects Patient Trend Setter
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/editPHR.jsp"), wr.getURL().toString());
+    WebForm form = wr.getForms()[0];
+    form = wr.getFormWithName("AddAllergy");
+    form.setParameter("description", "664662530");
+    form.submit();
+    // Add Penicillin Allergy (will be firstFound on todays date)
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Allergy Added"));
+    // No error should appear when this allergy is added.
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_HEALTH_INFORMATION_EDIT, 9000000000L, 25L, "");
+    form = wr.getFormWithName("AddAllergy");
+    form.setParameter("description", "664662530");
+    form.submit();
+    // Add Penicillin Allergy again
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Allergy 664662530 - Penicillin has already been added for Trend Setter."));
+    // This is the error that should appear when this allergy is added a second time.
+    iTrustHTTPTest.assertLogged(TransactionType.PATIENT_HEALTH_INFORMATION_EDIT, 9000000000L, 25L, "");
+}

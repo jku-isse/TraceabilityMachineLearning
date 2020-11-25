@@ -1,0 +1,49 @@
+/**
+ * construct the notes pannel
+ */
+private void constructNotesPanel() {
+    notesPanel = new JPanel(new GridBagLayout());
+    // first row
+    nameLabelNotes = new JLabel(((language.getText("name")) + ":"));
+    nameFieldNotes = new JTextField(20);
+    if (!(onlyOneTask)) {
+        nameLabelNotes.setVisible(false);
+        nameFieldNotes.setVisible(false);
+    }
+    durationLabelNotes = new JLabel(((language.getText("length")) + ":"));
+    durationFieldNotes = new JTextField(8);
+    nameFieldNotes.setEditable(false);
+    durationFieldNotes.setEditable(false);
+    firstRowPanelNotes = new JPanel();
+    setFirstRow(firstRowPanelNotes, gbc, nameLabelNotes, nameFieldNotes, durationLabelNotes, durationFieldNotes);
+    secondRowPanelNotes = new JPanel();
+    secondRowPanelNotes.setBorder(new TitledBorder(new EtchedBorder(), ((language.getText("notesTask")) + ":")));
+    noteAreaNotes = new JTextArea(8, 40);
+    noteAreaNotes.setLineWrap(true);
+    noteAreaNotes.setWrapStyleWord(true);
+    noteAreaNotes.setBackground(new Color(1.0F, 1.0F, 1.0F));
+    scrollPaneNotes = new JScrollPane(noteAreaNotes);
+    secondRowPanelNotes.add(scrollPaneNotes);
+    JButton bdate = new TestGanttRolloverButton(new ImageIcon(getClass().getResource("/icons/clock_16.gif")));
+    bdate.setToolTipText(GanttProject.getToolTip(language.getText("putDate")));
+    bdate.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            noteAreaNotes.append((("
+" + (GanttCalendar.getDateAndTime())) + "
+"));
+        }
+    });
+    secondRowPanelNotes.add(bdate);
+    gbc.anchor = GridBagConstraints.WEST;
+    gbc.insets.right = 15;
+    gbc.insets.left = 10;
+    gbc.insets.top = 10;
+    gbc.weighty = 0;
+    addUsingGBL(notesPanel, firstRowPanelNotes, gbc, 0, 0, 1, 1);
+    gbc.weighty = 1;
+    gbc.gridx = 0;
+    gbc.gridy = 1;
+    gbc.gridwidth = 1;
+    gbc.gridheight = 1;
+    notesPanel.add(secondRowPanelNotes, gbc);
+}

@@ -1,0 +1,40 @@
+/**
+ * The view menu bar is displayed for a view.
+ * The default implementation returns a new screen menu bar.
+ */
+protected JMenuBar createMenuBar(final View p, List<Action> toolBarActions) {
+    JMenuBar mb = new JMenuBar();
+    mb.add(createFileMenu(p));
+    JMenu lastMenu = null;
+    for (JMenu mm : getModel().createMenus(this, p)) {
+        mb.add(mm);
+        lastMenu = mm;
+    }
+    JMenu viewMenu = createViewMenu(p, toolBarActions);
+    if (viewMenu != null) {
+        if ((lastMenu != null) && (lastMenu.getText().equals(viewMenu.getText()))) {
+            for (Component c : lastMenu.getMenuComponents()) {
+                viewMenu.add(c);
+            }
+            mb.remove(lastMenu);
+        }
+        mb.add(viewMenu);
+    }
+    // Merge the help menu if one has been provided by the application model,
+    // otherwise just add it.
+    JMenu helpMenu = createHelpMenu(p);
+    for (Component mc : mb.getComponents()) {
+        JMenu m = ((JMenu) (mc));
+        if (m.getText().equals(helpMenu.getText())) {
+            for (Component c : helpMenu.getMenuComponents()) {
+                m.add(c);
+            }
+            helpMenu = null;
+            break;
+        }
+    }
+    if (helpMenu != null) {
+        mb.add(helpMenu);
+    }
+    return mb;
+}

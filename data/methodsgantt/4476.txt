@@ -1,0 +1,7 @@
+public TaskLength getProjectLength() {
+    if (myTaskMap.isEmpty()) {
+        return createLength(getConfig().getTimeUnitStack().getDefaultTimeUnit(), 0);
+    }
+    ProjectBoundsAlgorithm.Result result = getAlgorithmCollection().getProjectBoundsAlgorithm().getBounds(Arrays.asList(myTaskMap.getTasks()));
+    return createLength(getConfig().getTimeUnitStack().getDefaultTimeUnit(), result.lowerBound, result.upperBound);
+}

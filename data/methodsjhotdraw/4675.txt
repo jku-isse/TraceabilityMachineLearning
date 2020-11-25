@@ -1,0 +1,4 @@
+@Override
+protected void readDecorator(DOMInput in) throws IOException {
+    // do nothing
+}

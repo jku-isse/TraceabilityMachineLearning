@@ -1,0 +1,10 @@
+/**
+ * Render a ply (the move of a piece).
+ *
+ * @param ply
+ * 		The ply to render.
+ */
+public final void doPly(Ply ply) {
+    _piecesLayer.doPly(ply);
+    repaint();
+}

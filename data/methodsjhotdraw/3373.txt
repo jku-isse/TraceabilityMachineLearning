@@ -1,0 +1,3 @@
+public void addPoint(double x, double y) {
+    add(new BezierPath.Node(0, x, y, x, y, x, y));
+}

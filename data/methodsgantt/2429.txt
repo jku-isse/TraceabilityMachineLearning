@@ -1,0 +1,4 @@
+public GPOptionGroup[] getSecondaryOptions() {
+    // return myGanttChart.getOptionGroups();
+    return null;
+}

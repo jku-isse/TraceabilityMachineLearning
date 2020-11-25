@@ -1,0 +1,16 @@
+/**
+ * An office visit that is initially unsaved.
+ *
+ * @param factory
+ * 		
+ * @param hcpid
+ * 		
+ * @param pidString
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public EditOfficeVisitBaseAction(DAOFactory factory, long hcpid, String pidString) throws iTrustException {
+    super(factory, pidString);
+    this.hcpid = hcpid;
+}

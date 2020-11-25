@@ -1,0 +1,8 @@
+public void testGetProcedures() throws Exception {
+    gen.cptCodes();
+    List<ProcedureBean> list = action.getProcedures(2L);
+    assertEquals(1, list.size());
+    ProcedureBean bean = list.get(0);
+    assertEquals("1270F", bean.getCPTCode());
+    assertEquals("Injection procedure", bean.getDescription());
+}

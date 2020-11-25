@@ -1,0 +1,12 @@
+/**
+ * Creates a NumberFormatter with the specified Format instance.
+ */
+public JavaNumberFormatter(double min, double max, double scaleFactor, boolean allowsNullValue, boolean appendsDotZero) {
+    super();
+    setMinimum(min);
+    setMaximum(max);
+    setScaleFactor(scaleFactor);
+    setAllowsNullValue(allowsNullValue);
+    setAppendsDotZero(appendsDotZero);
+    setOverwriteMode(false);
+}

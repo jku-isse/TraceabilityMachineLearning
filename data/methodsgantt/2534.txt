@@ -1,0 +1,11 @@
+/**
+ * Creates an instance of GTextField with a default format.
+ *
+ * @param format
+ * 		Textfields format.
+ */
+public GTextField(JFormattedTextField.AbstractFormatter format) {
+    super(format);
+    // this.setDocument(new CPlainDocument(null));
+    this.setHorizontalAlignment(SwingConstants.RIGHT);
+}

@@ -1,0 +1,8 @@
+/**
+ * Get type and color as 1 byte.
+ *
+ * @return Type and color and 1 byte.
+ */
+public byte getTypeAndColor() {
+    return this.pieceColor;
+}

@@ -1,0 +1,3 @@
+String getAdvancedActionTitle() {
+    return GanttLanguage.getInstance().getText("optionAdvanced.label");
+}

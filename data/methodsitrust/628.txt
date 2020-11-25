@@ -1,0 +1,10 @@
+/**
+ *
+ *
+ * @return 
+ * @throws DBException
+ * 		
+ */
+private List<PatientBean> getAllPatients() throws DBException {
+    return pDAO.getAllPatients();
+}

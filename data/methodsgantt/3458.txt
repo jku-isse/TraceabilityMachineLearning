@@ -1,0 +1,9 @@
+/**
+ * Constructor.
+ */
+public GanttCSVExport(IGanttProject project, CSVOptions csvOptions) {
+    myProject = project;
+    myTasks = project.getTaskManager().getTasks();
+    myHrManager = ((HumanResourceManager) (project.getHumanResourceManager()));
+    this.csvOptions = csvOptions;
+}

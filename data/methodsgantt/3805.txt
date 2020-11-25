@@ -1,0 +1,7 @@
+public void setMail(String email) {
+    if (email == null) {
+        return;
+    }
+    this.email = email;
+    fireResourceChanged();
+}

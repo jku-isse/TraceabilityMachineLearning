@@ -1,0 +1,7 @@
+/**
+ * The square index of this position instance.
+ *
+ * @param index
+ * 		The square index of this position (0-63).
+ */
+void setSquareIndex(int index);

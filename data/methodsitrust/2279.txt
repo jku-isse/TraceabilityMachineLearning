@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param endDate
+ * 		the endDate to set
+ */
+public void setEndDate(String endDate) {
+    this.endDate = endDate;
+}

@@ -1,0 +1,6 @@
+public void testGetPatient() throws Exception {
+    action = new ViewExpiredPrescriptionsAction(factory, 9000000000L);
+    PatientBean patient = action.getPatient(1L);
+    assertEquals("Random", patient.getFirstName());
+    assertEquals("Person", patient.getLastName());
+}

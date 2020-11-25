@@ -1,0 +1,3 @@
+protected int getBezierNodeIndex() {
+    return (getBezierFigure().getNodeCount()) - 1;
+}

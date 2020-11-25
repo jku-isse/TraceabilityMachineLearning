@@ -1,0 +1,3 @@
+public void setPublicHoliDayType(Date curDayStart) {
+    publicHolidaysArray.add(curDayStart);
+}

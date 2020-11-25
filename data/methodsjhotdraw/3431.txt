@@ -1,0 +1,10 @@
+/**
+ * Constructs an iterator given a BezierPath and an optional
+ * AffineTransform.
+ *
+ * @see BezierPath#getPathIterator
+ */
+public BezierPathIterator(BezierPath path, AffineTransform at) {
+    this.path = path;
+    this.affine = at;
+}

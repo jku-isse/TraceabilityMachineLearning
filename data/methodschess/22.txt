@@ -1,0 +1,19 @@
+/**
+ * Turn the right to move from one player to the other.
+ */
+public void toggleMoveRight() {
+    _moveRight = !(_moveRight);
+    if (getGameTimer().isRunning()) {
+        getGameTimer().toggle();
+    } else {
+        getGameTimer().start();
+        _gameState = GameState.ONGOING;// Change the game state to running.
+
+    }
+    // Check if the computer has the next move.
+    if ((_moveRight) == (_computerIsWhite)) {
+        if (!(computerPly())) {
+            System.out.println("Computer cannot move!");
+        }
+    }
+}

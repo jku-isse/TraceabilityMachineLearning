@@ -1,0 +1,9 @@
+// EDITING
+// CONNECTING
+@Override
+public void invalidate() {
+    super.invalidate();
+    cachedTextShape = null;
+    cachedBounds = null;
+    cachedDrawingArea = null;
+}

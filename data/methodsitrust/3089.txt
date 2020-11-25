@@ -1,0 +1,58 @@
+/**
+ * Private method to get the number of entries for a certain patientID for today.
+ *
+ * @param patientMID
+ * 		
+ * @return the number of entries
+ * @throws DBException
+ * 		
+ */
+/* private int getNumberOfDailyEntries(long patientMID) throws DBException{
+Connection conn = null;
+PreparedStatement ps = null;
+try {
+conn = factory.getConnection();
+ps = conn.prepareStatement("SELECT * FROM RemoteMonitoringData WHERE PatientID=? AND DATE(timeLogged)=CURRENT_DATE");
+ps.setLong(1, patientMID);
+ResultSet rs = ps.executeQuery();
+List<RemoteMonitoringDataBean> patients = loader.loadList(rs);
+return patients.size();
+
+} catch (SQLException e) {
+e.printStackTrace();
+throw new DBException(e);
+} finally {
+DBUtil.closeConnection(conn, ps);
+}
+}
+ */
+/**
+ * Private method to get the number of entries for a certain patientID and a certain
+ * data type for today.
+ *
+ * @param patientMID
+ * 		
+ * @param dataType
+ * 		
+ * @return the number of entries
+ * @throws DBException
+ * 		
+ */
+private int getNumberOfDailyEntries(long patientMID, String dataType) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement((("SELECT * FROM remotemonitoringdata WHERE PatientID=? AND " + dataType) + "!=? AND DATE(timeLogged)=CURRENT_DATE"));
+        ps.setLong(1, patientMID);
+        ps.setInt(2, (-1));
+        ResultSet rs = ps.executeQuery();
+        List<RemoteMonitoringDataBean> patients = loader.loadList(rs);
+        return patients.size();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

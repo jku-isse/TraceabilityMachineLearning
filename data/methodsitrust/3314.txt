@@ -1,0 +1,3 @@
+public void testGetNonExistentPersonnel() throws Exception {
+    assertNull(personnelDAO.getPersonnel(0L));
+}

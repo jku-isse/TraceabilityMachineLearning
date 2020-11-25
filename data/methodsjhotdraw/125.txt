@@ -1,0 +1,5 @@
+public void setVersion(String newValue) {
+    String oldValue = version;
+    version = newValue;
+    firePropertyChange(DefaultApplicationModel.VERSION_PROPERTY, oldValue, newValue);
+}

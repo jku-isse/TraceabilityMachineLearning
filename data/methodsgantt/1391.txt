@@ -1,0 +1,3 @@
+public void isIconVisible() {
+    // TODO Auto-generated method stub
+}

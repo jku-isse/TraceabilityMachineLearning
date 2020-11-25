@@ -1,0 +1,9 @@
+/**
+ * Default constructor with no parameters.
+ */
+public PrjInfos() {
+    this._sProjectName = "Untitled Gantt Project";
+    this._sDescription = "";
+    this._sOrganization = "";
+    this._sWebLink = "http://";
+}

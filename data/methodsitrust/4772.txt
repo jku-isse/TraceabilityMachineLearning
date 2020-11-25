@@ -1,0 +1,6 @@
+public void testAllCorrect() throws Exception {
+    MedicationBean d = new MedicationBean();
+    d.setDescription("A description");
+    d.setNDCode("52563");
+    validator.validate(d);
+}

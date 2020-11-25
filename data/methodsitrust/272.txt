@@ -1,0 +1,4 @@
+public void editDiagnosis(DiagnosisBean bean) throws iTrustException {
+    verifySaved();
+    diagnosesDAO.edit(bean);
+}

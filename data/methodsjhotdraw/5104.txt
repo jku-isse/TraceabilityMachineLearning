@@ -1,0 +1,13 @@
+/**
+ * Returns predecessor PertTasks which are directly connected via a
+ * PertDependency to this TaskFigure.
+ */
+public List<TaskFigure> getPredecessors() {
+    LinkedList<TaskFigure> list = new LinkedList<TaskFigure>();
+    for (DependencyFigure c : getDependencies()) {
+        if ((c.getEndFigure()) == (this)) {
+            list.add(((TaskFigure) (c.getStartFigure())));
+        }
+    }
+    return list;
+}

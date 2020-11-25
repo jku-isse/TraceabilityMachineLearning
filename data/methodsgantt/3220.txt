@@ -1,0 +1,22 @@
+/**
+ * Construct the south panel
+ */
+private JPanel constructSouthPanel() {
+    okButton = new JButton(lang.getText("ok"));
+    okButton.setName("ok");
+    if ((getRootPane()) != null)
+        getRootPane().setDefaultButton(okButton);
+    // set ok the defuault
+
+    // button when press
+    // "enter" --> check
+    // because
+    // getRootPane()==null
+    // !!!
+    cancelButton = new JButton(lang.getText("cancel"));
+    cancelButton.setName("cancel");
+    southPanel = new JPanel(new FlowLayout(FlowLayout.TRAILING, 10, 10));
+    southPanel.add(okButton);
+    southPanel.add(cancelButton);
+    return southPanel;
+}

@@ -1,0 +1,9 @@
+// Methods
+/**
+ * The actual action.
+ *
+ * @param event
+ * 		The event, that caused this action.
+ */
+public void actionPerformed(ActionEvent event) {
+}

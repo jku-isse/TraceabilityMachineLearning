@@ -1,0 +1,10 @@
+// Constructors
+/**
+ * Create a new instance.
+ *
+ * @param reader
+ * 		The reader for the file.
+ */
+public PGNFile(Reader reader) {
+    setReader(reader);
+}

@@ -1,0 +1,16 @@
+/**
+ * Run the actual test.
+ */
+private void generatorTest() {
+    // Get the plies for black
+    Ply[] plies = _plyGenerator.getPliesForColor(false);
+    // Check if h4-a5 was delivered as a potential ply.
+    boolean containsIllegalMove = false;
+    for (int i = 0; i < (plies.length); i++) {
+        if (((plies[i].getSource().getSquareIndex()) == 31) && ((plies[i].getDestination().getSquareIndex()) == 32)) {
+            containsIllegalMove = true;
+            break;
+        }
+    }
+    assertTrue("PlyGenerator does not computes move h4-a5", (!containsIllegalMove));
+}

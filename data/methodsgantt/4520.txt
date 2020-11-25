@@ -1,0 +1,10 @@
+/**
+ * Creates an instance of TaskNode with the given task as reference.
+ *
+ * @param t
+ * 		Task of reference.
+ */
+public TaskNode(Task t) {
+    super(t);
+    task = t;
+}

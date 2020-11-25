@@ -1,0 +1,10 @@
+public void testWardCRUDServletPostFail() throws Exception {
+    WardCRUDServletTest.LittleDelegatorServlet servlet = new WardCRUDServletTest.LittleDelegatorServlet();
+    servlet.setUp();
+    expect(req.getParameter("requiredSpecialty")).andReturn("1").once();
+    expect(req.getParameter("inHospital")).andReturn("").once();
+    resp.sendRedirect("");
+    expectLastCall();
+    ctrl.replay();
+    servlet.doPost(req, resp);
+}

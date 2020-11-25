@@ -1,0 +1,10 @@
+public void configureAction(Action action, String argument, Class baseClass) {
+    action.putValue(Action.NAME, getTextProperty(argument));
+    String shortDescription = getToolTipTextProperty(argument);
+    if ((shortDescription != null) && ((shortDescription.length()) > 0)) {
+        action.putValue(Action.SHORT_DESCRIPTION, shortDescription);
+    }
+    action.putValue(Action.ACCELERATOR_KEY, getAcceleratorProperty(argument));
+    action.putValue(Action.MNEMONIC_KEY, new Integer(getMnemonicProperty(argument)));
+    action.putValue(Action.SMALL_ICON, getIconProperty(argument, baseClass));
+}

@@ -1,0 +1,8 @@
+public boolean isChanged() {
+    if (isLocked()) {
+        if ((myValue) != null) {
+            return false == (myValue.equals(myLockedValue));
+        }
+    }
+    return false;
+}

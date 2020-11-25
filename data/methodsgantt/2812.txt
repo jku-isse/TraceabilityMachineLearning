@@ -1,0 +1,10 @@
+public void mouseExited(MouseEvent e) {
+    setBorderPainted(false);
+    if ((getAction()) instanceof RolloverAction)
+        setIcon(((RolloverAction) (getAction())).getIconOnMouseOver());
+    else
+        if ((_iconOff) != null)
+            setIcon(_iconOff);
+
+
+}

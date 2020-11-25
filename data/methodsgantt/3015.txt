@@ -1,0 +1,6 @@
+/**
+ * This method ask for saving the changes.
+ */
+public boolean askForApplyChanges() {
+    return (UIFacade.Choice.YES) == (getUIFacade().showConfirmationDialog(language.getText("msg20"), language.getText("question")));
+}

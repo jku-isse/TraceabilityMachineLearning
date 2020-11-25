@@ -1,0 +1,3 @@
+public Point2D.Double getPointOnPath(float relative, double flatness) {
+    return path.getPointOnPath(relative, flatness);
+}

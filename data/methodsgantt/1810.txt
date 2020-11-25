@@ -1,0 +1,3 @@
+Font getSpanningHeaderFont() {
+    return mySpanningRowTextFont;
+}

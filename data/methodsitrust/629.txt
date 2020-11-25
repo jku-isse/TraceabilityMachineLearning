@@ -1,0 +1,128 @@
+/**
+ *
+ *
+ * @param patient
+ * 		
+ * @param filterType
+ * 		
+ * @return 
+ */
+public String getComprehensiveDemographicInfo(PatientBean patient, DemographicReportFilter.DemographicReportFilterType filterType) {
+    switch (filterType) {
+        case GENDER :
+            return patient.getGender().toString();
+        case LAST_NAME :
+            return patient.getLastName();
+        case FIRST_NAME :
+            return patient.getFirstName();
+        case CONTACT_EMAIL :
+            return patient.getEmail();
+        case STREET_ADDR :
+            return ((patient.getStreetAddress1()) + " ") + (patient.getStreetAddress2());
+        case CITY :
+            return patient.getCity();
+        case STATE :
+            return patient.getState();
+        case ZIP :
+            return patient.getZip();
+        case PHONE :
+            return patient.getPhone();
+        case EMER_CONTACT_NAME :
+            return patient.getEmergencyName();
+        case EMER_CONTACT_PHONE :
+            return patient.getEmergencyPhone();
+        case INSURE_NAME :
+            return patient.getIcName();
+        case INSURE_ADDR :
+            return ((patient.getIcAddress1()) + " ") + (patient.getIcAddress2());
+        case INSURE_CITY :
+            return patient.getIcCity();
+        case INSURE_STATE :
+            return patient.getIcState();
+        case INSURE_ZIP :
+            return patient.getIcZip();
+        case INSURE_PHONE :
+            return patient.getIcPhone();
+        case MID :
+            return Long.toString(patient.getMID());
+        case INSURE_ID :
+            return patient.getIcID();
+        case PARENT_FIRST_NAME :
+            try {
+                List<FamilyMemberBean> parents = fDAO.getParents(patient.getMID());
+                String out = "";
+                for (FamilyMemberBean parent : parents) {
+                    out += (parent.getFirstName()) + "
+";
+                }
+                return out;
+            } catch (Exception e) {
+                break;
+            }
+        case PARENT_LAST_NAME :
+            try {
+                List<FamilyMemberBean> parents = fDAO.getParents(patient.getMID());
+                String out = "";
+                for (FamilyMemberBean parent : parents) {
+                    out += (parent.getLastName()) + "
+";
+                }
+                return out;
+            } catch (Exception e) {
+                break;
+            }
+        case CHILD_FIRST_NAME :
+            try {
+                List<FamilyMemberBean> children = fDAO.getChildren(patient.getMID());
+                String out = "";
+                for (FamilyMemberBean child : children) {
+                    out += (child.getFirstName()) + "
+";
+                }
+                return out;
+            } catch (Exception e) {
+                break;
+            }
+        case CHILD_LAST_NAME :
+            try {
+                List<FamilyMemberBean> children = fDAO.getChildren(patient.getMID());
+                String out = "";
+                for (FamilyMemberBean child : children) {
+                    out += (child.getLastName()) + "
+";
+                }
+                return out;
+            } catch (Exception e) {
+                break;
+            }
+        case SIBLING_FIRST_NAME :
+            try {
+                List<FamilyMemberBean> siblings = fDAO.getSiblings(patient.getMID());
+                String out = "";
+                for (FamilyMemberBean sibling : siblings) {
+                    out += (sibling.getFirstName()) + "
+";
+                }
+                return out;
+            } catch (Exception e) {
+                break;
+            }
+        case SIBLING_LAST_NAME :
+            try {
+                List<FamilyMemberBean> siblings = fDAO.getSiblings(patient.getMID());
+                String out = "";
+                for (FamilyMemberBean sibling : siblings) {
+                    out += (sibling.getLastName()) + "
+";
+                }
+                return out;
+            } catch (Exception e) {
+                break;
+            }
+        case DEACTIVATED :
+            return patient.getDateOfDeactivationStr();
+        default :
+            break;
+    }
+    return null;
+}

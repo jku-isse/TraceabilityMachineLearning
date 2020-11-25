@@ -1,0 +1,11 @@
+/**
+ * Informs that a figure is about to change something that
+ * affects the contents of its display box.
+ */
+public void willChange() {
+    if ((changingDepth) == 0) {
+        fireAreaInvalidated();
+        invalidate();
+    }
+    (changingDepth)++;
+}

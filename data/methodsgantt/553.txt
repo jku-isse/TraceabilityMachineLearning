@@ -1,0 +1,6 @@
+/**
+ * Open a local project file with dialog box (JFileChooser)
+ */
+public void openFile() throws IOException {
+    getProjectUIFacade().openProject(this);
+}

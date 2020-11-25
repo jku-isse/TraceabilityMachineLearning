@@ -1,0 +1,9 @@
+private void fireTaskAdded(Task task) {
+    if (areEventsEnabled) {
+        TaskHierarchyEvent e = new TaskHierarchyEvent(this, task, null, getTaskHierarchy().getContainer(task));
+        for (int i = 0; i < (myListeners.size()); i++) {
+            TaskListener next = ((TaskListener) (myListeners.get(i)));
+            next.taskAdded(e);
+        }
+    }
+}

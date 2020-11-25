@@ -1,0 +1,25 @@
+public void testGetVisitReminders_DiagnosedCareNeeders() throws Exception {
+    gen.standardData();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("Office Visit Reminders").click();
+    assertEquals("iTrust - Visit Reminders", wr.getTitle());
+    WebForm wf = wr.getFormWithID("reminderForm");
+    wf.setParameter("ReminderType", "Diagnosed Care Needers");
+    wf.getButtonWithID("getReminders").click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Visit Reminders", wr.getTitle());
+    assertEquals(4, wr.getTables().length);
+    WebTable table = wr.getTables()[0];
+    assertEquals("Zappic Clith", table.getCellAsText(1, 1));
+    assertEquals("919-555-9213", table.getCellAsText(2, 1));
+    table = wr.getTables()[1];
+    assertEquals("Random Person", table.getCellAsText(1, 1));
+    assertEquals("919-971-0000", table.getCellAsText(2, 1));
+    table = wr.getTables()[2];
+    assertEquals("Anakin Skywalker", table.getCellAsText(1, 1));
+    assertEquals("919-419-5555", table.getCellAsText(2, 1));
+    table = wr.getTables()[3];
+    assertEquals("Darryl Thompson", table.getCellAsText(1, 1));
+    assertEquals("919-555-6709", table.getCellAsText(2, 1));
+}

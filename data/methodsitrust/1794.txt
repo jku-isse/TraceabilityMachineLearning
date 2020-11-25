@@ -1,0 +1,3 @@
+public void setERIncident(boolean isERIncident) {
+    this.isERIncident = isERIncident;
+}

@@ -1,0 +1,7 @@
+Offset(TimeUnit offsetUnit, Date offsetAnchor, Date offsetEnd, int offsetPixels, GPCalendar.DayType dayType) {
+    myOffsetAnchor = offsetAnchor;
+    myOffsetEnd = offsetEnd;
+    myOffsetPixels = offsetPixels;
+    myOffsetUnit = offsetUnit;
+    myDayType = dayType;
+}

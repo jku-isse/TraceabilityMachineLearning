@@ -1,0 +1,8 @@
+public AbstractButton add(Action action) {
+    JMenuItem item = getPopupMenu().add(action);
+    if ((getColumnCount()) > 1) {
+        item.setUI(new PaletteMenuItemUI());
+    }
+    item.setFont(itemFont);
+    return item;
+}

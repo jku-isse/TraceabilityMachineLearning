@@ -1,0 +1,11 @@
+/**
+ * Interface method; handles the mouse click on the OK-button
+ *
+ * @param e
+ * 		The action event
+ */
+public void actionPerformed(ActionEvent e) {
+    if (e.getSource().equals(jbOK)) {
+        this.hide();
+    }
+}

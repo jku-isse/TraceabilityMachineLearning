@@ -1,0 +1,8 @@
+public void mousePressed(MouseEvent e) {
+    example = new BezierDemo.Example();
+    examples.add(example);
+    example.error = getError();
+    double zoomFactor = getZoomFactor();
+    example.digitized.moveTo(((e.getX()) / zoomFactor), ((e.getY()) / zoomFactor));
+    canvas.repaint();
+}

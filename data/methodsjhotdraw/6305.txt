@@ -1,0 +1,7 @@
+public void configureButton(AbstractButton button, String argument, Class baseClass) {
+    button.setText(getTextProperty(argument));
+    // button.setACCELERATOR_KEY, getAcceleratorProperty(argument));
+    // action.putValue(Action.MNEMONIC_KEY, new Integer(getMnemonicProperty(argument)));
+    button.setIcon(getIconProperty(argument, baseClass));
+    button.setToolTipText(getToolTipTextProperty(argument));
+}

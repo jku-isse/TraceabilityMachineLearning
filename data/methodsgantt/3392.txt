@@ -1,0 +1,15 @@
+private boolean mergeProjects() {
+    if (((myProject.getDocument()) == null) && (!(myProject.isModified()))) {
+        return false;
+    }
+    String message = i18n("msg17");
+    String title = i18n("question");
+    UIFacade.Choice mergeChoice = getUIFacade().showConfirmationDialog(message, title);
+    if (mergeChoice == (UIFacade.Choice.YES)) {
+        return true;
+    }
+    if (myProject.checkCurrentProject()) {
+        myProject.close();
+    }
+    return false;
+}

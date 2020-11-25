@@ -1,0 +1,7 @@
+public void ancestorMoved(AncestorEvent event) {
+    if ((toolbar.getUI()) instanceof BasicToolBarUI) {
+        if (((BasicToolBarUI) (toolbar.getUI())).isFloating()) {
+            locationChanged();
+        }
+    }
+}

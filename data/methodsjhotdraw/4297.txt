@@ -1,0 +1,25 @@
+protected void uninstallListeners() {
+    if ((dockingListener) != null) {
+        toolBar.removeMouseMotionListener(dockingListener);
+        toolBar.removeMouseListener(dockingListener);
+        dockingListener = null;
+    }
+    if ((propertyListener) != null) {
+        toolBar.removePropertyChangeListener(propertyListener);
+        propertyListener = null;// removed in setFloating
+
+    }
+    if ((toolBarContListener) != null) {
+        toolBar.removeContainerListener(toolBarContListener);
+        toolBarContListener = null;
+    }
+    if ((toolBarFocusListener) != null) {
+        // Remove focus listener from all components in toolbar
+        Component[] components = toolBar.getComponents();
+        for (int i = 0; i < (components.length); ++i) {
+            components[i].removeFocusListener(toolBarFocusListener);
+        }
+        toolBarFocusListener = null;
+    }
+    handler = null;
+}

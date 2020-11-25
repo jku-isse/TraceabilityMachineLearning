@@ -1,0 +1,4 @@
+@Override
+protected void drawStroke(Graphics2D g) {
+    // throw new UnsupportedOperationException("Not supported yet.");
+}

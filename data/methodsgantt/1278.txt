@@ -1,0 +1,3 @@
+void show() {
+    showDialog(contentComponent, new Action[]{ okAction, cancelAction });
+}

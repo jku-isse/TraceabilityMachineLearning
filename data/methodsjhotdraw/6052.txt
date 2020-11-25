@@ -1,0 +1,4 @@
+protected void writeLineElement(IXMLElement parent, SVGPathFigure f) throws IOException {
+    BezierFigure bezier = ((BezierFigure) (f.getChild(0)));
+    parent.addChild(createLine(document, bezier.getNode(0).x[0], bezier.getNode(0).y[0], bezier.getNode(1).x[0], bezier.getNode(1).y[0], f.getAttributes()));
+}

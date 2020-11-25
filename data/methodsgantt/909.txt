@@ -1,0 +1,3 @@
+public DefaultMutableTreeNode getNode() {
+    return node;
+}

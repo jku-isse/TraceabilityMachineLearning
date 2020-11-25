@@ -1,0 +1,4 @@
+public void dependencyRemoved(TaskDependencyEvent e) {
+    // ourCriticProcess = true;
+    fireDelayObservation();
+}

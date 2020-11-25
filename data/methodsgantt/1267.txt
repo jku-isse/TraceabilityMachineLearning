@@ -1,0 +1,23 @@
+public UIFacade.Choice showConfirmationDialog(String message, String title) {
+    /* MyDialog dialog = new MyDialog(GanttDialogInfo.WARNING, message);
+    dialog.show();
+    return dialog.result;
+     */
+    // int result = JOptionPane.showConfirmDialog(myMainFrame, message);
+    String yes = GanttLanguage.getInstance().getText("yes");
+    String no = GanttLanguage.getInstance().getText("no");
+    String cancel = GanttLanguage.getInstance().getText("cancel");
+    int result = JOptionPane.showOptionDialog(myMainFrame, message, title, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[]{ yes, no, cancel }, yes);
+    switch (result) {
+        case JOptionPane.YES_OPTION :
+            return UIFacade.Choice.YES;
+        case JOptionPane.NO_OPTION :
+            return UIFacade.Choice.NO;
+        case JOptionPane.CANCEL_OPTION :
+            return UIFacade.Choice.CANCEL;
+        case JOptionPane.CLOSED_OPTION :
+            return UIFacade.Choice.CANCEL;
+        default :
+            return UIFacade.Choice.CANCEL;
+    }
+}

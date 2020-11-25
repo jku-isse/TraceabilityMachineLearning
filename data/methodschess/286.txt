@@ -1,0 +1,11 @@
+// Constructors
+/**
+ * Create a new action instance.
+ *
+ * @param book
+ * 		The opening book, we are operating on.
+ */
+public LoadOpeningsAction(OpeningBook book) {
+    super("Load openings from PGN...");
+    setOpeningBook(book);
+}

@@ -1,0 +1,30 @@
+PackBot
+
+PackBot is a series of military robots by iRobot. More than 2000 were used in Iraq and Afghanistan.[1] PackBots were the first robots to enter the damaged Fukushima nuclear plant after the 2011 Tōhoku earthquake and tsunami.[2] As of November 2014, the U.S. Army is refurbishing 224 iRobot 510 robots.[3]
+
+Current PackBot 510 variants
+
+PackBot 510 is the current base model. It uses a videogame-style hand controller to make it more familiar to young operators. Configurations include:
+
+PackBot 510 with EOD Bomb Disposal Kit designed for improvised explosive device identification and disposal.
+PackBot 510 with Fast Tactical Maneuvering Kit designed for infantry troops tasked with improvised explosive device inspection. This is a lighter weight robot.
+PackBot 510 with First Responder Kit designed to help SWAT teams and other first responders with situational awareness.
+PackBot 510 with HazMat Detection Kit collects air samples to detect chemical and radiological agents.
+PackBot 510 with Fido utilizes the Fido Explosives Detector from ICx Technologies as a payload in order to "sniff" out explosive materials. With the Fido, the PackBot now has the capability of locating explosive devices and subsequently disarming them using on-board robotic capabilities.[4]
+PackBot 510 with REDOWL Sniper Detection Kit utilizes the Acoustic Direction Finder from BioMimetic Systems to localize gunshots with azimuth, elevation, and range.[5]
+RC2 - U.S. Marine Corps version of the 510 PackBot with a longer and stronger arm, more cameras, communications variations, and better track propulsion.[6]
+
+Previous PackBot variants
+
+PackBot Scout is the basic configuration. It has five payload bays for assignable purposes and can be dropped from a height of six feet (1.83m) onto concrete without being damaged. The Packbot scout version weighs about 40 pounds (18 kg).
+PackBot Explorer has a camera head equipped with multiple cameras, laser pointers, audio and other sensors.
+PackBot EOD (explosive-ordnance disposal) can be controlled by radio or wired control to handle situations involving potential explosives, thereby reducing the risk of personal injury.
+
+References
+
+1. "iRobot Delivers 3,000th PackBot". Archived from the original on March 23, 2011.
+2. Nakata, Hiroko (2012-01-06). "Domestic robots failed to ride to rescue after No. 1 plant blew". The Japan Times. Retrieved January 9, 2012.
+3. US Army Works Toward Single Ground Robot - Defensenews.com, 15 November 2014
+4. http://www.nationaldefensemagazine.org/issues/2006/November/RDcommand.htm
+5. http://www.irobot.com/sp.cfm?pageid=314
+6. Marines happily recycle Army bots - MarineCorpstimes.com, 19 April 2014

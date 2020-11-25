@@ -1,0 +1,4 @@
+public void add(JMenuItem item) {
+    getPopupMenu().add(item);
+    item.setFont(itemFont);
+}

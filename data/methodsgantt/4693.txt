@@ -1,0 +1,3 @@
+public GanttCalendar getAcceptableStart() {
+    return myAcceptableStart;
+}

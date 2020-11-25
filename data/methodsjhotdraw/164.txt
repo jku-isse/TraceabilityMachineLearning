@@ -1,0 +1,4 @@
+@Override
+public void removePalette(Window palette) {
+    paletteHandler.removePalette(palette);
+}

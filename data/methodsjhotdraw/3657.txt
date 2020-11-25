@@ -1,0 +1,7 @@
+@Override
+public boolean replaceEdit(UndoableEdit anEdit) {
+    if (anEdit instanceof AbstractAttributeEditorHandler.UndoableAttributeEdit) {
+        return (((AbstractAttributeEditorHandler.UndoableAttributeEdit) (anEdit)).editUndoData) == (this.editUndoData);
+    }
+    return false;
+}

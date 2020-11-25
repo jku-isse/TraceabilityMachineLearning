@@ -1,0 +1,9 @@
+protected Shape getHitShape() {
+    if ((cachedHitShape) == null) {
+        cachedHitShape = getPath();
+        if (((AttributeKeys.FILL_COLOR.get(this)) == null) && ((SVGAttributeKeys.FILL_GRADIENT.get(this)) == null)) {
+            cachedHitShape = SVGAttributeKeys.getHitStroke(this).createStrokedShape(cachedHitShape);
+        }
+    }
+    return cachedHitShape;
+}

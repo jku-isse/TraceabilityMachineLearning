@@ -1,0 +1,4 @@
+public void cutSelection() {
+    this.saveSelectionToClipboard(true);
+    this.isCut = true;
+}

@@ -1,0 +1,12 @@
+/**
+ * Returns a string that specifies the name of the L&F class
+ * that renders this component.
+ *
+ * @return "FontChooserUI"
+ * @see JComponent#getUIClassID
+ * @see UIDefaults#getUI
+ */
+@Override
+public String getUIClassID() {
+    return JFontChooser.uiClassID;
+}

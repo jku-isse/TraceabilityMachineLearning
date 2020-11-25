@@ -1,0 +1,25 @@
+// Methods
+/**
+ * The actual action.
+ *
+ * @param event
+ * 		The event, that caused this action.
+ */
+public void actionPerformed(ActionEvent event) {
+    // Missing: save current project?
+    JFileChooser chooser = new JFileChooser();
+    chooser.setDialogTitle("Load pgn file");
+    chooser.setFileFilter(SaveGameAsAction.getPGNFileFilter());
+    int retval = chooser.showOpenDialog(null);
+    if (retval == (JFileChooser.APPROVE_OPTION)) {
+        File file = chooser.getSelectedFile();
+        try {
+            PGNFile pgnFile = new PGNFile(new BufferedReader(new FileReader(file)));
+            GameNotation notation = pgnFile.readGame();
+        } catch (FileNotFoundException fe) {
+            JOptionPane.showMessageDialog(null, (("File " + (file.getName())) + " not found!"), "File not found", JOptionPane.ERROR_MESSAGE);
+        } catch (RecognitionException re) {
+        } catch (TokenStreamException te) {
+        }
+    }
+}

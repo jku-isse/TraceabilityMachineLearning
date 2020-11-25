@@ -1,0 +1,4 @@
+public void testGetNamedHCP() throws Exception {
+    HCPVisitBean bean = action.getNamedHCP("Kelly Doctor");
+    assertEquals("Kelly Doctor", bean.getHCPName());
+}

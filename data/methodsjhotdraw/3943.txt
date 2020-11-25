@@ -1,0 +1,3 @@
+public Dimension maximumLayoutSize(Container target) {
+    return preferredLayoutSize(target);
+}

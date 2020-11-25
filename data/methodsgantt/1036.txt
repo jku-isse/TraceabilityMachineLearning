@@ -1,0 +1,2 @@
+// 
+GanttLanguage getI18n();

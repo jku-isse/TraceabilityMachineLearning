@@ -1,0 +1,7 @@
+/**
+ * Set the source of the ply.
+ *
+ * @param source
+ * 		The new source square for this ply.
+ */
+void setSource(Position source);

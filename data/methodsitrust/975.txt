@@ -1,0 +1,10 @@
+public void testAddDuplicate() throws DBException, FormValidationException {
+    final String code = "999999999";
+    final String descrip0 = "description 0";
+    MedicationBean proc = new MedicationBean(code, descrip0);
+    assertEquals(getAddCodeSuccessString(proc), action.addNDCode(proc));
+    proc.setDescription("description 1");
+    assertEquals("Error: Code already exists.", action.addNDCode(proc));
+    proc = factory.getNDCodesDAO().getNDCode(code);
+    assertEquals(descrip0, proc.getDescription());
+}

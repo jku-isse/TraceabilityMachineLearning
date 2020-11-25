@@ -1,0 +1,4 @@
+public boolean isLineNumbersVisible() {
+    NumberedViewFactory viewFactory = ((NumberedViewFactory) (editor.getEditorKit().getViewFactory()));
+    return viewFactory.isLineNumbersVisible();
+}

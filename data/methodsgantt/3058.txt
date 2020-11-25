@@ -1,0 +1,3 @@
+private boolean needsLabel(GPOption nextOption) {
+    return false == (nextOption instanceof BooleanOption);
+}

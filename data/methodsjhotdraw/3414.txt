@@ -1,0 +1,9 @@
+public Node(Point2D.Double c0) {
+    this.mask = 0;
+    x[0] = c0.x;
+    y[0] = c0.y;
+    x[1] = c0.x;
+    y[1] = c0.y;
+    x[2] = c0.x;
+    y[2] = c0.y;
+}

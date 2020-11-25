@@ -1,0 +1,3 @@
+public Dimension getMinimumVerticalSize() {
+    return ColorSliderUI.MINIMUM_VERTICAL_SIZE;
+}

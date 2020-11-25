@@ -1,0 +1,6 @@
+/**
+ * Gets the color displayed when over a floating area
+ */
+public Color getFloatingColor() {
+    return floatingColor;
+}

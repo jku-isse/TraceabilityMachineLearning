@@ -1,0 +1,5 @@
+public ZoomOutAction(ZoomManager zoomManager, String iconSize) {
+    super("ZoomOut", iconSize);
+    myZoomManager = zoomManager;
+    myZoomManager.addZoomListener(this);
+}

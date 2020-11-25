@@ -1,0 +1,15 @@
+// EDITING
+public Figure findFigureInside(Point2D.Double p) {
+    if (getDrawingArea().contains(p)) {
+        Figure found = null;
+        for (Figure child : getChildrenFrontToBack()) {
+            if (child.isVisible()) {
+                found = child.findFigureInside(p);
+                if (found != null) {
+                    return found;
+                }
+            }
+        }
+    }
+    return null;
+}

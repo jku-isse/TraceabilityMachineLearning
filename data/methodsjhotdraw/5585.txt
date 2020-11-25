@@ -1,0 +1,13 @@
+// GEN-FIRST:Superclass
+// Here you can add code for customizing the Superclass BeanInfo.
+// GEN-LAST:Superclass
+/**
+ * Gets the beans <code>BeanDescriptor</code>s.
+ *
+ * @return BeanDescriptor describing the editable
+properties of this bean.  May return null if the
+information should be obtained by automatic analysis.
+ */
+public BeanDescriptor getBeanDescriptor() {
+    return AbstractToolBarBeanInfo.getBdescriptor();
+}

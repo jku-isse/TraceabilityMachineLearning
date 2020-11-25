@@ -1,0 +1,35 @@
+/**
+ * Returns a list of information related to prescription reports given all of the office visits and the
+ * patient ID. The patient ID is necessary in case the office visit IDs are for different patients (the
+ * disambiguation is for security reasons).
+ *
+ * @param ovIDs
+ * 		A java.util.List of Longs for the office visits.
+ * @param patientID
+ * 		A long representing the MID of the patient in question.
+ * @return A java.util.List of prescription reports.
+ * @throws DBException
+ * 		
+ */
+public List<PrescriptionReportBean> byDate(long patientID, String startDate, String endDate) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("SELECT * FROM ndcodes, ovmedication, officevisits " + (((("WHERE ndcodes.Code=ovmedication.NDCode AND ovmedication.VisitID=officevisits.ID " + "AND PatientID=? AND ((DATE(?) < ovmedication.EndDate AND DATE(?) > ovmedication.StartDate)") + "OR (DATE(?) > ovmedication.StartDate  AND DATE(?) < ovmedication.EndDate ) OR ") + "(DATE(?) <= ovmedication.StartDate AND DATE(?) >= ovmedication.StartDate)) ") + "ORDER BY VisitDate DESC")));
+        ps.setLong(1, patientID);
+        ps.setString(2, startDate);
+        ps.setString(3, startDate);
+        ps.setString(4, endDate);
+        ps.setString(5, endDate);
+        ps.setString(6, startDate);
+        ps.setString(7, endDate);
+        ResultSet rs = ps.executeQuery();
+        return loader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

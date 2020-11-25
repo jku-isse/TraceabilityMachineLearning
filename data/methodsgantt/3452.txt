@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @return a list of the possible separated char.
+ */
+public String[] getSeparatedTextChars() {
+    String[] charText = new String[]{ "      ", "   "   " };
+    return charText;
+}

@@ -1,0 +1,3 @@
+public void endTimeFrame(TimeFrame timeFrame) {
+    // TODO Auto-generated method stub
+}

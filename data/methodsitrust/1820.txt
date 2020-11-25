@@ -1,0 +1,8 @@
+/**
+ * Gets the reason Code for this procedure
+ *
+ * @return The reason Code for this procedure
+ */
+public String getORCode() {
+    return reasonCode;
+}

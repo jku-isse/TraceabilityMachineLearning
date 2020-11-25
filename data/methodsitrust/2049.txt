@@ -1,0 +1,3 @@
+public void setVisitID(long visitID) {
+    this.visitID = visitID;
+}

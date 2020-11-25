@@ -1,0 +1,3 @@
+public void setTimeLogged(Timestamp timeLogged) {
+    this.timeLogged = timeLogged;
+}

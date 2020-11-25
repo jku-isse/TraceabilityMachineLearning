@@ -1,0 +1,4 @@
+public Dimension2DDouble getPreferredSize() {
+    Rectangle2D.Double b = getBounds();
+    return new Dimension2DDouble(b.width, b.height);
+}

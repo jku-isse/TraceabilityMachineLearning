@@ -1,0 +1,4 @@
+public void setLineNumbersVisible(boolean newValue) {
+    boolean oldValue = isLineNumbersVisible;
+    isLineNumbersVisible = newValue;
+}

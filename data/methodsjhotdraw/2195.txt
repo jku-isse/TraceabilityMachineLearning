@@ -1,0 +1,4 @@
+/**
+ * Sets the buffered image for the figure.
+ */
+public void setBufferedImage(BufferedImage image);

@@ -1,0 +1,11 @@
+@Override
+public boolean isCombinableWith(Handle h) {
+    /* if (super.isCombinableWith(h)) {
+    BezierNodeHandle that = (BezierNodeHandle) h;
+    return that.index == this.index &&
+    that.getOwner().getNodeCount() ==
+    this.getOwner().getNodeCount();
+    }
+     */
+    return false;
+}

@@ -1,0 +1,4 @@
+/**
+ * Disposes the resources aquired by the handler.
+ */
+public void dispose();

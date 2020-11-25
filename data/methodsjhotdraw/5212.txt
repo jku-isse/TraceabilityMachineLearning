@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ */
+public SVGCreateFromFileTool(ImageHolderFigure imagePrototype, CompositeFigure groupPrototype) {
+    super(imagePrototype);
+    this.groupPrototype = groupPrototype;
+    this.imagePrototype = imagePrototype;
+}

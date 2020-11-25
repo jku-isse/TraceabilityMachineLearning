@@ -1,0 +1,10 @@
+/**
+ * Adds a (non-palette) window to the application.
+ *
+ * @param window
+ * 		The window.
+ * @param view
+ * 		The View to which this window is associated, or null,
+ * 		if the window is associated to the application.
+ */
+public void addWindow(Window window, View view);

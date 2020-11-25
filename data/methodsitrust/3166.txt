@@ -1,0 +1,4 @@
+public void testVisitsForHCP0() throws Exception {
+    List<OfficeVisitBean> visits = ovDAO.getAllOfficeVisitsForLHCP(9000000000L);
+    assertEquals(10, visits.size());
+}

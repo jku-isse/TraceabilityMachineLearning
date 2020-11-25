@@ -1,0 +1,76 @@
+/**
+ * Generates the ArrayLists for the report based on the filters passed
+ * in the constructor.
+ */
+public void generateReport() {
+    // Initialize the GroupReportBean
+    GroupReportBean report = action.generateReport(filters);
+    // Populate the filter lists
+    for (ReportFilter filter : filters) {
+        reportFilterTypes.add(filter.getFilterTypeString());
+        reportFilterValues.add(filter.getFilterValue());
+    }
+    // Populate the header list with the DemographicReportFilters
+    for (DemographicReportFilter.DemographicReportFilterType type : DemographicReportFilter.DemographicReportFilterType.values()) {
+        if ((type != (DemographicReportFilter.DemographicReportFilterType.LOWER_AGE_LIMIT)) && (type != (DemographicReportFilter.DemographicReportFilterType.UPPER_AGE_LIMIT))) {
+            reportHeaders.add(type.toString());
+        }
+    }
+    // Populate the header list with the MedicalReportFilters
+    for (MedicalReportFilter.MedicalReportFilterType type : MedicalReportFilter.MedicalReportFilterType.values()) {
+        if ((type != (MedicalReportFilter.MedicalReportFilterType.LOWER_OFFICE_VISIT_DATE)) && (type != (MedicalReportFilter.MedicalReportFilterType.UPPER_OFFICE_VISIT_DATE))) {
+            reportHeaders.add(type.toString());
+        }
+        if (type == (MedicalReportFilter.MedicalReportFilterType.LOWER_OFFICE_VISIT_DATE)) {
+            reportHeaders.add("OFFICE VISIT DATE");
+        }
+    }
+    // Populate the header list with the PersonnelReportFilters
+    for (PersonnelReportFilter.PersonnelReportFilterType type : PersonnelReportFilter.PersonnelReportFilterType.values()) {
+        reportHeaders.add(type.toString());
+    }
+    // Loop through all the patients in the report
+    for (PatientBean patient : report.getPatients()) {
+        // Create a temporary ArrayList for the current patients data
+        ArrayList<String> currentPatientData = new ArrayList<String>();
+        // Populate the current record with Demographic data
+        for (DemographicReportFilter.DemographicReportFilterType type : DemographicReportFilter.DemographicReportFilterType.values()) {
+            if ((type != (DemographicReportFilter.DemographicReportFilterType.LOWER_AGE_LIMIT)) && (type != (DemographicReportFilter.DemographicReportFilterType.UPPER_AGE_LIMIT))) {
+                String val = action.getComprehensiveDemographicInfo(patient, type);
+                if (val != null) {
+                    currentPatientData.add(val);
+                } else {
+                    currentPatientData.add("");
+                }
+            }
+        }
+        // Populate the current record with Medical data
+        for (MedicalReportFilter.MedicalReportFilterType type : MedicalReportFilter.MedicalReportFilterType.values()) {
+            if (type != (MedicalReportFilter.MedicalReportFilterType.UPPER_OFFICE_VISIT_DATE)) {
+                String val = action.getComprehensiveMedicalInfo(patient, type);
+                if (val != null) {
+                    currentPatientData.add(val);
+                } else {
+                    currentPatientData.add("");
+                }
+            }
+        }
+        // Populate the current record with Personnel data
+        for (PersonnelReportFilter.PersonnelReportFilterType type : PersonnelReportFilter.PersonnelReportFilterType.values()) {
+            String val = action.getComprehensivePersonnelInfo(patient, type);
+            if (val != null) {
+                currentPatientData.add(val);
+            } else {
+                currentPatientData.add("");
+            }
+        }
+        // Add the current record to the list of records
+        reportData.add(currentPatientData);
+    }
+    // Remove MID from report
+    int midIndex = reportHeaders.indexOf("MID");
+    reportHeaders.remove(midIndex);
+    for (ArrayList<String> patients : reportData) {
+        patients.remove(midIndex);
+    }
+}

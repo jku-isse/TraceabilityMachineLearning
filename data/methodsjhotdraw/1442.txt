@@ -1,0 +1,4 @@
+/**
+ * Gets the start point.
+ */
+public Point2D.Double getStartPoint();

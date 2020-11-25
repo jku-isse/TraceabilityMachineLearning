@@ -1,0 +1,19 @@
+public boolean separatCharHasChange() {
+    CSVOptions csvOptions = appli.getOptions().getCSVOptions();
+    if ((bDoubleDot.isSelected()) && (csvOptions.sSeparatedChar.equals(":")))
+        return false;
+
+    if ((bComa.isSelected()) && (csvOptions.sSeparatedChar.equals(",")))
+        return false;
+
+    if ((bDotComa.isSelected()) && (csvOptions.sSeparatedChar.equals(";")))
+        return false;
+
+    if ((bSpace.isSelected()) && (csvOptions.sSeparatedChar.equals(" ")))
+        return false;
+
+    if ((bOther.isSelected()) && (csvOptions.sSeparatedChar.equals(tfOther.getText())))
+        return false;
+
+    return true;
+}

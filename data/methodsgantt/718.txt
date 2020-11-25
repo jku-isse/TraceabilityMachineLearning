@@ -1,0 +1,6 @@
+/**
+ * Move down the selected resource
+ */
+private void downResource() {
+    table.downResource();
+}

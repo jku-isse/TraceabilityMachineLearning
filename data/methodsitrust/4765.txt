@@ -1,0 +1,16 @@
+public void testLOINCcodeIncorrect() throws Exception {
+    LOINCbean bean = new LOINCbean();
+    bean.setComponent(" ");
+    bean.setKindOfProperty(" ");
+    bean.setLabProcedureCode("1232343");
+    bean.setMethodType(" ");
+    bean.setScaleType(" ");
+    bean.setSystem(" ");
+    bean.setTimeAspect(" ");
+    try {
+        new LOINCBeanValidator().validate(bean);
+        fail("exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals("LaboratoryProcedureCode: Must be 1-5 digits followed by a - then another digit", e.getErrorList().get(0));
+    }
+}

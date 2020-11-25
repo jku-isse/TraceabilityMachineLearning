@@ -1,0 +1,5 @@
+private Action[] getPopupMenuActions() {
+    return new Action[]{ getOptionsDialogAction(), new PublicHolidayDialogAction(getProject(), getUIFacade()) };
+    // actions.add(createMenuAction(GanttProject.correctLabel(language
+    // .getText("editPublicHolidays")), "));
+}

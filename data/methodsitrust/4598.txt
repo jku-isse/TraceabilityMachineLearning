@@ -1,0 +1,19 @@
+public int doStartTag() throws JspException {
+    try {
+        JspWriter out = pageContext.getOut();
+        out.write("<span class="navigation">");
+        for (int i = 0; i < (pageTitles.length); i++) {
+            if (pageTitles[i].equals(thisTitle)) {
+                out.write(pageTitles[i]);
+            } else
+                out.write((((("<a href="/iTrust/auth/hcp-uap/" + (pageURLs[i])) + "">") + (pageTitles[i])) + "</a>"));
+
+            out.write(" | ");
+        }
+        out.write("<a href="/iTrust/auth/hcp-uap/editPHR.jsp?switch=true">Switch Patient</a>");
+        out.write("<br /></span>");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return SKIP_BODY;
+}

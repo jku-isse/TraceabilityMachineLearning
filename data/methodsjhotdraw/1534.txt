@@ -1,0 +1,7 @@
+/**
+ * Returns true, if this tool fires toolDone immediately after a new
+ * figure has been created.
+ */
+public boolean isToolDoneAfterCreation() {
+    return isToolDoneAfterCreation;
+}

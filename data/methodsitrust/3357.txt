@@ -1,0 +1,4 @@
+public void testGetReferralsFromOV() throws Exception {
+    assertEquals(4, dao.getReferralsFromOV(955).size());
+    assertEquals(0, dao.getReferralsFromOV(952).size());
+}

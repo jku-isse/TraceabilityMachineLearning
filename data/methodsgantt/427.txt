@@ -1,0 +1,6 @@
+/**
+ * set the toolbar position.
+ */
+public void setToolBarPosition(int iToolBarPosition) {
+    toolBarPosition = iToolBarPosition;
+}

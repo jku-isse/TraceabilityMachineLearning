@@ -1,0 +1,11 @@
+public String getFilePath() {
+    String result = myPhysicalDocument.getFilePath();
+    if (result == null) {
+        try {
+            result = myCreator.createTemporaryFile();
+        } catch (IOException e) {
+            myUIFacade.showErrorDialog(e);
+        }
+    }
+    return result;
+}

@@ -1,0 +1,6 @@
+public void testDeclareNormal() throws Exception {
+    assertEquals("HCP successfully declared", action.declareHCP("9000000000"));
+    List<PersonnelBean> decs = action.getDeclaredHCPS();
+    assertEquals(2, decs.size());
+    assertEquals(9000000000L, decs.get(0).getMID());
+}

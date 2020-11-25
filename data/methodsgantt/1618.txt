@@ -1,0 +1,7 @@
+ChartHeaderImpl(ChartModelBase model, final UIConfiguration projectConfig) {
+    super(model);
+    myRedlineOption = projectConfig.getRedlineOption();
+    myProjectDatesOption = projectConfig.getProjectBoundariesOption();
+    myOptions = new ChartOptionGroup("ganttChartGridDetails", new GPOption[]{ myRedlineOption, myProjectDatesOption }, model.getOptionEventDispatcher());
+    myPrimitiveContainer = new GraphicPrimitiveContainer();
+}

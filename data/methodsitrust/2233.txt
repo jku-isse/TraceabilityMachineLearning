@@ -1,0 +1,5 @@
+public WardBean(long wardID, String requiredSpecialty, long inHospital) {
+    this.wardID = wardID;
+    this.requiredSpecialty = requiredSpecialty;
+    this.inHospital = inHospital;
+}

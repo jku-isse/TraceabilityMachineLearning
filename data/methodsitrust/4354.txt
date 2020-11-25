@@ -1,0 +1,15 @@
+/**
+ *
+ *
+ * @param name
+ * 		
+ * @return 
+ */
+public static PersonnelReportFilter.PersonnelReportFilterType filterTypeFromString(String name) {
+    for (PersonnelReportFilter.PersonnelReportFilterType type : PersonnelReportFilter.PersonnelReportFilterType.values()) {
+        if (type.name().equalsIgnoreCase(name)) {
+            return type;
+        }
+    }
+    return null;
+}

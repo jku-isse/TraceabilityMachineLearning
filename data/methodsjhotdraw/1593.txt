@@ -1,0 +1,7 @@
+public <T> T getDefaultAttribute(AttributeKey<T> key) {
+    if (defaultAttributes.containsKey(key)) {
+        return key.get(defaultAttributes);
+    } else {
+        return key.getDefaultValue();
+    }
+}

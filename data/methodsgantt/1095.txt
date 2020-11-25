@@ -1,0 +1,3 @@
+protected int getHeaderHeight() {
+    return 0;
+}

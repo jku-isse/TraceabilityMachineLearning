@@ -1,0 +1,8 @@
+/**
+ * Negates the input vector and returns it.
+ */
+private static Point2D.Double v2Negate(Point2D.Double v) {
+    v.x = -(v.x);
+    v.y = -(v.y);
+    return v;
+}

@@ -1,0 +1,18 @@
+/* An equivalence class test for a patient who should appear on the list.
+(Designated Tester Arehart, special-diagnosis-history, prescription expires in 5 days)
+The prescriptions were NOT made on the same visit as a special-diagnosis.
+ */
+public void testPatient9() throws Exception {
+    WebConversation wc = login("9900000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9900000000L, 0L, "");
+    wr = wr.getLinkWith("Potential Prescription-Renewals").click();
+    assertTrue(wr.getText().contains("Tester Arehart</th>"));
+    assertFalse(wr.getText().contains("9900000000"));
+    assertTrue(wr.getText().contains("Darryl"));
+    assertTrue(wr.getText().contains("Thompson"));
+    assertTrue(wr.getText().contains("a@b.com"));
+    assertTrue(wr.getText().contains("919-555-6709"));
+    iTrustHTTPTest.assertLogged(TransactionType.PRECONFIRM_PRESCRIPTION_RENEWAL, 9900000000L, 99L, "");
+}

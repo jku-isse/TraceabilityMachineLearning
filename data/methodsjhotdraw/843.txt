@@ -1,0 +1,8 @@
+public void restoreTransformTo(Object geometry) {
+    LinkedList list = ((LinkedList) (geometry));
+    Iterator i = list.iterator();
+    for (Figure child : getChildren()) {
+        child.restoreTransformTo(i.next());
+    }
+    invalidate();
+}

@@ -1,0 +1,5 @@
+public void testReportInteraction() throws Exception {
+    gen.ndCodes();
+    String response = action.reportInteraction("548684985", "081096", "May potentiate the risk of bleeding in patients.");
+    assertSame(response, "Interaction recorded successfully");
+}

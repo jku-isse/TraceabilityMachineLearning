@@ -1,0 +1,4 @@
+public void write(DOMOutput out) {
+    out.addAttribute("relativeX", relativeX, 0.5);
+    out.addAttribute("relativeY", relativeY, 0.5);
+}

@@ -1,0 +1,4 @@
+public void transform(AffineTransform tx) {
+    path.transform(tx);
+    invalidate();
+}

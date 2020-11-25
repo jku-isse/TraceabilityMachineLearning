@@ -1,0 +1,9 @@
+/**
+ * Returns the number of custom columns.
+ *
+ * @return The number of custom columns.
+ */
+public int getCustomColumnCount() {
+    // return customColumns.size();
+    return mapIdCustomColum.size();
+}

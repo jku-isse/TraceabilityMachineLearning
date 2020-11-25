@@ -1,0 +1,8 @@
+public void insert(MutableTreeNode newChild, int index) {
+    FontCollectionNode oldParent = ((FontCollectionNode) (newChild.getParent()));
+    if (oldParent != null) {
+        oldParent.remove(newChild);
+    }
+    newChild.setParent(this);
+    children.add(index, ((FontFamilyNode) (newChild)));
+}

@@ -1,0 +1,6 @@
+/**
+ * Create a new project
+ */
+public void newProject() {
+    getProjectUIFacade().createProject(getProject());
+}

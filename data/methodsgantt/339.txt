@@ -1,0 +1,15 @@
+/**
+ * Default constructor.
+ */
+public GanttOptions(RoleManager roleManager, DocumentManager documentManager, boolean isOnlyViewer) {
+    myDocumentManager = documentManager;
+    myRoleManager = roleManager;
+    this.isOnlyViewer = isOnlyViewer;
+    initByDefault();
+    try {
+        this.workingDir = System.getProperty("user.home");
+    } catch (AccessControlException e) {
+        // This can happen when running in a sandbox (Java WebStart)
+        System.err.println(((e + ": ") + (e.getMessage())));
+    }
+}

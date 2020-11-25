@@ -1,0 +1,7 @@
+public void testListEmailsByPerson() throws Exception {
+    String email = "gstormcrow@iTrust.org";
+    List<Email> emails = factory.getFakeEmailDAO().getEmailsByPerson(email);
+    assertEquals(2, emails.size());
+    assertEquals("this is an email", emails.get(0).getSubject());
+    assertEquals("this is another email", emails.get(1).getSubject());
+}

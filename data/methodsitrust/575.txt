@@ -1,0 +1,4 @@
+public void testGetLabProceduresTable() throws iTrustException {
+    Hashtable<Integer, ArrayList<LabProcedureBean>> lTable = action.getLabProceduresTable(4, 2007);
+    assertTrue(lTable.containsKey(19));
+}

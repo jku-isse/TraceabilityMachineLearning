@@ -1,0 +1,21 @@
+public TaskLength createLength(TimeUnit timeUnit, Date startDate, Date endDate) {
+    TaskLength result;
+    int sign = 1;
+    if (endDate.before(startDate)) {
+        sign = -1;
+        Date temp = endDate;
+        endDate = startDate;
+        startDate = temp;
+    }
+    if (timeUnit instanceof DateFrameable) {
+        DateFrameable df = ((DateFrameable) (timeUnit));
+        int unitCount = 0;
+        for (; startDate.before(endDate); unitCount++) {
+            startDate = df.adjustRight(startDate);
+        }
+        result = new TaskLengthImpl(timeUnit, (unitCount * sign));
+    } else {
+        throw new IllegalArgumentException((("Time unit=" + timeUnit) + " is not date frameable"));
+    }
+    return result;
+}

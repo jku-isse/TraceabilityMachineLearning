@@ -1,0 +1,4 @@
+ResourceChartTabContentPanel(ResourceTreeUIFacade resourceTree, Component resourceChart) {
+    myTreeFacade = resourceTree;
+    myResourceChart = resourceChart;
+}

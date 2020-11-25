@@ -1,0 +1,9 @@
+public void testSendEmail() throws Exception {
+    // Note: this test can be deleted once you switch to a "real" email util
+    try {
+        new EmailUtil(EvilDAOFactory.getEvilInstance()).sendEmail(null);
+        fail("Exception should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getExtendedMessage());
+    }
+}

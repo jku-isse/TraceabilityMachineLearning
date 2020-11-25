@@ -1,0 +1,8 @@
+/**
+ * Get the type of the moved piece.
+ *
+ * @return The type of the moved piece.
+ */
+public final byte getPieceType() {
+    return _pieceType;
+}

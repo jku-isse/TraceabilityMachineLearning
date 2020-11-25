@@ -1,0 +1,3 @@
+protected Application getApplication() {
+    return app;
+}

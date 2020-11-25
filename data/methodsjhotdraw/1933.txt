@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public EllipseFigure() {
+    this(0, 0, 0, 0);
+}

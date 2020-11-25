@@ -1,0 +1,6 @@
+public ImageHolderFigure createImageHolder(InputStream in) throws IOException {
+    ImageHolderFigure figure = ((ImageHolderFigure) (prototype.clone()));
+    figure.setBufferedImage(Images.toBufferedImage(PictImageInputFormat.getImageFromPictStream(in)));
+    figure.setBounds(new Point2D.Double(0, 0), new Point2D.Double(figure.getBufferedImage().getWidth(), figure.getBufferedImage().getHeight()));
+    return figure;
+}

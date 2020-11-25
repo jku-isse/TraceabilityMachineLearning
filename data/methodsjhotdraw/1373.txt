@@ -1,0 +1,6 @@
+/**
+ * Returns a cursor for the handle.
+ */
+public Cursor getCursor() {
+    return Cursor.getDefaultCursor();
+}

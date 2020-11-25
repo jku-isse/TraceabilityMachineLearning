@@ -1,0 +1,5 @@
+public boolean isLooping(TaskDependency dep) {
+    Set checked = new LinkedHashSet();
+    checked.add(dep.getDependee());
+    return isLooping(checked, dep.getDependant());
+}

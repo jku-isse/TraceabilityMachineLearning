@@ -1,0 +1,9 @@
+public void testWrongFormat() throws Exception {
+    gen.hcp0();
+    try {
+        new GetUserNameAction(factory).getUserName("90000000aaa01");
+        fail("Exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("MID not in correct form", e.getMessage());
+    }
+}

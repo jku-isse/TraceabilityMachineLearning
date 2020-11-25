@@ -1,0 +1,9 @@
+public ChartViewState(IGanttProject project, UIFacade uiFacade) {
+    iProject = project;
+    myUIFacade = uiFacade;
+    myTimeUnitStack = project.getTimeUnitStack();
+    myStartDate = CalendarFactory.newCalendar().getTime();
+    uiFacade.getZoomManager().addZoomListener(this);
+    myCurrentTimeFrame = myTimeUnitStack.createTimeFrame(myStartDate, getTopTimeUnit(), getBottomTimeUnit());
+    // setDefaultBottomUnitWidth();
+}

@@ -1,0 +1,9 @@
+public void testNoPersonnel() throws Exception {
+    action = new ViewPersonnelAction(factory, 4L);
+    try {
+        action.getPersonnel("9000000000");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("No personnel record exists for this MID", e.getMessage());
+    }
+}

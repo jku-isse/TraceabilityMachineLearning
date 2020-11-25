@@ -1,0 +1,5 @@
+@Override
+public <T> void setAttribute(AttributeKey<T> key, T newValue) {
+    super.setAttribute(key, newValue);
+    invalidate();
+}

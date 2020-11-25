@@ -1,0 +1,4 @@
+public GanttCalendar(Date date) {
+    super();
+    setTime(date);
+}

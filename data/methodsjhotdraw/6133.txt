@@ -1,0 +1,11 @@
+public void setLineNumbersVisible(boolean newValue) {
+    NumberedViewFactory viewFactory = ((NumberedViewFactory) (editor.getEditorKit().getViewFactory()));
+    boolean oldValue = viewFactory.isLineNumbersVisible();
+    if (oldValue != newValue) {
+        viewFactory.setLineNumbersVisible(newValue);
+        TeddyView.prefs.putBoolean("lineNumbersVisible", newValue);
+        firePropertyChange("lineNumbersVisible", oldValue, newValue);
+        editor.revalidate();
+        editor.repaint();
+    }
+}

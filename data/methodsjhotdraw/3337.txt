@@ -1,0 +1,41 @@
+/**
+ * Find the maximum squared distance of digitized points
+ * to fitted curve.
+ *
+ * @param d
+ * 		Digitized points.
+ * @param first
+ * 		Indice of first point of region in d.
+ * @param last
+ * 		Indice of last point of region in d.
+ * @param bezCurve
+ * 		Fitted Bezier curve
+ * @param u
+ * 		Parameterization of points*
+ * @param splitPoint
+ * 		Point of maximum error (input/output parameter, must be
+ * 		an array of 1)
+ */
+private static double computeMaxError(ArrayList<Point2D.Double> d, int first, int last, Point2D.Double[] bezCurve, double[] u, int[] splitPoint) {
+    int i;
+    double maxDist;/* Maximum error */
+
+    double dist;/* Current error */
+
+    Point2D.Double P = new Point2D.Double();/* Point on curve */
+
+    Point2D.Double v = new Point2D.Double();/* Vector from point to curve */
+
+    splitPoint[0] = ((last - first) + 1) / 2;
+    maxDist = 0.0;
+    for (i = first + 1; i < last; i++) {
+        P = Bezier.bezierII(3, bezCurve, u[(i - first)]);
+        v = Bezier.v2SubII(P, d.get(i));
+        dist = Bezier.v2SquaredLength(v);
+        if (dist >= maxDist) {
+            maxDist = dist;
+            splitPoint[0] = i;
+        }
+    }
+    return maxDist;
+}

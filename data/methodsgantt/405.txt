@@ -1,0 +1,6 @@
+/**
+ * set a new earlier previous tasks color.
+ */
+public void setEarlierPreviousTaskColor(Color color) {
+    getUIConfiguration().setEarlierPreviousTaskColor(color);
+}

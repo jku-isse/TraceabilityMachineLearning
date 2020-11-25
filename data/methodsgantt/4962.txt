@@ -1,0 +1,3 @@
+public void addUndoableEditListener(GPUndoListener listener) {
+    myUndoEventDispatcher.addUndoableEditListener(listener);
+}

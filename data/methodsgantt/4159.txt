@@ -1,0 +1,12 @@
+private ResourceAssignmentCollectionImpl(ResourceAssignmentCollectionImpl collection) {
+    myTask = collection.myTask;
+    ResourceAssignment[] assignments = collection.getAssignments();
+    for (int i = 0; i < (assignments.length); i++) {
+        ResourceAssignment next = assignments[i];
+        ResourceAssignment copy = new ResourceAssignmentCollectionImpl.ResourceAssignmentImpl(next.getResource());
+        copy.setLoad(next.getLoad());
+        copy.setCoordinator(next.isCoordinator());
+        copy.setRoleForAssignment(next.getRoleForAssignment());
+        addAssignment(copy);
+    }
+}

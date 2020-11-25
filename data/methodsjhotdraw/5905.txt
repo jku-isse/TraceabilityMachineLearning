@@ -1,0 +1,3 @@
+public Gradient createRadialGradient(double cx, double cy, double fx, double fy, double r, double[] stopOffsets, Color[] stopColors, double[] stopOpacities, boolean isRelativeToFigureBounds, AffineTransform tx) {
+    return new RadialGradient(cx, cy, fx, fy, r, stopOffsets, stopColors, stopOpacities, isRelativeToFigureBounds, tx);
+}

@@ -1,0 +1,5 @@
+public void testCheckLongValues() throws Exception {
+    Long value = 80L;
+    String errorMessage = "";
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, ValidationFormat.MID, true));
+}

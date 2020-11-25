@@ -1,0 +1,12 @@
+public void testHCPTelemedicineDetailsFromNotificationCenter() throws Exception {
+    SimpleDateFormat formatter = new SimpleDateFormat();
+    formatter.applyPattern("MM/dd/yyyy");
+    // String tomorrow = formatter.format(new Date((new Date()).getTime() + 86400000));
+    gen.appointmentCase3();
+    gen.remoteMonitoring3();
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    assertTrue(wr.getText().contains("3 physiological status reports"));
+    assertTrue(wr.getText().contains("0 weight/pedometer status reports"));
+}

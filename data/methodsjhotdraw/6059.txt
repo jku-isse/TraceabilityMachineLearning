@@ -1,0 +1,12 @@
+protected void writeTextAreaElement(IXMLElement parent, SVGTextAreaFigure f) throws IOException {
+    DefaultStyledDocument styledDoc = new DefaultStyledDocument();
+    try {
+        styledDoc.insertString(0, f.getText(), null);
+    } catch (BadLocationException e) {
+        InternalError error = new InternalError(e.getMessage());
+        error.initCause(e);
+        throw error;
+    }
+    Rectangle2D.Double bounds = f.getBounds();
+    parent.addChild(createTextArea(document, bounds.x, bounds.y, bounds.width, bounds.height, styledDoc, f.getAttributes()));
+}

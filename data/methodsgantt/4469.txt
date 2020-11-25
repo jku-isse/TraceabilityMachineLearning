@@ -1,0 +1,3 @@
+public TaskManagerConfig getConfig() {
+    return myConfig;
+}

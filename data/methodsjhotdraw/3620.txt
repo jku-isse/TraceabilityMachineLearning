@@ -1,0 +1,24 @@
+public void add(T o, Rectangle2D.Double oBounds) {
+    // Do we have to split?
+    if ((((isLeaf()) && ((objects.size()) >= (maxCapacity))) && ((bounds.width) > (minSize))) && ((bounds.height) > (minSize))) {
+        split();
+    }
+    if ((isLeaf()) || (oBounds.contains(bounds))) {
+        // We put an object into our hashtable if we are
+        // a leaf, or if the bounds of the object contain our bounds.
+        objects.put(o, oBounds);
+    } else {
+        if (northEast.bounds.intersects(oBounds)) {
+            northEast.add(o, oBounds);
+        }
+        if (northWest.bounds.intersects(oBounds)) {
+            northWest.add(o, oBounds);
+        }
+        if (southEast.bounds.intersects(oBounds)) {
+            southEast.add(o, oBounds);
+        }
+        if (southWest.bounds.intersects(oBounds)) {
+            southWest.add(o, oBounds);
+        }
+    }
+}

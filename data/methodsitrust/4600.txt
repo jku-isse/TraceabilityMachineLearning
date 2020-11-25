@@ -1,0 +1,3 @@
+public String getThisTitle() {
+    return thisTitle;
+}

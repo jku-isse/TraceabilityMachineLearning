@@ -1,0 +1,35 @@
+@SuppressWarnings("unchecked")
+private static Method getTargetMethod(Object target, String targetMethodName, Class[] parameterTypes) {
+    Method[] m = target.getClass().getMethods();
+    Method result = null;
+    eachMethod : for (int i = 0; i < (m.length); i++) {
+        if (!(targetMethodName.equals(m[i].getName())))
+            continue eachMethod;
+
+        Class[] p = m[i].getParameterTypes();
+        if ((p.length) != (parameterTypes.length))
+            continue eachMethod;
+
+        for (int j = 0; j < (p.length); j++) {
+            if (!(p[j].isAssignableFrom(parameterTypes[j])))
+                continue eachMethod;
+
+        }
+        if (result != null) {
+            throw new RuntimeException(((("ambiguous method: " + (m[i])) + " vs. ") + result));
+        }
+        result = m[i];
+    }
+    /* if (result == null) {
+    throw new RuntimeException("no such method "+targetMethodName+" in "+target.getClass());
+    }
+     */
+    if (result == null) {
+        return null;
+    }
+    Method publicResult = GenericListener.raiseToPublicClass(result);
+    if (publicResult != null)
+        result = publicResult;
+
+    return result;
+}

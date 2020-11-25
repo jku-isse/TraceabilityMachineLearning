@@ -1,0 +1,5 @@
+protected void writeln(String s) throws IOException {
+    connect();
+    write(s);
+    newline();
+}

@@ -1,0 +1,61 @@
+/**
+ * Reads a &lt;default-style&gt; element from the specified
+ * XML element.
+ * <p>
+ * A default style specifies default formatting properties for a certain
+ * style family. These defaults are used if a formatting property is neither
+ * specified by an automatic nor a common style. Default styles exist for
+ * all style families that are represented by the &lt;style:style&gt;
+ * element specified in section 14.1.
+ * Default styles are represented by the &lt;style:default-style&gt;
+ * element. The only attribute supported by this element is style:family.
+ * Its meaning equals the one of the same attribute for the
+ * &lt;style:style&gt; element, and the same properties child elements are
+ * supported depending on the style family.
+ *
+ * @param elem
+ * 		A &lt;default-style&gt; element.
+ * @param a
+ * 		Style attributes to be filled in by this method.
+ */
+private void readDefaultStyleElement(IXMLElement elem, HashMap<String, ODGStylesReader.Style> styles) throws IOException {
+    String styleName = elem.getAttribute("family", ODGConstants.STYLE_NAMESPACE, null);
+    String family = elem.getAttribute("family", ODGConstants.STYLE_NAMESPACE, null);
+    String parentStyleName = elem.getAttribute("parent-style-name", ODGConstants.STYLE_NAMESPACE, null);
+    if (ODGStylesReader.DEBUG)
+        System.out.println((("ODGStylesReader <default-style family=" + styleName) + " ...>...</>"));
+
+    if (styleName != null) {
+        ODGStylesReader.Style a = styles.get(styleName);
+        if (a == null) {
+            a = new ODGStylesReader.Style();
+            a.name = styleName;
+            a.family = family;
+            a.parentName = parentStyleName;
+            styles.put(styleName, a);
+        }
+        for (IXMLElement child : elem.getChildren()) {
+            String ns = child.getNamespace();
+            String name = child.getName();
+            if ((name.equals("drawing-page-properties")) && ((ns == null) || (ns.equals(ODGConstants.STYLE_NAMESPACE)))) {
+                readDrawingPagePropertiesElement(child, a);
+            } else
+                if ((name.equals("graphic-properties")) && ((ns == null) || (ns.equals(ODGConstants.STYLE_NAMESPACE)))) {
+                    readGraphicPropertiesElement(child, a);
+                } else
+                    if ((name.equals("paragraph-properties")) && ((ns == null) || (ns.equals(ODGConstants.STYLE_NAMESPACE)))) {
+                        readParagraphPropertiesElement(child, a);
+                    } else
+                        if ((name.equals("text-properties")) && ((ns == null) || (ns.equals(ODGConstants.STYLE_NAMESPACE)))) {
+                            readTextPropertiesElement(child, a);
+                        } else {
+                            if (ODGStylesReader.DEBUG)
+                                System.out.println(((("ODGStylesReader unsupported <" + (elem.getName())) + "> child ") + child));
+
+                        }
+
+
+
+        }
+    }
+}

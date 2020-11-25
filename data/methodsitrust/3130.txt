@@ -1,0 +1,32 @@
+/**
+ * Returns a list of patients associated with a given HCP.
+ *
+ * @param hcpid
+ * 		The MID of the HCP in question.
+ * @return A java.util.List of Visit Reminder Forms.
+ */
+public List<VisitReminderReturnForm> getPatients(long hcpid) throws DBException {
+    VisitReminderReturnForm temp;
+    VisitReminderReturnFormLoader loader = new VisitReminderReturnFormLoader();
+    List<VisitReminderReturnForm> patients = new ArrayList<VisitReminderReturnForm>();
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("SELECT DISTINCT" + ((((((((((((((("       ? as hid, " + "       dhcp.patientid, ") + "       p.lastName, ") + "       p.firstName, ") + "       p.phone ") + "  FROM ") + "       patients p, ") + "       declaredhcp dhcp ") + " WHERE ") + "		dhcp.hcpid = ? ") + " AND ") + "     p.MID = dhcp.patientid ") + " AND ") + "		p.dateofdeath is null ") + " AND ") + "     p.dateofbirth > DATE_SUB(CURDATE(), INTERVAL 19 YEAR) ")));
+        ps.setLong(1, hcpid);
+        ps.setLong(2, hcpid);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            temp = loader.loadSingle(rs);
+            patients.add(temp);
+        } 
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+    return patients;
+}

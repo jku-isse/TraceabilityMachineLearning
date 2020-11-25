@@ -1,0 +1,17 @@
+/**
+ * Super class validates the patient mid
+ *
+ * @param factory
+ * 		The DAOFactory used in creating the DAOs for this action.
+ * @param loggedInMID
+ * 		The MID of the patient editing his/her representatives.
+ * @param pidString
+ * 		The MID of the representative in question.
+ * @throws iTrustException
+ * 		
+ */
+public EditRepresentativesAction(DAOFactory factory, long loggedInMID, String pidString) throws iTrustException {
+    super(factory, pidString);
+    this.patientDAO = factory.getPatientDAO();
+    this.authDAO = factory.getAuthDAO();
+}

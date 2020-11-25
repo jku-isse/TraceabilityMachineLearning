@@ -1,0 +1,3 @@
+public ChartSelection getSelection() {
+    return getImplementation().getSelection();
+}

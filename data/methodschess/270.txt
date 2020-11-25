@@ -1,0 +1,17 @@
+// Instance variables
+// Constructors
+/**
+ * Create a new key instance.
+ */
+private ZobristKeyImpl() {
+    // Create a new multidimensional array.
+    _factors = new long[2][6][64];
+    Random rand = new Random();
+    for (int i = 0; i < 64; i++) {
+        for (int j = 0; j < 6; j++) {
+            _factors[0][j][i] = rand.nextLong();
+            _factors[1][j][i] = rand.nextLong();
+        }
+    }
+    _blackMoves = rand.nextLong();
+}

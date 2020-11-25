@@ -1,0 +1,11 @@
+/**
+ * Convert this position to a square name (like a4).
+ *
+ * @return The suare name of this position.
+ */
+public final String toSquareName() {
+    byte[] byteRepresentation = new byte[2];
+    byteRepresentation[0] = ((byte) (((int) (a)) + (getLineIndex())));
+    byteRepresentation[1] = ((byte) (((int) (1)) + (getRowIndex())));
+    return new String(byteRepresentation);
+}

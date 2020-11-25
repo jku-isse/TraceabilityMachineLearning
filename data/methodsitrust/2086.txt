@@ -1,0 +1,3 @@
+public void setDiastolicBloodPressure(int diastolicBloodPressure) {
+    this.diastolicBloodPressure = diastolicBloodPressure;
+}

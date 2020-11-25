@@ -1,0 +1,18 @@
+/**
+ *
+ *
+ * @param hcpid
+ * 		
+ * @return 
+ */
+public List<ApptRequestBean> getApptRequestsFor(long hcpid) throws SQLException {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    conn = factory.getConnection();
+    stmt = conn.prepareStatement("SELECT * FROM appointmentrequests WHERE doctor_id=? ORDER BY sched_date");
+    stmt.setLong(1, hcpid);
+    ResultSet rs = stmt.executeQuery();
+    List<ApptRequestBean> list = loader.loadList(rs);
+    DBUtil.closeConnection(conn, stmt);
+    return list;
+}

@@ -1,0 +1,3 @@
+public TaskHierarchyManagerImpl getHierarchyManager() {
+    return myHierarchyManager;
+}

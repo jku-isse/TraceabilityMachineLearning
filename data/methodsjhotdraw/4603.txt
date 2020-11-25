@@ -1,0 +1,5 @@
+public StraightLineFigure clone() {
+    StraightLineFigure that = ((StraightLineFigure) (super.clone()));
+    that.line = ((Line2D.Double) (this.line.clone()));
+    return that;
+}

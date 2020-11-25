@@ -1,0 +1,4 @@
+/**
+ * Returns the figure that contains the given point.
+ */
+public Figure findFigureInside(Point2D.Double p);

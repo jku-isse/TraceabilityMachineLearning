@@ -1,0 +1,14 @@
+/**
+ * Add a ply to the buffer, if the own king is not in check after the ply.
+ *
+ * @param ply
+ * 		The ply to add.
+ * @param score
+ * 		The presort score of this ply.
+ */
+private final void addPly(Ply ply, short score) {
+    // Test if the own king is in check, before adding the ply
+    if (!(getAnalyzer().isInCheck(((BitBoard) (getBoard().getBoardAfterPly(ply))), _white))) {
+        _currentPlies[((_plyCounter)++)] = new AnalyzedPlyImpl(ply, score);
+    }
+}

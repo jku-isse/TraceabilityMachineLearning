@@ -1,0 +1,7 @@
+@Override
+protected void setUp() throws Exception {
+    super.setUp();
+    gen.clearAllTables();
+    gen.standardData();
+    gen.healthData();
+}

@@ -1,0 +1,3 @@
+public FontUIResource getWindowTitleFont() {
+    return font;
+}

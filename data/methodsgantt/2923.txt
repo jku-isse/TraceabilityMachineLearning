@@ -1,0 +1,4 @@
+public void addField(AboutJavaInfosPanel.SystemInfo w) {
+    data.addElement(w);
+    fireTableRowsInserted(((data.size()) - 1), ((data.size()) - 1));
+}

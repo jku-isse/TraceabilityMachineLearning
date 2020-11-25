@@ -1,0 +1,55 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: databasejhotdraw
+-- ------------------------------------------------------
+-- Server version	8.0.11
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `interfaces`
+--
+
+DROP TABLE IF EXISTS `interfaces`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `interfaces` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `interfaceclassid` int(11) DEFAULT NULL,
+  `interfacename` longtext,
+  `ownerclassid` int(11) DEFAULT NULL,
+  `classname` longtext,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `interfaces`
+--
+
+LOCK TABLES `interfaces` WRITE;
+/*!40000 ALTER TABLE `interfaces` DISABLE KEYS */;
+INSERT INTO `interfaces` VALUES (1,3,'org.jhotdraw.app.Application',1,'org.jhotdraw.app.AbstractApplication'),(2,15,'org.jhotdraw.app.View',2,'org.jhotdraw.app.AbstractView'),(3,4,'org.jhotdraw.app.ApplicationModel',6,'org.jhotdraw.app.DefaultApplicationModel'),(4,64,'org.jhotdraw.color.ColorSliderModel',57,'org.jhotdraw.color.AbstractColorSlidersModel'),(5,68,'org.jhotdraw.color.ColorSystem',58,'org.jhotdraw.color.AbstractColorSystem'),(6,82,'org.jhotdraw.color.HarmonicRule',59,'org.jhotdraw.color.AbstractHarmonicRule'),(7,81,'org.jhotdraw.color.HarmonicColorModel',74,'org.jhotdraw.color.DefaultHarmonicColorModel'),(8,150,'org.jhotdraw.draw.DecoratedFigure',92,'org.jhotdraw.draw.AbstractAttributedDecoratedFigure'),(9,136,'org.jhotdraw.draw.CompositeFigure',95,'org.jhotdraw.draw.AbstractCompositeFigure'),(10,145,'org.jhotdraw.draw.Connector',97,'org.jhotdraw.draw.AbstractConnector'),(11,147,'org.jhotdraw.draw.Constrainer',98,'org.jhotdraw.draw.AbstractConstrainer'),(12,168,'org.jhotdraw.draw.Drawing',99,'org.jhotdraw.draw.AbstractDrawing'),(13,174,'org.jhotdraw.draw.Figure',100,'org.jhotdraw.draw.AbstractFigure'),(14,178,'org.jhotdraw.draw.FigureListener',101,'org.jhotdraw.draw.AbstractHandle'),(15,191,'org.jhotdraw.draw.Handle',101,'org.jhotdraw.draw.AbstractHandle'),(16,207,'org.jhotdraw.draw.Layouter',102,'org.jhotdraw.draw.AbstractLayouter'),(17,210,'org.jhotdraw.draw.LineDecoration',103,'org.jhotdraw.draw.AbstractLineDecoration'),(18,214,'org.jhotdraw.draw.Locator',104,'org.jhotdraw.draw.AbstractLocator'),(19,652,'org.jhotdraw.xml.DOMStorable',104,'org.jhotdraw.draw.AbstractLocator'),(20,262,'org.jhotdraw.draw.Tool',106,'org.jhotdraw.draw.AbstractTool'),(21,652,'org.jhotdraw.xml.DOMStorable',107,'org.jhotdraw.draw.ArrowTip'),(22,214,'org.jhotdraw.draw.Locator',119,'org.jhotdraw.draw.BezierLabelLocator'),(23,652,'org.jhotdraw.xml.DOMStorable',119,'org.jhotdraw.draw.BezierLabelLocator'),(24,178,'org.jhotdraw.draw.FigureListener',126,'org.jhotdraw.draw.BidirectionalConnectionTool'),(25,210,'org.jhotdraw.draw.LineDecoration',139,'org.jhotdraw.draw.CompositeLineDecoration'),(26,652,'org.jhotdraw.xml.DOMStorable',139,'org.jhotdraw.draw.CompositeLineDecoration'),(27,203,'org.jhotdraw.draw.InputFormat',149,'org.jhotdraw.draw.DOMStorableInputOutputFormat'),(28,221,'org.jhotdraw.draw.OutputFormat',149,'org.jhotdraw.draw.DOMStorableInputOutputFormat'),(29,167,'org.jhotdraw.draw.DragTracker',151,'org.jhotdraw.draw.DefaultDragTracker'),(30,169,'org.jhotdraw.draw.DrawingEditor',153,'org.jhotdraw.draw.DefaultDrawingEditor'),(31,264,'org.jhotdraw.draw.ToolListener',153,'org.jhotdraw.draw.DefaultDrawingEditor'),(32,11,'org.jhotdraw.app.EditableComponent',155,'org.jhotdraw.draw.DefaultDrawingView'),(33,171,'org.jhotdraw.draw.DrawingView',155,'org.jhotdraw.draw.DefaultDrawingView'),(34,138,'org.jhotdraw.draw.CompositeFigureListener',154,'org.jhotdraw.draw.DefaultDrawingView$EventHandler'),(35,178,'org.jhotdraw.draw.FigureListener',154,'org.jhotdraw.draw.DefaultDrawingView$EventHandler'),(36,194,'org.jhotdraw.draw.HandleListener',154,'org.jhotdraw.draw.DefaultDrawingView$EventHandler'),(37,196,'org.jhotdraw.draw.HandleTracker',160,'org.jhotdraw.draw.DefaultHandleTracker'),(38,247,'org.jhotdraw.draw.SelectAreaTracker',161,'org.jhotdraw.draw.DefaultSelectAreaTracker'),(39,167,'org.jhotdraw.draw.DragTracker',165,'org.jhotdraw.draw.DnDTracker'),(40,212,'org.jhotdraw.draw.Liner',172,'org.jhotdraw.draw.ElbowLiner'),(41,652,'org.jhotdraw.xml.DOMStorable',172,'org.jhotdraw.draw.ElbowLiner'),(42,178,'org.jhotdraw.draw.FigureListener',175,'org.jhotdraw.draw.FigureAdapter'),(43,214,'org.jhotdraw.draw.Locator',184,'org.jhotdraw.draw.FontSizeLocator'),(44,199,'org.jhotdraw.draw.ImageHolderFigure',198,'org.jhotdraw.draw.ImageFigure'),(45,203,'org.jhotdraw.draw.InputFormat',200,'org.jhotdraw.draw.ImageInputFormat'),(46,221,'org.jhotdraw.draw.OutputFormat',201,'org.jhotdraw.draw.ImageOutputFormat'),(47,178,'org.jhotdraw.draw.FigureListener',204,'org.jhotdraw.draw.LabelFigure'),(48,136,'org.jhotdraw.draw.CompositeFigure',206,'org.jhotdraw.draw.LabeledLineConnectionFigure'),(49,142,'org.jhotdraw.draw.ConnectionFigure',209,'org.jhotdraw.draw.LineConnectionFigure'),(50,207,'org.jhotdraw.draw.Layouter',217,'org.jhotdraw.draw.LocatorLayouter'),(51,652,'org.jhotdraw.xml.DOMStorable',222,'org.jhotdraw.draw.PerpendicularBar'),(52,203,'org.jhotdraw.draw.InputFormat',223,'org.jhotdraw.draw.PictImageInputFormat'),(53,264,'org.jhotdraw.draw.ToolListener',248,'org.jhotdraw.draw.SelectionTool'),(54,203,'org.jhotdraw.draw.InputFormat',249,'org.jhotdraw.draw.SerializationInputOutputFormat'),(55,221,'org.jhotdraw.draw.OutputFormat',249,'org.jhotdraw.draw.SerializationInputOutputFormat'),(56,212,'org.jhotdraw.draw.Liner',251,'org.jhotdraw.draw.SlantedLiner'),(57,652,'org.jhotdraw.xml.DOMStorable',251,'org.jhotdraw.draw.SlantedLiner'),(58,259,'org.jhotdraw.draw.TextHolderFigure',255,'org.jhotdraw.draw.TextAreaFigure'),(59,259,'org.jhotdraw.draw.TextHolderFigure',258,'org.jhotdraw.draw.TextFigure'),(60,203,'org.jhotdraw.draw.InputFormat',260,'org.jhotdraw.draw.TextInputFormat'),(61,180,'org.jhotdraw.draw.FigureSelectionListener',282,'org.jhotdraw.draw.action.AbstractSelectedAction$EventHandler'),(62,169,'org.jhotdraw.draw.DrawingEditor',304,'org.jhotdraw.draw.action.DrawingEditorProxy'),(63,180,'org.jhotdraw.draw.FigureSelectionListener',333,'org.jhotdraw.draw.action.SelectionComponentRepainter'),(64,180,'org.jhotdraw.draw.FigureSelectionListener',361,'org.jhotdraw.gui.AbstractAttributeEditorHandler$EventHandler'),(65,365,'org.jhotdraw.gui.Arrangeable',390,'org.jhotdraw.gui.MDIDesktopPane'),(66,404,'org.jhotdraw.gui.fontchooser.FontChooserModel',401,'org.jhotdraw.gui.fontchooser.AbstractFontChooserModel'),(67,652,'org.jhotdraw.xml.DOMStorable',469,'org.jhotdraw.samples.mini.DefaultDOMStorableSample$MyObject'),(68,652,'org.jhotdraw.xml.DOMStorable',477,'org.jhotdraw.samples.mini.QuickAndDirtyDOMStorableSample$MyObject'),(69,12,'org.jhotdraw.app.ExportableView',503,'org.jhotdraw.samples.odg.ODGView'),(70,511,'org.jhotdraw.samples.odg.figures.ODGFigure',508,'org.jhotdraw.samples.odg.figures.ODGAttributedFigure'),(71,511,'org.jhotdraw.samples.odg.figures.ODGFigure',510,'org.jhotdraw.samples.odg.figures.ODGEllipseFigure'),(72,511,'org.jhotdraw.samples.odg.figures.ODGFigure',512,'org.jhotdraw.samples.odg.figures.ODGGroupFigure'),(73,511,'org.jhotdraw.samples.odg.figures.ODGFigure',513,'org.jhotdraw.samples.odg.figures.ODGPathFigure'),(74,511,'org.jhotdraw.samples.odg.figures.ODGFigure',515,'org.jhotdraw.samples.odg.figures.ODGRectFigure'),(75,203,'org.jhotdraw.draw.InputFormat',521,'org.jhotdraw.samples.odg.io.ODGInputFormat'),(76,536,'org.jhotdraw.samples.svg.Gradient',537,'org.jhotdraw.samples.svg.LinearGradient'),(77,536,'org.jhotdraw.samples.svg.Gradient',540,'org.jhotdraw.samples.svg.RadialGradient'),(78,12,'org.jhotdraw.app.ExportableView',552,'org.jhotdraw.samples.svg.SVGView'),(79,561,'org.jhotdraw.samples.svg.figures.SVGFigure',560,'org.jhotdraw.samples.svg.figures.SVGEllipseFigure'),(80,561,'org.jhotdraw.samples.svg.figures.SVGFigure',562,'org.jhotdraw.samples.svg.figures.SVGGroupFigure'),(81,199,'org.jhotdraw.draw.ImageHolderFigure',563,'org.jhotdraw.samples.svg.figures.SVGImageFigure'),(82,561,'org.jhotdraw.samples.svg.figures.SVGFigure',563,'org.jhotdraw.samples.svg.figures.SVGImageFigure'),(83,561,'org.jhotdraw.samples.svg.figures.SVGFigure',564,'org.jhotdraw.samples.svg.figures.SVGPathFigure'),(84,561,'org.jhotdraw.samples.svg.figures.SVGFigure',566,'org.jhotdraw.samples.svg.figures.SVGRectFigure'),(85,259,'org.jhotdraw.draw.TextHolderFigure',569,'org.jhotdraw.samples.svg.figures.SVGTextAreaFigure'),(86,561,'org.jhotdraw.samples.svg.figures.SVGFigure',569,'org.jhotdraw.samples.svg.figures.SVGTextAreaFigure'),(87,259,'org.jhotdraw.draw.TextHolderFigure',570,'org.jhotdraw.samples.svg.figures.SVGTextFigure'),(88,561,'org.jhotdraw.samples.svg.figures.SVGFigure',570,'org.jhotdraw.samples.svg.figures.SVGTextFigure'),(89,180,'org.jhotdraw.draw.FigureSelectionListener',595,'org.jhotdraw.samples.svg.gui.SelectionComponentDisplayer'),(90,610,'org.jhotdraw.samples.svg.io.SVGFigureFactory',607,'org.jhotdraw.samples.svg.io.DefaultSVGFigureFactory'),(91,221,'org.jhotdraw.draw.OutputFormat',608,'org.jhotdraw.samples.svg.io.ImageMapOutputFormat'),(92,203,'org.jhotdraw.draw.InputFormat',612,'org.jhotdraw.samples.svg.io.SVGInputFormat'),(93,221,'org.jhotdraw.draw.OutputFormat',613,'org.jhotdraw.samples.svg.io.SVGOutputFormat'),(94,649,'org.jhotdraw.xml.DOMFactory',653,'org.jhotdraw.xml.DefaultDOMFactory'),(95,650,'org.jhotdraw.xml.DOMInput',654,'org.jhotdraw.xml.JavaxDOMInput'),(96,651,'org.jhotdraw.xml.DOMOutput',655,'org.jhotdraw.xml.JavaxDOMOutput'),(97,650,'org.jhotdraw.xml.DOMInput',656,'org.jhotdraw.xml.NanoXMLDOMInput'),(98,651,'org.jhotdraw.xml.DOMOutput',657,'org.jhotdraw.xml.NanoXMLDOMOutput'),(99,649,'org.jhotdraw.xml.DOMFactory',658,'org.jhotdraw.xml.QuickAndDirtyDOMFactory');
+/*!40000 ALTER TABLE `interfaces` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-11-26  0:21:15

@@ -1,0 +1,3 @@
+public HospitalBean(String hospitalID) {
+    this.hospitalID = hospitalID;
+}

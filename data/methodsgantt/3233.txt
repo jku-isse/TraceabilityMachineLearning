@@ -1,0 +1,3 @@
+public String getRolesetTooltipHeader(String roleSetName) {
+    return MessageFormat.format("<html><body><h3>{0}</h3><ul>", ((Object[]) (new String[]{ roleSetName })));
+}

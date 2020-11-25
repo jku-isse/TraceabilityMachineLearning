@@ -1,0 +1,3 @@
+public void icd9cmCodes() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/icd9cmCodes.sql"));
+}

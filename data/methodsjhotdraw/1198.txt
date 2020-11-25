@@ -1,0 +1,6 @@
+@Override
+public void invalidate() {
+    super.invalidate();
+    path.invalidatePath();
+    cappedPath = null;
+}

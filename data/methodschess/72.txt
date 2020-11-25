@@ -1,0 +1,6 @@
+/**
+ * Return a copy of the current board.
+ *
+ * @return A copy of the current board.
+ */
+public Object clone();

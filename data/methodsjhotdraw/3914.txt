@@ -1,0 +1,3 @@
+public MDIDesktopManager(MDIDesktopPane newDesktop) {
+    this.desktop = newDesktop;
+}

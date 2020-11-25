@@ -1,0 +1,24 @@
+public void trackEnd(Point anchor, Point lead, int modifiersEx) {
+    AffineTransform tx = new AffineTransform();
+    tx.translate(((lead.x) - (anchor.x)), ((lead.y) - (anchor.y)));
+    LinkedList<Figure> draggedFigures = new LinkedList<Figure>();
+    draggedFigures.add(getOwner());
+    Point2D.Double dropPoint = getView().viewToDrawing(lead);
+    Figure dropTarget = getView().getDrawing().findFigureExcept(dropPoint, draggedFigures);
+    if (dropTarget != null) {
+        boolean snapBack = dropTarget.handleDrop(dropPoint, draggedFigures, getView());
+        if (snapBack) {
+            tx = new AffineTransform();
+            tx.translate(((anchor.x) - (lead.x)), ((anchor.y) - (lead.y)));
+            for (Figure f : draggedFigures) {
+                f.willChange();
+                f.transform(tx);
+                f.changed();
+            }
+        } else {
+            fireUndoableEditHappened(new TransformEdit(getOwner(), tx));
+        }
+    } else {
+        fireUndoableEditHappened(new TransformEdit(getOwner(), tx));
+    }
+}

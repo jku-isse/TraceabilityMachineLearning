@@ -1,0 +1,18 @@
+/**
+ * Run the actual test.
+ */
+private void analyzerTest1() {
+    // Do the 1st analysis
+    short score1 = _analyzer.analyze(((BitBoard) (_board)), true);
+    // Move the pawn and attack a black pawn
+    _board.doPly(new PlyImpl(new PositionImpl(43), new PositionImpl(52), true));
+    // Analyze the board after the ply
+    short score2 = _analyzer.analyze(((BitBoard) (_board)), false);
+    // Check if the 2nd board is better for white.
+    assertTrue("Analyzer did not recognize attack on black piece", (score2 > score1));
+    // Now attack the black queen.
+    _board.doPly(new PlyImpl(new PositionImpl(52), new PositionImpl(59), true));
+    // Analyze the board again
+    short score3 = _analyzer.analyze(((BitBoard) (_board)), false);
+    assertTrue("Analyzer does not recognize attack on black queen", (score3 > score2));
+}

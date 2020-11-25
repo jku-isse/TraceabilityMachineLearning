@@ -1,0 +1,9 @@
+/**
+ * Constructs an instance of <code>ServerAuthenticationException</code> with the specified detail message.
+ *
+ * @param msg
+ * 		the detail message.
+ */
+public ServerAuthenticationException(String msg) {
+    super(msg);
+}

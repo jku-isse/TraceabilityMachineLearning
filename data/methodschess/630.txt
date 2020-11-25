@@ -1,0 +1,8 @@
+/**
+ * Get the preferred size of the board.
+ *
+ * @return The preferred size of the board.
+ */
+public final Dimension getPreferredSize() {
+    return getMinimumSize();
+}

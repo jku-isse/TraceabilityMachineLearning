@@ -1,0 +1,4 @@
+public void setArc(Dimension2DDouble arc) {
+    roundrect.arcwidth = Math.max(0.0, Math.min(roundrect.width, ((arc.width) * 2.0)));
+    roundrect.archeight = Math.max(0.0, Math.min(roundrect.height, ((arc.height) * 2.0)));
+}

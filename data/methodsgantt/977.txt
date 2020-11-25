@@ -1,0 +1,19 @@
+/**
+ * Returns <code>true</code> if the column name <code>name</code>
+ * is displayed, <code>false</code> otherwise.
+ *
+ * @param name
+ * 		Name of the column to check the display.
+ * @return <code>true</code> if the column name <code>name</code> is
+displayed, <code>false</code> otherwise.
+ */
+public boolean isDisplayed(String name) {
+    Iterator it = this.iterator();
+    while (it.hasNext()) {
+        GanttTreeTable.DisplayedColumn dc = ((GanttTreeTable.DisplayedColumn) (it.next()));
+        if (getNameForId(dc.getID()).equals(name))
+            return dc.isDisplayed();
+
+    } 
+    return false;
+}

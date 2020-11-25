@@ -1,0 +1,13 @@
+@Override
+protected void setUp() throws Exception {
+    TestDataGenerator gen = new TestDataGenerator();
+    gen.clearAllTables();
+    gen.hcp0();
+    gen.patient42();
+    gen.appointment();
+    gen.appointmentType();
+    gen.uc22();
+    this.factory = TestDAOFactory.getTestInstance();
+    this.editAction = new EditApptAction(this.factory, this.hcpId);
+    this.viewAction = new ViewMyApptsAction(this.factory, this.hcpId);
+}

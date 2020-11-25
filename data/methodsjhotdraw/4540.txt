@@ -1,0 +1,5 @@
+private void eraseButtonActionPerformed(ActionEvent evt) {
+    // GEN-FIRST:event_eraseButtonActionPerformed
+    examples.clear();
+    canvas.repaint();
+}// GEN-LAST:event_eraseButtonActionPerformed

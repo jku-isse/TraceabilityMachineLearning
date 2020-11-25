@@ -1,0 +1,69 @@
+/**
+ * Constructor.
+ */
+public AboutAuthorPanel(GanttProject parent) {
+    super(GanttLanguage.getInstance().getText("authors"), GanttLanguage.getInstance().getText("settingsAuthors"), parent);
+    JTable jTableAuthors = new JTable();
+    AboutAuthorPanel.AuthorsFieldTableModel modelauthors = new AboutAuthorPanel.AuthorsFieldTableModel();
+    jTableAuthors.setModel(modelauthors);
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("THOMAS Alexandre", "alexthomas@ganttproject.org"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("BARASHEV Dmitry", "dbarashev@ganttproject.org"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("AZURE Joe", "jazure@fishalaska.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("BARANNE Benoit", "bbaranne@users.sourceforge.net"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("BOHN Nicolas", "nicolasbohn@users.sourceforge.net"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("LIBS Jean-Marc", "jyhem@users.sourceforge.net"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("", ""));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("BARMEIER Matthias", "matthias.barmeier@sourcepark.de"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("MURAS Joanna", "zabucha@users.sourceforge.net"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("LU Cui", "cuix1@yahoo.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("SCHULZ Maik", "post@maikschulz.de"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("HAEUSLER Michael", "michael@akatose.de"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("ANDRESEN Roger", "Roger@Andresen.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("", ""));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("LIPINSKI Pawel", "pawel.lipinski@javart.com.pl"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("AUDRU C?dric", "cedricaudru@yahoo.fr"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("A S Hodel", "hodelas@ieee.org"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("BALAZS Major", "BMajor@Graphisoft.hu"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("BARZILAI Igor", "igor.barzilai@free.fr"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("BREZINA Marek", "marek.brezina@seznam.cz"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("BROKER Rick", "rick_broker@yahoo.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("CASTILHO Danilo", "dncastilho@yahoo.com.br"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("CHRISTENSEN Carsten", "coc-kultur@aalborg.dk"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("CROUNSE Brian", "brian@crounse.name"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("FERRAZ Nelson", "nferraz@phperl.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("GLOEGL Michael", "gloegl@fmi.uni-passau.de"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("GIANTSIDIS Nikos", "nickgiant@yahoo.com"));// greek translation
+
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("HERRMANN G.", "herr@nike.eonet.ne.jp"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("HURSEY John", "joshh@cs.earlham.edu"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("ILES Jon", "jon.iles@tapsterrock.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("Jiwon Kim", "yesdi@users.sourceforge.net"));// Korean language
+
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("KARLGREN Jussi", "jussi@sics.se"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("KITSIK Ahti", "ahti.kitsik@gmail.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("LIN Kirin", "kirinlin@users.sourceforge.net"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("LKENFACK Etienne", "etiennelk@hotmail.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("MADSEN Jan", "JM-kultur@aalborg.dk"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("MARCH Stephen", "steve@enerds.ca"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("MIYATA Yasuhiro", "yasuhiro.miyata@ulsystems.co.jp"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("NATHANAEL Uwe", "Uwe.Nathanael@t-online.de"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("OGNESS John", "john@ogness.net"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("PAOLETTI Tomaso", "tom@ipaoletti.net"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("PLUSCHKE Andreas", "homepage.plueschke@gmx.de"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("RACINOWSKI Przemyslaw", "p.racinowski@wp.pl"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("REY Juan", "juanrey@inicia.es"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("SAHIN Cengiz", "cengiz@sahinc.de"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("SENIGAGLIESI Paolo", "senigagliesi_inf@hotmail.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("SHABTAI Yoav", "yoavs@pmp-medical.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("STAVRIDES Paul", "pstav@adelie.net"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("VAN DER WIEL Andre", "a.vd.wiel@chello.nl"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("VOCI Elio", "elio.voci@gawab.com"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("ZAVOLZHSKY Alexandr", "zavolzhsky@mail.ru"));
+    modelauthors.addField(new AboutAuthorPanel.AuthorsInfo("Zheko Zhekov", "zhekov@electrostart.com"));// bulgarian language
+
+    JPanel authorsPanel = new JPanel(new BorderLayout());
+    authorsPanel.add(new JScrollPane(jTableAuthors), BorderLayout.CENTER);
+    authorsPanel.setPreferredSize(new Dimension(400, 350));
+    vb.add(authorsPanel);
+    applyComponentOrientation(language.getComponentOrientation());
+}

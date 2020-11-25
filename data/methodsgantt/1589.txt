@@ -1,0 +1,4 @@
+private UnitPair(TimeUnit mainUnit, TimeUnit offsetUnit) {
+    myMainUnit = mainUnit;
+    myOffsetUnit = offsetUnit;
+}

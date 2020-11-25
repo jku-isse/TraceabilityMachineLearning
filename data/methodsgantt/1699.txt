@@ -1,0 +1,7 @@
+public void setStartDate(Date startDate) {
+    if (!(startDate.equals(myStartDate))) {
+        myStartDate = startDate;
+        myTimeFrames = null;
+    }
+    myRange2DefaultUnitOffsets.clear();
+}

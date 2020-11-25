@@ -1,0 +1,21 @@
+/**
+ * Creates new instance.
+ */
+@SuppressWarnings("unchecked")
+public ODGPropertiesPanel() {
+    initComponents();
+    opacitySlider = new JAttributeSlider(JSlider.VERTICAL, 0, 100, 100);
+    opacityPopupButton.add(opacitySlider);
+    opacityPopupButton.putClientProperty("JButton.buttonType", "toolbar");
+    add(opacityPopupButton);
+    opacityField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0.0, 1.0, 100.0));
+    opacityFieldHandler = new FigureAttributeEditorHandler<Double>(SVGAttributeKeys.OPACITY, opacityField, editor);
+    opacitySliderHandler = new FigureAttributeEditorHandler<Double>(SVGAttributeKeys.OPACITY, opacitySlider, editor);
+    linkFieldHandler = new FigureAttributeEditorHandler<String>(SVGAttributeKeys.LINK, linkField, editor);
+    // set fonts
+    Font font = getFont().deriveFont(11.0F);
+    for (Component c : getComponents()) {
+        c.setFont(font);
+    }
+    opacitySlider.setFont(font);
+}

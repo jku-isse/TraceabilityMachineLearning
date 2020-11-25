@@ -1,0 +1,19 @@
+@Override
+public Icon getVisualRepresentation(Transferable t) {
+    if (DefaultDrawingViewTransferHandler.DEBUG) {
+        System.out.println(((this) + ".getVisualRepresentation"));
+    }
+    Image image = null;
+    try {
+        image = ((Image) (t.getTransferData(DataFlavor.imageFlavor)));
+    } catch (IOException ex) {
+        if (DefaultDrawingViewTransferHandler.DEBUG) {
+            ex.printStackTrace();
+        }
+    } catch (UnsupportedFlavorException ex) {
+        if (DefaultDrawingViewTransferHandler.DEBUG) {
+            ex.printStackTrace();
+        }
+    }
+    return image == null ? null : new ImageIcon(image);
+}

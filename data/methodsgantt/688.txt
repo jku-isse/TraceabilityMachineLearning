@@ -1,0 +1,3 @@
+public RoleManager getRoleManager() {
+    return RoleManager.Access.getInstance();
+}

@@ -1,0 +1,4 @@
+/**
+ * Returns the font to be used by a text editor for editing this Figure.
+ */
+public Font getFont();

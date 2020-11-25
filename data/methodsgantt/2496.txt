@@ -1,0 +1,73 @@
+private void init() {
+    myAddAction = new GPAction() {
+        protected String getIconFilePrefix() {
+            return null;
+        }
+
+        protected String getLocalizedName() {
+            return getI18n("add");
+        }
+
+        public void actionPerformed(ActionEvent e) {
+            myIntervalsModel.add(new DateIntervalListEditor.DateInterval(myStart.getValue(), myFinish.getValue()));
+            myListModel.update();
+        }
+    };
+    myDeleteAction = new GPAction() {
+        protected String getIconFilePrefix() {
+            return null;
+        }
+
+        protected String getLocalizedName() {
+            return getI18n("delete");
+        }
+
+        public void actionPerformed(ActionEvent e) {
+            int selected = myListSelectionModel.getMinSelectionIndex();
+            myIntervalsModel.remove(myIntervalsModel.getIntervals()[selected]);
+            myListModel.update();
+            myListSelectionModel.removeIndexInterval(selected, selected);
+            updateActions();
+        }
+    };
+    JPanel topPanel = new JPanel(new BorderLayout());
+    OptionsPageBuilder builder = new OptionsPageBuilder();
+    builder.setOptionKeyPrefix("");
+    // Box datesBox = Box.createVerticalBox();
+    // Component startDatePanel = builder.createStandaloneOptionPanel(myStart);
+    // datesBox.add(startDatePanel);
+    // if (myIntervalsModel.getMaxIntervalLength()>1) {
+    // Component finishDatePanel = builder.createStandaloneOptionPanel(myFinish);
+    // //
+    // datesBox.add(finishDatePanel);
+    // }
+    // topPanel.add(datesBox, BorderLayout.CENTER);
+    GPOptionGroup group = ((myIntervalsModel.getMaxIntervalLength()) == 1) ? new GPOptionGroup("", new GPOption[]{ myStart }) : new GPOptionGroup("", new GPOption[]{ myStart, myFinish });
+    group.setTitled(false);
+    JComponent datesBox = builder.buildPlanePage(new GPOptionGroup[]{ group });
+    topPanel.add(datesBox, BorderLayout.CENTER);
+    // 
+    Box buttonBox = Box.createHorizontalBox();
+    buttonBox.setBorder(BorderFactory.createEmptyBorder(3, 0, 3, 0));
+    buttonBox.add(new JButton(myAddAction));
+    buttonBox.add(Box.createHorizontalStrut(5));
+    buttonBox.add(new JButton(myDeleteAction));
+    topPanel.add(buttonBox, BorderLayout.SOUTH);
+    topPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 0, 5));
+    add(topPanel, BorderLayout.NORTH);
+    // 
+    JList list = new JList(myListModel);
+    list.setName("list");
+    list.setBorder(BorderFactory.createLoweredBevelBorder());
+    myListSelectionModel = list.getSelectionModel();
+    myListSelectionModel.addListSelectionListener(new ListSelectionListener() {
+        public void valueChanged(ListSelectionEvent e) {
+            updateActions();
+        }
+    });
+    JScrollPane scrollPane = new JScrollPane(list);
+    scrollPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+    scrollPane.setPreferredSize(new Dimension(120, 200));
+    add(scrollPane, BorderLayout.CENTER);
+    updateActions();
+}

@@ -1,0 +1,3 @@
+public FontUIResource getControlTextFont() {
+    return font;
+}

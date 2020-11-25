@@ -1,0 +1,6 @@
+public void setVisible(boolean newValue) {
+    boolean oldValue = isVisible;
+    isVisible = newValue;
+    firePropertyChange("visible", oldValue, newValue);
+    fireStateChanged();
+}

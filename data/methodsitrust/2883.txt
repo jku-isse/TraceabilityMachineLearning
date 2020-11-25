@@ -1,0 +1,34 @@
+/**
+ * Gets a weekly local zip code count and regional count of a specified diagnosis code over a time period
+ *
+ * @param icdCode
+ * 		The diagnosis code
+ * @param zipCode
+ * 		The zip code to evaluate
+ * @param lower
+ * 		The starting date
+ * @param upper
+ * 		The ending date
+ * @return A list of beans containing the local and regional count for each week in the time period
+ * @throws DBException
+ * 		
+ */
+public ArrayList<DiagnosisStatisticsBean> getWeeklyCounts(String icdCode, String zipCode, Date lower, Date upper) throws DBException {
+    Calendar cal = Calendar.getInstance();
+    cal.setTime(lower);
+    cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+    Date lowerDate = cal.getTime();
+    cal.add(Calendar.HOUR, (24 * 6));
+    Date upperDate = cal.getTime();
+    ArrayList<DiagnosisStatisticsBean> weekStats = new ArrayList<DiagnosisStatisticsBean>();
+    do {
+        DiagnosisStatisticsBean db = getDiagnosisCounts(icdCode, zipCode, lowerDate, upperDate);
+        weekStats.add(db);
+        cal.setTime(upperDate);
+        cal.add(Calendar.HOUR, 24);
+        lowerDate = cal.getTime();
+        cal.add(Calendar.HOUR, (24 * 6));
+        upperDate = cal.getTime();
+    } while (lowerDate.before(upper) );
+    return weekStats;
+}

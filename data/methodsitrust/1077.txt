@@ -1,0 +1,3 @@
+public List<MessageBean> getCCdMessages(long refID) throws SQLException {
+    return messageDAO.getCCdMessages(refID);
+}

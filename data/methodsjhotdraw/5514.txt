@@ -1,0 +1,3 @@
+public int getTextColumns() {
+    return (getText()) == null ? 4 : Math.max(getText().length(), 4);
+}

@@ -1,0 +1,11 @@
+/**
+ * We override getParameter() to make it work even if we have no Applet
+ * context.
+ */
+public String getParameter(String name) {
+    try {
+        return super.getParameter(name);
+    } catch (NullPointerException e) {
+        return null;
+    }
+}

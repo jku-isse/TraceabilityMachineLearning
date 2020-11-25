@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param patient
+ * 		the patient to set
+ */
+public void setPatient(long patient) {
+    this.patient = patient;
+}

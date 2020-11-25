@@ -1,0 +1,18 @@
+@Override
+public void paintIcon(Component c, Graphics gr, int x, int y) {
+    Graphics2D g = ((Graphics2D) (gr));
+    super.paintIcon(c, g, x, y);
+    Color color;
+    DrawingView view = editor.getActiveView();
+    if ((view != null) && ((view.getSelectedFigures().size()) == 1)) {
+        color = key.get(view.getSelectedFigures().iterator().next());
+    } else {
+        color = key.get(editor.getDefaultAttributes());
+    }
+    if (color != null) {
+        g.setColor(color);
+        g.translate(x, y);
+        g.fill(colorShape);
+        g.translate((-x), (-y));
+    }
+}

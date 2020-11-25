@@ -1,0 +1,4 @@
+public Boolean setToTesting(long id) throws DBException {
+    lpDAO.setLPToTesting(id);
+    return true;
+}

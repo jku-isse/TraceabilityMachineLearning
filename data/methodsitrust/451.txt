@@ -1,0 +1,18 @@
+/**
+ * Add a prescription to this office visit.  If the office visit is
+ * unsaved, this will throw an exception.
+ *
+ * @param pres
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public void addPrescription(PrescriptionBean pres) throws iTrustException {
+    verifySaved();
+    checkForAllergiesAndInteractions(pres);
+    long medID = psDAO.add(pres);
+    for (OverrideReasonBean reason : pres.getReasons()) {
+        reason.setPresID(medID);
+        prescriptionOverrideDAO.add(reason);
+    }
+}

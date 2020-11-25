@@ -1,0 +1,10 @@
+// Methods
+/**
+ * The actual action.
+ *
+ * @param event
+ * 		The event, that caused the action.
+ */
+public void actionPerformed(ActionEvent event) {
+    JavaChess.getInstance().reset();
+}

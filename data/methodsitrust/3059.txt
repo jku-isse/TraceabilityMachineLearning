@@ -1,0 +1,24 @@
+/**
+ * Updates a given referral in the database.
+ *
+ * @param r
+ * 		The referral to update.
+ * @throws DBException
+ * 		
+ */
+public void editReferral(ReferralBean r) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("UPDATE referrals SET PatientID=?,SenderID=?,ReceiverID=?," + "ReferralDetails=?,OVID=?,viewed_by_patient=?,viewed_by_HCP=?,PriorityCode=?  WHERE ID=?"));
+        referralLoader.loadParameters(ps, r);
+        ps.setLong(9, r.getId());
+        ps.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

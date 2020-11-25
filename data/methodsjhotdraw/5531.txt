@@ -1,0 +1,6 @@
+// CONNECTING
+@Override
+public boolean canConnect() {
+    return false;// SVG does not support connecting
+
+}

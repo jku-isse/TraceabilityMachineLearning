@@ -1,0 +1,15 @@
+public void uninstallUI(JComponent c) {
+    // Clear defaults
+    uninstallDefaults();
+    uninstallComponents();
+    uninstallListeners();
+    uninstallKeyboardActions();
+    // Clear instance vars
+    if ((isFloating()) == true) {
+        setFloating(false, null);
+    }
+    floatingToolBar = null;
+    dragWindow = null;
+    dockingSource = null;
+    c.putClientProperty(PaletteToolBarUI.FOCUSED_COMP_INDEX, new Integer(focusedCompIndex));
+}

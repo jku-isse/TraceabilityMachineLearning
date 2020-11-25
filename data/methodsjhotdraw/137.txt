@@ -1,0 +1,26 @@
+protected void initApplicationActions() {
+    ApplicationModel mo = getModel();
+    mo.putAction(AboutAction.ID, new AboutAction(this));
+    mo.putAction(ExitAction.ID, new ExitAction(this));
+    mo.putAction(NewAction.ID, new NewAction(this));
+    mo.putAction(OpenAction.ID, new OpenAction(this));
+    mo.putAction(ClearRecentFilesAction.ID, new ClearRecentFilesAction(this));
+    mo.putAction(SaveAction.ID, new SaveAction(this));
+    mo.putAction(SaveAsAction.ID, new SaveAsAction(this));
+    mo.putAction(CloseAction.ID, new CloseAction(this));
+    mo.putAction(PrintAction.ID, new PrintAction(this));
+    mo.putAction(UndoAction.ID, new UndoAction(this));
+    mo.putAction(RedoAction.ID, new RedoAction(this));
+    mo.putAction(CutAction.ID, new CutAction());
+    mo.putAction(CopyAction.ID, new CopyAction());
+    mo.putAction(PasteAction.ID, new PasteAction());
+    mo.putAction(DeleteAction.ID, new DeleteAction());
+    mo.putAction(DuplicateAction.ID, new DuplicateAction());
+    mo.putAction(SelectAllAction.ID, new SelectAllAction());
+    /* model.putAction(MaximizeAction.ID, new MaximizeAction(this));
+    model.putAction(MinimizeAction.ID, new MinimizeAction(this));
+     */
+    mo.putAction(ArrangeAction.VERTICAL_ID, new ArrangeAction(desktopPane, Arrangeable.Arrangement.VERTICAL));
+    mo.putAction(ArrangeAction.HORIZONTAL_ID, new ArrangeAction(desktopPane, Arrangeable.Arrangement.HORIZONTAL));
+    mo.putAction(ArrangeAction.CASCADE_ID, new ArrangeAction(desktopPane, Arrangeable.Arrangement.CASCADE));
+}

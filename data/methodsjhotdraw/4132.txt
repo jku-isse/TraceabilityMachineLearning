@@ -1,0 +1,19 @@
+private void updateCollectionList() {
+    (isUpdating)++;
+    JList list = selectionPanel.getCollectionList();
+    DefaultListModel lm = ((DefaultListModel) (list.getModel()));
+    lm.removeAllElements();
+    FontChooserModel model = fontChooser.getModel();
+    Object parent = model.getRoot();
+    for (int i = 0, n = model.getChildCount(parent); i < n; i++) {
+        lm.addElement(model.getChild(parent, i));
+    }
+    TreePath path = fontChooser.getSelectionPath();
+    if ((path == null) || ((path.getPathCount()) < 2)) {
+        list.clearSelection();
+    } else {
+        list.setSelectedIndex(((TreeNode) (path.getPathComponent(0))).getIndex(((TreeNode) (path.getPathComponent(1)))));
+        list.scrollRectToVisible(list.getCellBounds(list.getSelectedIndex(), list.getSelectedIndex()));
+    }
+    (isUpdating)--;
+}

@@ -1,0 +1,5 @@
+protected Point getCenter() {
+    int w = ((getWidth()) - (wheelInsets.left)) - (wheelInsets.right);
+    int h = ((getHeight()) - (wheelInsets.top)) - (wheelInsets.bottom);
+    return new Point(((wheelInsets.left) + (w / 2)), ((wheelInsets.top) + (h / 2)));
+}

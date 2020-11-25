@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public TextAreaCreationTool(TextHolderFigure prototype) {
+    super(prototype);
+}

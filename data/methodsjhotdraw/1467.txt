@@ -1,0 +1,13 @@
+/**
+ * This method is called on the Figure, onto which the user wants
+ * to start a new connection.
+ *
+ * @param f
+ * 		The ConnectionFigure.
+ * @param startConnector
+ * 		The Connector of the start Figure.
+ * @return True, if a connection can be made.
+ */
+protected boolean canConnect(ConnectionFigure f, Connector startConnector) {
+    return f.canConnect(startConnector);
+}

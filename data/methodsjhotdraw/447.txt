@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public CMYKICCColorSystem(InputStream iccProfile) throws IOException {
+    read(iccProfile);
+}

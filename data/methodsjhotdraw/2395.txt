@@ -1,0 +1,9 @@
+/**
+ * Writes a Drawing into a file.
+ *
+ * @param file
+ * 		The file.
+ * @param drawing
+ * 		The drawing.
+ */
+public void write(File file, Drawing drawing) throws IOException;

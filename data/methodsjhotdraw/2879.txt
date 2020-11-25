@@ -1,0 +1,6 @@
+/**
+ * Adds handles for scaling, moving, rotating and shearing a Figure.
+ */
+public static void addGroupHoverHandles(Figure f, Collection<Handle> handles) {
+    handles.add(new BoundsOutlineHandle(f, HandleAttributeKeys.GROUP_BOUNDS_STROKE_1_HOVER, HandleAttributeKeys.GROUP_BOUNDS_COLOR_1_HOVER, HandleAttributeKeys.GROUP_BOUNDS_STROKE_2_HOVER, HandleAttributeKeys.GROUP_BOUNDS_COLOR_2_HOVER, HandleAttributeKeys.GROUP_BOUNDS_STROKE_1_DISABLED, HandleAttributeKeys.GROUP_BOUNDS_COLOR_1_DISABLED, HandleAttributeKeys.GROUP_BOUNDS_STROKE_2_DISABLED, HandleAttributeKeys.GROUP_BOUNDS_COLOR_2_DISABLED));
+}

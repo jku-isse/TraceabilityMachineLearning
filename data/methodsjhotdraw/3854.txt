@@ -1,0 +1,35 @@
+protected void showPopup(MouseEvent evt) {
+    // Add your handling code here:
+    if (((popupMenu) != null) && (((actionArea) == null) || (!(actionArea.contains(((evt.getX()) - (getInsets().left)), ((evt.getY()) - (getInsets().top))))))) {
+        int x;
+        int y;
+        switch (popupAnchor) {
+            case SwingConstants.SOUTH_EAST :
+                x = (getWidth()) - (popupMenu.getPreferredSize().width);
+                y = getHeight();
+                break;
+            case SwingConstants.SOUTH_WEST :
+            default :
+                x = 0;
+                y = getHeight();
+                break;
+        }
+        if ((getParent()) instanceof JToolBar) {
+            JToolBar toolbar = ((JToolBar) (getParent()));
+            if ((toolbar.getOrientation()) == (JToolBar.VERTICAL)) {
+                y = 0;
+                if ((toolbar.getX()) > (toolbar.getParent().getInsets().left)) {
+                    x = -(popupMenu.getPreferredSize().width);
+                } else {
+                    x = getWidth();
+                }
+            } else {
+                if ((toolbar.getY()) > (toolbar.getParent().getInsets().top)) {
+                    y = -(popupMenu.getPreferredSize().height);
+                }
+            }
+        }
+        popupMenu.show(this, x, y);
+        popupMenu.repaint();
+    }
+}

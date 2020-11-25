@@ -1,0 +1,8 @@
+public double constrainAngle(double angle) {
+    // No step specified then no constraining
+    if ((theta) == 0) {
+        return angle;
+    }
+    double factor = Math.round((angle / (theta)));
+    return (theta) * factor;
+}

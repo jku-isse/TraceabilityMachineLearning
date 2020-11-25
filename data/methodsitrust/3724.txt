@@ -1,0 +1,10 @@
+/**
+ * Warning if providing wrong prescription
+ *
+ * @param warnings
+ * 		
+ */
+public PrescriptionWarningException(List<String> warnings) {
+    super("");
+    this.warnings = warnings;
+}

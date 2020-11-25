@@ -1,0 +1,8 @@
+public DrawingAttributeAction(DrawingEditor editor, AttributeKey key, Object value, String name, Icon icon, Action compatibleTextAction) {
+    super(editor);
+    this.attributes = new HashMap<AttributeKey, Object>();
+    attributes.put(key, value);
+    putValue(AbstractAction.NAME, name);
+    putValue(AbstractAction.SMALL_ICON, icon);
+    setEnabled(true);
+}

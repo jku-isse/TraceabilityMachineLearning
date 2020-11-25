@@ -1,0 +1,3 @@
+public Enumeration getAttributeNames() {
+    throw new IllegalStateException("should not be hit!");
+}

@@ -1,0 +1,6 @@
+/**
+ * Change the year of the date
+ */
+public void setYear(int y) {
+    this.set(Calendar.YEAR, y);
+}

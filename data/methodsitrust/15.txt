@@ -1,0 +1,8 @@
+/**
+ * Returns the ArrayList of Strings containing the CSV header fields
+ *
+ * @return ArrayList of Strings containing CSV header fields
+ */
+public ArrayList<String> getHeader() {
+    return CSVHeader;
+}

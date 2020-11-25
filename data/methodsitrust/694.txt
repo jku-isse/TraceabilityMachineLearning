@@ -1,0 +1,8 @@
+public boolean needsCaptcha() {
+    try {
+        return (authDAO.getLoginFailures(ipAddr)) >= 3;
+    } catch (DBException e) {
+        System.err.println("Denying access due to DBException");
+        return false;
+    }
+}

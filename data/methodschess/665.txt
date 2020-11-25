@@ -1,0 +1,4 @@
+public void setBlackClockRunning() {
+    _white.setBackground(Color.lightGray);
+    _black.setBackground(Color.white);
+}

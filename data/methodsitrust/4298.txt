@@ -1,0 +1,5 @@
+public void testFilterByParentFirstNameNoResult() throws Exception {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.PARENT_FIRST_NAME, "Dalpe", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertTrue(res.isEmpty());
+}

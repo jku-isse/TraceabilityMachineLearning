@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public PathTool(SVGPathFigure pathPrototype, SVGBezierFigure bezierPrototype, Map<AttributeKey, Object> attributes) {
+    super(bezierPrototype, attributes);
+    this.pathPrototype = pathPrototype;
+}

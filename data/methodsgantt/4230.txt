@@ -1,0 +1,3 @@
+// 
+// relationships with other entities
+GanttTaskRelationship[] getPredecessors();

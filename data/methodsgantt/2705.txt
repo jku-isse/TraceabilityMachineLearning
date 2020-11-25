@@ -1,0 +1,9 @@
+public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+    String text = String.valueOf(((DefaultMutableTreeNode) (value)).getUserObject());
+    setFont(Fonts.GENERAL_DIALOG_FONT);
+    setIcon(new ImageIcon(getClass().getResource("/icons/blank.gif")));
+    setText(text);
+    setBackground((selected ? new Color(((float) (0.29)), ((float) (0.349)), ((float) (0.643))) : Color.white));
+    setForeground((selected ? Color.white : Color.black));
+    return this;
+}

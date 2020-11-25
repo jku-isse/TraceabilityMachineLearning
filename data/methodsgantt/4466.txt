@@ -1,0 +1,11 @@
+void fireTaskScheduleChanged(Task changedTask, GanttCalendar oldStartDate, GanttCalendar oldFinishDate) {
+    if (areEventsEnabled) {
+        TaskScheduleEvent e = new TaskScheduleEvent(changedTask, oldStartDate, oldFinishDate, changedTask.getStart(), changedTask.getEnd());
+        // List copy = new ArrayList(myListeners);
+        // myListeners.clear();
+        for (int i = 0; i < (myListeners.size()); i++) {
+            TaskListener next = ((TaskListener) (myListeners.get(i)));
+            next.taskScheduleChanged(e);
+        }
+    }
+}

@@ -1,0 +1,85 @@
+/**
+ * Returns a list of all the HCPs who have a particular diagnosis
+ *
+ * @param icdcode
+ * 		the diagnosis of interest
+ * @return the list of HCPs
+ * @throws DBException
+ * 		
+ */
+public List<HCPDiagnosisBean> getHCPByDiagnosis(String icdcode) throws DBException {
+    int medMatch = 0;
+    HashMap<Long, HCPDiagnosisBean> hcpHash = new HashMap<Long, HCPDiagnosisBean>();
+    HashMap<Long, Long> patientHash = new HashMap<Long, Long>();
+    HCPDiagnosisBean diag = null;
+    List<OfficeVisitBean> beans = officeVisitDAO.getAllOfficeVisitsForDiagnosis(icdcode);
+    for (OfficeVisitBean bean : beans) {
+        // check for HCP-Patient locality based on first 3 digits in ZIP
+        if (!(patientDAO.getPatient(loggedInMID).getZip().substring(0, 2).equals(personnelDAO.getPersonnel(bean.getHcpID()).getZip().substring(0, 2))))
+            continue;
+
+        // Check to see if we already have a bean for the HCP associated with this visit
+        if (hcpHash.containsKey(bean.getHcpID())) {
+            diag = hcpHash.get(bean.getHcpID());
+            // get all prescriptions associated with an office visit
+            List<PrescriptionBean> prescriptions = prescriptionsDAO.getList(bean.getID());
+            for (PrescriptionBean p : prescriptions) {
+                List<MedicationBean> mlist = diag.getMedList();
+                for (MedicationBean b : mlist) {
+                    if (p.getMedication().getDescription().equals(b.getDescription()))
+                        medMatch++;
+
+                }
+                if (medMatch == 0) {
+                    mlist.add(p.getMedication());
+                    diag.setMedList(mlist);
+                } else {
+                    medMatch = 0;
+                }
+            }
+            // Get Lab Procedures
+            List<LabProcedureBean> labprocs = diag.getLabList();
+            List<LabProcedureBean> lpbeans = labprocDAO.getAllLabProceduresForDocOV(bean.getVisitID());
+            for (LabProcedureBean p : lpbeans) {
+                labprocs.add(p);
+            }
+            diag.setLabList(labprocs);
+            if (surveyDAO.isSurveyCompleted(bean.getVisitID())) {
+                SurveyBean survey = surveyDAO.getSurveyData(bean.getVisitID());
+                diag.setVisitSat(survey.getVisitSatisfaction());
+                diag.setTreatmentSat(survey.getTreatmentSatisfaction());
+            }
+            // Check if this patient has been seen multiple times for this diagnosis
+            if (!(patientHash.containsKey(bean.getPatientID()))) {
+                patientHash.put(bean.getPatientID(), bean.getHcpID());
+                diag.incNumPatients();
+            }
+        } else {
+            diag = new HCPDiagnosisBean();
+            List<MedicationBean> mlist = new ArrayList<MedicationBean>();
+            diag.setHCP(bean.getHcpID());
+            try {
+                diag.setHCPName(personnelDAO.getName(bean.getHcpID()));
+            } catch (iTrustException e) {
+                diag.setHCPName("null");
+            }
+            diag.incNumPatients();
+            List<PrescriptionBean> prescriptions = prescriptionsDAO.getList(bean.getID());
+            for (PrescriptionBean p : prescriptions) {
+                mlist.add(p.getMedication());
+            }
+            diag.setMedList(mlist);
+            diag.setLabList(labprocDAO.getAllLabProceduresForDocOV(bean.getVisitID()));
+            if (surveyDAO.isSurveyCompleted(bean.getVisitID())) {
+                SurveyBean survey = surveyDAO.getSurveyData(bean.getVisitID());
+                diag.setVisitSat(survey.getVisitSatisfaction());
+                diag.setTreatmentSat(survey.getTreatmentSatisfaction());
+            }
+            patientHash.put(bean.getPatientID(), bean.getHcpID());
+            hcpHash.put(bean.getHcpID(), diag);
+        }
+    }
+    List<HCPDiagnosisBean> list = new ArrayList<HCPDiagnosisBean>(hcpHash.values());
+    Collections.sort(list, new MyDiagnosisAction.HCPDiagnosisBeanComparator());
+    return list;
+}

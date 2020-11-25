@@ -1,0 +1,9 @@
+/**
+ * Get the color of this engine.
+ *
+ * @param white
+ * 		true, if the engine operates with the white pieces.
+ */
+public boolean isWhite() {
+    return _white;
+}

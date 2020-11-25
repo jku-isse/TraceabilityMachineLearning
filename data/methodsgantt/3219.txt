@@ -1,0 +1,25 @@
+private Box constructNamePanel() {
+    Box box = Box.createVerticalBox();
+    JPanel previousStatePanel;
+    nameComboBox = new JComboBox();
+    if ((myPreviousStates.size()) != 0) {
+        previousStatePanel = new JPanel(new FlowLayout(FlowLayout.TRAILING, 30, 20));
+        previousStateLabel = new JLabel(lang.getText("previousStates"));
+        for (int i = 0; i < (myPreviousStates.size()); i++)
+            nameComboBox.addItem(((GanttPreviousState) (myPreviousStates.get(i))).getName());
+
+        nameComboBox.setName("nameComboBox");
+        nameComboBox.setSelectedIndex((-1));
+        previousStatePanel.add(previousStateLabel);
+        previousStatePanel.add(nameComboBox);
+        box.add(previousStatePanel);
+    }
+    nameTextField = new JTextField(20);
+    nameTextField.setText((((GanttSaveAsPreviousStateBean.defaultName) + "_") + (GanttSaveAsPreviousStateBean.count)));
+    nameTextField.selectAll();
+    JPanel namePanel = new JPanel(new FlowLayout(FlowLayout.TRAILING, 30, 20));
+    namePanel.add(nameTextField);
+    box.add(namePanel);
+    box.setBorder(new TitledBorder(new EtchedBorder(), lang.getText("name")));
+    return box;
+}

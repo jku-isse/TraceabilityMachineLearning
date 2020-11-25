@@ -1,0 +1,8 @@
+/**
+ * Gets the error list
+ *
+ * @return ErrorList All errors encountered while parsing
+ */
+public ErrorList getErrors() {
+    return errors;
+}

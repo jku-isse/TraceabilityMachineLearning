@@ -1,0 +1,3 @@
+public TaskPropertiesTagHandler(CustomColumnsStorage columnStorage) {
+    myColumnStorage = columnStorage;
+}

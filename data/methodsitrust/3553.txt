@@ -1,0 +1,3 @@
+public void loincs() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/loincs.sql"));
+}

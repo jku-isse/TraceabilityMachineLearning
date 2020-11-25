@@ -1,0 +1,6 @@
+/**
+ * Get the board as a byte stream.
+ *
+ * @return The board as a array of bytes.
+ */
+byte[] getBytes();

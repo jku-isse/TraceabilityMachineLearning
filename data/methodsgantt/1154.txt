@@ -1,0 +1,11 @@
+public void add(String name, int order, int width) {
+    ArrayList cols = ttModel.getColumns();
+    for (int i = 0; i < (cols.size()); i++) {
+        ResourceColumn col = ((ResourceColumn) (cols.get(i)));
+        if ((name.equals(col.getID())) && (!(col.isVisible()))) {
+            col.setWidth(width);
+            col.setOrder(order);
+            showColumn(col);
+        }
+    }
+}

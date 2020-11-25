@@ -1,0 +1,9 @@
+public BezierTool(BezierFigure prototype, Map<AttributeKey, Object> attributes, String name) {
+    this.prototype = prototype;
+    this.attributes = attributes;
+    if (name == null) {
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        name = labels.getString("edit.createFigure.text");
+    }
+    this.presentationName = name;
+}

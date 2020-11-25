@@ -1,0 +1,3 @@
+public void setDraggedFigure(Figure f) {
+    anchorFigure = f;
+}

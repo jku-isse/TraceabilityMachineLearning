@@ -1,0 +1,13 @@
+/**
+ * Moves a point to the closest constrained location in the specified
+ * direction.
+ * <p>
+ * This method changes the point which is passed as a parameter.
+ *
+ * @param p
+ * 		A point on the drawing.
+ * @param dir
+ * 		A direction.
+ * @return Returns the constrained point.
+ */
+public Point2D.Double translatePoint(Point2D.Double p, TranslationDirection dir);

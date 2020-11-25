@@ -1,0 +1,17 @@
+/**
+ * Returns the date of the last Transaction in the list passed as a param if the list is not empty
+ * otherwise, returns todays date
+ *
+ * @param accesses
+ * 		A java.util.List of TransactionBeans storing the access.
+ * @return A String representation of the date of the last transaction.
+ */
+public String getDefaultEnd(List<TransactionBean> accesses) {
+    String endDate = "";
+    if ((accesses.size()) > 0) {
+        endDate = new SimpleDateFormat("MM/dd/yyyy").format(new Date(accesses.get(0).getTimeLogged().getTime()));
+    } else {
+        endDate = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
+    }
+    return endDate;
+}

@@ -1,0 +1,5 @@
+private void saveProject(Document document) throws IOException {
+    // assert document!=null;
+    myWorkbenchFacade.setStatusText((((GanttLanguage.getInstance().getText("saving")) + " ") + (document.getPath())));
+    document.write();
+}

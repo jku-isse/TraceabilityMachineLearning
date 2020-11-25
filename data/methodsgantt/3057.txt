@@ -1,0 +1,17 @@
+private Component createStringComponent(final StringOption option) {
+    final JTextField result = new JTextField(option.getValue());
+    result.getDocument().addDocumentListener(new DocumentListener() {
+        public void insertUpdate(DocumentEvent e) {
+            option.setValue(result.getText());
+        }
+
+        public void removeUpdate(DocumentEvent e) {
+            option.setValue(result.getText());
+        }
+
+        public void changedUpdate(DocumentEvent e) {
+            option.setValue(result.getText());
+        }
+    });
+    return result;
+}

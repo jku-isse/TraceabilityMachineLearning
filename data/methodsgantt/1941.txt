@@ -1,0 +1,4 @@
+public ResourceLoadRenderer(ChartModelResource model, ResourceChart resourceChart) {
+    super(model);
+    myResourcechart = resourceChart;
+}

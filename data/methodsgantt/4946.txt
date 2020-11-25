@@ -1,0 +1,8 @@
+protected TimeUnitText createTimeUnitText(Date startDate) {
+    myCalendar.setTime(startDate);
+    myCalendar.setMinimalDaysInFirstWeek(4);
+    Integer weekNo = new Integer(myCalendar.get(Calendar.WEEK_OF_YEAR));
+    String shortText = MessageFormat.format("{0}", new Object[]{ weekNo });
+    String middleText = MessageFormat.format(((GanttLanguage.getInstance().getText("week")) + " {0}"), new Object[]{ weekNo });
+    return new TimeUnitText(middleText, middleText, shortText);
+}

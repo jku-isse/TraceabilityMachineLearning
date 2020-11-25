@@ -1,0 +1,11 @@
+public void testUpdateNonExistent() throws Exception {
+    String code = "99999-9";
+    String com = "Malaria";
+    String kop = "VOL";
+    LOINCbean proc = new LOINCbean();
+    proc.setLabProcedureCode(code);
+    proc.setComponent(com);
+    proc.setKindOfProperty(kop);
+    assertEquals("Error: Code not found.", action.updateInformation(proc));
+    assertTrue(factory.getLOINCDAO().getProcedures(code).isEmpty());
+}

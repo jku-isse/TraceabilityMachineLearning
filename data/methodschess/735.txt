@@ -1,0 +1,26 @@
+/**
+ * Returns if the new string (after inserting a character or pasted string) is valid
+ *
+ * @param s
+ * 		The string to check
+ * @return <code>true</code> if the string is valid, based on the users conditions
+given in the constructor
+ */
+public boolean canBecomeValid(String s) {
+    switch (iType) {
+        case CHECK_FOR_CHAR_NUM :
+            // only character count
+            return ((s.length()) <= (iCharacterCount)) && ((s.length()) >= 0);
+        case CHECK_FOR_NUMBER :
+            // numbers only
+            return (((s.length()) <= (iCharacterCount)) && ((s.length()) >= 0)) && (isValid(s));
+        case CHECK_FOR_EP_SQUARE :
+            // a3-d3 and a6-d6 are valid squares for en passant
+            return this.isValidSquare(s, true);
+        case CHECK_FOR_SQUARE :
+            // between a1 and h8
+            return this.isValidSquare(s, false);
+        default :
+            return false;
+    }
+}

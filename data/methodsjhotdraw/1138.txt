@@ -1,0 +1,58 @@
+/**
+ * Returns the distance, that a Rectangle needs to grow (or shrink) to
+ * fill its shape as specified by the FILL_UNDER_STROKE and STROKE_POSITION
+ * attributes of a figure.
+ * The value returned is the number of units that need to be grown (or shrunk)
+ * perpendicular to a stroke on an outline of the shape.
+ */
+public static double getPerpendicularFillGrowth(Figure f) {
+    double grow;
+    double strokeWidth = AttributeKeys.getStrokeTotalWidth(f);
+    AttributeKeys.StrokePlacement placement = AttributeKeys.STROKE_PLACEMENT.get(f);
+    switch (AttributeKeys.FILL_UNDER_STROKE.get(f)) {
+        case FULL :
+            switch (placement) {
+                case INSIDE :
+                    grow = 0.0F;
+                    break;
+                case OUTSIDE :
+                    grow = strokeWidth;
+                    break;
+                case CENTER :
+                default :
+                    grow = strokeWidth / 2.0;
+                    break;
+            }
+            break;
+        case NONE :
+            switch (placement) {
+                case INSIDE :
+                    grow = -strokeWidth;
+                    break;
+                case OUTSIDE :
+                    grow = 0.0F;
+                    break;
+                case CENTER :
+                default :
+                    grow = strokeWidth / (-2.0);
+                    break;
+            }
+            break;
+        case CENTER :
+        default :
+            switch (placement) {
+                case INSIDE :
+                    grow = strokeWidth / (-2.0);
+                    break;
+                case OUTSIDE :
+                    grow = strokeWidth / 2.0;
+                    break;
+                case CENTER :
+                default :
+                    grow = 0.0;
+                    break;
+            }
+            break;
+    }
+    return grow;
+}

@@ -1,0 +1,9 @@
+/**
+ * Set a new game controller.
+ *
+ * @param The
+ * 		new game controller.
+ */
+private final void setController(GameController controller) {
+    _controller = controller;
+}

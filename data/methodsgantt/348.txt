@@ -1,0 +1,16 @@
+/**
+ *
+ *
+ * @return if the mouse is used to drag on the chart.
+ */
+// public boolean getDragTime() {
+// return dragTime;
+// }
+/**
+ *
+ *
+ * @return automatic launch properties box when create a new task.
+ */
+public boolean getAutomatic() {
+    return automatic;
+}

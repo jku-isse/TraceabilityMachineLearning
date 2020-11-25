@@ -1,0 +1,8 @@
+@Override
+public void initApplication(Application a) {
+    putAction(FindAction.ID, new FindAction(a));
+    putAction(ToggleLineWrapAction.ID, new ToggleLineWrapAction(a));
+    putAction(ToggleStatusBarAction.ID, new ToggleStatusBarAction(a));
+    putAction(ToggleLineNumbersAction.ID, new ToggleLineNumbersAction(a));
+    putAction(PrintAction.ID, null);
+}

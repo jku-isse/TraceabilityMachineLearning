@@ -1,0 +1,3 @@
+Task getTask(int id) {
+    return ((Task) (myId2task.get(new Integer(id))));
+}

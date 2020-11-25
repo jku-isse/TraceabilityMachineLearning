@@ -1,0 +1,8 @@
+/**
+ * Gets the body of this message
+ *
+ * @return 
+ */
+public String getBody() {
+    return body;
+}

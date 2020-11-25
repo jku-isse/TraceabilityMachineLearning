@@ -1,0 +1,9 @@
+/**
+ *
+ *
+ * @param appt
+ * 		
+ */
+public void setRequestedAppt(ApptBean appt) {
+    requestedAppt = appt;
+}

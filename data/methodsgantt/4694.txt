@@ -1,0 +1,3 @@
+public int getVariation() {
+    return myVariation;
+}

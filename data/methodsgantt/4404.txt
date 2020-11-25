@@ -1,0 +1,14 @@
+public float getLength(TimeUnit unit) {
+    if (myUnit.isConstructedFrom(unit)) {
+        return ((float) (myCount)) * (myUnit.getAtomCount(unit));
+    } else
+        if (unit.isConstructedFrom(myUnit)) {
+            return ((float) (myCount)) / (unit.getAtomCount(myUnit));
+        } else
+            if (!(unit.equals(myUnit))) {
+                throw new IllegalArgumentException(((("Cant convert unit=" + unit) + " to my unit=") + (myUnit)));
+            }
+
+
+    return myCount;
+}

@@ -1,0 +1,3 @@
+public int getMaxID() {
+    return myMaxID;
+}

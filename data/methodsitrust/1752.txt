@@ -1,0 +1,6 @@
+/**
+ * sets the status to "Testing"
+ */
+public void statusTesting() {
+    this.status = LabProcedureBean.Testing;
+}

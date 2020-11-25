@@ -1,0 +1,3 @@
+public TaskDependency.ActivityBinding getActivityBinding() {
+    return getConstraint().getActivityBinding();
+}

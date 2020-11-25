@@ -1,0 +1,8 @@
+/**
+ * Gets the display box of the connector.
+ */
+@Override
+public Rectangle2D.Double getBounds() {
+    Point2D.Double p = locator.locate(getOwner());
+    return new Rectangle2D.Double(((p.x) - ((LocatorConnector.SIZE) / 2)), ((p.y) - ((LocatorConnector.SIZE) / 2)), LocatorConnector.SIZE, LocatorConnector.SIZE);
+}

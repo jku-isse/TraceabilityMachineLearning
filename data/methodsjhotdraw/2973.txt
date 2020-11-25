@@ -1,0 +1,3 @@
+protected void updateEnabledState() {
+    setEnabled((((editor) != null) && (editor.isEnabled())));
+}

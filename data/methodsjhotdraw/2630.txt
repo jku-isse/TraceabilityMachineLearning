@@ -1,0 +1,4 @@
+@Override
+public void draw(Graphics2D g) {
+    tracker.draw(g);
+}

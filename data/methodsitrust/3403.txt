@@ -1,0 +1,9 @@
+// order by code asc but field isnt numerical, so codes will NOT be
+// in NUMERICAL ascending order...
+// (unless codes are switched to fixed width)
+public void testGetAllCPT() throws Exception {
+    List<ProcedureBean> codes = cptDAO.getAllCPTCodes();
+    assertEquals(17, codes.size());
+    assertEquals("Injection procedure", codes.get(0).getDescription());
+    assertEquals("87", codes.get(1).getCPTCode());
+}

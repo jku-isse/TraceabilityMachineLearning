@@ -1,0 +1,3 @@
+public PreparedStatement loadParameters(PreparedStatement ps, LOINCbean bean) throws SQLException {
+    throw new IllegalStateException("unimplemented!");
+}

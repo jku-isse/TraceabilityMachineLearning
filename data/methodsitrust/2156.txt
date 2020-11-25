@@ -1,0 +1,3 @@
+public void setHCPLastName(String lastName) {
+    this.hcpLastName = lastName;
+}

@@ -1,0 +1,47 @@
+/**
+ * Function to put up the selected tasks
+ */
+public void upCurrentNodes() {
+    final DefaultMutableTreeNode[] cdmtn = getSelectedNodes();
+    if (cdmtn == null) {
+        myUIFacade.setStatusText(language.getText("msg21"));
+        return;
+    }
+    final TreePath[] selectedPaths = new TreePath[cdmtn.length];
+    final GanttTree2 gt2 = this;
+    appli.getUndoManager().undoableEdit("Up", new Runnable() {
+        public void run() {
+            for (int i = 0; i < (cdmtn.length); i++) {
+                DefaultMutableTreeNode father = gt2.getFatherNode(cdmtn[i]);
+                int index = father.getIndex(((TreeNode) (cdmtn[i])));
+                index--;
+                Task task = ((Task) (cdmtn[i].getUserObject()));
+                if (index >= 0) {
+                    DefaultMutableTreeNode[] child = new DefaultMutableTreeNode[cdmtn[i].getChildCount()];
+                    if (task.getExpand()) {
+                        for (int j = 0; j < (cdmtn[i].getChildCount()); j++) {
+                            child[j] = ((DefaultMutableTreeNode) (cdmtn[i].getChildAt(j)));
+                        }
+                        for (int j = 0; j < (child.length); j++) {
+                            child[j].removeFromParent();
+                            treeModel.nodesWereRemoved(cdmtn[i], new int[]{ 0 }, new Object[]{ child });
+                        }
+                    }
+                    cdmtn[i].removeFromParent();
+                    treeModel.nodesWereRemoved(father, new int[]{ index + 1 }, new Object[]{ cdmtn });
+                    father.insert(cdmtn[i], index);
+                    treeModel.nodesWereInserted(father, new int[]{ index });
+                    if (task.getExpand()) {
+                        for (int j = 0; j < (child.length); j++) {
+                            cdmtn[i].insert(child[j], j);
+                            treeModel.nodesWereInserted(cdmtn[i], new int[]{ j });
+                        }
+                    }
+                    forwardScheduling();
+                }
+            }
+        }
+    });
+    // treetable.getTree().setSelectionPaths(selectedPaths);
+    area.repaint();
+}

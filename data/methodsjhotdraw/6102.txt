@@ -1,0 +1,21 @@
+@Override
+public List<JMenu> createMenus(Application a, View p) {
+    LinkedList<JMenu> mb = new LinkedList<JMenu>();
+    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.teddy.Labels");
+    JMenu m;
+    JCheckBoxMenuItem cbmi;
+    mb.add(createEditMenu(a, p));
+    m = new JMenu();
+    labels.configureMenu(m, "view");
+    cbmi = new JCheckBoxMenuItem(getAction(ToggleLineWrapAction.ID));
+    Actions.configureJCheckBoxMenuItem(cbmi, getAction(ToggleLineWrapAction.ID));
+    m.add(cbmi);
+    cbmi = new JCheckBoxMenuItem(getAction(ToggleLineNumbersAction.ID));
+    Actions.configureJCheckBoxMenuItem(cbmi, getAction(ToggleLineNumbersAction.ID));
+    m.add(cbmi);
+    cbmi = new JCheckBoxMenuItem(getAction(ToggleStatusBarAction.ID));
+    Actions.configureJCheckBoxMenuItem(cbmi, getAction(ToggleStatusBarAction.ID));
+    m.add(cbmi);
+    mb.add(m);
+    return mb;
+}

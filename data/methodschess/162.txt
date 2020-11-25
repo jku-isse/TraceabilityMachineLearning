@@ -1,0 +1,8 @@
+/**
+ * Get the number of analyzed boards.
+ *
+ * @return The number of analyzed boards.
+ */
+public final long getAnalyzedBoards() {
+    return _analyzedBoards;
+}

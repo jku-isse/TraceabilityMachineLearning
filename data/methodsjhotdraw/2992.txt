@@ -1,0 +1,16 @@
+public void setEditor(DrawingEditor editor) {
+    if ((this.editor) != null) {
+        this.editor.removePropertyChangeListener(eventHandler);
+        if ((this.editor.getActiveView()) != null) {
+            this.editor.getActiveView().removeFigureSelectionListener(eventHandler);
+        }
+    }
+    this.editor = editor;
+    if ((this.editor) != null) {
+        this.editor.addPropertyChangeListener(eventHandler);
+        if ((this.editor.getActiveView()) != null) {
+            this.editor.getActiveView().addFigureSelectionListener(eventHandler);
+        }
+    }
+    updateEnabledState();
+}

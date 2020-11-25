@@ -1,0 +1,5 @@
+private void fireZoomIn() {
+    if (myZoomManager.canZoomIn()) {
+        myZoomManager.zoomIn();
+    }
+}

@@ -1,0 +1,4 @@
+/**
+ * Returns the element tag name for the specified Enum class.
+ */
+public String getEnumName(Enum o);

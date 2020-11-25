@@ -1,0 +1,3 @@
+public String getValueAsString() {
+    return HumanResourceManager.getValueAsString(myValue);
+}

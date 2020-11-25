@@ -1,0 +1,7 @@
+public TaskProgressChartItem(int posX, int unitWidth, TimeUnit bottomUnit, Task task) {
+    super(task);
+    myPosX = posX;
+    myUnitWidth = unitWidth;
+    myTimeUnit = bottomUnit;
+    myTaskLength = task.getDuration().getLength(bottomUnit);
+}

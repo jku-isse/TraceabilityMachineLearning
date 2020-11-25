@@ -1,0 +1,10 @@
+public void testValidatePasswordEmpty() throws Exception {
+    gen.patient1();
+    try {
+        action.resetPassword(1L, "patient", "blue", "", "12345678", "127.0.0.1");
+        fail("exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals("Password cannot be empty", e.getErrorList().get(0));
+        assertEquals(1, e.getErrorList().size());
+    }
+}

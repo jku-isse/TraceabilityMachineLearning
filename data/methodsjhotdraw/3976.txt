@@ -1,0 +1,6 @@
+/**
+ * Returns the option that the JFileChooser or JOptionPane returned.
+ */
+public int getOption() {
+    return option;
+}

@@ -1,0 +1,3 @@
+public void setThisTitle(String thisPage) {
+    this.thisTitle = thisPage;
+}

@@ -1,0 +1,5 @@
+@Override
+public void write(DOMOutput out) throws IOException {
+    super.write(out);
+    writeAttributes(out);
+}

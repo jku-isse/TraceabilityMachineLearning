@@ -1,0 +1,15 @@
+/**
+ * Test method for {@link edu.ncsu.csc.itrust.action.ViewPatientReferralsAction#getReferralsForPatientUnread()}.
+ *
+ * @throws DBException
+ * 		
+ */
+public void testGetReferralsForPatientUnread() throws DBException {
+    int number = action.getReferralsForPatientUnread();
+    assertEquals(5, number);
+    ReferralBean b = action.getReferralByID(1);
+    b.setViewedByPatient(true);
+    action.updateReferral(b);
+    number = action.getReferralsForPatientUnread();
+    assertEquals(4, number);
+}

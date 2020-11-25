@@ -1,0 +1,11 @@
+public void restoreTransformTo(Object geometry) {
+    Object[] restoreData = ((Object[]) (geometry));
+    AttributeKeys.TRANSFORM.basicSetClone(this, ((AffineTransform) (restoreData[0])));
+    Point2D.Double[] restoredCoordinates = ((Point2D.Double[]) (restoreData[1]));
+    for (int i = 0; i < (this.coordinates.length); i++) {
+        coordinates[i] = ((Point2D.Double) (restoredCoordinates[i].clone()));
+    }
+    SVGAttributeKeys.FILL_GRADIENT.basicSetClone(this, ((Gradient) (restoreData[2])));
+    SVGAttributeKeys.STROKE_GRADIENT.basicSetClone(this, ((Gradient) (restoreData[3])));
+    invalidate();
+}

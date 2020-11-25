@@ -1,0 +1,15 @@
+/**
+ * Creates an instance of GanttTreeTable with the given TreeTableModel.
+ *
+ * @param project
+ * 		
+ * @param model
+ * 		TreeTableModel.
+ */
+public GanttTreeTable(IGanttProject project, UIFacade uifacade, GanttTreeTableModel model) {
+    super(project, model);
+    GanttLanguage.getInstance().addListener(this);
+    initTreeTable();
+    this.ttModel = model;
+    myUIfacade = uifacade;
+}

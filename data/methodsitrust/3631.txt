@@ -1,0 +1,3 @@
+public void timeout() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/timeout.sql"));
+}

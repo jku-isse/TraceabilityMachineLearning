@@ -1,0 +1,4 @@
+private void beforeClose() {
+    myWorkbenchFacade.setWorkbenchTitle(i18n.getText("appliTitle"));
+    getUndoManager().die();
+}

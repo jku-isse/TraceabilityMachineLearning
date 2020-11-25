@@ -1,0 +1,4 @@
+public void testGetFamilyHistory() throws iTrustException {
+    List<FamilyMemberBean> fmbList = action.getFamilyHistory();
+    assertEquals(5, fmbList.size());
+}

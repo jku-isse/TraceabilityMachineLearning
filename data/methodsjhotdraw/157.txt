@@ -1,0 +1,23 @@
+protected void initApplicationActions() {
+    ApplicationModel mo = getModel();
+    mo.putAction(AboutAction.ID, new AboutAction(this));
+    mo.putAction(ExitAction.ID, new ExitAction(this));
+    mo.putAction(OSXDropOnDockAction.ID, new OSXDropOnDockAction(this));
+    mo.putAction(NewAction.ID, new NewAction(this));
+    mo.putAction(OpenAction.ID, new OpenAction(this));
+    mo.putAction(ClearRecentFilesAction.ID, new ClearRecentFilesAction(this));
+    mo.putAction(SaveAction.ID, new SaveAction(this));
+    mo.putAction(SaveAsAction.ID, new SaveAsAction(this));
+    mo.putAction(PrintAction.ID, new PrintAction(this));
+    mo.putAction(CloseAction.ID, new CloseAction(this));
+    mo.putAction(UndoAction.ID, new UndoAction(this));
+    mo.putAction(RedoAction.ID, new RedoAction(this));
+    mo.putAction(CutAction.ID, new CutAction());
+    mo.putAction(CopyAction.ID, new CopyAction());
+    mo.putAction(PasteAction.ID, new PasteAction());
+    mo.putAction(DeleteAction.ID, new DeleteAction());
+    mo.putAction(DuplicateAction.ID, new DuplicateAction());
+    mo.putAction(SelectAllAction.ID, new SelectAllAction());
+    mo.putAction(MaximizeAction.ID, new MaximizeAction(this));
+    mo.putAction(MinimizeAction.ID, new MinimizeAction(this));
+}

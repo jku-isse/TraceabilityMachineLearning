@@ -1,0 +1,6 @@
+public void focusGained(FocusEvent e) {
+    // repaintHandles();
+    if ((editor) != null) {
+        editor.setActiveView(this);
+    }
+}

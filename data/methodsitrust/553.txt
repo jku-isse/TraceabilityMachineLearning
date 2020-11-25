@@ -1,0 +1,7 @@
+@Override
+protected void setUp() throws Exception {
+    TestDataGenerator gen = new TestDataGenerator();
+    gen.clearAllTables();
+    factory = TestDAOFactory.getTestInstance();
+    action = new EventLoggingAction(factory);
+}

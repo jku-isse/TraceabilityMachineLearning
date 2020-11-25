@@ -1,0 +1,4 @@
+ValidationFormat(String regex, String errorMessage) {
+    this.regex = Pattern.compile(regex);
+    this.description = errorMessage;
+}

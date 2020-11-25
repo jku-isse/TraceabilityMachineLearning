@@ -1,0 +1,7 @@
+public void setIconHidden(boolean isHidden) {
+    if (isHidden) {
+        setDefaultIcon(null);
+    } else {
+        setDefaultIcon(myIcon);
+    }
+}

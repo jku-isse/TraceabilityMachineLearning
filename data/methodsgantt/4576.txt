@@ -1,0 +1,4 @@
+public CriticalPathAlgorithmImpl(TaskNode root, GPCalendar cal) {
+    this.root = root;
+    this.calendar = cal;
+}

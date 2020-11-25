@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Test, if this stack is empty.
+ *
+ * @return true, if the stack is empty. False otherwise.
+ */
+public final boolean empty() {
+    return (_nItems) == 0;
+}

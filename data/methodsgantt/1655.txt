@@ -1,0 +1,5 @@
+protected void enableRenderers1() {
+    myChartHeader.setEnabled(false);
+    // myBottomUnitLineRenderer.setEnabled(true);
+    myChartGrid.setEnabled(true);
+}

@@ -1,0 +1,6 @@
+String[] getDayNames() {
+    return myDayNames;
+    // DateFormatSymbols symbols = new
+    // DateFormatSymbols(Locale.getDefault());
+    // return symbols.getWeekdays();
+}

@@ -1,0 +1,7 @@
+@Override
+public void undo() throws CannotUndoException {
+    super.undo();
+    owner.willChange();
+    owner.setNode(index, oldValue);
+    owner.changed();
+}

@@ -1,0 +1,4 @@
+@Override
+public String getDescription() {
+    return "Patients ethnicity is " + (patient.getEthnicity());
+}

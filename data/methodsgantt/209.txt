@@ -1,0 +1,10 @@
+/**
+ * Return an image with the gantt chart
+ */
+// TODO: 1.11 take into account flags "render this and dont render that"
+public BufferedImage getChart(GanttExportSettings settings) {
+    RenderedChartImage renderedImage = ((RenderedChartImage) (getRenderedImage(settings)));
+    BufferedImage result = renderedImage.getWholeImage();
+    repaint();
+    return result;
+}

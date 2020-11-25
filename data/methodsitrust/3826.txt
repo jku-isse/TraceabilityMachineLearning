@@ -1,0 +1,11 @@
+public void testHCPDeactivatedPatientGroupReport() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9000000000L, 0L, "");
+    wr = wr.getLinkWith("Group Report").click();
+    assertEquals("iTrust - Generate Group Report", wr.getTitle());
+    WebForm form = wr.getFormWithID("mainForm");
+    wr = form.submit();
+    assertEquals("iTrust - Generate Group Report", wr.getTitle());
+}

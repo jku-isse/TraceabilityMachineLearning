@@ -1,0 +1,6 @@
+public CustomPropertyDefinition createDefinition(String id, String typeAsString, String name, String defaultValueAsString) {
+    final CustomPropertyDefinition stubDefinition = net.sourceforge.ganttproject.CustomPropertyManager.PropertyTypeEncoder.decodeTypeAndDefaultValue(typeAsString, defaultValueAsString);
+    CustomPropertyDefinition result = new HumanResourceManager.CustomPropertyDefinitionImpl(name, id, stubDefinition);
+    addCustomField(result);
+    return result;
+}

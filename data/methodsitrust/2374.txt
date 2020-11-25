@@ -1,0 +1,7 @@
+public List<LabProcedureBean> loadList(ResultSet rs) throws SQLException {
+    ArrayList<LabProcedureBean> list = new ArrayList<LabProcedureBean>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

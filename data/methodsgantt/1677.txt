@@ -1,0 +1,8 @@
+public Date getEndDate() {
+    TimeFrame[] timeFrames = getTimeFrames(null);
+    // for(int i = 0 ; i<timeFrames.length; i++)
+    // System.out.println("< "+timeFrames[i].getStartDate() + "" +
+    // timeFrames[i].getFinishDate()+" >");
+    TimeFrame last = timeFrames[((timeFrames.length) - 1)];
+    return last.getFinishDate();
+}

@@ -1,0 +1,22 @@
+// BOUNDS
+/**
+ * Sets the logical and untransformed bounds of the figure.
+ * <p>
+ * This is used by Tools which create a new Figure and by Tools which
+ * connect a Figure to another Figure.
+ * <p>
+ * This is a basic operation which does not fire events. Use the following
+ * code sequence, if you need event firing:
+ * <pre>
+ * aFigure.willChange();
+ * aFigure.setBounds(...);
+ * aFigure.changed();
+ * </pre>
+ *
+ * @param start
+ * 		the start point of the bounds
+ * @param end
+ * 		the end point of the bounds
+ * @see #getBounds
+ */
+public void setBounds(Point2D.Double start, Point2D.Double end);

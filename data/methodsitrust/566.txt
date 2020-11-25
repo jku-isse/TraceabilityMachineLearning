@@ -1,0 +1,30 @@
+/**
+ * Creates a hash table with all of the Appointments to be
+ * displayed on the calendar for the month and year being viewed.
+ *
+ * @param thisMonth
+ * 		The month of the calendar to be rendered
+ * @param thisYear
+ * 		The year of the calendar to be rendered
+ * @return A Hashtable containing the AppointmentBeans to be rendered
+ * @throws SQLException
+ * 		
+ */
+public Hashtable<Integer, ArrayList<ApptBean>> getApptsTable(int thisMonth, int thisYear) throws SQLException {
+    List<ApptBean> appts = a_action.getAllMyAppointments();
+    Hashtable<Integer, ArrayList<ApptBean>> atable = new Hashtable<Integer, ArrayList<ApptBean>>();
+    Calendar a = Calendar.getInstance();
+    for (ApptBean b : appts) {
+        a.setTimeInMillis(b.getDate().getTime());
+        if (((a.get(Calendar.MONTH)) == thisMonth) && ((a.get(Calendar.YEAR)) == thisYear)) {
+            if (!(atable.containsKey(a.get(Calendar.DAY_OF_MONTH))))
+                atable.put(a.get(Calendar.DAY_OF_MONTH), new ArrayList<ApptBean>());
+
+            ArrayList<ApptBean> l = atable.get(a.get(Calendar.DAY_OF_MONTH));
+            l.add(b);
+            send.add(b);
+            atable.put(a.get(Calendar.DAY_OF_MONTH), l);
+        }
+    }
+    return atable;
+}

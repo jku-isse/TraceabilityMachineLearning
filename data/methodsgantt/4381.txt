@@ -1,0 +1,7 @@
+public void setName(final String name) {
+    myCommands.add(new Runnable() {
+        public void run() {
+            TaskImpl.this.setName(name);
+        }
+    });
+}

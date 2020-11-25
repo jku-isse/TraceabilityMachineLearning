@@ -1,0 +1,3 @@
+public void setStatusText(String newStatusText) {
+    this.jlStatus.setText(newStatusText);
+}

@@ -1,0 +1,4 @@
+public int useNextIndex() {
+    (ResourceTreeTableModel.index)++;
+    return ResourceTreeTableModel.index;
+}

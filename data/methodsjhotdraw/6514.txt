@@ -1,0 +1,17 @@
+public void setSelector(String selector) {
+    switch (selector.charAt(0)) {
+        case * :
+            type = CSSRule.SelectorType.ALL;
+            break;
+        case . :
+            type = CSSRule.SelectorType.CLASS_ATTRIBUTE;
+            break;
+        case # :
+            type = CSSRule.SelectorType.ID_ATTRIBUTE;
+            break;
+        default :
+            type = CSSRule.SelectorType.ELEMENT_NAME;
+            break;
+    }
+    this.selector = ((type) == (CSSRule.SelectorType.ELEMENT_NAME)) ? selector : selector.substring(1);
+}

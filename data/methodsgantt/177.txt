@@ -1,0 +1,4 @@
+/* Default constructor */
+public GanttCalendarDays() {
+    dayList = new ArrayList();
+}

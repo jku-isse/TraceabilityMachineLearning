@@ -1,0 +1,8 @@
+// Constructors
+/**
+ * Create a new AnalyzedPly instance.
+ */
+public AnalyzedPlyImpl(Ply ply, short score) {
+    setPly(ply);
+    setScore(score);
+}

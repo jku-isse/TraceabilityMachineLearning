@@ -1,0 +1,25 @@
+public Rectangle2D.Double layout(CompositeFigure compositeFigure, Point2D.Double anchor, Point2D.Double lead) {
+    Rectangle2D.Double bounds = null;
+    for (Figure child : compositeFigure.getChildren()) {
+        Locator locator = getLocator(child);
+        Rectangle2D.Double r;
+        if (locator == null) {
+            r = child.getBounds();
+        } else {
+            Point2D.Double p = locator.locate(compositeFigure, child);
+            Dimension2DDouble d = child.getPreferredSize();
+            r = new Rectangle2D.Double(p.x, p.y, d.width, d.height);
+        }
+        child.willChange();
+        child.setBounds(new Point2D.Double(r.getMinX(), r.getMinY()), new Point2D.Double(r.getMaxX(), r.getMaxY()));
+        child.changed();
+        if (!(r.isEmpty())) {
+            if (bounds == null) {
+                bounds = r;
+            } else {
+                bounds.add(r);
+            }
+        }
+    }
+    return bounds == null ? new Rectangle2D.Double() : bounds;
+}

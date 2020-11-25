@@ -1,0 +1,10 @@
+/**
+ * Consumes a substring from the current sval of the StreamPosTokenizer.
+ */
+public void consumeGreedy(String greedyToken) {
+    if ((greedyToken.length()) < (sval.length())) {
+        pushBack();
+        setStartPosition(((getStartPosition()) + (greedyToken.length())));
+        sval = sval.substring(greedyToken.length());
+    }
+}

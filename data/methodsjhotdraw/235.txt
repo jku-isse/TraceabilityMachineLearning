@@ -1,0 +1,6 @@
+/**
+ * Sets the multiple open id.
+ * The id is used to help distinguish multiply opened views.
+ * The id should be displayed in the title of the view.
+ */
+public void setMultipleOpenId(int newValue);

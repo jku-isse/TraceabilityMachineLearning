@@ -1,0 +1,5 @@
+public final void siteTag() throws RecognitionException, TokenStreamException {
+    match(PGNTokenTypes.TAG_SITE);
+    whiteSpaces();
+    match(PGNTokenTypes.STRING_LITERAL);
+}

@@ -1,0 +1,6 @@
+public void testUnreadMessagesCount() throws Exception {
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    assertTrue(wr.getText().contains("12</a>"));
+}

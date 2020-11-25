@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((StrokeToolBarBeanInfo.beanDescriptor) == null)
+        StrokeToolBarBeanInfo.beanDescriptor = new BeanDescriptor(StrokeToolBarBeanInfo.class);
+
+    StrokeToolBarBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    StrokeToolBarBeanInfo.beanDescriptor.setDisplayName("StrokeToolPane");
+    return StrokeToolBarBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

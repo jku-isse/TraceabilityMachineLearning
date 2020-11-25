@@ -1,0 +1,3 @@
+public boolean figureContains(Point2D.Double p) {
+    return bounds.contains(p);
+}

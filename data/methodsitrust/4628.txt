@@ -1,0 +1,8 @@
+public static void assertLogged(TransactionType code, long loggedInMID, long secondaryMID, String addedInfo) throws DBException {
+    List<TransactionBean> transList = TestDAOFactory.getTestInstance().getTransactionDAO().getAllTransactions();
+    TransactionBean lastRecordedAction = transList.get(0);
+    assertTrue(((lastRecordedAction.getTransactionType()) == code));
+    assertTrue(((lastRecordedAction.getLoggedInMID()) == loggedInMID));
+    assertTrue(((lastRecordedAction.getSecondaryMID()) == secondaryMID));
+    assertTrue(lastRecordedAction.getAddedInfo().equals(addedInfo));
+}

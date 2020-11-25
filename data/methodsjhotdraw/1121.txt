@@ -1,0 +1,8 @@
+/**
+ * Returns the key string.
+ *
+ * @return key string.
+ */
+public String getKey() {
+    return key;
+}

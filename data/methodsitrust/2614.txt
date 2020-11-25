@@ -1,0 +1,8 @@
+public void testUpdatePrivacyLevelWithAccess() throws Exception {
+    List<DiagnosisBean> diagnoses = getDiagnoses();
+    assertEquals(5, diagnoses.size());
+    DiagnosisBean d = new DiagnosisBean();
+    d.setOvDiagnosisID(diagnoses.get(1).getOvDiagnosisID());
+    diagnoses = getDiagnoses();
+    assertEquals(5, diagnoses.size());
+}

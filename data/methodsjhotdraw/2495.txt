@@ -1,0 +1,6 @@
+/**
+ * North east.
+ */
+public static Locator northEast() {
+    return new RelativeDecoratorLocator(1.0, 0.0);
+}

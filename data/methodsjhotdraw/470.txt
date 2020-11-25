@@ -1,0 +1,6 @@
+/**
+ * Returns a CompositeColor representing the current value of the ColorSliderModel.
+ *
+ * @return CompositeColor.
+ */
+public CompositeColor getCompositeColor();

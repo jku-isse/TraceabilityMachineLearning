@@ -1,0 +1,5 @@
+protected void compareToPreviousState() {
+    getUIFacade().setStatusText(GanttLanguage.getInstance().getText("comparePrev"));
+    GanttDialogCompareToPreviousState cp = new GanttDialogCompareToPreviousState(this);
+    cp.show();
+}

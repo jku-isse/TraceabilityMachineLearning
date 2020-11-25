@@ -1,0 +1,3 @@
+public IStatus canPaste(ChartSelection selection) {
+    return Status.OK_STATUS;
+}

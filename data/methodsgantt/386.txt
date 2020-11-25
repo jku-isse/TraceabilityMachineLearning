@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the working directory.
+ */
+public String getWorkingDir() {
+    return workingDir;
+}

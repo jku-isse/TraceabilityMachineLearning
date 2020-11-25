@@ -1,0 +1,8 @@
+private String correctField(String field) {
+    String res = "";
+    for (int i = 0; i < ((iMaxSize) - (field.length())); i++)
+        res += " ";
+
+    res += field;
+    return res;
+}

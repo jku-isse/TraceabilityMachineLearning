@@ -1,0 +1,30 @@
+/**
+ *
+ *
+ * @unknown 
+ */
+public void setValueAt(Object value, Object node, int column) {
+    if (isCellEditable(node, column))
+        switch (column) {
+            case ResourceTreeTableModel.INDEX_RESOURCE_NAME :
+                ((ResourceNode) (node)).setName(value.toString());
+                break;
+            case ResourceTreeTableModel.INDEX_RESOURCE_EMAIL :
+                ((ResourceNode) (node)).setEMail(value.toString());
+                break;
+            case ResourceTreeTableModel.INDEX_RESOURCE_PHONE :
+                ((ResourceNode) (node)).setPhone(value.toString());
+                break;
+            case ResourceTreeTableModel.INDEX_RESOURCE_ROLE :
+                ((ResourceNode) (node)).setDefaultRole(((Role) (value)));
+                break;
+            case ResourceTreeTableModel.INDEX_RESOURCE_ROLE_TASK :
+                ((AssignmentNode) (node)).setRoleForAssigment(((Role) (value)));
+                break;
+            default :
+                ((ResourceNode) (node)).setCustomField(this.getColumnName(column), value);
+                break;
+        }
+
+    Mediator.getGanttProjectSingleton().setAskForSave(true);
+}

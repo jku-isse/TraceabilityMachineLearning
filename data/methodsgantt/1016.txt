@@ -1,0 +1,11 @@
+/**
+ * Purpose: Should return true if this Tasks has any nested subtasks.
+ */
+public boolean hasNestedTasks(Task container) {
+    TaskNode r = ((TaskNode) (root));
+    if ((r.getChildCount()) > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}

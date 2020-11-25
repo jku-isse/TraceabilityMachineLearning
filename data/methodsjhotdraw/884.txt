@@ -1,0 +1,8 @@
+/**
+ * Constructs a connector that has no owner. It is only
+ * used internally to resurrect a connectors from a
+ * StorableOutput. It should never be called directly.
+ */
+public AbstractConnector() {
+    owner = null;
+}

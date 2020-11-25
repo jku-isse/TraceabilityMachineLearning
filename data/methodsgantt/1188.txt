@@ -1,0 +1,19 @@
+/**
+ * Message this to remove node from its parent. This will message
+ * nodesWereRemoved to create the appropriate event. This is the preferred
+ * way to remove a node as it handles the event creation for you.
+ */
+public void removeNodeFromParent(MutableTreeNode node) {
+    if (node != null) {
+        MutableTreeNode parent = ((MutableTreeNode) (node.getParent()));
+        if (parent == null)
+            throw new IllegalArgumentException("node does not have a parent.");
+
+        int[] childIndex = new int[1];
+        Object[] removedArray = new Object[1];
+        childIndex[0] = parent.getIndex(node);
+        parent.remove(childIndex[0]);
+        removedArray[0] = node;
+        nodesWereRemoved(parent, childIndex, removedArray);
+    }
+}

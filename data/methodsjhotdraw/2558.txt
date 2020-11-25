@@ -1,0 +1,19 @@
+/**
+ * Draws this handle.
+ * <p>
+ * If the figure is transformable, the handle is drawn as a filled rectangle.
+ * If the figure is not transformable, the handle is drawn as an unfilled
+ * rectangle.
+ */
+@Override
+public void draw(Graphics2D g) {
+    if (getEditor().getTool().supportsHandleInteraction()) {
+        if (getOwner().isTransformable()) {
+            drawRectangle(g, ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_HANDLE_FILL_COLOR))), ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.RESIZE_HANDLE_STROKE_COLOR))));
+        } else {
+            drawRectangle(g, ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.NULL_HANDLE_FILL_COLOR))), ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.NULL_HANDLE_STROKE_COLOR))));
+        }
+    } else {
+        drawRectangle(g, ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.HANDLE_FILL_COLOR_DISABLED))), ((Color) (getEditor().getHandleAttribute(HandleAttributeKeys.HANDLE_STROKE_COLOR_DISABLED))));
+    }
+}

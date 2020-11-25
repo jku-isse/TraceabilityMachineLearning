@@ -1,0 +1,9 @@
+/**
+ * Set a new chess engine.
+ *
+ * @param engine
+ * 		The new engine.
+ */
+final void setEngine(ChessEngine engine) {
+    _engine = engine;
+}

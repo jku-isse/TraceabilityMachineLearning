@@ -1,0 +1,8 @@
+/**
+ * Returns an iterator to iterate in
+ * Z-order front to back over the children.
+ */
+public List<Figure> getFiguresFrontToBack() {
+    ensureSorted();
+    return new ReversedList<Figure>(children);
+}

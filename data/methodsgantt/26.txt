@@ -1,0 +1,3 @@
+protected void setDefaultCursor() {
+    setCursor(ChartComponentBase.DEFAULT_CURSOR);
+}

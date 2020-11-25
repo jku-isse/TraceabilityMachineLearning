@@ -1,0 +1,5 @@
+public void keyTyped(KeyEvent evt) {
+    if (((getView()) != null) && (getView().isEnabled())) {
+        tracker.keyTyped(evt);
+    }
+}

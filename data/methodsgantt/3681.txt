@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @see net.sourceforge.ganttproject.parser.TagHandler#endElement(String,
+String, String)
+ */
+public void endElement(String namespaceURI, String sName, String qName) {
+}

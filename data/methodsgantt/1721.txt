@@ -1,0 +1,3 @@
+public int getTimeFrameWidth(TimeFrame timeFrame) {
+    return (timeFrame.getUnitCount(myBottomUnit)) * (myAtomUnitPixels);
+}

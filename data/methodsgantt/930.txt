@@ -1,0 +1,49 @@
+String getIdForName(String colName) {
+    String id = null;
+    if (colName.equals(GanttTreeTableModel.strColType))
+        id = "tpd0";
+    else
+        if (colName.equals(GanttTreeTableModel.strColPriority))
+            id = "tpd1";
+        else
+            if (colName.equals(GanttTreeTableModel.strColInfo))
+                id = "tpd2";
+            else
+                if (colName.equals(GanttTreeTableModel.strColName))
+                    id = "tpd3";
+                else
+                    if (colName.equals(GanttTreeTableModel.strColBegDate))
+                        id = "tpd4";
+                    else
+                        if (colName.equals(GanttTreeTableModel.strColEndDate))
+                            id = "tpd5";
+                        else
+                            if (colName.equals(GanttTreeTableModel.strColDuration))
+                                id = "tpd6";
+                            else
+                                if (colName.equals(GanttTreeTableModel.strColCompletion))
+                                    id = "tpd7";
+                                else
+                                    if (colName.equals(GanttTreeTableModel.strColCoordinator))
+                                        id = "tpd8";
+                                    else
+                                        if (colName.equals(GanttTreeTableModel.strColPredecessors))
+                                            id = "tpd9";
+                                        else
+                                            if (colName.equals(GanttTreeTableModel.strColID))
+                                                id = "tpd10";
+                                            else
+                                                id = getProject().getCustomColumnsStorage().getIdFromName(colName);
+
+
+
+
+
+
+
+
+
+
+
+    return id;
+}

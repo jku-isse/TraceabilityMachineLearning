@@ -1,0 +1,5 @@
+private JComboBox createEnumerationComponent(EnumerationOption option) {
+    ComboBoxModel model = new EnumerationOptionComboBoxModel(option);
+    JComboBox result = new JComboBox(model);
+    return result;
+}

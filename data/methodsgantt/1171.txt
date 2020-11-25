@@ -1,0 +1,4 @@
+public void deleteResource(ProjectResource people) {
+    removeNodeFromParent(getNodeForResource(people));
+    // myResourceManager.remove(people);
+}

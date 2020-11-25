@@ -1,0 +1,22 @@
+/* Authenticate Patient
+MID: 2
+Password: pw
+Choose option View My Records
+Choose to view records for mid 1, the person he represents.
+ */
+public void testViewRecords5() throws Exception {
+    // login patient 2
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    // click View My Records
+    wr = wr.getLinkWith("My Records").click();
+    iTrustHTTPTest.assertLogged(TransactionType.MEDICAL_RECORD_VIEW, 2L, 2L, "");
+    WebTable wt = wr.getTableStartingWith("Patients Andy Represents");
+    assertEquals("Random Person", wt.getTableCell(2, 0).getLinkWith("Random Person").getText());
+    wr = wt.getTableCell(2, 0).getLinkWith("Random Person").click();
+    // check to make sure you are viewing patient 1s records
+    assertTrue(wr.getText().contains("You are currently viewing your representees records"));
+    iTrustHTTPTest.assertLogged(TransactionType.MEDICAL_RECORD_VIEW, 2L, 1L, "");
+}

@@ -1,0 +1,29 @@
+/**
+ * Returns a full bean describing a given report request.
+ *
+ * @param id
+ * 		The unique ID of the bean in the database.
+ * @return The bean describing this report request.
+ * @throws DBException
+ * 		
+ */
+public ReportRequestBean getReportRequest(long id) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (id == 0L)
+            throw new SQLException("ID cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM reportrequests WHERE ID = ?");
+        ps.setLong(1, id);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return loader.loadSingle(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

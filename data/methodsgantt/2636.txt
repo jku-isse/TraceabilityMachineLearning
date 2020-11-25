@@ -1,0 +1,3 @@
+private String getLabelText() {
+    return ((("<html><body><b>" + (myTask)) + " ... ") + (((myProgressBar.getValue()) * 100) / (myProgressBar.getMaximum()))) + "%</b></body></html>";
+}

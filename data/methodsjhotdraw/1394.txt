@@ -1,0 +1,7 @@
+/**
+ * Removes all children from the composite figure.
+ * <p>
+ * This is a convenience method for
+ * {@code while(getChildCount() > 0) removeChild(0);}
+ */
+public void removeAllChildren();

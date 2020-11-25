@@ -1,0 +1,1 @@
+void setOptions(GanttOptions options);

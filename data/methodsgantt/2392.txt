@@ -1,0 +1,6 @@
+public void run(File[] exportedFiles) {
+    if ((myState.getPublishInWebOption().isChecked()) && ((exportedFiles.length) > 0)) {
+        WebPublisher publisher = new WebPublisher();
+        publisher.run(exportedFiles, myProject.getDocumentManager().getFTPOptions(), getUIFacade());
+    }
+}

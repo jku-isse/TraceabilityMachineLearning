@@ -1,0 +1,26 @@
+/**
+ *
+ *
+ * @return the textwith of this task for and its children tasks. Determine
+width of text labels (task names) in this task assume fixed
+width, 14 letters to the inch, 1200 ppi each level is indented
+1/4 inch (300 points @ 1200ppi)
+ */
+private float getTaskTextWidth(Task task) {
+    if (debug)
+        System.out.println("getTaskTextWidth begin");
+
+    Task t = task;
+    float res = (((float) (t.getName().length())) * (1.0F / 14.0F)) * 1200.0F;
+    Task[] children = task.getManager().getTaskHierarchy().getNestedTasks(task);
+    for (int i = 0; i < (children.length); i++) {
+        float subTaskTextWidth = 0.25F + (getTaskTextWidth(children[i]));
+        if (subTaskTextWidth > res)
+            res = subTaskTextWidth;
+
+    }
+    if (debug)
+        System.out.println("getTaskTextWidth end");
+
+    return res;
+}

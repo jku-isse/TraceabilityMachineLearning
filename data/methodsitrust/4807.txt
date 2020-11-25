@@ -1,0 +1,12 @@
+public void testNullConfirm() throws Exception {
+    qa.setAnswer("12345678");
+    qa.setConfirmAnswer(null);
+    qa.setQuestion("12345678");
+    try {
+        qav.validate(qa);
+        fail("exception should have been thrown");
+    } catch (FormValidationException e) {
+        assertEquals(1, e.getErrorList().size());
+        assertEquals("Confirm answer cannot be empty", e.getErrorList().get(0));
+    }
+}

@@ -1,0 +1,9 @@
+public void testSendOneMail() throws DBException, FormValidationException, iTrustException {
+    AdverseEventBean aBean = new AdverseEventBean();
+    aBean.setMID("2");
+    aBean.setDrug("Prioglitazone");
+    aBean.setCode("647641512");
+    aBean.setDescription("ITS KILLING ME!");
+    Email email = advAction.sendMail(aBean);
+    assertEquals(" Patient: Andy Programmer (MID 2) Has Reported the following adverse event Drug: Prioglitazone(647641512) Description: ITS KILLING ME!", email.getBody());
+}

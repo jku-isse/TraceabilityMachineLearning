@@ -1,0 +1,7 @@
+@Override
+public void undo() throws CannotUndoException {
+    super.undo();
+    figure.willChange();
+    figure.restoreTransformTo(oldRestoreData);
+    figure.changed();
+}

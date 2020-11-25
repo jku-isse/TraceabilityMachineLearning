@@ -1,0 +1,9 @@
+public void trackStart(Point anchor, int modifiersEx) {
+    location = new Point(anchor.x, anchor.y);
+    restoreData = getOwner().getTransformRestoreData();
+    transform = new AffineTransform();
+    center = getCenter();
+    Point2D.Double anchorPoint = view.viewToDrawing(anchor);
+    startTheta = Geom.angle(center.x, center.y, anchorPoint.x, anchorPoint.y);
+    startLength = Geom.length(center.x, center.y, anchorPoint.x, anchorPoint.y);
+}

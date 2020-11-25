@@ -1,0 +1,6 @@
+/**
+ * Constructor
+ */
+public GanttDialogProperties(GanttTask[] tasks) {
+    myTasks = tasks;
+}

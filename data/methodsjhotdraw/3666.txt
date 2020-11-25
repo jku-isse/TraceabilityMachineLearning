@@ -1,0 +1,4 @@
+/**
+ * Gets the attribute value.
+ */
+public T getAttributeValue();

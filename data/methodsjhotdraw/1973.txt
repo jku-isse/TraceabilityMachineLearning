@@ -1,0 +1,8 @@
+// TRANSFORMING
+/**
+ * Gets data which can be used to restore the transformation of the figure
+ * without loss of precision, after a transform has been applied to it.
+ *
+ * @see #transform(AffineTransform)
+ */
+public Object getTransformRestoreData();

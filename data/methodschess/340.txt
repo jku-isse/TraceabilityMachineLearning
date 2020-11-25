@@ -1,0 +1,7 @@
+// Constructors
+/**
+ * Create a new instance of this test.
+ */
+public PlyGeneratorTest1() {
+    super("A simple ply generator test with a attack on the pawn e5");
+}

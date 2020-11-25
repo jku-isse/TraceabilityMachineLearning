@@ -1,0 +1,18 @@
+private boolean ensureProjectSaved(IGanttProject project) {
+    if (project.isModified()) {
+        UIFacade.Choice saveChoice = myWorkbenchFacade.showConfirmationDialog(i18n.getText("msg1"), i18n.getText("warning"));
+        if ((UIFacade.Choice.CANCEL) == saveChoice) {
+            return false;
+        }
+        if ((UIFacade.Choice.YES) == saveChoice) {
+            try {
+                saveProject(project);
+            } catch (Exception e) {
+                System.err.println(e);
+                myWorkbenchFacade.showErrorDialog(e);
+                return false;
+            }
+        }
+    }
+    return true;
+}

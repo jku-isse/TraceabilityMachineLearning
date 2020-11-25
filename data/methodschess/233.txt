@@ -1,0 +1,40 @@
+/**
+ * Perform a combined quick-/shakersort on a ply partition.
+ *
+ * @param l
+ * 		The left bound of the array partition.
+ * @param r
+ * 		The right bound of the array partition.
+ */
+private final void quickersort(int l, int r) {
+    int i = l;
+    int j = r;
+    AnalyzedPly x = _currentPlies[((l + r) / 2)];
+    do {
+        while ((_currentPlies[i].getScore()) > (x.getScore())) {
+            i++;
+        } 
+        while ((x.getScore()) > (_currentPlies[j].getScore())) {
+            j--;
+        } 
+        if (i <= j) {
+            AnalyzedPly w = _currentPlies[i];
+            _currentPlies[(i++)] = _currentPlies[j];
+            _currentPlies[(j--)] = w;
+        }
+    } while (i <= j );
+    if (l < j) {
+        if ((l - j) > 7) {
+            quickersort(l, j);
+        } else {
+            shakersort(l, j);
+        }
+    }
+    if (i < r) {
+        if ((r - i) > 7) {
+            quickersort(i, r);
+        } else {
+            shakersort(i, r);
+        }
+    }
+}

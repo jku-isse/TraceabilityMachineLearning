@@ -1,0 +1,4 @@
+public UIFacade.Choice showConfirmationDialog(String message, String title) {
+    // TODO Auto-generated method stub
+    return null;
+}

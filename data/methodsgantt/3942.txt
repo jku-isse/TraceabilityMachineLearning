@@ -1,0 +1,7 @@
+/**
+ * Removes the resource by its id.
+ *
+ * @param Id
+ * 		Id of the resource to remove.
+ */
+public void remove(ProjectResource resource, GPUndoManager myUndoManager);

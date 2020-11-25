@@ -1,0 +1,6 @@
+/**
+ * Adds a comment to the current element of the DOM Document.
+ */
+public void addComment(String comment) {
+    current.appendChild(document.createComment(comment));
+}

@@ -1,0 +1,12 @@
+private void init(DAOFactory factory) {
+    psDAO = factory.getPrescriptionsDAO();
+    medDAO = factory.getNDCodesDAO();
+    interactionsDAO = factory.getDrugInteractionDAO();
+    allergyDAO = factory.getAllergyDAO();
+    rptDAO = factory.getPrescriptionReportDAO();
+    patientDAO = factory.getPatientDAO();
+    emailUtil = new EmailUtil(factory);
+    personnelDAO = new PersonnelDAO(factory);
+    prescriptionOverrideDAO = new PrescriptionOverrideDAO(factory);
+    loggingAction = new EventLoggingAction(factory);
+}

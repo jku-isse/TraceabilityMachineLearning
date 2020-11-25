@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return 
+ */
+public String getComment() {
+    return myComment;
+}

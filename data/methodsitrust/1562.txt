@@ -1,0 +1,9 @@
+/**
+ * Setter for Region count
+ *
+ * @param regionStats
+ * 		The count of regional diagnoses to be stored
+ */
+public void setRegionStats(long regionStats) {
+    this.regionStats = regionStats;
+}

@@ -1,0 +1,11 @@
+public void setUndoManager(UndoRedoManager newValue) {
+    if (((this.editor) != null) && (newValue != null)) {
+        this.removePropertyChangeListener(getEventHandler());
+    }
+    this.undoManager = newValue;
+    if (((editor) != null) && (newValue != null)) {
+        init();
+        setDisclosureState(prefs.getInt(((getID()) + ".disclosureState"), 1));
+        this.addPropertyChangeListener(getEventHandler());
+    }
+}

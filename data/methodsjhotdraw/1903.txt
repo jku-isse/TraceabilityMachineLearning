@@ -1,0 +1,4 @@
+/**
+ * Test whether a given figure is selected.
+ */
+public boolean isFigureSelected(Figure checkFigure);

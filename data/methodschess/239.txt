@@ -1,0 +1,33 @@
+/**
+ * Perform a shakersort on a ply partition.
+ *
+ * @param l
+ * 		The left bound of the ply partition.
+ * @param r
+ * 		The right bound of the ply partition.
+ */
+private final void shakersort(int l, int r) {
+    int i = l + 1;
+    int j = r;
+    int k = r;
+    do {
+        for (int h = j; h >= i; h--) {
+            if ((_currentPlies[(h - 1)].getScore()) < (_currentPlies[h].getScore())) {
+                AnalyzedPly w = _currentPlies[(h - 1)];
+                _currentPlies[(h - 1)] = _currentPlies[h];
+                _currentPlies[h] = w;
+                k = h;
+            }
+        }
+        i = k + 1;
+        for (int h = i; h <= j; h++) {
+            if ((_currentPlies[(h - 1)].getScore()) < (_currentPlies[h].getScore())) {
+                AnalyzedPly w = _currentPlies[(h - 1)];
+                _currentPlies[(h - 1)] = _currentPlies[h];
+                _currentPlies[h] = w;
+                k = h;
+            }
+        }
+        j = k - 1;
+    } while (i <= j );
+}

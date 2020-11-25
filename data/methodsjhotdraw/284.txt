@@ -1,0 +1,11 @@
+/**
+ * Installs listeners on the application object.
+ */
+@Override
+protected void installApplicationListeners(Application app) {
+    super.installApplicationListeners(app);
+    if ((applicationListener) == null) {
+        applicationListener = createApplicationListener();
+    }
+    app.addPropertyChangeListener(applicationListener);
+}

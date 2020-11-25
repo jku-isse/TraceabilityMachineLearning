@@ -1,0 +1,56 @@
+/**
+ * test acceptance scenario1
+ *  throws Exception
+ *
+ * @author student
+ * @author student
+ */
+public void testAcceptanceScenario1() throws Exception {
+    gen.hcp4();
+    WebConversation wc = login("9000000004", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    // click Document Office Visit
+    wr = wr.getLinkWith("Document Office Visit").click();
+    // select the patient
+    WebForm form = wr.getForms()[0];
+    form.getScriptableObject().setParameterValue("UID_PATIENTID", "1");
+    form.getButtons()[1].click();
+    wr = wc.getCurrentPage();
+    assertEquals(((iTrustHTTPTest.ADDRESS) + "auth/hcp-uap/documentOfficeVisit.jsp"), wr.getURL().toString());
+    // click Yes, Document Office Visit
+    form = wr.getForms()[0];
+    form.getButtons()[0].click();
+    wr = wc.getCurrentPage();
+    assertEquals("iTrust - Document Office Visit", wr.getTitle());
+    // add a new office visit
+    form = wr.getFormWithID("mainForm");
+    String dateString = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
+    form.setParameter("visitDate", dateString);
+    form.setParameter("hospitalID", "2");
+    form.setParameter("notes", "Showing signs of dehydration.");
+    form.getButtonWithID("update").click();
+    // Check that it was created
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("Information Successfully Updated"));
+    iTrustHTTPTest.assertLogged(TransactionType.OFFICE_VISIT_CREATE, 9000000004L, 1L, "Office visit");
+    // Check database.
+    long ovid = getVisitID(wr);
+    OfficeVisitDAO ovDAO = factory.getOfficeVisitDAO();
+    assertTrue(ovDAO.checkOfficeVisitExists(ovid, 1));
+    OfficeVisitBean ovbean = ovDAO.getOfficeVisit(ovid);
+    assertEquals("2", ovbean.getHospitalID());
+    assertEquals("Showing signs of dehydration.", ovbean.getNotes());
+    assertEquals(dateString, ovbean.getVisitDateStr());
+    // Add diagnosis
+    form = wr.getFormWithID("diagnosisForm");
+    form.setParameter("ICDCode", "79.10");
+    form.getButtonWithID("add_diagnosis").click();
+    // Check page and database.
+    wr = wc.getCurrentPage();
+    assertTrue(wr.getText().contains("information successfully updated"));
+    DiagnosesDAO diagDAO = factory.getDiagnosesDAO();
+    assertEquals(1, diagDAO.getList(ovid).size());
+    DiagnosisBean diagBean = diagDAO.getList(ovid).get(0);
+    assertEquals(diagBean.getICDCode(), "79.10");
+}

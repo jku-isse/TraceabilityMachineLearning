@@ -1,0 +1,8 @@
+/**
+ *
+ *
+ * @return the patient MID
+ */
+public long getPrescriberMID() {
+    return prescriberMID;
+}

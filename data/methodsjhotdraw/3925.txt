@@ -1,0 +1,5 @@
+private void checkDesktopSize() {
+    if (((getParent()) != null) && (isVisible())) {
+        manager.resizeDesktop();
+    }
+}

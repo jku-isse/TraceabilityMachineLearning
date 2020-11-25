@@ -1,0 +1,19 @@
+/**
+ * Shows a question-message sheet requesting input from the user and
+ * parented to <code>parentComponent</code>. The input value will be
+ * initialized to <code>initialSelectionValue</code>.
+ *
+ * @param parentComponent
+ * 		the parent <code>Component</code> for the
+ * 		dialog
+ * @param message
+ * 		the <code>Object</code> to display
+ * @param initialSelectionValue
+ * 		the value used to initialize the input
+ * 		field
+ * @param listener
+ * 		The listener for SheetEvents.
+ */
+public static void showInputSheet(Component parentComponent, Object message, Object initialSelectionValue, SheetListener listener) {
+    JSheet.showInputSheet(parentComponent, message, JOptionPane.QUESTION_MESSAGE, null, null, initialSelectionValue, listener);
+}

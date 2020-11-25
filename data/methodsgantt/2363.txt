@@ -1,0 +1,4 @@
+public void logErrorMessage(Throwable e) {
+    System.err.println(("[ConsoleUIFacade] ERROR:" + (e.getMessage())));
+    e.printStackTrace();
+}

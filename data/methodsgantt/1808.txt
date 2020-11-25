@@ -1,0 +1,3 @@
+public int getRowHeight() {
+    return myRowHeight;
+}

@@ -1,0 +1,10 @@
+/**
+ * Constructor
+ */
+public GanttTaskRelationship(int predecessorTaskID, int successorTaskID, int relationshipType, int difference, TaskManager taskManager) {
+    this(taskManager);
+    this.predecessorTaskID = predecessorTaskID;
+    this.successorTaskID = successorTaskID;
+    this.relationshipType = relationshipType;
+    this.difference = difference;
+}

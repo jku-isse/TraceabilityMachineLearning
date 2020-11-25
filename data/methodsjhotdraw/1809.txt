@@ -1,0 +1,10 @@
+/**
+ * Adds a figure to the drawing.
+ * The drawing sends an {@code addNotify} message to the figure
+ * after it has been added.
+ *
+ * @see Figure#addNotify
+ * @param figure
+ * 		to be added to the drawing
+ */
+boolean add(Figure figure);

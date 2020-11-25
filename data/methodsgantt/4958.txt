@@ -1,0 +1,1 @@
+void removeUndoableEditListener(GPUndoListener listener);

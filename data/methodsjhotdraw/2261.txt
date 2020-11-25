@@ -1,0 +1,12 @@
+// CLONING
+public LabeledLineConnectionFigure clone() {
+    LabeledLineConnectionFigure that = ((LabeledLineConnectionFigure) (super.clone()));
+    that.childHandler = new LabeledLineConnectionFigure.ChildHandler(that);
+    that.children = new ArrayList<Figure>();
+    for (Figure thisChild : this.children) {
+        Figure thatChild = ((Figure) (thisChild.clone()));
+        that.children.add(thatChild);
+        thatChild.addFigureListener(that.childHandler);
+    }
+    return that;
+}

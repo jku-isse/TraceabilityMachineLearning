@@ -1,0 +1,20 @@
+/**
+ * Ignored: The maximum of an input stream can not be changed.
+ * #
+ * Sets the models maximum to <I>newMaximum</I>. The other
+ * three properties may be changed as well, to ensure that
+ * <pre>
+ * minimum <= value <= value+extent <= maximum
+ * </pre>
+ * <p>
+ * Notifies any listeners if the model changes.
+ *
+ * @param newMaximum
+ * 		the models new maximum
+ * @see #getMaximum
+ * @see #addChangeListener
+ */
+public void setMaximum(int newMaximum) {
+    size_ = newMaximum;
+    fireStateChanged();
+}

@@ -1,0 +1,9 @@
+// Methods
+/**
+ * Get the ply, that lead to this game status.
+ *
+ * @return The ply, that lead to this game status.
+ */
+final Ply getPly() {
+    return _ply;
+}

@@ -1,0 +1,12 @@
+/**
+ * Finds a connectable figure target.
+ */
+protected Figure findTarget(Point2D.Double p, Drawing drawing) {
+    Figure target = findConnectableFigure(p, drawing);
+    Connector targetConnector = (target == null) ? null : target.findConnector(p, prototype);
+    Connector startConnector = getStartConnector();
+    if ((((targetConnector != null) && ((getConnection()) != null)) && (target.canConnect())) && ((getConnection().canConnect(startConnector, targetConnector)) || (getConnection().canConnect(targetConnector, startConnector)))) {
+        return target;
+    }
+    return null;
+}

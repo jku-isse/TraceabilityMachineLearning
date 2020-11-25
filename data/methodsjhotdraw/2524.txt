@@ -1,0 +1,6 @@
+/**
+ * Non-transforming West.
+ */
+public static Locator west() {
+    return RelativeLocator.west(false);
+}

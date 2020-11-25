@@ -1,0 +1,4 @@
+@SuppressWarnings("unchecked")
+public T getAttributeValue() {
+    return ((T) (getValue()));
+}

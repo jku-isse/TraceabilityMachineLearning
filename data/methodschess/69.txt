@@ -1,0 +1,9 @@
+/**
+ * Get the positions of some pieces as a long (64 bit wide) bitmask.
+ *
+ * @param pieceTypeColor
+ * 		The color and type of the pieces.
+ */
+public final long getPositionOfPieces(int pieceTypeColor) {
+    return ((((pieceTypeColor & 1) != 0 ? _boardLayer[0] : ~(_boardLayer[0])) & ((pieceTypeColor & 2) != 0 ? _boardLayer[1] : ~(_boardLayer[1]))) & ((pieceTypeColor & 4) != 0 ? _boardLayer[2] : ~(_boardLayer[2]))) & ((pieceTypeColor & 8) != 0 ? _boardLayer[3] : ~(_boardLayer[3]));
+}

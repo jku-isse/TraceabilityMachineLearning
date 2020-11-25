@@ -1,0 +1,11 @@
+public void setFirstText(String text, int mlTimer) {
+    if (!(isVisible()))
+        return;
+
+    message1.setText(text, mlTimer);
+    mode = GanttStatusBar.MESSAGE_1;
+    if (!(bRunning)) {
+        bRunning = true;
+        new Thread(this).start();
+    }
+}

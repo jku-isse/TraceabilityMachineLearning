@@ -1,0 +1,15 @@
+protected void alignFigures(Collection selectedFigures, Rectangle2D.Double selectionBounds) {
+    double x = (selectionBounds.x) + (selectionBounds.width);
+    for (Iterator i = getView().getSelectedFigures().iterator(); i.hasNext();) {
+        Figure f = ((Figure) (i.next()));
+        if (f.isTransformable()) {
+            f.willChange();
+            Rectangle2D.Double b = f.getBounds();
+            AffineTransform tx = new AffineTransform();
+            tx.translate(((x - (b.x)) - (b.width)), 0);
+            f.transform(tx);
+            f.changed();
+            fireUndoableEditHappened(new TransformEdit(f, tx));
+        }
+    }
+}

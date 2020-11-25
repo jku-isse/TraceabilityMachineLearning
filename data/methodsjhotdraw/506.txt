@@ -1,0 +1,35 @@
+/**
+ * If the mouse is pressed above the "thumb" component
+ * then reduce the scrollbars value by one page ("page up"),
+ * otherwise increase it by one page.  If there is no
+ * thumb then page up if the mouse is in the upper half
+ * of the track.
+ */
+public void mousePressed(MouseEvent e) {
+    if (!(slider.isEnabled()))
+        return;
+
+    currentMouseX = e.getX();
+    currentMouseY = e.getY();
+    if (slider.isRequestFocusEnabled()) {
+        slider.requestFocus();
+    }
+    // Clicked inside the Thumb area?
+    if (thumbRect.contains(currentMouseX, currentMouseY)) {
+        super.mousePressed(e);
+    } else {
+        Dimension sbSize = slider.getSize();
+        int direction = BasicSliderUI.POSITIVE_SCROLL;
+        switch (slider.getOrientation()) {
+            case JSlider.VERTICAL :
+                slider.setValue(valueForYPosition(currentMouseY));
+                break;
+            case JSlider.HORIZONTAL :
+                slider.setValue(valueForXPosition(currentMouseX));
+                break;
+        }
+        // FIXME:
+        // We should set isDragging to false here. Unfortunately,
+        // we can not access this variable in class BasicSliderUI.
+    }
+}

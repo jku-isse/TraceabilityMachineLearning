@@ -1,0 +1,9 @@
+GraphicPrimitiveContainer.Rectangle createRectangle(int leftx, int topy, int width, int height) {
+    if (width < 0) {
+        width = -width;
+        leftx = leftx - width;
+    }
+    GraphicPrimitiveContainer.Rectangle result = new GraphicPrimitiveContainer.Rectangle(leftx, topy, width, height);
+    myRectangles.add(result);
+    return result;
+}

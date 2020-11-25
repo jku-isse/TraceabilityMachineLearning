@@ -1,0 +1,23 @@
+@SuppressWarnings("unchecked")
+public void combinePaths(DrawingView view, CompositeFigure group, Collection<Figure> figures, int groupIndex) {
+    view.getDrawing().basicRemoveAll(figures);
+    view.clearSelection();
+    view.getDrawing().add(groupIndex, group);
+    group.willChange();
+    group.basicRemoveAllChildren();
+    for (Map.Entry<AttributeKey, Object> entry : figures.iterator().next().getAttributes().entrySet()) {
+        group.setAttribute(entry.getKey(), entry.getValue());
+    }
+    for (Figure f : figures) {
+        SVGPathFigure path = ((SVGPathFigure) (f));
+        List<Figure> children = new LinkedList<Figure>(path.getChildren());
+        path.basicRemoveAllChildren();
+        for (Figure child : children) {
+            SVGBezierFigure bez = ((SVGBezierFigure) (child));
+            bez.flattenTransform();
+            group.basicAdd(child);
+        }
+    }
+    group.changed();
+    view.addToSelection(group);
+}

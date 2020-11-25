@@ -1,0 +1,3 @@
+protected TimeUnitStack getTimeUnitStack() {
+    return myTimeUnitStack;
+}

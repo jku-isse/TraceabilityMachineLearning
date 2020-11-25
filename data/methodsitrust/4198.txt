@@ -1,0 +1,23 @@
+public void testViewAccessLogByRole() throws Exception {
+    gen.transactionLog3();
+    WebConversation wc = login("1", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 1L, 0L, "");
+    wr = wr.getLinkWith("Access Log").click();
+    assertFalse(wr.getText().contains("Exception"));
+    WebForm form = wr.getForms()[0];
+    form.setParameter("startDate", "02/01/2008");
+    form.setParameter("endDate", "09/22/2009");
+    form.getSubmitButtons()[0].click();
+    form.getScriptableObject().setParameterValue("sortBy", "role");
+    wr = form.submit();
+    WebTable table = wr.getTableStartingWithPrefix("Date");
+    assertTrue(table.getCellAsText(1, 2).contains("Emergency Responder"));
+    assertTrue(table.getCellAsText(2, 2).contains("LHCP"));
+    assertTrue(table.getCellAsText(3, 2).contains("LHCP"));
+    assertTrue(table.getCellAsText(4, 2).contains("LHCP"));
+    assertTrue(table.getCellAsText(5, 2).contains("Personal Health Representative"));
+    assertTrue(table.getCellAsText(6, 2).contains("UAP"));
+    iTrustHTTPTest.assertLogged(TransactionType.ACCESS_LOG_VIEW, 1L, 0L, "");
+}

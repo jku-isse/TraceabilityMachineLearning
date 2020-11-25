@@ -1,0 +1,13 @@
+/**
+ * Removes the specified child without firing events.
+ * <p>
+ * This method can be used to temporarily remove a child from this
+ * CompositeFigure (for example to reorder the sequence of the children).
+ * <p>
+ * This is a convenience method for calling
+ * {@code basicRemove(indexOf(child));}.
+ * <p>
+ * Returns the index of the removed figure. Returns -1 if the
+ * figure was not a child of this CompositeFigure.
+ */
+public int basicRemove(Figure child);

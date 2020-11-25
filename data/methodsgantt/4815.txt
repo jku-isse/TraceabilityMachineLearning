@@ -1,0 +1,7 @@
+public TimeUnitFunctionOfDateImpl(String name, TimeUnitGraph graph, TimeUnit directAtomUnit, DateFrameable framer) {
+    super(name, graph, directAtomUnit, framer);
+    if (!(directAtomUnit instanceof DateFrameable)) {
+        throw new IllegalArgumentException("Only date frameable time units may be used as atoms for functions of date");
+    }
+    myDirectFrameable = ((DateFrameable) (directAtomUnit));
+}

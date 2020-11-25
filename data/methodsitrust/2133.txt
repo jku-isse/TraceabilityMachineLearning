@@ -1,0 +1,3 @@
+public void setVisitSatisfaction(int visitSatisfaction) {
+    this.visitSatisfaction = visitSatisfaction;
+}

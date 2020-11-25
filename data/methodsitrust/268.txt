@@ -1,0 +1,5 @@
+public EditDiagnosesAction(DAOFactory factory, long hcpid, String pidString, String ovIDString) throws iTrustException {
+    super(factory, hcpid, pidString, ovIDString);
+    diagnosesDAO = factory.getDiagnosesDAO();
+    icdDAO = factory.getICDCodesDAO();
+}

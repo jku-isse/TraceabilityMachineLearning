@@ -1,0 +1,6 @@
+// EVENT HANDLING
+/**
+ * Informs a figure, that it has been added to a drawing.
+ * The figure must inform all FigureListeners that it has been added.
+ */
+public void addNotify(Drawing d);

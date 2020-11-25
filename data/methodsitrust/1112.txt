@@ -1,0 +1,10 @@
+/**
+ * Returns a list of HealthRecords for the specified family member
+ *
+ * @return a list of HealthRecords for the specified family member
+ * @throws iTrustException
+ * 		
+ */
+public List<HealthRecord> getFamilyHealthRecords(long mid) throws iTrustException {
+    return hrDAO.getAllHealthRecords(mid);
+}

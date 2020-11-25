@@ -1,0 +1,11 @@
+public ResourceNode getNodeForResource(ProjectResource resource) {
+    ResourceNode res = null;
+    Enumeration childs = root.children();
+    while ((childs.hasMoreElements()) && (res == null)) {
+        ResourceNode rn = ((ResourceNode) (childs.nextElement()));
+        if (resource.equals(rn.getUserObject()))
+            res = rn;
+
+    } 
+    return res;
+}

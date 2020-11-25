@@ -1,0 +1,5 @@
+/**
+ * Prevents instance creation.
+ */
+private SVGConstants() {
+}

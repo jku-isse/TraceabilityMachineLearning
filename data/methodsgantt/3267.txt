@@ -1,0 +1,9 @@
+public WizardImpl(UIFacade uiFacade, String title) {
+    // super(frame, title, true);
+    myUIFacade = uiFacade;
+    myTitle = title;
+    myCardLayout = new CardLayout();
+    myPagesContainer = new JPanel(myCardLayout);
+    myNextAction = new WizardImpl.NextAction();
+    myBackAction = new WizardImpl.BackAction();
+}

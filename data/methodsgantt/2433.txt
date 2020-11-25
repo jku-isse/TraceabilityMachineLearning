@@ -1,0 +1,3 @@
+FileTypeOption() {
+    super("impex.image.fileformat");
+}

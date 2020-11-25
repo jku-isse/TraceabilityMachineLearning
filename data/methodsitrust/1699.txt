@@ -1,0 +1,3 @@
+public String getMethodType() {
+    return methodType;
+}

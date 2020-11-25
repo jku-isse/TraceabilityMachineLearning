@@ -1,0 +1,7 @@
+private String getSegmentPosition(Component c) {
+    String segmentPosition = null;
+    if (c instanceof JComponent) {
+        segmentPosition = ((String) (((JComponent) (c)).getClientProperty("Palette.Component.segmentPosition")));
+    }
+    return segmentPosition == null ? "only" : segmentPosition;
+}

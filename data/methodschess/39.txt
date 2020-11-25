@@ -1,0 +1,14 @@
+// Methods
+/**
+ * The actual action.
+ *
+ * @param event
+ * 		The event, that triggered the action.
+ */
+public void actionPerformed(ActionEvent event) {
+    DialogAbout dialog = DialogAbout.getInstance();
+    if (dialog != null) {
+        Tools.setDialogToCenter(dialog);
+        dialog.show();
+    }
+}

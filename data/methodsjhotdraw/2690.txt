@@ -1,0 +1,3 @@
+public void setAngle(float angle) {
+    this.angle = angle;
+}

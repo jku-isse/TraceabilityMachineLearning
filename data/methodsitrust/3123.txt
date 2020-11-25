@@ -1,0 +1,35 @@
+/**
+ * Return a list of all transactions in which an HCP accessed the given patients record, within the dates
+ *
+ * @param patientID
+ * 		The MID of the patient in question.
+ * @param lower
+ * 		The starting date as a java.util.Date
+ * @param upper
+ * 		The ending date as a java.util.Date
+ * @return A java.util.List of transactions.
+ * @throws DBException
+ * 		
+ */
+public List<TransactionBean> getRecordAccesses(long patientID, long dlhcpID, Date lower, Date upper, boolean getByRole) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(((((("SELECT * FROM transactionlog WHERE secondaryMID=? AND transactionCode IN (" + (TransactionType.patientViewableStr)) + ") ") + "AND timeLogged >= ? AND timeLogged <= ? ") + "AND loggedInMID!=? ") + "ORDER BY timeLogged DESC"));
+        ps.setLong(1, patientID);
+        ps.setTimestamp(2, new Timestamp(lower.getTime()));
+        // add 1 days worth to include the upper
+        ps.setTimestamp(3, new Timestamp(((upper.getTime()) + (((1000L * 60L) * 60) * 24L))));
+        ps.setLong(4, dlhcpID);
+        ResultSet rs = ps.executeQuery();
+        List<TransactionBean> tbList = loader.loadList(rs);
+        tbList = addAndSortRoles(tbList, patientID, getByRole);
+        return tbList;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

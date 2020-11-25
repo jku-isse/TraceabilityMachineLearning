@@ -1,0 +1,8 @@
+/**
+ * Retrieves the identifier of the patient as a long.
+ *
+ * @return The patients MID.
+ */
+public long getPid() {
+    return pid;
+}

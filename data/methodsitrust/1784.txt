@@ -1,0 +1,10 @@
+/**
+ * For use ONLY by DAOs
+ * setters and getters method
+ *
+ * @param visitID
+ * 		
+ */
+public OfficeVisitBean(long visitID) {
+    this.visitID = visitID;
+}

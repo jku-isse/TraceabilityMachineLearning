@@ -1,0 +1,8 @@
+/**
+ * Creates a new instance.
+ * All icons must have the same dimensions.
+ * If an icon is null, nothing is drawn for this state.
+ */
+public SliderThumbIcon(Icon[] icons) {
+    super(icons);
+}

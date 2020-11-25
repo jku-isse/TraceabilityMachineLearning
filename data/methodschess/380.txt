@@ -1,0 +1,10 @@
+/**
+ * Do a new ply in this game.
+ *
+ * @param ply
+ * 		The next ply.
+ */
+public final void doPly(Ply ply) {
+    // Add a new game status, that derives from the previous status.
+    _gameStatus.push(((getLastGameStatus()) == null ? new GameImpl.GameStatus(ply) : new GameImpl.GameStatus(ply, getLastGameStatus())));
+}

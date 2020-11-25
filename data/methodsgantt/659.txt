@@ -1,0 +1,7 @@
+public void setActive(boolean active) {
+    if (active) {
+        myChart.addSelectionListener(this);
+    } else {
+        myChart.removeSelectionListener(this);
+    }
+}

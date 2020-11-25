@@ -1,0 +1,8 @@
+/**
+ * Check, if its a move with white pieces.
+ *
+ * @return true, if its a move with white pieces.
+ */
+public final boolean isWhiteMove() {
+    return (getBoard().getPiece(getPly().getSource()).getColor()) == (Piece.WHITE);
+}

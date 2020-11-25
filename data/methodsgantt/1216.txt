@@ -1,0 +1,39 @@
+Image createImage(List myItemsToConsider) {
+    BufferedImage tmpImage = new BufferedImage(10, 10, BufferedImage.TYPE_INT_RGB);
+    FontMetrics fmetric = tmpImage.getGraphics().getFontMetrics(myUIConfiguration.getChartMainFont().deriveFont(12.0F));
+    int fourEmWidth = fmetric.stringWidth("mmmm");
+    int width = 0;
+    int height = ((getTree().getTreeTable().getRowHeight()) * 3) + (TaskTreeImageGenerator.HEADER_OFFSET);
+    for (Iterator tasks = myItemsToConsider.iterator(); tasks.hasNext();) {
+        DefaultMutableTreeNode nextTreeNode = ((DefaultMutableTreeNode) (tasks.next()));
+        if (nextTreeNode instanceof BlankLineNode) {
+            height += getTree().getTreeTable().getRowHeight();
+            continue;
+        }
+        Task next = ((Task) (nextTreeNode.getUserObject()));
+        if ("None".equals(next.toString())) {
+            continue;
+        }
+        if (isVisible(next)) {
+            height += getTree().getTreeTable().getRowHeight();
+            int nbchar = (fmetric.stringWidth(next.getName())) + ((next.getManager().getTaskHierarchy().getDepth(next)) * fourEmWidth);
+            if (nbchar > width) {
+                width = nbchar;
+            }
+        }
+    }
+    width += 10;
+    myWidth = width;
+    BufferedImage image2 = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+    // setSize(sizeTOC, getHeight());
+    Graphics g2 = image2.getGraphics();
+    ((Graphics2D) (g2)).setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    g2.setColor(Color.WHITE);
+    g2.fillRect(0, 0, width, height);
+    printTasks(g2, myItemsToConsider);
+    GanttImagePanel but = new GanttImagePanel("big.png", 300, 47);
+    g2.setColor(new Color(102, 153, 153));
+    g2.fillRect(0, 0, width, but.getHeight());
+    but.paintComponent(g2);
+    return image2;
+}

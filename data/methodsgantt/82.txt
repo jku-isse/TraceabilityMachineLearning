@@ -1,0 +1,7 @@
+public void mouseWheelMoved(MouseWheelEvent e) {
+    if (isRotationUp(e)) {
+        fireZoomOut();
+    } else {
+        fireZoomIn();
+    }
+}

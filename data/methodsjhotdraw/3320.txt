@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public ZoomAction(DrawingEditor editor, double scaleFactor, AbstractButton button) {
+    this(((DrawingView) (null)), scaleFactor, button);
+    setEditor(editor);
+}

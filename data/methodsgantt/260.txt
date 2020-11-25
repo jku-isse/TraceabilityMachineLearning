@@ -1,0 +1,7 @@
+ChangeTaskStartInteraction(MouseEvent e, TaskBoundaryChartItem taskBoundary) {
+    super(e, taskBoundary);
+    setCursor(GanttGraphicArea.W_RESIZE_CURSOR);
+    myInitialLength = getTask().getDuration();
+    myMutator = getTask().createMutator();
+    myInitialStart = getTask().getStart();
+}

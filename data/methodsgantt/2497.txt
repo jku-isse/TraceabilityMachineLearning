@@ -1,0 +1,8 @@
+private void updateActions() {
+    if ((((myStart.getValue()) != null) && ((myFinish.getValue()) != null)) && (false == (myFinish.getValue().before(myStart.getValue())))) {
+        myAddAction.setEnabled(true);
+    } else {
+        myAddAction.setEnabled(false);
+    }
+    myDeleteAction.setEnabled((false == (myListSelectionModel.isSelectionEmpty())));
+}

@@ -1,0 +1,1 @@
+abstract void apply(MouseEvent event);

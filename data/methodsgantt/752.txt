@@ -1,0 +1,3 @@
+public void setResourceActions(ResourceActionSet actionSet) {
+    myResourceActionSet = actionSet;
+}

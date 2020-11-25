@@ -1,0 +1,8 @@
+/**
+ * Get the flag to indicate, if we are still in the opening book.
+ *
+ * @return true, if we are still in the opening book. False otherwise.
+ */
+private final boolean inOpeningBook() {
+    return _inOpeningBook;
+}

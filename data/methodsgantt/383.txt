@@ -1,0 +1,15 @@
+public UIConfiguration getUIConfiguration() {
+    if ((myUIConfig) == null) {
+        myUIConfig = new UIConfiguration(null, null, new Color(140, 182, 206), redline) {
+            public Font getMenuFont() {
+                return (GanttOptions.this.myMenuFont) == null ? super.getMenuFont() : GanttOptions.this.myMenuFont;
+            }
+
+            public Font getChartMainFont() {
+                return (GanttOptions.this.myChartMainFont) == null ? super.getChartMainFont() : GanttOptions.this.myChartMainFont;
+            }
+        };
+        // Color.black
+    }
+    return myUIConfig;
+}

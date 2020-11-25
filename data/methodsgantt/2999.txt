@@ -1,0 +1,2 @@
+GPOptionChoicePanel() {
+}

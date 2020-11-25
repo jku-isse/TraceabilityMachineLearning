@@ -1,0 +1,3 @@
+public BooleanOption getProjectBoundariesOption() {
+    return myProjectDatesOption;
+}

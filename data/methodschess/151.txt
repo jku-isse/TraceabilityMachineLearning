@@ -1,0 +1,4 @@
+/**
+ * Stop the computations of the permanent brain.
+ */
+void stopPermanentBrain();

@@ -1,0 +1,8 @@
+/**
+ * Prepare the opening test.
+ */
+private final void prepareTest() {
+    reset();
+    // Move a white pawn to the 4th row
+    doPly(new PlyImpl(new PositionImpl("e2"), new PositionImpl("e4"), false));
+}

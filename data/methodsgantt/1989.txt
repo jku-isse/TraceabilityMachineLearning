@@ -1,0 +1,36 @@
+/**
+ * Returns an array of <code>String</code>s recognized as names by
+ * this property source that begin with the supplied prefix.  If
+ * no property names match, <code>null</code> will be returned.
+ * The comparison is done in a case-independent manner.
+ *
+ * <p> The default implementation calls
+ * <code>getPropertyNames()</code> and searches the list of names
+ * for matches.
+ *
+ * @return an array of <code>String</code>s giving the valid
+property names.
+ */
+public String[] getPropertyNames(String prefix) {
+    String[] propertyNames = getPropertyNames();
+    if (propertyNames == null) {
+        return null;
+    }
+    prefix = prefix.toLowerCase();
+    Vector names = new Vector();
+    for (int i = 0; i < (propertyNames.length); i++) {
+        if (propertyNames[i].startsWith(prefix)) {
+            names.addElement(propertyNames[i]);
+        }
+    }
+    if ((names.size()) == 0) {
+        return null;
+    }
+    // Copy the strings from the Vector over to a String array.
+    String[] prefixNames = new String[names.size()];
+    int count = 0;
+    for (Iterator it = names.iterator(); it.hasNext();) {
+        prefixNames[(count++)] = ((String) (it.next()));
+    }
+    return prefixNames;
+}

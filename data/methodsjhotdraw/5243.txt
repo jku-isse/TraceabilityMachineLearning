@@ -1,0 +1,15 @@
+/**
+ * Gets the beans <code>PropertyDescriptor</code>s.
+ *
+ * @return An array of PropertyDescriptors describing the editable
+properties supported by this bean.  May return null if the
+information should be obtained by automatic analysis.
+<p>
+If a property is indexed, then its entry in the result array will
+belong to the IndexedPropertyDescriptor subclass of PropertyDescriptor.
+A client of getPropertyDescriptors can use "instanceof" to check
+if a given PropertyDescriptor is an IndexedPropertyDescriptor.
+ */
+public PropertyDescriptor[] getPropertyDescriptors() {
+    return SVGDrawingPanelBeanInfo.getPdescriptor();
+}

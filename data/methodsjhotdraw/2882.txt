@@ -1,0 +1,9 @@
+/**
+ * Adds handles for scaling, moving, rotating and shearing a Figure.
+ */
+public static void addTransformHandles(Figure f, Collection<Handle> handles) {
+    handles.add(new BoundsOutlineHandle(f, true, false));
+    TransformHandleKit.addCornerTransformHandles(f, handles);
+    TransformHandleKit.addEdgeTransformHandles(f, handles);
+    handles.add(new RotateHandle(f));
+}

@@ -1,0 +1,8 @@
+public CalculateCriticalPathAction(TaskManager taskManager, GanttTree2 tree, GanttOptions options, UIConfiguration uiConfiguration, GanttProject appli) {
+    super(null, options.getIconSize());
+    this.taskManager = taskManager;
+    this.tree = tree;
+    myUIConfiguration = uiConfiguration;
+    myOptions = options;
+    this.appli = appli;
+}

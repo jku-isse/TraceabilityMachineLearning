@@ -1,0 +1,10 @@
+public void testloadSingle() {
+    try {
+        expect(rs.getLong("WardID")).andReturn(1L).once();
+        expect(rs.getString("RequiredSpecialty")).andReturn("specialty").once();
+        expect(rs.getLong("InHospital")).andReturn(1L).once();
+        ctrl.replay();
+        wbl.loadSingle(rs);
+    } catch (SQLException e) {
+    }
+}

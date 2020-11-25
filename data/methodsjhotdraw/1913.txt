@@ -1,0 +1,4 @@
+/**
+ * Selects all figures.
+ */
+public void selectAll();

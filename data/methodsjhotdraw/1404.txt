@@ -1,0 +1,4 @@
+/**
+ * Sent when a figure was removed.
+ */
+public void figureRemoved(CompositeFigureEvent e);

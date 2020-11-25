@@ -1,0 +1,3 @@
+protected Figure getAddedFigure() {
+    return createdFigure;
+}

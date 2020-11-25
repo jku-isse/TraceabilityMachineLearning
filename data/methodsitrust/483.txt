@@ -1,0 +1,4 @@
+public void addProcedure(ProcedureBean bean) throws iTrustException {
+    verifySaved();
+    proceduresDAO.add(bean);
+}

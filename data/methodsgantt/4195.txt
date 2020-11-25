@@ -1,0 +1,10 @@
+public void deleteAssignment(ProjectResource resource) {
+    ResourceAssignmentCollectionImpl.MutationInfo info = ((ResourceAssignmentCollectionImpl.MutationInfo) (myQueue.get(resource)));
+    if (info == null) {
+        myQueue.put(resource, new ResourceAssignmentCollectionImpl.MutationInfo(resource, ResourceAssignmentCollectionImpl.MutationInfo.DELETE));
+    } else
+        if ((info.myOperation) == (ResourceAssignmentCollectionImpl.MutationInfo.ADD)) {
+            myQueue.remove(resource);
+        }
+
+}

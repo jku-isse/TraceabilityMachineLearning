@@ -1,0 +1,3 @@
+public void testEmptyPatientDateOfBirth() throws Exception {
+    assertEquals("empty patient bean", new PatientBean().getDateOfBirthStr(), new BeanBuilder<PatientBean>().build(new HashMap<String, String>(), new PatientBean()).getDateOfBirthStr());
+}

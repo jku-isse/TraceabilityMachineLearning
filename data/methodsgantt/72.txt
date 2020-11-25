@@ -1,0 +1,3 @@
+public void mouseExited(MouseEvent e) {
+    setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+}

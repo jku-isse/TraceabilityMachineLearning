@@ -1,0 +1,17 @@
+@SuppressWarnings("unchecked")
+public void applyAttributes() {
+    DrawingEditor editor = getEditor();
+    CompositeEdit edit = new CompositeEdit(labels.getString("edit.applyAttrbutes.text"));
+    DrawingView view = getView();
+    view.getDrawing().fireUndoableEditHappened(edit);
+    for (Figure figure : view.getSelectedFigures()) {
+        figure.willChange();
+        for (Map.Entry<AttributeKey, Object> entry : editor.getDefaultAttributes().entrySet()) {
+            if (!(excludedAttributes.contains(entry.getKey()))) {
+                entry.getKey().basicSet(figure, entry.getValue());
+            }
+        }
+        figure.changed();
+    }
+    view.getDrawing().fireUndoableEditHappened(edit);
+}

@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance of DefaultAppletApplication
+ */
+public DefaultAppletApplication(JApplet applet) {
+    this.applet = applet;
+}

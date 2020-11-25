@@ -1,0 +1,11 @@
+public void testPrescriptionRenewalEmail() throws Exception {
+    WebConversation wc = login("9900000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - HCP Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 9900000000L, 0L, "");
+    wr = wr.getLinkWith("Potential Prescription-Renewals").click();
+    assertTrue(wr.getText().contains("Darryl Thompson"));
+    wr = wr.getLinkWith("Darryl Thompson").click();
+    assertTrue(wr.getText().contains("Send Email Form"));
+    iTrustHTTPTest.assertLogged(TransactionType.PRECONFIRM_PRESCRIPTION_RENEWAL, 9900000000L, 99L, "");
+}

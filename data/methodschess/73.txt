@@ -1,0 +1,7 @@
+/**
+ * Move a piece from one square to another.
+ *
+ * @param ply
+ * 		The move to perform.
+ */
+void doPly(Ply ply);

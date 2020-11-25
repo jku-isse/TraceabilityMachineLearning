@@ -1,0 +1,4 @@
+public OverrideReasonBean(String code, String description) {
+    reasonCode = code;
+    this.description = description;
+}

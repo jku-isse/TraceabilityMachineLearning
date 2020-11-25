@@ -1,0 +1,3 @@
+public void testDoesNotExist() throws Exception {
+    assertFalse(ovDAO.checkOfficeVisitExists(500, 1));
+}

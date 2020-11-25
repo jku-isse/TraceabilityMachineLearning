@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ * The icon representations are created lazily from the image.
+ */
+public SliderThumbIcon(Image tiledImage, int tileCount, boolean isTiledHorizontaly) {
+    super(tiledImage, tileCount, isTiledHorizontaly);
+}

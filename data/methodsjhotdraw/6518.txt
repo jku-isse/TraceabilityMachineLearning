@@ -1,0 +1,3 @@
+public void add(CSSRule rule) {
+    rules.add(rule);
+}

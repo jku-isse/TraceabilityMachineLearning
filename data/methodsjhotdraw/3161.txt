@@ -1,0 +1,3 @@
+public void setActiveView(DrawingView newValue) {
+    target.setActiveView(newValue);
+}

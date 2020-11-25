@@ -1,0 +1,10 @@
+/**
+ * Sets the image data.
+ * This clears the buffered image.
+ */
+public void setImageData(byte[] imageData) {
+    willChange();
+    this.imageData = imageData;
+    this.bufferedImage = null;
+    changed();
+}

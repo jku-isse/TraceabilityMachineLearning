@@ -1,0 +1,5 @@
+public void testFilterByGenderNoResult() {
+    filter = new DemographicReportFilter(DemographicReportFilter.DemographicReportFilterType.GENDER, "Dalpe", factory);
+    List<PatientBean> res = filter.filter(allPatients);
+    assertTrue(res.isEmpty());
+}

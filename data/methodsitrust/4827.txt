@@ -1,0 +1,5 @@
+public void testGoodAnswer() throws Exception {
+    String value = "City Name";
+    String errorMessage = CityValidatorTest.PASSED;
+    assertEquals(errorMessage, validatorProxy.checkFormat("Name", value, CityValidatorTest.VALIDATION_FORMAT, false));
+}

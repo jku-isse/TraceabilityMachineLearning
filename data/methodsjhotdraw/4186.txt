@@ -1,0 +1,4 @@
+@Override
+public String getDescription() {
+    return "A look and feel for palette components";
+}

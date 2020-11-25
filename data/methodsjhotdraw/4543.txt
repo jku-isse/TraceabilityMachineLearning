@@ -1,0 +1,3 @@
+private double getZoomFactor() {
+    return (zoomSlider.getValue()) / 100.0;
+}

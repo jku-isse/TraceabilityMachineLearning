@@ -1,0 +1,4 @@
+public CustomColumnsManager getTaskCustomColumnManager() {
+    // TODO Auto-generated method stub
+    return super.getTaskCustomColumnManager();
+}

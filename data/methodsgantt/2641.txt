@@ -1,0 +1,11 @@
+public void done() {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            // myProgressPanel.stop();
+            // myProgressPanel.setVisible(false);
+            myProgressDialog.done();
+            // pbp.reset();
+            // pbp.setVisible(false);
+        }
+    });
+}

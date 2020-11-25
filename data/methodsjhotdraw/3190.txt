@@ -1,0 +1,8 @@
+/**
+ * Returns the GridConstrainer currently being edited by this panel.
+ *
+ * @return The GridConstrainer.
+ */
+public GridConstrainer getConstrainer() {
+    return constrainer;
+}

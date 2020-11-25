@@ -1,0 +1,3 @@
+public void setEmergencyName(String emergencyName) {
+    this.emergencyName = emergencyName;
+}

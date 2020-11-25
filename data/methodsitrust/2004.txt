@@ -1,0 +1,3 @@
+public String getEndDateStr() {
+    return endDateStr;
+}

@@ -1,0 +1,6 @@
+private void insertDefaultTimeout(Connection conn, int mins) throws SQLException {
+    PreparedStatement ps = null;
+    ps = conn.prepareStatement("INSERT INTO globalvariables(Name,Value) VALUES (Timeout, ?)");
+    ps.setInt(1, mins);
+    ps.executeUpdate();
+}

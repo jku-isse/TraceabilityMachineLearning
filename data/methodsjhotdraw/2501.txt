@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public RelativeLocator() {
+    this(0, 0, false);
+}

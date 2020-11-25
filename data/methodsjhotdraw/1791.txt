@@ -1,0 +1,33 @@
+@Override
+public boolean importData(TransferHandler.TransferSupport support) {
+    if (DnDDrawingViewTransferHandler.DEBUG) {
+        System.out.println(((this) + ".importData(support)"));
+    }
+    HashSet<Figure> transferFigures = new HashSet<Figure>();
+    boolean success = ((support.getComponent()) instanceof JComponent) ? importData(((JComponent) (support.getComponent())), support.getTransferable(), transferFigures) : false;
+    if (success) {
+        final DrawingView view = ((DrawingView) (support.getComponent()));
+        Point dropPoint = support.getDropLocation().getDropPoint();
+        Point2D.Double drawingDropPoint = view.viewToDrawing(dropPoint);
+        // Set<Figure> transferFigures = view.getSelectedFigures();
+        Rectangle2D.Double drawingArea = null;
+        for (Figure fig : transferFigures) {
+            if (drawingArea == null) {
+                drawingArea = fig.getDrawingArea();
+            } else {
+                drawingArea.add(fig.getDrawingArea());
+            }
+        }
+        AffineTransform t = new AffineTransform();
+        t.translate((-(drawingArea.x)), (-(drawingArea.y)));
+        t.translate(drawingDropPoint.x, drawingDropPoint.y);
+        // XXX - instead of centering, we have to translate by the drag image offset here
+        t.translate(((drawingArea.width) / (-2.0)), ((drawingArea.height) / (-2.0)));
+        for (Figure fig : transferFigures) {
+            fig.willChange();
+            fig.transform(t);
+            fig.changed();
+        }
+    }
+    return success;
+}

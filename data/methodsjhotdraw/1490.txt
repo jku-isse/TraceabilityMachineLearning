@@ -1,0 +1,4 @@
+/**
+ * Gets the connectors owner.
+ */
+public Figure getOwner();

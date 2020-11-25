@@ -1,0 +1,7 @@
+private void performAction(MouseEvent evt) {
+    // GEN-FIRST:event_performAction
+    // Add your handling code here:
+    if (((actionArea) != null) && (actionArea.contains(((evt.getX()) - (getInsets().left)), ((evt.getY()) - (getInsets().top))))) {
+        action.actionPerformed(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, null, evt.getWhen(), evt.getModifiers()));
+    }
+}// GEN-LAST:event_performAction

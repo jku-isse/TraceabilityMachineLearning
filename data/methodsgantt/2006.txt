@@ -1,0 +1,3 @@
+protected GPCalendar getCalendar() {
+    return myCalendar;
+}

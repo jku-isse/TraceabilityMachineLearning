@@ -1,0 +1,16 @@
+public void testVisitsFor2() throws Exception {
+    List<OfficeVisitBean> visits = ovDAO.getAllOfficeVisits(2L);
+    assertEquals(9, visits.size());
+    assertEquals(955, visits.get(0).getID());
+    assertEquals(9000000000L, visits.get(0).getHcpID());
+    assertEquals(2L, visits.get(0).getPatientID());
+    assertEquals("1", visits.get(0).getHospitalID());
+    assertEquals("Yet another office visit.", visits.get(0).getNotes());
+    // Note that that "all office visits" doesnt return the procedures, etc. since its not needed (yet)
+    // assertEquals(0, visits.get(0).getDiagnoses().size());
+    // assertEquals(0, visits.get(0).getProcedures().size());
+    // assertEquals(0, visits.get(0).getProcedures().size());
+    // Now check the order
+    assertEquals(952L, visits.get(1).getID());
+    assertEquals(959L, visits.get(2).getID());
+}

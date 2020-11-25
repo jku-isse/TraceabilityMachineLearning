@@ -1,0 +1,17 @@
+/**
+ * Combines two lists of hospitals
+ *
+ * @param hcpsHospitals
+ * 		hospitals the HCP is assigned to
+ * @param allHospitals
+ * 		all hospitals
+ * @return the combined list
+ */
+private List<HospitalBean> combineLists(List<HospitalBean> hcpsHospitals, List<HospitalBean> allHospitals) {
+    for (HospitalBean hos : allHospitals) {
+        if (!(hcpsHospitals.contains(hos)))
+            hcpsHospitals.add(hos);
+
+    }
+    return hcpsHospitals;
+}

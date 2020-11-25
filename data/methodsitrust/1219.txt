@@ -1,0 +1,10 @@
+/**
+ * Returns a PersonnelBean for the logged in HCP
+ *
+ * @return PersonnelBean for the logged in HCP
+ * @throws iTrustException
+ * 		
+ */
+public PersonnelBean getPersonnel() throws iTrustException {
+    return personnelDAO.getPersonnel(loggedInMID);
+}

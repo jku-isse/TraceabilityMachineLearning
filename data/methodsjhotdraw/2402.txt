@@ -1,0 +1,3 @@
+public void write(DOMOutput out) {
+    out.addAttribute("height", height);
+}

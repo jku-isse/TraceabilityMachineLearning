@@ -1,0 +1,13 @@
+public boolean stopCellEditing() {
+    final String dateString = ((JTextComponent) (getComponent())).getText();
+    Date parsedDate = parseDate(dateString);
+    if (parsedDate == null) {
+        getComponent().setBackground(colorError);
+        return false;
+    } else {
+        myDate = parsedDate;
+        getComponent().setBackground(colorNormal);
+        super.fireEditingStopped();
+        return true;
+    }
+}

@@ -1,0 +1,22 @@
+/**
+ * Test testReportSeenHCPs0
+ *
+ * @throws Exception
+ * 		
+ */
+public void testReportSeenHCPs0() throws Exception {
+    WebConversation wc = login("2", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Patient Home", wr.getTitle());
+    iTrustHTTPTest.assertLogged(TransactionType.HOME_VIEW, 2L, 0L, "");
+    wr = wr.getLinkWith("My Providers").click();
+    assertEquals("iTrust - My Providers", wr.getTitle());
+    WebTable table = ((WebTable) (wr.getElementWithID("hcp_table")));
+    TableRow[] rows = table.getRows();
+    assertTrue(rows[0].getText().contains("HCP Name"));
+    assertTrue(rows[1].getText().contains("Gandalf Stormcrow"));
+    assertTrue(rows[2].getText().contains("Mary Shelley"));
+    assertTrue(rows[3].getText().contains("Lauren Frankenstein"));
+    assertTrue(rows[4].getText().contains("Jason Frankenstein"));
+    assertTrue(rows[5].getText().contains("Kelly Doctor"));
+}

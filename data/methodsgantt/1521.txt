@@ -1,0 +1,1 @@
+protected abstract List getActivitiesForward(Date startDate, TimeUnit timeUnit, long l);

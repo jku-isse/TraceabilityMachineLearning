@@ -1,0 +1,31 @@
+XM1219 Armed Robotic Vehicle
+
+The XM1219 Armed Robotic Vehicle was an unmanned ground combat vehicle based on the MULE Platform. The ARV-A-L MULE Vehicle (XM1219) would feature integrated anti-tank and anti-personnel and reconnaissance, surveillance, and target acquisition (RSTA) systems remotely operated by network linked soldiers. The Armed robotic vehicle was canceled in July 2011 over mobility concerns.[1]
+
+Design
+
+The MULE platform is controlled by a modified Xbox 360 controller for ease of training recruits familiar with console controllers.
+
+Mobility
+
+Transportable inside a C-130 Hercules and CH-47 Chinook.
+Transportable, slung under a UH-60 Black Hawk.
+Climb more than a 1 metre (3 ft 3 in) step.
+Cross a 1 metre (3 ft 3 in) gap.
+Traverse side slopes of 40 percent.
+Ford water obstacles over 0.5 metres (1 ft 8 in).
+Cross obstacles as high as 0.5 metres (1 ft 8 in).
+
+Variants
+
+Assault
+
+The only production variant of this vehicle was the Assault Light (ARV-A-L).
+
+Reconnaissance, Surveillance and Target Acquisition
+
+The Reconnaissance, Surveillance and Target Acquisition or (RSTA) was likely canceled at some point.
+
+References
+
+1. Army cancels MULE unmanned ground vehicle, Gannett Government Media Corporation, retrieved 2 August 2011

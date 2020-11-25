@@ -1,0 +1,31 @@
+/**
+ * Adds a new override reason code, returns whether or not the change was made. If the code already exists, an
+ * iTrustException is thrown.
+ *
+ * @param orc
+ * 		The overridereason bean to be added.
+ * @return A boolean indicating success or failure.
+ * @throws DBException
+ * 		
+ * @throws iTrustException
+ * 		
+ */
+public boolean addORCode(OverrideReasonBean orc) throws DBException, iTrustException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        conn = factory.getConnection();
+        ps = conn.prepareStatement(("INSERT INTO drugreactionoverridecodes (Code, Description) " + "VALUES (?,?)"));
+        ps.setString(1, orc.getORCode());
+        ps.setString(2, orc.getDescription());
+        return 1 == (ps.executeUpdate());
+    } catch (SQLException e) {
+        e.printStackTrace();
+        if (1062 == (e.getErrorCode()))
+            throw new iTrustException("Error: Code already exists.");
+
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

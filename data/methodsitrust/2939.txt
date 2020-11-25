@@ -1,0 +1,29 @@
+/**
+ * Get a list of the lab procedures associated with a given patient.
+ *
+ * @param id
+ * 		The MID of the patient as a long.
+ * @return A java.util.List of LabProcedureBeans
+ * @throws DBException
+ * 		
+ */
+public List<LabProcedureBean> getLabProceduresForPatient(long id) throws DBException {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    try {
+        if (id == 0L)
+            throw new SQLException("PatientMID cannot be null");
+
+        conn = factory.getConnection();
+        ps = conn.prepareStatement("SELECT * FROM labprocedure WHERE PatientMID = ? AND Rights = ? ORDER BY UpdatedDate DESC");
+        ps.setLong(1, id);
+        ps.setString(2, LabProcedureBean.Allow);
+        ResultSet rs = ps.executeQuery();
+        return labProcedureLoader.loadList(rs);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new DBException(e);
+    } finally {
+        DBUtil.closeConnection(conn, ps);
+    }
+}

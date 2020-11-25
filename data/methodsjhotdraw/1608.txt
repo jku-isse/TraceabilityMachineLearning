@@ -1,0 +1,9 @@
+private void updateActiveView() {
+    for (DrawingView v : views) {
+        if (v.getComponent().isFocusOwner()) {
+            setActiveView(v);
+            return;
+        }
+    }
+    setActiveView(null);
+}

@@ -1,0 +1,5 @@
+@Override
+public void mousePressed(MouseEvent evt) {
+    super.mousePressed(evt);
+    clearRubberBand();
+}

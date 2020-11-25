@@ -1,0 +1,56 @@
+public void testHcpViewUpcomingAppointments() throws Exception {
+    // Create DB for this test case
+    String DIR = "sql/data";
+    DAOFactory factory = TestDAOFactory.getTestInstance();
+    new DBBuilder(factory).executeSQLFile((DIR + "/clearAppointments.sql"));
+    new DBBuilder(factory).executeSQLFile((DIR + "/appointmentCase2.sql"));
+    // Login
+    WebConversation wc = login("9000000000", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    wr = wr.getLinkWith("View My Appointments").click();
+    // Create timestamp
+    DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    Timestamp time = new Timestamp(new Date().getTime());
+    // Check Table
+    // Row 1
+    Timestamp time1 = new Timestamp(((time.getTime()) + ((((7 * 24) * 60) * 60) * 1000)));
+    String dt1 = dateFormat.format(new Date(time1.getTime()));
+    assertTrue(wr.getTables()[0].getRows()[1].getAttribute("style").contains("font-weight: bold;"));
+    assertTrue(wr.getTables()[0].getRows()[1].getText().contains("Random Person"));
+    assertTrue(wr.getTables()[0].getRows()[1].getText().contains("Consultation"));
+    assertTrue(wr.getTables()[0].getRows()[1].getText().contains((dt1 + " 09:10 AM")));
+    assertTrue(wr.getTables()[0].getRows()[1].getText().contains("30 minutes"));
+    assertTrue(wr.getTables()[0].getRows()[1].getText().contains("No Comment"));
+    // Row 2
+    assertTrue(wr.getTables()[0].getRows()[2].getAttribute("style").contains("font-weight: bold;"));
+    assertTrue(wr.getTables()[0].getRows()[2].getText().contains("Baby Programmer"));
+    assertTrue(wr.getTables()[0].getRows()[2].getText().contains("General Checkup"));
+    assertTrue(wr.getTables()[0].getRows()[2].getText().contains((dt1 + " 09:30 AM")));
+    assertTrue(wr.getTables()[0].getRows()[2].getText().contains("45 minutes"));
+    assertTrue(wr.getTables()[0].getRows()[2].getText().contains("Read Comment"));
+    // Row 3
+    Timestamp time2 = new Timestamp(((time.getTime()) + ((((10 * 24) * 60) * 60) * 1000)));
+    String dt2 = dateFormat.format(new Date(time2.getTime()));
+    assertTrue(wr.getTables()[0].getRows()[3].getText().contains("Baby Programmer"));
+    assertTrue(wr.getTables()[0].getRows()[3].getText().contains("General Checkup"));
+    assertTrue(wr.getTables()[0].getRows()[3].getText().contains((dt2 + " 04:00 PM")));
+    assertTrue(wr.getTables()[0].getRows()[3].getText().contains("45 minutes"));
+    assertTrue(wr.getTables()[0].getRows()[3].getText().contains("Read Comment"));
+    // Row 4
+    Timestamp time3 = new Timestamp(((time.getTime()) + ((((14 * 24) * 60) * 60) * 1000)));
+    String dt3 = dateFormat.format(new Date(time3.getTime()));
+    assertTrue(wr.getTables()[0].getRows()[4].getAttribute("style").contains("font-weight: bold;"));
+    assertTrue(wr.getTables()[0].getRows()[4].getText().contains("Random Person"));
+    assertTrue(wr.getTables()[0].getRows()[4].getText().contains("Ultrasound"));
+    assertTrue(wr.getTables()[0].getRows()[4].getText().contains((dt3 + " 01:30 PM")));
+    assertTrue(wr.getTables()[0].getRows()[4].getText().contains("30 minutes"));
+    assertTrue(wr.getTables()[0].getRows()[4].getText().contains("No Comment"));
+    // Row 5
+    assertTrue(wr.getTables()[0].getRows()[5].getAttribute("style").contains("font-weight: bold;"));
+    assertTrue(wr.getTables()[0].getRows()[5].getText().contains("Andy Programmer"));
+    assertTrue(wr.getTables()[0].getRows()[5].getText().contains("General Checkup"));
+    assertTrue(wr.getTables()[0].getRows()[5].getText().contains((dt3 + " 01:45 PM")));
+    assertTrue(wr.getTables()[0].getRows()[5].getText().contains("45 minutes"));
+    assertTrue(wr.getTables()[0].getRows()[5].getText().contains("No Comment"));
+    iTrustHTTPTest.assertLogged(TransactionType.APPOINTMENT_ALL_VIEW, 9000000000L, 0L, "");
+}

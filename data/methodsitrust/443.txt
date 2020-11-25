@@ -1,0 +1,8 @@
+public void testNonExistent() throws Exception {
+    try {
+        personnelEditor = new EditPersonnelAction(factory, 0L, "8999999999");
+        fail("exception should have been thrown");
+    } catch (iTrustException e) {
+        assertEquals("Personnel does not exist", e.getMessage());
+    }
+}

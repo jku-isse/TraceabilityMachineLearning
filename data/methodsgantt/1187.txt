@@ -1,0 +1,11 @@
+/**
+ * Move Up the selected resource
+ */
+public boolean moveUp(HumanResource resource) {
+    myResourceManager.up(resource);
+    ResourceNode rn = getNodeForResource(resource);
+    int index = root.getIndex(root.getChildBefore(rn));
+    removeNodeFromParent(rn);
+    insertNodeInto(rn, root, index);
+    return true;
+}

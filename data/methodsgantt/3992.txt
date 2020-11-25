@@ -1,0 +1,15 @@
+public RoleManagerImpl() {
+    DEFAULT_ROLE_SET = new RoleSetImpl(RoleSet.DEFAULT, this);
+    SOFTWARE_DEVELOPMENT_ROLE_SET = new RoleSetImpl(RoleSet.SOFTWARE_DEVELOPMENT, this);
+    createRoleSet();
+    clear();
+    myRoleSets.add(DEFAULT_ROLE_SET);
+    myRoleSets.add(SOFTWARE_DEVELOPMENT_ROLE_SET);
+    myProjectRoleSet.setEnabled(true);
+    SOFTWARE_DEVELOPMENT_ROLE_SET.setEnabled(false);
+    GanttLanguage.getInstance().addListener(new GanttLanguage.Listener() {
+        public void languageChanged(GanttLanguage.Event event) {
+            changeRoleSet();
+        }
+    });
+}

@@ -1,0 +1,3 @@
+public Dimension getPreferredVerticalSize() {
+    return ColorSliderUI.PREFERRED_VERTICAL_SIZE;
+}

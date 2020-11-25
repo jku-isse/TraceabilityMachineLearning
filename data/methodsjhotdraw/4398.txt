@@ -1,0 +1,9 @@
+/**
+ * Overrides <code>FilterInputStream.reset</code>
+ * to reset the progress monitor as well as the stream.
+ */
+public synchronized void reset() throws IOException {
+    in.reset();
+    nread_ = (size_) - (in.available());
+    fireStateChanged();
+}

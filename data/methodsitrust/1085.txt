@@ -1,0 +1,7 @@
+public void testAddMessage() throws SQLException {
+    MessageDAO test = new MessageDAO(factory);
+    List<MessageBean> mbList = action.getAllMyMessages();
+    test.addMessage(mbList.get(0));
+    mbList = action.getAllMyMessages();
+    assertEquals(2, mbList.size());
+}

@@ -1,0 +1,13 @@
+/**
+ * Creates a new instance.
+ */
+public DependencyFigure() {
+    AttributeKeys.STROKE_COLOR.basicSet(this, new Color(153));
+    AttributeKeys.STROKE_WIDTH.basicSet(this, 1.0);
+    AttributeKeys.END_DECORATION.basicSet(this, new ArrowTip());
+    setAttributeEnabled(AttributeKeys.END_DECORATION, false);
+    setAttributeEnabled(AttributeKeys.START_DECORATION, false);
+    setAttributeEnabled(AttributeKeys.STROKE_DASHES, false);
+    setAttributeEnabled(AttributeKeys.FONT_ITALIC, false);
+    setAttributeEnabled(AttributeKeys.FONT_UNDERLINE, false);
+}

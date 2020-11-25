@@ -1,0 +1,4 @@
+public Action get(Object key) {
+    loadIfNecessary();
+    return super.get(key);
+}

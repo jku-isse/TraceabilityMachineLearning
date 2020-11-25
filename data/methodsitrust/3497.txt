@@ -1,0 +1,8 @@
+public void testGetFluShotDelinquentsException() throws Exception {
+    try {
+        evilDAO.getFluShotDelinquents(0);
+        fail("DBException should have been thrown");
+    } catch (DBException e) {
+        assertEquals(EvilDAOFactory.MESSAGE, e.getSQLException().getMessage());
+    }
+}

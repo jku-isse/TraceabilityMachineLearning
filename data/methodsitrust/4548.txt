@@ -1,0 +1,3 @@
+public void setAttribute(String arg0, Object arg1) {
+    throw new IllegalStateException("should not be hit!");
+}

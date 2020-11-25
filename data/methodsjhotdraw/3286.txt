@@ -1,0 +1,7 @@
+/**
+ * Creates a new instance.
+ */
+public SendToBackAction(DrawingEditor editor) {
+    super(editor);
+    labels.configureAction(this, SendToBackAction.ID);
+}

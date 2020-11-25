@@ -1,0 +1,18 @@
+public Boolean submitResults(String id, String numericalResults, String numericalResultsUnit, String upperBound, String lowerBound) throws FormValidationException {
+    try {
+        long procedureID = Long.parseLong(id);
+        LabProcedureBean lp = lpDAO.getLabProcedure(procedureID);
+        lp.setNumericalResult(numericalResults);
+        lp.setNumericalResultUnit(numericalResultsUnit);
+        lp.setUpperBound(upperBound);
+        lp.setLowerBound(lowerBound);
+        lpDAO.submitTestResults(Long.parseLong(id), numericalResults, numericalResultsUnit, upperBound, lowerBound);
+    } catch (NumberFormatException e) {
+        e.printStackTrace();
+        return false;
+    } catch (DBException e) {
+        e.printStackTrace();
+        return false;
+    }
+    return true;
+}

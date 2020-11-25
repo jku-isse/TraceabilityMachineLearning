@@ -1,0 +1,6 @@
+/**
+ * Creates a new instance.
+ */
+public ImageTransferable(Image image) {
+    this.image = image;
+}

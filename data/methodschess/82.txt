@@ -1,0 +1,17 @@
+/**
+ * Get a dialog resource as a reader.
+ *
+ * @param resourceName
+ * 		The name of the resource.
+ * @return A reader to read from.
+ */
+private final Reader getDialogResource(String resourceName) {
+    try {
+        // Create a URL into the jar.
+        URL resourceURL = new URL(("jar:file:javaChess.jar!/de/java_chess/javaChess/dialogs/resources/" + resourceName));
+        return new BufferedReader(new InputStreamReader(resourceURL.openStream()));
+    } catch (IOException ie) {
+        // Ugly! But the same behaviour than before...
+        return new StringReader(ie.getMessage());
+    }
+}

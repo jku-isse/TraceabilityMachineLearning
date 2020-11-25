@@ -1,0 +1,27 @@
+/**
+ * Set the text on the buttons.
+ */
+public void setButtonText() {
+    if ((options.getButtonShow()) != (GanttOptions.ICONS)) {
+        bImport.setText(GanttProject.correctLabel(language.getText("import")));
+        bExport.setText(GanttProject.correctLabel(language.getText("export")));
+        bPreviewPrint.setText(GanttProject.correctLabel(language.getText("preview")));
+        bNewTask.setText(GanttProject.correctLabel(language.getText(((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX) ? "createTask" : "newHuman"))));
+        bDelete.setText(GanttProject.correctLabel(language.getText(((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX) ? "deleteTask" : "deleteHuman"))));
+        bProperties.setText(GanttProject.correctLabel(language.getText(((getTabs().getSelectedIndex()) == (UIFacade.GANTT_INDEX) ? "propertiesTask" : "propertiesHuman"))));
+        bPrev.setText(GanttProject.correctLabel(language.getText("backDate")));
+        bScrollCenter.setText(GanttProject.correctLabel(language.getText("centerOnSelectedTasks")));
+        bNext.setText(GanttProject.correctLabel(language.getText("forwardDate")));
+        bZoomOut.setText(GanttProject.correctLabel(language.getText("zoomOut")));
+        bZoomIn.setText(GanttProject.correctLabel(language.getText("zoomIn")));
+        bAbout.setText(GanttProject.correctLabel(language.getText("about")));
+        bUndo.setText(GanttProject.correctLabel(language.getText("undo")));
+        bRedo.setText(GanttProject.correctLabel(language.getText("redo")));
+        bCritical.setText(language.getText("criticalPath"));
+        bComparePrev.setText(GanttProject.correctLabel(language.getText("comparePrev")));
+        bSaveCurrent.setText(GanttProject.correctLabel(language.getText("saveCurrent")));
+        bRefresh.setText(GanttProject.correctLabel(language.getText("refresh")));
+        // bShowHiddens.setText
+        // (correctLabel(language.getText("showHiddens")));
+    }
+}

@@ -1,0 +1,11 @@
+/**
+ * Handles the connection of a connection.
+ * Override this method to handle this event.
+ */
+@Override
+protected void handleConnect(Connector start, Connector end) {
+    TaskFigure sf = ((TaskFigure) (start.getOwner()));
+    TaskFigure ef = ((TaskFigure) (end.getOwner()));
+    sf.addDependency(this);
+    ef.addDependency(this);
+}

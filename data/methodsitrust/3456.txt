@@ -1,0 +1,4 @@
+public void testSurveyResultsBadHospitalID() throws Exception {
+    List<SurveyResultBean> list = surveyResultDAO.getSurveyResultsForHospital("badhospid", SurveyResultBean.ANY_SPECIALTY);
+    assertEquals(0, list.size());
+}

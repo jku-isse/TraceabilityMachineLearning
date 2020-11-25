@@ -1,0 +1,4 @@
+public void testToList() throws Exception {
+    Email email = getTestEmail();
+    assertEquals(3, email.getToList().size());
+}

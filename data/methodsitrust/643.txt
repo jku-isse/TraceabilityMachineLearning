@@ -1,0 +1,8 @@
+/**
+ * Gets a list of the report headers.
+ *
+ * @return List of report headers
+ */
+public ArrayList<String> getReportHeaders() {
+    return reportHeaders;
+}

@@ -1,0 +1,1 @@
+public Figure createCircle(double cx, double cy, double r, Map<AttributeKey, Object> attributes);

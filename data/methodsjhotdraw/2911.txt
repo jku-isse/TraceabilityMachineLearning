@@ -1,0 +1,3 @@
+SouthHandle(Figure owner) {
+    super(owner, RelativeLocator.south());
+}

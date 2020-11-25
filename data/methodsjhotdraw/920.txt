@@ -1,0 +1,9 @@
+@Override
+public void read(DOMInput in) throws IOException {
+    in.openElement("figures");
+    for (int i = 0; i < (in.getElementCount()); i++) {
+        Figure f;
+        add((f = ((Figure) (in.readObject(i)))));
+    }
+    in.closeElement();
+}

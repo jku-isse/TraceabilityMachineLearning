@@ -1,0 +1,10 @@
+private static BeanDescriptor getBdescriptor() {
+    // GEN-HEADEREND:BeanDescriptor
+    // Here you can add code for customizing the BeanDescriptor.
+    if ((JLifeFormattedTextFieldBeanInfo.beanDescriptor) == null) {
+        JLifeFormattedTextFieldBeanInfo.beanDescriptor = new BeanDescriptor(JLifeFormattedTextFieldBeanInfo.class);
+    }
+    JLifeFormattedTextFieldBeanInfo.beanDescriptor.setValue("isContainer", Boolean.FALSE);
+    JLifeFormattedTextFieldBeanInfo.beanDescriptor.setDisplayName("JLifeFormattedTextField");
+    return JLifeFormattedTextFieldBeanInfo.beanDescriptor;
+}// GEN-LAST:BeanDescriptor

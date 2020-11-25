@@ -1,0 +1,8 @@
+public ImportFileWizardImpl(UIFacade uiFacade, GanttProject project) {
+    super(uiFacade, GanttLanguage.getInstance().getText("importWizard.dialog.title"));
+    myProject = project;
+    myState = new ImportFileWizardImpl.State();
+    Importer[] importers = getImporters();
+    addPage(new ImporterChooserPage(importers, myState));
+    addPage(new FileChooserPage(myState));
+}

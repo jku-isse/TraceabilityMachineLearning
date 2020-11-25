@@ -1,0 +1,3 @@
+public void setCholesterolHDL(int cholesterolHDL) {
+    this.cholesterolHDL = cholesterolHDL;
+}

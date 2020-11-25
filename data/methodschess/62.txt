@@ -1,0 +1,37 @@
+/**
+ * Move a piece from one square to another.
+ *
+ * @param ply
+ * 		The ply to perform.
+ */
+public final void doPly(Ply ply) {
+    Piece movedPiece = getPiece(ply.getSource());
+    // Check, if it was a castling
+    if (ply instanceof CastlingPly) {
+        int offset = (movedPiece.isWhite()) ? 0 : 56;
+        if (((CastlingPly) (ply)).isLeftCastling()) {
+            setPiece(movedPiece, new PositionImpl((2 + offset)));
+            // Move the rook to the right
+            doPly(new PlyImpl(new PositionImpl((0 + offset)), new PositionImpl((3 + offset)), false));
+        } else {
+            setPiece(movedPiece, new PositionImpl((6 + offset)));
+            // Move the rook to the left
+            doPly(new PlyImpl(new PositionImpl((7 + offset)), new PositionImpl((5 + offset)), false));
+        }
+    } else {
+        // If a pawn has just reached the last row
+        if (ply instanceof TransformationPly) {
+            // Set a piece of the new type on the destination square.
+            setPiece(new PieceImpl(((TransformationPly) (ply)).getTypeAfterTransformation(), movedPiece.getColor()), ply.getDestination());
+        } else {
+            // Copy the piece from source square to destination square.
+            setPiece(movedPiece, ply.getDestination());
+            // If its a en passant ply, remove the attacked pawn.
+            if (ply instanceof EnPassantPly) {
+                setPiece(null, ((EnPassantPly) (ply)).getAttackedPosition());
+            }
+        }
+    }
+    // Empty the source square.
+    setPiece(null, ply.getSource());
+}

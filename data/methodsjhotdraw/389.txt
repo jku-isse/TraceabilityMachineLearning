@@ -1,0 +1,34 @@
+/**
+ * XXX - Change type of value to Throwable
+ *
+ * @param value
+ * 		is either null for success or a Throwable on failure.
+ */
+protected void fileSaved(final View view, File file, Object value) {
+    if (value == null) {
+        view.setFile(file);
+        view.markChangesAsSaved();
+        int multiOpenId = 1;
+        for (View p : view.getApplication().views()) {
+            if (((p != view) && ((p.getFile()) != null)) && (p.getFile().equals(file))) {
+                multiOpenId = Math.max(multiOpenId, ((p.getMultipleOpenId()) + 1));
+            }
+        }
+        getApplication().addRecentFile(file);
+        view.setMultipleOpenId(multiOpenId);
+    } else {
+        String message;
+        if ((value instanceof Throwable) && ((((Throwable) (value)).getMessage()) != null)) {
+            message = ((Throwable) (value)).getMessage();
+        } else {
+            message = value.toString();
+        }
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        JSheet.showMessageSheet(getActiveView().getComponent(), ((((("<html>" + (UIManager.getString("OptionPane.css"))) + "<b>") + (labels.getFormatted("couldntSave", file.getName()))) + "</b><br>") + (message == null ? "" : message)), JOptionPane.ERROR_MESSAGE);
+    }
+    view.setEnabled(true);
+    SwingUtilities.getWindowAncestor(view.getComponent()).toFront();
+    if ((oldFocusOwner) != null) {
+        oldFocusOwner.requestFocus();
+    }
+}

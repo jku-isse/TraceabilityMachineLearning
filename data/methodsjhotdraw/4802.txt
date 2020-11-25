@@ -1,0 +1,12 @@
+public Rectangle2D.Double getDrawingArea() {
+    if ((cachedDrawingArea) == null) {
+        if ((AttributeKeys.TRANSFORM.get(this)) == null) {
+            cachedDrawingArea = path.getBounds2D();
+        } else {
+            BezierPath p2 = ((BezierPath) (path.clone()));
+            p2.transform(AttributeKeys.TRANSFORM.get(this));
+            cachedDrawingArea = p2.getBounds2D();
+        }
+    }
+    return ((Rectangle2D.Double) (cachedDrawingArea.clone()));
+}

@@ -1,0 +1,9 @@
+/**
+ * This method sets the lab technicians ID
+ *
+ * @param lTID
+ * 		
+ */
+public void setLTID(long LTID) {
+    this.LTID = LTID;
+}

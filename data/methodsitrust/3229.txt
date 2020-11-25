@@ -1,0 +1,5 @@
+public void testDeclareHCP() throws Exception {
+    assertEquals(1, patientDAO.getDeclaredHCPs(2L).size());
+    patientDAO.declareHCP(2L, 9000000000L);
+    assertEquals(2, patientDAO.getDeclaredHCPs(2L).size());
+}

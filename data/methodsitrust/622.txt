@@ -1,0 +1,14 @@
+public void testTestPneumo() throws Exception {
+    // TODO: add boundary tests
+    gen.standardData();
+    // Login as kelly doctor
+    action = new GetVisitRemindersAction(factory, 9000000000L);
+    Calendar cal = Calendar.getInstance();
+    cal.add(Calendar.HOUR, (((-6) * 7) * 24));
+    assertEquals("90669 Pneumococcal (6 weeks), ", GetVisitRemindersAction.testPneumo(0, cal.getTime(), 0L, 0L));
+    cal = Calendar.getInstance();
+    cal.add(Calendar.MONTH, (-4));
+    assertEquals("90669 Pneumococcal (4 months), ", GetVisitRemindersAction.testPneumo(1, cal.getTime(), 0L, 0L));
+    // assertEquals("90669 Pneumococcal (6 months) ", GetVisitRemindersAction.testPneumo(2, 26L, 0L));
+    // assertEquals("90669 Pneumococcal (12 months) ", GetVisitRemindersAction.testPneumo(2, 52L, 0L));
+}

@@ -1,0 +1,33 @@
+public Rectangle2D.Double layout(CompositeFigure layoutable, Point2D.Double anchor, Point2D.Double lead) {
+    Insets2D.Double layoutInsets = AttributeKeys.LAYOUT_INSETS.get(layoutable);
+    AttributeKeys.Alignment compositeAlignment = AttributeKeys.COMPOSITE_ALIGNMENT.get(layoutable);
+    if (layoutInsets == null) {
+        layoutInsets = new Insets2D.Double();
+    }
+    Rectangle2D.Double layoutBounds = calculateLayout(layoutable, anchor, lead);
+    double y = (layoutBounds.y) + (layoutInsets.top);
+    for (Figure child : layoutable.getChildren()) {
+        if (child.isVisible()) {
+            Insets2D.Double insets = getInsets(child);
+            double height = child.getPreferredSize().height;
+            double width = child.getPreferredSize().width;
+            switch (compositeAlignment) {
+                case LEADING :
+                    child.setBounds(new Point2D.Double((((layoutBounds.x) + (layoutInsets.left)) + (insets.left)), (y + (insets.top))), new Point2D.Double(((((layoutBounds.x) + (+(layoutInsets.left))) + (insets.left)) + width), ((y + (insets.top)) + height)));
+                    break;
+                case TRAILING :
+                    child.setBounds(new Point2D.Double((((((layoutBounds.x) + (layoutBounds.width)) - (layoutInsets.right)) - (insets.right)) - width), (y + (insets.top))), new Point2D.Double(((((layoutBounds.x) + (layoutBounds.width)) - (layoutInsets.right)) - (insets.right)), ((y + (insets.top)) + height)));
+                    break;
+                case CENTER :
+                    child.setBounds(new Point2D.Double(((layoutBounds.x) + (((layoutBounds.width) - width) / 2.0)), (y + (insets.top))), new Point2D.Double(((layoutBounds.x) + (((layoutBounds.width) + width) / 2.0)), ((y + (insets.top)) + height)));
+                    break;
+                case BLOCK :
+                default :
+                    child.setBounds(new Point2D.Double((((layoutBounds.x) + (layoutInsets.left)) + (insets.left)), (y + (insets.top))), new Point2D.Double(((((layoutBounds.x) + (layoutBounds.width)) - (layoutInsets.right)) - (insets.right)), ((y + (insets.top)) + height)));
+                    break;
+            }
+            y += (height + (insets.top)) + (insets.bottom);
+        }
+    }
+    return layoutBounds;
+}

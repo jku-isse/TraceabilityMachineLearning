@@ -1,0 +1,3 @@
+public Constrainer getConstrainer() {
+    return isConstrainerVisible() ? visibleConstrainer : invisibleConstrainer;
+}

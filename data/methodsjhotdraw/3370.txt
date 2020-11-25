@@ -1,0 +1,7 @@
+/**
+ * Convenience method for adding a control point with three
+ * coordinates C0, C1 and C2 with a mask.
+ */
+public void add(int mask, Point2D.Double c0, Point2D.Double c1, Point2D.Double c2) {
+    add(new BezierPath.Node(mask, c0, c1, c2));
+}

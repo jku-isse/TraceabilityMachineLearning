@@ -1,0 +1,5 @@
+public void testAddRepresentative() throws Exception {
+    assertEquals(0, patientDAO.getRepresented(1L).size());
+    patientDAO.addRepresentative(1L, 2L);
+    assertEquals(1, patientDAO.getRepresented(1L).size());
+}

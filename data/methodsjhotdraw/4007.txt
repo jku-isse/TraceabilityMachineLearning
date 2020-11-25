@@ -1,0 +1,3 @@
+public void addAll(Collection<FontFamilyNode> c) {
+    children.addAll(c);
+}

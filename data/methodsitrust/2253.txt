@@ -1,0 +1,3 @@
+public void setOccupiedBy(Long occupiedBy) {
+    this.occupiedBy = occupiedBy;
+}

@@ -1,0 +1,33 @@
+protected void paintRegularTimeFrames(Graphics g, TimeFrame[] timeFrames) {
+    fireBeforeProcessingTimeFrames();
+    for (int i = 0; i < (timeFrames.length); i++) {
+        TimeFrame next = timeFrames[i];
+        fireFrameStarted(next);
+        TimeUnit topUnit = next.getTopUnit();
+        fireUnitLineStarted(topUnit);
+        fireUnitLineFinished(topUnit);
+        // 
+        TimeUnit bottomUnit = myBottomUnit;// next.getBottomUnit();
+
+        fireUnitLineStarted(bottomUnit);
+        visitTimeUnits(next, bottomUnit);
+        fireUnitLineFinished(bottomUnit);
+        fireFrameFinished(next);
+    }
+    fireAfterProcessingTimeFrames();
+    // Painter p = new StyledPainterImpl(g, getChartUIConfiguration());
+    myChartHeader.getPrimitiveContainer().paint(myPainter, g);
+    // myBottomUnitLineRenderer.getPrimitiveContainer().paint(myPainter, g);
+    Graphics mainArea = g.create(0, getChartUIConfiguration().getHeaderHeight(), ((int) (getBounds().getWidth())), ((int) (getBounds().getHeight())));
+    myPainter.setGraphics(mainArea);
+    // p = new StyledPainterImpl(mainArea, getChartUIConfiguration());
+    myBackgroundRenderer.getPrimitiveContainer().paint(myPainter, g);
+    paintMainArea(mainArea, myPainter);
+    // Graphics resourcesArea = g.create((int)getBounds().getWidth()-20,
+    // getChartUIConfiguration().getHeaderHeight(), 20,
+    // (int)getBounds().getHeight());
+    // myResourcesRendererImpl.getPrimitiveContainer().paint(p,
+    // resourcesArea);
+    // myTaskProgressRendererImpl.getPrimitiveContainer().paint(p,
+    // mainArea);
+}

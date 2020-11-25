@@ -1,0 +1,14 @@
+/**
+ * as the name indicated
+ */
+// public GanttCalendar getEnd() {
+// 
+// return end;
+// 
+// }
+/**
+ * as the name indicated
+ */
+public GanttCalendar getThird() {
+    return third;
+}

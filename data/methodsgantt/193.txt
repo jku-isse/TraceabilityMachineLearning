@@ -1,0 +1,3 @@
+public void setEndDate(Date date) {
+    endDate = date;
+}

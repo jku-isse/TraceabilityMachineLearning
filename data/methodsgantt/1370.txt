@@ -1,0 +1,4 @@
+public ScrollGanttChartRightAction(ScrollingManager scrollingManager, String iconSize) {
+    super("ScrollRight", iconSize);
+    myScrollingManager = scrollingManager;
+}

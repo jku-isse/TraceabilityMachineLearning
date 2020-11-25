@@ -1,0 +1,12 @@
+public void testGetResultsByHopsitalID() throws Exception {
+    SurveyResultBean bean = new SurveyResultBean();
+    bean.setHCPhospital("9191919191");
+    bean.setHCPspecialty(SurveyResultBean.ANY_SPECIALTY);
+    List<SurveyResultBean> list = action.getSurveyResultsForHospital(bean);
+    SurveyResultBean bean0 = list.get(0);
+    assertEquals("12345-1234", bean0.getHCPzip());
+    assertEquals("Doctor", bean0.getHCPLastName());
+    assertEquals("surgeon", bean0.getHCPspecialty());// hardcoded surgeon b/c of the capitalization
+
+    // difference
+}

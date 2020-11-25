@@ -1,0 +1,3 @@
+public Locator getLocator() {
+    return locator;
+}

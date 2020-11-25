@@ -1,0 +1,3 @@
+public void patientDeactivate() throws FileNotFoundException, IOException, SQLException {
+    new DBBuilder(factory).executeSQLFile(((DIR) + "/patientDeactivate.sql"));
+}

@@ -1,0 +1,3 @@
+public void statusComplete() {
+    this.status = LabProcedureBean.Completed;
+}

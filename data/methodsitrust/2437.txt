@@ -1,0 +1,7 @@
+public List<ReportRequestBean> loadList(ResultSet rs) throws SQLException {
+    ArrayList<ReportRequestBean> list = new ArrayList<ReportRequestBean>();
+    while (rs.next()) {
+        list.add(loadSingle(rs));
+    } 
+    return list;
+}

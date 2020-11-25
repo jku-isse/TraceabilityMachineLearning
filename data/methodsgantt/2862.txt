@@ -1,0 +1,3 @@
+public float getValueAsFloat() {
+    return FLOATS[myIndex];
+}

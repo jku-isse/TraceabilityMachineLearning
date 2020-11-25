@@ -1,0 +1,5 @@
+/**
+ * Sets and installs another drawing in the view.
+ * This is a bound property.
+ */
+public void setDrawing(Drawing d);

@@ -1,0 +1,13 @@
+/**
+ * Creates a new instance.
+ */
+public LineDecorationIcon(LineDecoration decoration, boolean isStartDecoration) {
+    lineFigure = new LineFigure();
+    lineFigure.setBounds(new Point2D.Double(2, 8), new Point2D.Double(23, 8));
+    if (isStartDecoration) {
+        AttributeKeys.START_DECORATION.basicSet(lineFigure, decoration);
+    } else {
+        AttributeKeys.END_DECORATION.basicSet(lineFigure, decoration);
+    }
+    AttributeKeys.STROKE_COLOR.basicSet(lineFigure, Color.black);
+}

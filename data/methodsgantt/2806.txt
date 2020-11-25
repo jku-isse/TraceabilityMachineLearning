@@ -1,0 +1,10 @@
+public void setTextHidden(boolean isHidden) {
+    if (isHidden) {
+        setText("");
+    } else {
+        Action action = getAction();
+        if (action != null) {
+            setText(String.valueOf(action.getValue(Action.NAME)));
+        }
+    }
+}

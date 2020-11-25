@@ -1,0 +1,15 @@
+public static void main(String[] args) {
+    ArrayList<Point2D.Double> d = new ArrayList<Point2D.Double>();
+    d.add(new Point2D.Double(0, 0));
+    d.add(new Point2D.Double(5, 1));
+    d.add(new Point2D.Double(10, 0));
+    d.add(new Point2D.Double(10, 10));
+    d.add(new Point2D.Double(0, 10));
+    d.add(new Point2D.Double(0, 0));
+    ArrayList<ArrayList<Point2D.Double>> segments = Bezier.splitAtCorners(d, ((45 / 180.0) * (Math.PI)), 2.0);
+    for (ArrayList<Point2D.Double> seg : segments) {
+        for (int i = 0; i < 2; i++) {
+            seg = Bezier.reduceNoise(seg, 0.8);
+        }
+    }
+}

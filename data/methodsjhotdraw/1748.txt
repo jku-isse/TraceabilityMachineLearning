@@ -1,0 +1,4 @@
+public void setHandles(Handle handle, Collection<Handle> compatibleHandles) {
+    masterHandle = handle;
+    multicaster = new HandleMulticaster(handle);
+}

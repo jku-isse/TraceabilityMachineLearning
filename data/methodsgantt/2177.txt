@@ -1,0 +1,9 @@
+/**
+ * Tries to acquire a lock. <br>
+ * This method is optional. Storage containers, for which locking is
+ * inappropriate, should always return true.
+ *
+ * @return wether a lock could be successfully acquired
+ * @see #releaseLock()
+ */
+public boolean acquireLock();

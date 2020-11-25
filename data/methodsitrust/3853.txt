@@ -1,0 +1,19 @@
+public void testAddNewOverrideReason() throws Exception {
+    // login admin
+    WebConversation wc = login("9000000001", "pw");
+    WebResponse wr = wc.getCurrentPage();
+    assertEquals("iTrust - Admin Home", wr.getTitle());
+    // click on Edit OR Codes
+    wr = wr.getLinkWith("Edit Override Reason Codes").click();
+    // add the codes and description
+    assertEquals("iTrust - Maintain Override Reason Codes", wr.getTitle());
+    WebForm form = wr.getForms()[0];
+    form.setParameter("description", "Interaction not applicable to this patient");
+    form.setParameter("code", "22222");
+    form.getSubmitButtons()[0].click();
+    wr = wc.getCurrentPage();
+    // verify change
+    assertTrue(wr.getURL().toString().contains("auth/admin/editORCodes"));
+    assertTrue(wr.getText().contains("Success: 22222 - Interaction not applicable to this patient added"));
+    iTrustHTTPTest.assertLogged(TransactionType.OVERRIDE_CODE_ADD, 9000000001L, 0L, "");
+}

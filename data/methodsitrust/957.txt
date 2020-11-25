@@ -1,0 +1,7 @@
+public void testUpdateNonExistent() throws Exception {
+    final String code = "999999999";
+    MedicationBean proc = new MedicationBean(code, "shouldnt be here");
+    assertEquals("Error: Code not found.", action.updateInformation(proc));
+    assertEquals(null, factory.getNDCodesDAO().getNDCode(code));
+    assertEquals(5, factory.getNDCodesDAO().getAllNDCodes().size());
+}
