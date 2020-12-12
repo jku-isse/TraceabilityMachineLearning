@@ -56,7 +56,8 @@ def main():
             .sort_index()
             .plot.bar(ax=ax)
     )
-    
+    ax.set_yscale('log')
+
     statistics(dataset)
 
     plt.xlabel('T percentage')
@@ -74,6 +75,7 @@ def main():
             .plot.bar(ax=ax)
     )
     statistics(dataset)
+    ax.set_yscale('log')
 
     plt.xlabel('N percentage')
     plt.ylabel('Frequency')
@@ -89,6 +91,7 @@ def main():
             .plot.bar(ax=ax)
     )
     statistics(dataset)
+    ax.set_yscale('log')
 
     plt.xlabel('U percentage')
     plt.ylabel('Frequency')
