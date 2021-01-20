@@ -12,53 +12,53 @@ plt.rc('xtick', labelsize=13)
 plt.rc('ytick', labelsize=13) 
 plt.rc('font', weight='bold')
 
-TtoN0_5PrecT=[]
-TtoN1PrecT=[]
-TtoN1_5PrecT=[]
-TtoN2PrecT=[]
-TtoN2_5PrecT=[]	
+TtoN5PrecT=[]
+TtoN10PrecT=[]
+TtoN15PrecT=[]
+TtoN20PrecT=[]
+TtoN25PrecT=[]	
         
-TtoN0_5PrecN=[]
-TtoN1PrecN=[]
-TtoN1_5PrecN=[]
-TtoN2PrecN=[]
-TtoN2_5PrecN=[]	
+TtoN5PrecN=[]
+TtoN10PrecN=[]
+TtoN15PrecN=[]
+TtoN20PrecN=[]
+TtoN25PrecN=[]	
     
-TtoN0_5RecT=[]
-TtoN1RecT=[]
-TtoN1_5RecT=[]
-TtoN2RecT=[]
-TtoN2_5RecT=[]	
+TtoN5RecT=[]
+TtoN10RecT=[]
+TtoN15RecT=[]
+TtoN20RecT=[]
+TtoN25RecT=[]	
         
-TtoN0_5RecN=[]
-TtoN1RecN=[]
-TtoN1_5RecN=[]
-TtoN2RecN=[]
-TtoN2_5RecN=[]	
+TtoN5RecN=[]
+TtoN10RecN=[]
+TtoN15RecN=[]
+TtoN20RecN=[]
+TtoN25RecN=[]	
        
-NtoT5PrecT=[]
-NtoT10PrecT=[]
-NtoT15PrecT=[]
-NtoT20PrecT=[]
-NtoT25PrecT=[]	
+NtoT0_5PrecT=[]
+NtoT1PrecT=[]
+NtoT1_5PrecT=[]
+NtoT2PrecT=[]
+NtoT2_5PrecT=[]	
         
-NtoT5PrecN=[]
-NtoT10PrecN=[]
-NtoT15PrecN=[]
-NtoT20PrecN=[]
-NtoT25PrecN=[]	
+NtoT0_5PrecN=[]
+NtoT1PrecN=[]
+NtoT1_5PrecN=[]
+NtoT2PrecN=[]
+NtoT2_5PrecN=[]	
     
-NtoT5RecT=[]
-NtoT10RecT=[]
-NtoT15RecT=[]
-NtoT20RecT=[]
-NtoT25RecT=[]	
+NtoT0_5RecT=[]
+NtoT1RecT=[]
+NtoT1_5RecT=[]
+NtoT2RecT=[]
+NtoT2_5RecT=[]	
         
-NtoT5RecN=[]
-NtoT10RecN=[]
-NtoT15RecN=[]
-NtoT20RecN=[]
-NtoT25RecN=[]	
+NtoT0_5RecN=[]
+NtoT1RecN=[]
+NtoT1_5RecN=[]
+NtoT2RecN=[]
+NtoT2_5RecN=[]	
 def main():
     
     X_train={}
@@ -79,36 +79,38 @@ def main():
     X_train, X_test2, y_train, y_test2 = train_test_split(X, y, test_size=0.5, random_state=1)    
 
     #print(CorrectData)
-    path = 'TtoN'
+    '''path = 'TtoN'
     print_precision_recall(path, X_train, y_train)
     
     
-    drawboxplots('Prec_T', TtoN0_5PrecT, TtoN1PrecT, TtoN1_5PrecT, TtoN2PrecT, TtoN2_5PrecT, 'Trace Precision %', 
+    drawboxplots('Prec_T', TtoN5PrecT, TtoN10PrecT, TtoN15PrecT, TtoN20PrecT, TtoN25PrecT, 'Trace Precision %', 
                  'T->N % of error seeded', './boxplots/TracePrecisionVsTtoNError')
-    drawboxplots('Prec_N', TtoN0_5PrecN, TtoN1PrecN, TtoN1_5PrecN, TtoN2PrecN, TtoN2_5PrecN, 'NoTrace Precision %', 
+    drawboxplots('Prec_N', TtoN5PrecN, TtoN10PrecN, TtoN15PrecN, TtoN20PrecN, TtoN25PrecN, 'NoTrace Precision %', 
                  'T->N % of error seeded', './boxplots/NoTracePrecisionVsTtoNError')
-    drawboxplots('Rec_T', TtoN0_5RecT, TtoN1RecT, TtoN1_5RecT, TtoN2RecT, TtoN2_5RecT, 'Trace Recall %', 
+    drawboxplots('Rec_T', TtoN5RecT, TtoN10RecT, TtoN15RecT, TtoN20RecT, TtoN25RecT, 'Trace Recall %', 
                  'T->N % of error seeded', './boxplots/TraceRecallVsTtoNError')
-    drawboxplots('Rec_N', TtoN0_5RecN, TtoN1RecN, TtoN1_5RecN, TtoN2RecN, TtoN2_5RecN, 'NoTrace Recall %', 
-                 'T->N % of error seeded', './boxplots/NoTraceRecallVsTtoNError')
+    drawboxplots('Rec_N', TtoN5RecN, TtoN10RecN, TtoN15RecN, TtoN20RecN, TtoN25RecN, 'NoTrace Recall %', 
+                 'T->N % of error seeded', './boxplots/NoTraceRecallVsTtoNError')'''
+   
+   
     path = 'NtoT'
     print_precision_recall(path, X_train, y_train)
 
-    drawboxplots('Prec_T', NtoT5PrecT, NtoT10PrecT, NtoT15PrecT, NtoT20PrecT, NtoT25PrecT, 'Trace Precision %', 
+    drawboxplots('Prec_T', NtoT0_5PrecT, NtoT1PrecT, NtoT1_5PrecT, NtoT2PrecT, NtoT2_5PrecT, 'Trace Precision %', 
                  'N->T % of error seeded', './boxplots/TracePrecisionVsNtoTError')
-    drawboxplots('Prec_N', NtoT5PrecN, NtoT10PrecN, NtoT15PrecN, NtoT20PrecN, NtoT25PrecN, 'NoTrace Precision %', 
+    drawboxplots('Prec_N', NtoT0_5PrecN, NtoT1PrecN, NtoT1_5PrecN, NtoT2PrecN, NtoT2_5PrecN, 'NoTrace Precision %', 
                  'N->T % of error seeded', './boxplots/NoTracePrecisionVsNtoTError')
-    drawboxplots('Rec_T', NtoT5RecT, NtoT10RecT, NtoT15RecT, NtoT20RecT, NtoT25RecT, 'Trace Recall %', 
+    drawboxplots('Rec_T', NtoT0_5RecT, NtoT1RecT, NtoT1_5RecT, NtoT2RecT, NtoT2_5RecT, 'Trace Recall %', 
                  'N->T % of error seeded', './boxplots/TraceRecallVsNtoTError')
-    drawboxplots('Rec_N', NtoT5RecN, NtoT10RecN, NtoT15RecN, NtoT20RecN, NtoT25RecN, 'NoTrace Recall %', 
+    drawboxplots('Rec_N', NtoT0_5RecN, NtoT1RecN, NtoT1_5RecN, NtoT2RecN, NtoT2_5RecN, 'NoTrace Recall %', 
                  'N->T % of error seeded', './boxplots/NoTraceRecallVsNtoTError')
 
 def drawboxplots(prec_T, array1, array2, array3, array4, array5, ylabel, xlabel, figname):
     box_plot_data=[array1,array2,array3,array4, array5]
     if(figname.find('NtoT')!=-1):
-        plt.boxplot(box_plot_data,patch_artist=True,labels=['5','10','15','20', '25'])
-    else:
         plt.boxplot(box_plot_data,patch_artist=True,labels=['0.5','1','1.5','2', '2.5'])
+    else:
+        plt.boxplot(box_plot_data,patch_artist=True,labels=['5','10','15','20', '25'])
 
     plt.ylim(0, 100)# Add title and axis names
     #plt.title('Trace Precision % versus T->N % of error seeded',fontsize=15)
@@ -224,28 +226,28 @@ def print_precision_recall(path, X_train, y_train):
         Prec_N=TP_N/(TP_N+FP_N)*100
         Rec_N=TP_N/(TP_N+FN_N)*100
         
-        if(filename.find('TtoN-0.5')!=-1):
-            appendToArray(TtoN0_5PrecT, TtoN0_5PrecN, TtoN0_5RecT, TtoN0_5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        elif(filename.find('TtoN-1.0')!=-1):
-            appendToArray(TtoN1PrecT, TtoN1PrecN, TtoN1RecT, TtoN1RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        elif(filename.find('TtoN-1.5')!=-1):
-            appendToArray(TtoN1_5PrecT, TtoN1_5PrecN, TtoN1_5RecT, TtoN1_5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        elif(filename.find('TtoN-2.0')!=-1):
-            appendToArray(TtoN2PrecT, TtoN2PrecN, TtoN2RecT, TtoN2RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        elif(filename.find('TtoN-2.5')!=-1):
-            appendToArray(TtoN2_5PrecT, TtoN2_5PrecN, TtoN2_5RecT, TtoN2_5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        if(filename.find('TtoN-5')!=-1):
+            appendToArray(TtoN5PrecT, TtoN5PrecN, TtoN5RecT, TtoN5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('TtoN-10')!=-1):
+            appendToArray(TtoN10PrecT, TtoN10PrecN, TtoN10RecT, TtoN10RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('TtoN-15')!=-1):
+            appendToArray(TtoN15PrecT, TtoN15PrecN, TtoN15RecT, TtoN15RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('TtoN-20')!=-1):
+            appendToArray(TtoN20PrecT, TtoN20PrecN, TtoN20RecT, TtoN20RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('TtoN-25')!=-1):
+            appendToArray(TtoN25PrecT, TtoN25PrecN, TtoN25RecT, TtoN25RecN, Prec_T, Rec_T, Prec_N, Rec_N)
             
             
-        if(filename.find('NtoT-5')!=-1):
-            appendToArray(NtoT5PrecT, NtoT5PrecN, NtoT5RecT, NtoT5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        elif(filename.find('NtoT-10')!=-1):
-            appendToArray(NtoT10PrecT, NtoT10PrecN, NtoT10RecT, NtoT10RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        elif(filename.find('NtoT-15')!=-1):
-            appendToArray(NtoT15PrecT, NtoT15PrecN, NtoT15RecT, NtoT15RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        elif(filename.find('NtoT-20')!=-1):
-            appendToArray(NtoT20PrecT, NtoT20PrecN, NtoT20RecT, NtoT20RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        elif(filename.find('NtoT-25')!=-1):
-            appendToArray(NtoT25PrecT, NtoT25PrecN, NtoT25RecT, NtoT25RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        if(filename.find('NtoT-0.5')!=-1):
+            appendToArray(NtoT0_5PrecT, NtoT0_5PrecN, NtoT0_5RecT, NtoT0_5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('NtoT-1.0')!=-1):
+            appendToArray(NtoT1PrecT, NtoT1PrecN, NtoT1RecT, NtoT1RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('NtoT-1.5')!=-1):
+            appendToArray(NtoT1_5PrecT, NtoT1_5PrecN, NtoT1_5RecT, NtoT1_5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('NtoT-2.0')!=-1):
+            appendToArray(NtoT2PrecT, NtoT2PrecN, NtoT2RecT, NtoT2RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('NtoT-2.5')!=-1):
+            appendToArray(NtoT2_5PrecT, NtoT2_5PrecN, NtoT2_5RecT, NtoT2_5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
           
             
        
