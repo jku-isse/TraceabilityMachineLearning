@@ -72,6 +72,7 @@ def main():
     row_count, column_count = CorrectData.shape
     CorrectData['MethodType'] = CorrectData['MethodType'].astype('category').cat.codes
     CorrectData['gold'] = CorrectData['gold'].astype('category').cat.codes
+    
 
 
     X = CorrectData.iloc[:, 1:column_count].values
