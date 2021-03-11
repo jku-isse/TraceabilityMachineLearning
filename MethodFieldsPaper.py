@@ -15,6 +15,7 @@ def main(seed):
     dataset = pd.read_csv( 'inputFieldsAll.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsMajority.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsAtLeast2.txt', sep= ',', index_col=False) 
+    #dataset = pd.read_csv( 'MethodCalls.txt', sep= ',', index_col=False) 
     #convert Inner, Root, Leaf into 0, 1, 2
     
     dataset['Program'] = dataset['Program'].astype('category').cat.codes
@@ -53,12 +54,12 @@ def main(seed):
     ################################################################################
        
         
-    #ComputePrecisionRecall(X_train, X_test, y_train, y_test)
+    ComputePrecisionRecall(X_train, X_test, y_train, y_test)
     classifier = RandomForestClassifier(n_estimators=400, random_state=0)
-    classifier.fit(X_train, y_train)
-    y_pred = classifier.predict(X_test)
-    i=0
-    f = open("log.txt", "a")
+    rf=classifier.fit(X_train, y_train)
+    #y_pred = classifier.predict(X_test)
+    #i=0
+    #f = open("log.txt", "a")
     '''f.write("ProgramName,RequirementID,MethodID,VariableTrace,MethodType,CallersT,CallersN,CallersU,CallersCallersT,CallersCallersN,CallersCallersU,CalleesT,CalleesN,CalleesU,CalleesCalleesT,CalleesCalleesN,CalleesCalleesU,pred,gold\n")
     while i < y_pred.size:
         s=str(X_test[i][0])+','+str(X_test[i][1])+','+str(X_test[i][2])+','+ str(X_test[i][3])+','+str(X_test[i][4])+','+str(X_test[i][5])+','+str(X_test[i][6]) +','+str(X_test[i][7])+','+str(X_test[i][8])+','+str(X_test[i][9])+','+ str(X_test[i][10])+','+str(X_test[i][11])+','+str(X_test[i][12]) +','+str(X_test[i][13])+','+str(X_test[i][14])+','+str(X_test[i][15]) +','+str(X_test[i][16])+','+str(y_pred[i])+','+str(y_test[i])+'\n'
@@ -66,19 +67,25 @@ def main(seed):
         i += 1
     f.close()   ''' 
     print('##################################################')
-    print(seed)
-    print('confusion matrix\n',confusion_matrix(y_test,y_pred))
-    print('classification report\n', classification_report(y_test,y_pred))
-    print('accuracy score', accuracy_score(y_test, y_pred))     
+    #print(seed)
+    #print('confusion matrix\n',confusion_matrix(y_test,y_pred))
+    #print('classification report\n', classification_report(y_test,y_pred))
+    #print('accuracy score', accuracy_score(y_test, y_pred))   
+    Xcol = dataset.iloc[:, 1:column_count]
+
+    print('Feature Importance')
+    for feature in sorted(zip(map(lambda x: round(x, 4), classifier.feature_importances_), Xcol.columns), reverse=True):
+        print(feature)    
+    print('##################################################')
 
 
-'''def ComputePrecisionRecall(X_train, X_test, y_train, y_test):
+def ComputePrecisionRecall(X_train, X_test, y_train, y_test):
     classifier = RandomForestClassifier(n_estimators=400, random_state=0)
     
     classifier.fit(X_train, y_train)
     y_pred = classifier.predict(X_test)
     
-    f = open("dataMachineLearning.txt", "a")
+    #f = open("dataMachineLearning.txt", "a")
     probs= classifier.predict_proba(X_test)
     counter=0
     y_pred=[None]*len(y_test)
@@ -102,13 +109,13 @@ def main(seed):
             #print('i ',i)
             flag=False
 
-            print(X_test[i])
+            #print(X_test[i])
             if (probs_list[i][0]>=threshold_N):
                    flag=True
                    y_pred_list[i]=0
-                   if(y_test_list[i]==0): 
+                   if(y_test_list[i]=='N'): 
                        TP_N=TP_N+1
-                   elif(y_test_list[i]==1): 
+                   elif(y_test_list[i]=='T'): 
                        FP_N=FP_N+1
                        FN_T=FN_T+1
                    mylist = [str(X_test[i][2]), str(X_test[i][3]), str(y_pred_list[i])]
@@ -117,44 +124,55 @@ def main(seed):
             elif (probs_list[i][1]>=threshold_T):
                    flag=True
                    y_pred_list[i]=1
-                   if(y_test_list[i]==0): 
+                   if(y_test_list[i]=='N'): 
                        FP_T=FP_T+1
                        FN_N=FN_N+1
-                   elif(y_test_list[i]==1): 
+                   elif(y_test_list[i]=='T'): 
                        TP_T=TP_T+1
                    mylist = [str(X_test[i][2]), str(X_test[i][3]), str(y_pred_list[i])]
-                   print('--------',str(X_test[i]))
+                   #print('--------',str(X_test[i]))
                    i=i+1
             else:   
                    #print(y_pred[i])
-                   print('i==> ',i, ' probs length ', len(probs_list), ' ', len(y_pred_list), ' ', len(y_test_list))
+                   #print('i==> ',i, ' probs length ', len(probs_list), ' ', len(y_pred_list), ' ', len(y_test_list))
 
-                   if (y_test_list[i]==1):
+                   if (y_test_list[i]=='T'):
                        FN_T=FN_T+1
                        U_T=U_T+1
-                   elif (y_test_list[i]==0):
+                   elif (y_test_list[i]=='N'):
                        FN_N=FN_N+1
                        U_N=U_N+1
                    y_pred_list.pop(i)
                    y_test_list.pop(i)
                    probs_list.pop(i)
                    
-                   print('======= ',X_test[i])
+                   #print('======= ',X_test[i])
                    
                    n=n+1
             if flag==True:
                 mylist_string = ",".join(mylist)
                 s=mylist_string+"\n"
-                f.write(s)
-    f.close()
+                #f.write(s)
+    #f.close()
  
     print('TP_T ',TP_T, 'FP_T, ', FP_T,  'FN_T ', FN_T, 'U_T ', U_T)
     print('TP_N ',TP_N, 'FP_N, ', FP_N,  'FN_N ', FN_N, ' U_N ', U_N)
-    print('T PRECISION ', TP_T/(TP_T+FP_T))
-    print('T RECALL ', TP_T/(TP_T+FN_T))
+   
     
-    print('N PRECISION ', TP_N/(TP_N+FP_N))
-    print('N RECALL ', TP_N/(TP_N+FN_N))'''
+    Prec_T=TP_T/(TP_T+FP_T)
+    Rec_T=TP_T/(TP_T+FN_T)
+    Prec_N=TP_N/(TP_N+FP_N)
+    Rec_N=TP_N/(TP_N+FN_N)
+
+    Prec_T=round(Prec_T*100,2)
+    Prec_N=round(Prec_N*100,2)
+    Rec_T=round(Rec_T*100,2)
+    Rec_N=round(Rec_N*100,2)
+    
+    print('T PRECISION ', Prec_T)
+    print('T RECALL ', Rec_T)
+    print('N PRECISION ', Prec_N)
+    print('N RECALL ', Rec_N)
 
 if __name__=="__main__": 
         seeds = [500,2,10,15,24,31,34,49,58,60]
