@@ -4,7 +4,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 import numpy as np
+import xgboost as xgb
+from sklearn.metrics import mean_squared_error
 import sys
+from xgboost import XGBClassifier
 
 
 def main(seed):
@@ -12,17 +15,18 @@ def main(seed):
     #dataset = pd.read_csv( 'inputFieldsMajority+MethodCalls.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsAtLeast2+MethodCalls.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsAll+MethodCalls.txt', sep= ',', index_col=False) 
-    dataset = pd.read_csv( 'inputFieldsAll.txt', sep= ',', index_col=False) 
+    #dataset = pd.read_csv( 'inputFieldsAll.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsMajority.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsAtLeast2.txt', sep= ',', index_col=False) 
-    #dataset = pd.read_csv( 'MethodCalls.txt', sep= ',', index_col=False) 
+    dataset = pd.read_csv( 'MethodCalls.txt', sep= ',', index_col=False) 
     #convert Inner, Root, Leaf into 0, 1, 2
     
     dataset['Program'] = dataset['Program'].astype('category').cat.codes
     #dataset['VariableTrace'] = dataset['VariableTrace'].astype('category').cat.codes
     dataset['MethodType'] = dataset['MethodType'].astype('category').cat.codes
     dataset['classGold']=dataset['classGold'].astype('category').cat.codes
-    dataset['VariableTraceValue']=dataset['VariableTraceValue'].astype('category').cat.codes
+    #dataset['VariableTraceValue']=dataset['VariableTraceValue'].astype('category').cat.codes
+    #dataset['gold']=dataset['gold'].astype('category').cat.codes
 
     '''dataset['CallersT'] = dataset['CallersT'].astype('category').cat.codes
     dataset['CallersN'] = dataset['CallersN'].astype('category').cat.codes
@@ -37,15 +41,36 @@ def main(seed):
     dataset['CalleesCalleesN'] = dataset['CalleesCalleesN'].astype('category').cat.codes
     dataset['CalleesCalleesU'] = dataset['CalleesCalleesU'].astype('category').cat.codes'''
     
+    dataset=dataset.drop(columns=['RequirementID'], axis=1)
+    dataset=dataset.drop(columns=['MethodID'], axis=1)
+    dataset=dataset.drop(columns=['Program'], axis=1)
 
     pd.set_option('display.max_columns', None)
     
     row_count, column_count = dataset.shape
     
-   
+    '''X, y = dataset.iloc[:,:-1],dataset.iloc[:,-1]
+   # split data into train and test sets
+    seed = 7
+    test_size = 0.33
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=seed)
+    # fit model no training data
+    model = XGBClassifier()
+    model.fit(X_train, y_train)
+    # make predictions for test data
+    y_pred = model.predict(X_test)
+    predictions = [round(value) for value in y_pred]
+    # evaluate predictions
+    accuracy = accuracy_score(y_test, predictions)
+    print("Accuracy: %.2f%%" % (accuracy * 100.0))'''
+
+    
+    
+    
+    
     X = dataset.iloc[:, 1:column_count].values
     y = dataset.iloc[:, 0].values
-
+    
     #print(y)
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=seed)   
@@ -66,7 +91,7 @@ def main(seed):
         f.write(s)
         i += 1
     f.close()   ''' 
-    print('##################################################')
+    #print('##################################################')
     #print(seed)
     #print('confusion matrix\n',confusion_matrix(y_test,y_pred))
     #print('classification report\n', classification_report(y_test,y_pred))
@@ -155,8 +180,7 @@ def ComputePrecisionRecall(X_train, X_test, y_train, y_test):
                 #f.write(s)
     #f.close()
  
-    print('TP_T ',TP_T, 'FP_T, ', FP_T,  'FN_T ', FN_T, 'U_T ', U_T)
-    print('TP_N ',TP_N, 'FP_N, ', FP_N,  'FN_N ', FN_N, ' U_N ', U_N)
+
    
     
     Prec_T=TP_T/(TP_T+FP_T)
@@ -169,6 +193,9 @@ def ComputePrecisionRecall(X_train, X_test, y_train, y_test):
     Rec_T=round(Rec_T*100,2)
     Rec_N=round(Rec_N*100,2)
     
+    print('TP_T ',TP_T, 'FP_T, ', FP_T,  'FN_T ', FN_T, 'U_T ', U_T,'TP_N ',TP_N, 'FP_N, ', FP_N,  'FN_N ', FN_N, ' U_N ', U_N)
+    print(TP_T, ',', FP_T,  ',', FN_T, ',', U_T,',',TP_N, ',', FP_N,  ',', FN_N, ',', U_N, ',', Prec_T, ',', Rec_T, ',', Prec_N, ',', Rec_N)
+
     print('T PRECISION ', Prec_T)
     print('T RECALL ', Rec_T)
     print('N PRECISION ', Prec_N)
