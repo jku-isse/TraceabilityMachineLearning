@@ -4,10 +4,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 import numpy as np
-import xgboost as xgb
 from sklearn.metrics import mean_squared_error
 import sys
-from xgboost import XGBClassifier
 
 
 def main(seed):
