@@ -10,20 +10,20 @@ import sys
 
 def main(seed):
   
-    #dataset = pd.read_csv( 'inputFieldsMajority+MethodCalls.txt', sep= ',', index_col=False) 
+    dataset = pd.read_csv( 'inputFieldsMajority+MethodCalls.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsAtLeast2+MethodCalls.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsAll+MethodCalls.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsAll.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsMajority.txt', sep= ',', index_col=False) 
     #dataset = pd.read_csv( 'inputFieldsAtLeast2.txt', sep= ',', index_col=False) 
-    dataset = pd.read_csv( 'MethodCalls.txt', sep= ',', index_col=False) 
+    #dataset = pd.read_csv( 'MethodCalls.txt', sep= ',', index_col=False) 
     #convert Inner, Root, Leaf into 0, 1, 2
     
     dataset['Program'] = dataset['Program'].astype('category').cat.codes
     #dataset['VariableTrace'] = dataset['VariableTrace'].astype('category').cat.codes
     dataset['MethodType'] = dataset['MethodType'].astype('category').cat.codes
     dataset['classGold']=dataset['classGold'].astype('category').cat.codes
-    #dataset['VariableTraceValue']=dataset['VariableTraceValue'].astype('category').cat.codes
+    dataset['VariableTraceValue']=dataset['VariableTraceValue'].astype('category').cat.codes
     #dataset['gold']=dataset['gold'].astype('category').cat.codes
 
     '''dataset['CallersT'] = dataset['CallersT'].astype('category').cat.codes
