@@ -26,18 +26,6 @@ def main(seed):
     dataset['VariableTraceValue']=dataset['VariableTraceValue'].astype('category').cat.codes
     #dataset['gold']=dataset['gold'].astype('category').cat.codes
 
-    '''dataset['CallersT'] = dataset['CallersT'].astype('category').cat.codes
-    dataset['CallersN'] = dataset['CallersN'].astype('category').cat.codes
-    dataset['CallersU'] = dataset['CallersU'].astype('category').cat.codes
-    dataset['CalleesT'] = dataset['CalleesT'].astype('category').cat.codes
-    dataset['CalleesN'] = dataset['CalleesN'].astype('category').cat.codes
-    dataset['CalleesU'] = dataset['CalleesU'].astype('category').cat.codes
-    dataset['CallersCallersT'] = dataset['CallersCallersT'].astype('category').cat.codes
-    dataset['CallersCallersN'] = dataset['CallersCallersN'].astype('category').cat.codes
-    dataset['CallersCallersU'] = dataset['CallersCallersU'].astype('category').cat.codes
-    dataset['CalleesCalleesT'] = dataset['CalleesCalleesT'].astype('category').cat.codes
-    dataset['CalleesCalleesN'] = dataset['CalleesCalleesN'].astype('category').cat.codes
-    dataset['CalleesCalleesU'] = dataset['CalleesCalleesU'].astype('category').cat.codes'''
     
     dataset=dataset.drop(columns=['RequirementID'], axis=1)
     dataset=dataset.drop(columns=['MethodID'], axis=1)
@@ -78,7 +66,8 @@ def main(seed):
        
         
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
-    classifier = RandomForestClassifier(n_estimators=400, random_state=0)
+    classifier = RandomForestClassifier(n_estimators=10, random_state=0,max_depth=20, min_samples_leaf=40,
+                                       min_samples_split=220 )
     rf=classifier.fit(X_train, y_train)
     #y_pred = classifier.predict(X_test)
     #i=0

@@ -7,8 +7,7 @@ import numpy as np
 import xgboost as xgb
 from sklearn.metrics import mean_squared_error
 import sys
-from xgboost import XGBClassifier
-#from catboost import CatBoostRegressor
+from catboost import CatBoostRegressor
 
 
 def main(seed):
@@ -44,7 +43,7 @@ def main(seed):
    
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=seed)
     # fit model no training data
-    classifier = XGBClassifier()
+    classifier = xgb.XGBClassifier()
     #classifier = CatBoostRegressor(iterations=2,learning_rate=1,depth=2)
     classifier.fit(X_train, y_train)
     # make predictions for test data

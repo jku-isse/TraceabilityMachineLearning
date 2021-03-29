@@ -20,48 +20,65 @@ TtoN10PrecT=[]
 TtoN15PrecT=[]
 TtoN20PrecT=[]
 TtoN25PrecT=[]	
-        
+TtoN50PrecT=[]	
+TtoN75PrecT=[]	     
+
 TtoN5PrecN=[]
 TtoN10PrecN=[]
 TtoN15PrecN=[]
 TtoN20PrecN=[]
 TtoN25PrecN=[]	
+TtoN50PrecN=[]	
+TtoN75PrecN=[]	
     
 TtoN5RecT=[]
 TtoN10RecT=[]
 TtoN15RecT=[]
 TtoN20RecT=[]
 TtoN25RecT=[]	
+TtoN50RecT=[]	
+TtoN75RecT=[]	
         
 TtoN5RecN=[]
 TtoN10RecN=[]
 TtoN15RecN=[]
 TtoN20RecN=[]
 TtoN25RecN=[]	
+TtoN50RecN=[]	
+TtoN75RecN=[]	
+
        
 NtoT0_5PrecT=[]
 NtoT1PrecT=[]
 NtoT1_5PrecT=[]
 NtoT2PrecT=[]
 NtoT2_5PrecT=[]	
+NtoT5PrecT=[]
+NtoT10PrecT=[]
         
 NtoT0_5PrecN=[]
 NtoT1PrecN=[]
 NtoT1_5PrecN=[]
 NtoT2PrecN=[]
 NtoT2_5PrecN=[]	
-    
+NtoT5PrecN=[]
+NtoT10PrecN=[]
+
 NtoT0_5RecT=[]
 NtoT1RecT=[]
 NtoT1_5RecT=[]
 NtoT2RecT=[]
 NtoT2_5RecT=[]	
+NtoT5RecT=[]
+NtoT10RecT=[]
         
 NtoT0_5RecN=[]
 NtoT1RecN=[]
 NtoT1_5RecN=[]
 NtoT2RecN=[]
 NtoT2_5RecN=[]	
+NtoT5RecN=[]
+NtoT10RecN=[]
 
 def main():
     
@@ -88,30 +105,31 @@ def main():
     print_precision_recall(path, X_train, y_train)
     
     
-    drawboxplots('Prec_T', TtoN5PrecT, TtoN10PrecT, TtoN15PrecT, TtoN20PrecT, TtoN25PrecT, 'Trace Precision %', 
+    drawboxplots('Prec_T', TtoN5PrecT, TtoN10PrecT, TtoN15PrecT, TtoN20PrecT, TtoN25PrecT,TtoN50PrecT,TtoN75PrecT, 'Trace Precision %', 
                  'T->N % of error seeded', './boxplots/TracePrecisionVsTtoNError')
-    drawboxplots('Prec_N', TtoN5PrecN, TtoN10PrecN, TtoN15PrecN, TtoN20PrecN, TtoN25PrecN, 'NoTrace Precision %', 
+    drawboxplots('Prec_N', TtoN5PrecN, TtoN10PrecN, TtoN15PrecN, TtoN20PrecN, TtoN25PrecN,TtoN50PrecN,TtoN75PrecN, 'NoTrace Precision %', 
                  'T->N % of error seeded', './boxplots/NoTracePrecisionVsTtoNError')
-    drawboxplots('Rec_T', TtoN5RecT, TtoN10RecT, TtoN15RecT, TtoN20RecT, TtoN25RecT, 'Trace Recall %', 
+    drawboxplots('Rec_T', TtoN5RecT, TtoN10RecT, TtoN15RecT, TtoN20RecT, TtoN25RecT,TtoN50RecT,TtoN75RecT, 'Trace Recall %', 
                  'T->N % of error seeded', './boxplots/TraceRecallVsTtoNError')
-    drawboxplots('Rec_N', TtoN5RecN, TtoN10RecN, TtoN15RecN, TtoN20RecN, TtoN25RecN, 'NoTrace Recall %', 
+    drawboxplots('Rec_N', TtoN5RecN, TtoN10RecN, TtoN15RecN, TtoN20RecN, TtoN25RecN,TtoN50RecN,TtoN75RecN, 'NoTrace Recall %', 
                  'T->N % of error seeded', './boxplots/NoTraceRecallVsTtoNError')
    
-   
-    '''path = 'NtoT'
+    '''
+    path = 'NtoT'
     print_precision_recall(path, X_train, y_train)
 
-    drawboxplots('Prec_T', NtoT0_5PrecT, NtoT1PrecT, NtoT1_5PrecT, NtoT2PrecT, NtoT2_5PrecT, 'Trace Precision %', 'N->T % of error seeded', './boxplots/TracePrecisionVsNtoTError')
-    drawboxplots('Prec_N', NtoT0_5PrecN, NtoT1PrecN, NtoT1_5PrecN, NtoT2PrecN, NtoT2_5PrecN, 'NoTrace Precision %',  'N->T % of error seeded', './boxplots/NoTracePrecisionVsNtoTError')
-    drawboxplots('Rec_T', NtoT0_5RecT, NtoT1RecT, NtoT1_5RecT, NtoT2RecT, NtoT2_5RecT, 'Trace Recall %',  'N->T % of error seeded', './boxplots/TraceRecallVsNtoTError')
-    drawboxplots('Rec_N', NtoT0_5RecN, NtoT1RecN, NtoT1_5RecN, NtoT2RecN, NtoT2_5RecN, 'NoTrace Recall %', 'N->T % of error seeded', './boxplots/NoTraceRecallVsNtoTError')
-'''
-def drawboxplots(prec_T, array1, array2, array3, array4, array5, ylabel, xlabel, figname):
-    box_plot_data=[array1,array2,array3,array4, array5]
-    if(figname.find('NtoT')!=-1):
-        plt.boxplot(box_plot_data,patch_artist=True,labels=['0.5','1','1.5','2', '2.5'])
+    drawboxplots('Prec_T', NtoT0_5PrecT, NtoT1PrecT, NtoT1_5PrecT, NtoT2PrecT, NtoT2_5PrecT, NtoT5PrecT,NtoT10PrecT,  'Trace Precision %', 'N->T % of error seeded', './boxplots/TracePrecisionVsNtoTError')
+    drawboxplots('Prec_N', NtoT0_5PrecN, NtoT1PrecN, NtoT1_5PrecN, NtoT2PrecN, NtoT2_5PrecN,NtoT5PrecN, NtoT10PrecN, 'NoTrace Precision %',  'N->T % of error seeded', './boxplots/NoTracePrecisionVsNtoTError')
+    drawboxplots('Rec_T', NtoT0_5RecT, NtoT1RecT, NtoT1_5RecT, NtoT2RecT, NtoT2_5RecT,NtoT5RecT, NtoT10RecT, 'Trace Recall %',  'N->T % of error seeded', './boxplots/TraceRecallVsNtoTError')
+    drawboxplots('Rec_N', NtoT0_5RecN, NtoT1RecN, NtoT1_5RecN, NtoT2RecN, NtoT2_5RecN,NtoT5RecN,NtoT10RecN, 'NoTrace Recall %', 'N->T % of error seeded', './boxplots/NoTraceRecallVsNtoTError')'''
+
+def drawboxplots(prec_T, array1, array2, array3, array4, array5, array6, array7, ylabel, xlabel, figname):
+    box_plot_data=[array1,array2,array3,array4, array5, array6, array7]
+    print(box_plot_data)
+    if(figname.find('TtoN')!=-1):
+        plt.boxplot(box_plot_data,patch_artist=True,labels=['0.5','1','1.5','2', '2.5','5','10'])
     else:
-        plt.boxplot(box_plot_data,patch_artist=True,labels=['5','10','15','20', '25'])
+        plt.boxplot(box_plot_data,patch_artist=True,labels=['5','10','15','20', '25','50','75'])
 
     plt.ylim(0, 100)# Add title and axis names
     #plt.title('Trace Precision % versus T->N % of error seeded',fontsize=15)
@@ -136,7 +154,7 @@ def print_precision_recall(path, X_train, y_train):
         filename=path+'\\'+f
         print(filename)
         dataset = pd.read_csv( filename, sep= ',', index_col=False) 
-    
+        
             #convert Inner, Root, Leaf into 0, 1, 2
            
         dataset['MethodType'] = dataset['MethodType'].astype('category').cat.codes
@@ -270,8 +288,14 @@ def print_precision_recall(path, X_train, y_train):
             appendToArray(NtoT2PrecT, NtoT2PrecN, NtoT2RecT, NtoT2RecN, Prec_T, Rec_T, Prec_N, Rec_N)
         elif(filename.find('NtoT-2.5')!=-1):
             appendToArray(NtoT2_5PrecT, NtoT2_5PrecN, NtoT2_5RecT, NtoT2_5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
-        
-        if(filename.find('TtoN-5')!=-1):
+        elif(filename.find('NtoT-5')!=-1):
+            appendToArray(NtoT5PrecT, NtoT5PrecN, NtoT5RecT, NtoT5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('NtoT-10')!=-1):
+            appendToArray(NtoT10PrecT, NtoT10PrecN, NtoT10RecT, NtoT10RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+            
+            
+            
+        if(filename.find('TtoN-5.0-')!=-1):
             appendToArray(TtoN5PrecT, TtoN5PrecN, TtoN5RecT, TtoN5RecN, Prec_T, Rec_T, Prec_N, Rec_N)
         elif(filename.find('TtoN-10')!=-1):
             appendToArray(TtoN10PrecT, TtoN10PrecN, TtoN10RecT, TtoN10RecN, Prec_T, Rec_T, Prec_N, Rec_N)
@@ -281,6 +305,10 @@ def print_precision_recall(path, X_train, y_train):
             appendToArray(TtoN20PrecT, TtoN20PrecN, TtoN20RecT, TtoN20RecN, Prec_T, Rec_T, Prec_N, Rec_N)
         elif(filename.find('TtoN-25')!=-1):
             appendToArray(TtoN25PrecT, TtoN25PrecN, TtoN25RecT, TtoN25RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('TtoN-50.0-')!=-1):
+            appendToArray(TtoN50PrecT, TtoN50PrecN, TtoN50RecT, TtoN50RecN, Prec_T, Rec_T, Prec_N, Rec_N)
+        elif(filename.find('TtoN-75')!=-1):
+            appendToArray(TtoN75PrecT, TtoN75PrecN, TtoN75RecT, TtoN75RecN, Prec_T, Rec_T, Prec_N, Rec_N)
 
          
 
