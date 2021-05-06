@@ -66,18 +66,18 @@ def main(seed):
        
         
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
-    classifier = RandomForestClassifier(n_estimators=10, random_state=0,max_depth=20, min_samples_leaf=40,
-                                       min_samples_split=220 )
+    classifier = RandomForestClassifier(n_estimators=800, random_state=10,max_depth=20, min_samples_leaf=2,
+                                       min_samples_split=10,max_features='sqrt',bootstrap=False )
     rf=classifier.fit(X_train, y_train)
-    #y_pred = classifier.predict(X_test)
-    #i=0
-    #f = open("log.txt", "a")
-    '''f.write("ProgramName,RequirementID,MethodID,VariableTrace,MethodType,CallersT,CallersN,CallersU,CallersCallersT,CallersCallersN,CallersCallersU,CalleesT,CalleesN,CalleesU,CalleesCalleesT,CalleesCalleesN,CalleesCalleesU,pred,gold\n")
+    '''y_pred = classifier.predict(X_test)
+    i=0
+    f = open("log.txt", "a")
+    f.write("ProgramName,RequirementID,MethodID,VariableTrace,MethodType,CallersT,CallersN,CallersU,CallersCallersT,CallersCallersN,CallersCallersU,CalleesT,CalleesN,CalleesU,CalleesCalleesT,CalleesCalleesN,CalleesCalleesU,pred,gold\n")
     while i < y_pred.size:
         s=str(X_test[i][0])+','+str(X_test[i][1])+','+str(X_test[i][2])+','+ str(X_test[i][3])+','+str(X_test[i][4])+','+str(X_test[i][5])+','+str(X_test[i][6]) +','+str(X_test[i][7])+','+str(X_test[i][8])+','+str(X_test[i][9])+','+ str(X_test[i][10])+','+str(X_test[i][11])+','+str(X_test[i][12]) +','+str(X_test[i][13])+','+str(X_test[i][14])+','+str(X_test[i][15]) +','+str(X_test[i][16])+','+str(y_pred[i])+','+str(y_test[i])+'\n'
         f.write(s)
         i += 1
-    f.close()   ''' 
+    f.close() '''
     #print('##################################################')
     #print(seed)
     #print('confusion matrix\n',confusion_matrix(y_test,y_pred))

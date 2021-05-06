@@ -85,7 +85,9 @@ def RandomForest(TrainingSet, TestSet):
         print(feature)    
     print('##################################################')'''
 
-def MergeDatasets(prog1, prog2, prog3, prog4, TraningSet, TestSet):
+def MergeDatasets(prog1, prog2, prog3, prog4, TrainingSet, TestSet):
+    TrainingSet={}
+    TestSet={}
     TrainingSet=prog2.append(prog3)
     TrainingSet=TrainingSet.append(prog4)
     TestSet=prog1
@@ -195,5 +197,5 @@ if __name__=="__main__":
         seeds = [500,2,10,15,24,31,34,49,58,60]
         
         for seed in seeds:
-            Tes(seed)
+            main(seed)
     

@@ -88,21 +88,26 @@ def main():
     y_test={}
     
    
-    CorrectData = pd.read_csv( 'InputDataAtLeastOneInstance.txt', sep= ',', index_col=False) 
+    CorrectData = pd.read_csv( 'inputFieldsMajority+MethodCalls.txt', sep= ',', index_col=False) 
     CorrectData=CorrectData.drop(columns=['Program'], axis=1)
+    CorrectData=CorrectData.drop(columns=['MethodID'], axis=1)
+    CorrectData=CorrectData.drop(columns=['RequirementID'], axis=1)
+
     row_count, column_count = CorrectData.shape
     CorrectData['MethodType'] = CorrectData['MethodType'].astype('category').cat.codes
     CorrectData['gold'] = CorrectData['gold'].astype('category').cat.codes
-    
+    CorrectData['VariableTraceValue']=CorrectData['VariableTraceValue'].astype('category').cat.codes
+    CorrectData['classGold']=CorrectData['classGold'].astype('category').cat.codes
+
 
 
     X = CorrectData.iloc[:, 1:column_count].values
     y = CorrectData.iloc[:, 0].values
-    X_train, X_test2, y_train, y_test2 = train_test_split(X, y, test_size=0.5, random_state=1)    
+    X_train2, X_test2, y_train2, y_test2 = train_test_split(X, y, test_size=0.5, random_state=1)    
 
     #print(CorrectData)
-    path = 'TtoN'
-    print_precision_recall(path, X_train, y_train)
+    '''path = 'TtoN'
+    print_precision_recall(path, X_train, y_train,X_train2, y_train2)
     
     
     drawboxplots('Prec_T', TtoN5PrecT, TtoN10PrecT, TtoN15PrecT, TtoN20PrecT, TtoN25PrecT,TtoN50PrecT,TtoN75PrecT, 'Trace Precision %', 
@@ -116,17 +121,17 @@ def main():
    
     '''
     path = 'NtoT'
-    print_precision_recall(path, X_train, y_train)
+    print_precision_recall(path, X_train, y_train,X_train2, y_train2)
 
     drawboxplots('Prec_T', NtoT0_5PrecT, NtoT1PrecT, NtoT1_5PrecT, NtoT2PrecT, NtoT2_5PrecT, NtoT5PrecT,NtoT10PrecT,  'Trace Precision %', 'N->T % of error seeded', './boxplots/TracePrecisionVsNtoTError')
     drawboxplots('Prec_N', NtoT0_5PrecN, NtoT1PrecN, NtoT1_5PrecN, NtoT2PrecN, NtoT2_5PrecN,NtoT5PrecN, NtoT10PrecN, 'NoTrace Precision %',  'N->T % of error seeded', './boxplots/NoTracePrecisionVsNtoTError')
     drawboxplots('Rec_T', NtoT0_5RecT, NtoT1RecT, NtoT1_5RecT, NtoT2RecT, NtoT2_5RecT,NtoT5RecT, NtoT10RecT, 'Trace Recall %',  'N->T % of error seeded', './boxplots/TraceRecallVsNtoTError')
-    drawboxplots('Rec_N', NtoT0_5RecN, NtoT1RecN, NtoT1_5RecN, NtoT2RecN, NtoT2_5RecN,NtoT5RecN,NtoT10RecN, 'NoTrace Recall %', 'N->T % of error seeded', './boxplots/NoTraceRecallVsNtoTError')'''
+    drawboxplots('Rec_N', NtoT0_5RecN, NtoT1RecN, NtoT1_5RecN, NtoT2RecN, NtoT2_5RecN,NtoT5RecN,NtoT10RecN, 'NoTrace Recall %', 'N->T % of error seeded', './boxplots/NoTraceRecallVsNtoTError')
 
 def drawboxplots(prec_T, array1, array2, array3, array4, array5, array6, array7, ylabel, xlabel, figname):
     box_plot_data=[array1,array2,array3,array4, array5, array6, array7]
     print(box_plot_data)
-    if(figname.find('TtoN')!=-1):
+    if(figname.find('TtoN')==-1):
         plt.boxplot(box_plot_data,patch_artist=True,labels=['0.5','1','1.5','2', '2.5','5','10'])
     else:
         plt.boxplot(box_plot_data,patch_artist=True,labels=['5','10','15','20', '25','50','75'])
@@ -139,14 +144,14 @@ def drawboxplots(prec_T, array1, array2, array3, array4, array5, array6, array7,
     plt.savefig(figname)
     plt.show()
 
-def print_precision_recall(path, X_train, y_train):
+def print_precision_recall(path, X_train, y_train,X_train2, y_train2):
     print(sklearn.__version__)
     X_train={}
     X_test={}
     y_train={}
     y_test={}
     #change line below to TtoN or NtoT depending on seeding type 
-    path = 'TtoN'
+    path = 'NtoT'
     files = os.listdir(path)
 
     for f in files:
@@ -182,7 +187,7 @@ def print_precision_recall(path, X_train, y_train):
             
         classifier = RandomForestClassifier(n_estimators=400, random_state=0)
     
-        classifier.fit(X_train, y_train)
+        classifier.fit(X_train2, y_train2)
         y_pred = classifier.predict(X_test)
         
         #f = open("dataMachineLearning.txt", "a")
