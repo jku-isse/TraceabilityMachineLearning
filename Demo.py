@@ -43,12 +43,7 @@ def main(seed):
        
         
     ComputePrecisionRecall(X_train, X_test, y_train, y_test)
-    classifier = RandomForestClassifier(n_estimators=800, random_state=10,max_depth=20, min_samples_leaf=2,
-                                       min_samples_split=10,max_features='sqrt',bootstrap=False )
-    rf=classifier.fit(X_train, y_train)
- 
-   
-    Xcol = dataset.iloc[:, 1:column_count]
+  
 
     
 
