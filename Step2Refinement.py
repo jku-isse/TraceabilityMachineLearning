@@ -9,10 +9,12 @@ import sys
 
 
 def main(seed):
-    thresholds_T=[0.65,0.60,0.55,0.50,0.45]
-    thresholds_N=[0.95,0.90,0.85,0.80,0.75]
+    thresholds_T=[0.65,0.60,0.55,0.50,0.45,0.40,0.35,0.30,0.25,0.20,0.15,0.10,0.05]
+    thresholds_N=[0.95,0.90,0.85,0.80,0.75,0.70,0.65,0.60,0.55,0.50,0.45,0.40,0.35]
     TrainingSet = pd.read_csv( 'TrainingSetStep2.txt', sep= ',', index_col=False) 
-    TestSetStep2 = pd.read_csv( 'Step2Data.txt', sep= ',', index_col=False) 
+    TestSetStep2 = pd.read_csv( 'TestSetStep2Data.txt', sep= ',', index_col=False) 
+    TestSetRealData = pd.read_csv( 'RealDataEvaluation.txt', sep= ',', index_col=False) 
+
 
     TestSetStep2=TestSetStep2.drop(columns=['RequirementID'], axis=1)
     TestSetStep2=TestSetStep2.drop(columns=['MethodID'], axis=1)
@@ -21,6 +23,10 @@ def main(seed):
     TrainingSet=TrainingSet.drop(columns=['RequirementID'], axis=1)
     TrainingSet=TrainingSet.drop(columns=['MethodID'], axis=1)
     TrainingSet=TrainingSet.drop(columns=['Program'], axis=1)
+    
+    TestSetRealData=TestSetRealData.drop(columns=['RequirementID'], axis=1)
+    TestSetRealData=TestSetRealData.drop(columns=['MethodID'], axis=1)
+    TestSetRealData=TestSetRealData.drop(columns=['Program'], axis=1)
     
     
     #TrainingSet['Program'] = TrainingSet['Program'].astype('category').cat.codes
@@ -42,7 +48,9 @@ def main(seed):
     TestSetStep2['PredictedTraceValue']=TestSetStep2['PredictedTraceValue'].astype('category').cat.codes
     
    
-    
+    TestSetRealData['MethodType'] = TestSetRealData['MethodType'].astype('category').cat.codes
+    TestSetRealData['classGold']=TestSetRealData['classGold'].astype('category').cat.codes
+    TestSetRealData['PredictedTraceValue']=TestSetRealData['PredictedTraceValue'].astype('category').cat.codes
     
     X = TrainingSet.iloc[:, 1:column_count].values
     y = TrainingSet.iloc[:, 0].values
@@ -51,23 +59,28 @@ def main(seed):
     XStep2 = TestSetStep2.iloc[:, 1:column_count].values
     yStep2 = TestSetStep2.iloc[:, 0].values
     
+    XStepRealData = TestSetRealData.iloc[:, 1:column_count].values
+    yStepRealData = TestSetRealData.iloc[:, 0].values
+    
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=seed)   
     X_train_step2, X_test_step2, y_train_step2, y_test_step2 = train_test_split(XStep2, yStep2, test_size=0.5, random_state=seed)   
+    X_train_RealData, X_test_RealData, y_train_RealData, y_test_RealData = train_test_split(XStepRealData, yStepRealData, test_size=0.5, random_state=seed)   
+
     #print(y)
-    for i in range(0, 5):
+    classifier = RandomForestClassifier(n_estimators=400, random_state=0)
+    
+    classifier.fit(X_train, y_train)
+    for i in range(0, 13):
         print('############## ITERATION ',i,'#######################')
 
-        ComputePrecisionRecall(X_train, X_test_step2, y_train, y_test_step2,thresholds_T[i],thresholds_N[i])
+        ComputePrecisionRecall(classifier,X_train, X_test_RealData, y_train, y_test_RealData,thresholds_T[i],thresholds_N[i])
     
 
    
 
 
-def ComputePrecisionRecall(X_train, X_test, y_train, y_test,Tthreshold,Nthreshold):
-    classifier = RandomForestClassifier(n_estimators=400, random_state=0)
-    
-    classifier.fit(X_train, y_train)
-    y_pred = classifier.predict(X_test)
+def ComputePrecisionRecall(classifier,X_train, X_test, y_train, y_test,Tthreshold,Nthreshold):
+
     
     #f = open("dataMachineLearning.txt", "a")
     probs= classifier.predict_proba(X_test)
@@ -104,7 +117,6 @@ def ComputePrecisionRecall(X_train, X_test, y_train, y_test,Tthreshold,Nthreshol
                    elif(y_test_list[i]=='T' ): 
                        FP_N=FP_N+1
                        FN_T=FN_T+1
-                   mylist = [str(X_test[i][2]), str(X_test[i][3]), str(y_pred_list[i])]
                    i=i+1
             
             elif (probs_list[i][1]>=threshold_T):
@@ -117,12 +129,8 @@ def ComputePrecisionRecall(X_train, X_test, y_train, y_test,Tthreshold,Nthreshol
                        FN_N=FN_N+1
                    elif(y_test_list[i]=='T' ): 
                        TP_T=TP_T+1
-                   mylist = [str(X_test[i][2]), str(X_test[i][3]), str(y_pred_list[i])]
-                   #print('--------',str(X_test[i]))
                    i=i+1
             else:   
-                   #print(y_pred[i])
-                   #print('i==> ',i, ' probs length ', len(probs_list), ' ', len(y_pred_list), ' ', len(y_test_list))
 
                    if (y_test_list[i]=='T' ):
                        FN_T=FN_T+1
@@ -134,18 +142,13 @@ def ComputePrecisionRecall(X_train, X_test, y_train, y_test,Tthreshold,Nthreshol
                    y_test_list.pop(i)
                    probs_list.pop(i)
                    
-                   #print('======= ',X_test[i])
                    
                    n=n+1
-            if flag==True:
-                mylist_string = ",".join(mylist)
-                s=mylist_string+"\n"
-                #f.write(s)
-    #f.close()
  
 
    
-    
+    if (TP_T+FP_T==0):
+        sys.exit()
     Prec_T=TP_T/(TP_T+FP_T)
     Rec_T=TP_T/(TP_T+FN_T)
     Prec_N=TP_N/(TP_N+FP_N)
@@ -157,7 +160,6 @@ def ComputePrecisionRecall(X_train, X_test, y_train, y_test,Tthreshold,Nthreshol
     Rec_N=round(Rec_N*100,2)
     
     print('TP_T ',TP_T, 'FP_T, ', FP_T,  'FN_T ', FN_T, 'U_T ', U_T,'TP_N ',TP_N, 'FP_N, ', FP_N,  'FN_N ', FN_N, ' U_N ', U_N)
-    #print(TP_T, ',', FP_T,  ',', FN_T, ',', U_T,',',TP_N, ',', FP_N,  ',', FN_N, ',', U_N, ',', Prec_T, ',', Rec_T, ',', Prec_N, ',', Rec_N)
 
     print('T PRECISION ', Prec_T)
     print('T RECALL ', Rec_T)
