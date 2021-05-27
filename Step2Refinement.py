@@ -73,7 +73,7 @@ def main(seed):
     for i in range(0, 13):
         print('############## ITERATION ',i,'#######################')
 
-        ComputePrecisionRecall(classifier,X_train, X_test_RealData, y_train, y_test_RealData,thresholds_T[i],thresholds_N[i])
+        ComputePrecisionRecall(classifier,X_train, X_test_step2, y_train, y_test_RealData,thresholds_T[i],thresholds_N[i])
     
 
    
