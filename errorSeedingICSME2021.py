@@ -106,7 +106,7 @@ def main():
     X_train2, X_test2, y_train2, y_test2 = train_test_split(X, y, test_size=0.5, random_state=1)    
 
     #print(CorrectData)
-    '''path = 'TtoN'
+    path = 'TtoN'
     print_precision_recall(path, X_train, y_train,X_train2, y_train2)
     
     
@@ -127,7 +127,7 @@ def main():
     drawboxplots('Prec_N', NtoT0_5PrecN, NtoT1PrecN, NtoT1_5PrecN, NtoT2PrecN, NtoT2_5PrecN,NtoT5PrecN, NtoT10PrecN, 'NoTrace Precision %',  'N->T % of error seeded', './boxplots/NoTracePrecisionVsNtoTError')
     drawboxplots('Rec_T', NtoT0_5RecT, NtoT1RecT, NtoT1_5RecT, NtoT2RecT, NtoT2_5RecT,NtoT5RecT, NtoT10RecT, 'Trace Recall %',  'N->T % of error seeded', './boxplots/TraceRecallVsNtoTError')
     drawboxplots('Rec_N', NtoT0_5RecN, NtoT1RecN, NtoT1_5RecN, NtoT2RecN, NtoT2_5RecN,NtoT5RecN,NtoT10RecN, 'NoTrace Recall %', 'N->T % of error seeded', './boxplots/NoTraceRecallVsNtoTError')
-
+    '''
 def drawboxplots(prec_T, array1, array2, array3, array4, array5, array6, array7, ylabel, xlabel, figname):
     box_plot_data=[array1,array2,array3,array4, array5, array6, array7]
     print(box_plot_data)
@@ -136,7 +136,7 @@ def drawboxplots(prec_T, array1, array2, array3, array4, array5, array6, array7,
     else:
         plt.boxplot(box_plot_data,patch_artist=True,labels=['5','10','15','20', '25','50','75'])
 
-    plt.ylim(0, 100)# Add title and axis names
+    plt.ylim(0, 110)# Add title and axis names
     #plt.title('Trace Precision % versus T->N % of error seeded',fontsize=15)
     plt.ylabel(ylabel,fontsize=15, weight='bold')
     plt.xlabel(xlabel,fontsize=15, weight='bold')
@@ -151,7 +151,7 @@ def print_precision_recall(path, X_train, y_train,X_train2, y_train2):
     y_train={}
     y_test={}
     #change line below to TtoN or NtoT depending on seeding type 
-    path = 'NtoT'
+    path = 'TtoN'
     files = os.listdir(path)
 
     for f in files:
